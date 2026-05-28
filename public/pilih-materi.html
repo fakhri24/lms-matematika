@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Materi - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .materi-card {
+        cursor: pointer;
+        margin-bottom: 15px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 2px solid transparent;
+      }
+      .materi-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        border-color: var(--primary-color);
+      }
+      .tahap-separator {
+        display: flex;
+        align-items: center;
+        margin: 25px 0 15px 0;
+        color: #475569;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tahap-separator::before,
+      .tahap-separator::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px dashed #cbd5e1;
+      }
+      .tahap-separator span {
+        padding: 0 15px;
+        background-color: var(--bg-body);
+        color: var(--primary-color);
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 500px; margin-top: 50px">
+      <header
+        class="flex-between mb-25"
+        style="
+          border-bottom: 2px solid var(--border-color);
+          padding-bottom: 15px;
+        "
+      >
+        <div>
+          <h2 class="text-primary" style="margin: 0">Pilih Materi Latihan</h2>
+          <p class="status-text" style="margin-top: 5px; margin-bottom: 0">
+            Fokus pada satu topik untuk hasil maksimal
+          </p>
+        </div>
+        <button
+          id="btn-kembali"
+          class="btn btn-secondary text-sm"
+          style="padding: 8px 15px; white-space: nowrap"
+        >
+          &laquo; Kembali
+        </button>
+      </header>
+
+      <div
+        style="
+          background: white;
+          padding: 20px;
+          border-radius: 12px;
+          margin-bottom: 20px;
+          border: 1px solid var(--border-color);
+        "
+      >
+        <label class="font-semibold text-primary mb-15" style="display: block"
+          >⚙️ Pilih Mode Latihan:</label
+        >
+
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <label
+            id="label-formatif"
+            style="
+              padding: 15px;
+              border: 2px solid var(--primary-color);
+              border-radius: 8px;
+              cursor: pointer;
+              background: #eef2ff;
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              transition: 0.2s;
+            "
+          >
+            <input
+              type="radio"
+              name="mode_latihan"
+              value="latihan_formatif"
+              checked
+              style="transform: scale(1.3); margin: 0; cursor: pointer"
+            />
+            <div>
+              <strong
+                class="text-primary"
+                style="display: block; font-size: 1.05rem"
+                >Latihan Formatif 🛠️</strong
+              >
+              <span
+                class="text-sm"
+                style="
+                  color: #64748b;
+                  line-height: 1.4;
+                  display: block;
+                  margin-top: 2px;
+                "
+              >
+                Fokus pada penguasaan konsep dasar. Tersedia <i>clue</i> &
+                pembahasan jika kamu melakukan kesalahan. Sangat cocok sebagai
+                pemanasan sebelum menantang ujian sesungguhnya!
+              </span>
+            </div>
+          </label>
+
+          <label
+            id="label-normal"
+            style="
+              padding: 15px;
+              border: 2px solid var(--border-color);
+              border-radius: 8px;
+              cursor: pointer;
+              background: white;
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              transition: 0.2s;
+            "
+          >
+            <input
+              type="radio"
+              name="mode_latihan"
+              value="tes_normal"
+              style="transform: scale(1.3); margin: 0; cursor: pointer"
+            />
+            <div>
+              <strong
+                class="text-main"
+                style="display: block; font-size: 1.05rem"
+                >Latihan Sumatif (Normal) 🎯</strong
+              >
+              <span
+                class="text-sm"
+                style="
+                  color: #64748b;
+                  line-height: 1.4;
+                  display: block;
+                  margin-top: 2px;
+                "
+              >
+                Evaluasi murni dengan urutan soal terstruktur tanpa bantuan. Uji
+                ketangguhanmu dan raih skor > 85 untuk langsung mengukir namamu
+                di <i>Wall of Mastery</i>!
+              </span>
+            </div>
+          </label>
+
+          <label
+            id="label-acak"
+            style="
+              padding: 15px;
+              border: 2px solid var(--border-color);
+              border-radius: 8px;
+              cursor: pointer;
+              background: white;
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              transition: 0.2s;
+            "
+          >
+            <input
+              type="radio"
+              name="mode_latihan"
+              value="tes_acak"
+              style="transform: scale(1.3); margin: 0; cursor: pointer"
+            />
+            <div>
+              <strong
+                class="text-main"
+                style="display: block; font-size: 1.05rem"
+                >Latihan Sumatif (Acak) 🎲</strong
+              >
+              <span
+                class="text-sm"
+                style="
+                  color: #64748b;
+                  line-height: 1.4;
+                  display: block;
+                  margin-top: 2px;
+                "
+              >
+                Tantangan sesungguhnya dengan urutan soal yang diacak penuh.
+                Buktikan penguasaan materimu secara acak dan rebut gelar
+                prestisius di <i>Wall of Mastery</i>!
+              </span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div
+        id="wadah-tombol-tab"
+        class="tab-nav-container"
+        style="display: none"
+      ></div>
+
+      <div id="wadah-konten-tab">
+        <p id="teks-loading" class="text-center text-muted mt-20">
+          Memuat kurikulum dan menyusun urutan materi...
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="js/pages/pilihMateri.js"></script>
+  </body>
+</html>

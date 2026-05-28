@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rekap Hasil - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .chart-container {
+        background: white;
+        padding: 20px;
+        border-radius: var(--radius);
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+      }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .stat-card {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid var(--border-color);
+      }
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      select.filter-radar {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        background: #f1f5f9;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 700px; margin-top: 30px">
+      <header class="flex-between mb-20">
+        <h2 class="text-primary" style="margin: 0">Analisis Capaian</h2>
+        <button id="btn-kembali" class="btn btn-secondary btn-sm">
+          &laquo; Kembali
+        </button>
+      </header>
+
+      <div
+        class="flex-wrap text-center mb-25"
+        style="
+          background: linear-gradient(
+            135deg,
+            var(--primary-color) 0%,
+            #312e81 100%
+          );
+          border-radius: 16px;
+          padding: 20px;
+          color: white;
+          display: flex;
+          justify-content: space-around;
+          box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        "
+      >
+        <div>
+          <p
+            class="text-xs mb-5"
+            style="
+              color: #c7d2fe;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            ⚔️ Total Soal Dilibas
+          </p>
+          <div id="global-total-soal" style="font-size: 2rem; font-weight: 900">
+            0
+          </div>
+        </div>
+        <div
+          style="width: 2px; background-color: #6366f1; border-radius: 2px"
+        ></div>
+        <div>
+          <p
+            class="text-xs mb-5"
+            style="
+              color: #c7d2fe;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            ⏳ Jam Terbang
+          </p>
+          <div
+            id="global-total-waktu"
+            style="font-size: 2rem; font-weight: 900"
+          >
+            0m
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex-wrap mb-20 gap-10"
+        style="
+          border-bottom: 2px solid var(--border-color);
+          padding-bottom: 15px;
+        "
+      >
+        <button
+          id="btn-tab-sumatif"
+          class="btn btn-primary"
+          style="flex: 1; padding: 10px; font-size: 0.9rem"
+        >
+          🎯 Performa Ujian
+        </button>
+        <button
+          id="btn-tab-formatif"
+          class="btn btn-secondary"
+          style="flex: 1; padding: 10px; font-size: 0.9rem"
+        >
+          🛠️ Jejak Latihan
+        </button>
+      </div>
+
+      <div class="summary-grid">
+        <div class="stat-card" style="background: white">
+          <p class="text-xs text-muted">
+            Total Sesi <span id="label-sesi-tab">Ujian</span>
+          </p>
+          <div id="tab-total-latihan" class="stat-value">0</div>
+        </div>
+        <div class="stat-card" style="background: white">
+          <p class="text-xs text-muted">Performa Terkini</p>
+          <div id="tab-rata-terkini" class="stat-value text-warning">0</div>
+          <p class="text-xs text-muted mt-5">
+            Rata-rata 3 <span id="label-rata-tab">ujian</span> terakhir
+          </p>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <div class="flex-between mb-15">
+          <h3 class="text-sm" style="margin: 0">📈 Tren Perkembangan Nilai</h3>
+          <select id="filter-rentang-siswa" class="filter-radar">
+            <option value="10">10 Latihan Terakhir</option>
+            <option value="semua">Semua Latihan</option>
+          </select>
+        </div>
+        <canvas id="lineChartSiswa" height="180"></canvas>
+      </div>
+
+      <div class="chart-container" id="wadah-radar">
+        <div class="flex-between mb-15">
+          <h3 class="text-sm" style="margin: 0">🕸️ Peta Kekuatan Materi</h3>
+          <select id="filter-radar-siswa" class="filter-radar">
+            <option value="makro">Makro (Semua)</option>
+          </select>
+        </div>
+        <canvas id="radarChartSiswa" height="250"></canvas>
+      </div>
+    </div>
+
+    <script type="module" src="js/pages/rekapHasil.js"></script>
+  </body>
+</html>

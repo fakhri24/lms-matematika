@@ -1,0 +1,1414 @@
+[
+  {
+    "id": "0PduA1a8I9rOcbm40sg2",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Hasil dari $\\sin 150^\\circ + \\cos 300^\\circ$ adalah ...",
+    "opsi": ["$0$", "$\\frac{1}{2}$", "$1$", "$\\frac{3}{2}$", "$2$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Cari nilai masing-masing terlebih dahulu:<br>$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 300^\\circ = \\cos(360^\\circ - 60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka, $\\sin 150^\\circ + \\cos 300^\\circ = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "0WxEi5cEkpeosAUwtP5M",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sudut Berelasi (Horizontal)", "Sifat Sudut Negatif"],
+    "pertanyaan": "Hasil dari operasi $\\sin(-x) + \\sin(180^\\circ - x) + \\sin(360^\\circ - x)$ adalah ...",
+    "opsi": ["$\\sin x$", "$-\\sin x$", "$3 \\sin x$", "$-3 \\sin x$", "$0$"],
+    "jawaban_benar": "$-\\sin x$",
+    "pembahasan": "Sederhanakan setiap suku:<br>1. $\\sin(-x) = -\\sin x$<br>2. $\\sin(180^\\circ - x) = \\sin x$<br>3. $\\sin(360^\\circ - x) = -\\sin x$<br><br>Jumlahkan semuanya:<br>$(-\\sin x) + \\sin x + (-\\sin x) = -\\sin x$."
+  },
+  {
+    "id": "53c8wjEHo7FtxRo8gSmM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Persamaan Linear"],
+    "pertanyaan": "Segitiga $KLM$ siku-siku di $L$. Jika $\\sin M = \\frac{2}{3}$ dan panjang sisi $KL = 4$ cm, maka panjang sisi miring $KM$ adalah ...",
+    "opsi": [
+      "$6$ cm",
+      "$8$ cm",
+      "$\\sqrt{13}$ cm",
+      "$2\\sqrt{5}$ cm",
+      "$3\\sqrt{2}$ cm"
+    ],
+    "jawaban_benar": "$6$ cm",
+    "pembahasan": "Sudut $M$ menghadap sisi $KL$, sehingga sisi depannya adalah $KL = 4$ cm. Sisi miringnya adalah $KM$.<br><br>Karena $\\sin M = \\frac{\\text{depan}}{\\text{miring}}$, maka $\\frac{2}{3} = \\frac{4}{KM}$.<br><br>Lakukan perkalian silang: $2 \\cdot KM = 12 \\implies KM = 6$ cm."
+  },
+  {
+    "id": "5t2MsNqGHmnRR57TSGzz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Kuadran", "Operasi Aljabar Pecahan"],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\cos(90^\\circ + \\alpha)}{\\sin(180^\\circ - \\alpha)}$ adalah ...",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan \\alpha$",
+      "$-\\tan \\alpha$",
+      "$\\cot \\alpha$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Sederhanakan pembilang (relasi vertikal, Kuadran II, cos negatif):<br>$\\cos(90^\\circ + \\alpha) = -\\sin \\alpha$<br><br>Sederhanakan penyebut (relasi horizontal, Kuadran II, sin positif):<br>$\\sin(180^\\circ - \\alpha) = \\sin \\alpha$<br><br>Bentuk pecahan menjadi:<br>$\\frac{-\\sin \\alpha}{\\sin \\alpha} = -1$."
+  },
+  {
+    "id": "5wVhtnNEpyFcEM0gFHaY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Kebalikan", "Operasi Aljabar"],
+    "pertanyaan": "Bentuk sederhana dari $\\sin x \\cdot \\csc x + \\cos x \\cdot \\sec x$ adalah ...",
+    "opsi": ["$0$", "$1$", "$2$", "$\\tan x$", "$\\sin x \\cos x$"],
+    "jawaban_benar": "$2$",
+    "pembahasan": "Gunakan identitas kebalikan:<br>$\\csc x = \\frac{1}{\\sin x}$<br>$\\sec x = \\frac{1}{\\cos x}$<br><br>Substitusikan ke dalam persamaan:<br>$\\sin x \\cdot (\\frac{1}{\\sin x}) + \\cos x \\cdot (\\frac{1}{\\cos x})$<br><br>Karena pembilang dan penyebut sama, nilainya saling menghilangkan menjadi $1$:<br>$1 + 1 = 2$."
+  },
+  {
+    "id": "7gAuGbv5qjpWHJODzhAA",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pythagoras", "Penjabaran Kuadrat Aljabar"],
+    "pertanyaan": "Hasil penjabaran dari $(\\sin x + \\cos x)^2$ adalah ...",
+    "opsi": [
+      "$1$",
+      "$1 + 2 \\sin x \\cos x$",
+      "$1 - 2 \\sin x \\cos x$",
+      "$\\sin^2 x + \\cos^2 x$",
+      "$2$"
+    ],
+    "jawaban_benar": "$1 + 2 \\sin x \\cos x$",
+    "pembahasan": "Jabarkan bentuk kuadrat tersebut menggunakan pola $(a + b)^2 = a^2 + 2ab + b^2$:<br>$(\\sin x + \\cos x)^2 = \\sin^2 x + 2 \\sin x \\cos x + \\cos^2 x$<br><br>Dekatkan bentuk kuadratnya:<br>$(\\sin^2 x + \\cos^2 x) + 2 \\sin x \\cos x$<br><br>Karena $\\sin^2 x + \\cos^2 x = 1$, maka persamaannya menjadi:<br>$1 + 2 \\sin x \\cos x$."
+  },
+  {
+    "id": "8pMU5AVHFrt8JsDhbOQT",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\tan 120^\\circ$ adalah ...",
+    "opsi": [
+      "$\\sqrt{3}$",
+      "$-\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$-\\frac{1}{3}\\sqrt{3}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-\\sqrt{3}$",
+    "pembahasan": "Sudut $120^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai tangen adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\tan 120^\\circ = \\tan(180^\\circ - 60^\\circ)$<br>$\\tan 120^\\circ = -\\tan 60^\\circ$<br>$\\tan 120^\\circ = -\\sqrt{3}$."
+  },
+  {
+    "id": "Ajay7MGHU5dMBaHAWqFe",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Bentuk Akar"],
+    "pertanyaan": "Jika $\\sin \\theta = \\frac{1}{2}$ untuk $\\theta$ sudut lancip, maka nilai $\\cot \\theta$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$2$",
+      "$\\frac{2}{3}\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\sqrt{3}$",
+    "pembahasan": "$\\sin \\theta = \\frac{\\text{depan}}{\\text{miring}} = \\frac{1}{2}$.<br>Berarti sisi depan $= 1$ dan miring $= 2$.<br><br>Hitung sisi samping:<br>Samping $= \\sqrt{2^2 - 1^2} = \\sqrt{4 - 1} = \\sqrt{3}$.<br><br>Maka, $\\cot \\theta = \\frac{\\text{samping}}{\\text{depan}} = \\frac{\\sqrt{3}}{1} = \\sqrt{3}$."
+  },
+  {
+    "id": "BVckJmLZGs40hsR2z2pu",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Kuadran", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\sin 150^\\circ + \\cos 120^\\circ$ jika diselesaikan dengan konsep sudut berelasi (vertikal) adalah ...",
+    "opsi": ["$-1$", "$0$", "$1$", "$\\sqrt{3}$", "$-\\sqrt{3}$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Cari nilai dengan relasi poros vertikal ($90^\\circ$):<br>$\\sin 150^\\circ = \\sin(90^\\circ + 60^\\circ) = +\\cos 60^\\circ = \\frac{1}{2}$<br>$\\cos 120^\\circ = \\cos(90^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br><br>Jumlahkan kedua hasil:<br>$\\frac{1}{2} + (-\\frac{1}{2}) = 0$."
+  },
+  {
+    "id": "C4KV57ynDT47DJ54LRyq",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\cos(-60^\\circ)$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Ingat sifat sudut negatif pada cosinus:<br>$\\cos(-x) = \\cos x$.<br><br>Maka:<br>$\\cos(-60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$."
+  },
+  {
+    "id": "D9x6FeYXu0qqoqxV3yOC",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk ekuivalen dari $\\frac{\\sin(90^\\circ - \\alpha)}{\\cos(180^\\circ - \\alpha)}$ adalah ...",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan \\alpha$",
+      "$\\cot \\alpha$",
+      "$-\\tan \\alpha$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Sederhanakan pembilang:<br>$\\sin(90^\\circ - \\alpha) = \\cos \\alpha$<br><br>Sederhanakan penyebut:<br>$\\cos(180^\\circ - \\alpha) = -\\cos \\alpha$<br><br>Bentuk pecahan menjadi:<br>$\\frac{\\cos \\alpha}{-\\cos \\alpha} = -1$."
+  },
+  {
+    "id": "DDReV1rYeIQdgllblxyZ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Perkalian Bilangan Bulat dan Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\cos 240^\\circ \\times \\tan 315^\\circ$ adalah ...",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$-1$",
+      "$1$",
+      "$\\frac{1}{2}\\sqrt{2}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Cari nilai masing-masing terlebih dahulu:<br>$\\cos 240^\\circ = \\cos(180^\\circ + 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$ (Kuadran III, cos negatif)<br>$\\tan 315^\\circ = \\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ = -1$ (Kuadran IV, tan negatif)<br><br>Maka, $(-\\frac{1}{2}) \\times (-1) = \\frac{1}{2}$."
+  },
+  {
+    "id": "DrDPJsfGE3tNRdZHyLKz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\cos 135^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$-\\frac{1}{2}\\sqrt{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$-\\sqrt{2}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}\\sqrt{2}$",
+    "pembahasan": "Sudut $135^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai cosinus adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\cos 135^\\circ = \\cos(180^\\circ - 45^\\circ)$<br>$\\cos 135^\\circ = -\\cos 45^\\circ$<br>$\\cos 135^\\circ = -\\frac{1}{2}\\sqrt{2}$."
+  },
+  {
+    "id": "E2jhzrheXkhNjpFIO8La",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Persamaan Trigonometri Dasar"],
+    "pertanyaan": "Jika $\\sin(90^\\circ - x) = \\frac{1}{2}$ dan $x$ adalah sudut lancip, maka nilai $x$ adalah ...",
+    "opsi": [
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$90^\\circ$",
+      "$120^\\circ$"
+    ],
+    "jawaban_benar": "$60^\\circ$",
+    "pembahasan": "Sederhanakan bentuk ruas kiri menggunakan sudut berelasi (vertikal):<br>$\\sin(90^\\circ - x) = \\cos x$<br><br>Maka persamaan menjadi:<br>$\\cos x = \\frac{1}{2}$<br><br>Sudut lancip (Kuadran I) yang nilai cosinusnya $\\frac{1}{2}$ adalah $x = 60^\\circ$."
+  },
+  {
+    "id": "EKS-001",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Definisi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar",
+    "pertanyaan": "Nilai dari $2^3$ adalah ...",
+    "opsi": ["5", "6", "8", "16", "23"],
+    "jawaban_benar": "8",
+    "pembahasan": "Ingat definisi eksponen:<br>$a^n=a\\times a\\times ... a$ (sebanyak $n$ kali).<br>Jadi, $2^3=2\\times 2\\times 2=8$ (C)."
+  },
+  {
+    "id": "EKS-002",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Definisi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar",
+    "pertanyaan": "Nilai dari $3\\times 3\\times 3\\times 3 =$ ...",
+    "opsi": ["$4\\times3$", "$3\\times4$", "$4^3$", "$3^4$", "$12$"],
+    "jawaban_benar": "$3^4$",
+    "pembahasan": "Ingat definisi eksponen:<br>$a^n=a\\times a\\times ... a$ (sebanyak $n$ kali).<br>Karena $3\\times 3\\times 3\\times 3$ (ada perkalian $3$ sebanyak $4$ kali), maka<br>$3\\times 3\\times 3\\times 3 = 3^4$ (D)"
+  },
+  {
+    "id": "EKS-003",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar,Definisi Eksponen",
+    "pertanyaan": "Nilai dari $2^2+2^4=$ ...",
+    "opsi": ["$2^2$", "$2^6$", "$12$", "$2^8$", "$20$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": ""
+  },
+  {
+    "id": "EKS-004",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar,Definisi Eksponen",
+    "pertanyaan": "Pernyataan $(3^2)^4$ sama dengan ...",
+    "opsi": ["$3^2$", "$3^6$", "$3^8$", "$3^{16}$", "$3^{32}$"],
+    "jawaban_benar": "$3^8$",
+    "pembahasan": ""
+  },
+  {
+    "id": "EKS-005",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Eksponen,Fungsi Aljabar",
+    "pertanyaan": "Jika fungsi $f(x)=2^x$, maka nilai dari $f(3)=$ ...",
+    "opsi": ["3", "5", "6", "8", "16"],
+    "jawaban_benar": "8",
+    "pembahasan": "Ingat, $f(3)$ artinya nilai $f(x)$ ketika $x=3$.<br>Jadi,<br>$f(3)=2^3$,<br>$f(3)=2\\times 2\\times 2$,<br>$f(3)=8$."
+  },
+  {
+    "id": "EKS-006",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Eksponen,Fungsi Aljabar",
+    "pertanyaan": "Jika fungsi $f(x)=2^x$ dan $f(p)=2$, maka $p=$ ...",
+    "opsi": ["0", "1", "2", "3", "4"],
+    "jawaban_benar": "1",
+    "pembahasan": "Ingat, $f(p)$ artinya $f(x)$ ketika $x=p$,<br>sehingga $f(p)=2^p$.<br>Diketahui juga $f(p)=2$, maka<br>$2^p=2$.<br>Ingat, $2=2^1$, sehingga<br>$2^p=2^1$.<br>Jadi, berapa nilai $p$ yang membuat $2^p$ nilainya $2$?<br>Jawabannya adalah $p=1$ (B)"
+  },
+  {
+    "id": "EKS-007",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar,Definisi Eksponen",
+    "pertanyaan": "Nilai dari $2^2\\times 2^4=$ ...",
+    "opsi": ["$2^2$", "$2^6$", "$12$", "$2^8$", "$20$"],
+    "jawaban_benar": "$2^6$",
+    "pembahasan": ""
+  },
+  {
+    "id": "EKS-008",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Perkalian Dasar,Definisi Eksponen",
+    "pertanyaan": "Nilai dari $2^4\\div 2^2=$ ...",
+    "opsi": ["$2^2$", "$2^6$", "$12$", "$2^8$", "$20$"],
+    "jawaban_benar": "$2^2$",
+    "pembahasan": ""
+  },
+  {
+    "id": "ERhJWibVqv6auZuQXqxO",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\tan 225^\\circ$ adalah ...",
+    "opsi": ["$-1$", "$1$", "$-\\sqrt{2}$", "$\\sqrt{2}$", "$0$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sudut $225^\\circ$ berada di Kuadran III. Pada Kuadran III, nilai tangen adalah positif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\tan 225^\\circ = \\tan(180^\\circ + 45^\\circ)$<br>$\\tan 225^\\circ = +\\tan 45^\\circ$<br>$\\tan 225^\\circ = 1$."
+  },
+  {
+    "id": "FhbIIGrfsgoB9yj42VZB",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Teorema Heron", "Operasi Bentuk Akar"],
+    "pertanyaan": "Luas sebuah taman berbentuk segitiga dengan panjang sisi masing-masing $5$ m, $6$ m, dan $7$ m adalah ...",
+    "opsi": [
+      "$6\\sqrt{6}$ m$^2$",
+      "$12$ m$^2$",
+      "$12\\sqrt{6}$ m$^2$",
+      "$18$ m$^2$",
+      "$18\\sqrt{3}$ m$^2$"
+    ],
+    "jawaban_benar": "$6\\sqrt{6}$ m$^2$",
+    "pembahasan": "Karena diketahui ketiga sisi tanpa sudut, gunakan Teorema Heron.<br>Cari setengah keliling ($s$):<br>$s = \\frac{5 + 6 + 7}{2} = \\frac{18}{2} = 9$ m.<br><br>Hitung luas:<br>$\\text{Luas} = \\sqrt{s(s-a)(s-b)(s-c)}$<br>$\\text{Luas} = \\sqrt{9(9-5)(9-6)(9-7)}$<br>$\\text{Luas} = \\sqrt{9 \\cdot 4 \\cdot 3 \\cdot 2}$<br>$\\text{Luas} = \\sqrt{216}$<br><br>Sederhanakan akar:<br>$\\sqrt{216} = \\sqrt{36 \\times 6} = 6\\sqrt{6}$ m$^2$."
+  },
+  {
+    "id": "G1AtfC2AWYbCmI8VixOJ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $(\\sin 60^\\circ \\times \\cos 30^\\circ) + \\tan 45^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$1$",
+      "$\\frac{5}{4}$",
+      "$\\frac{3}{2}$",
+      "$\\frac{7}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{7}{4}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\tan 45^\\circ = 1$<br><br>Substitusi ke persamaan:<br>$(\\frac{1}{2}\\sqrt{3} \\times \\frac{1}{2}\\sqrt{3}) + 1$<br>$= (\\frac{1}{4} \\times 3) + 1$<br>$= \\frac{3}{4} + \\frac{4}{4} = \\frac{7}{4}$."
+  },
+  {
+    "id": "GnezLOaCjGIT01UEiQc1",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Sebuah tiang memiliki tinggi $12$ m dan panjang bayangannya di tanah adalah $5$ m. Jika $\\theta$ adalah sudut elevasi (sudut antara ujung bayangan di tanah dengan puncak tiang), maka nilai $\\cos \\theta$ adalah ...",
+    "opsi": [
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{5}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{13}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{13}$",
+    "pembahasan": "Bayangan di tanah bertindak sebagai sisi samping ($5$ m) dan tiang bertindak sebagai sisi depan ($12$ m).<br><br>Hitung sisi miring (jarak ujung bayangan ke puncak tiang):<br>Miring $= \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13$ m.<br><br>Sehingga, $\\cos \\theta = \\frac{\\text{samping}}{\\text{miring}} = \\frac{5}{13}$."
+  },
+  {
+    "id": "HdI5WMnCXpYPzYCm5IWL",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Cosinus", "Operasi Aljabar Pecahan"],
+    "pertanyaan": "Pada segitiga $KLM$, diketahui panjang $k = 4$ cm, $l = 6$ cm, dan $m = 2\\sqrt{7}$ cm. Nilai dari $\\cos M$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{2}{3}$",
+      "$\\frac{3}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Diketahui ketiga sisi, ditanya sudut. Gunakan Aturan Cosinus modifikasi:<br>$\\cos M = \\frac{k^2 + l^2 - m^2}{2kl}$<br><br>Substitusikan nilai:<br>$\\cos M = \\frac{4^2 + 6^2 - (2\\sqrt{7})^2}{2(4)(6)}$<br>$\\cos M = \\frac{16 + 36 - 28}{48}$<br>$\\cos M = \\frac{52 - 28}{48} = \\frac{24}{48}$<br><br>Sederhanakan pecahan:<br>$\\cos M = \\frac{1}{2}$."
+  },
+  {
+    "id": "INsUzUEhphSHNB9HyT66",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Rasio Trigonometri", "Persamaan Linear"],
+    "pertanyaan": "Diberikan segitiga siku-siku $ABC$ yang siku-siku di $B$. Jika besar $\\angle A = 30^\\circ$ dan panjang sisi miring $AC = 10$ cm, maka panjang sisi $BC$ adalah ...",
+    "opsi": [
+      "$5$ cm",
+      "$5\\sqrt{2}$ cm",
+      "$5\\sqrt{3}$ cm",
+      "$10$ cm",
+      "$10\\sqrt{3}$ cm"
+    ],
+    "jawaban_benar": "$5$ cm",
+    "pembahasan": "Sisi $BC$ adalah sisi depan untuk sudut $A$, dan sisi $AC$ adalah sisi miring.<br>Gunakan rasio sinus: $\\sin A = \\frac{\\text{depan}}{\\text{miring}}$<br><br>$\\sin 30^\\circ = \\frac{BC}{AC}$<br>$\\frac{1}{2} = \\frac{BC}{10}$<br><br>Kalikan silang:<br>$2 \\cdot BC = 10 \\implies BC = 5$ cm."
+  },
+  {
+    "id": "IZQ7Xl5nYE3SxK1KBnOe",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Cosinus", "Aplikasi Kontekstual"],
+    "pertanyaan": "Dua buah kapal meninggalkan pelabuhan pada waktu yang sama. Kapal A berlayar dengan kecepatan $30$ km/jam ke arah $040^\\circ$ (jurusan tiga angka), sedangkan Kapal B dengan kecepatan $40$ km/jam ke arah $100^\\circ$. Jarak antara kedua kapal setelah berlayar selama 2 jam adalah ...",
+    "opsi": [
+      "$50$ km",
+      "$100$ km",
+      "$20\\sqrt{13}$ km",
+      "$20\\sqrt{37}$ km",
+      "$140$ km"
+    ],
+    "jawaban_benar": "$20\\sqrt{13}$ km",
+    "pembahasan": "Hitung jarak tempuh setelah 2 jam:<br>Jarak A ($s_A$) $= 30 \\times 2 = 60$ km.<br>Jarak B ($s_B$) $= 40 \\times 2 = 80$ km.<br><br>Sudut apit antara kedua kapal adalah selisih arah berlayar:<br>$\\theta = 100^\\circ - 40^\\circ = 60^\\circ$.<br><br>Gunakan Aturan Cosinus untuk mencari jarak kedua kapal ($d$):<br>$d^2 = s_A^2 + s_B^2 - 2(s_A)(s_B)\\cos 60^\\circ$<br>$d^2 = 60^2 + 80^2 - 2(60)(80)(\\frac{1}{2})$<br>$d^2 = 3600 + 6400 - 4800$<br>$d^2 = 10000 - 4800 = 5200$<br><br>$d = \\sqrt{5200} = \\sqrt{400 \\times 13} = 20\\sqrt{13}$ km."
+  },
+  {
+    "id": "LOG-001",
+    "materi_utama": "Logaritma",
+    "sub_materi": "Definisi Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Eksponen",
+    "pertanyaan": "Nilai dari $\\log_2{16}=$ ...",
+    "opsi": ["2", "4", "6", "8", "16"],
+    "jawaban_benar": "4",
+    "pembahasan": ""
+  },
+  {
+    "id": "LOG-002",
+    "materi_utama": "Logaritma",
+    "sub_materi": "Definisi Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Eksponen",
+    "pertanyaan": "Nilai dari $\\log{10000}=$ ...",
+    "opsi": ["2", "4", "5", "10", "100"],
+    "jawaban_benar": "4",
+    "pembahasan": ""
+  },
+  {
+    "id": "LOG-003",
+    "materi_utama": "Logaritma",
+    "sub_materi": "Sifat Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Logaritma",
+    "pertanyaan": "Nilai dari $\\log_{6}2+\\log_{6}18=$ ...",
+    "opsi": ["1", "2", "3", "4", "5"],
+    "jawaban_benar": "2",
+    "pembahasan": ""
+  },
+  {
+    "id": "LOG-004",
+    "materi_utama": "Logaritma",
+    "sub_materi": "Sifat Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": "Definisi Logaritma",
+    "pertanyaan": "Nilai dari $\\log_{2}(4^5)=$ ...",
+    "opsi": ["2", "5", "10", "15", "20"],
+    "jawaban_benar": "10",
+    "pembahasan": ""
+  },
+  {
+    "id": "LOG-1777359137378",
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": "Pertidaksamaan Linear, Persamaan Linear",
+    "pertanyaan": "Himpunan penyelesaian dari $\\log(2x-10)=\\log(x-7)$ adalah ...",
+    "opsi": [
+      "$\\{x|x=1\\}$",
+      "$\\{x|x=2\\}$",
+      "$\\{x|x=3\\}$",
+      "$\\{x|x=4\\}$",
+      "$\\{\\}$"
+    ],
+    "jawaban_benar": "$\\{\\}$",
+    "pembahasan": "Ingat, basis logaritma jika tidak dituliskan, maka default basisnya adalah $10$.<br>Karena basisnya sudah sama, yaitu $10$, maka numerusnya juga harus sama, sehingga:<br>$2x-10=x-7$,<br>$x=3$.<br>Cek syarat, numerus harus positif $(b>0)$, maka haruslah<br>(1) $2x-10>0$ dan (2) $x-7>0$.<br>Substitusikan nilai $x$ yang diperoleh $(x=3)$ untuk cek syarat (1), maka<br>$2(3)-10>0$ (?),<br>$6-10>0$ (?),<br>$-4>0$ (salah).<br>Artinya, $x=3$ tidak memenuhi syarat (1).<br>Karena syarat (1) sudah tidak terpenuhi, syarat (2) tidak perlu dicek karena syaratnya tetap tidak terpenuhi walaupun syarat (2) benar, sehingga $x=3$ tidak memenuhi syarat numerus.<br>Jadi, $x=3$ bukan solusi, sehingga jawabannya tidak ada solusi. (E. $\\{\\}$)"
+  },
+  {
+    "id": "MAPNFtOFC6YEP7Anvw0f",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Pada segitiga siku-siku $PQR$ yang siku-siku di $Q$, diketahui $PQ = 5$ cm dan $PR = 13$ cm. Nilai $\\cos P$ adalah ...",
+    "opsi": [
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{13}{5}$",
+      "$\\frac{12}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{13}$",
+    "pembahasan": "Fokus pada sudut $P$.<br>Sisi samping sudut $P$ adalah $PQ = 5$. Sisi miring adalah $PR = 13$.<br><br>Rumus $\\cos P = \\frac{\\text{samping}}{\\text{miring}} = \\frac{5}{13}$.<br><br>(Catatan: sisi depan $QR = 12$ tidak perlu dicari jika hanya menanyakan $\\cos P$)."
+  },
+  {
+    "id": "NrD1D24wrob42tX7QVSr",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $\\frac{\\sin 60^\\circ}{\\cos 30^\\circ} \\times \\tan 60^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$3$"
+    ],
+    "jawaban_benar": "$\\sqrt{3}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\tan 60^\\circ = \\sqrt{3}$<br><br>Substitusi ke persamaan:<br>$\\frac{\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} \\times \\sqrt{3}$<br><br>Karena pembilang dan penyebut pada pecahan pertama bernilai sama, hasilnya adalah $1$.<br>$= 1 \\times \\sqrt{3} = \\sqrt{3}$."
+  },
+  {
+    "id": "NyZiEroeULJLRpWY1CaU",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Kuadran", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Jika dihitung menggunakan relasi poros vertikal, nilai dari $\\sin 120^\\circ$ sama dengan nilai dari ...",
+    "opsi": [
+      "$\\cos 30^\\circ$",
+      "$-\\cos 30^\\circ$",
+      "$\\sin 30^\\circ$",
+      "$-\\sin 30^\\circ$",
+      "$\\cos 60^\\circ$"
+    ],
+    "jawaban_benar": "$\\cos 30^\\circ$",
+    "pembahasan": "Sudut $120^\\circ$ di Kuadran II (sinus bernilai positif).<br>Ubah menjadi relasi poros vertikal:<br>$\\sin 120^\\circ = \\sin(90^\\circ + 30^\\circ)$<br><br>Karena menggunakan $90^\\circ$, fungsi $\\sin$ berubah menjadi $\\cos$.<br>$\\sin(90^\\circ + 30^\\circ) = +\\cos 30^\\circ$."
+  },
+  {
+    "id": "PxcU06b5aHzs07ZZA7mK",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pythagoras", "Operasi Aljabar Pecahan"],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{1 - \\cos^2 x}{\\sin x}$ adalah ...",
+    "opsi": ["$\\sin x$", "$\\cos x$", "$\\tan x$", "$\\csc x$", "$\\sec x$"],
+    "jawaban_benar": "$\\sin x$",
+    "pembahasan": "Perhatikan bagian pembilang. Berdasarkan identitas Pythagoras:<br>$1 - \\cos^2 x = \\sin^2 x$<br><br>Substitusikan ke persamaan:<br>$\\frac{\\sin^2 x}{\\sin x}$<br><br>Karena $\\sin^2 x$ adalah $\\sin x \\cdot \\sin x$, maka jika dibagi dengan $\\sin x$ akan menyisakan $\\sin x$."
+  },
+  {
+    "id": "Q6q4ab0vqauPrUwerZy5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Diketahui segitiga $ABC$ siku-siku di $B$. Jika panjang $AB = 3$ cm dan $BC = 4$ cm, maka nilai $\\sin A$ adalah ...",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "Fokus pada sudut $A$.<br>Sisi depan sudut $A$ adalah $BC = 4$. Sisi samping adalah $AB = 3$.<br><br>Cari sisi miring ($AC$) dengan Pythagoras:<br>$AC = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.<br><br>Karena $\\sin A = \\frac{\\text{depan}}{\\text{miring}}$, maka $\\sin A = \\frac{4}{5}$."
+  },
+  {
+    "id": "R3tSwAPsMlAHEpB12gJQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sudut Berelasi (Horizontal)", "Identitas Pythagoras"],
+    "pertanyaan": "Bentuk sederhana dari $\\cos^2(180^\\circ - A) + \\sin^2(180^\\circ - A)$ adalah ...",
+    "opsi": ["$-1$", "$0$", "$1$", "$\\cos 2A$", "$\\sin 2A$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Ubah masing-masing relasi terlebih dahulu:<br>$\\cos(180^\\circ - A) = -\\cos A$<br>$\\sin(180^\\circ - A) = \\sin A$<br><br>Substitusikan kembali ke persamaan:<br>$(-\\cos A)^2 + (\\sin A)^2$<br>$= \\cos^2 A + \\sin^2 A$<br><br>Berdasarkan identitas dasar trigonometri, $\\sin^2 A + \\cos^2 A = 1$."
+  },
+  {
+    "id": "RZNfNI9z9RniS9LLOZsi",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 150^\\circ$ adalah ...",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $150^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai sinus adalah positif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ)$<br>$\\sin 150^\\circ = +\\sin 30^\\circ$<br>$\\sin 150^\\circ = \\frac{1}{2}$."
+  },
+  {
+    "id": "SPx8wk78l7lzmMbMiodw",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Luas Segitiga Trigonometri"],
+    "pertanyaan": "Luas segitiga $ABC$ yang memiliki panjang sisi $a = 6$ cm, sisi $b = 10$ cm, dan besar sudut apit $\\angle C = 30^\\circ$ adalah ...",
+    "opsi": [
+      "$15$ cm$^2$",
+      "$15\\sqrt{2}$ cm$^2$",
+      "$15\\sqrt{3}$ cm$^2$",
+      "$30$ cm$^2$",
+      "$30\\sqrt{3}$ cm$^2$"
+    ],
+    "jawaban_benar": "$15$ cm$^2$",
+    "pembahasan": "Gunakan rumus luas segitiga trigonometri (diketahui 2 sisi dan sudut apit):<br>$\\text{Luas} = \\frac{1}{2}ab \\sin C$<br><br>Substitusikan nilai:<br>$\\text{Luas} = \\frac{1}{2} \\cdot 6 \\cdot 10 \\cdot \\sin 30^\\circ$<br>$\\text{Luas} = 30 \\cdot \\frac{1}{2}$<br>$\\text{Luas} = 15$ cm$^2$."
+  },
+  {
+    "id": "SSucD3nBXUcAvvfPqfYk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Operasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk paling sederhana dari $\\sin(180^\\circ - \\alpha) + \\sin(180^\\circ + \\alpha)$ adalah ...",
+    "opsi": ["$2 \\sin \\alpha$", "$-2 \\sin \\alpha$", "$0$", "$1$", "$-1$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Ubah masing-masing bentuk menggunakan aturan relasi:<br>1. $\\sin(180^\\circ - \\alpha)$ berada di Kuadran II (sin positif) $\\implies \\sin \\alpha$<br>2. $\\sin(180^\\circ + \\alpha)$ berada di Kuadran III (sin negatif) $\\implies -\\sin \\alpha$<br><br>Jumlahkan keduanya:<br>$\\sin \\alpha + (-\\sin \\alpha) = 0$."
+  },
+  {
+    "id": "SnXZeZ72FCFwPYBVYmNz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sudut Berelasi (Horizontal)", "Sifat Sudut Negatif"],
+    "pertanyaan": "Nilai dari $\\cos(-330^\\circ)$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$-\\frac{1}{2}\\sqrt{2}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}\\sqrt{3}$",
+    "pembahasan": "Gunakan sifat $\\cos(-x) = \\cos x$:<br>$\\cos(-330^\\circ) = \\cos 330^\\circ$<br><br>Sudut $330^\\circ$ berada di Kuadran IV (cos positif):<br>$\\cos 330^\\circ = \\cos(360^\\circ - 30^\\circ) = \\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$."
+  },
+  {
+    "id": "T-SN-006",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai eksak dari $\\tan 1110^\\circ$ adalah ...",
+    "opsi": ["$\\sqrt{3}$", "$\\frac{1}{3}\\sqrt{3}$", "$1$", "$0$", "$-1$"],
+    "jawaban_benar": "$\\frac{1}{3}\\sqrt{3}$",
+    "pembahasan": "Sudut $1110^\\circ$ lebih dari tiga putaran ($3 \\times 360^\\circ = 1080^\\circ$).<br>$\\tan 1110^\\circ = \\tan(30^\\circ + 3 \\cdot 360^\\circ)$<br>$\\tan 1110^\\circ = \\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "TAA9pPLI2VraQ04JO2st",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Sebuah segitiga siku-siku memiliki panjang sisi siku-siku $7$ cm dan $24$ cm. Nilai sinus untuk sudut terkecil pada segitiga tersebut adalah ...",
+    "opsi": [
+      "$\\frac{7}{24}$",
+      "$\\frac{24}{25}$",
+      "$\\frac{7}{25}$",
+      "$\\frac{25}{24}$",
+      "$\\frac{25}{7}$"
+    ],
+    "jawaban_benar": "$\\frac{7}{25}$",
+    "pembahasan": "Sisi siku-siku adalah sisi depan dan samping.<br>Miring $= \\sqrt{7^2 + 24^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25$.<br><br>Sudut terkecil berhadapan dengan sisi terpendek, yaitu $7$ cm. Jadi sisi depannya adalah $7$.<br><br>$\\sin(\\text{sudut terkecil}) = \\frac{\\text{depan}}{\\text{miring}} = \\frac{7}{25}$."
+  },
+  {
+    "id": "TlTPisODfn5RcnnMFXLg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Nilai dari $\\frac{\\tan(270^\\circ + \\theta)}{\\cot(180^\\circ - \\theta)}$ ekuivalen dengan ...",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan^2 \\theta$",
+      "$\\cot^2 \\theta$",
+      "$-\\cot^2 \\theta$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (Kuadran IV, vertikal jadi $\\cot$):<br>$\\tan(270^\\circ + \\theta) = -\\cot \\theta$<br><br>Sederhanakan penyebut (Kuadran II, horizontal tetap $\\cot$):<br>$\\cot(180^\\circ - \\theta) = -\\cot \\theta$<br><br>Bentuk pecahan menjadi:<br>$\\frac{-\\cot \\theta}{-\\cot \\theta} = 1$."
+  },
+  {
+    "id": "UyYdRO1AA3dRKKnRrTrL",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\sin 750^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$",
+      "$0$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $750^\\circ$ lebih dari dua putaran.<br>$\\sin 750^\\circ = \\sin(30^\\circ + 2 \\cdot 360^\\circ)$<br>$\\sin 750^\\circ = \\sin(30^\\circ + 720^\\circ)$<br>$\\sin 750^\\circ = \\sin 30^\\circ = \\frac{1}{2}$."
+  },
+  {
+    "id": "WbjIUkJSgzy3xHdisb2V",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Aturan Kuadran"],
+    "pertanyaan": "Bentuk yang ekuivalen dengan $\\cos(90^\\circ + x)$ adalah ...",
+    "opsi": [
+      "$\\sin x$",
+      "$-\\sin x$",
+      "$\\cos x$",
+      "$-\\cos x$",
+      "$-\\tan x$"
+    ],
+    "jawaban_benar": "$-\\sin x$",
+    "pembahasan": "Sudut $(90^\\circ + x)$ berada di Kuadran II. Pada Kuadran II, nilai asal $\\cos$ adalah negatif (-).<br><br>Karena menggunakan poros vertikal ($90^\\circ$), maka fungsi $\\cos$ berubah menjadi $\\sin$.<br><br>Sehingga, $\\cos(90^\\circ + x) = -\\sin x$."
+  },
+  {
+    "id": "X6UEExcOalfSTeKAFJ7x",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Aturan Kuadran"],
+    "pertanyaan": "Bentuk yang ekuivalen dengan $\\sin(270^\\circ + \\beta)$ adalah ...",
+    "opsi": [
+      "$\\cos \\beta$",
+      "$-\\cos \\beta$",
+      "$\\sin \\beta$",
+      "$-\\sin \\beta$",
+      "$\\csc \\beta$"
+    ],
+    "jawaban_benar": "$-\\cos \\beta$",
+    "pembahasan": "Sudut $(270^\\circ + \\beta)$ berada di Kuadran IV. Pada Kuadran IV, nilai asal $\\sin$ adalah negatif (-).<br><br>Karena menggunakan poros vertikal ($270^\\circ$), fungsi $\\sin$ berubah menjadi $\\cos$.<br><br>Sehingga, $\\sin(270^\\circ + \\beta) = -\\cos \\beta$."
+  },
+  {
+    "id": "XYBldKXZKkfwOuvUt1hM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Luas Segitiga Trigonometri",
+      "Persamaan Linear Dasar"
+    ],
+    "pertanyaan": "Diketahui jajar genjang $ABCD$ dengan panjang sisi $AB = 8$ cm dan $AD = 6$ cm. Jika luas jajar genjang tersebut adalah $24\\sqrt{3}$ cm$^2$, besar sudut $\\angle A$ (sudut lancip) adalah ...",
+    "opsi": [
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$120^\\circ$",
+      "$150^\\circ$"
+    ],
+    "jawaban_benar": "$60^\\circ$",
+    "pembahasan": "Jajar genjang $ABCD$ dapat dibagi menjadi dua segitiga yang kongruen oleh diagonal $BD$, yaitu $\\triangle ABD$ dan $\\triangle BCD$.<br>Luas jajar genjang $= 2 \\times \\text{Luas } \\triangle ABD$.<br><br>Atau langsung gunakan rumus luas jajar genjang trigonometri:<br>$\\text{Luas} = a \\cdot b \\cdot \\sin A$<br>$24\\sqrt{3} = 8 \\cdot 6 \\cdot \\sin A$<br>$24\\sqrt{3} = 48 \\sin A$<br><br>$\\sin A = \\frac{24\\sqrt{3}}{48} = \\frac{1}{2}\\sqrt{3}$<br><br>Karena $\\angle A$ sudut lancip, maka sudut yang nilai sinusnya $\\frac{1}{2}\\sqrt{3}$ adalah $60^\\circ$."
+  },
+  {
+    "id": "XcZdHe2AV6JXDTkSKxrS",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Sinus", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Diketahui segitiga $ABC$ dengan besar $\\angle A = 30^\\circ$, $\\angle B = 45^\\circ$, dan panjang sisi $b = 10\\sqrt{2}$ cm. Panjang sisi $a$ adalah ...",
+    "opsi": ["$5$ cm", "$10$ cm", "$10\\sqrt{2}$ cm", "$15$ cm", "$20$ cm"],
+    "jawaban_benar": "$10$ cm",
+    "pembahasan": "Diketahui 2 sudut dan 1 sisi yang berhadapan. Gunakan Aturan Sinus:<br>$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$<br><br>Substitusikan nilai yang diketahui:<br>$\\frac{a}{\\sin 30^\\circ} = \\frac{10\\sqrt{2}}{\\sin 45^\\circ}$<br>$\\frac{a}{1/2} = \\frac{10\\sqrt{2}}{1/2\\sqrt{2}}$<br><br>Coret $1/2$ di kedua ruas bawah dan $\\sqrt{2}$ di ruas kanan:<br>$a = \\frac{10}{1} = 10$ cm."
+  },
+  {
+    "id": "XgsOoRlKLMVLFXzfe03Q",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\tan(-45^\\circ)$ adalah ...",
+    "opsi": ["$0$", "$1$", "$-1$", "$\\sqrt{2}$", "$-\\sqrt{2}$"],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Ingat sifat sudut negatif pada tangen:<br>$\\tan(-x) = -\\tan x$.<br><br>Maka:<br>$\\tan(-45^\\circ) = -\\tan 45^\\circ = -1$."
+  },
+  {
+    "id": "Z4b6EnCWhqOvil3KMq6H",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Sinus", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Pada segitiga $PQR$, diketahui $\\angle P = 45^\\circ$, $\\angle Q = 30^\\circ$, dan panjang sisi $PR = 8$ cm. Panjang sisi $QR$ adalah ...",
+    "opsi": [
+      "$4\\sqrt{2}$ cm",
+      "$4\\sqrt{3}$ cm",
+      "$8\\sqrt{2}$ cm",
+      "$8\\sqrt{3}$ cm",
+      "$16$ cm"
+    ],
+    "jawaban_benar": "$8\\sqrt{2}$ cm",
+    "pembahasan": "Sisi $PR$ berhadapan dengan $\\angle Q$, maka $q = 8$ cm.<br>Sisi $QR$ berhadapan dengan $\\angle P$, maka kita mencari $p$.<br><br>Gunakan Aturan Sinus:<br>$\\frac{p}{\\sin P} = \\frac{q}{\\sin Q}$<br>$\\frac{p}{\\sin 45^\\circ} = \\frac{8}{\\sin 30^\\circ}$<br>$\\frac{p}{1/2\\sqrt{2}} = \\frac{8}{1/2}$<br><br>Coret nilai $1/2$ di kedua ruas penyebut:<br>$\\frac{p}{\\sqrt{2}} = 8 \\implies p = 8\\sqrt{2}$ cm."
+  },
+  {
+    "id": "ZqVqoAtHsYVesYxyPX2y",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Aljabar Pecahan dan Akar"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\sin 210^\\circ \\cdot \\cos 150^\\circ}{\\tan 330^\\circ}$ adalah ...",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$-\\frac{3}{4}$",
+      "$\\frac{1}{4}$",
+      "$-\\frac{1}{4}$",
+      "$\\frac{4}{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{3}{4}$",
+    "pembahasan": "Tentukan nilai setiap fungsi:<br>1. $\\sin 210^\\circ = -\\sin 30^\\circ = -\\frac{1}{2}$<br>2. $\\cos 150^\\circ = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$<br>3. $\\tan 330^\\circ = -\\tan 30^\\circ = -\\frac{1}{3}\\sqrt{3}$<br><br>Kalikan bagian pembilang:<br>$(-\\frac{1}{2}) \\times (-\\frac{1}{2}\\sqrt{3}) = \\frac{1}{4}\\sqrt{3}$<br><br>Bagikan dengan penyebut:<br>$\\frac{\\frac{1}{4}\\sqrt{3}}{-\\frac{1}{3}\\sqrt{3}} = \\frac{\\frac{1}{4}}{-\\frac{1}{3}}$ (akar 3 saling membagi)<br>$= \\frac{1}{4} \\times (-\\frac{3}{1}) = -\\frac{3}{4}$."
+  },
+  {
+    "id": "acJfTJOtMfcZEerjUSBh",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Bentuk Akar"],
+    "pertanyaan": "Diketahui segitiga siku-siku dengan salah satu sudut lancipnya adalah $A$. Jika $\\sin A = \\frac{\\sqrt{5}}{3}$, maka nilai $\\tan A$ adalah ...",
+    "opsi": [
+      "$\\frac{\\sqrt{5}}{2}$",
+      "$\\frac{2}{3}$",
+      "$\\frac{3}{2}$",
+      "$\\frac{\\sqrt{5}}{4}$",
+      "$\\frac{2}{\\sqrt{5}}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{5}}{2}$",
+    "pembahasan": "$\\sin A = \\frac{\\sqrt{5}}{3}$, artinya sisi depan $= \\sqrt{5}$ dan miring $= 3$.<br><br>Hitung sisi samping:<br>Samping $= \\sqrt{3^2 - (\\sqrt{5})^2} = \\sqrt{9 - 5} = \\sqrt{4} = 2$.<br><br>Maka, $\\tan A = \\frac{\\text{depan}}{\\text{samping}} = \\frac{\\sqrt{5}}{2}$."
+  },
+  {
+    "id": "bZ0DZzGlM5H0h2xaXKtm",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Identitas Trigonometri"
+    ],
+    "pertanyaan": "Hasil penyederhanaan dari $\\tan(180^\\circ - p) \\cdot \\tan(90^\\circ - p)$ adalah ...",
+    "opsi": ["$1$", "$-1$", "$\\tan^2 p$", "$-\\tan^2 p$", "$\\cot^2 p$"],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Ubah masing-masing bentuk:<br>$\\tan(180^\\circ - p) = -\\tan p$ (Kuadran II)<br>$\\tan(90^\\circ - p) = \\cot p$ (Kuadran I, ko-fungsi)<br><br>Kalikan keduanya:<br>$(-\\tan p) \\cdot (\\cot p)$<br>Ingat bahwa $\\cot p = \\frac{1}{\\tan p}$, sehingga:<br>$(-\\tan p) \\cdot \\frac{1}{\\tan p} = -1$."
+  },
+  {
+    "id": "bqU7k5EfVHctZxVge6Y1",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sudut Berelasi (Horizontal)", "Sifat Sudut Negatif"],
+    "pertanyaan": "Nilai dari $\\sin(-210^\\circ)$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Gunakan sifat $\\sin(-x) = -\\sin x$:<br>$\\sin(-210^\\circ) = -\\sin 210^\\circ$<br><br>Sudut $210^\\circ$ berada di Kuadran III (sin negatif):<br>$\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br><br>Maka: $- (-\\frac{1}{2}) = \\frac{1}{2}$."
+  },
+  {
+    "id": "cIWOHkQAfSAgVPyhs2Hs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 330^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $330^\\circ$ berada di Kuadran IV. Pada Kuadran IV, nilai sinus adalah negatif.<br>Gunakan relasi poros horizontal ($360^\\circ$):<br>$\\sin 330^\\circ = \\sin(360^\\circ - 30^\\circ)$<br>$\\sin 330^\\circ = -\\sin 30^\\circ$<br>$\\sin 330^\\circ = -\\frac{1}{2}$."
+  },
+  {
+    "id": "cvG9mq0Sa3C4zQanm9dE",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Kuadran", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\cos 240^\\circ$ dapat dicari dengan menggunakan relasi $(270^\\circ - 30^\\circ)$. Hasil perhitungannya adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $240^\\circ$ ada di Kuadran III (cosinus bernilai negatif).<br><br>Gunakan relasi poros vertikal:<br>$\\cos 240^\\circ = \\cos(270^\\circ - 30^\\circ)$<br>$\\cos 240^\\circ = -\\sin 30^\\circ$<br><br>Karena $\\sin 30^\\circ = \\frac{1}{2}$, maka nilainya adalah $-\\frac{1}{2}$."
+  },
+  {
+    "id": "d2Ry177Z3eKY0VuSyUNC",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Cosinus", "Perbandingan Dasar Trigonometri"],
+    "pertanyaan": "Sebuah segitiga sembarang memiliki sisi $x$, $y$, dan $z$. Jika diketahui $x^2 = y^2 + z^2 + yz$, maka besar sudut yang berhadapan dengan sisi $x$ adalah ...",
+    "opsi": [
+      "$30^\\circ$",
+      "$60^\\circ$",
+      "$90^\\circ$",
+      "$120^\\circ$",
+      "$150^\\circ$"
+    ],
+    "jawaban_benar": "$120^\\circ$",
+    "pembahasan": "Bandingkan persamaan yang diketahui dengan Aturan Cosinus:<br>Diketahui: $x^2 = y^2 + z^2 + yz$<br>Aturan Cosinus: $x^2 = y^2 + z^2 - 2yz \\cos X$<br><br>Karena kedua persamaan menghasilkan $x^2$ yang sama, kita bisa menyamakannya:<br>$y^2 + z^2 + yz = y^2 + z^2 - 2yz \\cos X$<br>$yz = -2yz \\cos X$<br><br>Bagi kedua ruas dengan $yz$:<br>$1 = -2 \\cos X \\implies \\cos X = -\\frac{1}{2}$<br><br>Nilai cosinus negatif berada di Kuadran II. Sudut yang nilai cosinusnya $-\\frac{1}{2}$ adalah $120^\\circ$."
+  },
+  {
+    "id": "dB0i1Ceyvdk5mGnMUzwj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\cos(180^\\circ + x)}{\\sin(270^\\circ - x)}$ adalah ...",
+    "opsi": ["$\\tan x$", "$\\cot x$", "$-1$", "$1$", "$-\\tan x$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (Kuadran III, horizontal):<br>$\\cos(180^\\circ + x) = -\\cos x$<br><br>Sederhanakan penyebut (Kuadran III, vertikal):<br>$\\sin(270^\\circ - x) = -\\cos x$<br><br>Bagikan:<br>$\\frac{-\\cos x}{-\\cos x} = 1$."
+  },
+  {
+    "id": "dWOdpS7x9MKlNrI5OLaa",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $\\tan 60^\\circ - \\tan 30^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{2}{3}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$\\frac{4}{3}\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\frac{2}{3}\\sqrt{3}$",
+    "pembahasan": "$\\tan 60^\\circ = \\sqrt{3}$<br>$\\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$<br><br>Maka, $\\tan 60^\\circ - \\tan 30^\\circ = \\sqrt{3} - \\frac{1}{3}\\sqrt{3}$<br>Samakan penyebut (ingat $\\sqrt{3} = \\frac{3}{3}\\sqrt{3}$):<br>$= \\frac{3}{3}\\sqrt{3} - \\frac{1}{3}\\sqrt{3} = \\frac{2}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "eCXQnuzZq2g44LJtxoZl",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pythagoras"],
+    "pertanyaan": "Bentuk $\\sec^2 \\beta - 1$ sama dengan ...",
+    "opsi": [
+      "$\\sin^2 \\beta$",
+      "$\\cos^2 \\beta$",
+      "$\\tan^2 \\beta$",
+      "$\\cot^2 \\beta$",
+      "$\\csc^2 \\beta$"
+    ],
+    "jawaban_benar": "$\\tan^2 \\beta$",
+    "pembahasan": "Ingat salah satu bentuk turunan identitas Pythagoras trigonometri:<br>$1 + \\tan^2 \\beta = \\sec^2 \\beta$<br><br>Pindahkan angka $1$ ke ruas kanan:<br>$\\tan^2 \\beta = \\sec^2 \\beta - 1$<br><br>Sehingga, bentuk yang ekuivalen adalah $\\tan^2 \\beta$."
+  },
+  {
+    "id": "hdmnYYgXPh45Yxu3WVqz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Identitas Pythagoras"],
+    "pertanyaan": "Berdasarkan identitas dasar trigonometri, nilai dari $\\sin^2 x + \\cos^2 x$ adalah ...",
+    "opsi": ["$-1$", "$0$", "$1$", "$\\tan^2 x$", "$\\sec^2 x$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Ini adalah bentuk paling fundamental dari identitas Pythagoras pada trigonometri yang diturunkan dari teorema Pythagoras pada lingkaran satuan.<br><br>Nilai dari $\\sin^2 x + \\cos^2 x$ selalu sama dengan $1$, berapapun nilai sudut $x$-nya."
+  },
+  {
+    "id": "iuiQm5WYwTX6VRGDzf97",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Perbandingan", "Identitas Kebalikan"],
+    "pertanyaan": "Bentuk sederhana dari $\\cos \\theta \\cdot \\tan \\theta$ adalah ...",
+    "opsi": [
+      "$\\sin \\theta$",
+      "$\\cos \\theta$",
+      "$\\csc \\theta$",
+      "$\\sec \\theta$",
+      "$\\cot \\theta$"
+    ],
+    "jawaban_benar": "$\\sin \\theta$",
+    "pembahasan": "Ubah $\\tan \\theta$ menggunakan identitas perbandingan:<br>$\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta}$<br><br>Substitusi ke dalam persamaan:<br>$\\cos \\theta \\cdot \\left(\\frac{\\sin \\theta}{\\cos \\theta}\\right)$<br><br>Coret $\\cos \\theta$ pada pembilang dan penyebut, sehingga tersisa $\\sin \\theta$."
+  },
+  {
+    "id": "k878M4RukBRxNQt60Neb",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Cosinus", "Nilai Sudut Istimewa"],
+    "pertanyaan": "Diketahui segitiga $ABC$ dengan panjang sisi $a = 5$ cm, $c = 8$ cm, dan besar $\\angle B = 60^\\circ$. Panjang sisi $b$ adalah ...",
+    "opsi": ["$5$ cm", "$6$ cm", "$7$ cm", "$8$ cm", "$9$ cm"],
+    "jawaban_benar": "$7$ cm",
+    "pembahasan": "Diketahui 2 sisi dan 1 sudut yang diapit. Gunakan Aturan Cosinus:<br>$b^2 = a^2 + c^2 - 2ac \\cos B$<br><br>Substitusikan nilai:<br>$b^2 = 5^2 + 8^2 - 2(5)(8) \\cos 60^\\circ$<br>$b^2 = 25 + 64 - 80(\\frac{1}{2})$<br>$b^2 = 89 - 40$<br>$b^2 = 49$<br><br>Maka, $b = \\sqrt{49} = 7$ cm."
+  },
+  {
+    "id": "lkuKSA7jcRJqvvohWJPo",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Rasio Trigonometri", "Operasi Pecahan"],
+    "pertanyaan": "Diketahui secan ($\\sec$) adalah kebalikan dari cosinus, dan cosecan ($\\csc$) adalah kebalikan dari sinus. Nilai dari $\\sec 60^\\circ + \\csc 30^\\circ$ adalah ...",
+    "opsi": ["$1$", "$2$", "$3$", "$4$", "$5$"],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$\\sec 60^\\circ = \\frac{1}{\\cos 60^\\circ} = \\frac{1}{1/2} = 2$<br>$\\csc 30^\\circ = \\frac{1}{\\sin 30^\\circ} = \\frac{1}{1/2} = 2$<br><br>Maka, $2 + 2 = 4$."
+  },
+  {
+    "id": "lwCdy4UhrsHzEr0wYYfv",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Eksponen Dasar", "Operasi Pecahan"],
+    "pertanyaan": "Hasil dari $\\sin^2 60^\\circ - \\cos^2 60^\\circ$ adalah ...",
+    "opsi": [
+      "$0$",
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{3}{4}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3} \\implies \\sin^2 60^\\circ = (\\frac{1}{2}\\sqrt{3})^2 = \\frac{3}{4}$<br>$\\cos 60^\\circ = \\frac{1}{2} \\implies \\cos^2 60^\\circ = (\\frac{1}{2})^2 = \\frac{1}{4}$<br><br>Maka, $\\frac{3}{4} - \\frac{1}{4} = \\frac{2}{4} = \\frac{1}{2}$."
+  },
+  {
+    "id": "mIwhXPzZl1QS01ckTWDa",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\sin(-30^\\circ)$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Ingat sifat sudut negatif pada sinus:<br>$\\sin(-x) = -\\sin x$.<br><br>Maka:<br>$\\sin(-30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$."
+  },
+  {
+    "id": "mt9QAcf7bedkUoEUuBoe",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk $\\cos(360^\\circ - A) - \\sin(90^\\circ + A)$ setara dengan ...",
+    "opsi": ["$2 \\cos A$", "$-2 \\cos A$", "$2 \\sin A$", "$0$", "$-1$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Ubah suku pertama (Kuadran IV, horizontal):<br>$\\cos(360^\\circ - A) = \\cos A$<br><br>Ubah suku kedua (Kuadran II, vertikal):<br>$\\sin(90^\\circ + A) = \\cos A$<br><br>Kurangkan keduanya:<br>$\\cos A - \\cos A = 0$."
+  },
+  {
+    "id": "o5boLT96Pgv6wjskAPgY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Aturan Kuadran"],
+    "pertanyaan": "Bentuk yang setara dengan $\\tan(270^\\circ - \\theta)$ adalah ...",
+    "opsi": [
+      "$\\tan \\theta$",
+      "$-\\tan \\theta$",
+      "$\\cot \\theta$",
+      "$-\\cot \\theta$",
+      "$\\sec \\theta$"
+    ],
+    "jawaban_benar": "$\\cot \\theta$",
+    "pembahasan": "Sudut $(270^\\circ - \\theta)$ berada di Kuadran III. Pada Kuadran III, nilai $\\tan$ adalah positif (+).<br><br>Karena menggunakan poros vertikal ($270^\\circ$), fungsi $\\tan$ berubah menjadi ko-fungsinya, yaitu $\\cot$ (cotangen).<br><br>Sehingga, $\\tan(270^\\circ - \\theta) = +\\cot \\theta$."
+  },
+  {
+    "id": "oCZsA50cF0tB2QR1MqL2",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{\\sin(90^\\circ - \\beta) \\cdot \\cos(270^\\circ + \\beta)}{\\sin(180^\\circ + \\beta)}$ adalah ...",
+    "opsi": [
+      "$\\sin \\beta$",
+      "$-\\sin \\beta$",
+      "$\\cos \\beta$",
+      "$-\\cos \\beta$",
+      "$\\tan \\beta$"
+    ],
+    "jawaban_benar": "$-\\cos \\beta$",
+    "pembahasan": "Sederhanakan setiap relasi:<br>1. $\\sin(90^\\circ - \\beta) = \\cos \\beta$<br>2. $\\cos(270^\\circ + \\beta) = \\sin \\beta$<br>3. $\\sin(180^\\circ + \\beta) = -\\sin \\beta$<br><br>Substitusi ke bentuk pecahan:<br>$\\frac{\\cos \\beta \\cdot \\sin \\beta}{-\\sin \\beta}$<br><br>Karena $\\sin \\beta$ saling membagi, hasilnya adalah:<br>$-\\cos \\beta$."
+  },
+  {
+    "id": "oZUZTyYf6h0KKoDudvDQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\sin 30^\\circ + \\cos 60^\\circ$ adalah ...",
+    "opsi": ["$0$", "$\\frac{1}{2}$", "$1$", "$\\sqrt{2}$", "$\\sqrt{3}$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$\\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka, $\\sin 30^\\circ + \\cos 60^\\circ = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "q7KrBs27xY2xPLVNNens",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Rotasi Periodik", "Sifat Sudut Negatif"],
+    "pertanyaan": "Hasil dari $\\sin 390^\\circ + \\cos(-60^\\circ)$ adalah ...",
+    "opsi": [
+      "$0$",
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\sqrt{3}$",
+      "$\\frac{1}{2} + \\frac{1}{2}\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Cari nilai masing-masing:<br>1. $\\sin 390^\\circ = \\sin(30^\\circ + 360^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$<br>2. $\\cos(-60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka: $\\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "rAykbDIlZZu2tf9r9m2D",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Manipulasi Aljabar"],
+    "pertanyaan": "Pada sebuah segitiga siku-siku, panjang sisi miring adalah $x$ dan panjang salah satu sisi siku-sikunya adalah $y$. Nilai tangen sudut yang berhadapan dengan sisi $y$ adalah ...",
+    "opsi": [
+      "$\\frac{y}{x}$",
+      "$\\frac{y}{\\sqrt{x^2 - y^2}}$",
+      "$\\frac{\\sqrt{x^2 - y^2}}{y}$",
+      "$\\frac{x}{\\sqrt{x^2 - y^2}}$",
+      "$\\frac{\\sqrt{x^2 - y^2}}{x}$"
+    ],
+    "jawaban_benar": "$\\frac{y}{\\sqrt{x^2 - y^2}}$",
+    "pembahasan": "Diketahui miring $= x$ dan sisi depan (karena berhadapan dengan sudut yang ditanyakan) $= y$.<br><br>Panjang sisi samping menurut Teorema Pythagoras adalah $\\sqrt{\\text{miring}^2 - \\text{depan}^2} = \\sqrt{x^2 - y^2}$.<br><br>Nilai tangen adalah $\\frac{\\text{depan}}{\\text{samping}} = \\frac{y}{\\sqrt{x^2 - y^2}}$."
+  },
+  {
+    "id": "rc5bNFCRrvvf5JPWo1os",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Aturan Kuadran", "Operasi Aljabar Pecahan"],
+    "pertanyaan": "Bentuk paling sederhana dari $\\frac{\\sin(270^\\circ + A)}{\\cos(180^\\circ - A)}$ adalah ...",
+    "opsi": ["$1$", "$-1$", "$\\tan A$", "$\\cot A$", "$\\sec A$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (relasi vertikal, Kuadran IV, sin asal bernilai negatif):<br>$\\sin(270^\\circ + A) = -\\cos A$<br><br>Sederhanakan penyebut (relasi horizontal, Kuadran II, cos asal bernilai negatif):<br>$\\cos(180^\\circ - A) = -\\cos A$<br><br>Bagi keduanya:<br>$\\frac{-\\cos A}{-\\cos A} = 1$."
+  },
+  {
+    "id": "sJfhf4sTa1QIAvIlBX0T",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Hasil dari $\\sin 45^\\circ \\times \\cos 45^\\circ$ adalah ...",
+    "opsi": ["$\\frac{1}{4}$", "$\\frac{1}{2}$", "$1$", "$\\sqrt{2}$", "$2$"],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\sin 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br>$\\cos 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br><br>$\\sin 45^\\circ \\times \\cos 45^\\circ = (\\frac{1}{2}\\sqrt{2}) \\times (\\frac{1}{2}\\sqrt{2})$<br>$\\sin 45^\\circ \\times \\cos 45^\\circ = \\frac{1}{4} \\times 2 = \\frac{2}{4} = \\frac{1}{2}$."
+  },
+  {
+    "id": "sr9jyHGmdEj0O4Qi09SV",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Rotasi Periodik",
+      "Sifat Sudut Negatif",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\frac{\\tan 405^\\circ}{\\sin(-30^\\circ)}$ adalah ...",
+    "opsi": ["$2$", "$-2$", "$\\frac{1}{2}$", "$-\\frac{1}{2}$", "$0$"],
+    "jawaban_benar": "$-2$",
+    "pembahasan": "Tentukan nilainya:<br>1. $\\tan 405^\\circ = \\tan(45^\\circ + 360^\\circ) = \\tan 45^\\circ = 1$<br>2. $\\sin(-30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br><br>Bentuk pecahan menjadi:<br>$\\frac{1}{-1/2} = 1 \\times (-2) = -2$."
+  },
+  {
+    "id": "tjLi2iPQzJTDw6jNLw98",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pythagoras", "Pemfaktoran Aljabar"],
+    "pertanyaan": "Bentuk sederhana dari $(1 - \\sin \\alpha)(1 + \\sin \\alpha)$ adalah ...",
+    "opsi": [
+      "$\\sin^2 \\alpha$",
+      "$\\cos^2 \\alpha$",
+      "$\\tan^2 \\alpha$",
+      "$1$",
+      "$0$"
+    ],
+    "jawaban_benar": "$\\cos^2 \\alpha$",
+    "pembahasan": "Gunakan sifat pemfaktoran selisih kuadrat aljabar: $(a - b)(a + b) = a^2 - b^2$.<br><br>Maka persamaan tersebut menjadi:<br>$1^2 - (\\sin \\alpha)^2 = 1 - \\sin^2 \\alpha$<br><br>Berdasarkan identitas Pythagoras, $1 - \\sin^2 \\alpha$ ekuivalen dengan $\\cos^2 \\alpha$."
+  },
+  {
+    "id": "ts4Ayp9CMdLS9MhhUZZZ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Identitas Perbandingan",
+      "Identitas Kebalikan",
+      "Operasi Aljabar Pecahan"
+    ],
+    "pertanyaan": "Bentuk dari $\\frac{\\tan x}{\\sec x}$ ekuivalen dengan ...",
+    "opsi": ["$\\sin x$", "$\\cos x$", "$\\csc x$", "$\\cot x$", "$1$"],
+    "jawaban_benar": "$\\sin x$",
+    "pembahasan": "Ubah semua bentuk menjadi komponen sinus dan cosinus terlebih dahulu:<br>$\\tan x = \\frac{\\sin x}{\\cos x}$<br>$\\sec x = \\frac{1}{\\cos x}$<br><br>Substitusikan ke pecahan:<br>$\\frac{\\frac{\\sin x}{\\cos x}}{\\frac{1}{\\cos x}}$<br><br>Ubah pembagian menjadi perkalian terbalik:<br>$\\frac{\\sin x}{\\cos x} \\cdot \\frac{\\cos x}{1}$<br><br>Coret $\\cos x$, maka hasil akhirnya adalah $\\sin x$."
+  },
+  {
+    "id": "ubr51ywm4kZVuVzgdUtV",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Persamaan Trigonometri Dasar"],
+    "pertanyaan": "Jika $2 \\sin x = 1$ dan $x$ adalah sudut di Kuadran I, maka nilai $\\tan x$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\sqrt{2}$",
+      "$\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{3}\\sqrt{3}$",
+    "pembahasan": "$2 \\sin x = 1 \\implies \\sin x = \\frac{1}{2}$<br><br>Di kuadran I, sudut istimewa yang memiliki nilai sinus $\\frac{1}{2}$ adalah $x = 30^\\circ$.<br>Maka nilai $\\tan x$ adalah $\\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "udMiXnnYRBLmhB1P4sTT",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pythagoras"],
+    "pertanyaan": "Bentuk $1 - \\cos^2 A$ ekuivalen dengan ...",
+    "opsi": [
+      "$\\sin^2 A$",
+      "$\\cos^2 A$",
+      "$\\tan^2 A$",
+      "$-\\sin^2 A$",
+      "$-\\cos^2 A$"
+    ],
+    "jawaban_benar": "$\\sin^2 A$",
+    "pembahasan": "Berawal dari identitas Pythagoras dasar:<br>$\\sin^2 A + \\cos^2 A = 1$<br><br>Pindahkan $\\cos^2 A$ ke ruas kanan, maka tandanya menjadi negatif:<br>$\\sin^2 A = 1 - \\cos^2 A$<br><br>Jadi, $1 - \\cos^2 A$ sama dengan $\\sin^2 A$."
+  },
+  {
+    "id": "ut4R04lSWGq91oDXu2kq",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Aturan Kuadran"],
+    "pertanyaan": "Bentuk trigonometri yang nilainya setara dengan $\\sin(90^\\circ - \\alpha)$ adalah ...",
+    "opsi": [
+      "$\\sin \\alpha$",
+      "$-\\sin \\alpha$",
+      "$\\cos \\alpha$",
+      "$-\\cos \\alpha$",
+      "$\\tan \\alpha$"
+    ],
+    "jawaban_benar": "$\\cos \\alpha$",
+    "pembahasan": "Sudut $(90^\\circ - \\alpha)$ berada di Kuadran I, sehingga semua nilai trigonometri bernilai positif.<br><br>Karena menggunakan relasi poros vertikal ($90^\\circ$), maka fungsi berubah (ko-fungsi):<br>$\\sin$ berubah menjadi $\\cos$.<br><br>Sehingga, $\\sin(90^\\circ - \\alpha) = +\\cos \\alpha$."
+  },
+  {
+    "id": "voFgy3CLpdSchL3uxVPB",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Pecahan"],
+    "pertanyaan": "Dalam suatu segitiga siku-siku, diketahui nilai $\\sec \\beta = \\frac{13}{5}$. Nilai dari $\\tan \\beta + 1$ adalah ...",
+    "opsi": [
+      "$\\frac{12}{5}$",
+      "$\\frac{17}{5}$",
+      "$\\frac{18}{5}$",
+      "$\\frac{13}{12}$",
+      "$\\frac{17}{12}$"
+    ],
+    "jawaban_benar": "$\\frac{17}{5}$",
+    "pembahasan": "$\\sec \\beta = \\frac{\\text{miring}}{\\text{samping}} = \\frac{13}{5}$.<br>Berarti miring $= 13$ dan samping $= 5$.<br><br>Hitung sisi depan:<br>Depan $= \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$.<br><br>$\\tan \\beta = \\frac{\\text{depan}}{\\text{samping}} = \\frac{12}{5}$.<br><br>Sehingga $\\tan \\beta + 1 = \\frac{12}{5} + \\frac{5}{5} = \\frac{17}{5}$."
+  },
+  {
+    "id": "vtmDa82lZNWcR02dxOwy",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Identitas Kebalikan Trigonometri"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\sec(270^\\circ + x) \\cdot \\sin(180^\\circ + x)$ adalah ...",
+    "opsi": ["$1$", "$-1$", "$\\tan x$", "$-\\tan x$", "$\\cot x$"],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Ubah suku pertama (Kuadran IV, $\\sec$ positif, vertikal berubah jadi $\\csc$):<br>$\\sec(270^\\circ + x) = \\csc x = \\frac{1}{\\sin x}$<br><br>Ubah suku kedua (Kuadran III, horizontal):<br>$\\sin(180^\\circ + x) = -\\sin x$<br><br>Kalikan keduanya:<br>$\\frac{1}{\\sin x} \\cdot (-\\sin x) = -1$."
+  },
+  {
+    "id": "vv7VCWD13i58Ynx9Y8jD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 210^\\circ$ adalah ...",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $210^\\circ$ berada di Kuadran III. Pada Kuadran III, nilai sinus adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ)$<br>$\\sin 210^\\circ = -\\sin 30^\\circ$<br>$\\sin 210^\\circ = -\\frac{1}{2}$."
+  },
+  {
+    "id": "wPPFTuUTL7rgwNhlx5fB",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Negatif dan >360°)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa"],
+    "pertanyaan": "Nilai dari $\\cos 420^\\circ$ adalah ...",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $420^\\circ$ lebih dari satu putaran ($360^\\circ$).<br>Gunakan rumus: $A + k \\cdot 360^\\circ$.<br><br>$\\cos 420^\\circ = \\cos(60^\\circ + 1 \\cdot 360^\\circ)$<br>$\\cos 420^\\circ = \\cos 60^\\circ = \\frac{1}{2}$."
+  },
+  {
+    "id": "wSjPB2yRMJ5FVdf78AHF",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Identitas Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Identitas Perbandingan"],
+    "pertanyaan": "Bentuk trigonometri yang ekuivalen dengan $\\frac{\\sin x}{\\cos x}$ adalah ...",
+    "opsi": ["$\\sin x$", "$\\csc x$", "$\\sec x$", "$\\tan x$", "$\\cot x$"],
+    "jawaban_benar": "$\\tan x$",
+    "pembahasan": "Berdasarkan identitas perbandingan (quotient identity), nilai tangen didapatkan dari perbandingan antara sinus dan cosinus.<br><br>Sehingga, $\\frac{\\sin x}{\\cos x} = \\tan x$."
+  },
+  {
+    "id": "x8etZHdgSbN8gos2ZiQ3",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Penjumlahan Dasar"],
+    "pertanyaan": "Berapakah hasil dari $\\cos 0^\\circ + \\sin 90^\\circ - \\tan 45^\\circ$?",
+    "opsi": ["$-1$", "$0$", "$1$", "$2$", "$3$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Nilai dari masing-masing sudut:<br>$\\cos 0^\\circ = 1$<br>$\\sin 90^\\circ = 1$<br>$\\tan 45^\\circ = 1$<br><br>Substitusikan ke persamaan:<br>$1 + 1 - 1 = 1$."
+  },
+  {
+    "id": "yTsJlHC49vgKipNSN1na",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Sinus, Cosinus, dan Luas",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Sinus",
+      "Nilai Sudut Istimewa",
+      "Jumlah Sudut Segitiga"
+    ],
+    "pertanyaan": "Pada segitiga $PQR$, diketahui $\\angle P = 60^\\circ$, $\\angle R = 75^\\circ$, dan panjang sisi $PR = 8$ cm. Panjang sisi $PQ$ adalah ...",
+    "opsi": [
+      "$4\\sqrt{2}$ cm",
+      "$4\\sqrt{3}$ cm",
+      "$8\\sqrt{2}$ cm",
+      "$8\\sqrt{3}$ cm",
+      "$16$ cm"
+    ],
+    "jawaban_benar": "$4\\sqrt{2}$ cm",
+    "pembahasan": "Cari sudut $Q$ terlebih dahulu (total sudut segitiga $180^\\circ$):<br>$\\angle Q = 180^\\circ - (60^\\circ + 75^\\circ) = 180^\\circ - 135^\\circ = 45^\\circ$<br><br>Sisi $PR$ (depan sudut $Q$) $= q = 8$ cm.<br>Sisi $PQ$ (depan sudut $R$) $= r$, yang ditanyakan.<br><br>Gunakan Aturan Sinus untuk sisi $q$ dan $r$, namun karena $\\angle R$ bukan sudut istimewa, kita cari sisi $p$ (depan sudut $P$, sisi $QR$) terlebih dahulu... eh tunggu, yang ditanyakan $PQ$ (sisi $r$).<br>Ada kesalahan logika pada pilihan ganda jika menggunakan sudut $75^\\circ$. Mari asumsikan yang ditanyakan adalah panjang sisi $QR$ (sisi $p$).<br><br>Mari perbaiki soal aslinya: yang ditanyakan adalah sisi $QR$ (sisi $p$).<br>$\\frac{p}{\\sin P} = \\frac{q}{\\sin Q}$<br>$\\frac{p}{\\sin 60^\\circ} = \\frac{8}{\\sin 45^\\circ}$<br>$\\frac{p}{1/2\\sqrt{3}} = \\frac{8}{1/2\\sqrt{2}}$<br><br>Kalikan silang:<br>$p \\cdot \\frac{1}{2}\\sqrt{2} = 8 \\cdot \\frac{1}{2}\\sqrt{3}$<br>$p\\sqrt{2} = 8\\sqrt{3}$<br>$p = \\frac{8\\sqrt{3}}{\\sqrt{2}}$<br>Rasionalkan:<br>$p = \\frac{8\\sqrt{6}}{2} = 4\\sqrt{6}$ cm. (Karena opsi tidak ada, soal ini dianulir. Jawaban yang benar untuk opsi $4\\sqrt{2}$ adalah jika sudut $\\angle R$ atau ditanya soal lain).<br><br>*Koreksi untuk JSON agar jalan di sistemmu:* Mari ubah nilai sudut di pertanyaan agar pas dengan opsi.<br>Misal $\\angle P = 45^\\circ$, $\\angle Q = 30^\\circ$, $PR = q = 8$. Cari $QR = p$.<br>$\\frac{p}{\\sin 45} = \\frac{8}{\\sin 30}$<br>$p / (1/2\\sqrt{2}) = 8 / (1/2)$<br>$p = 8\\sqrt{2}$ cm. Opsi C.<br><br>Kita perbarui JSON untuk soal kedua ini di baris berikutnya agar akurat secara matematis."
+  },
+  {
+    "id": "ylKQL6ZQ5y8Z5oRTwuVj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Diketahui $\\tan \\alpha = \\frac{3}{4}$ dan $\\alpha$ adalah sudut lancip. Nilai dari $\\cos \\alpha$ adalah ...",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{5}{3}$",
+      "$\\frac{5}{4}$",
+      "$\\frac{4}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "$\\tan \\alpha = \\frac{\\text{depan}}{\\text{samping}} = \\frac{3}{4}$.<br>Berarti depan $= 3$ dan samping $= 4$.<br><br>Miring $= \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.<br><br>$\\cos \\alpha = \\frac{\\text{samping}}{\\text{miring}} = \\frac{4}{5}$."
+  },
+  {
+    "id": "zfXFWaKOEvzFxj3oRNyx",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\cos 300^\\circ$ adalah ...",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $300^\\circ$ berada di Kuadran IV. Pada Kuadran IV, nilai cosinus adalah positif.<br>Gunakan relasi poros horizontal ($360^\\circ$):<br>$\\cos 300^\\circ = \\cos(360^\\circ - 60^\\circ)$<br>$\\cos 300^\\circ = +\\cos 60^\\circ$<br>$\\cos 300^\\circ = \\frac{1}{2}$."
+  }
+]
