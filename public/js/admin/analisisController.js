@@ -142,40 +142,46 @@ export function lihatDetailSiswa(nis, nama) {
   document.getElementById("admin-detail-waktu").innerText =
     jam > 0 ? `${jam}j ${mnt}m` : mnt > 0 ? `${mnt}m` : `${totalWaktu}s`;
 
-  const profil = state.profilSiswa ? state.profilSiswa.find((p) => p.id === nis) : null;
+  const profil = state.profilSiswa
+    ? state.profilSiswa.find((p) => p.id === nis)
+    : null;
   const sesi = profil && profil.sesi_terakhir ? profil.sesi_terakhir : null;
-  
+
   const elemLogin = document.getElementById("admin-detail-waktu-login");
   const elemDurasi = document.getElementById("admin-detail-durasi-login");
   const elemLogout = document.getElementById("admin-detail-waktu-logout");
-  
+
   if (sesi) {
     const formatWaktu = (isoStr) => {
       if (!isoStr) return "-";
-      return new Date(isoStr).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" });
+      return new Date(isoStr).toLocaleTimeString("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
     };
-    
+
     let isAktif = false;
     if (sesi.waktu_logout) {
       const logoutTime = new Date(sesi.waktu_logout).getTime();
       if (Date.now() - logoutTime < 120000) isAktif = true; // Dianggap aktif jika < 2 menit
     }
-    
+
     if (elemLogin) elemLogin.innerText = formatWaktu(sesi.waktu_login);
-    if (elemLogout) elemLogout.innerText = isAktif ? "-" : formatWaktu(sesi.waktu_logout);
-    
+    if (elemLogout)
+      elemLogout.innerText = isAktif ? "-" : formatWaktu(sesi.waktu_logout);
+
     if (elemDurasi) {
       const durasiDetik = sesi.durasi_aktif_detik || 0;
       const jam = Math.floor(durasiDetik / 3600);
       const mnt = Math.floor((durasiDetik % 3600) / 60);
-      elemDurasi.innerText = jam > 0 ? `${jam}j ${mnt}m` : mnt > 0 ? `${mnt}m` : `${durasiDetik}s`;
+      elemDurasi.innerText =
+        jam > 0 ? `${jam}j ${mnt}m` : mnt > 0 ? `${mnt}m` : `${durasiDetik}s`;
     }
   } else {
     if (elemLogin) elemLogin.innerText = "-";
     if (elemLogout) elemLogout.innerText = "-";
     if (elemDurasi) elemDurasi.innerText = "-";
   }
-
 
   let rata = 0;
   if (dataValid.length > 0) {
@@ -185,7 +191,10 @@ export function lihatDetailSiswa(nis, nama) {
   }
   document.getElementById("admin-detail-rata").innerText = rata;
 
-  document.getElementById("modal-detail-siswa").style.display = "flex";
+  const modalDetail = document.getElementById("modal-detail-siswa");
+  modalDetail.style.display = "flex";
+  const scrollArea = modalDetail.querySelector("[style*='overflow-y']");
+  if (scrollArea) scrollArea.scrollTop = 0;
   renderTabelDetailSiswa();
 }
 
@@ -235,9 +244,9 @@ export function renderTabelDetailSiswa() {
     // Membersihkan Inline CSS Info Status
     if (statusPengerjaan === STATUS_LATIHAN.DRAF) {
       teksNilai = `<span class="text-warning font-bold" style="font-style: italic;">${data.nilai} (Smntr)</span>`;
-      infoStatus = `<br><span class="badge badge-warning" style="margin-top: 5px;">⏳ Sedang Dikerjakan</span>`;
+      infoStatus = `<span class="badge badge-warning">⏳ Sedang Dikerjakan</span>`;
     } else {
-      infoStatus = `<br><span class="badge badge-success" style="margin-top: 5px;">✅ Selesai</span>`;
+      infoStatus = `<span class="badge badge-success">✅ Selesai</span>`;
     }
 
     tbody.innerHTML += createRowDetailSiswaHTML(
@@ -279,38 +288,49 @@ export function renderTabelDetailSiswa() {
 
 export function refreshTampilanRiwayat() {
   const searchInput = document.getElementById("search-siswa");
-  const filterKelas = document.getElementById("filter-kelas-riwayat")?.value || "";
+  const filterKelas =
+    document.getElementById("filter-kelas-riwayat")?.value || "";
   const keyword = searchInput ? searchInput.value.toLowerCase() : "";
-  
+
   state.dataTabelAktif = state.dataMentah.filter((d) => {
     let matchesKeyword = true;
     if (keyword) {
-      matchesKeyword = (d.nama_siswa || "").toLowerCase().includes(keyword) ||
-          (d.nis_siswa || "").toLowerCase().includes(keyword) ||
-          (d.sub_materi || "").toLowerCase().includes(keyword);
+      matchesKeyword =
+        (d.nama_siswa || "").toLowerCase().includes(keyword) ||
+        (d.nis_siswa || "").toLowerCase().includes(keyword) ||
+        (d.sub_materi || "").toLowerCase().includes(keyword);
     }
-    
+
     let matchesKelas = true;
     if (filterKelas) {
-      const profil = state.profilSiswa ? state.profilSiswa.find(p => p.id === d.nis_siswa) : null;
+      const profil = state.profilSiswa
+        ? state.profilSiswa.find((p) => p.id === d.nis_siswa)
+        : null;
       const kelasSiswa = profil ? profil.kelas : null;
-      matchesKelas = (kelasSiswa === filterKelas);
+      matchesKelas = kelasSiswa === filterKelas;
     }
-    
+
     return matchesKeyword && matchesKelas;
   });
-  
+
   renderTabelRiwayat();
   prosesAnalisisSoalLokal();
 
   const modalDetail = document.getElementById("modal-detail-siswa");
-  if (modalDetail && modalDetail.style.display === "flex" && dataDetailSiswaAktif.length > 0) {
+  if (
+    modalDetail &&
+    modalDetail.style.display === "flex" &&
+    dataDetailSiswaAktif.length > 0
+  ) {
     const nisTarget = dataDetailSiswaAktif[0].nis_siswa;
     const namaTarget = document.getElementById("judul-detail-siswa").innerText;
     lihatDetailSiswa(nisTarget, namaTarget);
   }
 
-  if (nisAnalisisAktif && document.getElementById("wadah-kotak-analisis")?.style.display !== "none") {
+  if (
+    nisAnalisisAktif &&
+    document.getElementById("wadah-kotak-analisis")?.style.display !== "none"
+  ) {
     renderGrafikSiswa(nisAnalisisAktif);
   }
 }
@@ -835,14 +855,17 @@ export function setupExportCSV() {
 
     if (jenis === "riwayat") {
       if (state.dataMentah.length === 0) return alert("Belum ada data!");
-      
-      const filterKelas = document.getElementById("filter-kelas-riwayat")?.value || "";
+
+      const filterKelas =
+        document.getElementById("filter-kelas-riwayat")?.value || "";
       let dataToExport = state.dataMentah;
       if (filterKelas) {
-         dataToExport = dataToExport.filter(d => {
-            const profil = state.profilSiswa ? state.profilSiswa.find(p => p.id === d.nis_siswa) : null;
-            return profil && profil.kelas === filterKelas;
-         });
+        dataToExport = dataToExport.filter((d) => {
+          const profil = state.profilSiswa
+            ? state.profilSiswa.find((p) => p.id === d.nis_siswa)
+            : null;
+          return profil && profil.kelas === filterKelas;
+        });
       }
 
       csvContent +=
@@ -909,7 +932,8 @@ export function setupExportCSV() {
       });
 
       const daftarSubMateri = Array.from(semuaSubMateri);
-      let headerCSV = "Nama Siswa,NIS,Waktu Login Terakhir,Durasi Aktif Sesi Terakhir (Menit),Waktu Logout Terakhir,Total Soal Diuji (Sumatif)";
+      let headerCSV =
+        "Nama Siswa,NIS,Waktu Login Terakhir,Durasi Aktif Sesi Terakhir (Menit),Waktu Logout Terakhir,Total Soal Diuji (Sumatif)";
       daftarSubMateri.forEach((sub) => {
         headerCSV += `,Soal: ${escapeCSV(sub)},Akurasi 10 Terakhir: ${escapeCSV(sub)} (%),Total Waktu: ${escapeCSV(sub)} (Menit)`;
       });
@@ -920,22 +944,31 @@ export function setupExportCSV() {
         let totalSoalGlobal = 0;
         for (const sub in s.data_per_sub)
           totalSoalGlobal += s.data_per_sub[sub].skor_soal.length;
-          
-        const profil = state.profilSiswa ? state.profilSiswa.find((p) => p.id === nis) : null;
-        const sesi = profil && profil.sesi_terakhir ? profil.sesi_terakhir : null;
-        
+
+        const profil = state.profilSiswa
+          ? state.profilSiswa.find((p) => p.id === nis)
+          : null;
+        const sesi =
+          profil && profil.sesi_terakhir ? profil.sesi_terakhir : null;
+
         let loginStr = "-";
         let logoutStr = "-";
         let durasiSesiMenit = 0;
-        
+
         if (sesi) {
           let isAktif = false;
           if (sesi.waktu_logout) {
             const logoutTime = new Date(sesi.waktu_logout).getTime();
             if (Date.now() - logoutTime < 120000) isAktif = true;
           }
-          loginStr = sesi.waktu_login ? new Date(sesi.waktu_login).toLocaleString("id-ID") : "-";
-          logoutStr = isAktif ? "-" : (sesi.waktu_logout ? new Date(sesi.waktu_logout).toLocaleString("id-ID") : "-");
+          loginStr = sesi.waktu_login
+            ? new Date(sesi.waktu_login).toLocaleString("id-ID")
+            : "-";
+          logoutStr = isAktif
+            ? "-"
+            : sesi.waktu_logout
+              ? new Date(sesi.waktu_logout).toLocaleString("id-ID")
+              : "-";
           durasiSesiMenit = Math.round((sesi.durasi_aktif_detik || 0) / 60);
         }
 
@@ -979,8 +1012,10 @@ export function setupExportCSV() {
       unduhFileCSV(csvContent, "Albago_Analisis_Butir_Soal.csv");
     } else if (jenis === "ketuntasan") {
       const dataKetuntasan = getKetuntasanDataForExport();
-      if (dataKetuntasan.length === 0) return alert("Belum ada data ketuntasan untuk filter saat ini!");
-      csvContent += "No,Nama Siswa,Materi Utama,Sub Materi,Selesai Formatif,Selesai Sumatif dan >= 80\n";
+      if (dataKetuntasan.length === 0)
+        return alert("Belum ada data ketuntasan untuk filter saat ini!");
+      csvContent +=
+        "No,Nama Siswa,Materi Utama,Sub Materi,Selesai Formatif,Selesai Sumatif dan >= 80\n";
       dataKetuntasan.forEach((k) => {
         csvContent += `${k.no},${escapeCSV(k.nama)},${escapeCSV(k.materiUtama)},${escapeCSV(k.subMateri)},${escapeCSV(k.formatif)},${escapeCSV(k.sumatif)}\n`;
       });

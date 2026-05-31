@@ -257,10 +257,11 @@
           <table class="admin-table" style="table-layout: fixed">
             <thead>
               <tr>
-                <th style="width: 10%">No</th>
-                <th style="width: 40%">Nama Siswa</th>
-                <th style="text-align: center; width: 20%">Aktif</th>
-                <th style="text-align: center; width: 30%">
+                <th style="width: 8%">No</th>
+                <th style="width: 32%">Nama Siswa</th>
+                <th style="text-align: center; width: 12%">Aktif</th>
+                <th style="text-align: center; width: 25%">Login Terakhir</th>
+                <th style="text-align: center; width: 23%">
                   Durasi Latihan Terakhir
                 </th>
               </tr>
@@ -268,7 +269,7 @@
             <tbody id="tabel-status">
               <tr>
                 <td
-                  colspan="4"
+                  colspan="5"
                   class="text-center text-muted"
                   style="padding: 30px"
                 >
@@ -1337,16 +1338,23 @@
             overflow: hidden;
           "
         >
-          <div style="overflow-y: auto; max-height: 60vh">
+          <div
+            style="
+              overflow-y: auto;
+              overflow-x: hidden;
+              max-height: 60vh;
+              scrollbar-gutter: stable;
+            "
+          >
             <table class="admin-table" style="table-layout: fixed">
               <thead style="position: sticky; top: 0; z-index: 1">
                 <tr>
-                  <th style="width: 30%">Topik / Sub-Materi</th>
-                  <th style="width: 15%">Mode Latihan</th>
-                  <th class="text-center" style="width: 10%">Soal</th>
-                  <th style="width: 20%">Waktu Submit</th>
+                  <th style="width: 25%">Topik / Sub-Materi</th>
+                  <th style="width: 18%">Mode Latihan</th>
+                  <th class="text-center" style="width: 8%">Soal</th>
+                  <th style="width: 19%">Waktu Submit</th>
                   <th style="width: 15%">Durasi</th>
-                  <th class="text-center" style="width: 10%">Skor</th>
+                  <th class="text-center" style="width: 15%">Skor</th>
                 </tr>
               </thead>
               <tbody id="tabel-detail-siswa"></tbody>

@@ -82,8 +82,10 @@ export function createRowDetailSiswaHTML(
         ${teksDurasi}
       </td>
       <td class="text-center" style="vertical-align: middle;">
-        ${teksNilai}
-        ${infoStatus}
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          ${teksNilai}
+          ${infoStatus}
+        </div>
       </td>
     </tr>
   `;
