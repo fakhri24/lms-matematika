@@ -30,8 +30,8 @@ export async function cekMasteryDanGelar(
   )
     return null;
 
-  // Kalau nilainya di bawah/sama dengan 85, batal
-  if (nilaiSekarang <= 85) return null;
+  // Kalau nilainya di bawah 80, batal
+  if (nilaiSekarang < 80) return null;
 
   try {
     // 1. Tarik semua histori ujian di sub-materi ini
@@ -55,10 +55,10 @@ export async function cekMasteryDanGelar(
         soalDikerjakan = Object.keys(d.log_percobaan).length;
       }
 
-      // Syarat Ketat: Mode Ujian, Nilai > 85, dan MINIMAL 10 SOAL
+      // Syarat Ketat: Mode Ujian, Nilai >= 80, dan MINIMAL 10 SOAL
       if (
         (mode === MODE_LATIHAN.NORMAL || mode === MODE_LATIHAN.ACAK) &&
-        d.nilai > 85 &&
+        d.nilai >= 80 &&
         soalDikerjakan >= 10
       ) {
         countMastery++;

@@ -6,20 +6,40 @@
     <title>Dashboard Siswa - Albago LMS</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
+      .dashboard-layout {
+        display: grid;
+        grid-template-columns: 270px 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+      .dashboard-sidebar {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        border: 1px solid #e2e8f0;
+        position: sticky;
+        top: 20px;
+      }
+      .sidebar-divider {
+        border: 0;
+        height: 1px;
+        background-color: var(--border-color);
+        margin: 18px 0;
+      }
+      .score-display {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 8px 0;
+      }
       .menu-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-top: 30px;
-      }
-      @media (max-width: 480px) {
-        .menu-grid {
-          grid-template-columns: 1fr;
-        }
+        gap: 16px;
       }
       .menu-card {
         background: white;
-        padding: 30px;
+        padding: 25px 20px;
         border-radius: 20px;
         text-align: center;
         cursor: pointer;
@@ -30,26 +50,39 @@
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
       }
-      .score-display {
-        font-size: 3rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        margin: 10px 0;
-      }
       .icon-menu {
         font-size: 2.5rem;
         margin-bottom: 15px;
         display: block;
       }
+      @media (max-width: 768px) {
+        .dashboard-layout {
+          grid-template-columns: 1fr;
+        }
+        .dashboard-sidebar {
+          position: static;
+        }
+      }
+      @media (max-width: 480px) {
+        .menu-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container" style="max-width: 600px; margin-top: 50px">
-      <header class="flex-between mb-25 flex-wrap gap-15">
-        <div style="flex: 1">
+    <div class="container" style="max-width: 960px; margin: 40px auto">
+      <div class="dashboard-layout">
+        <!-- SIDEBAR -->
+        <aside class="dashboard-sidebar">
           <div
-            class="flex-center mb-5 gap-10"
-            style="justify-content: flex-start"
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 8px;
+              margin-bottom: 8px;
+            "
           >
             <span
               id="badge-gelar-siswa"
@@ -62,150 +95,238 @@
               id="btn-buka-lemari-gelar"
               class="btn btn-secondary btn-sm badge-outline"
             >
-              ✏️ Ubah
+              ✏️ Ubah Gelar
             </button>
           </div>
 
           <h2
             id="sapaan-siswa"
             class="text-main"
-            style="margin: 0; font-size: 1.8rem"
+            style="margin: 10px 0 2px; font-size: 1.6rem"
           >
-            Halo, Siswa!
+            Hi,
           </h2>
-          <p class="status-text text-sm" style="margin-top: 2px">
-            Selamat datang kembali di Albago LMS
-          </p>
-        </div>
+          <p class="status-text text-sm">Welcome back to Albago LMS!</p>
 
-        <div class="flex-center gap-10">
-          <button
-            id="btn-ubah-sandi"
-            class="btn btn-secondary btn-sm font-semibold"
-            style="background-color: white; border-radius: 10px"
-          >
-            ⚙️ Sandi
-          </button>
-          <button
-            id="btn-logout"
-            class="btn btn-sm font-semibold"
+          <hr class="sidebar-divider" />
+
+          <div style="text-align: center">
+            <p class="text-muted text-sm">Skor Latihan Terakhirmu</p>
+            <div id="skor-terakhir" class="score-display">--</div>
+            <p id="materi-terakhir" class="text-xs text-muted">
+              Belum ada riwayat latihan
+            </p>
+          </div>
+
+          <hr class="sidebar-divider" />
+
+          <div class="flex-center gap-10">
+            <button
+              id="btn-ubah-sandi"
+              class="btn btn-secondary btn-sm font-semibold"
+              style="background-color: white; border-radius: 10px"
+            >
+              ⚙️ Sandi
+            </button>
+            <button
+              id="btn-logout"
+              class="btn btn-sm font-semibold"
+              style="
+                background-color: #fee2e2;
+                color: #ef4444;
+                border: 1px solid #fca5a5;
+                border-radius: 10px;
+              "
+            >
+              Keluar
+            </button>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+          <!-- Banner Latihan Spesial (Hidden by default) -->
+          <div
+            id="banner-latihan-spesial"
+            class="menu-card"
             style="
-              background-color: #fee2e2;
-              color: #ef4444;
-              border: 1px solid #fca5a5;
-              border-radius: 10px;
+              display: none;
+              background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+              color: white;
+              border: none;
+              text-align: left;
+              position: relative;
+              overflow: hidden;
+              margin-bottom: 16px;
             "
           >
-            Keluar
-          </button>
-        </div>
-      </header>
+            <div style="position: relative; z-index: 1">
+              <div class="flex-between mb-10">
+                <span
+                  class="badge"
+                  style="background: rgba(255, 255, 255, 0.2); color: white"
+                  >⭐ Latihan Spesial</span
+                >
+                <span id="banner-spesial-waktu" class="text-sm font-semibold"
+                  >Berakhir dalam ...</span
+                >
+              </div>
+              <h3
+                id="banner-spesial-judul"
+                class="mb-5"
+                style="font-size: 1.5rem"
+              >
+                Judul Latihan
+              </h3>
+              <p
+                id="banner-spesial-submateri"
+                class="text-sm mb-15"
+                style="opacity: 0.9"
+              >
+                Sub materi...
+              </p>
+              <div class="flex-between" style="align-items: center">
+                <span id="banner-spesial-durasi" class="font-bold"
+                  >⏱️ 0 Menit</span
+                >
+                <button
+                  id="btn-kerjakan-spesial"
+                  class="btn font-bold"
+                  style="
+                    background: white;
+                    color: #4f46e5;
+                    padding: 8px 20px;
+                    border-radius: 20px;
+                  "
+                >
+                  Kerjakan Sekarang
+                </button>
+              </div>
+            </div>
+            <!-- Decorative Background Elements -->
+            <div
+              style="
+                position: absolute;
+                right: -20px;
+                top: -20px;
+                width: 150px;
+                height: 150px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                right: 50px;
+                bottom: -30px;
+                width: 100px;
+                height: 100px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+              "
+            ></div>
+          </div>
 
-      <div class="question-card text-center" style="margin-top: 30px">
-        <p class="text-muted text-sm">Skor Latihan Terakhirmu</p>
-        <div id="skor-terakhir" class="score-display">--</div>
-        <p id="materi-terakhir" class="text-xs text-muted">
-          Belum ada riwayat latihan
-        </p>
-      </div>
+          <div class="menu-grid">
+            <div id="menu-materi" class="menu-card">
+              <span class="icon-menu text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </span>
+              <h3 class="mb-10" style="font-size: 1.1rem">Ayo Latihan</h3>
+              <p class="text-muted text-sm">Mulai kerjakan soal</p>
+            </div>
 
-      <div class="menu-grid">
-        <div id="menu-materi" class="menu-card">
-          <span class="icon-menu text-primary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <circle cx="12" cy="12" r="6"></circle>
-              <circle cx="12" cy="12" r="2"></circle>
-            </svg>
-          </span>
-          <h3 class="mb-10" style="font-size: 1.1rem">Ayo Latihan</h3>
-          <p class="text-muted text-sm">Mulai kerjakan soal</p>
-        </div>
+            <div id="menu-riwayat" class="menu-card">
+              <span class="icon-menu" style="color: #f59e0b">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"
+                  ></path>
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                </svg>
+              </span>
+              <h3 class="mb-10" style="font-size: 1.1rem">Pembahasan</h3>
+              <p class="text-muted text-sm">Review jawabanmu</p>
+            </div>
 
-        <div id="menu-riwayat" class="menu-card">
-          <span class="icon-menu" style="color: #f59e0b">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"
-              ></path>
-              <path d="M9 18h6"></path>
-              <path d="M10 22h4"></path>
-            </svg>
-          </span>
-          <h3 class="mb-10" style="font-size: 1.1rem">Pembahasan</h3>
-          <p class="text-muted text-sm">Review jawabanmu</p>
-        </div>
+            <div id="menu-rekap" class="menu-card">
+              <span class="icon-menu" style="color: #10b981">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 3v18h18"></path>
+                  <path d="m19 9-5 5-4-4-3 3"></path>
+                  <path d="M14 9h5v5"></path>
+                </svg>
+              </span>
+              <h3 class="mb-10" style="font-size: 1.1rem">Rekap Hasil</h3>
+              <p class="text-muted text-sm">Grafik & Statistik</p>
+            </div>
 
-        <div id="menu-rekap" class="menu-card">
-          <span class="icon-menu" style="color: #10b981">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M3 3v18h18"></path>
-              <path d="m19 9-5 5-4-4-3 3"></path>
-              <path d="M14 9h5v5"></path>
-            </svg>
-          </span>
-          <h3 class="mb-10" style="font-size: 1.1rem">Rekap Hasil</h3>
-          <p class="text-muted text-sm">Grafik & Statistik</p>
-        </div>
-
-        <div id="menu-leaderboard" class="menu-card">
-          <span class="icon-menu" style="color: #eab308">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-              <path d="M4 22h16"></path>
-              <path
-                d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
-              ></path>
-              <path
-                d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
-              ></path>
-              <path d="M18 2H6v7a6 6 0 0 1-12 0V2Z"></path>
-            </svg>
-          </span>
-          <h3 class="mb-10" style="font-size: 1.1rem">Leaderboard</h3>
-          <p class="text-muted text-sm">Klasemen penantang</p>
-        </div>
+            <div id="menu-leaderboard" class="menu-card">
+              <span class="icon-menu" style="color: #eab308">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path
+                    d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                  ></path>
+                  <path
+                    d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                  ></path>
+                  <path d="M18 2H6v7a6 6 0 0 1-12 0V2Z"></path>
+                </svg>
+              </span>
+              <h3 class="mb-10" style="font-size: 1.1rem">Leaderboard</h3>
+              <p class="text-muted text-sm">Klasemen penantang</p>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
 
@@ -433,6 +554,6 @@
 
     <script type="module" src="js/utils/bugReporter.js"></script>
 
-    <script type="module" src="js/pages/dashboardSiswa.js"></script>
+    <script type="module" src="js/pages/dashboardSiswa.js?v=2"></script>
   </body>
 </html>

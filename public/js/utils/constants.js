@@ -4,6 +4,7 @@ export const MODE_LATIHAN = {
   FORMATIF: "latihan_formatif",
   NORMAL: "tes_normal",
   ACAK: "tes_acak",
+  SPESIAL: "latihan_spesial",
   // Beberapa fallback yang ada di database lama
   LAMA_LATIHAN: "latihan",
   LAMA_NORMAL: "normal",

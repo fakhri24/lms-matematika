@@ -5,13 +5,13 @@ import {
   logoutSistem,
   ubahPasswordSistem,
 } from "../services/authService.js";
-import { getRiwayatTerakhir } from "../services/latihanService.js";
+import { getRiwayatTerakhir, getLatihanSpesialAktif } from "../services/latihanService.js";
 import {
   getSiswaByNis,
   updateGelarAktif,
   updateStatusPassword,
 } from "../services/userService.js";
-import { DATA_DEFAULT, STATUS_LATIHAN } from "../utils/constants.js";
+import { DATA_DEFAULT, STATUS_LATIHAN, MODE_LATIHAN } from "../utils/constants.js";
 
 let currentUserLengkap = null;
 let isModeJebakan = false;
@@ -24,7 +24,7 @@ let gelarTerbuka = JSON.parse(
 );
 
 function renderSapaan() {
-  document.getElementById("sapaan-siswa").innerText = `Halo, ${nama}!`;
+  document.getElementById("sapaan-siswa").innerText = `Hi, ${nama}!`;
   document.getElementById("badge-gelar-siswa").innerText = `${gelarAktif}`;
 }
 
@@ -44,10 +44,56 @@ async function muatSkorTerakhir() {
   }
 }
 
+async function muatLatihanSpesial() {
+  try {
+    const spesialAktif = await getLatihanSpesialAktif();
+    const banner = document.getElementById("banner-latihan-spesial");
+    if (!banner) return;
+
+    if (spesialAktif) {
+      document.getElementById("banner-spesial-judul").innerText = spesialAktif.judul;
+      document.getElementById("banner-spesial-submateri").innerText = `Sub-Materi: ${spesialAktif.sub_materi.join(", ")}`;
+      document.getElementById("banner-spesial-durasi").innerText = `⏱️ ${spesialAktif.durasi_menit} Menit`;
+      
+      const tSelesai = new Date(spesialAktif.waktu_selesai);
+      const updateWaktu = () => {
+        const selisih = Math.max(0, Math.floor((tSelesai - new Date()) / 1000));
+        if (selisih <= 0) {
+          banner.style.display = "none";
+        } else {
+          const jam = Math.floor(selisih / 3600);
+          const menit = Math.floor((selisih % 3600) / 60);
+          document.getElementById("banner-spesial-waktu").innerText = `Berakhir dalam ${jam}j ${menit}m`;
+        }
+      };
+      
+      updateWaktu();
+      setInterval(updateWaktu, 60000); // Update tiap menit
+
+      document.getElementById("btn-kerjakan-spesial").onclick = () => {
+        localStorage.setItem("mode_latihan", MODE_LATIHAN.SPESIAL);
+        localStorage.setItem("id_latihan_spesial", spesialAktif.id);
+        localStorage.setItem("judul_latihan_spesial", spesialAktif.judul);
+        localStorage.setItem("durasi_latihan_spesial", spesialAktif.durasi_menit);
+        localStorage.setItem("sub_materi_spesial", JSON.stringify(spesialAktif.sub_materi));
+        
+        window.location.href = "latihan.html";
+      };
+
+      banner.style.display = "block";
+    } else {
+      banner.style.display = "none";
+    }
+  } catch (error) {
+    console.error("Gagal memuat Latihan Spesial:", error);
+  }
+}
+
 pantauSesi(async (user) => {
   currentUserLengkap = user;
   renderSapaan();
   muatSkorTerakhir();
+  muatLatihanSpesial();
 
   if (nis) {
     try {
@@ -71,6 +117,7 @@ pantauSesi(async (user) => {
 function navigasi(url) {
   window.location.href = url;
 }
+
 function keluarAplikasi() {
   logoutSistem();
 }
@@ -142,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("btn-tutup-lemari-gelar")
     ?.addEventListener("click", () => (modalGelar.style.display = "none"));
+
   document
     .getElementById("btn-tutup-modal-sandi")
     ?.addEventListener(
@@ -207,5 +255,4 @@ document.addEventListener("DOMContentLoaded", () => {
     el.innerText = msg;
     el.style.display = "block";
   }
-  
 });

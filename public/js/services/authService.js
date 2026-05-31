@@ -1,4 +1,3 @@
-// public/js/services/authService.js
 import { auth } from "../config/firebase.js";
 import {
   onAuthStateChanged,
@@ -8,6 +7,8 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { mulaiPelacakanSesi, hentikanPelacakanSesi } from "./sessionTracker.js";
+
 
 /**
  * Fungsi untuk memantau sesi user yang sedang aktif.
@@ -28,6 +29,13 @@ export function pantauSesi(callbackValid, isRoleAdmin = false) {
       window.location.href = "admin.html";
       return;
     }
+    
+    // Mulai pelacakan sesi jika yang login adalah siswa
+    if (!isRoleAdmin && user.email !== "admin@albago.id") {
+      const nis = user.email.split("@")[0];
+      mulaiPelacakanSesi(nis);
+    }
+
     if (callbackValid) callbackValid(user);
   });
 }
@@ -36,6 +44,7 @@ export function pantauSesi(callbackValid, isRoleAdmin = false) {
  * Fungsi untuk keluar dari aplikasi secara global
  */
 export function logoutSistem() {
+  hentikanPelacakanSesi();
   return signOut(auth)
     .then(() => {
       localStorage.clear();

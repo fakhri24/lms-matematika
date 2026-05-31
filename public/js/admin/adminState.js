@@ -8,4 +8,5 @@ export const state = {
   dataBankSoalMentah: [],
   dataBankSoalAktif: [],
   petaMateriBankSoal: {}, // Untuk menyimpan opsi dropdown
+  profilSiswa: [], // Menyimpan profil siswa termasuk durasi login
 };

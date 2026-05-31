@@ -131,7 +131,9 @@ async function muatMateri() {
       let tahapAktif = "";
 
       urutanHasil.forEach((subNormal) => {
-        const meta = metaDataMap[subNormal];
+        const meta = Object.values(metaDataMap).find(
+          (m) => m.nama_asli.toLowerCase().trim() === subNormal,
+        );
         if (!meta || meta.jumlah_soal === 0) return;
 
         const namaTahap =
@@ -234,7 +236,39 @@ document.getElementById("wadah-konten-tab").addEventListener("click", (e) => {
     localStorage.setItem("mode_latihan", modeTerpilih);
     localStorage.setItem("materi_utama_aktif", materiUtama);
     localStorage.setItem("sub_materi_aktif", subMateri);
-    window.location.href = "latihan.html";
+
+    if (
+      subMateri === "Aturan Kuadran" &&
+      modeTerpilih === MODE_LATIHAN.FORMATIF
+    ) {
+      window.location.href = "materi/trigonometri/aturan-kuadran/index.html";
+    } else if (
+      subMateri === "Sudut Berelasi (Horizontal)" &&
+      modeTerpilih === MODE_LATIHAN.FORMATIF
+    ) {
+      window.location.href =
+        "materi/trigonometri/sudut-berelasi-horizontal/index.html";
+    } else if (
+      subMateri === "Sudut Berelasi (Vertikal)" &&
+      modeTerpilih === MODE_LATIHAN.FORMATIF
+    ) {
+      window.location.href =
+        "materi/trigonometri/sudut-berelasi-vertikal/index.html";
+    } else if (
+      subMateri === "Sifat Sudut Negatif" &&
+      modeTerpilih === MODE_LATIHAN.FORMATIF
+    ) {
+      window.location.href =
+        "materi/trigonometri/sifat-sudut-negatif/index.html";
+    } else if (
+      subMateri === "Sudut Berelasi (Negatif dan >360°)" &&
+      modeTerpilih === MODE_LATIHAN.FORMATIF
+    ) {
+      window.location.href =
+        "materi/trigonometri/sudut-berelasi-negatif-360/index.html";
+    } else {
+      window.location.href = "latihan.html";
+    }
   }
 });
 
