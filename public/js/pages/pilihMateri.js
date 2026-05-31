@@ -190,7 +190,7 @@ function ubahTampilanMode() {
 
   if (labelAktif) {
     labelAktif.style.borderColor = "var(--primary-color)";
-    labelAktif.style.backgroundColor = "#eef2ff";
+    labelAktif.style.backgroundColor = "#f0fdfa";
     labelAktif.querySelector("strong").style.color = "var(--primary-color)";
   }
 }

@@ -10,6 +10,7 @@
 - Use JavaScript Vanilla.
 - Use popular libraries.
 - As simple as possible but with an elegant UI.
+- Gunakan prinsip DRY (Don't Repeat Yourself)
 
 ## Color Scheme
 

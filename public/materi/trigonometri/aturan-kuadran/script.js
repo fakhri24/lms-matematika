@@ -19,7 +19,7 @@ class AturanKuadranController extends LatihanController {
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Aturan Kuadran";
     this.state.materiUtama = "Trigonometri Dasar"; // asumsikan ini jika kosong
-    
+
     // Pastikan localStorage set untuk kompatibilitas LatihanController
     localStorage.setItem("mode_latihan", MODE_LATIHAN.FORMATIF);
     localStorage.setItem("sub_materi_aktif", "Aturan Kuadran");
@@ -28,26 +28,31 @@ class AturanKuadranController extends LatihanController {
   async init() {
     // Setup UI interaktif Lingkaran Satuan
     this.setupCanvas();
-    
-    document.getElementById("btn-kembali-dasbor").addEventListener("click", () => {
-      window.location.href = "../../../dashboard-siswa.html";
-    });
+
+    document
+      .getElementById("btn-kembali-dasbor")
+      .addEventListener("click", () => {
+        window.location.href = "../../../dashboard-siswa.html";
+      });
 
     const btnMulai = document.getElementById("btn-mulai-terbimbing");
     btnMulai.addEventListener("click", () => {
       document.getElementById("wadah-mulai-terbimbing").style.display = "none";
       document.getElementById("quiz-section").style.display = "block";
-      
+      document.getElementById("visual-inner").classList.add("stacked");
+
       // Inisialisasi controller latihan standar untuk mode formatif
       this.bindGlobalEvents();
       this.mulaiAplikasi();
     });
 
     // Tambahkan event untuk tombol lanjut ke sumatif
-    document.getElementById("btn-lanjut-sumatif").addEventListener("click", () => {
-      localStorage.setItem("mode_latihan", MODE_LATIHAN.NORMAL);
-      window.location.href = "../../../latihan.html";
-    });
+    document
+      .getElementById("btn-lanjut-sumatif")
+      .addEventListener("click", () => {
+        localStorage.setItem("mode_latihan", MODE_LATIHAN.NORMAL);
+        window.location.href = "../../../latihan.html";
+      });
   }
 
   setupCanvas() {
@@ -62,7 +67,7 @@ class AturanKuadranController extends LatihanController {
 
     const drawCircle = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Sumbu X dan Y
       ctx.beginPath();
       // Garis utama
@@ -70,22 +75,22 @@ class AturanKuadranController extends LatihanController {
       ctx.lineTo(canvas.width, centerY);
       ctx.moveTo(centerX, 0);
       ctx.lineTo(centerX, canvas.height);
-      
+
       // Panah Kanan (Sumbu X positif)
       ctx.moveTo(canvas.width - 10, centerY - 6);
       ctx.lineTo(canvas.width, centerY);
       ctx.lineTo(canvas.width - 10, centerY + 6);
-      
+
       // Panah Kiri (Sumbu X negatif)
       ctx.moveTo(10, centerY - 6);
       ctx.lineTo(0, centerY);
       ctx.lineTo(10, centerY + 6);
-      
+
       // Panah Atas (Sumbu Y positif)
       ctx.moveTo(centerX - 6, 10);
       ctx.lineTo(centerX, 0);
       ctx.lineTo(centerX + 6, 10);
-      
+
       // Panah Bawah (Sumbu Y negatif)
       ctx.moveTo(centerX - 6, canvas.height - 10);
       ctx.lineTo(centerX, canvas.height);
@@ -133,22 +138,22 @@ class AturanKuadranController extends LatihanController {
       // Label Derajat
       ctx.fillStyle = "black";
       ctx.font = "bold 14px Arial";
-      
+
       // 0 derajat (Kanan) - di luar lingkaran, sedikit di atas sumbu
       ctx.textAlign = "left";
       ctx.textBaseline = "bottom";
       ctx.fillText("0°", centerX + radius + 10, centerY - 8);
-      
+
       // 90 derajat (Atas) - di luar lingkaran, sedikit di kanan sumbu
       ctx.textAlign = "left";
       ctx.textBaseline = "bottom";
       ctx.fillText("90°", centerX + 8, centerY - radius - 10);
-      
+
       // 180 derajat (Kiri) - di luar lingkaran, sedikit di atas sumbu
-      ctx.textAlign = "right";
+      ctx.textAlign = "left";
       ctx.textBaseline = "bottom";
-      ctx.fillText("180°", centerX - radius - 10, centerY - 8);
-      
+      ctx.fillText("180°", 4, centerY - 8);
+
       // 270 derajat (Bawah) - di luar lingkaran, sedikit di kanan sumbu
       ctx.textAlign = "left";
       ctx.textBaseline = "top";
@@ -159,12 +164,15 @@ class AturanKuadranController extends LatihanController {
       // Normalisasi derajat 0 - 360
       let norm = deg % 360;
       if (norm < 0) norm += 360;
-      
-      document.getElementById("sudut-info").innerText = `Sudut: ${Math.round(norm)}°`;
+
+      document.getElementById("sudut-info").innerText =
+        `Sudut: ${Math.round(norm)}°`;
 
       // Hapus semua class active
-      document.querySelectorAll(".astc-row").forEach(el => el.classList.remove("active"));
-      
+      document
+        .querySelectorAll(".astc-row")
+        .forEach((el) => el.classList.remove("active"));
+
       // Tentukan kuadran dan update UI
       let q = 1;
       if (norm >= 0 && norm <= 90) q = 1;
@@ -173,7 +181,7 @@ class AturanKuadranController extends LatihanController {
       else if (norm > 270 && norm <= 360) q = 4;
 
       document.getElementById(`row-q${q}`).classList.add("active");
-      
+
       // Update background canvas
       canvas.className = `bg-q${q}`;
     };
@@ -182,7 +190,7 @@ class AturanKuadranController extends LatihanController {
       const rect = canvas.getBoundingClientRect();
       const x = (e.clientX || e.touches[0].clientX) - rect.left - centerX;
       const y = (e.clientY || e.touches[0].clientY) - rect.top - centerY;
-      
+
       let rad = Math.atan2(-y, x); // -y karena koordinat canvas y ke bawah
       let deg = rad * (180 / Math.PI);
       if (deg < 0) deg += 360;

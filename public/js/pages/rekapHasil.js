@@ -163,10 +163,10 @@ function renderLineChart(modeRentang, dataTersaring) {
         {
           label: "Skor",
           data: dataTampil.map((item) => item.nilai),
-          borderColor: tabAktif === "sumatif" ? "#4f46e5" : "#f59e0b",
+          borderColor: tabAktif === "sumatif" ? "#0d9488" : "#f59e0b",
           backgroundColor:
             tabAktif === "sumatif"
-              ? "rgba(79, 70, 229, 0.1)"
+              ? "rgba(13, 148, 136, 0.1)"
               : "rgba(245, 158, 11, 0.1)",
           fill: true,
           tension: 0.3,
@@ -212,10 +212,10 @@ function renderRadarChart(modeRadar) {
           label: isMakro ? "Rata-rata Makro (%)" : `Detail ${modeRadar} (%)`,
           data: dataPoin,
           backgroundColor: isMakro
-            ? "rgba(79, 70, 229, 0.2)"
+            ? "rgba(13, 148, 136, 0.2)"
             : "rgba(16, 185, 129, 0.2)",
-          borderColor: isMakro ? "#4f46e5" : "#10b981",
-          pointBackgroundColor: isMakro ? "#4338ca" : "#059669",
+          borderColor: isMakro ? "#0d9488" : "#10b981",
+          pointBackgroundColor: isMakro ? "#0f766e" : "#059669",
         },
       ],
     },

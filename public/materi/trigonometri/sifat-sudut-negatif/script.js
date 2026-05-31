@@ -137,18 +137,18 @@ class SifatSudutNegatifController extends LatihanController {
     const toCanvas = (deg) => ((360 - deg) * Math.PI) / 180;
 
     // --- Sudut α (biru, di atas sumbu X) ---
-    drawAngle(this.alpha, "#4f46e5");
+    drawAngle(this.alpha, "#0d9488");
 
     // Arc kecil menandai sudut α dari sumbu X
     ctx.beginPath();
     ctx.arc(centerX, centerY, 20, toCanvas(0), toCanvas(this.alpha), true);
-    ctx.strokeStyle = "#4f46e5";
+    ctx.strokeStyle = "#0d9488";
     ctx.lineWidth = 2;
     ctx.stroke();
 
     // Label α
     const alphaRad = (this.alpha * Math.PI) / 180;
-    ctx.fillStyle = "#4f46e5";
+    ctx.fillStyle = "#0d9488";
     ctx.font = "bold 14px Arial";
     ctx.fillText(
       "α",

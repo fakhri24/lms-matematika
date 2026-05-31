@@ -83,7 +83,7 @@ canvas {
 
 .mode-tab input[type="radio"]:checked + span {
   border-color: var(--primary-color);
-  background: #eef2ff;
+  background: #f0fdfa;
   color: var(--primary-color);
 }
 

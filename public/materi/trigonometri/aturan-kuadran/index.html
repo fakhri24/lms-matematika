@@ -85,51 +85,56 @@
             fungsinya.
           </p>
 
-          <div class="canvas-container">
-            <canvas id="unit-circle" width="300" height="300"></canvas>
+          <div id="visual-inner" class="visual-inner">
+            <div class="canvas-col">
+              <div class="canvas-container">
+                <canvas id="unit-circle" width="260" height="260"></canvas>
+              </div>
+              <div
+                id="sudut-info"
+                class="text-center font-bold text-main mt-10"
+                style="font-size: 1.2rem"
+              >
+                Sudut: 0°
+              </div>
+            </div>
+
+            <div class="table-col">
+              <table class="astc-table">
+                <thead>
+                  <tr>
+                    <th>Kuadran</th>
+                    <th>Sudut</th>
+                    <th>Positif (+)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="row-q1" class="astc-row">
+                    <td>I</td>
+                    <td>0° - 90°</td>
+                    <td><b>A</b>ll (Semua)</td>
+                  </tr>
+                  <tr id="row-q2" class="astc-row">
+                    <td>II</td>
+                    <td>90° - 180°</td>
+                    <td><b>S</b>in (Sinus)</td>
+                  </tr>
+                  <tr id="row-q3" class="astc-row">
+                    <td>III</td>
+                    <td>180° - 270°</td>
+                    <td><b>T</b>an (Tangen)</td>
+                  </tr>
+                  <tr id="row-q4" class="astc-row">
+                    <td>IV</td>
+                    <td>270° - 360°</td>
+                    <td><b>C</b>os (Cosinus)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
-          <div
-            id="sudut-info"
-            class="text-center font-bold text-main mt-10 mb-15"
-            style="font-size: 1.2rem"
-          >
-            Sudut: 0°
-          </div>
-
-          <table class="astc-table">
-            <thead>
-              <tr>
-                <th>Kuadran</th>
-                <th>Sudut</th>
-                <th>Positif (+)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr id="row-q1" class="astc-row">
-                <td>I</td>
-                <td>0° - 90°</td>
-                <td><b>A</b>ll (Semua)</td>
-              </tr>
-              <tr id="row-q2" class="astc-row">
-                <td>II</td>
-                <td>90° - 180°</td>
-                <td><b>S</b>in (Sinus)</td>
-              </tr>
-              <tr id="row-q3" class="astc-row">
-                <td>III</td>
-                <td>180° - 270°</td>
-                <td><b>T</b>an (Tangen)</td>
-              </tr>
-              <tr id="row-q4" class="astc-row">
-                <td>IV</td>
-                <td>270° - 360°</td>
-                <td><b>C</b>os (Cosinus)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="text-center mt-20" id="wadah-mulai-terbimbing">
+          <div class="text-center mt-10" id="wadah-mulai-terbimbing">
             <button
               id="btn-mulai-terbimbing"
               class="btn btn-primary"
@@ -160,41 +165,43 @@
               <span id="teks-halaman" class="font-bold text-muted">1 / ?</span>
             </div>
 
-            <div id="wadah-soal"></div>
-
-            <div
-              id="wadah-feedback-formatif"
-              class="mb-20"
-              style="display: none"
-            >
-              <div
-                id="pesan-feedback"
-                class="text-center font-bold mb-15"
-                style="padding: 15px; border-radius: 8px; font-size: 1.1rem"
-              ></div>
+            <div id="soal-card-wrapper" class="soal-card-wrapper">
+              <div id="wadah-soal"></div>
 
               <div
-                id="area-clue"
-                class="info-box box-warning"
+                id="wadah-feedback-formatif"
+                class="mb-20"
                 style="display: none"
               >
-                <p class="info-box-title">💡 PETUNJUK (CLUE):</p>
-                <div id="teks-clue"></div>
-              </div>
+                <div
+                  id="pesan-feedback"
+                  class="text-center font-bold mb-15"
+                  style="padding: 15px; border-radius: 8px; font-size: 1.1rem"
+                ></div>
 
-              <div
-                id="area-pembahasan"
-                class="info-box box-primary"
-                style="display: none"
-              >
-                <p class="info-box-title">📖 PEMBAHASAN:</p>
-                <div id="teks-pembahasan"></div>
+                <div
+                  id="area-clue"
+                  class="info-box box-warning"
+                  style="display: none"
+                >
+                  <p class="info-box-title">💡 PETUNJUK (CLUE):</p>
+                  <div id="teks-clue"></div>
+                </div>
+
+                <div
+                  id="area-pembahasan"
+                  class="info-box box-primary"
+                  style="display: none"
+                >
+                  <p class="info-box-title">📖 PEMBAHASAN:</p>
+                  <div id="teks-pembahasan"></div>
+                </div>
               </div>
             </div>
 
             <div
               id="navigasi-soal"
-              class="nav-container flex-center gap-15 flex-wrap"
+              class="nav-bar-formatif"
               style="display: none"
             >
               <button

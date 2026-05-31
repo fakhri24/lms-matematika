@@ -197,7 +197,7 @@ class SudutBerelasiVertikalController extends LatihanController {
       targetAngle = 270 + this.alpha;
     }
 
-    drawAngle(targetAngle, "#4f46e5", true);
+    drawAngle(targetAngle, "#0d9488", true);
 
     // Arc menunjukkan sudut α diukur dari poros vertikal (sumbu Y)
     let refAngle, arcAnticlockwise;
@@ -223,7 +223,7 @@ class SudutBerelasiVertikalController extends LatihanController {
       toCanvas(targetAngle),
       arcAnticlockwise,
     );
-    ctx.strokeStyle = "#4f46e5";
+    ctx.strokeStyle = "#0d9488";
     ctx.lineWidth = 2.5;
     ctx.stroke();
   }

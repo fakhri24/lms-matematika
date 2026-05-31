@@ -184,7 +184,7 @@ class SudutBerelasiController extends LatihanController {
       canvas.className = "bg-q4";
     }
 
-    drawAngle(targetAngle, "#4f46e5");
+    drawAngle(targetAngle, "#0d9488");
 
     // Arc simbol sudut α diukur dari poros horizontal (180° atau 360°)
     let refAngle, arcAnticlockwise;
@@ -207,7 +207,7 @@ class SudutBerelasiController extends LatihanController {
       toCanvas(targetAngle),
       arcAnticlockwise,
     );
-    ctx.strokeStyle = "#4f46e5";
+    ctx.strokeStyle = "#0d9488";
     ctx.lineWidth = 2.5;
     ctx.stroke();
   }

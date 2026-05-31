@@ -176,14 +176,14 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
     }
 
     // Panah biru ke sudut ternormalisasi
-    this._drawArrow(ctx, cx, cy, radius, normalized, "#4f46e5");
+    this._drawArrow(ctx, cx, cy, radius, normalized, "#0d9488");
 
     // Arc kecil penanda sudut normalized (dari 0° CCW ke normalized)
     const toCanvas = (deg) => ((360 - deg) * Math.PI) / 180;
     if (normalized > 0) {
       ctx.beginPath();
       ctx.arc(cx, cy, 22, toCanvas(0), toCanvas(normalized), true);
-      ctx.strokeStyle = "#4f46e5";
+      ctx.strokeStyle = "#0d9488";
       ctx.lineWidth = 2;
       ctx.setLineDash([]);
       ctx.stroke();
@@ -193,7 +193,7 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
     const normRad = (normalized * Math.PI) / 180;
     const labelR = radius + 20;
     ctx.save();
-    ctx.fillStyle = "#4f46e5";
+    ctx.fillStyle = "#0d9488";
     ctx.font = "bold 11px Arial";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";

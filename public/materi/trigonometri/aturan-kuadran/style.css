@@ -1,16 +1,22 @@
 /* public/css/aturan-kuadran.css */
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .canvas-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 8px 0;
   position: relative;
 }
 
 #unit-circle {
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: grab;
   transition: background-color 0.5s ease;
   touch-action: none; /* prevent scrolling while dragging */
@@ -20,27 +26,50 @@
 }
 
 /* Quadrant Background Colors */
-.bg-q1 { background-color: #bbf7d0 !important; } /* green */
-.bg-q2 { background-color: #bfdbfe !important; } /* blue */
-.bg-q3 { background-color: #fecaca !important; } /* red */
-.bg-q4 { background-color: #fde68a !important; } /* yellow */
+.bg-q1 {
+  background-color: #bbf7d0 !important;
+} /* green */
+.bg-q2 {
+  background-color: #bfdbfe !important;
+} /* blue */
+.bg-q3 {
+  background-color: #fecaca !important;
+} /* red */
+.bg-q4 {
+  background-color: #fde68a !important;
+} /* yellow */
 
 /* ASTC Table Styles */
 .astc-table {
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
+  width: 320px;
+  margin: 8px auto;
   border-collapse: collapse;
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  table-layout: fixed;
 }
 
-.astc-table th, .astc-table td {
-  padding: 12px;
+/* In exploration mode: anchor table-col to canvas height, table fills it */
+.visual-inner:not(.stacked) .table-col {
+  height: 300px;
+  display: flex;
+  align-items: stretch;
+}
+
+.visual-inner:not(.stacked) .astc-table {
+  height: 100%;
+  margin: 0;
+}
+
+.astc-table th,
+.astc-table td {
+  padding: 7px 12px;
   text-align: center;
   border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .astc-table th {
@@ -58,7 +87,6 @@
   background-color: var(--primary-color);
   color: white;
   font-weight: bold;
-  transform: scale(1.02);
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
@@ -71,7 +99,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  align-items: flex-start;
+  align-items: stretch;
+  height: calc(100vh - 150px);
 }
 
 .visual-section {
@@ -79,7 +108,51 @@
   background: white;
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* visual-inner: side-by-side default, stacked when entering formatif */
+.visual-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.canvas-col {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bigger canvas display in exploration mode only */
+.visual-inner:not(.stacked) #unit-circle {
+  width: 300px;
+  height: 300px;
+}
+
+.table-col {
+  flex: 0 0 auto;
+}
+
+.visual-inner.stacked {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.visual-inner.stacked .canvas-col {
+  align-items: center;
+}
+
+.visual-inner.stacked .astc-table {
+  max-width: 100%;
 }
 
 .quiz-section {
@@ -87,17 +160,43 @@
   display: none; /* hidden initially */
 }
 
+.quiz-section > div {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+#soal-card-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
 /* Animation for answers */
 @keyframes bounceWrong {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
 }
 
 @keyframes glowRight {
-  0% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
-  50% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
-  100% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+  0% {
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+  }
 }
 
 .answer-wrong {
@@ -114,11 +213,20 @@
 
 .mode-title {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   font-weight: 800;
   color: var(--text-main);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+#sudut-info {
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+.visual-section > p {
+  margin-bottom: 4px !important;
 }
 
 /* Badge specific for Gamification */
@@ -131,5 +239,5 @@
   display: inline-block;
   margin: 15px 0;
   box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
