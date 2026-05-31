@@ -11,7 +11,7 @@
         display: none; /* Sembunyikan sebelum cek auth */
       }
       .container {
-        max-width: 1000px !important;
+        max-width: 960px !important;
       }
       .admin-table {
         width: 100%;
@@ -178,7 +178,15 @@
       </div>
 
       <div id="tab-riwayat">
-        <div class="mb-15" style="display: flex; justify-content: flex-end; gap: 10px; align-items: center;">
+        <div
+          class="mb-15"
+          style="
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            align-items: center;
+          "
+        >
           <select
             id="filter-kelas-riwayat"
             class="input-standard btn-sm"
@@ -252,22 +260,42 @@
                 <th style="width: 10%">No</th>
                 <th style="width: 40%">Nama Siswa</th>
                 <th style="text-align: center; width: 20%">Aktif</th>
-                <th style="text-align: center; width: 30%">Durasi Latihan Terakhir</th>
+                <th style="text-align: center; width: 30%">
+                  Durasi Latihan Terakhir
+                </th>
               </tr>
             </thead>
             <tbody id="tabel-status">
               <tr>
-                <td colspan="4" class="text-center text-muted" style="padding: 30px">
+                <td
+                  colspan="4"
+                  class="text-center text-muted"
+                  style="padding: 30px"
+                >
                   Menghubungkan ke database...
                 </td>
               </tr>
             </tbody>
           </table>
           <div class="pagination-container flex-between">
-            <span id="info-halaman-status" class="text-sm text-muted">Halaman 1 dari 1</span>
+            <span id="info-halaman-status" class="text-sm text-muted"
+              >Halaman 1 dari 1</span
+            >
             <div class="flex-center gap-10">
-              <button id="btn-prev-status" class="btn btn-secondary btn-sm" disabled>&laquo; Sebelumnya</button>
-              <button id="btn-next-status" class="btn btn-secondary btn-sm" disabled>Selanjutnya &raquo;</button>
+              <button
+                id="btn-prev-status"
+                class="btn btn-secondary btn-sm"
+                disabled
+              >
+                &laquo; Sebelumnya
+              </button>
+              <button
+                id="btn-next-status"
+                class="btn btn-secondary btn-sm"
+                disabled
+              >
+                Selanjutnya &raquo;
+              </button>
             </div>
           </div>
         </div>
@@ -526,22 +554,42 @@
                 <th style="width: 25%">Nama</th>
                 <th style="width: 35%">Materi Utama - Sub Materi</th>
                 <th class="text-center" style="width: 15%">Selesai Formatif</th>
-                <th class="text-center" style="width: 20%">Selesai Sumatif dan &gt;= 80</th>
+                <th class="text-center" style="width: 20%">
+                  Selesai Sumatif dan &gt;= 80
+                </th>
               </tr>
             </thead>
             <tbody id="tabel-ketuntasan">
               <tr>
-                <td colspan="5" class="text-center text-muted" style="padding: 30px">
+                <td
+                  colspan="5"
+                  class="text-center text-muted"
+                  style="padding: 30px"
+                >
                   Menghubungkan ke database...
                 </td>
               </tr>
             </tbody>
           </table>
           <div class="pagination-container flex-between">
-            <span id="info-halaman-ketuntasan" class="text-sm text-muted">Halaman 1 dari 1</span>
+            <span id="info-halaman-ketuntasan" class="text-sm text-muted"
+              >Halaman 1 dari 1</span
+            >
             <div class="flex-center gap-10">
-              <button id="btn-prev-ketuntasan" class="btn btn-secondary btn-sm" disabled>&laquo; Sebelumnya</button>
-              <button id="btn-next-ketuntasan" class="btn btn-secondary btn-sm" disabled>Selanjutnya &raquo;</button>
+              <button
+                id="btn-prev-ketuntasan"
+                class="btn btn-secondary btn-sm"
+                disabled
+              >
+                &laquo; Sebelumnya
+              </button>
+              <button
+                id="btn-next-ketuntasan"
+                class="btn btn-secondary btn-sm"
+                disabled
+              >
+                Selanjutnya &raquo;
+              </button>
             </div>
           </div>
         </div>
@@ -639,59 +687,170 @@
 
       <div id="tab-latihan-spesial" style="display: none">
         <div class="question-card mb-20">
-          <h3 class="text-primary mb-15" style="margin-top: 0">Buat Latihan Spesial Baru</h3>
+          <h3 class="text-primary mb-15" style="margin-top: 0">
+            Buat Latihan Spesial Baru
+          </h3>
           <form id="form-latihan-spesial">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin-bottom: 15px;
+              "
+            >
               <div>
-                <label class="font-semibold text-sm mb-5" style="display: block;">Judul Latihan</label>
-                <input type="text" id="input-judul-spesial" class="input-standard" placeholder="Contoh: UH Eksponen & Logaritma" required />
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Judul Latihan</label
+                >
+                <input
+                  type="text"
+                  id="input-judul-spesial"
+                  class="input-standard"
+                  placeholder="Contoh: UH Eksponen & Logaritma"
+                  required
+                />
               </div>
               <div>
-                <label class="font-semibold text-sm mb-5" style="display: block;">Batas Waktu Pengerjaan (Menit)</label>
-                <input type="number" id="input-durasi-spesial" class="input-standard" placeholder="Contoh: 30" required />
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Batas Waktu Pengerjaan (Menit)</label
+                >
+                <input
+                  type="number"
+                  id="input-durasi-spesial"
+                  class="input-standard"
+                  placeholder="Contoh: 30"
+                  required
+                />
               </div>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin-bottom: 15px;
+              "
+            >
               <div>
-                <label class="font-semibold text-sm mb-5" style="display: block;">Waktu Mulai</label>
-                <input type="datetime-local" id="input-mulai-spesial" class="input-standard" required />
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Waktu Mulai</label
+                >
+                <input
+                  type="datetime-local"
+                  id="input-mulai-spesial"
+                  class="input-standard"
+                  required
+                />
               </div>
               <div>
-                <label class="font-semibold text-sm mb-5" style="display: block;">Waktu Selesai</label>
-                <input type="datetime-local" id="input-selesai-spesial" class="input-standard" required />
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Waktu Selesai</label
+                >
+                <input
+                  type="datetime-local"
+                  id="input-selesai-spesial"
+                  class="input-standard"
+                  required
+                />
               </div>
             </div>
             <div class="mb-15">
-              <label class="font-semibold text-sm mb-5" style="display: block;">Pilih Materi Utama</label>
-              <select id="select-materi-spesial" class="input-standard" style="cursor: pointer;" required>
+              <label class="font-semibold text-sm mb-5" style="display: block"
+                >Pilih Materi Utama</label
+              >
+              <select
+                id="select-materi-spesial"
+                class="input-standard"
+                style="cursor: pointer"
+                required
+              >
                 <option value="">-- Pilih Materi Utama --</option>
               </select>
             </div>
             <div class="mb-15">
-              <label class="font-semibold text-sm mb-5" style="display: block;">Pilih Sub-Materi (Bisa Lebih Dari Satu)</label>
-              <div id="wadah-checkbox-submateri" style="max-height: 150px; overflow-y: auto; border: 1px solid var(--border-color); padding: 10px; border-radius: 8px;">
+              <label class="font-semibold text-sm mb-5" style="display: block"
+                >Pilih Sub-Materi (Bisa Lebih Dari Satu)</label
+              >
+              <div
+                id="wadah-checkbox-submateri"
+                style="
+                  max-height: 150px;
+                  overflow-y: auto;
+                  border: 1px solid var(--border-color);
+                  padding: 10px;
+                  border-radius: 8px;
+                "
+              >
                 <!-- Akan diisi dengan JS -->
-                <p class="text-muted text-sm">Pilih materi utama terlebih dahulu...</p>
+                <p class="text-muted text-sm">
+                  Pilih materi utama terlebih dahulu...
+                </p>
               </div>
             </div>
-            <button type="submit" id="btn-submit-spesial" class="btn btn-primary w-100">Simpan & Buat Latihan Spesial</button>
+            <button
+              type="submit"
+              id="btn-submit-spesial"
+              class="btn btn-primary w-100"
+            >
+              Simpan & Buat Latihan Spesial
+            </button>
           </form>
         </div>
 
         <h3 class="text-primary mb-15">Daftar Latihan Spesial</h3>
-        <div id="wadah-daftar-spesial" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
-          <p class="text-muted text-sm" style="padding: 10px;">Belum ada Latihan Spesial yang dibuat.</p>
+        <div
+          id="wadah-daftar-spesial"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+          "
+        >
+          <p class="text-muted text-sm" style="padding: 10px">
+            Belum ada Latihan Spesial yang dibuat.
+          </p>
         </div>
       </div>
-
     </div>
 
     <!-- Modal Hasil Latihan Spesial -->
     <div id="modal-hasil-spesial" class="modal-overlay">
-      <div class="modal-content" style="max-width: 800px; text-align: left; max-height: 85vh; overflow-y: auto;">
-        <div class="flex-between mb-15" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
-          <h3 id="judul-modal-hasil-spesial" class="text-primary" style="margin: 0">Hasil Latihan Spesial</h3>
-          <button id="btn-tutup-hasil-spesial" class="text-danger" style="background: none; border: none; font-size: 1.8rem; cursor: pointer;">&times;</button>
+      <div
+        class="modal-content"
+        style="
+          max-width: 800px;
+          text-align: left;
+          max-height: 85vh;
+          overflow-y: auto;
+        "
+      >
+        <div
+          class="flex-between mb-15"
+          style="
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+          "
+        >
+          <h3
+            id="judul-modal-hasil-spesial"
+            class="text-primary"
+            style="margin: 0"
+          >
+            Hasil Latihan Spesial
+          </h3>
+          <button
+            id="btn-tutup-hasil-spesial"
+            class="text-danger"
+            style="
+              background: none;
+              border: none;
+              font-size: 1.8rem;
+              cursor: pointer;
+            "
+          >
+            &times;
+          </button>
         </div>
         <table class="admin-table" style="table-layout: fixed">
           <thead>
@@ -705,7 +864,13 @@
           </thead>
           <tbody id="tabel-hasil-spesial">
             <tr>
-              <td colspan="5" class="text-center text-muted" style="padding: 20px">Belum ada siswa yang mengerjakan.</td>
+              <td
+                colspan="5"
+                class="text-center text-muted"
+                style="padding: 20px"
+              >
+                Belum ada siswa yang mengerjakan.
+              </td>
             </tr>
           </tbody>
         </table>
