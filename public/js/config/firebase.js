@@ -14,5 +14,8 @@ const firebaseConfig = {
 
 // Inisialisasi Firebase
 export const app = initializeApp(firebaseConfig);
+
+// Gunakan getFirestore biasa (Memory Cache) untuk menghindari bug IndexedDB di Safari yang menyebabkan aplikasi hang/freeze
 export const db = getFirestore(app);
+
 export const auth = getAuth(app);

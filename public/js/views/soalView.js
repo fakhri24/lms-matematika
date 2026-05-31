@@ -2,6 +2,8 @@
 
 import { MODE_LATIHAN } from "../utils/constants.js";
 
+let _renderCount = 0;
+
 export function renderKartuSoal(
   el,
   soal,
@@ -10,6 +12,7 @@ export function renderKartuSoal(
   nomorTampil,
   totalSoal,
 ) {
+  _renderCount++;
   const daftarPilihan = soal.opsi || soal.pilihan_jawaban || [];
   const isKunciPilihan =
     modeLatihan === MODE_LATIHAN.FORMATIF && dataMemori.status_selesai
@@ -72,6 +75,15 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnCekJawaban.style.display = "inline-block";
     el.btnLanjutFormatif.style.display = "none";
     el.wadahFeedback.style.display = "block";
+    if (dataMemori.pesan_aktif) {
+      const wrapper = document.getElementById("soal-card-wrapper");
+      const renderAtCall = _renderCount;
+      if (wrapper)
+        setTimeout(() => {
+          if (_renderCount === renderAtCall)
+            wrapper.scrollTo({ top: wrapper.scrollHeight, behavior: "smooth" });
+        }, 50);
+    }
 
     if (dataMemori.pesan_aktif) {
       el.pesanFeedback.style.display = "block";
@@ -121,6 +133,13 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnCekJawaban.style.display = "none";
     el.btnLihatBahas.style.display = "none";
     el.wadahFeedback.style.display = "block";
+    const wrapper = document.getElementById("soal-card-wrapper");
+    const renderAtCall = _renderCount;
+    if (wrapper)
+      setTimeout(() => {
+        if (_renderCount === renderAtCall)
+          wrapper.scrollTo({ top: wrapper.scrollHeight, behavior: "smooth" });
+      }, 50);
     el.pesanFeedback.style.display = "block";
     el.pesanFeedback.innerText = dataMemori.pesan_aktif;
     el.pesanFeedback.className += " box-success"; // State Benar

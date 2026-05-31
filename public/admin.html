@@ -34,6 +34,16 @@
       .admin-table tr:hover {
         background-color: #f8fafc;
       }
+      .truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dummy-row td {
+        color: transparent !important;
+        pointer-events: none;
+        border-bottom: 1px solid var(--border-color);
+      }
       .badge-nilai {
         padding: 4px 10px;
         border-radius: 20px;
@@ -97,6 +107,7 @@
             <option value="riwayat">Riwayat Lengkap</option>
             <option value="rekap">Rekap per Siswa</option>
             <option value="soal">Analisis Soal</option>
+            <option value="ketuntasan">Ketuntasan Materi</option>
           </select>
           <button id="btn-ekspor" class="btn btn-success btn-sm">
             📥 Unduh CSV
@@ -146,6 +157,9 @@
         <button id="btn-tab-riwayat" class="btn btn-primary">
           📋 Riwayat Latihan
         </button>
+        <button id="btn-tab-status" class="btn btn-secondary">
+          🟢 Status Siswa
+        </button>
         <button id="btn-tab-analisis" class="btn btn-secondary">
           📈 Analisis Performa
         </button>
@@ -155,10 +169,23 @@
         <button id="btn-tab-bank-soal" class="btn btn-secondary">
           📚 Bank Soal
         </button>
+        <button id="btn-tab-ketuntasan" class="btn btn-secondary">
+          🎓 Ketuntasan Materi
+        </button>
+        <button id="btn-tab-latihan-spesial" class="btn btn-secondary">
+          ⭐ Latihan Spesial
+        </button>
       </div>
 
       <div id="tab-riwayat">
-        <div class="mb-15" style="text-align: right">
+        <div class="mb-15" style="display: flex; justify-content: flex-end; gap: 10px; align-items: center;">
+          <select
+            id="filter-kelas-riwayat"
+            class="input-standard btn-sm"
+            style="width: auto; cursor: pointer"
+          >
+            <option value="">Semua Kelas</option>
+          </select>
           <input
             type="text"
             id="search-siswa"
@@ -203,6 +230,44 @@
               <button id="btn-next" class="btn btn-secondary btn-sm" disabled>
                 Selanjutnya &raquo;
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-status" style="display: none">
+        <div class="mb-15" style="text-align: right">
+          <select
+            id="filter-kelas-status"
+            class="input-standard btn-sm"
+            style="width: auto; cursor: pointer"
+          >
+            <option value="">Semua Kelas</option>
+          </select>
+        </div>
+        <div class="question-card" style="padding: 0; overflow: hidden">
+          <table class="admin-table" style="table-layout: fixed">
+            <thead>
+              <tr>
+                <th style="width: 10%">No</th>
+                <th style="width: 40%">Nama Siswa</th>
+                <th style="text-align: center; width: 20%">Aktif</th>
+                <th style="text-align: center; width: 30%">Durasi Latihan Terakhir</th>
+              </tr>
+            </thead>
+            <tbody id="tabel-status">
+              <tr>
+                <td colspan="4" class="text-center text-muted" style="padding: 30px">
+                  Menghubungkan ke database...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination-container flex-between">
+            <span id="info-halaman-status" class="text-sm text-muted">Halaman 1 dari 1</span>
+            <div class="flex-center gap-10">
+              <button id="btn-prev-status" class="btn btn-secondary btn-sm" disabled>&laquo; Sebelumnya</button>
+              <button id="btn-next-status" class="btn btn-secondary btn-sm" disabled>Selanjutnya &raquo;</button>
             </div>
           </div>
         </div>
@@ -424,6 +489,64 @@
         </div>
       </div>
 
+      <div id="tab-ketuntasan" style="display: none">
+        <div class="question-card">
+          <div class="flex-between mb-20 flex-wrap gap-15">
+            <h3 class="text-primary" style="margin: 0">
+              Pantau Ketuntasan Materi Siswa
+            </h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <select
+                id="filter-kelas-ketuntasan"
+                class="input-standard btn-sm"
+                style="width: auto; cursor: pointer"
+              >
+                <option value="">Semua Kelas</option>
+              </select>
+              <select
+                id="filter-materi-ketuntasan"
+                class="input-standard btn-sm"
+                style="width: auto; cursor: pointer"
+              >
+                <option value="">-- Pilih Materi Utama --</option>
+              </select>
+              <select
+                id="filter-submateri-ketuntasan"
+                class="input-standard btn-sm"
+                style="width: auto; cursor: pointer"
+              >
+                <option value="">-- Pilih Sub-Materi --</option>
+              </select>
+            </div>
+          </div>
+          <table class="admin-table" style="table-layout: fixed">
+            <thead>
+              <tr>
+                <th style="width: 5%">No</th>
+                <th style="width: 25%">Nama</th>
+                <th style="width: 35%">Materi Utama - Sub Materi</th>
+                <th class="text-center" style="width: 15%">Selesai Formatif</th>
+                <th class="text-center" style="width: 20%">Selesai Sumatif dan &gt;= 80</th>
+              </tr>
+            </thead>
+            <tbody id="tabel-ketuntasan">
+              <tr>
+                <td colspan="5" class="text-center text-muted" style="padding: 30px">
+                  Menghubungkan ke database...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination-container flex-between">
+            <span id="info-halaman-ketuntasan" class="text-sm text-muted">Halaman 1 dari 1</span>
+            <div class="flex-center gap-10">
+              <button id="btn-prev-ketuntasan" class="btn btn-secondary btn-sm" disabled>&laquo; Sebelumnya</button>
+              <button id="btn-next-ketuntasan" class="btn btn-secondary btn-sm" disabled>Selanjutnya &raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="tab-bank-soal" style="display: none">
         <div class="flex-between mb-15 flex-wrap gap-15">
           <button
@@ -467,15 +590,15 @@
         </div>
 
         <div class="question-card" style="padding: 0; overflow: hidden">
-          <table class="admin-table">
+          <table class="admin-table" style="table-layout: fixed">
             <thead>
               <tr>
-                <th>Sub-Materi</th>
-                <th>Prasyarat</th>
-                <th>Cuplikan Soal</th>
-                <th>Kunci Jawaban</th>
-                <th class="text-center">Pembahasan</th>
-                <th class="text-center">Aksi</th>
+                <th style="width: 18%">Sub-Materi</th>
+                <th style="width: 18%">Prasyarat</th>
+                <th style="width: 29%">Cuplikan Soal</th>
+                <th style="width: 10%">Kunci Jawaban</th>
+                <th class="text-center" style="width: 10%">Pembahasan</th>
+                <th class="text-center" style="width: 15%">Aksi</th>
               </tr>
             </thead>
             <tbody id="tabel-bank-soal">
@@ -512,6 +635,80 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div id="tab-latihan-spesial" style="display: none">
+        <div class="question-card mb-20">
+          <h3 class="text-primary mb-15" style="margin-top: 0">Buat Latihan Spesial Baru</h3>
+          <form id="form-latihan-spesial">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block;">Judul Latihan</label>
+                <input type="text" id="input-judul-spesial" class="input-standard" placeholder="Contoh: UH Eksponen & Logaritma" required />
+              </div>
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block;">Batas Waktu Pengerjaan (Menit)</label>
+                <input type="number" id="input-durasi-spesial" class="input-standard" placeholder="Contoh: 30" required />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block;">Waktu Mulai</label>
+                <input type="datetime-local" id="input-mulai-spesial" class="input-standard" required />
+              </div>
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block;">Waktu Selesai</label>
+                <input type="datetime-local" id="input-selesai-spesial" class="input-standard" required />
+              </div>
+            </div>
+            <div class="mb-15">
+              <label class="font-semibold text-sm mb-5" style="display: block;">Pilih Materi Utama</label>
+              <select id="select-materi-spesial" class="input-standard" style="cursor: pointer;" required>
+                <option value="">-- Pilih Materi Utama --</option>
+              </select>
+            </div>
+            <div class="mb-15">
+              <label class="font-semibold text-sm mb-5" style="display: block;">Pilih Sub-Materi (Bisa Lebih Dari Satu)</label>
+              <div id="wadah-checkbox-submateri" style="max-height: 150px; overflow-y: auto; border: 1px solid var(--border-color); padding: 10px; border-radius: 8px;">
+                <!-- Akan diisi dengan JS -->
+                <p class="text-muted text-sm">Pilih materi utama terlebih dahulu...</p>
+              </div>
+            </div>
+            <button type="submit" id="btn-submit-spesial" class="btn btn-primary w-100">Simpan & Buat Latihan Spesial</button>
+          </form>
+        </div>
+
+        <h3 class="text-primary mb-15">Daftar Latihan Spesial</h3>
+        <div id="wadah-daftar-spesial" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+          <p class="text-muted text-sm" style="padding: 10px;">Belum ada Latihan Spesial yang dibuat.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modal Hasil Latihan Spesial -->
+    <div id="modal-hasil-spesial" class="modal-overlay">
+      <div class="modal-content" style="max-width: 800px; text-align: left; max-height: 85vh; overflow-y: auto;">
+        <div class="flex-between mb-15" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+          <h3 id="judul-modal-hasil-spesial" class="text-primary" style="margin: 0">Hasil Latihan Spesial</h3>
+          <button id="btn-tutup-hasil-spesial" class="text-danger" style="background: none; border: none; font-size: 1.8rem; cursor: pointer;">&times;</button>
+        </div>
+        <table class="admin-table" style="table-layout: fixed">
+          <thead>
+            <tr>
+              <th style="width: 5%">No</th>
+              <th style="width: 35%">Nama Siswa</th>
+              <th style="width: 20%" class="text-center">Waktu Pengerjaan</th>
+              <th style="width: 20%" class="text-center">Durasi</th>
+              <th style="width: 20%" class="text-center">Nilai</th>
+            </tr>
+          </thead>
+          <tbody id="tabel-hasil-spesial">
+            <tr>
+              <td colspan="5" class="text-center text-muted" style="padding: 20px">Belum ada siswa yang mengerjakan.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -838,7 +1035,7 @@
         <div
           style="
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 10px;
             margin-bottom: 15px;
             text-align: center;
@@ -912,6 +1109,57 @@
               0m
             </div>
           </div>
+          <div
+            style="
+              background: #f8fafc;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid var(--border-color);
+            "
+          >
+            <p class="text-xs text-muted" style="margin: 0">Login</p>
+            <div
+              id="admin-detail-waktu-login"
+              class="font-bold"
+              style="font-size: 1.1rem; color: #14b8a6"
+            >
+              -
+            </div>
+          </div>
+          <div
+            style="
+              background: #f8fafc;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid var(--border-color);
+            "
+          >
+            <p class="text-xs text-muted" style="margin: 0">Durasi Latihan</p>
+            <div
+              id="admin-detail-durasi-login"
+              class="font-bold"
+              style="font-size: 1.1rem; color: #14b8a6"
+            >
+              -
+            </div>
+          </div>
+          <div
+            style="
+              background: #f8fafc;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid var(--border-color);
+            "
+          >
+            <p class="text-xs text-muted" style="margin: 0">Logout</p>
+            <div
+              id="admin-detail-waktu-logout"
+              class="font-bold"
+              style="font-size: 1.1rem; color: #14b8a6"
+            >
+              -
+            </div>
+          </div>
         </div>
 
         <div
@@ -925,15 +1173,15 @@
           "
         >
           <div style="overflow-y: auto; max-height: 60vh">
-            <table class="admin-table">
+            <table class="admin-table" style="table-layout: fixed">
               <thead style="position: sticky; top: 0; z-index: 1">
                 <tr>
-                  <th>Topik / Sub-Materi</th>
-                  <th>Mode Latihan</th>
-                  <th class="text-center">Soal</th>
-                  <th>Waktu Submit</th>
-                  <th>Durasi</th>
-                  <th class="text-center">Skor</th>
+                  <th style="width: 30%">Topik / Sub-Materi</th>
+                  <th style="width: 15%">Mode Latihan</th>
+                  <th class="text-center" style="width: 10%">Soal</th>
+                  <th style="width: 20%">Waktu Submit</th>
+                  <th style="width: 15%">Durasi</th>
+                  <th class="text-center" style="width: 10%">Skor</th>
                 </tr>
               </thead>
               <tbody id="tabel-detail-siswa"></tbody>

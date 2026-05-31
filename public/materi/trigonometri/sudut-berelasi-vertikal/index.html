@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eksplorasi Sudut Berelasi Vertikal - Albago LMS</title>
+    <link rel="stylesheet" href="../../../css/style.css?v=2" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container" style="max-width: 960px">
+      <header
+        class="quiz-header flex-between mb-25 flex-wrap gap-15"
+        style="align-items: flex-start"
+      >
+        <div class="text-left">
+          <h1 class="text-primary mb-5" style="font-size: 1.8rem">
+            Sudut Berelasi (Vertikal)
+          </h1>
+          <p id="status-koneksi" class="status-text text-sm">
+            Mode Eksplorasi (Belajar)
+          </p>
+        </div>
+
+        <div
+          class="flex-center gap-10"
+          style="flex-direction: column; align-items: flex-end"
+        >
+          <button
+            id="btn-kembali-dasbor"
+            class="btn btn-sm font-semibold"
+            style="
+              background-color: #fee2e2;
+              color: #ef4444;
+              border: 1px solid #fca5a5;
+              border-radius: 10px;
+            "
+          >
+            Kembali
+          </button>
+
+          <div
+            id="tampilan-timer"
+            class="font-bold text-primary"
+            style="
+              background: white;
+              padding: 6px 16px;
+              border-radius: 20px;
+              border: 2px solid var(--primary-color);
+              font-size: 1.1rem;
+              display: none;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            "
+          >
+            ⏱️ 00:00
+          </div>
+        </div>
+      </header>
+
+      <main class="exploration-layout">
+        <!-- Sisi Kiri: Visualisasi Interaktif -->
+        <div class="visual-section" id="visual-section">
+          <h2 class="mode-title">Relasi dengan Sumbu Y</h2>
+          <p class="text-center text-sm text-muted mb-15">
+            Geser sudut $\alpha$ (alpha) dan lihat perbandingannya dengan
+            kuadran lain. Garis vertikal (sumbu Y) sebagai acuan ($90^\circ$ dan
+            $270^\circ$).
+          </p>
+
+          <div class="canvas-container">
+            <canvas id="unit-circle" width="300" height="300"></canvas>
+          </div>
+
+          <div class="controls-container mt-15 text-center">
+            <div class="mb-10">
+              <label for="alpha-slider" class="font-semibold text-sm"
+                >Sudut $\alpha$ (0° - 90°):
+                <span id="alpha-value" class="text-primary font-bold"
+                  >30°</span
+                ></label
+              >
+              <input
+                type="range"
+                id="alpha-slider"
+                min="0"
+                max="90"
+                value="30"
+                class="w-100 mt-5"
+              />
+            </div>
+
+            <div class="relasi-options mt-10">
+              <p class="font-semibold text-sm mb-5 text-left">Pilih Relasi:</p>
+              <div
+                class="radio-group"
+                style="
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                "
+              >
+                <label class="radio-label">
+                  <input type="radio" name="relasi" value="90-alpha" checked />
+                  $90^\circ - \alpha$ (K-I)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="relasi" value="90+alpha" />
+                  $90^\circ + \alpha$ (K-II)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="relasi" value="270-alpha" />
+                  $270^\circ - \alpha$ (K-III)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="relasi" value="270+alpha" />
+                  $270^\circ + \alpha$ (K-IV)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="penjelasan-relasi"
+            class="info-box mt-15 text-sm"
+            style="background: #f8fafc; border: 1px solid #e2e8f0"
+          >
+            Pilih relasi untuk melihat perbandingan nilainya.
+          </div>
+
+          <div class="text-center mt-20" id="wadah-mulai-terbimbing">
+            <button
+              id="btn-mulai-terbimbing"
+              class="btn btn-primary"
+              style="width: 100%; padding: 12px; font-size: 1.1rem"
+            >
+              Masuk ke Latihan Terbimbing &raquo;
+            </button>
+            <p class="text-sm text-muted mt-10">
+              Uji pemahamanmu dengan bantuan visual ini.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sisi Kanan: Latihan Terbimbing (Disembunyikan pada awalnya) -->
+        <div class="quiz-section" id="quiz-section">
+          <div
+            style="
+              background: white;
+              padding: 20px;
+              border-radius: 16px;
+              border: 2px solid var(--primary-color);
+            "
+          >
+            <div class="flex-between mb-15">
+              <h2 class="text-primary" style="margin: 0; font-size: 1.3rem">
+                Latihan Terbimbing
+              </h2>
+              <span id="teks-halaman" class="font-bold text-muted">1 / ?</span>
+            </div>
+
+            <div id="wadah-soal"></div>
+
+            <div
+              id="wadah-feedback-formatif"
+              class="mb-20"
+              style="display: none"
+            >
+              <div
+                id="pesan-feedback"
+                class="text-center font-bold mb-15"
+                style="padding: 15px; border-radius: 8px; font-size: 1.1rem"
+              ></div>
+
+              <div
+                id="area-clue"
+                class="info-box box-warning"
+                style="display: none"
+              >
+                <p class="info-box-title">💡 PETUNJUK (CLUE):</p>
+                <div id="teks-clue"></div>
+              </div>
+
+              <div
+                id="area-pembahasan"
+                class="info-box box-primary"
+                style="display: none"
+              >
+                <p class="info-box-title">📖 PEMBAHASAN:</p>
+                <div id="teks-pembahasan"></div>
+              </div>
+            </div>
+
+            <div
+              id="navigasi-soal"
+              class="nav-container flex-center gap-15 flex-wrap"
+              style="display: none"
+            >
+              <button
+                id="btn-cek-jawaban"
+                class="btn btn-primary"
+                style="background-color: #f59e0b"
+              >
+                Cek Jawaban
+              </button>
+              <button
+                id="btn-lihat-bahas"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Nyerah (Lihat Pembahasan)
+              </button>
+              <button
+                id="btn-lanjut-formatif"
+                class="btn btn-primary"
+                style="display: none"
+              >
+                Lanjut Soal Berikutnya &raquo;
+              </button>
+              <button
+                id="btn-selesai"
+                class="btn btn-success"
+                style="display: none"
+              >
+                Selesai Kerjakan
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Hasil Formatif -->
+    <div id="modal-hasil" class="modal-overlay">
+      <div class="modal-content" style="max-width: 500px">
+        <p>Latihan Terbimbing Selesai!</p>
+        <h2 id="teks-apresiasi" class="text-primary">Hebat!</h2>
+
+        <div id="badge-container" style="display: none">
+          <div class="achievement-badge" id="teks-gelar">
+            Master Sudut Berelasi
+          </div>
+        </div>
+
+        <div class="skor-besar text-main" id="skor-akhir">0</div>
+        <p class="detail-hasil text-muted mb-20" id="detail-hasil">
+          Kamu menjawab benar 0 dari 0 soal.
+        </p>
+
+        <div
+          style="
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+          "
+        >
+          <h3 class="text-main mb-10" style="font-size: 1.1rem">
+            Tantangan Selanjutnya:
+          </h3>
+          <p class="text-sm text-muted mb-15">
+            Masuk ke <b>Mode Sumatif</b>. Kamu akan diuji pemahaman relasi sudut
+            tanpa bantuan visual.
+          </p>
+          <button
+            id="btn-lanjut-sumatif"
+            class="btn btn-primary w-100 mb-10"
+            style="font-size: 1.1rem; padding: 12px"
+          >
+            ⚔️ Mulai Tantangan Sumatif
+          </button>
+          <button id="btn-kembali-modal-hasil" class="btn btn-secondary w-100">
+            Nanti Saja (Kembali ke Dashboard)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Idle -->
+    <div
+      id="modal-idle"
+      class="modal-overlay"
+      style="z-index: 9999; background-color: rgba(0, 0, 0, 0.85)"
+    >
+      <div
+        class="modal-content"
+        style="background: transparent; box-shadow: none; color: white"
+      >
+        <h2 class="mb-15" style="font-size: 1.5rem; color: white">
+          Zzz... Kamu masih di sana?
+        </h2>
+        <p class="text-center mb-25" style="color: #cbd5e1">
+          Waktu pengerjaan dijeda sementara karena tidak ada aktivitas.
+        </p>
+        <button
+          id="btn-lanjut-idle"
+          class="btn btn-primary"
+          style="
+            font-size: 1.1rem;
+            padding: 12px 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          "
+        >
+          Lanjut Kerjakan
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast UI -->
+    <div
+      id="toast-stuck"
+      style="
+        position: fixed;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1e293b;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        transition: bottom 0.5s ease;
+        z-index: 9998;
+        font-size: 0.9rem;
+        max-width: 90%;
+        text-align: center;
+        border-left: 4px solid #f59e0b;
+      "
+    ></div>
+
+    <script type="module" src="./script.js?v=1"></script>
+  </body>
+</html>

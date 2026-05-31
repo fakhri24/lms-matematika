@@ -11,10 +11,10 @@ export function createRowBankSoalHTML(
   statusPembahasan,
 ) {
   return `
-    <td class="text-sm font-semibold" style="vertical-align: middle;">${badgeLevel} ${soal.sub_materi || "Umum"}</td>
-    <td style="vertical-align: middle;">${prasyaratHTML}</td>
-    <td class="text-sm text-muted" style="vertical-align: middle;">${cuplikan}</td>
-    <td class="text-sm font-bold text-success" style="vertical-align: middle;">${soal.jawaban_benar}</td>
+    <td class="text-sm font-semibold truncate" style="max-width: 150px; vertical-align: middle;">${badgeLevel} ${soal.sub_materi || "Umum"}</td>
+    <td style="width: 180px; min-width: 180px; max-width: 180px; vertical-align: middle;">${prasyaratHTML}</td>
+    <td class="text-sm text-muted truncate" style="max-width: 250px; vertical-align: middle;">${cuplikan}</td>
+    <td class="text-sm font-bold text-success truncate" style="max-width: 150px; vertical-align: middle;" data-original-title="${soal.jawaban_benar}">${soal.jawaban_benar}</td>
     <td class="text-center" style="vertical-align: middle;">${statusPembahasan}</td>
     <td class="text-center" style="vertical-align: middle;">
       <div class="flex-center gap-5">

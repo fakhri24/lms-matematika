@@ -1,4 +1,3 @@
-// public/js/services/latihanService.js
 import { db } from "../config/firebase.js";
 import {
   collection,
@@ -23,11 +22,11 @@ export async function getMetadataSoal() {
 export async function getRiwayatLatihanSiswa(nis) {
   const q = query(
     collection(db, "hasil_latihan"),
-    where("nis_siswa", "==", nis),
-    orderBy("waktu_submit", "desc"),
+    where("nis_siswa", "==", nis)
   );
   const snap = await getDocs(q);
-  return snap.docs.map((docSnap) => docSnap.data());
+  const data = snap.docs.map((docSnap) => docSnap.data());
+  return data.sort((a, b) => new Date(b.waktu_submit) - new Date(a.waktu_submit));
 }
 
 export async function getSoalById(idSoal) {
@@ -107,25 +106,100 @@ export async function hapusDrafFormatifDB(docIdKustom) {
 export async function getRiwayatLatihanAsc(nis) {
   const q = query(
     collection(db, "hasil_latihan"),
-    where("nis_siswa", "==", nis),
-    orderBy("waktu_submit", "asc"),
+    where("nis_siswa", "==", nis)
   );
   const snap = await getDocs(q);
-  return snap.docs.map((docSnap) => docSnap.data());
+  const data = snap.docs.map((docSnap) => docSnap.data());
+  return data.sort((a, b) => new Date(a.waktu_submit) - new Date(b.waktu_submit));
 }
 
 export async function getRiwayatTerakhir(nis, limitAngka = 5) {
   const q = query(
     collection(db, "hasil_latihan"),
-    where("nis_siswa", "==", nis),
-    orderBy("waktu_submit", "desc"),
-    limit(limitAngka),
+    where("nis_siswa", "==", nis)
   );
   const snap = await getDocs(q);
-  return snap.docs.map((docSnap) => docSnap.data());
+  const data = snap.docs.map((docSnap) => docSnap.data());
+  return data
+    .sort((a, b) => new Date(b.waktu_submit) - new Date(a.waktu_submit))
+    .slice(0, limitAngka);
 }
 
 export async function getSemuaHasilLatihanGlobal() {
   const snap = await getDocs(collection(db, "hasil_latihan"));
   return snap.docs.map((docSnap) => docSnap.data());
+}
+
+export async function getLatihanSpesialAktif() {
+  const q = query(
+    collection(db, "latihan_spesial"),
+    orderBy("created_at", "desc"),
+    limit(5)
+  );
+  const snap = await getDocs(q);
+  const now = new Date();
+  
+  // Cari yang waktu_mulai <= now <= waktu_selesai
+  for (const docSnap of snap.docs) {
+    const data = docSnap.data();
+    const start = new Date(data.waktu_mulai);
+    const end = new Date(data.waktu_selesai);
+    if (now >= start && now <= end) {
+      return { id: docSnap.id, ...data };
+    }
+  }
+  return null;
+}
+
+// FUNGSI BARU UNTUK ATURAN KUADRAN (3 TERCEPAT PERCOBAAN PERTAMA)
+export async function cekTop3Tercepat(subMateri, nisUser) {
+  const q = query(
+    collection(db, "hasil_latihan"),
+    where("sub_materi", "==", subMateri),
+    where("mode_latihan", "==", "tes_normal")
+  );
+  const snap = await getDocs(q);
+  const semuaData = snap.docs.map(doc => doc.data());
+  
+  // Urutkan berdasarkan waktu_submit (paling lama ke baru)
+  semuaData.sort((a, b) => new Date(a.waktu_submit) - new Date(b.waktu_submit));
+  
+  // Ambil HANYA percobaan pertama setiap siswa
+  const percobaanPertamaMap = new Map();
+  semuaData.forEach(data => {
+    if (!percobaanPertamaMap.has(data.nis_siswa)) {
+      percobaanPertamaMap.set(data.nis_siswa, data);
+    }
+  });
+  
+  // Jika percobaan pertama user tidak ada, berarti ini bukan percobaan pertamanya atau belum ada data
+  if (!percobaanPertamaMap.has(nisUser)) return false;
+  
+  // Ambil semua percobaan pertama, lalu urutkan berdasarkan durasi (tercepat ke terlama)
+  const daftarPertama = Array.from(percobaanPertamaMap.values());
+  daftarPertama.sort((a, b) => {
+    if (a.durasi_detik === b.durasi_detik) {
+      // Jika durasi sama, yang submit duluan yang menang
+      return new Date(a.waktu_submit) - new Date(b.waktu_submit);
+    }
+    return a.durasi_detik - b.durasi_detik;
+  });
+  
+  // Ambil Top 3
+  const top3 = daftarPertama.slice(0, 3);
+  
+  // Cek apakah nisUser ada di dalam top 3 ini
+  const isMasukTop3 = top3.some(user => user.nis_siswa === nisUser);
+  
+  // Cek apakah percobaan saat ini (yang terbaru) adalah percobaan pertamanya
+  // dengan membandingkan waktu submit
+  const percobaanTerbaruUser = semuaData.filter(d => d.nis_siswa === nisUser).pop();
+  const percobaanPertamaUser = percobaanPertamaMap.get(nisUser);
+  
+  // Jika percobaan terbaru BUKAN percobaan pertama, kembalikan false
+  if (percobaanTerbaruUser.waktu_submit !== percobaanPertamaUser.waktu_submit) {
+    return false;
+  }
+
+  return isMasukTop3;
 }

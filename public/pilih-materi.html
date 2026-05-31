@@ -41,10 +41,45 @@
         color: var(--primary-color);
         border-radius: 20px;
       }
+      .mode-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+      .mode-card {
+        padding: 22px 16px;
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        cursor: pointer;
+        background: white;
+        text-align: center;
+        transition: 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .mode-card:hover {
+        border-color: var(--primary-color);
+        background: #f8f9ff;
+      }
+      .mode-card input[type="radio"] {
+        display: none;
+      }
+      .mode-emoji {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      @media (max-width: 640px) {
+        .mode-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container" style="max-width: 500px; margin-top: 50px">
+    <div class="container" style="max-width: 960px; margin: 40px auto">
       <header
         class="flex-between mb-25"
         style="
@@ -67,147 +102,54 @@
         </button>
       </header>
 
-      <div
+      <p
+        class="font-semibold text-primary mb-10"
         style="
-          background: white;
-          padding: 20px;
-          border-radius: 12px;
-          margin-bottom: 20px;
-          border: 1px solid var(--border-color);
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         "
       >
-        <label class="font-semibold text-primary mb-15" style="display: block"
-          >⚙️ Pilih Mode Latihan:</label
+        ⚙️ Pilih Mode Latihan
+      </p>
+      <div class="mode-grid">
+        <label
+          id="label-formatif"
+          class="mode-card"
+          style="border-color: var(--primary-color); background: #eef2ff"
         >
+          <input
+            type="radio"
+            name="mode_latihan"
+            value="latihan_formatif"
+            checked
+          />
+          <span class="mode-emoji">🛠️</span>
+          <strong class="text-primary" style="font-size: 1rem">Formatif</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Konsep & eksplorasi dengan <i>clue</i> dan pembahasan. Cocok untuk
+            pemanasan.
+          </span>
+        </label>
 
-        <div style="display: flex; flex-direction: column; gap: 12px">
-          <label
-            id="label-formatif"
-            style="
-              padding: 15px;
-              border: 2px solid var(--primary-color);
-              border-radius: 8px;
-              cursor: pointer;
-              background: #eef2ff;
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              transition: 0.2s;
-            "
-          >
-            <input
-              type="radio"
-              name="mode_latihan"
-              value="latihan_formatif"
-              checked
-              style="transform: scale(1.3); margin: 0; cursor: pointer"
-            />
-            <div>
-              <strong
-                class="text-primary"
-                style="display: block; font-size: 1.05rem"
-                >Latihan Formatif 🛠️</strong
-              >
-              <span
-                class="text-sm"
-                style="
-                  color: #64748b;
-                  line-height: 1.4;
-                  display: block;
-                  margin-top: 2px;
-                "
-              >
-                Fokus pada penguasaan konsep dasar. Tersedia <i>clue</i> &
-                pembahasan jika kamu melakukan kesalahan. Sangat cocok sebagai
-                pemanasan sebelum menantang ujian sesungguhnya!
-              </span>
-            </div>
-          </label>
+        <label id="label-normal" class="mode-card">
+          <input type="radio" name="mode_latihan" value="tes_normal" />
+          <span class="mode-emoji">🎯</span>
+          <strong style="font-size: 1rem">Sumatif Normal</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Soal terstruktur tanpa bantuan. Raih &ge;80 untuk masuk
+            <i>Wall of Mastery</i>.
+          </span>
+        </label>
 
-          <label
-            id="label-normal"
-            style="
-              padding: 15px;
-              border: 2px solid var(--border-color);
-              border-radius: 8px;
-              cursor: pointer;
-              background: white;
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              transition: 0.2s;
-            "
-          >
-            <input
-              type="radio"
-              name="mode_latihan"
-              value="tes_normal"
-              style="transform: scale(1.3); margin: 0; cursor: pointer"
-            />
-            <div>
-              <strong
-                class="text-main"
-                style="display: block; font-size: 1.05rem"
-                >Latihan Sumatif (Normal) 🎯</strong
-              >
-              <span
-                class="text-sm"
-                style="
-                  color: #64748b;
-                  line-height: 1.4;
-                  display: block;
-                  margin-top: 2px;
-                "
-              >
-                Evaluasi murni dengan urutan soal terstruktur tanpa bantuan. Uji
-                ketangguhanmu dan raih skor > 85 untuk langsung mengukir namamu
-                di <i>Wall of Mastery</i>!
-              </span>
-            </div>
-          </label>
-
-          <label
-            id="label-acak"
-            style="
-              padding: 15px;
-              border: 2px solid var(--border-color);
-              border-radius: 8px;
-              cursor: pointer;
-              background: white;
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              transition: 0.2s;
-            "
-          >
-            <input
-              type="radio"
-              name="mode_latihan"
-              value="tes_acak"
-              style="transform: scale(1.3); margin: 0; cursor: pointer"
-            />
-            <div>
-              <strong
-                class="text-main"
-                style="display: block; font-size: 1.05rem"
-                >Latihan Sumatif (Acak) 🎲</strong
-              >
-              <span
-                class="text-sm"
-                style="
-                  color: #64748b;
-                  line-height: 1.4;
-                  display: block;
-                  margin-top: 2px;
-                "
-              >
-                Tantangan sesungguhnya dengan urutan soal yang diacak penuh.
-                Buktikan penguasaan materimu secara acak dan rebut gelar
-                prestisius di <i>Wall of Mastery</i>!
-              </span>
-            </div>
-          </label>
-        </div>
+        <label id="label-acak" class="mode-card">
+          <input type="radio" name="mode_latihan" value="tes_acak" />
+          <span class="mode-emoji">🎲</span>
+          <strong style="font-size: 1rem">Sumatif Acak</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Urutan soal diacak penuh. Buktikan penguasaan materimu!
+          </span>
+        </label>
       </div>
 
       <div
@@ -223,6 +165,6 @@
       </div>
     </div>
 
-    <script type="module" src="js/pages/pilihMateri.js"></script>
+    <script type="module" src="js/pages/pilihMateri.js?v=2"></script>
   </body>
 </html>

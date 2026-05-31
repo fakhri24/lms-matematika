@@ -88,3 +88,11 @@ export async function upsertSoalImportDB(id, dataSoal) {
     : doc(collection(db, "bank_soal"));
   await setDoc(refDokumen, dataSoal);
 }
+
+/**
+ * Menarik profil seluruh siswa dari koleksi data_siswa
+ */
+export async function getAllProfilSiswa() {
+  const snap = await getDocs(collection(db, "data_siswa"));
+  return snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+}

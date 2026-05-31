@@ -1,6 +1,3 @@
-// public/js/utils/bugReporter.js
-
-// ⚠️ GANTI DENGAN URL WEBHOOK DISCORD MILIKMU
 const DISCORD_WEBHOOK_URL =
   "https://discord.com/api/webhooks/1505175434847846440/xTSCppeKAn9r2D9kJyh40QaPrWE3Lu30Z7XbiE2YPm0nXNCBUk-V0hwbxENzB0VnMwQJ";
 
@@ -10,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalLaporan = document.getElementById("modal-laporan");
   const btnKirim = document.getElementById("btn-kirim-laporan");
 
+  // Jika tidak ada tombol bug/saran, maka skip kode di bawah
   if (!btnBuka || !modalLaporan) return;
 
   btnBuka.addEventListener("click", () => {

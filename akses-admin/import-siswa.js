@@ -36,6 +36,7 @@ async function importDataSiswa() {
         .set(
           {
             nama_lengkap: siswa.nama,
+            kelas: siswa.kelas || "Tanpa Kelas",
             wajib_ganti_password: true, // INI KUNCI UTAMANYA!
             gelar_aktif: "Petarung Baru",
             gelar_terbuka: ["Petarung Baru"],
@@ -46,8 +47,8 @@ async function importDataSiswa() {
       console.log(`[+] Berhasil import: ${siswa.nama} (${nisStr})`);
       sukses++;
     } catch (error) {
-      // Jika email sudah ada, biasanya karena data tertimpa/import ulang
-      if (error.code === "auth/email-already-exists") {
+      // Jika email atau uid sudah ada, biasanya karena data tertimpa/import ulang
+      if (error.code === "auth/email-already-exists" || error.code === "auth/uid-already-exists") {
         console.log(
           `[!] Akun ${nisStr} sudah ada di Auth. Memperbarui data Firestore...`,
         );
@@ -55,6 +56,7 @@ async function importDataSiswa() {
         await db.collection("data_siswa").doc(nisStr).set(
           {
             nama_lengkap: siswa.nama,
+            kelas: siswa.kelas || "Tanpa Kelas",
           },
           { merge: true },
         );

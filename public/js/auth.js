@@ -1,4 +1,3 @@
-// HAPUS import signInWithEmailAndPassword
 import { db } from "./config/firebase.js";
 import {
   doc,

@@ -31,6 +31,48 @@ export function siapkanDraftSoal(semuaSoalValid, modeLatihan) {
     return drafFinal;
   }
 
+  if (modeLatihan === MODE_LATIHAN.SPESIAL) {
+    // Spesial: 1 Mudah, 3 Sedang, 1 Sulit PER sub-materi
+    // Kita asumsikan `semuaSoalValid` berisi soal dari beberapa sub-materi
+    // Kelompokkan dulu per sub-materi
+    const soalPerSub = {};
+    semuaSoalValid.forEach((s) => {
+      const sub = s.sub_materi || "Lainnya";
+      if (!soalPerSub[sub]) soalPerSub[sub] = { mudah: [], sedang: [], sulit: [] };
+      
+      const level = parseInt(s.tingkat_kesulitan) || 1;
+      if (level === 1) soalPerSub[sub].mudah.push(s);
+      else if (level === 2) soalPerSub[sub].sedang.push(s);
+      else soalPerSub[sub].sulit.push(s);
+    });
+
+    let draftSpesial = [];
+    Object.keys(soalPerSub).forEach(sub => {
+      let { mudah, sedang, sulit } = soalPerSub[sub];
+      mudah = acakArray(mudah);
+      sedang = acakArray(sedang);
+      sulit = acakArray(sulit);
+
+      // Ambil 1 mudah, 3 sedang, 1 sulit
+      let pilihan = [
+        ...mudah.splice(0, 1),
+        ...sedang.splice(0, 3),
+        ...sulit.splice(0, 1)
+      ];
+
+      // Fallback jika ada yang kurang (misal tidak ada soal sulit)
+      if (pilihan.length < 5) {
+        let sisa = acakArray([...mudah, ...sedang, ...sulit]);
+        pilihan = [...pilihan, ...sisa.splice(0, 5 - pilihan.length)];
+      }
+
+      draftSpesial = [...draftSpesial, ...pilihan];
+    });
+
+    // Acak urutan akhir
+    return acakArray(draftSpesial);
+  }
+
   // --- LOGIKA KHUSUS UJIAN SUMATIF/ACAK (MAKS 10 SOAL) ---
   let mudah = [];
   let sedang = [];

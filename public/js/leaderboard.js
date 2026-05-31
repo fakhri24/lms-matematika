@@ -84,7 +84,7 @@ async function muatDataLeaderboard() {
 
       if (
         (mode === MODE_LATIHAN.NORMAL || mode === MODE_LATIHAN.ACAK) &&
-        nilai > 85 &&
+        nilai >= 80 &&
         soalDikerjakan >= 10
       ) {
         agregatSiswa[sub][nis].skor_mastery.push(nilai);
@@ -156,7 +156,7 @@ function prosesTampilan() {
     renderPapanKegigihan(daftarSiswa);
   } else if (tabAktif === "mastery") {
     teksRule.innerHTML =
-      "<strong>Wall of Mastery:</strong> Mengukir nama yang berhasil mencetak skor ujian <strong>> 85</strong>.";
+      "<strong>Wall of Mastery:</strong> Mengukir nama yang berhasil mencetak skor ujian <strong>>= 80</strong>.";
     renderWallOfMastery(daftarSiswa.filter((s) => s.skor_mastery.length >= 1));
   }
 }

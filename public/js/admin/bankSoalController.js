@@ -75,14 +75,10 @@ export function renderTabelBankSoal() {
     }
 
     let prasyaratHTML =
-      '<span style="color:#94a3b8; font-size: 0.8rem;">-</span>';
+      '<div class="truncate" style="max-width: 180px; font-size: 0.7rem; color:#94a3b8; padding: 3px 8px; border-radius: 12px; border: 1px solid transparent; display: inline-block;">-</div>';
     if (arrPrasyarat.length > 0 && arrPrasyarat[0] !== "") {
-      prasyaratHTML = `<div style="display: flex; flex-wrap: wrap; gap: 4px; max-width: 180px;">`;
-      arrPrasyarat.forEach((p) => {
-        if (p)
-          prasyaratHTML += `<span style="font-size: 0.7rem; color: #475569; background: #f1f5f9; padding: 3px 8px; border-radius: 12px; border: 1px solid #cbd5e1; white-space: nowrap;">🔑 ${p}</span>`;
-      });
-      prasyaratHTML += `</div>`;
+      const prasyaratText = arrPrasyarat.join(", ");
+      prasyaratHTML = `<div class="truncate" style="max-width: 180px; font-size: 0.7rem; color: #475569; background: #f1f5f9; padding: 3px 8px; border-radius: 12px; border: 1px solid #cbd5e1; display: inline-block;" data-original-title="${prasyaratText}">🔑 ${prasyaratText}</div>`;
     }
 
     // PANGGIL VIEW
@@ -96,6 +92,20 @@ export function renderTabelBankSoal() {
     );
     tbody.appendChild(tr);
   });
+
+  const sisaBaris = barisPerHalamanSoal - dataHalamanIni.length;
+  for (let i = 0; i < sisaBaris; i++) {
+    const trDummy = document.createElement("tr");
+    trDummy.className = "dummy-row";
+    trDummy.innerHTML = `
+      <td colspan="6">
+        <div style="visibility: hidden; display: flex; align-items: center; padding: 2px 0;">
+          <button class="btn btn-sm">X</button>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(trDummy);
+  }
 
   infoHalaman.innerText = `Halaman ${halamanSaatIniSoal} dari ${totalHalaman}`;
   btnPrev.disabled = halamanSaatIniSoal === 1;
