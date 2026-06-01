@@ -13,6 +13,7 @@ window.keluarAplikasi = function () {
 class SudutBerelasiNegatif360Controller extends LatihanController {
   constructor() {
     super();
+    this.dashboardUrl = "../../../dashboard-siswa.html";
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Sudut Berelasi (Negatif dan >360°)";
     this.state.materiUtama = "Trigonometri Dasar";
@@ -148,10 +149,26 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
 
     // Sumbu X dan Y
     ctx.beginPath();
-    ctx.moveTo(0, cy);
-    ctx.lineTo(canvas.width, cy);
-    ctx.moveTo(cx, 0);
-    ctx.lineTo(cx, canvas.height);
+    ctx.moveTo(2, cy);
+    ctx.lineTo(canvas.width - 2, cy);
+    ctx.moveTo(cx, 2);
+    ctx.lineTo(cx, canvas.height - 2);
+    // Panah kanan
+    ctx.moveTo(canvas.width - 10, cy - 5);
+    ctx.lineTo(canvas.width - 2, cy);
+    ctx.lineTo(canvas.width - 10, cy + 5);
+    // Panah kiri
+    ctx.moveTo(10, cy - 5);
+    ctx.lineTo(2, cy);
+    ctx.lineTo(10, cy + 5);
+    // Panah atas
+    ctx.moveTo(cx - 5, 10);
+    ctx.lineTo(cx, 2);
+    ctx.lineTo(cx + 5, 10);
+    // Panah bawah
+    ctx.moveTo(cx - 5, canvas.height - 10);
+    ctx.lineTo(cx, canvas.height - 2);
+    ctx.lineTo(cx + 5, canvas.height - 10);
     ctx.strokeStyle = "#334155";
     ctx.lineWidth = 1.5;
     ctx.setLineDash([]);
@@ -187,21 +204,55 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
       ctx.lineWidth = 2;
       ctx.setLineDash([]);
       ctx.stroke();
+
+      // Panah di ujung arc sudut ternormalisasi
+      if (normalized > 8) {
+        const nRad = (normalized * Math.PI) / 180;
+        const arcEndX = cx + 22 * Math.cos(nRad);
+        const arcEndY = cy - 22 * Math.sin(nRad);
+        const tAngle = Math.atan2(-Math.cos(nRad), -Math.sin(nRad));
+        const arrowLen = 6;
+        const spread = 0.4;
+        ctx.beginPath();
+        ctx.moveTo(arcEndX, arcEndY);
+        ctx.lineTo(
+          arcEndX + arrowLen * Math.cos(tAngle + Math.PI - spread),
+          arcEndY + arrowLen * Math.sin(tAngle + Math.PI - spread),
+        );
+        ctx.moveTo(arcEndX, arcEndY);
+        ctx.lineTo(
+          arcEndX + arrowLen * Math.cos(tAngle + Math.PI + spread),
+          arcEndY + arrowLen * Math.sin(tAngle + Math.PI + spread),
+        );
+        ctx.strokeStyle = "#0d9488";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([]);
+        ctx.stroke();
+      }
     }
 
-    // Label "≡ X°" di ujung panah biru
+    // Label "θ° ≡ X°" di ujung panah biru
     const normRad = (normalized * Math.PI) / 180;
     const labelR = radius + 20;
+    const labelText = `${this.theta}\u00b0 \u2261 ${normalized}\u00b0`;
     ctx.save();
     ctx.fillStyle = "#0d9488";
     ctx.font = "bold 11px Arial";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(
-      `\u2261${normalized}\u00b0`,
-      cx + labelR * Math.cos(normRad),
-      cy - labelR * Math.sin(normRad),
+    const rawLabelX = cx + labelR * Math.cos(normRad);
+    const rawLabelY = cy - labelR * Math.sin(normRad);
+    const textHalfW = ctx.measureText(labelText).width / 2 + 4;
+    const textHalfH = 7;
+    const labelX = Math.min(
+      canvas.width - textHalfW,
+      Math.max(textHalfW, rawLabelX),
     );
+    const labelY = Math.min(
+      canvas.height - textHalfH,
+      Math.max(textHalfH, rawLabelY),
+    );
+    ctx.fillText(labelText, labelX, labelY);
     ctx.restore();
   }
 
@@ -225,70 +276,28 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
     ctx.fill();
   }
 
-  // Spiral Archimedean berlawanan arah jarum jam (untuk sudut >360°, mode A)
+  // Hanya tampilkan label jumlah putaran (spiral dihapus)
   _drawSpiralCCW(ctx, cx, cy, totalDeg, color) {
-    const steps = Math.max(300, Math.round(totalDeg * 2));
-    const startR = 12;
-    const endR = Math.min(42, 12 + (totalDeg / 360) * 10);
     const turns = Math.floor(totalDeg / 360);
-
-    ctx.beginPath();
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      const a = t * totalDeg * (Math.PI / 180);
-      const rr = startR + (endR - startR) * t;
-      const x = cx + rr * Math.cos(a);
-      const y = cy - rr * Math.sin(a); // CCW: y berkurang saat sin positif
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([3, 2]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // Label jumlah putaran di atas spiral
     if (turns > 0) {
       ctx.save();
       ctx.fillStyle = color;
-      ctx.font = "bold 11px Arial";
+      ctx.font = "bold 12px Arial";
       ctx.textAlign = "center";
-      ctx.fillText(`${turns}\u00d7 putaran`, cx + 14, cy - 50);
+      ctx.fillText(`${turns}\u00d7 putaran`, cx, cy - 55);
       ctx.restore();
     }
   }
 
-  // Spiral Archimedean searah jarum jam (untuk kombinasi negatif+>360°, mode C)
+  // Hanya tampilkan label jumlah putaran (spiral dihapus)
   _drawSpiralCW(ctx, cx, cy, totalDeg, color) {
-    const steps = Math.max(300, Math.round(totalDeg * 2));
-    const startR = 12;
-    const endR = Math.min(42, 12 + (totalDeg / 360) * 10);
     const turns = Math.floor(totalDeg / 360);
-
-    ctx.beginPath();
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      const a = t * totalDeg * (Math.PI / 180);
-      const rr = startR + (endR - startR) * t;
-      const x = cx + rr * Math.cos(a);
-      const y = cy + rr * Math.sin(a); // CW: y bertambah saat sin positif
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([3, 2]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // Label jumlah putaran di bawah spiral
     if (turns > 0) {
       ctx.save();
       ctx.fillStyle = color;
-      ctx.font = "bold 11px Arial";
+      ctx.font = "bold 12px Arial";
       ctx.textAlign = "center";
-      ctx.fillText(`${turns}\u00d7 putaran`, cx + 14, cy + 56);
+      ctx.fillText(`${turns}\u00d7 putaran`, cx, cy + 60);
       ctx.restore();
     }
   }
@@ -340,8 +349,8 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
       html = `
         <p><b>Sudut Lebih dari Satu Putaran</b></p>
         <p>Kurangi kelipatan 360° sampai sudut masuk ke $[0°, 360°)$.</p>
+        <p>Normalisasi: $${theta}° = ${n} \\times 360° + ${sisa}°$</p>
         <ul>
-          <li>$${theta}° = ${n} \\times 360° + ${sisa}°$</li>
           <li>$\\sin(${theta}°) = \\sin(${sisa}°)$</li>
           <li>$\\cos(${theta}°) = \\cos(${sisa}°)$</li>
           <li>$\\tan(${theta}°) = \\tan(${sisa}°)$</li>
@@ -351,8 +360,8 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
       html = `
         <p><b>Sudut Negatif</b></p>
         <p>Tambahkan 360° agar sudut menjadi positif di $[0°, 360°)$.</p>
+        <p>Normalisasi: $${theta}° + 360° = ${normalized}°$</p>
         <ul>
-          <li>$${theta}° + 360° = ${normalized}°$</li>
           <li>$\\sin(${theta}°) = \\sin(${normalized}°)$</li>
           <li>$\\cos(${theta}°) = \\cos(${normalized}°)$</li>
           <li>$\\tan(${theta}°) = \\tan(${normalized}°)$</li>
@@ -364,8 +373,8 @@ class SudutBerelasiNegatif360Controller extends LatihanController {
       html = `
         <p><b>Negatif dan Lebih dari Satu Putaran</b></p>
         <p>Tambahkan kelipatan 360° yang cukup agar sudut masuk ke $[0°, 360°)$.</p>
+        <p>Normalisasi: $${theta}° + ${n} \\times 360° = ${normalized}°$</p>
         <ul>
-          <li>$${theta}° + ${n} \\times 360° = ${normalized}°$</li>
           <li>$\\sin(${theta}°) = \\sin(${normalized}°)$</li>
           <li>$\\cos(${theta}°) = \\cos(${normalized}°)$</li>
           <li>$\\tan(${theta}°) = \\tan(${normalized}°)$</li>

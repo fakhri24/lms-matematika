@@ -13,6 +13,7 @@ window.keluarAplikasi = function () {
 class SifatSudutNegatifController extends LatihanController {
   constructor() {
     super();
+    this.dashboardUrl = "../../../dashboard-siswa.html";
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Sifat Sudut Negatif";
     this.state.materiUtama = "Trigonometri Dasar";
@@ -78,10 +79,26 @@ class SifatSudutNegatifController extends LatihanController {
 
     // Sumbu X dan Y
     ctx.beginPath();
-    ctx.moveTo(0, centerY);
-    ctx.lineTo(canvas.width, centerY);
-    ctx.moveTo(centerX, 0);
-    ctx.lineTo(centerX, canvas.height);
+    ctx.moveTo(2, centerY);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.moveTo(centerX, 2);
+    ctx.lineTo(centerX, canvas.height - 2);
+    // Panah kanan
+    ctx.moveTo(canvas.width - 10, centerY - 5);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.lineTo(canvas.width - 10, centerY + 5);
+    // Panah kiri
+    ctx.moveTo(10, centerY - 5);
+    ctx.lineTo(2, centerY);
+    ctx.lineTo(10, centerY + 5);
+    // Panah atas
+    ctx.moveTo(centerX - 5, 10);
+    ctx.lineTo(centerX, 2);
+    ctx.lineTo(centerX + 5, 10);
+    // Panah bawah
+    ctx.moveTo(centerX - 5, canvas.height - 10);
+    ctx.lineTo(centerX, canvas.height - 2);
+    ctx.lineTo(centerX + 5, canvas.height - 10);
     ctx.strokeStyle = "#334155";
     ctx.lineWidth = 1.5;
     ctx.stroke();
@@ -146,6 +163,31 @@ class SifatSudutNegatifController extends LatihanController {
     ctx.lineWidth = 2;
     ctx.stroke();
 
+    // Panah di ujung arc sudut α
+    if (this.alpha > 8) {
+      const aRad = (this.alpha * Math.PI) / 180;
+      const arcEndX = centerX + 20 * Math.cos(aRad);
+      const arcEndY = centerY - 20 * Math.sin(aRad);
+      const tAngle = Math.atan2(-Math.cos(aRad), -Math.sin(aRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI - spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI - spread),
+      );
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI + spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#0d9488";
+      ctx.lineWidth = 2;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
     // Label α
     const alphaRad = (this.alpha * Math.PI) / 180;
     ctx.fillStyle = "#0d9488";
@@ -165,6 +207,30 @@ class SifatSudutNegatifController extends LatihanController {
     ctx.strokeStyle = "#f97316";
     ctx.lineWidth = 2;
     ctx.stroke();
+
+    // Panah di ujung arc sudut -α
+    if (this.alpha > 8) {
+      const negArcEndX = centerX + 20 * Math.cos(alphaRad);
+      const negArcEndY = centerY + 20 * Math.sin(alphaRad);
+      const negTAngle = Math.atan2(Math.cos(alphaRad), -Math.sin(alphaRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(negArcEndX, negArcEndY);
+      ctx.lineTo(
+        negArcEndX + arrowLen * Math.cos(negTAngle + Math.PI - spread),
+        negArcEndY + arrowLen * Math.sin(negTAngle + Math.PI - spread),
+      );
+      ctx.moveTo(negArcEndX, negArcEndY);
+      ctx.lineTo(
+        negArcEndX + arrowLen * Math.cos(negTAngle + Math.PI + spread),
+        negArcEndY + arrowLen * Math.sin(negTAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#f97316";
+      ctx.lineWidth = 2;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
 
     // Label -α
     ctx.fillStyle = "#f97316";
@@ -196,7 +262,7 @@ class SifatSudutNegatifController extends LatihanController {
 
     const html = `
       <p><b>Relasi Sudut Negatif ($-\\alpha$)</b></p>
-      <p>Sudut $-\\alpha$ adalah <b>refleksi</b> dari sudut $\\alpha$ terhadap sumbu X.
+      <p>Sudut $-\\alpha$ adalah <b>refleksi</b> dari sudut $\\alpha$ terhadap sumbu X.<br>
       Sisi horizontal (cos) tidak berubah; sisi vertikal (sin) berbalik tanda.</p>
       <ul>
         <li>$\\sin(-${this.alpha}^\\circ) = -${sinVal}$</li>

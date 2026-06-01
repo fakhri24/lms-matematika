@@ -1,14 +1,31 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 20px 10px;
+}
+
 .exploration-layout {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 30px;
-  align-items: flex-start;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
 }
 
 .visual-section {
   flex: 1 1 350px;
-  max-width: 600px;
-  margin: 0 auto; /* Supaya saat full width, maksimal lebar 600px dan rata tengah */
+  min-height: 0;
+  overflow-y: auto;
   background: white;
   padding: 20px;
   border-radius: 16px;
@@ -35,9 +52,9 @@
 canvas {
   max-width: 100%;
   display: block;
-  border-radius: 50%;
+  border-radius: 16px;
   background-color: #f8fafc;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
 }
 
@@ -49,13 +66,14 @@ canvas {
 }
 
 /* Slider custom styling */
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
   width: 20px;
@@ -63,10 +81,10 @@ input[type=range]::-webkit-slider-thumb {
   background: var(--primary-color);
   cursor: pointer;
   margin-top: -8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -107,4 +125,21 @@ input[type=range]::-webkit-slider-runnable-track {
 .quiz-section {
   display: none;
   flex: 1.5 1 400px;
+}
+
+#penjelasan-relasi ul {
+  padding-left: 20px;
+}
+
+.quiz-section > div {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+#soal-card-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }

@@ -13,6 +13,7 @@ window.keluarAplikasi = function () {
 class SudutBerelasiVertikalController extends LatihanController {
   constructor() {
     super();
+    this.dashboardUrl = "../../../dashboard-siswa.html";
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Sudut Berelasi (Vertikal)";
     this.state.materiUtama = "Trigonometri Dasar";
@@ -89,10 +90,26 @@ class SudutBerelasiVertikalController extends LatihanController {
 
     // Sumbu X dan Y
     ctx.beginPath();
-    ctx.moveTo(0, centerY);
-    ctx.lineTo(canvas.width, centerY);
-    ctx.moveTo(centerX, 0);
-    ctx.lineTo(centerX, canvas.height);
+    ctx.moveTo(2, centerY);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.moveTo(centerX, 2);
+    ctx.lineTo(centerX, canvas.height - 2);
+    // Panah kanan
+    ctx.moveTo(canvas.width - 10, centerY - 5);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.lineTo(canvas.width - 10, centerY + 5);
+    // Panah kiri
+    ctx.moveTo(10, centerY - 5);
+    ctx.lineTo(2, centerY);
+    ctx.lineTo(10, centerY + 5);
+    // Panah atas
+    ctx.moveTo(centerX - 5, 10);
+    ctx.lineTo(centerX, 2);
+    ctx.lineTo(centerX + 5, 10);
+    // Panah bawah
+    ctx.moveTo(centerX - 5, canvas.height - 10);
+    ctx.lineTo(centerX, canvas.height - 2);
+    ctx.lineTo(centerX + 5, canvas.height - 10);
     ctx.strokeStyle = "#334155";
     ctx.lineWidth = 1.5;
     ctx.stroke();
@@ -176,6 +193,31 @@ class SudutBerelasiVertikalController extends LatihanController {
     ctx.lineWidth = 2;
     ctx.stroke();
 
+    // Panah di ujung arc sudut α
+    if (this.alpha > 8) {
+      const aRad = (this.alpha * Math.PI) / 180;
+      const arcEndX = centerX + 18 * Math.cos(aRad);
+      const arcEndY = centerY - 18 * Math.sin(aRad);
+      const tAngle = Math.atan2(-Math.cos(aRad), -Math.sin(aRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI - spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI - spread),
+      );
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI + spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#475569";
+      ctx.lineWidth = 2;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
     const alphaRad = (this.alpha * Math.PI) / 180;
     ctx.fillStyle = "#0f172a";
     ctx.font = "bold 14px Arial";
@@ -226,6 +268,61 @@ class SudutBerelasiVertikalController extends LatihanController {
     ctx.strokeStyle = "#0d9488";
     ctx.lineWidth = 2.5;
     ctx.stroke();
+
+    // Panah di ujung arc relasi
+    {
+      const tRad = (targetAngle * Math.PI) / 180;
+      const relArcEndX = centerX + 25 * Math.cos(tRad);
+      const relArcEndY = centerY - 25 * Math.sin(tRad);
+      const relTAngle = arcAnticlockwise
+        ? Math.atan2(-Math.cos(tRad), -Math.sin(tRad))
+        : Math.atan2(Math.cos(tRad), Math.sin(tRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(relArcEndX, relArcEndY);
+      ctx.lineTo(
+        relArcEndX + arrowLen * Math.cos(relTAngle + Math.PI - spread),
+        relArcEndY + arrowLen * Math.sin(relTAngle + Math.PI - spread),
+      );
+      ctx.moveTo(relArcEndX, relArcEndY);
+      ctx.lineTo(
+        relArcEndX + arrowLen * Math.cos(relTAngle + Math.PI + spread),
+        relArcEndY + arrowLen * Math.sin(relTAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#0d9488";
+      ctx.lineWidth = 2.5;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
+    // Label sudut relasi di bisector arc
+    let labelText, bisectorDeg;
+    if (this.relasi === "90-alpha") {
+      labelText = "90\u00b0-\u03b1";
+      bisectorDeg = 90 - this.alpha / 2;
+    } else if (this.relasi === "90+alpha") {
+      labelText = "90\u00b0+\u03b1";
+      bisectorDeg = 90 + this.alpha / 2;
+    } else if (this.relasi === "270-alpha") {
+      labelText = "270\u00b0-\u03b1";
+      bisectorDeg = 270 - this.alpha / 2;
+    } else {
+      labelText = "270\u00b0+\u03b1";
+      bisectorDeg = 270 + this.alpha / 2;
+    }
+    const labelBisRad = (bisectorDeg * Math.PI) / 180;
+    ctx.fillStyle = "#0d9488";
+    ctx.font = "bold 12px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(
+      labelText,
+      centerX + 50 * Math.cos(labelBisRad),
+      centerY - 50 * Math.sin(labelBisRad),
+    );
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
   }
 
   updatePenjelasan() {
@@ -235,7 +332,7 @@ class SudutBerelasiVertikalController extends LatihanController {
     if (this.relasi === "90-alpha") {
       html = `
         <p><b>Kuadran I ($90^\\circ - \\alpha$)</b></p>
-        <p>Perhatikan bayangan segitiga biru dan abu-abu. Keduanya berada di Kuadran I. Poros vertikal ($90^\\circ$) menyebabkan <b>fungsi bertukar</b>: tinggi (sin) menjadi alas (cos) dan sebaliknya. Semua nilai positif di Kuadran I.</p>
+        <p>Perhatikan bayangan segitiga biru dan abu-abu. Keduanya berada di Kuadran I. <br>Poros vertikal ($90^\\circ$) menyebabkan <b>fungsi bertukar</b>: tinggi (sin) menjadi alas (cos) dan sebaliknya. <br>Semua nilai positif di Kuadran I.</p>
         <ul>
           <li>$\\sin(90^\\circ - ${this.alpha}^\\circ) = +\\cos(${this.alpha}^\\circ)$</li>
           <li>$\\cos(90^\\circ - ${this.alpha}^\\circ) = +\\sin(${this.alpha}^\\circ)$</li>
@@ -245,7 +342,7 @@ class SudutBerelasiVertikalController extends LatihanController {
     } else if (this.relasi === "90+alpha") {
       html = `
         <p><b>Kuadran II ($90^\\circ + \\alpha$)</b></p>
-        <p>Fungsi bertukar akibat poros vertikal. Di Kuadran II: sin bernilai positif, cos bernilai negatif. Maka tinggi (sin baru) positif, alas (cos baru) negatif.</p>
+        <p>Fungsi bertukar akibat poros vertikal. <br>Di Kuadran II: sin bernilai positif.</p>
         <ul>
           <li>$\\sin(90^\\circ + ${this.alpha}^\\circ) = +\\cos(${this.alpha}^\\circ)$</li>
           <li>$\\cos(90^\\circ + ${this.alpha}^\\circ) = -\\sin(${this.alpha}^\\circ)$</li>
@@ -255,7 +352,7 @@ class SudutBerelasiVertikalController extends LatihanController {
     } else if (this.relasi === "270-alpha") {
       html = `
         <p><b>Kuadran III ($270^\\circ - \\alpha$)</b></p>
-        <p>Fungsi bertukar akibat poros vertikal ($270^\\circ$). Di Kuadran III: sin negatif, cos negatif. Keduanya bernilai negatif.</p>
+        <p>Fungsi bertukar akibat poros vertikal ($270^\\circ$). <br>Di Kuadran III: tan bernilai positif.</p>
         <ul>
           <li>$\\sin(270^\\circ - ${this.alpha}^\\circ) = -\\cos(${this.alpha}^\\circ)$</li>
           <li>$\\cos(270^\\circ - ${this.alpha}^\\circ) = -\\sin(${this.alpha}^\\circ)$</li>
@@ -265,7 +362,7 @@ class SudutBerelasiVertikalController extends LatihanController {
     } else if (this.relasi === "270+alpha") {
       html = `
         <p><b>Kuadran IV ($270^\\circ + \\alpha$)</b></p>
-        <p>Fungsi bertukar akibat poros vertikal ($270^\\circ$). Di Kuadran IV: sin negatif, cos positif.</p>
+        <p>Fungsi bertukar akibat poros vertikal ($270^\\circ$). <br>Di Kuadran IV: cos bernilai positif.</p>
         <ul>
           <li>$\\sin(270^\\circ + ${this.alpha}^\\circ) = -\\cos(${this.alpha}^\\circ)$</li>
           <li>$\\cos(270^\\circ + ${this.alpha}^\\circ) = +\\sin(${this.alpha}^\\circ)$</li>

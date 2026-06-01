@@ -93,6 +93,8 @@ export class LatihanController {
       btnLihatBahas: document.getElementById("btn-lihat-bahas"),
       btnLanjutFormatif: document.getElementById("btn-lanjut-formatif"),
     };
+
+    this.dashboardUrl = "dashboard-siswa.html";
   }
 
   async init() {
@@ -104,7 +106,7 @@ export class LatihanController {
     document
       .getElementById("btn-kembali-modal-hasil")
       ?.addEventListener("click", () => {
-        window.location.href = "dashboard-siswa.html";
+        window.location.href = this.dashboardUrl;
       });
 
     this.el.btnCekJawaban?.addEventListener("click", () =>
@@ -783,7 +785,7 @@ export class LatihanController {
               try {
                 await this.sinkronRiwayatFormatifSementara();
               } finally {
-                window.location.href = "dashboard-siswa.html";
+                window.location.href = this.dashboardUrl;
               }
             };
           }
@@ -796,7 +798,7 @@ export class LatihanController {
                   "Yakin ingin membatalkan ujian? Semua jawabanmu yang belum diselesaikan akan hangus dan tidak tersimpan.",
                 )
               ) {
-                window.location.href = "dashboard-siswa.html";
+                window.location.href = this.dashboardUrl;
               }
             };
           }
@@ -838,7 +840,7 @@ export class LatihanController {
             .getElementById("btn-kembali-tamat")
             ?.addEventListener(
               "click",
-              () => (window.location.href = "dashboard-siswa.html"),
+              () => (window.location.href = this.dashboardUrl),
             );
         } else {
           if (this.el.statusKoneksi)

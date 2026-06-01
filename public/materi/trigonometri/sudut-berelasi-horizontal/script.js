@@ -13,6 +13,7 @@ window.keluarAplikasi = function () {
 class SudutBerelasiController extends LatihanController {
   constructor() {
     super();
+    this.dashboardUrl = "../../../dashboard-siswa.html";
     // Memaksa mode formatif dan sub materi Sudut Berelasi Horizontal
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Sudut Berelasi (Horizontal)"; // Sesuaikan dengan DB Bank Soal
@@ -94,10 +95,26 @@ class SudutBerelasiController extends LatihanController {
 
     // Gambar sumbu X dan Y
     ctx.beginPath();
-    ctx.moveTo(0, centerY);
-    ctx.lineTo(canvas.width, centerY);
-    ctx.moveTo(centerX, 0);
-    ctx.lineTo(centerX, canvas.height);
+    ctx.moveTo(2, centerY);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.moveTo(centerX, 2);
+    ctx.lineTo(centerX, canvas.height - 2);
+    // Panah kanan
+    ctx.moveTo(canvas.width - 10, centerY - 5);
+    ctx.lineTo(canvas.width - 2, centerY);
+    ctx.lineTo(canvas.width - 10, centerY + 5);
+    // Panah kiri
+    ctx.moveTo(10, centerY - 5);
+    ctx.lineTo(2, centerY);
+    ctx.lineTo(10, centerY + 5);
+    // Panah atas
+    ctx.moveTo(centerX - 5, 10);
+    ctx.lineTo(centerX, 2);
+    ctx.lineTo(centerX + 5, 10);
+    // Panah bawah
+    ctx.moveTo(centerX - 5, canvas.height - 10);
+    ctx.lineTo(centerX, canvas.height - 2);
+    ctx.lineTo(centerX + 5, canvas.height - 10);
     ctx.strokeStyle = "#334155"; // Abu-abu gelap tegas
     ctx.lineWidth = 1.5;
     ctx.stroke();
@@ -161,6 +178,31 @@ class SudutBerelasiController extends LatihanController {
     ctx.lineWidth = 2;
     ctx.stroke();
 
+    // Panah di ujung arc sudut α
+    if (this.alpha > 8) {
+      const aRad = (this.alpha * Math.PI) / 180;
+      const arcEndX = centerX + 18 * Math.cos(aRad);
+      const arcEndY = centerY - 18 * Math.sin(aRad);
+      const tAngle = Math.atan2(-Math.cos(aRad), -Math.sin(aRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI - spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI - spread),
+      );
+      ctx.moveTo(arcEndX, arcEndY);
+      ctx.lineTo(
+        arcEndX + arrowLen * Math.cos(tAngle + Math.PI + spread),
+        arcEndY + arrowLen * Math.sin(tAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#475569";
+      ctx.lineWidth = 2;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
     // Label Alpha
     const alphaRad = (this.alpha * Math.PI) / 180;
     ctx.fillStyle = "#0f172a"; // Hitam
@@ -210,6 +252,58 @@ class SudutBerelasiController extends LatihanController {
     ctx.strokeStyle = "#0d9488";
     ctx.lineWidth = 2.5;
     ctx.stroke();
+
+    // Panah di ujung arc relasi
+    {
+      const tRad = (targetAngle * Math.PI) / 180;
+      const relArcEndX = centerX + 25 * Math.cos(tRad);
+      const relArcEndY = centerY - 25 * Math.sin(tRad);
+      const relTAngle = arcAnticlockwise
+        ? Math.atan2(-Math.cos(tRad), -Math.sin(tRad))
+        : Math.atan2(Math.cos(tRad), Math.sin(tRad));
+      const arrowLen = 6;
+      const spread = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(relArcEndX, relArcEndY);
+      ctx.lineTo(
+        relArcEndX + arrowLen * Math.cos(relTAngle + Math.PI - spread),
+        relArcEndY + arrowLen * Math.sin(relTAngle + Math.PI - spread),
+      );
+      ctx.moveTo(relArcEndX, relArcEndY);
+      ctx.lineTo(
+        relArcEndX + arrowLen * Math.cos(relTAngle + Math.PI + spread),
+        relArcEndY + arrowLen * Math.sin(relTAngle + Math.PI + spread),
+      );
+      ctx.strokeStyle = "#0d9488";
+      ctx.lineWidth = 2.5;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
+    // Label sudut relasi di bisector arc
+    let labelText, bisectorDeg;
+    if (this.relasi === "180-alpha") {
+      labelText = "180\u00b0-\u03b1";
+      bisectorDeg = 180 - this.alpha / 2;
+    } else if (this.relasi === "180+alpha") {
+      labelText = "180\u00b0+\u03b1";
+      bisectorDeg = 180 + this.alpha / 2;
+    } else {
+      labelText = "360\u00b0-\u03b1";
+      bisectorDeg = 360 - this.alpha / 2;
+    }
+    const labelBisRad = (bisectorDeg * Math.PI) / 180;
+    ctx.fillStyle = "#0d9488";
+    ctx.font = "bold 12px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(
+      labelText,
+      centerX + 50 * Math.cos(labelBisRad),
+      centerY - 50 * Math.sin(labelBisRad),
+    );
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
   }
 
   updatePenjelasan() {
@@ -219,7 +313,7 @@ class SudutBerelasiController extends LatihanController {
     if (this.relasi === "180-alpha") {
       html = `
         <p><b>Kuadran II ($180^\\circ - \\alpha$)</b></p>
-        <p>Perhatikan bayangan segitiga biru. Tingginya (sumbu-y/sin) sama dan berada di atas sumbu-x (positif). Alasnya (sumbu-x/cos) sama panjang tetapi ke arah kiri (negatif).</p>
+        <p>Perhatikan bayangan segitiga biru. <br>Tingginya (sumbu-y/sin) sama dan berada di atas sumbu-x (positif). <br>Alasnya (sumbu-x/cos) sama panjang tetapi ke arah kiri (negatif).</p>
         <ul>
           <li>$\\sin(180^\\circ - ${this.alpha}^\\circ) = +\\sin(${this.alpha}^\\circ)$</li>
           <li>$\\cos(180^\\circ - ${this.alpha}^\\circ) = -\\cos(${this.alpha}^\\circ)$</li>
@@ -229,7 +323,7 @@ class SudutBerelasiController extends LatihanController {
     } else if (this.relasi === "180+alpha") {
       html = `
         <p><b>Kuadran III ($180^\\circ + \\alpha$)</b></p>
-        <p>Tingginya (sumbu-y/sin) mengarah ke bawah (negatif). Alasnya (sumbu-x/cos) mengarah ke kiri (negatif).</p>
+        <p>Tingginya (sumbu-y/sin) mengarah ke bawah (negatif). <br>Alasnya (sumbu-x/cos) mengarah ke kiri (negatif).</p>
         <ul>
           <li>$\\sin(180^\\circ + ${this.alpha}^\\circ) = -\\sin(${this.alpha}^\\circ)$</li>
           <li>$\\cos(180^\\circ + ${this.alpha}^\\circ) = -\\cos(${this.alpha}^\\circ)$</li>
@@ -239,7 +333,7 @@ class SudutBerelasiController extends LatihanController {
     } else if (this.relasi === "360-alpha") {
       html = `
         <p><b>Kuadran IV ($360^\\circ - \\alpha$)</b></p>
-        <p>Tingginya (sumbu-y/sin) mengarah ke bawah (negatif). Alasnya (sumbu-x/cos) mengarah ke kanan (positif).</p>
+        <p>Tingginya (sumbu-y/sin) mengarah ke bawah (negatif). <br>Alasnya (sumbu-x/cos) mengarah ke kanan (positif).</p>
         <ul>
           <li>$\\sin(360^\\circ - ${this.alpha}^\\circ) = -\\sin(${this.alpha}^\\circ)$</li>
           <li>$\\cos(360^\\circ - ${this.alpha}^\\circ) = +\\cos(${this.alpha}^\\circ)$</li>

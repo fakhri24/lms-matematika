@@ -15,6 +15,7 @@ window.keluarAplikasi = function () {
 class AturanKuadranController extends LatihanController {
   constructor() {
     super();
+    this.dashboardUrl = "../../../dashboard-siswa.html";
     // Memaksa mode formatif dan sub materi Aturan Kuadran
     this.state.modeLatihan = MODE_LATIHAN.FORMATIF;
     this.state.subMateriPilihan = "Aturan Kuadran";
@@ -39,7 +40,6 @@ class AturanKuadranController extends LatihanController {
     btnMulai.addEventListener("click", () => {
       document.getElementById("wadah-mulai-terbimbing").style.display = "none";
       document.getElementById("quiz-section").style.display = "block";
-      document.getElementById("visual-inner").classList.add("stacked");
 
       // Inisialisasi controller latihan standar untuk mode formatif
       this.bindGlobalEvents();
@@ -71,30 +71,30 @@ class AturanKuadranController extends LatihanController {
       // Sumbu X dan Y
       ctx.beginPath();
       // Garis utama
-      ctx.moveTo(0, centerY);
-      ctx.lineTo(canvas.width, centerY);
-      ctx.moveTo(centerX, 0);
-      ctx.lineTo(centerX, canvas.height);
+      ctx.moveTo(2, centerY);
+      ctx.lineTo(canvas.width - 2, centerY);
+      ctx.moveTo(centerX, 2);
+      ctx.lineTo(centerX, canvas.height - 2);
 
       // Panah Kanan (Sumbu X positif)
-      ctx.moveTo(canvas.width - 10, centerY - 6);
-      ctx.lineTo(canvas.width, centerY);
-      ctx.lineTo(canvas.width - 10, centerY + 6);
+      ctx.moveTo(canvas.width - 12, centerY - 6);
+      ctx.lineTo(canvas.width - 2, centerY);
+      ctx.lineTo(canvas.width - 12, centerY + 6);
 
       // Panah Kiri (Sumbu X negatif)
-      ctx.moveTo(10, centerY - 6);
-      ctx.lineTo(0, centerY);
-      ctx.lineTo(10, centerY + 6);
+      ctx.moveTo(12, centerY - 6);
+      ctx.lineTo(2, centerY);
+      ctx.lineTo(12, centerY + 6);
 
       // Panah Atas (Sumbu Y positif)
-      ctx.moveTo(centerX - 6, 10);
-      ctx.lineTo(centerX, 0);
-      ctx.lineTo(centerX + 6, 10);
+      ctx.moveTo(centerX - 6, 12);
+      ctx.lineTo(centerX, 2);
+      ctx.lineTo(centerX + 6, 12);
 
       // Panah Bawah (Sumbu Y negatif)
-      ctx.moveTo(centerX - 6, canvas.height - 10);
-      ctx.lineTo(centerX, canvas.height);
-      ctx.lineTo(centerX + 6, canvas.height - 10);
+      ctx.moveTo(centerX - 6, canvas.height - 12);
+      ctx.lineTo(centerX, canvas.height - 2);
+      ctx.lineTo(centerX + 6, canvas.height - 12);
 
       ctx.strokeStyle = "black";
       ctx.lineWidth = 2;
@@ -135,6 +135,32 @@ class AturanKuadranController extends LatihanController {
       ctx.lineWidth = 2;
       ctx.stroke();
 
+      // Panah di ujung arc sudut alpha
+      if (rad > 0.15) {
+        const arcR = 30;
+        const arcEndX = centerX + arcR * Math.cos(rad);
+        const arcEndY = centerY - arcR * Math.sin(rad);
+        // Tangent CCW di ujung arc (canvas coords)
+        const tAngle = Math.atan2(-Math.cos(rad), -Math.sin(rad));
+        const arrowLen = 7;
+        const spread = 0.4;
+        ctx.beginPath();
+        ctx.moveTo(arcEndX, arcEndY);
+        ctx.lineTo(
+          arcEndX + arrowLen * Math.cos(tAngle + Math.PI - spread),
+          arcEndY + arrowLen * Math.sin(tAngle + Math.PI - spread),
+        );
+        ctx.moveTo(arcEndX, arcEndY);
+        ctx.lineTo(
+          arcEndX + arrowLen * Math.cos(tAngle + Math.PI + spread),
+          arcEndY + arrowLen * Math.sin(tAngle + Math.PI + spread),
+        );
+        ctx.strokeStyle = "#f59e0b";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([]);
+        ctx.stroke();
+      }
+
       // Label Derajat
       ctx.fillStyle = "black";
       ctx.font = "bold 14px Arial";
@@ -152,7 +178,7 @@ class AturanKuadranController extends LatihanController {
       // 180 derajat (Kiri) - di luar lingkaran, sedikit di atas sumbu
       ctx.textAlign = "left";
       ctx.textBaseline = "bottom";
-      ctx.fillText("180°", 4, centerY - 8);
+      ctx.fillText("180°", 6, centerY - 8);
 
       // 270 derajat (Bawah) - di luar lingkaran, sedikit di kanan sumbu
       ctx.textAlign = "left";

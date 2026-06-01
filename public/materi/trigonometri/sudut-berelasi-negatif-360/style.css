@@ -1,14 +1,31 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 20px 10px;
+}
+
 .exploration-layout {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 30px;
-  align-items: flex-start;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
 }
 
 .visual-section {
   flex: 1 1 350px;
-  max-width: 600px;
-  margin: 0 auto;
+  min-height: 0;
+  overflow-y: auto;
   background: white;
   padding: 20px;
   border-radius: 16px;
@@ -35,7 +52,7 @@
 canvas {
   max-width: 100%;
   display: block;
-  border-radius: 50%;
+  border-radius: 16px;
   background-color: #f8fafc;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
@@ -99,11 +116,11 @@ canvas {
 }
 
 .theta-number-input {
-  width: 72px;
-  padding: 5px 8px;
+  width: 90px;
+  padding: 5px 10px;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--primary-color);
   text-align: center;
@@ -144,4 +161,21 @@ input[type="range"]::-webkit-slider-runnable-track {
 .quiz-section {
   display: none;
   flex: 1.5 1 400px;
+}
+
+#penjelasan-relasi ul {
+  padding-left: 20px;
+}
+
+.quiz-section > div {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+#soal-card-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
