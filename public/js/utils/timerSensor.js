@@ -8,11 +8,13 @@ let totalDurasiBerjalan = 0;
 let statusLayar = "aktif";
 let timerIdle;
 let timerStuck;
+let sensorAktif = false;
 
 // ==========================================
 // FUNGSI EKSPOR UNTUK APP.JS
 // ==========================================
 export function mulaiAtauLanjutStopwatch() {
+  sensorAktif = true;
   waktuMulaiTatapan = Date.now();
   resetSensorAktivitas();
 }
@@ -48,7 +50,7 @@ export function dapatkanTotalWaktuSekarang() {
 // MESIN SENSOR (BEKERJA DI BALIK LAYAR)
 // ==========================================
 function resetSensorAktivitas() {
-  if (statusLayar === "idle") return;
+  if (!sensorAktif || statusLayar === "idle") return;
 
   clearTimeout(timerIdle);
   clearTimeout(timerStuck);
@@ -101,6 +103,6 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     pauseDanAkumulasiWaktu();
   } else {
-    if (statusLayar !== "idle") mulaiAtauLanjutStopwatch();
+    if (sensorAktif && statusLayar !== "idle") mulaiAtauLanjutStopwatch();
   }
 });
