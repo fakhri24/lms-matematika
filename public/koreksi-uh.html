@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koreksi Ulangan Harian - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      .koreksi-card {
+        background: white;
+        padding: 20px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .koreksi-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .detail-box {
+        display: none;
+        margin-top: 20px;
+        animation: fadeIn 0.4s ease-out;
+      }
+      .motivasi-banner {
+        background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+        color: white;
+        padding: 25px;
+        border-radius: var(--radius);
+        margin-bottom: 25px;
+        position: relative;
+        overflow: hidden;
+      }
+      .soal-koreksi-card {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--primary-color);
+        border-top: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .nomor-soal-header {
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 960px; margin-top: 30px">
+      <header class="flex-between mb-25">
+        <h2 class="text-primary" style="margin: 0">Koreksi Ulangan Harian</h2>
+        <button id="btn-kembali" class="btn btn-secondary btn-sm">
+          Kembali
+        </button>
+      </header>
+
+      <div id="pembungkus-daftar">
+        <div class="mb-20">
+          <input
+            type="text"
+            id="search-koreksi"
+            class="input-standard"
+            placeholder="🔍 Cari topik ujian..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div id="daftar-koreksi">
+          <p class="text-center text-muted">Memuat koreksi ulangan...</p>
+        </div>
+      </div>
+
+      <div id="detail-koreksi" class="detail-box">
+        <button
+          id="btn-tutup-detail"
+          class="btn btn-secondary w-100 font-bold mb-20"
+        >
+          &laquo; Kembali ke Daftar Koreksi
+        </button>
+        <div id="wadah-detail"></div>
+      </div>
+    </div>
+
+    <script type="module" src="js/pages/koreksiUhSiswa.js"></script>
+  </body>
+</html>

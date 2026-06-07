@@ -6,6 +6,7 @@
     <title>Dashboard Guru - Albago LMS</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
       body {
         display: none; /* Sembunyikan sebelum cek auth */
@@ -174,6 +175,9 @@
         </button>
         <button id="btn-tab-latihan-spesial" class="btn btn-secondary">
           ⭐ Latihan Spesial
+        </button>
+        <button id="btn-tab-koreksi-uh" class="btn btn-secondary">
+          📝 Koreksi UH
         </button>
       </div>
 
@@ -811,6 +815,234 @@
           <p class="text-muted text-sm" style="padding: 10px">
             Belum ada Latihan Spesial yang dibuat.
           </p>
+        </div>
+      </div>
+
+      <!-- TAB KOREKSI ULANGAN HARIAN -->
+      <div id="tab-koreksi-uh" style="display: none">
+        <div class="question-card mb-25">
+          <h3 class="text-primary mb-15" style="margin-top: 0">
+            ➕ Upload Koreksi Ulangan Harian
+          </h3>
+          <form id="form-koreksi-uh">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin-bottom: 15px;
+              "
+            >
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Berkas JSON Koreksi</label
+                >
+                <input
+                  type="file"
+                  id="input-json-koreksi"
+                  class="input-standard"
+                  accept=".json"
+                  required
+                />
+                <p class="text-xs text-muted mt-5">
+                  Unggah file JSON koreksi hasil pemeriksaan guru.
+                </p>
+              </div>
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Pilih Siswa (Pencocokan Otomatis)</label
+                >
+                <select
+                  id="select-siswa-koreksi"
+                  class="input-standard"
+                  style="cursor: pointer"
+                  required
+                >
+                  <option value="">-- Pilih Siswa --</option>
+                </select>
+                <p class="text-xs text-muted mt-5">
+                  Sistem akan mencocokkan otomatis berdasarkan nama di JSON,
+                  atau pilih manual.
+                </p>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin-bottom: 20px;
+              "
+            >
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Tautan PDF Pekerjaan (Opsional)</label
+                >
+                <input
+                  type="text"
+                  id="input-url-pdf-koreksi"
+                  class="input-standard"
+                  placeholder="https://drive.google.com/file/d/..."
+                />
+                <p class="text-xs text-muted mt-5">
+                  Masukkan tautan jika file PDF disimpan di cloud luar (misal
+                  Google Drive).
+                </p>
+              </div>
+              <div>
+                <label class="font-semibold text-sm mb-5" style="display: block"
+                  >Atau Unggah Berkas PDF Pekerjaan</label
+                >
+                <input
+                  type="file"
+                  id="input-file-pdf-koreksi"
+                  class="input-standard"
+                  accept=".pdf"
+                />
+                <p class="text-xs text-muted mt-5">
+                  Unggah file PDF langsung ke Firebase Storage sistem.
+                </p>
+              </div>
+            </div>
+
+            <div
+              id="info-ringkasan-koreksi"
+              class="info-box box-primary mb-20"
+              style="display: none"
+            >
+              <p class="info-box-title">
+                📋 Ringkasan Data Koreksi Terdeteksi:
+              </p>
+              <div id="ringkasan-konten-json" class="text-sm"></div>
+            </div>
+
+            <button
+              type="submit"
+              id="btn-submit-koreksi-uh"
+              class="btn btn-primary w-100"
+              style="padding: 12px"
+            >
+              🚀 Simpan Koreksi Ulangan Harian
+            </button>
+          </form>
+        </div>
+
+        <div class="question-card mb-25" style="border-top: 4px solid #3b82f6;">
+          <h3 class="text-primary mb-15" style="margin-top: 0">
+            📦 Batch Upload Koreksi via ZIP
+          </h3>
+          <form id="form-batch-koreksi-zip">
+            <div class="mb-15">
+              <label class="font-semibold text-sm mb-5" style="display: block"
+                >Pilih Berkas ZIP Kelas</label
+              >
+              <input
+                type="file"
+                id="input-zip-koreksi"
+                class="input-standard"
+                accept=".zip"
+                required
+              />
+              <p class="text-xs text-muted mt-5">
+                Unggah berkas ZIP berisi file-file .json koreksi dan file .pdf
+                pekerjaan siswa (sistem akan otomatis menyandingkan file dengan akhiran yang cocok, misalnya koreksi_uh3_nara.json dengan uh3_nara.pdf).
+              </p>
+            </div>
+
+            <div
+              id="progres-batch-koreksi"
+              class="info-box box-primary mb-20"
+              style="display: none; max-height: 250px; overflow-y: auto"
+            >
+              <p class="info-box-title">🔄 Progres Pemrosesan Batch:</p>
+              <div id="progres-batch-log" class="text-xs" style="line-height: 1.6;"></div>
+            </div>
+
+            <button
+              type="submit"
+              id="btn-submit-batch-zip"
+              class="btn btn-primary w-100"
+              style="padding: 12px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border: none;"
+            >
+              🚀 Mulai Unggah Massal (Batch Upload)
+            </button>
+          </form>
+        </div>
+
+        <div class="question-card">
+          <div class="flex-between mb-20 flex-wrap gap-15">
+            <h3 class="text-primary" style="margin: 0">
+              Daftar Koreksi Ulangan Harian Terunggah
+            </h3>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                flex-wrap: wrap;
+              "
+            >
+              <input
+                type="text"
+                id="search-koreksi-uh"
+                class="input-standard btn-sm"
+                placeholder="🔍 Cari siswa atau topik..."
+                autocomplete="off"
+                style="width: 250px"
+              />
+              <button
+                id="btn-hapus-massal-koreksi"
+                class="btn btn-danger btn-sm"
+                style="display: none;"
+              >
+                🗑️ Hapus Terpilih (<span id="jumlah-terpilih-koreksi">0</span>)
+              </button>
+            </div>
+          </div>
+          <div style="overflow-x: auto">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 5%; text-align: center">
+                    <input type="checkbox" id="check-all-koreksi" style="cursor: pointer" />
+                  </th>
+                  <th style="width: 20%">Nama Siswa</th>
+                  <th style="width: 12%">Kelas</th>
+                  <th style="width: 33%">Topik Ujian</th>
+                  <th style="width: 12%; text-align: center">
+                    Nilai Wajib (+Bonus)
+                  </th>
+                  <th style="width: 8%; text-align: center">Salinan PDF</th>
+                  <th style="width: 10%; text-align: center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tabel-koreksi-uh">
+                <tr>
+                  <td
+                    colspan="6"
+                    class="text-center text-muted"
+                    style="padding: 30px"
+                  >
+                    Menghubungkan ke database...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination-container flex-between" style="margin-top: 15px;">
+            <span id="info-halaman-koreksi" class="text-sm text-muted"
+              >Halaman 1 dari 1</span
+            >
+            <div class="flex-center gap-10">
+              <button id="btn-prev-koreksi" class="btn btn-secondary btn-sm" disabled>
+                &laquo; Sebelumnya
+              </button>
+              <button id="btn-next-koreksi" class="btn btn-secondary btn-sm" disabled>
+                Selanjutnya &raquo;
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -38,6 +38,7 @@ import {
   resetPageKetuntasan,
 } from "./admin/ketuntasanController.js";
 import { inisialisasiLatihanSpesial } from "./admin/latihanSpesialController.js";
+import { inisialisasiKoreksiUh } from "./admin/koreksiUhController.js";
 import { DATA_DEFAULT, STATUS_LATIHAN } from "./utils/constants.js";
 
 // ==========================================
@@ -139,6 +140,7 @@ async function muatDataAwal() {
     mulaiAutoRefreshStatus(); // Inisialisasi auto-refresh status siswa
     mulaiAutoRefreshRiwayat(); // Inisialisasi auto-refresh riwayat latihan
     inisialisasiLatihanSpesial(); // Inisialisasi Latihan Spesial
+    await inisialisasiKoreksiUh(); // Inisialisasi Koreksi UH
   } catch (error) {
     console.error("Gagal memuat data awal admin:", error);
     alert("Gagal memuat data dari server. Periksa koneksi internet.");
@@ -177,7 +179,7 @@ function mulaiAutoRefreshRiwayat() {
 // 3. PENGATURAN TAB NAVIGASI & LISTENER
 // ==========================================
 function gantiTab(tabPilihan) {
-  const tabs = ["riwayat", "status", "analisis", "soal", "bank-soal", "ketuntasan", "latihan-spesial"];
+  const tabs = ["riwayat", "status", "analisis", "soal", "bank-soal", "ketuntasan", "latihan-spesial", "koreksi-uh"];
   tabs.forEach((t) => {
     const targetTab = document.getElementById(`tab-${t}`);
     const targetBtn = document.getElementById(`btn-tab-${t}`);
@@ -193,7 +195,7 @@ function gantiTab(tabPilihan) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // A. Navigasi Tab
-  const tombolTabs = ["riwayat", "status", "analisis", "soal", "bank-soal", "ketuntasan", "latihan-spesial"];
+  const tombolTabs = ["riwayat", "status", "analisis", "soal", "bank-soal", "ketuntasan", "latihan-spesial", "koreksi-uh"];
   tombolTabs.forEach((id) => {
     document
       .getElementById(`btn-tab-${id}`)

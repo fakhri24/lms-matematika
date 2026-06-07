@@ -136,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("menu-leaderboard")
     ?.addEventListener("click", () => navigasi("leaderboard.html"));
   document
+    .getElementById("menu-koreksi-uh")
+    ?.addEventListener("click", () => navigasi("koreksi-uh.html"));
+  document
     .getElementById("btn-logout")
     ?.addEventListener("click", keluarAplikasi);
 
