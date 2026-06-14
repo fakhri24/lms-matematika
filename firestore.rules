@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper untuk mengecek apakah user sudah login
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper untuk mendapatkan email user saat ini
+    function getUserEmail() {
+      return request.auth.token.email;
+    }
+
+    // Helper untuk mengekstrak NIS dari email siswa (nis@albago.id)
+    function getUserNis() {
+      return getUserEmail().replace('@albago.id', '');
+    }
+
+    // Helper untuk mengecek apakah user adalah admin
+    function isAdmin() {
+      return isAuthenticated() && getUserEmail() == 'admin@albago.id';
+    }
+
+    // Helper untuk mengecek apakah user mengidentifikasi dirinya sendiri berdasarkan NIS
+    function isOwner(nis) {
+      return isAuthenticated() && getUserNis() == nis;
+    }
+
+    // 1. Koleksi data_siswa
+    match /data_siswa/{nis} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin();
+      allow update: if isAdmin() || isOwner(nis);
+      allow delete: if isAdmin();
+    }
+
+    // 2. Koleksi hasil_latihan
+    match /hasil_latihan/{docId} {
+      allow read: if isAuthenticated();
+      // Izinkan membuat jika user menginput nis_siswa yang sesuai dengan dirinya sendiri, atau jika dia admin
+      allow create: if isAdmin() || (isAuthenticated() && request.resource.data.nis_siswa == getUserNis());
+      // Izinkan update/delete jika user adalah pemilik rekam hasil latihan tersebut, atau jika dia admin
+      allow update, delete: if isAdmin() || (isAuthenticated() && resource.data.nis_siswa == getUserNis());
+    }
+
+    // 3. Koleksi metadata
+    match /metadata/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 4. Koleksi bank_soal
+    match /bank_soal/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 5. Koleksi progres_belajar
+    match /progres_belajar/{docId} {
+      // Format ID dokumen: {nis}_{subMateri}
+      allow read: if isAuthenticated() && (isAdmin() || docId.startsWith(getUserNis() + '_'));
+      allow create: if isAdmin() || (isAuthenticated() && request.resource.data.nis_siswa == getUserNis());
+      allow update: if isAdmin() || (isAuthenticated() && resource.data.nis_siswa == getUserNis() && request.resource.data.nis_siswa == getUserNis());
+      allow delete: if isAdmin() || (isAuthenticated() && resource.data.nis_siswa == getUserNis());
+    }
+
+    // 6. Koleksi latihan_spesial
+    match /latihan_spesial/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 7. Koleksi koreksi_uh
+    match /koreksi_uh/{docId} {
+      allow read: if isAuthenticated() && (isAdmin() || resource.data.nis_siswa == getUserNis());
+      allow write: if isAdmin();
+    }
+  }
+}

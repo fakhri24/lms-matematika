@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "nama_siswa": "Ghalin Nisa Izzati",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "4/06/24"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menghitung relasi horizontal $\\tan(360^\\circ - 45^\\circ) + \\cos(180^\\circ - 60^\\circ) = -\\tan 45^\\circ + (-\\cos 60^\\circ) = -1 - \\frac{1}{2} = -\\frac{3}{2}$. Hasil dan kuadrannya tepat.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Keren, pemahaman kamu tentang tanda kuadran sudah sangat mantap!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Nilai dari sin 870°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menguraikan periodisitas $\\sin(2 \\\\times 360^\\circ + 150^\\circ)$, mengidentifikasi kuadran II, dan menyederhanakannya menjadi $\\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Siswa juga memverifikasi kesetaraan dengan $\\cos 60^\\circ$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Langkah kamu memecah sudut besar dengan periodisitas 360 derajat sangat rapi!"
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Operasi tan 300° x cos 150° x sin(-210°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa melakukan relasi sudut dengan baik: $-\\tan 60^\\circ \\cdot (-\\cos 30^\\circ) \\cdot \\sin 30^\\circ$, namun salah mensubstitusi nilai dari $\\cos 30^\\circ$ menjadi $\\frac{1}{2}$ pada perhitungannya.",
+      "letak_kesalahan": [
+        "Kesalahan substitusi nilai sudut istimewa $\\cos 30^\\circ = \\frac{1}{2}$, seharusnya $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Penjabaran relasi tanda kamu sudah betul semua, sayang sekali agak teledor mengingat nilai tabel sudut istimewa. Jangan tertukar lagi ya!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyederhanakan ekspresi menjadi $\\frac{-\\sqrt{3} + \\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}}$, lalu memecah pecahan tersebut dengan mengalikan pembilang dengan kebalikan penyebut sehingga menjadi $-\\sqrt{3} \\\\times \\frac{2}{\\sqrt{3}} + \\frac{\\sqrt{3}}{2} \\\\times \\frac{2}{\\sqrt{3}} = -2 + 1 = -1$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Manipulasi aljabar pemecahan pecahan kamu di langkah akhir itu cerdik dan brilian banget!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menghitung relasi $\\sec 60^\\circ + \\cot 45^\\circ - (-\\csc 30^\\circ) = 2 + 1 + 2 = 5$ secara akurat. Namun tidak mencentang opsi D (hasil akhir 5) di lembar utama.",
+      "letak_kesalahan": [
+        "Kesalahan administratif kesalahan keteledoran administratif pada opsi d, hasil di coretan sudah tepat 5 namun lupa mencentangnya di lembar pernyataan, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Perhitungan kamu sudah 100% sempurna! Ke depannya lebih teliti lagi saat memindahkan jawaban ke lembar kotak centang ya."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan operasi bentuk trigonometri",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengidentifikasi sifat relasi vertikal dan horizontal dengan tepat, menjodohkan $\\cos(270^\\circ - A)$ dengan $-\\sin A$, $\\tan(180^\\circ + A)$ dengan $\\tan A$, dan $\\sin(270^\\circ + A)$ dengan $-\\cos A$ beserta analisis letak kuadrannya.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Catatan kecil kamu tentang 'karena vertikal' sangat membuktikan kalau kamu paham konsep dasar relasi ini secara mendalam!"
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengubahnya menjadi $-\\tan(360^\\circ + 240^\\circ)$ lalu menggunakan relasi vertikal $-\\tan(270^\\circ - 30^\\circ)$. Namun ia lupa mengubah fungsinya menjadi $\\cot$, dan tetap menuliskannya sebagai $-\\tan 30^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan penggunaan relasi vertikal pada $-\\tan(270^\\circ - 30^\\circ)$, seharusnya fungsi berubah menjadi $-\\cot 30^\\circ = -\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah pintar menggunakan periodisitas rotasi 360 derajat. Ingat lagi aturan emas relasi vertikal: fungsi tan harus berubah menjadi cot ya!"
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan cos(180°+A)*sin(270°-A)/cos(360°-A)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa membuktikan ekspresi menjadi $\\frac{-\\cos A \\cdot (-\\cos A)}{\\cos A} = \\cos A$. Siswa juga mengidentifikasi pernyataan B adalah salah karena $\\sin(270^\\circ - A)$ seharusnya $-\\cos A$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Analisis kamu di opsi B benar-benar menunjukkan tingkat ketelitian yang luar biasa, mantap!"
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian cos 150° x sin 300° (relasi vertikal sumbu Y)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa memakai relasi vertikal 90 dan 270 dengan sangat akurat, merubahnya menjadi $-\\sin 60^\\circ \\cdot (-\\cos 30^\\circ)$ dan mendapatkan hasil akhir $\\frac{3}{4}$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Kamu mengeksekusi instruksi relasi vertikal dengan sempurna, tanda positif/negatifnya juga sudah tepat semua!"
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Operasi pembagian (cos(-240°) - sin(570°)) / tan(-135°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa merubah bentuk sudut besar dan relasi kuadrannya dengan sangat baik, namun pada perhitungan akhir terjadi keteledoran saat mengurangkan $-\\frac{1}{2}$ dengan $-\\frac{1}{2}$ yang malah dihitung menjadi -1.",
+      "letak_kesalahan": [
+        "Kesalahan operasi pengurangan aljabar $-\\sin 30^\\circ - (\\sin 210^\\circ) = -\\frac{1}{2} - ( -\\frac{1}{2} )$, seharusnya menjadi $-\\frac{1}{2} + \\frac{1}{2} = 0$."
+      ],
+      "apresiasi_dan_catatan": "Semua pondasi trigonometrinya sudah mantap, cuma terpeleset di perhitungan aritmetika minus dan minus pada langkah paling akhir saja. Yuk bisa lebih fokus lagi!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Jika sin(54°) = p, nilai ekspresi",
+      "skor": 4,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa menuliskan penyederhanaan $\\frac{\\sin p - 2\\sin p}{\\frac{\\sin p}{2}} = -2$. Secara aljabar penyederhanaan ini membuahkan hasil yang benar, namun terdapat kesalahan menempatkan 'sin' pada substitusi variabel p.",
+      "letak_kesalahan": [
+        "Kesalahan penulisan variabel substitusi, menuliskan $\\sin p$ padahal, seharusnya nilai p sudah merepresentasikan keseluruhan $\\sin 54^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Secara logika aljabar kamu sudah menguasai cara mencoret variabel atas dan bawah dengan baik. Perhatikan lagi notasi variabelnya ya, supaya lebih presisi secara matematis!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 95,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 4,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "95 + 4",
+    "persentase_kelulusan": 95,
+    "predikat": "Sangat Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Ghalin! Selamat ya, kamu dapat nilai wajib 95 dan bonus soal opsional 4 dengan total akhir 95 + 4 (Predikat Sangat Baik). Manipulasi aljabar pemecahan pecahan kamu di soal nomor 4 sangat cerdik. Pondasi pemahaman kuadran dan relasi horizontal kamu juga sangat solid. Ke depannya, tetap perhatikan lagi ketelitian mengingat nilai sudut istimewa dan perubahan fungsi pada relasi vertikal ya. Semangat terus!"
+}

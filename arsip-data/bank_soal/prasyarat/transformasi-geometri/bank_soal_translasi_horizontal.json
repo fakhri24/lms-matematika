@@ -1,0 +1,207 @@
+[
+  {
+    "id": "0BYCMLXlI0TZnfAZMEtA",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi"
+    ],
+    "pertanyaan": "Diketahui sebuah kurva $y = f(x)$ memotong sumbu Y di titik koordinat $(0, 5)$. Jika kurva tersebut digeser secara keseluruhan melalui persamaan $g(x) = f(x - 3)$, titik potong tersebut akan berpindah posisi ke koordinat ...",
+    "clue": "Titik asli $(0, 5)$ berarti $x = 0, y = 5$. Transformasi $(x - 3)$ akan menambah nilai semua absis (X) di dalam kurva sebesar 3 satuan ke arah kanan.",
+    "opsi": [
+      "$(-3, 5)$",
+      "$(0, 2)$",
+      "$(3, 5)$",
+      "$(0, 8)$",
+      "$(3, 2)$"
+    ],
+    "jawaban_benar": "$(3, 5)$",
+    "pembahasan": "Persamaan $g(x) = f(x - 3)$ merupakan translasi kurva $f(x)$ sejauh $3$ satuan mendatar ke <b>kanan</b>.<br>Ini berarti setiap titik koordinat $(x, y)$ pada grafik asal akan berpindah letak ke $(x + 3, y)$.<br>Maka, titik potong yang awalnya berada di $(0, 5)$ akan bergeser ke koordinat $(0 + 3, 5) = (3, 5)$."
+  },
+  {
+    "id": "9kE3bGRVzuPb27ZrZiGo",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar",
+      "Analisis Grafik Fungsi"
+    ],
+    "pertanyaan": "Sebuah fungsi pemodelan cuaca $y = h(x)$ diketahui memiliki titik puncak (suhu tertinggi) pada koordinat $(2, 7)$. Jika fungsi tersebut mengalami translasi horizontal menjadi $y = h(x - 6)$, maka letak koordinat titik puncak yang baru akan berada pada ...",
+    "clue": "Fungsi $h(x - 6)$ berarti grafik digeser lurus mendatar ke sebelah kanan sejauh $6$ satuan. Koordinat Y (ketinggian suhu) tidak terpengaruh, hanya koordinat X (waktu pengamatan) yang bertambah nilainya.",
+    "opsi": [
+      "$(-4, 7)$",
+      "$(8, 7)$",
+      "$(2, 1)$",
+      "$(2, 13)$",
+      "$(8, 13)$"
+    ],
+    "jawaban_benar": "$(8, 7)$",
+    "pembahasan": "Transformasi $y = h(x - 6)$ merupakan translasi murni secara horizontal yang sejajar dengan sumbu X, yakni sejauh $6$ satuan ke <b>kanan</b>.<br>Artinya, seluruh titik pada kurva tersebut, termasuk titik suhu tertinggi, akan mengalami penambahan nilai sebesar $6$ pada sumbu absisnya (X), sedangkan tinggi ordinatnya (Y) akan tetap statis.<br>Absis lama: $x = 2$<br>Absis baru: $2 + 6 = 8$<br>Ordinat tetap: $y = 7$<br>Maka, titik puncak barunya berpindah letak ke koordinat $(8, 7)$."
+  },
+  {
+    "id": "IQKzLW3A4Pm8H08sXtmL",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah garis lurus $y = f(x)$ diketahui melintasi titik pusat koordinat $(0, 0)$. Jika garis tersebut mengalami translasi horizontal menjadi $y = f(x - 4)$, pada koordinat berapakah garis baru tersebut akan melintasi sumbu mendatar (sumbu X)?",
+    "clue": "Garis aslinya memotong sumbu X di angka 0. Translasi $(x - 4)$ akan menggeser titik tersebut ke arah kanan sejauh 4 kotak.",
+    "opsi": [
+      "$(-4, 0)$",
+      "$(0, -4)$",
+      "$(4, 0)$",
+      "$(0, 4)$",
+      "$(4, 4)$"
+    ],
+    "jawaban_benar": "$(4, 0)$",
+    "pembahasan": "Fungsi asal $f(x)$ melewati absis $x = 0$.<br>Transformasi $f(x - 4)$ akan menggeser seluruh kurva sejauh $4$ satuan ke arah <b>kanan</b>.<br>Titik perpotongan sumbu X yang awalnya di angka 0 akan ikut bergeser ke kanan sebesar 4 satuan, yaitu ke absis $x = 0 + 4 = 4$.<br>Karena pergeserannya murni horizontal, ketinggian di sumbu Y tidak berubah (tetap 0). Maka koordinat barunya adalah $(4, 0)$."
+  },
+  {
+    "id": "LOJfGsgbZIvvudbGv9I8",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Persamaan Kuadrat Dasar",
+      "Analisis Grafik Fungsi",
+      "Representasi Aljabar"
+    ],
+    "pertanyaan": "Diketahui penyelesaian atau akar-akar riil dari persamaan grafik $f(x) = 0$ memotong sumbu X tepat di dua titik, yaitu $x = -2$ dan $x = 4$. Jika diberikan fungsi transformasi $g(x) = f(x + 5)$, maka akar-akar baru penyelesaian dari persamaan $g(x) = 0$ adalah ...",
+    "clue": "Bayangkan dua titik potong grafik tersebut ditarik secara bersamaan sesuai dengan translasi horizontal $f(x + 5)$. Ke manakah arah pergeserannya?",
+    "opsi": [
+      "$x = 3$ dan $x = 9$",
+      "$x = -7$ dan $x = -1$",
+      "$x = -10$ dan $x = 20$",
+      "$x = -2$ dan $x = 9$",
+      "$x = 7$ dan $x = 1$"
+    ],
+    "jawaban_benar": "$x = -7$ dan $x = -1$",
+    "pembahasan": "Akar-akar $f(x) = 0$ adalah titik di mana kurva memotong sumbu X, yaitu pada posisi $x = -2$ dan $x = 4$.<br>Transformasi $g(x) = f(x + 5)$ memberikan perintah agar seluruh tubuh grafik $f(x)$ digeser mundur ke arah <b>kiri</b> sejauh $5$ satuan.<br>Maka, posisi kedua titik potong akar tersebut akan ikut berkurang sebesar $5$ dari titik awal.<br>Akar pertama: $-2 - 5 = -7$<br>Akar kedua: $4 - 5 = -1$<br>Maka himpunan akar untuk kurva baru $g(x)$ adalah $-7$ dan $-1$."
+  },
+  {
+    "id": "Qahx2QFUpbz58N269rmx",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='120' x2='280' y2='120' stroke='black' stroke-width='2'/><line x1='150' y1='20' x2='150' y2='150' stroke='black' stroke-width='2'/><path d='M 110 40 Q 150 200, 190 40' fill='none' stroke='black' stroke-dasharray='4,4' stroke-width='2'/><path d='M 170 40 Q 210 200, 250 40' fill='none' stroke='blue' stroke-width='3'/><text x='110' y='30' font-size='12'>y = f(x)</text><text x='250' y='30' font-size='12' fill='blue'>y = h(x)</text><circle cx='150' cy='120' r='4' fill='black'/><circle cx='210' cy='120' r='4' fill='blue'/><text x='145' y='140' font-size='12'>0</text><text x='205' y='140' font-size='12'>3</text></svg><br><br>Perhatikan gambar translasi fungsi parabola di atas. Jika fungsi awal $f(x)$ bergeser menghasilkan bayangan kurva biru $h(x)$, maka pernyataan matematis yang mendeskripsikan kurva biru tersebut adalah ...",
+    "clue": "Titik puncak kurva bergeser dari angka 0 ke angka 3 pada sumbu mendatar. Ingat aturan tanda untuk pergeseran ke arah kanan.",
+    "opsi": [
+      "$h(x) = f(x + 3)$",
+      "$h(x) = f(x - 3)$",
+      "$h(x) = f(x) + 3$",
+      "$h(x) = f(x) - 3$",
+      "$h(x) = 3 f(x)$"
+    ],
+    "jawaban_benar": "$h(x) = f(x - 3)$",
+    "pembahasan": "Berdasarkan visual grafik, titik puncak parabola awal $f(x)$ ditarik dari $x = 0$ sejauh $3$ satuan ke arah <b>kanan</b> untuk menjadi kurva $h(x)$.<br>Aturan translasi mendatar ke arah kanan mengharuskan kita mengurangi variabel $x$ di dalam kurung.<br>Maka rumusan yang benar adalah $h(x) = f(x - 3)$."
+  },
+  {
+    "id": "UEL2MaE1TSHULbAmKwpg",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah fungsi nilai mutlak $y = |x|$ membentuk grafik menyerupai huruf 'V' dengan titik terendahnya berada di $(0, 0)$. Jika fungsi tersebut ditranslasikan menjadi $y = |x - 7|$, di manakah letak koordinat titik terendah (puncak V) yang baru?",
+    "clue": "Format $|x - 7|$ identik dengan $f(x - 7)$. Ini akan menggeser ujung landasan 'V' tersebut searah garis mendatar tanpa mengangkat atau menurunkannya.",
+    "opsi": [
+      "$(-7, 0)$",
+      "$(0, -7)$",
+      "$(7, 0)$",
+      "$(0, 7)$",
+      "$(7, 7)$"
+    ],
+    "jawaban_benar": "$(7, 0)$",
+    "pembahasan": "Persamaan baru memiliki modifikasi di dalam fungsi (di dalam tanda mutlak), yaitu $(x - 7)$.<br>Pengurangan dengan $7$ di dalam variabel berarti grafik digeser sejauh $7$ satuan secara horizontal ke arah <b>kanan</b>.<br>Titik terendah awal yang berada di koordinat $(0, 0)$ akan ikut maju ke kanan sejauh 7 satuan pada sumbu X, sementara sumbu Y-nya tetap.<br>Maka koordinat akhirnya adalah $(7, 0)$."
+  },
+  {
+    "id": "WMV9rUZW6jbIy0wpXH3e",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='120' x2='280' y2='120' stroke='black' stroke-width='2'/><line x1='150' y1='20' x2='150' y2='150' stroke='black' stroke-width='2'/><path d='M 110 40 Q 150 120, 190 40' fill='none' stroke='black' stroke-width='2' stroke-dasharray='4,4'/><text x='160' y='50' font-size='12'>f(x)</text><path d='M 30 40 Q 70 120, 110 40' fill='none' stroke='red' stroke-width='3'/><text x='75' y='50' font-size='12' fill='red'>g(x)</text><circle cx='150' cy='120' r='3' fill='black'/><circle cx='70' cy='120' r='4' fill='red'/><text x='60' y='140' font-size='12'>-4</text><text x='155' y='140' font-size='12'>0</text></svg><br><br>Diberikan grafik kurva awal $y = f(x)$ berupa garis putus-putus hitam dengan titik puncak di pusat koordinat. Kurva tersebut kemudian digeser sehingga menjadi kurva $g(x)$ yang berwarna merah. Persamaan translasi untuk grafik $g(x)$ tersebut adalah ...",
+    "clue": "Perhatikan arah pergeseran puncaknya. Kurva bergeser dari titik $x = 0$ menuju ke titik $x = -4$ (bergerak mundur ke arah kiri).",
+    "opsi": [
+      "$g(x) = f(x - 4)$",
+      "$g(x) = f(x + 4)$",
+      "$g(x) = f(x) - 4$",
+      "$g(x) = f(x) + 4$",
+      "$g(x) = -f(x + 4)$"
+    ],
+    "jawaban_benar": "$g(x) = f(x + 4)$",
+    "pembahasan": "Dari gambar, kita bisa melihat secara visual bahwa grafik $f(x)$ ditarik sejauh $4$ satuan ke arah <b>kiri</b> (menuju area negatif) untuk menjadi grafik $g(x)$.<br>Translasi horizontal ke arah kiri secara aljabar dilambangkan dengan penambahan tanda positif di dalam kurung pada variabel absisnya.<br>Oleh karena itu, persamaannya diubah menjadi $g(x) = f(x + 4)$."
+  },
+  {
+    "id": "Y2sjDy4uOnPLyGKL07eK",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi"
+    ],
+    "pertanyaan": "Jika sebuah grafik fungsi $y = f(x)$ digeser sejauh $5$ satuan arah mendatar lurus ke sebelah <b>kanan</b>, maka persamaan bayangan grafik yang baru adalah ...",
+    "clue": "Pergeseran mendatar (horizontal) terjadi di dalam kurung bersama variabel $x$. Ingat, tanda aljabarnya berlawanan arah dengan arah pergeseran di sumbu X.",
+    "opsi": [
+      "$y = f(x) + 5$",
+      "$y = f(x) - 5$",
+      "$y = f(x + 5)$",
+      "$y = f(x - 5)$",
+      "$y = f(5x)$"
+    ],
+    "jawaban_benar": "$y = f(x - 5)$",
+    "pembahasan": "Translasi horizontal (kiri/kanan) ditandai dengan penambahan atau pengurangan angka langsung pada variabel $x$ di dalam kurung.<br>Aturan utamanya berlawanan arah:<br>- Geser ke <b>kanan</b> sejauh $a$ satuan menjadi $f(x - a)$<br>- Geser ke <b>kiri</b> sejauh $a$ satuan menjadi $f(x + a)$<br>Maka, jika digeser ke kanan $5$ satuan, persamaannya adalah $y = f(x - 5)$."
+  },
+  {
+    "id": "xcf2tYLKBDkqbw6YgwS4",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Representasi Aljabar"
+    ],
+    "pertanyaan": "Persamaan grafik $y = (x + 3)^2$ merupakan hasil pergeseran dari grafik dasar parabola $y = x^2$. Arah dan jarak pergeseran tersebut adalah ...",
+    "clue": "Perhatikan tanda di dalam kurung kuadrat. Tanda positif pada modifikasi absis $x$ menandakan pergeseran menuju wilayah sumbu X yang negatif.",
+    "opsi": [
+      "$3$ satuan ke atas",
+      "$3$ satuan ke bawah",
+      "$3$ satuan ke kanan",
+      "$3$ satuan ke kiri",
+      "$9$ satuan ke kiri"
+    ],
+    "jawaban_benar": "$3$ satuan ke kiri",
+    "pembahasan": "Bentuk $y = (x + 3)^2$ ekuivalen dengan pola $y = f(x + a)$ di mana $a = 3$.<br>Karena ada penambahan (tanda plus) di dalam kurung yang terikat langsung dengan $x$, ini adalah sebuah translasi horizontal <i>counter-intuitive</i> (berlawanan arah). Tanda plus berarti grafik didorong mundur ke arah nilai X yang lebih kecil.<br>Maka grafiknya bergeser sejauh $3$ satuan ke arah <b>kiri</b>."
+  },
+  {
+    "id": "zxkzj31lnFXxslXPLraN",
+    "materi_utama": "Transformasi Geometri",
+    "sub_materi": "Translasi Horizontal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi"
+    ],
+    "pertanyaan": "Secara visual, apa yang akan terjadi pada sebuah kurva jika persamaan matematisnya diubah dari $y = f(x)$ menjadi $y = f(x - 2)$?",
+    "clue": "Pengurangan $2$ terjadi di dalam kurung. Apakah kurva akan naik, turun, atau bergerak menyamping? Tanda minus pada modifikasi sumbu X berarti bergerak ke arah positif.",
+    "opsi": [
+      "Seluruh kurva akan bergeser sejajar sejauh 2 satuan ke arah kanan",
+      "Seluruh kurva akan bergeser sejajar sejauh 2 satuan ke arah kiri",
+      "Seluruh kurva akan bergeser sejajar sejauh 2 satuan ke arah bawah",
+      "Tinggi kurva akan menyusut menjadi setengah dari ukuran aslinya",
+      "Bentuk kurva akan melebar sebesar 2 satuan"
+    ],
+    "jawaban_benar": "Seluruh kurva akan bergeser sejajar sejauh 2 satuan ke arah kanan",
+    "pembahasan": "Transformasi berformat $f(x - a)$ adalah sebuah pergeseran mendatar (translasi horizontal).<br>Tanda minus menandakan bahwa agar nilai fungsi tetap sama, absis $x$ harus 'membayar' kekurangan tersebut dengan nilai yang lebih besar.<br>Secara grafis, hal ini membuat seluruh titik kurva maju sejauh $2$ satuan ke <b>kanan</b> secara bersamaan tanpa mengubah bentuk aslinya."
+  }
+]

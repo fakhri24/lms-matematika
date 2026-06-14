@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "nama_siswa": "Maritsa Sofwah Aziza",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika Peminatan",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-07"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menulis pengerjaan dengan benar: $\\tan(360^\\circ - 45^\\circ) + \\cos(180^\\circ - 60^\\circ) = -\\tan 45^\\circ + (-\\cos 60^\\circ) = -1 - \\frac{1}{2} = -\\frac{3}{2}$. Hasil akhirnya sesuai dengan pilihan A yang dicentang di lembar utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Koreksi yang sangat baik! Langkah-langkah penyelesaiannya runtut, pemahaman tanda kuadrannya tepat, dan perhitungan pecahan di akhir juga benar."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Nilai dari sin 870°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menggunakan periodisitas dengan benar: $\\sin(2 \\\\times 360^\\circ + 150^\\circ) = \\sin 150^\\circ$. Namun, siswa menuliskan relasi $\\sin 150^\\circ = \\sin(150^\\circ + 30^\\circ)$ yang salah secara konsep. Siswa kemudian menuliskan $\\sin 30^\\circ$ dan mensubstitusikannya menjadi $\\frac{1}{2}$. Pilihan A, C, dan D yang dicentang di lembar utama sudah tepat.",
+      "letak_kesalahan": [
+        "Kesalahan penerapan rumus relasi sudut dasar $\\sin(150^\\circ) = \\sin(150^\\circ + 30^\\circ)$, seharusnya $\\sin(150^\\circ) = \\sin(180^\\circ - 30^\\circ)$."
+      ],
+      "apresiasi_dan_catatan": "Pemahaman konsep periodisitas dan nilai sudut istimewa sudah sangat baik. Hanya saja, hati-hati saat menuliskan rumus relasi sudut pada langkah kedua."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Operasi tan 300° x cos 150° x sin(-210°)",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan beberapa relasi sudut dengan penulisan tanda negatif terlalu awal: $\\tan 300^\\circ = -\\tan(300^\\circ + 60^\\circ)$, $\\cos 150^\\circ = -\\cos(180^\\circ - 30^\\circ)$, dan $\\sin(-210^\\circ) = -(-\\sin(210^\\circ - 30^\\circ))$. Ini dianggap sebagai kesalahan kecil yang digabung. Namun pada langkah substitusi, nilai-nilai yang dimasukkan sudah benar: $-\\sqrt{3} \\cdot (-\\frac{1}{2}\\sqrt{3}) \\cdot \\frac{1}{2} = \\frac{3}{2} \\cdot \\frac{1}{2} = \\frac{3}{4}$. Pilihan Benar/Salah pada lembar jawaban juga sinkron dengan hasil hitungan.",
+      "letak_kesalahan": [
+        "Kesalahan penerapan rumus relasi sudut dasar berupa penulisan tanda negatif terlalu awal pada ketiga sudut relasi, seharusnya menggunakan acuan sudut horizontal standar yaitu $\\tan(360^\\circ - 60^\\circ)$, $\\cos(180^\\circ - 30^\\circ)$, dan $-\\sin(180^\\circ + 30^\\circ)$."
+      ],
+      "apresiasi_dan_catatan": "Hasil akhir dan substitusi nilai sudut istimewa kamu sudah benar semua. Namun, penulisan rumus relasi sudutnya masih kurang tepat. Ingat bahwa sudut relasi horizontal selalu menggunakan acuan 180° atau 360°."
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menentukan konsep dan nilai sudut istimewa dengan benar: $\\frac{-\\tan 60^\\circ - (-\\cos 30^\\circ)}{\\sin 60^\\circ} = \\frac{-\\sqrt{3} + \\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}}$. Namun, siswa melakukan kesalahan aljabar dengan langsung mencoret penyebut dan suku pembilang sehingga menghasilkan $-\\sqrt{3}$ dan mencentang pilihan A.",
+      "letak_kesalahan": [
+        "Kesalahan penyederhanaan aljabar $\\frac{-\\sqrt{3} + \\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -\\sqrt{3}$, seharusnya $\\frac{-\\sqrt{3} + \\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = \\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -1$."
+      ],
+      "apresiasi_dan_catatan": "Secara konsep trigonometri dan substitusi sudut istimewa sudah sempurna. Namun, hati-hati dengan operasi aljabar pecahan. Kita tidak bisa langsung mencoret suku penjumlahan di pembilang dengan penyebut ya."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan relasi sudut dengan benar secara konsep: $\\sec 60^\\circ + \\cot 45^\\circ - (-\\csc 30^\\circ)$. Namun, siswa melakukan kesalahan substitusi nilai $\\sec 60^\\circ = \\sqrt{3}$ (seharusnya 2) dan -($-\\csc 30^\\circ$) disubstitusikan menjadi $\\frac{1}{2}$ (seharusnya 2). Di lembar utama, siswa mencentang pilihan B ($\\cot 225^\\circ = -1$) yang bertentangan dengan pengerjaannya di coretan ($\\cot 45^\\circ = 1$), sementara pilihan C dicentang dengan benar.",
+      "letak_kesalahan": [
+        "Kesalahan substitusi nilai $\\sec(60^\\circ) = \\sqrt{3}$, seharusnya $\\sec(60^\\circ) = 2$.",
+        "Kesalahan substitusi nilai $-(-\\csc 30^\\circ) = \\frac{1}{2}$, seharusnya -($-\\csc 30^\\circ$) = 2.",
+        "Kesalahan administratif kesalahan administratif di mana opsi yang dicentang adalah b ($\\cot 225^\\circ = -1$), sedangkan pada coretan tertulis $\\cot(45^\\circ) = 1$, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Langkah awal pengubahan sudut relasinya sudah benar secara konsep. Namun, kamu keliru memasukkan nilai sec 60° serta nilai csc 30°, dan ada ketidaksesuaian jawaban antara coretan dan lembar utama untuk nilai cot 225°. Lebih teliti lagi ya!"
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan operasi bentuk trigonometri",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjodohkan seluruh pernyataan dengan benar di lembar utama: $1) \\cos(270^\\circ - A) = -\\sin A$ (pilihan B), $2) \\tan(180^\\circ + A) = \\tan A$ (pilihan A), $3) \\sin(270^\\circ + A) = -\\cos A$ (pilihan C). Coretan siswa di sebelah kanan menunjukkan proses berpikir yang benar.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Luar biasa! Semua konsep penyederhanaan sudut berelasi variabel di kuadran III dan IV dijawab dengan sangat tepat dan rapi."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyelesaikan perhitungan dengan benar di coretan: $\\tan(-600^\\circ) = -\\tan 600^\\circ = -\\tan(360^\\circ + 240^\\circ) = -\\tan 240^\\circ = -\\tan(180^\\circ + 60^\\circ) = -\\tan 60^\\circ = -\\sqrt{3}$. Namun, di lembar utama siswa memilih Benar untuk pernyataan kedua ('Nilai dari tan 600° sama dengan tan 120°'), padahal kedua nilai tersebut berlawanan tanda.",
+      "letak_kesalahan": [
+        "Kesalahan administratif di mana opsi yang dicentang untuk pernyataan kedua (\"Nilai dari $\\tan 600^\\circ$ sama dengan $\\tan 120^\\circ$\") adalah B (Benar), seharusnya S (Salah) karena $\\tan 600^\\circ = \\sqrt{3}$ sedangkan $\\tan 120^\\circ = -\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Perhitungan di lembar buram kamu sudah 100% benar dan sangat detail. Hanya saja, ada ketelitian yang terlewat saat mengisi tabel pernyataan kedua di lembar utama."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan cos(180°+A)*sin(270°-A)/cos(360°-A)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menerapkan konsep relasi sudut dengan benar di pembilang dan penyebut: $\\frac{-{\\cos A} \\cdot (-{\\cos A})}{\\cos A}$. Namun, siswa melakukan kesalahan aljabar di pembilang dengan menuliskan $-\\cos A \\cdot (-\\cos A) = \\cos A$ (seharusnya $\\cos^2 A$) sehingga hasil akhir coretannya adalah 1.",
+      "letak_kesalahan": [
+        "Kesalahan aljabar perkalian bentuk aljabar $-\\cos A \\cdot (-\\cos A) = \\cos A$, seharusnya $-\\cos A \\cdot (-\\cos A) = \\cos^2 A$."
+      ],
+      "apresiasi_dan_catatan": "Konsep kuadran dan relasi sudutnya sudah mantap! Sayangnya, ada sedikit kekeliruan aljabar saat mengalikan cos A dengan cos A."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian cos 150° x sin 300° (relasi vertikal sumbu Y)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menerapkan relasi vertikal dengan benar: $\\cos 150^\\circ \\cdot \\sin 300^\\circ = -\\sin 60^\\circ \\cdot (-\\cos 30^\\circ) = -\\frac{1}{2}\\sqrt{3} \\cdot (-\\frac{1}{2}\\sqrt{3}) = \\frac{3}{4}$. Di lembar utama, siswa mencentang A dan C, tetapi melewatkan pilihan B yang juga bernilai benar sesuai dengan langkah pengerjaannya.",
+      "letak_kesalahan": [
+        "Kesalahan administratif kesalahan administratif di mana opsi b ($\\sin 300^\\circ$ dapat diubah menjadi $\\sin(270^\\circ + 30^\\circ) = -\\cos 30^\\circ$) tidak dicentang di lembar utama, padahal pada coretan sudah tertulis langkah $-\\cos 30^\\circ$, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Pekerjaan di lembar buram sangat bagus dan teliti, konsep relasi vertikalnya juga dikuasai. Sayang sekali pilihan B di lembar utama terlewat untuk dicentang."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Operasi pembagian (cos(-240°) - sin(570°)) / tan(-135°)",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyelesaikan konsep $\\cos(-240^\\circ) = -\\cos 60^\\circ$ dan penyebut dengan benar. Namun, siswa melakukan kesalahan konsep periodisitas sinus dengan menuliskan $\\sin(570^\\circ) = -\\sin(360^\\circ+210^\\circ)$ (sehingga dihitung sebagai -($-\\sin 210^\\circ$)). Pada langkah aljabar, siswa juga melakukan kesalahan aritmetika dengan menjumlahkan $-\\frac{1}{2} + \\frac{1}{2} = -1$ (seharusnya 0). Pilihan S (Salah) pada tabel utama diisi dengan benar.",
+      "letak_kesalahan": [
+        "Kesalahan periodisitas $\\sin(570^\\circ) = -\\sin(360^\\circ + 210^\\circ)$, seharusnya $\\sin(570^\\circ) = \\sin(360^\\circ + 210^\\circ)$.",
+        "Kesalahan aritmetika penjumlahan pecahan $-\\frac{1}{2} + \\frac{1}{2} = -1$, seharusnya $-\\frac{1}{2} + \\frac{1}{2} = 0$."
+      ],
+      "apresiasi_dan_catatan": "Langkah pengerjaan dan aljabar kamu sudah konsisten. Namun, kamu melakukan kesalahan periodisitas pada sinus dan kesalahan aritmetika sederhana pada penjumlahan pembilangnya. Lebih teliti lagi ya!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Jika sin(54°) = p, nilai ekspresi [SOAL BONUS]",
+      "skor": 3,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa langsung mensubstitusikan variabel p pada persamaan tanpa menuliskan dasar/langkah penurunan relasi sudut untuk $\\cos 216^\\circ = -p$ dan $\\cos 324^\\circ = p$. Siswa juga melakukan kesalahan aljabar penyederhanaan pecahan variabel sehingga menghasilkan -2p (seharusnya -2) dan memilih opsi E. Berdasarkan rubrik bonus berjenjang, nilai opsional diberikan 3/5.",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi sudut karena tidak mencantumkan dasar/penurunan mengapa $\\cos 216^\\circ = -p$ dan $\\cos 324^\\circ = p$, seharusnya diselesaikan dengan benar.",
+        "Kesalahan aljabar penyederhanaan variabel $\\frac{-p}{\\frac{1}{2}p} = -2p$, seharusnya $\\frac{-p}{\\frac{1}{2}p} = -2$."
+      ],
+      "apresiasi_dan_catatan": "Substitusi variabel p sudah cocok dengan opsi akhir. Namun, karena ini soal essay/coretan, kamu wajib menuliskan dasar mengapa cos 216° dan cos 324° bisa diubah menjadi p ya. Selain itu, ada kekeliruan aljabar di langkah akhir."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 86,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 3,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "86 + 3",
+    "persentase_kelulusan": 86.0,
+    "predikat": "Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Maritsa! Selamat ya, kamu dapat nilai wajib 86 dan bonus soal opsional 3 dengan total akhir 86 + 3 (Predikat Baik). Secara keseluruhan, pemahaman kamu tentang konsep sudut berelasi trigonometri dan periodisitas sudah sangat matang. Namun, kamu masih sering melakukan kesalahan aljabar sederhana seperti menyederhanakan pembagian pecahan, perkalian tanda aljabar, dan penjumlahan pecahan dasar. Selain itu, ada beberapa ketidaktelitian administratif antara hasil coretan dan opsi yang dicentang di lembar utama. Jika kamu lebih teliti dalam menghitung dan mencocokkan lembar jawaban, nilaimu pasti bisa lebih tinggi lagi. Tetap semangat berlatih soal-soal aljabar dan trigonometri ya!"
+}

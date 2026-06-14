@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "nama_siswa": "Nadin Emira Kayyisa",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-06"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan relasi sudut secara runtun di lembar coretan: $\\tan(360^\\circ - 45^\\circ) + \\cos(180^\\circ - 60^\\circ) = -\\tan 45^\\circ - \\cos 60^\\circ$. Kemudian melakukan substitusi nilai dan menyederhanakan pecahan dengan benar menjadi $-1 - \\frac{1}{2} = -\\frac{3}{2}$. Pilihan jawaban A pada lembar soal utama disilang dengan benar.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Pengerjaan yang sangat rapi dan sistematis, Nadin! Kamu menguasai konsep sudut berelasi di kuadran II dan IV serta penjumlahan pecahan negatif dengan sempurna."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyederhanakan periodisitas sudut lebih dari 360 derajat: $\\sin(2 \\times 360^\\circ + 150^\\circ) = \\sin 150^\\circ$, lalu menggunakan relasi kuadran II untuk menemukan nilai akhir $\\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Siswa juga membuktikan kesetaraan nilai tersebut dengan $\\cos 60^\\circ = \\frac{1}{2}$. Opsi A, C, dan D pada lembar jawaban utama dicentang dengan benar.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Mantap sekali, Nadin! Analisis sudut besar dan kesetaraan nilai fungsi trigonometri yang ekuivalen berhasil kamu selesaikan dengan sangat baik."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan relasi sudut dari ketiga fungsi secara terpisah di lembar coretan: $\\tan 300^\\circ = -\\tan 60^\\circ = -\\sqrt{3}$, $\\cos 150^\\circ = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$, dan $\\sin(-210^\\circ) = -\\sin(210^\\circ) = -\\sin(180^\\circ+30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Kemudian mengalikan ketiganya dengan benar menjadi $\\frac{3}{4}$ dan mengisi tabel Benar/Salah pada lembar soal utama dengan sangat tepat (B, S, B, S).",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Salut dengan ketelitianmu, Nadin! Penjabaran sudut negatif dan perkalian bentuk akar negatifmu 100% akurat."
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan relasi sudut untuk pembilang dan penyebut dengan benar: $\\tan 300^\\circ = -\\sqrt{3}$, $\\cos 210^\\circ = -\\frac{1}{2}\\sqrt{3}$, dan $\\sin 120^\\circ = \\sin 60^\\circ$. Namun, pada saat melakukan substitusi nilai, terjadi kesalahan di mana siswa menuliskan $\\sin 60^\\circ = \\frac{1}{2}$ (seharusnya $\\frac{1}{2}\\sqrt{3}$). Langkah penyelesaian aljabar berikutnya dilakukan secara konsisten dengan kesalahan tersebut hingga diperoleh hasil akhir $-\\sqrt{3}$ dan menyilang opsi A.",
+      "letak_kesalahan": [
+        "Kesalahan nilai dasar trigonometri $\\sin 60^\\circ = \\frac{1}{2}$, seharusnya $\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Konsep relasi sudut dan perhitungan aljabarmu sebenarnya sudah sangat bagus, Nadin. Hanya saja, lain kali lebih hati-hati saat mensubstitusi nilai sudut istimewa agar hasil akhirnya tidak meleset ya!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan dan menghitung nilai kebalikan fungsi trigonometri dengan tepat di lembar coretan: $\\sec 300^\\circ = 2$, $\\cot 225^\\circ = 1$, dan $\\csc 210^\\circ = -2$. Operasi akhir diselesaikan dengan benar: 2 + 1 - (-2) = 5. Pernyataan A, C, dan D dicentang dengan benar di lembar soal utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Keren banget, Nadin! Pemahamanmu tentang fungsi kebalikan (secan, cosecan, cotangen) dan perhitungan kuadrannya sudah sangat matang."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjodohkan ketiga pernyataan dengan hasil sederhananya dengan benar: $1. \\cos(270^\\circ - A) \\to -\\sin A (B)$, $2. \\tan(180^\\circ + A) \\to \\tan A (A)$, $3. \\sin(270^\\circ + A) \\to -\\cos A (C)$. Siswa menuliskan bagan konsep relasi sumbu vertikal (90/270 derajat) dan horizontal (180/360 derajat) secara jelas di lembar coretan.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Bagus sekali, Nadin! Catatan konsep sumbu vertikal dan horizontal yang kamu buat sangat membantu dan terbukti membuatmu menjawab soal ini dengan sempurna."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabaran penyederhanaan sudut negatif dan periodisitas sudut di lembar coretan dengan benar: $\\tan(-600^\\circ) = -\\tan 600^\\circ = -\\tan 240^\\circ = -\\tan 60^\\circ = -\\sqrt{3}$. Siswa juga menghitung nilai $\\tan 120^\\circ = -\\sqrt{3}$ dengan benar. Namun, siswa mencentang Benar (B) untuk pernyataan 2 bahwa nilai $\\tan 600^\\circ$ sama dengan $\\tan 120^\\circ$ (seharusnya Salah karena $\\tan 600^\\circ = \\sqrt{3}$ sedangkan $\\tan 120^\\circ = -\\sqrt{3}$).",
+      "letak_kesalahan": [
+        "Kesalahan analisis kebenaran opsi pada lembar jawaban $\\tan 600^\\circ = \\tan 120^\\circ$ (Benar), seharusnya $\\tan 600^\\circ = \\sqrt{3} \\\\neq \\tan 120^\\circ = -\\sqrt{3}$ (Salah)."
+      ],
+      "apresiasi_dan_catatan": "Perhitungan di coretanmu sebenarnya sudah 100% benar untuk kedua sudut tersebut, Nadin. Hati-hati saat menganalisis pernyataan di tabel ya, jangan sampai terkecoh dengan tanda negatifnya."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyederhanakan setiap komponen relasi sudut dengan benar di lembar coretan: $\\cos(180^\\circ + A) = -\\cos A$, $\\sin(270^\\circ - A) = -\\cos A$, dan $\\cos(360^\\circ - A) = \\cos A$. Pecahan disederhanakan secara aljabar dengan tepat menjadi $\\frac{(-\\cos A) \\cdot (-\\cos A)}{\\cos A} = \\cos A$. Pernyataan A, C, dan D dicentang dengan benar di lembar soal utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sempurna, Nadin! Penyederhanaan fungsi kuadran III dan IV serta pembagian aljabar kuadrat trigonometrimu sangat presisi."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menggunakan relasi vertikal sumbu Y sesuai instruksi di lembar coretan: $\\cos 150^\\circ = \\cos(90^\\circ + 60^\\circ) = -\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$ dan $\\sin 300^\\circ = \\sin(270^\\circ + 30^\\circ) = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$. Hasil akhir perkalian dihitung dengan benar menjadi $\\frac{3}{4}$. Pernyataan A, B, dan C dicentang dengan benar di lembar soal utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Kerja bagus, Nadin! Kamu berhasil menerapkan perubahan fungsi pada relasi vertikal sumbu Y beserta penentuan tanda kuadrannya dengan sangat baik."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan setiap bagian operasi secara detail di lembar coretan: $\\cos(-240^\\circ) = -\\frac{1}{2}$, $\\sin(570^\\circ) = -\\frac{1}{2}$, dan $\\tan(-135^\\circ) = 1$. Pecahan disederhanakan dengan benar menjadi $\\frac{-\\frac{1}{2} - (-\\frac{1}{2})}{1} = 0$. Tabel Benar/Salah pada lembar soal utama diisi dengan benar (S, B, B, S).",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Proses berpikirmu sangat sistematis, Nadin! Penguraian sudut besar, penanganan tanda negatif, dan penyederhanaan akhirnya semuanya 100% tepat."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Soal Opsional / Bonus",
+      "skor": 5,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa menuliskan penyederhanaan aljabar dengan parameter p di lembar coretan dengan benar: $\\cos 216^\\circ = -p$, $\\cos(-60^\\circ) = \\frac{1}{2}$, dan $\\cos 324^\\circ = p$. Substitusi dan penyederhanaan aljabar diselesaikan dengan sangat baik menjadi $\\frac{p - 2p}{p/2} = -2$, lalu menyilang opsi A.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sempurna, Nadin! Langkah aljabar parameter p dan relasi sudutnya kamu selesaikan hingga tuntas dan berhasil mendapatkan jawaban -2 dengan tepat. Bonus 5 poin penuh untukmu!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 98,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 5,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "98 + 5",
+    "persentase_kelulusan": 98,
+    "predikat": "Sangat Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Nadin! Selamat ya, kamu dapat nilai wajib 98 dan bonus soal opsional 5 dengan total akhir 98 + 5 (Predikat Sangat Baik). Secara keseluruhan, pemahaman konsep trigonometrimu luar biasa hebat dan pengerjaanmu di lembar coretan sangat sistematis. Sedikit catatan saja, kamu hanya perlu lebih teliti lagi saat mensubstitusi nilai sudut istimewa seperti $\\sin 60^\\circ$ di nomor 4 dan lebih jeli melihat tanda negatif di tabel pernyataan nomor 7. Terus pertahankan prestasi gemilang ini ya, kamu keren banget!"
+}

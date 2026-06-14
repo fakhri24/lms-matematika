@@ -1,0 +1,205 @@
+[
+  {
+    "id": "ItW8jK9thPesuUvoohaj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Titik potong grafik fungsi murni $y = \\tan x$ terhadap sumbu X pada satu putaran penuh ($0^\\circ \\le x \\le 360^\\circ$) terjadi pada koordinat sudut ...",
+    "clue": "Tangen adalah hasil pembagian sinus oleh cosinus ($\\frac{\\sin}{\\cos}$). Pecahan akan bernilai nol jika pembilangnya (sinus) bernilai nol.",
+    "opsi": [
+      "$90^\\circ$ dan $270^\\circ$",
+      "$45^\\circ$ dan $225^\\circ$",
+      "$0^\\circ$ dan $180^\\circ$ saja",
+      "$180^\\circ$ dan $360^\\circ$ saja",
+      "$0^\\circ, 180^\\circ,$ dan $360^\\circ$"
+    ],
+    "jawaban_benar": "$0^\\circ, 180^\\circ,$ dan $360^\\circ$",
+    "pembahasan": "Grafik akan memotong sumbu X saat $\\tan x = 0$.<br>Karena $\\tan x = \\frac{\\sin x}{\\cos x}$, maka nilai nol tercapai di saat yang sama dengan $\\sin x = 0$.<br>Fungsi sinus bernilai nol pada garis mendatar, yaitu saat sudut menyentuh $0^\\circ, 180^\\circ,$ dan kembali ke $360^\\circ$."
+  },
+  {
+    "id": "04sfzQOyQIQmohJNabWR",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Titik koordinat perpotongan antara grafik fungsi murni $y = \\sin x$ dengan sumbu tegak (sumbu Y) berada pada ...",
+    "clue": "Titik potong terhadap sumbu Y terjadi ketika sudut mendatarnya ($x$) bernilai tepat $0^\\circ$.",
+    "opsi": [
+      "$(0, 1)$",
+      "$(0, -1)$",
+      "$(0, 0)$",
+      "$(90^\\circ, 1)$",
+      "$(180^\\circ, 0)$"
+    ],
+    "jawaban_benar": "$(0, 0)$",
+    "pembahasan": "Syarat memotong sumbu Y adalah nilai absis $x = 0^\\circ$.<br>Substitusikan ke dalam fungsi:<br>$y = \\sin(0^\\circ)$<br>$y = 0$<br>Maka grafik memotong sumbu tegak tepat di titik pusat koordinat $(0, 0)$."
+  },
+  {
+    "id": "0XCD6YPlnONtPMb1MLhQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Pada rentang Kuadran I ($0^\\circ < x < 90^\\circ$), jika kamu menggambar grafik fungsi $y = \\sin x$ dan $y = \\cos x$ di atas kertas yang sama, kedua garis kurva tersebut pasti akan saling berpotongan persis pada sudut ...",
+    "clue": "Titik potong antar dua fungsi terjadi saat nilai $y$-nya setara ($\\sin x = \\cos x$). Sudut istimewa manakah yang memiliki nilai yang sama persis?",
+    "opsi": [
+      "$0^\\circ$",
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$90^\\circ$"
+    ],
+    "jawaban_benar": "$45^\\circ$",
+    "pembahasan": "Agar kedua grafik berpotongan di Kuadran I, tinggi kordinat $y$-nya harus sama persis. <br>Berdasarkan tabel sudut istimewa:<br>$\\sin 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br>$\\cos 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br>Karena nilainya identik di sudut tersebut, kurva sinus yang sedang menanjak akan bertabrakan dengan kurva cosinus yang sedang menurun pada titik absis $x = 45^\\circ$."
+  },
+  {
+    "id": "3k4CS0a9w1qdFGH1or7K",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Pada rentang interval $0^\\circ \\le x \\le 360^\\circ$, grafik fungsi dasar $y = \\cos x$ akan memotong sumbu X mendatar tepat pada titik sudut ...",
+    "clue": "Grafik memotong sumbu X ketika nilai ketinggiannya bernilai nol ($y = 0$). Pada sudut berapakah nilai cosinus menghasilkan angka nol?",
+    "opsi": [
+      "$0^\\circ$ dan $180^\\circ$",
+      "$90^\\circ$ dan $270^\\circ$",
+      "$0^\\circ$ dan $360^\\circ$",
+      "$180^\\circ$ dan $360^\\circ$",
+      "$45^\\circ$ dan $135^\\circ$"
+    ],
+    "jawaban_benar": "$90^\\circ$ dan $270^\\circ$",
+    "pembahasan": "Titik potong terhadap sumbu X terjadi jika $y = 0$.<br>Maka kita mencari penyelesaian dari $\\cos x = 0$.<br>Berdasarkan tabel sudut istimewa dan batasan kuadran, nilai cosinus meredup hingga menjadi $0$ pada sudut vertikal tegak, yaitu $90^\\circ$ (atas) dan $270^\\circ$ (bawah)."
+  },
+  {
+    "id": "FsgYsvoM65Ow6ePdquVg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='75' x2='280' y2='75' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='140' stroke='black' stroke-width='2'/><path d='M 50 25 C 100 25, 100 125, 150 125 C 200 125, 200 25, 250 25' fill='none' stroke='red' stroke-width='3'/><text x='40' y='30' text-anchor='end'>1</text><text x='40' y='130' text-anchor='end'>-1</text><text x='150' y='142' text-anchor='middle'>180°</text><text x='250' y='90' text-anchor='middle'>360°</text><line x1='45' y1='25' x2='55' y2='25' stroke='black'/><line x1='45' y1='125' x2='55' y2='125' stroke='black'/></svg><br><br>Berdasarkan bentuk kurva di atas, fungsi trigonometri dasar yang paling tepat untuk memodelkannya adalah ...",
+    "clue": "Grafik ini bentuknya seperti mangkuk. Ia bermula dari titik puncaknya (saat $x = 0^\\circ, y = 1$).",
+    "opsi": [
+      "$y = \\sin x$",
+      "$y = \\cos x$",
+      "$y = \\tan x$",
+      "$y = -\\sin x$",
+      "$y = -\\cos x$"
+    ],
+    "jawaban_benar": "$y = \\cos x$",
+    "pembahasan": "Grafik fungsi $y = \\cos x$ selalu dimulai dari nilai maksimumnya di koordinat $(0, 1)$ karena $\\cos 0^\\circ = 1$. Kurva ini kemudian turun melewati sumbu X pada $90^\\circ$, mencapai titik terendah di $180^\\circ$, dan naik kembali."
+  },
+  {
+    "id": "Idmmq3FWYMHosIvyzxtK",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='75' x2='280' y2='75' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='140' stroke='black' stroke-width='2'/><path d='M 50 75 Q 100 -25, 150 75 T 250 75' fill='none' stroke='blue' stroke-width='3'/><text x='40' y='25' text-anchor='end'>1</text><text x='40' y='130' text-anchor='end'>-1</text><text x='150' y='90' text-anchor='middle'>180°</text><text x='250' y='90' text-anchor='middle'>360°</text><line x1='45' y1='25' x2='55' y2='25' stroke='black'/><line x1='45' y1='125' x2='55' y2='125' stroke='black'/></svg><br><br>Grafik di atas merepresentasikan pergerakan gelombang murni dari fungsi dasar ...",
+    "clue": "Perhatikan titik awalnya. Grafik ini dimulai dari koordinat $(0, 0)$. Fungsi apakah yang bernilai nol saat sudutnya $0^\\circ$?",
+    "opsi": [
+      "$y = \\sin x$",
+      "$y = \\cos x$",
+      "$y = \\tan x$",
+      "$y = -\\sin x$",
+      "$y = -\\cos x$"
+    ],
+    "jawaban_benar": "$y = \\sin x$",
+    "pembahasan": "Grafik dasar $y = \\sin x$ selalu dimulai dari titik pangkal $(0, 0)$ karena $\\sin 0^\\circ = 0$. Setelah itu grafik naik membentuk bukit di Kuadran I/II dan turun membentuk lembah di Kuadran III/IV."
+  },
+  {
+    "id": "It3PxyA9xeTkPsMgRhGg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Berdasarkan bentuk grafik dasarnya, nilai maksimum dan nilai minimum mutlak yang dapat dicapai oleh fungsi $y = \\sin x$ secara berturut-turut adalah ...",
+    "clue": "Bayangkan tabel sudut istimewa untuk sinus. Berapakah angka paling besar dan paling kecil yang pernah dihasilkan oleh fungsi tersebut?",
+    "opsi": [
+      "$0$ dan $-1$",
+      "$1$ dan $0$",
+      "$1$ dan $-1$",
+      "$2$ dan $-2$",
+      "Tak terhingga ($\\infty$) dan $-\\infty$"
+    ],
+    "jawaban_benar": "$1$ dan $-1$",
+    "pembahasan": "Grafik dasar fungsi $y = \\sin x$ bergerak seperti gelombang beraturan.<br>Puncak tertingginya (nilai maksimum) terjadi pada saat $x = 90^\\circ$ dengan nilai $y = 1$.<br>Lembah terendahnya (nilai minimum) terjadi pada saat $x = 270^\\circ$ dengan nilai $y = -1$."
+  },
+  {
+    "id": "fHfP3zoiEy07yg1TKkXA",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Perhatikan anatomi pergerakan dari grafik fungsi dasar $y = \\cos x$. Pada rentang interval manakah grafik tersebut mengalami 'penurunan nilai' secara konsisten dan terus-menerus (mulai dari nilai tertinggi meluncur turun ke nilai terendah)?",
+    "clue": "Cosinus dimulai dari $y = 1$ pada sudut $0^\\circ$. Di sudut manakah nilainya benar-benar jatuh mencapai dasar di angka $-1$?",
+    "opsi": [
+      "$0^\\circ \\le x \\le 90^\\circ$ saja",
+      "$90^\\circ \\le x \\le 270^\\circ$",
+      "$180^\\circ \\le x \\le 360^\\circ$",
+      "$0^\\circ \\le x \\le 180^\\circ$",
+      "$270^\\circ \\le x \\le 360^\\circ$"
+    ],
+    "jawaban_benar": "$0^\\circ \\le x \\le 180^\\circ$",
+    "pembahasan": "Kita lacak nilai fungsi dasar $\\cos x$:<br>Pada $x = 0^\\circ$, nilainya memuncak di $1$.<br>Pada $x = 90^\\circ$, nilainya merosot ke $0$.<br>Pada $x = 180^\\circ$, nilainya mencapai dasar terdalam di $-1$.<br>Setelah melewati $180^\\circ$, nilainya akan kembali memanjat naik (meningkat) menuju $360^\\circ$.<br>Maka, fase penurunan tanpa henti murni terjadi pada separuh putaran pertama: $0^\\circ \\le x \\le 180^\\circ$."
+  },
+  {
+    "id": "oRtwaLE6BA77WO2Wt6k5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Di antara ketiga fungsi trigonometri dasar ($y = \\sin x$, $y = \\cos x$, dan $y = \\tan x$), manakah yang grafiknya meregang dari tak terhingga positif ke tak terhingga negatif sehingga tidak memiliki nilai batas ekstrem?",
+    "clue": "Fungsi ini sering kali terputus oleh asimtot, dan nilainya melejit tak terhingga ($\\infty$) saat sudutnya mendekati $90^\\circ$.",
+    "opsi": [
+      "Hanya fungsi Sinus",
+      "Hanya fungsi Cosinus",
+      "Hanya fungsi Tangen",
+      "Fungsi Sinus dan Cosinus",
+      "Semua fungsi memiliki nilai ekstrem yang jelas"
+    ],
+    "jawaban_benar": "Hanya fungsi Tangen",
+    "pembahasan": "Fungsi $y = \\sin x$ dan $y = \\cos x$ memiliki domain rentang alamiah (nilai ekstrem) yang terkunci di antara batas minimum $-1$ dan maksimum $1$. Namun, fungsi $y = \\tan x$ tidak dibatasi dan grafiknya akan melesat hingga nilai tak terhingga ($\\pm \\infty$)."
+  },
+  {
+    "id": "yNJEQX8jOdxZYH0cwYFO",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Bentuk Umum Fungsi Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Grafik fungsi $y = \\tan x$ memiliki wujud patah-patah yang terputus oleh garis imajiner vertikal yang disebut asimtot tegak. Pada interval $0^\\circ \\le x \\le 360^\\circ$, garis asimtot tegak tak terdefinisi tersebut berada tepat pada absis $x = ...$",
+    "clue": "Asimtot tegak terjadi karena pembagian dengan angka nol. Ingat bahwa $\\tan x = \\frac{\\sin x}{\\cos x}$. Cari sudut di mana nilai cosinusnya adalah nol.",
+    "opsi": [
+      "$0^\\circ$ dan $180^\\circ$",
+      "$90^\\circ$ dan $270^\\circ$",
+      "$180^\\circ$ dan $360^\\circ$",
+      "$45^\\circ$ dan $225^\\circ$",
+      "$0^\\circ$ dan $360^\\circ$"
+    ],
+    "jawaban_benar": "$90^\\circ$ dan $270^\\circ$",
+    "pembahasan": "Nilai $\\tan x$ didapatkan dari perbandingan pecahan $\\frac{\\sin x}{\\cos x}$.<br>Kondisi asimtot (tak terdefinisi) terjadi apabila penyebutnya (yaitu $\\cos x$) bernilai $0$.<br>Nilai $\\cos x = 0$ terjadi murni pada garis sumbu vertikal, yakni sudut $90^\\circ$ dan $270^\\circ$.<br>Pada sudut-sudut itulah grafik tangen terputus dan menghindar membentuk garis lurus asimtot."
+  }
+]

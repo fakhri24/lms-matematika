@@ -1,0 +1,210 @@
+[
+  {
+    "id": "33czfAhGO37ioVJPiMXg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Berapakah nilai pasti dari $\\cos(-60^\\circ)$?",
+    "clue": "Jangan terkecoh dengan tanda minus di dalam sudut. Cosinus itu 'kebal' terhadap sudut negatif.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Berdasarkan sifat kekebalan cosinus: $\\cos(-60^\\circ) = \\cos 60^\\circ$. Berdasarkan tabel sudut istimewa, nilai $\\cos 60^\\circ$ adalah $\\frac{1}{2}$."
+  },
+  {
+    "id": "9P0NhdnV8VSO0iMkQurs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Karena sudut negatif lancip (misalnya $-30^\\circ$) secara otomatis jatuh di wilayah Kuadran IV, maka fungsi trigonometri yang kebal terhadap tanda negatif (nilainya tetap positif) adalah ...",
+    "clue": "Ingat aturan ALL-SIN-TAN-COS. Siapa 'penguasa' tunggal yang bernilai positif di Kuadran IV?",
+    "opsi": [
+      "Sinus",
+      "Cosinus",
+      "Tangen",
+      "Cosecan",
+      "Cotangen"
+    ],
+    "jawaban_benar": "Cosinus",
+    "pembahasan": "Sudut negatif yang kecil (lancip) memutar garis ke bawah dan berhenti di Kuadran IV. Berdasarkan aturan kuadran, fungsi Cosinus selalu bernilai positif di Kuadran IV, sehingga $\\cos(-x)$ akan selalu sama dengan $\\cos x$."
+  },
+  {
+    "id": "NLnUAQm3gZCZ2aPQrKVs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Bentuk sederhana dari operasi penjumlahan $\\cos(-x) + \\cos x$ adalah ...",
+    "clue": "Ubah $\\cos(-x)$ menggunakan sifat kekebalannya. Setelah wujudnya sama, kamu bisa menjumlahkannya layaknya mengoperasikan aljabar $a + a$.",
+    "opsi": [
+      "$0$",
+      "$1$",
+      "$\\cos x$",
+      "$2 \\cos x$",
+      "$-2 \\cos x$"
+    ],
+    "jawaban_benar": "$2 \\cos x$",
+    "pembahasan": "Berdasarkan sifat sudut negatif, $\\cos(-x) = \\cos x$.<br>Substitusikan kembali ke persamaannya: $\\cos x + \\cos x$.<br>Jika diibaratkan variabel, $a + a = 2a$. Maka hasilnya adalah $2 \\cos x$."
+  },
+  {
+    "id": "RDhsMs5FcL4Rdk1YoGjS",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Berdasarkan sifat sudut negatif, bentuk yang ekuivalen secara matematis dengan $\\sin(-x)$ adalah ...",
+    "clue": "Berbeda dengan Cosinus yang 'memakan' tanda negatif, fungsi Sinus akan 'memuntahkan' tanda negatifnya keluar kurung.",
+    "opsi": [
+      "$\\sin x$",
+      "$-\\sin x$",
+      "$\\cos x$",
+      "$-\\cos x$",
+      "$\\csc x$"
+    ],
+    "jawaban_benar": "$-\\sin x$",
+    "pembahasan": "Fungsi Sinus bernilai negatif di Kuadran IV. Oleh karena itu, sifat sudut negatif pada fungsi Sinus memposisikan tanda minus keluar dari sudut: $\\sin(-x) = -\\sin x$."
+  },
+  {
+    "id": "Up1SPrSISBz0A1903uZk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Bentuk paling sederhana dari ekspresi aljabar trigonometri $-\\sin(-\\beta)$ adalah ...",
+    "clue": "Keluarkan tanda minus dari dalam sudut, lalu kalikan dengan tanda minus yang sudah ada di luar fungsi.",
+    "opsi": [
+      "$\\sin \\beta$",
+      "$-\\sin \\beta$",
+      "$\\cos \\beta$",
+      "$-\\cos \\beta$",
+      "$0$"
+    ],
+    "jawaban_benar": "$\\sin \\beta$",
+    "pembahasan": "Langkah 1: Sederhanakan bagian sudut negatifnya: $\\sin(-\\beta) = -\\sin \\beta$.<br>Langkah 2: Substitusikan kembali ke persamaan awal: $- (-\\sin \\beta)$.<br>Langkah 3: Perkalian negatif dengan negatif menghasilkan nilai positif, sehingga hasilnya adalah $\\sin \\beta$."
+  },
+  {
+    "id": "XRfkUdNN4VZFHGD2fwmr",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Secara geometri, jika sudut bernilai positif diukur dengan memutar berlawanan arah jarum jam dari sumbu X positif, maka sudut bernilai negatif menandakan putaran yang searah dengan ...",
+    "clue": "Sudut negatif hanyalah penunjuk arah rotasi yang berlawanan dari standar normal pemetaan sudut.",
+    "opsi": [
+      "Jarum jam (ke bawah)",
+      "Sumbu Y positif (ke atas)",
+      "Garis diagonal kuadran pertama",
+      "Sumbu Z pada ruang tiga dimensi",
+      "Garis horizontal murni (tidak berputar)"
+    ],
+    "jawaban_benar": "Jarum jam (ke bawah)",
+    "pembahasan": "Tanda minus pada sudut geometri semata-mata menunjukkan arah perputaran. Sudut negatif berarti garis diputar searah dengan putaran jarum jam (menukik ke bawah menuju Kuadran IV)."
+  },
+  {
+    "id": "ZS2YBwAIjDzeKPmNh34S",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai akhir dari operasi pembagian pecahan $\\frac{\\tan(-45^\\circ)}{\\cos(-60^\\circ)}$ adalah ...",
+    "clue": "Tarik sifat negatif masing-masing fungsi, ubah menjadi nilai angkanya, lalu selesaikan pembagian pecahan tersebut (naikkan pembagi dari bawah ke atas).",
+    "opsi": [
+      "$-2$",
+      "$2$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-2$",
+    "pembahasan": "Selesaikan pembilang: $\\tan(-45^\\circ) = -\\tan 45^\\circ = -1$.<br>Selesaikan penyebut: $\\cos(-60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$.<br><br>Susun ke dalam pecahan:<br>$\\frac{-1}{\\frac{1}{2}}$<br><br>Ubah pembagian menjadi perkalian dengan membalik penyebut:<br>$-1 \\times \\frac{2}{1} = -2$."
+  },
+  {
+    "id": "bhXqF6JbOhcZJoapZq8Z",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Bentuk yang ekuivalen dari $\\tan(-\\alpha)$ adalah ...",
+    "clue": "Sama seperti Sinus, Tangen tidak memiliki keistimewaan di Kuadran IV. Tanda negatifnya akan ikut keluar.",
+    "opsi": [
+      "$\\tan \\alpha$",
+      "$-\\tan \\alpha$",
+      "$\\cot \\alpha$",
+      "$-\\cot \\alpha$",
+      "$\\sin \\alpha$"
+    ],
+    "jawaban_benar": "$-\\tan \\alpha$",
+    "pembahasan": "Karena fungsi Tangen bernilai negatif di Kuadran IV, maka tanda negatif pada sudutnya bisa dipindahkan ke depan fungsi: $\\tan(-\\alpha) = -\\tan \\alpha$."
+  },
+  {
+    "id": "rbs7k9Ff23zckmGb22LW",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Hasil dari evaluasi $\\cos(-60^\\circ) - \\sin(-30^\\circ)$ adalah ...",
+    "clue": "Hati-hati dengan tanda kurang ($-$) yang ada di tengah persamaan. Sinus juga akan mengeluarkan tanda minusnya, sehingga akan terjadi tabrakan tanda.",
+    "opsi": [
+      "$0$",
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$-1$",
+      "$\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Langkah 1: Terapkan sifat sudut negatif.<br>$\\cos(-60^\\circ) = \\cos 60^\\circ$<br>$\\sin(-30^\\circ) = -\\sin 30^\\circ$<br><br>Langkah 2: Masukkan nilainya dan substitusi kembali.<br>$\\cos 60^\\circ - (-\\sin 30^\\circ)$<br>$\\frac{1}{2} - (-\\frac{1}{2})$<br><br>Langkah 3: Tanda minus bertemu minus menjadi plus.<br>$\\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "xdV2Turjk3WSDM2VvpUI",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sifat Sudut Negatif",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Nilai dari $\\sin(-45^\\circ)$ adalah ...",
+    "clue": "Tarik keluar tanda negatifnya terlebih dahulu, baru cari nilai sudut istimewanya.",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$-\\frac{1}{2}\\sqrt{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}\\sqrt{2}$",
+    "pembahasan": "Keluarkan tanda negatif: $\\sin(-45^\\circ) = -\\sin 45^\\circ$.<br>Karena nilai $\\sin 45^\\circ$ adalah $\\frac{1}{2}\\sqrt{2}$, maka hasil akhirnya adalah $-\\frac{1}{2}\\sqrt{2}$."
+  }
+]

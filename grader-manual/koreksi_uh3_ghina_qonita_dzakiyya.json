@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "nama_siswa": "Ghina Qonita Dzakiyya",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika (MTL)",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "04/06/2026"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa merelasikan tangen di kuadran IV dan cosinus di kuadran II dengan benar melalui sudut horizontal. Namun, terdapat kesalahan substitusi nilai sudut istimewa di mana $\\tan 45^\\circ$ ditulis menjadi $\\frac{1}{2}\\sqrt{3}$ dan $\\cos 60^\\circ$ ditulis menjadi $\\frac{1}{2}\\sqrt{3}$. Selain itu, terjadi kesalahan perhitungan aritmatika saat menjumlahkan pecahan bentuk akar di baris terakhir.",
+      "letak_kesalahan": [
+        "Kesalahan substitusi nilai sudut istimewa $-\\tan 45^\\circ + (-\\cos 60^\\circ) = -\\frac{1}{2}\\sqrt{3} + (-\\frac{1}{2}\\sqrt{3})$, seharusnya $-\\tan 45^\\circ + (-\\cos 60^\\circ) = -1 + (-\\frac{1}{2})$.",
+        "Kesalahan aritmatika pada penjumlahan $-\\frac{1}{2}\\sqrt{3} + (-\\frac{1}{2}\\sqrt{3}) = -\\frac{3}{2}$, seharusnya hasil penjumlahan tersebut secara aljabar adalah $-\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Halo Ghina! Pemahaman kamu tentang kuadran dan relasi sudut sebenarnya sudah sangat baik lho, namun hati-hati ya saat mengingat nilai sudut istimewanya dan teliti lagi saat menjumlahkan pecahan. Yuk berlatih lagi!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Pernyataan BENAR terkait nilai dari sin 870°",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa telah memahami konsep sudut lebih dari $360^\\circ$ dengan benar sehingga mendapati bahwa $\\sin 870^\\circ = \\sin 150^\\circ$. Siswa juga berhasil merelasikan $\\sin 150^\\circ$ dengan $\\cos 60^\\circ$ menggunakan konsep relasi vertikal. Akan tetapi, ada sedikit ketidaktelitian penulisan saat mengonversi melalui $90^\\circ$ dan keliru dalam mensubstitusi nilai ukur dari $\\cos 60^\\circ$ di baris akhir.",
+      "letak_kesalahan": [
+        "Kesalahan penulisan fungsi pada relasi vertikal $\\sin(90^\\circ + 60^\\circ)$ ditulis menjadi $\\cos(90^\\circ + 60^\\circ)$, seharusnya $\\sin(90^\\circ + 60^\\circ) = +\\cos 60^\\circ$.",
+        "Kesalahan substitusi nilai sudut istimewa $\\cos 60^\\circ = \\frac{1}{2}\\sqrt{3}$, seharusnya $\\cos 60^\\circ = \\frac{1}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Konsep rotasi sudut besar dan konversi relasi antar-fungsi sudah kamu kuasai dengan baik! Tinggal poles sedikit lagi untuk pengingat nilai trigonometrinya supaya sempurna ya."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan Benar/Salah terkait operasi trigonometri",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menyederhanakan $\\tan 300^\\circ$ menjadi $-\\sqrt{3}$ dengan tepat. Namun, siswa mengalami kesulitan besar di bagian lainnya. Terdapat kesalahan konvensi tanda saat mengubah $\\cos 150^\\circ$ menjadi fungsi kuadran 1. Siswa juga sangat keliru dalam mengartikan sudut negatif $\\sin(-210^\\circ)$ yang dituliskan sebagai $\\sin(270^\\circ - 60^\\circ)$, dilanjutkan dengan kesalahan transisi fungsi vertikal dan substitusi nilai yang bertubi-tubi.",
+      "letak_kesalahan": [
+        "Kesalahan relasi kuadran II $\\cos(180^\\circ - 30^\\circ) = \\cos 30^\\circ$, seharusnya $\\cos(180^\\circ - 30^\\circ) = -\\cos 30^\\circ$.",
+        "Kesalahan penanganan sudut negatif $\\sin(-210^\\circ) = \\sin(270^\\circ - 60^\\circ)$, seharusnya $\\sin(-210^\\circ) = -\\sin 210^\\circ = -\\sin(180^\\circ + 30^\\circ) = -(-\\sin 30^\\circ) = \\sin 30^\\circ$.",
+        "Kesalahan substitusi nilai sudut istimewa $\\cos 30^\\circ = -\\frac{1}{2}$ dan $\\sin 60^\\circ = -\\frac{1}{2}$, seharusnya berturut-turut bernilai $\\frac{1}{2}\\sqrt{3}$ dan $\\frac{1}{2}\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Usaha kamu menguraikan per baris dengan teliti sangat patut diacungi jempol! Mari perkuat lagi pemahaman mengenai sifat sudut negatif dan perubahan tanda pada kuadran agar analisis kamu bisa lebih presisi. Tetap semangat!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mencoba merelasikan sudut-sudut tersebut ke kuadran pertama, namun keliru menentukan tanda fungsi pada kuadran asal sehingga $\\tan 300^\\circ$ dan $\\cos 210^\\circ$ ditulis tanpa tanda negatif di depannya. Kesalahan semakin banyak terjadi pada saat mensubstitusi nilai sudut istimewa di mana $\\cos 30^\\circ$ dan $\\sin 60^\\circ$ sama-sama disubstitusi menjadi $\\frac{1}{2}$.",
+      "letak_kesalahan": [
+        "Kesalahan tanda relasi kuadran pada pembilang $\\tan 300^\\circ - \\cos 210^\\circ = \\tan 60^\\circ - \\cos 30^\\circ$, seharusnya $\\tan 300^\\circ - \\cos 210^\\circ = -\\tan 60^\\circ - (-\\cos 30^\\circ)$.",
+        "Kesalahan substitusi nilai sudut istimewa $\\cos 30^\\circ = \\frac{1}{2}$ dan $\\sin 60^\\circ = \\frac{1}{2}$, seharusnya keduanya bernilai $\\frac{1}{2}\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Terima kasih sudah mencoba merelasikan sudutnya! Di soal pecahan ini, ketelitian tanda minus dari setiap kuadran sangat krusial. Hafalkan lagi nilai dasar trigonometrinya supaya tidak tertukar, ya!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa memulai dengan baik dalam menjabarkan relasi horizontal ke kuadran I. Namun, ia kurang teliti mengidentifikasi tanda kuadran III pada fungsi $\\csc 210^\\circ$ sehingga tidak menambahkan tanda negatif. Kesalahan berlanjut pada substitusi identitas kebalikan dan nilai sudut di mana $\\sec 60^\\circ$ berubah menjadi $2\\sqrt{3}$, $\\cot 45^\\circ$ menjadi $-2\\sqrt{3}$, dan $\\csc 30^\\circ$ menjadi $\\frac{1}{2}$. Selain itu, ada ketidakkonsistenan antara hasil coretan dengan opsi yang dicentang.",
+      "letak_kesalahan": [
+        "Kesalahan tanda relasi kuadran III pada $\\csc(180^\\circ + 30^\\circ) = \\csc 30^\\circ$, seharusnya relasi kuadran III bernilai negatif yaitu $-\\csc 30^\\circ$.",
+        "Kesalahan mengingat identitas kebalikan dan nilai sudut istimewa, seperti $\\sec 60^\\circ$ diubah menjadi $2\\sqrt{3}$, seharusnya $2$, $\\cot 45^\\circ$ diubah menjadi $-2\\sqrt{3}$ (seharusnya $1$), dan $\\csc 30^\\circ$ diubah menjadi $\\frac{1}{2}$ (seharusnya $2$)."
+      ],
+      "apresiasi_dan_catatan": "Usaha kamu mengubah ke bentuk relasi dasar sudah terlihat polanya! Sayangnya, nilai fungsi kebalikannya (sec, csc, cot) masih agak tertukar nih. Pastikan juga coretanmu selaras dengan opsi yang kamu pilih ya."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan relasi sudut vertikal dan horizontal",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menjawab dengan benar untuk poin ke-2 karena paham bahwa relasi horizontal $180^\\circ$ tidak mengubah nama fungsi. Akan tetapi, siswa keliru pada poin 1 dan 3 karena tidak mengaplikasikan konsep perubahan fungsi (dari sinus menjadi cosinus, dan sebaliknya) pada relasi sudut vertikal $270^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan pemahaman relasi vertikal ($270^\\circ$), di mana fungsi trigonometri, seharusnya berubah bentuk (sin menjadi cos, cos menjadi sin). Siswa menuliskan $\\cos(270^\\circ - A) = -\\cos A$ (seharusnya $-\\sin A$) dan $\\sin(270^\\circ + A) = -\\sin A$ (seharusnya $-\\cos A$)."
+      ],
+      "apresiasi_dan_catatan": "Wah, pemahaman relasi horizontal $180^\\circ$ kamu sudah benar! Tapi ingat ya, kalau ketemu relasi vertikal seperti $90^\\circ$ atau $270^\\circ$, fungsinya harus berubah nama. Semangat belajar lagi!"
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menganalisis ketiga pernyataan dengan tepat dan mencentang tabel sesuai kunci jawaban. Pada penjabaran rotasi, terdapat dua buah kesalahan tanda beruntun (double error) saat mengubah $\\tan(-120^\\circ)$ menjadi $-\\tan 120^\\circ$ lalu menjadi $-\\tan 60^\\circ$ tanpa memperhatikan negatif dari kuadran II. Namun, karena kesalahan tanda minus ini terjadi dua kali secara beruntun, hasil akhirnya justru kembali menjadi nilai yang benar secara kebetulan yaitu $-\\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan tanda rotasi dan tanda kuadran yang terjadi secara beruntun (*double error*), yakni nilai dari $-\\tan(720^\\circ - 120^\\circ)$, seharusnya adalah $-(-\\tan 120^\\circ) = +\\tan 120^\\circ$, lalu $\\tan 120^\\circ = \\tan(180^\\circ - 60^\\circ)$ seharusnya bernilai $-\\tan 60^\\circ$. Hasil akhir $-\\sqrt{3}$ menjadi benar secara kebetulan akibat dua kesalahan tanda yang saling menutupi."
+      ],
+      "apresiasi_dan_catatan": "Kerja bagus, analisis pernyataan tabel kamu sempurna! Sedikit tips untuk coretannya: hati-hati dengan tanda minus berlapis saat menguraikan sudut negatif dan kuadran genap ya, agar perhitungannya lebih valid secara runtut."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan operasi aljabar relasi sudut",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa membuktikan dua komponen relasi horizontal dengan benar dan mencentang opsi A dan C dengan tepat. Sayangnya, siswa kembali gagal saat menjumpai relasi vertikal $\\sin(270^\\circ - A)$ yang malah disubstitusi menjadi $-\\sin A$, seharusnya $-\\cos A$. Akibat kesalahan fungsi ini, hasil penyederhanaan aljabar di langkah akhir menjadi salah (seharusnya hasil akhirnya $\\cos A$).",
+      "letak_kesalahan": [
+        "Kesalahan pemahaman relasi vertikal ($270^\\circ$), di mana fungsi seharusnya berubah. Siswa menuliskan $\\sin(270^\\circ - A) = -\\sin A$, seharusnya $-\\cos A$. Akibatnya hasil akhir penyederhanaan bentuk aljabar juga menjadi salah."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah jago menyederhanakan bentuk aljabarnya! Tapi lagi-lagi relasi vertikal $270^\\circ$ bikin terkecoh nih. Jangan lupa, kalau pakai $270^\\circ$ atau $90^\\circ$, sin berubah jadi cos ya!"
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian dengan konsep sudut berelasi vertikal",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa dengan cemerlang berhasil menguraikan $\\cos 150^\\circ$ dan $\\sin 300^\\circ$ menggunakan konsep relasi vertikal yang tepat (fungsi berubah dan tanda sesuai kuadran). Opsi pernyataan yang dicentang juga 100% benar. Akan tetapi, siswa kembali keliru mensubstitusi nilai sudut istimewa di baris akhir perhitungan, di mana $\\sin 60^\\circ$ dan $\\cos 30^\\circ$ sama-sama diartikan sebagai $\\frac{1}{2}$ sehingga nilai perkalian akhirnya salah.",
+      "letak_kesalahan": [
+        "Kesalahan berulang pada substitusi nilai sudut istimewa $\\sin 60^\\circ$ dan $\\cos 30^\\circ$ yang keduanya ditulis $\\frac{1}{2}$, seharusnya bernilai $\\frac{1}{2}\\sqrt{3}$. Akibatnya, nilai perkalian akhirnya menjadi salah."
+      ],
+      "apresiasi_dan_catatan": "Luar biasa! Di soal ini kamu berhasil membuktikan bahwa kamu bisa mengubah fungsi pakai relasi vertikal sumbu Y dengan sempurna! Tinggal diingat-ingat lagi hafalan nilai sudut istimewanya supaya hasil hitungannya juga mantap."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Tahapan hitung operasi pembagian relasi",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mampu mengubah bentuk negatif awal menjadi sudut positif. Namun, langkah selanjutnya dipenuhi dengan berbagai kesalahan fungsi relasi vertikal dan kesalahan tanda kuadran. Hasil akhir operasi dan nilai sudut istimewanya juga dikalkulasi dengan keliru. Pemahaman mengenai tahapan dasar merelasikan sudut masih sangat rancu di soal ini.",
+      "letak_kesalahan": [
+        "Kesalahan pengubahan fungsi pada relasi vertikal, $\\cos(270^\\circ - 30^\\circ)$ ditulis $\\cos 30^\\circ$, seharusnya $-\\sin 30^\\circ$ dan $-\\tan(90^\\circ + 45^\\circ)$ ditulis $-\\tan 45^\\circ$ (seharusnya $-\\cot 45^\\circ$ atau $-(-\\cot 45^\\circ)$).",
+        "Kesalahan tanda kuadran III pada $\\sin(180^\\circ + 30^\\circ) = \\sin 30^\\circ$, seharusnya bernilai negatif yaitu $-\\sin 30^\\circ$.",
+        "Kesalahan perhitungan aritmatika dasar di akhir, di mana $\\frac{0}{-\\frac{1}{2}}$ dihitung menjadi $-\\frac{1}{3}$, seharusnya bernilai $0$."
+      ],
+      "apresiasi_dan_catatan": "Terima kasih sudah mencoba menjabarkan soal pembagian ini! Yuk kita perbaiki lagi pemahaman relasi 90 dan 270 derajatnya, supaya fungsi trigonometrinya tidak salah bertransformasi. Tetap fokus ya!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "[OPSIONAL] Substitusi variabel relasi sudut ganda",
+      "skor": 2,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa menunjukkan kemampuan menganalisis sudut ke dalam bentuk $54^\\circ$ dan $36^\\circ$ yang kreatif dan tepat arah pada baris awal. Namun dalam eksekusinya, siswa melakukan kesalahan tanda kuadran di pembilang dan gagal mematuhi aturan perubahan fungsi vertikal di penyebut. Baris terakhir pengerjaan siswa juga diwarnai dengan penyederhanaan aljabar yang dipaksakan sehingga berujung pada jawaban yang salah.",
+      "letak_kesalahan": [
+        "Kesalahan tanda relasi kuadran III pada $2\\cos(270^\\circ - 54^\\circ) = 2\\sin 54^\\circ$, seharusnya bernilai negatif yaitu $-2\\sin 54^\\circ$.",
+        "Kesalahan pemahaman fungsi pada relasi vertikal $\\cos(90^\\circ - 30^\\circ) = \\cos 30^\\circ$, seharusnya berubah menjadi $\\sin 30^\\circ$.",
+        "Kesalahan manipulasi aljabar dasar pada baris akhir di mana pecahan variabel disederhanakan secara keliru sehingga menghasilkan tebakan $2p$ atau $-2p$, padahal hasil akhir operasi yang tepat adalah bilangan rasional $-2$, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Kreativitasmu mencoba tantangan soal opsional ini dengan merelasikan sudut ke $54^\\circ$ sudah keren banget, lho! Sayangnya, eksekusi manipulasi aljabarnya belum selesai. Terus asah ketelitianmu ya!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 59,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 2,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "59 + 2",
+    "persentase_kelulusan": 59,
+    "predikat": "Remedial"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Ghina! Selamat ya, kamu telah menyelesaikan seluruh rangkaian ujian ini dengan total skor wajib 59 dari 100 dan bonus 2 poin tambahan (Predikat Remedial). Jika diperhatikan, kemampuan utamamu sebenarnya ada di penguasaan relasi sudut horizontal (180/360) yang sudah lumayan rapi dan tepat penempatannya. Namun, ada dua hambatan utama yang harus kamu perbaiki: pertama, aturan relasi vertikal (90/270) yang mengharuskan fungsi trigonometri berubah nama (seperti sin menjadi cos); kedua, hafalan nilai dasar sudut istimewa yang sering tertukar. Jika dua hal mendasar itu diperkuat, nilai matematikamu pasti akan melesat naik! Semangat terus belajarnya ya, jangan pernah ragu untuk mencoba!"
+}

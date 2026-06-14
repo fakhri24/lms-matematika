@@ -1,0 +1,550 @@
+[
+  {
+    "id": "WjAg4P3gERsnZ0cPIUjX",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Bentuk Akar"],
+    "pertanyaan": "Diberikan segitiga siku-siku dengan sisi $a, b, c$ dimana $c$ adalah sisi miring. Jika panjang sisi $a = 1$ dan sudut $A$ berhadapan dengan sisi $a$, berapakah nilai $\\cos A$ jika diketahui panjang sisi $b = \\sqrt{3}$?",
+    "clue": "Sisi $a$ adalah sisi depan untuk sudut $A$, sedangkan sisi $b$ adalah sisi samping. Cari sisi miring $c$ dengan Pythagoras, baru susun nilai $\\cos A$.",
+    "opsi": [
+      "$\\frac{\\sqrt{3}}{2}$",
+      "$\\frac{1}{2}$",
+      "$\\sqrt{3}$",
+      "$\\frac{1}{\\sqrt{3}}$",
+      "$\\frac{2}{\\sqrt{3}}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{3}}{2}$",
+    "pembahasan": "Diketahui untuk sudut $A$: depan $= a = 1$, samping $= b = \\sqrt{3}$.<br><br>Hitung sisi miring $c$:<br>$c = \\sqrt{a^2 + b^2} = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{1 + 3} = \\sqrt{4} = 2$.<br><br>Maka, $\\cos A = \\frac{\\text{samping}}{\\text{miring}} = \\frac{b}{c} = \\frac{\\sqrt{3}}{2}$."
+  },
+  {
+    "id": "c9nymKYxeeceLwWQG3St",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pemodelan Matematika",
+      "Sistem Persamaan Linear",
+      "Visualisasi Spasial dan Arah"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 250 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='10' y1='130' x2='240' y2='130' stroke='black' stroke-width='2'/><line x1='200' y1='30' x2='200' y2='130' stroke='black' stroke-width='4'/><line x1='40' y1='130' x2='200' y2='30' stroke='black' stroke-dasharray='4'/><line x1='120' y1='130' x2='200' y2='30' stroke='black' stroke-dasharray='4'/><text x='35' y='145' font-family='Arial' font-size='12'>A</text><text x='115' y='145' font-family='Arial' font-size='12'>B</text><text x='65' y='145' font-family='Arial' font-size='12'>10 m</text><rect x='190' y='120' width='10' height='10' fill='none' stroke='black'/></svg><br><br>Seorang pengamat sedang mengukur tinggi sebuah tiang bendera. Dari titik pengamatan A, ia melihat puncak tiang dengan sudut elevasi yang nilai tangennya $\\frac{1}{2}$. Ia kemudian berjalan lurus sejauh $10$ meter mendekati tiang ke titik B. Dari titik B, nilai tangen sudut elevasinya menjadi $1$. Jika tinggi pengamat diabaikan, tinggi tiang bendera tersebut dari permukaan tanah adalah ...",
+    "clue": "Misalkan tinggi tiang adalah $h$ dan jarak dari titik B ke dasar tiang adalah $x$. Buat dua persamaan tangen: satu dari titik B sejauh $x$, dan satu lagi dari titik A sejauh $(x + 10)$. Gunakan substitusi.",
+    "opsi": ["10 meter", "15 meter", "20 meter", "5 meter", "25 meter"],
+    "jawaban_benar": "10 meter",
+    "pembahasan": "Misalkan tinggi tiang = $h$.<br>Jarak titik B ke tiang = $x$.<br>Jarak titik A ke tiang = $x + 10$.<br><br>Tinjau dari titik B (tangen = 1):<br>$\\tan(\\text{elevasi}_B) = \\frac{\\text{depan}}{\\text{samping}} \\implies 1 = \\frac{h}{x} \\implies h = x$<br><br>Tinjau dari titik A (tangen = $\\frac{1}{2}$):<br>$\\tan(\\text{elevasi}_A) = \\frac{h}{x + 10} \\implies \\frac{1}{2} = \\frac{h}{x + 10}$<br><br>Lakukan perkalian silang: $2h = x + 10$.<br>Karena dari persamaan pertama kita tahu $x = h$, substitusikan nilai $x$:<br>$2h = h + 10$<br>$2h - h = 10$<br>$h = 10$ meter."
+  },
+  {
+    "id": "lm0OxOMQJvU7eNO9RyTs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Manipulasi Aljabar Lanjutan",
+      "Identitas Trigonometri Dasar"
+    ],
+    "pertanyaan": "Jika diketahui $\\sin \\theta - \\cos \\theta = \\frac{1}{5}$ untuk $\\theta$ sudut lancip, berapakah nilai dari $\\sin \\theta \\cdot \\cos \\theta$?",
+    "clue": "Kuadratkan kedua ruas persamaan tersebut. Ingat sifat aljabar $(A - B)^2 = A^2 - 2AB + B^2$ dan identitas trigonometri $\\sin^2 \\theta + \\cos^2 \\theta = 1$.",
+    "opsi": [
+      "$\\frac{12}{25}$",
+      "$\\frac{24}{25}$",
+      "$\\frac{1}{25}$",
+      "$\\frac{13}{25}$",
+      "$\\frac{7}{25}$"
+    ],
+    "jawaban_benar": "$\\frac{12}{25}$",
+    "pembahasan": "Kuadratkan kedua ruas persamaan:<br>$(\\sin \\theta - \\cos \\theta)^2 = (\\frac{1}{5})^2$<br>$\\sin^2 \\theta - 2 \\sin \\theta \\cos \\theta + \\cos^2 \\theta = \\frac{1}{25}$<br><br>Kelompokkan bentuk kuadratnya:<br>$(\\sin^2 \\theta + \\cos^2 \\theta) - 2 \\sin \\theta \\cos \\theta = \\frac{1}{25}$<br><br>Karena $\\sin^2 \\theta + \\cos^2 \\theta = 1$, maka:<br>$1 - 2 \\sin \\theta \\cos \\theta = \\frac{1}{25}$<br>$2 \\sin \\theta \\cos \\theta = 1 - \\frac{1}{25}$<br>$2 \\sin \\theta \\cos \\theta = \\frac{24}{25}$<br><br>Bagi 2 kedua ruas:<br>$\\sin \\theta \\cos \\theta = \\frac{12}{25}$."
+  },
+  {
+    "id": "T7CWRi1yjSMN6sPYnqhk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Manipulasi Aljabar Dasar",
+      "Sifat Pecahan Trigonometri"
+    ],
+    "pertanyaan": "Jika diketahui $3 \\tan x = 4$, maka nilai dari $\\frac{2 \\sin x + \\cos x}{\\sin x - \\cos x}$ adalah ...",
+    "clue": "Kamu bisa menggunakan segitiga untuk mencari nilai $\\sin$ dan $\\cos$, ATAU cara yang jauh lebih cepat: bagi semua suku pada pembilang dan penyebut dengan $\\cos x$ untuk mengubahnya menjadi $\\tan x$.",
+    "opsi": ["$11$", "$\\frac{11}{3}$", "$-11$", "$7$", "$\\frac{7}{3}$"],
+    "jawaban_benar": "$11$",
+    "pembahasan": "Diketahui $3 \\tan x = 4 \\implies \\tan x = \\frac{4}{3}$.<br><br>Bagi pembilang dan penyebut pada pertanyaan dengan $\\cos x$:<br>$\\frac{\\frac{2\\sin x}{\\cos x} + \\frac{\\cos x}{\\cos x}}{\\frac{\\sin x}{\\cos x} - \\frac{\\cos x}{\\cos x}} = \\frac{2\\tan x + 1}{\\tan x - 1}$<br><br>Substitusikan $\\tan x = \\frac{4}{3}$:<br>$\\frac{2(\\frac{4}{3}) + 1}{\\frac{4}{3} - 1} = \\frac{\\frac{8}{3} + \\frac{3}{3}}{\\frac{4}{3} - \\frac{3}{3}} = \\frac{\\frac{11}{3}}{\\frac{1}{3}} = 11$."
+  },
+  {
+    "id": "XeGQ4AyDZUdhGl0c24Da",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pemodelan Matematika",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Benang seekor layang-layang yang terbang tegang lurus memiliki panjang $50$ meter. Jika sudut elevasi benang dengan tanah horizontal adalah $\\alpha$ dan diketahui $\\sin \\alpha = 0,6$, maka tinggi layang-layang dari permukaan tanah adalah ...",
+    "clue": "Ubah desimal $0,6$ menjadi pecahan. Benang adalah sisi miring, sedangkan tinggi layang-layang adalah sisi depan sudut. Susun persamaan menggunakan rasio sinus.",
+    "opsi": [
+      "$30$ meter",
+      "$40$ meter",
+      "$25$ meter",
+      "$20$ meter",
+      "$15$ meter"
+    ],
+    "jawaban_benar": "$30$ meter",
+    "pembahasan": "Sisi miring (panjang benang) $= 50$ meter.<br>Tinggi layang-layang bertindak sebagai sisi depan.<br><br>Diketahui $\\sin \\alpha = 0,6 = \\frac{6}{10}$.<br>Rumus $\\sin \\alpha = \\frac{\\text{depan}}{\\text{miring}}$<br><br>$\\frac{6}{10} = \\frac{\\text{tinggi}}{50}$<br>Lakukan perkalian silang: $10 \\times \\text{tinggi} = 300$<br>Tinggi $= 30$ meter."
+  },
+  {
+    "id": "dRKRVQ7pB4VI4ivNekYC",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Bangun Datar", "Teorema Pythagoras"],
+    "pertanyaan": "<svg viewBox='0 0 200 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><polygon points='100,20 40,130 160,130' fill='none' stroke='black' stroke-width='2'/><text x='95' y='15' font-family='Arial' font-size='14'>P</text><text x='25' y='140' font-family='Arial' font-size='14'>Q</text><text x='165' y='140' font-family='Arial' font-size='14'>R</text><path d='M 60 130 A 20 20 0 0 0 52 118' fill='none' stroke='black'/><text x='65' y='125' font-family='Arial' font-size='12'>α</text></svg><br><br>Diberikan segitiga sama kaki $PQR$ dengan panjang $PQ = PR = 13$ cm dan alas $QR = 10$ cm. Jika $\\angle PQR = \\alpha$, nilai $\\tan \\alpha$ adalah ...",
+    "clue": "Tarik garis tinggi dari titik $P$ membelah alas $QR$ menjadi dua bagian yang sama panjang, sehingga membentuk dua segitiga siku-siku. Gunakan salah satu segitiga siku-siku tersebut.",
+    "opsi": [
+      "$\\frac{12}{5}$",
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{13}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{12}{5}$",
+    "pembahasan": "Garis tinggi dari titik $P$ akan memotong $QR$ di titik $S$ sehingga $QS = SR = \\frac{10}{2} = 5$ cm.<br>Tinjau segitiga siku-siku $PQS$.<br>Sisi samping $\\alpha$ (yaitu $\\angle PQS$) adalah $QS = 5$ cm, dan sisi miringnya $PQ = 13$ cm.<br><br>Hitung tinggi (sisi depan) $PS$ dengan Pythagoras:<br>$PS = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm.<br><br>Maka, $\\tan \\alpha = \\frac{\\text{depan}}{\\text{samping}} = \\frac{PS}{QS} = \\frac{12}{5}$."
+  },
+  {
+    "id": "nRL8WnchQlAmDAaFvbU9",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Identitas Trigonometri Dasar"],
+    "pertanyaan": "Diketahui $\\csc \\theta = \\frac{5}{3}$. Nilai $\\cos \\theta$ adalah ...",
+    "clue": "Kosekan (csc) adalah kebalikan dari sinus. Artinya $\\csc = \\text{miring}/\\text{depan}$. Cari sisi samping lalu susun rasio $\\cos$.",
+    "opsi": [
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "Karena $\\csc \\theta = \\frac{\\text{miring}}{\\text{depan}} = \\frac{5}{3}$, maka miring $= 5$ dan depan $= 3$.<br><br>Cari sisi samping dengan Pythagoras:<br>Samping $= \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4$.<br><br>Maka, $\\cos \\theta = \\frac{\\text{samping}}{\\text{miring}} = \\frac{4}{5}$."
+  },
+  {
+    "id": "2tlNj7jQqxX22ZAtF1pf",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Identitas Trigonometri Dasar"],
+    "pertanyaan": "Diketahui sebuah sudut lancip $\\alpha$ memiliki nilai $\\cos \\alpha = \\frac{1}{4}$. Nilai dari $\\sec \\alpha$ adalah ...",
+    "clue": "Sekan (sec) adalah kebalikan langsung dari cosinus. Kamu tidak perlu repot menggambar segitiga atau menghitung Pythagoras.",
+    "opsi": [
+      "$4$",
+      "$\\frac{1}{4}$",
+      "$\\sqrt{15}$",
+      "$\\frac{\\sqrt{15}}{4}$",
+      "$\\frac{4}{\\sqrt{15}}$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "Nilai secan adalah kebalikan (invers perkalian) dari nilai cosinus.<br>$\\sec \\alpha = \\frac{1}{\\cos \\alpha}$<br><br>Karena $\\cos \\alpha = \\frac{1}{4}$, maka $\\sec \\alpha = \\frac{4}{1} = 4$."
+  },
+  {
+    "id": "tulvoghWPalWMRncgqZ1",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Pecahan"],
+    "pertanyaan": "Jika $\\tan A = \\frac{5}{12}$ dengan $A$ adalah sudut lancip, maka hasil dari perkalian $\\sin A \\times \\cos A$ adalah ...",
+    "clue": "Gambar segitiga dengan sisi depan $5$ dan samping $12$. Cari miringnya (ingat tripel pythagoras). Setelah itu, cari masing-masing nilai $\\sin$ dan $\\cos$, lalu kalikan.",
+    "opsi": [
+      "$\\frac{60}{169}$",
+      "$\\frac{60}{144}$",
+      "$\\frac{17}{13}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$"
+    ],
+    "jawaban_benar": "$\\frac{60}{169}$",
+    "pembahasan": "$\\tan A = \\frac{\\text{depan}}{\\text{samping}} = \\frac{5}{12}$.<br>Miring $= \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$.<br><br>Nilai $\\sin A = \\frac{5}{13}$ dan $\\cos A = \\frac{12}{13}$.<br><br>Perkalian: $\\frac{5}{13} \\times \\frac{12}{13} = \\frac{60}{169}$."
+  },
+  {
+    "id": "Xmw8GqUZT3OyFag4WNjF",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Pecahan"],
+    "pertanyaan": "Pada segitiga siku-siku $DEF$, diketahui siku-siku berada di titik $E$. Jika panjang $DF = 10$ cm dan $DE = 6$ cm, nilai dari $\\sin F$ adalah ...",
+    "clue": "Sisi miring selalu berada di depan sudut siku-siku ($DF$). Untuk mencari sinus sudut $F$, kamu membutuhkan sisi depan sudut $F$, yaitu sisi $DE$.",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{3}{5}$",
+    "pembahasan": "Fokus pada sudut $F$. Sisi di depannya adalah $DE = 6$ cm.<br>Sisi miringnya adalah $DF = 10$ cm.<br><br>Maka, $\\sin F = \\frac{\\text{depan}}{\\text{miring}} = \\frac{6}{10}$.<br>Disederhanakan menjadi $\\frac{3}{5}$.<br>(Panjang $EF = 8$ tidak perlu dicari jika hanya mencari sinus $F$)."
+  },
+  {
+    "id": "Q6q4ab0vqauPrUwerZy5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Diketahui segitiga $ABC$ siku-siku di $B$. Jika panjang $AB = 3$ cm dan $BC = 4$ cm, maka nilai $\\sin A$ adalah ...",
+    "clue": "Langkah pertama, cari panjang sisi miring (AC) pakai rumus Pythagoras (ingat triple pythagoras 3, 4, ...). Setelah itu, susun nilai perbandingan $\\sin = \\text{depan}/\\text{miring}$.",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "Fokus pada sudut $A$.<br>Sisi depan sudut $A$ adalah $BC = 4$. Sisi samping adalah $AB = 3$.<br><br>Cari sisi miring ($AC$) dengan Pythagoras:<br>$AC = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.<br><br>Karena $\\sin A = \\frac{\\text{depan}}{\\text{miring}}$, maka $\\sin A = \\frac{4}{5}$."
+  },
+  {
+    "id": "6nspW9nusPaQYyGfAkZc",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Bangun Datar",
+      "Manipulasi Aljabar Dasar",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Diketahui sebuah persegi panjang $ABCD$ dengan panjang $AB = 12$ cm dan lebar $BC = 5$ cm. Jika ditarik garis diagonal $AC$ dan misalkan $\\angle BAC = \\alpha$, berapakah nilai dari $\\sin \\alpha + \\cos \\alpha$?",
+    "clue": "Garis diagonal membagi persegi panjang menjadi dua segitiga siku-siku. Gunakan segitiga $ABC$ yang siku-siku di $B$. Cari panjang diagonal (miring) dengan Pythagoras terlebih dahulu.",
+    "opsi": [
+      "$\\frac{17}{13}$",
+      "$\\frac{17}{12}$",
+      "$\\frac{7}{13}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$"
+    ],
+    "jawaban_benar": "$\\frac{17}{13}$",
+    "pembahasan": "Perhatikan segitiga siku-siku $ABC$ (siku-siku di $B$).<br>Diketahui sisi samping sudut $\\alpha$ adalah $AB = 12$ cm dan sisi depannya adalah $BC = 5$ cm.<br><br>Hitung panjang sisi miring (diagonal $AC$) menggunakan Pythagoras:<br>$AC = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13$ cm.<br><br>Nilai $\\sin \\alpha = \\frac{\\text{depan}}{\\text{miring}} = \\frac{5}{13}$<br>Nilai $\\cos \\alpha = \\frac{\\text{samping}}{\\text{miring}} = \\frac{12}{13}$<br><br>Maka, $\\sin \\alpha + \\cos \\alpha = \\frac{5}{13} + \\frac{12}{13} = \\frac{17}{13}$."
+  },
+  {
+    "id": "e0PIwYi0CyJxTSCnGdoO",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Manipulasi Aljabar Dasar",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Diketahui sudut $A$ adalah sudut lancip. Jika berlaku persamaan $\\frac{2 \\sin A - \\cos A}{\\sin A + 3 \\cos A} = \\frac{1}{2}$, maka nilai dari $\\tan A$ adalah ...",
+    "clue": "Lakukan perkalian silang pada persamaan pecahan tersebut. Setelah itu, kumpulkan suku-suku sinus di satu ruas dan cosinus di ruas lain. Ingat bahwa $\\tan A = \\frac{\\sin A}{\\cos A}$.",
+    "opsi": [
+      "$\\frac{5}{3}$",
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{2}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{3}$",
+    "pembahasan": "Lakukan perkalian silang:<br>$2(2 \\sin A - \\cos A) = 1(\\sin A + 3 \\cos A)$<br>$4 \\sin A - 2 \\cos A = \\sin A + 3 \\cos A$<br><br>Kelompokkan suku-suku yang sejenis:<br>$4 \\sin A - \\sin A = 3 \\cos A + 2 \\cos A$<br>$3 \\sin A = 5 \\cos A$<br><br>Pindahkan $\\cos A$ ke ruas kiri dan angka $3$ ke ruas kanan:<br>$\\frac{\\sin A}{\\cos A} = \\frac{5}{3}$<br><br>Karena identitas $\\frac{\\sin A}{\\cos A} = \\tan A$, maka nilai $\\tan A = \\frac{5}{3}$."
+  },
+  {
+    "id": "ujjUk00DQhpjhJaK7AO9",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pemodelan Matematika",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Sebuah segitiga siku-siku memiliki keliling $40$ cm. Jika nilai sinus salah satu sudut lancipnya adalah $\\frac{8}{17}$, berapakah luas segitiga siku-siku tersebut?",
+    "clue": "Rasio sinus $\\frac{8}{17}$ bukan berarti panjang sisi aslinya otomatis $8$ dan $17$, melainkan bentuk perbandingannya. Misalkan panjang sisi depan $8x$ dan miring $17x$. Gunakan Pythagoras untuk mencari sisi samping dalam variabel $x$. Setelah itu, jumlahkan ketiga sisi untuk menyamakan dengan keliling dan mencari nilai $x$.",
+    "opsi": [
+      "$60$ cm$^2$",
+      "$120$ cm$^2$",
+      "$30$ cm$^2$",
+      "$40$ cm$^2$",
+      "$480$ cm$^2$"
+    ],
+    "jawaban_benar": "$60$ cm$^2$",
+    "pembahasan": "Diketahui $\\sin = \\frac{\\text{depan}}{\\text{miring}} = \\frac{8}{17}$.<br>Misalkan panjang sisi sebenarnya adalah perbandingan dikalikan variabel $x$:<br>Depan $= 8x$, Miring $= 17x$.<br><br>Cari sisi samping (alas) dengan Pythagoras:<br>Samping $= \\sqrt{(17x)^2 - (8x)^2} = \\sqrt{289x^2 - 64x^2} = \\sqrt{225x^2} = 15x$.<br><br>Gunakan informasi keliling untuk mencari nilai $x$:<br>Keliling $= \\text{depan} + \\text{samping} + \\text{miring}$<br>$40 = 8x + 15x + 17x$<br>$40 = 40x \\implies x = 1$.<br><br>Karena $x = 1$, panjang sisi sebenarnya adalah $8$ cm, $15$ cm, dan miring $17$ cm. (Sisi siku-siku adalah $8$ dan $15$).<br><br>Luas segitiga $= \\frac{1}{2} \\cdot \\text{alas} \\cdot \\text{tinggi} = \\frac{1}{2} \\cdot 15 \\cdot 8 = 60$ cm$^2$."
+  },
+  {
+    "id": "wKmMq9QrgB8nFu52aZC5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pemodelan Matematika", "Sistem Persamaan Linear"],
+    "pertanyaan": "Pada segitiga sembarang $ABD$, ditarik garis tinggi $AC$ sedemikian rupa sehingga tegak lurus dengan alas $BD$ di titik $C$. Jika diketahui $\\tan B = \\frac{3}{4}$, $\\tan D = \\frac{1}{2}$, dan panjang garis tinggi $AC = 6$ cm, panjang alas $BD$ adalah ...",
+    "clue": "Garis tinggi $AC$ membelah segitiga $ABD$ menjadi dua segitiga siku-siku, yaitu segitiga $ACB$ dan segitiga $ACD$. Terapkan rumus tangen pada masing-masing segitiga untuk mencari panjang $BC$ dan $CD$. $BD$ adalah jumlah dari $BC$ dan $CD$.",
+    "opsi": ["$20$ cm", "$15$ cm", "$18$ cm", "$24$ cm", "$28$ cm"],
+    "jawaban_benar": "$20$ cm",
+    "pembahasan": "Garis $AC$ tegak lurus $BD$, membentuk dua segitiga siku-siku di titik $C$: $\\triangle ACB$ dan $\\triangle ACD$.<br>Sisi depan untuk kedua sudut ($B$ dan $D$) adalah garis tinggi $AC = 6$ cm.<br><br>Pada $\\triangle ACB$:<br>$\\tan B = \\frac{\\text{depan}}{\\text{samping}} = \\frac{AC}{BC}$<br>$\\frac{3}{4} = \\frac{6}{BC} \\implies 3 \\cdot BC = 24 \\implies BC = 8$ cm.<br><br>Pada $\\triangle ACD$:<br>$\\tan D = \\frac{\\text{depan}}{\\text{samping}} = \\frac{AC}{CD}$<br>$\\frac{1}{2} = \\frac{6}{CD} \\implies 1 \\cdot CD = 12 \\implies CD = 12$ cm.<br><br>Panjang alas $BD$ adalah jumlah dari $BC$ dan $CD$:<br>$BD = 8 + 12 = 20$ cm."
+  },
+  {
+    "id": "qe9cTcj8M5WAMbQ5oYWv",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Pengenalan Sudut Dasar"],
+    "pertanyaan": "Diberikan sebuah segitiga siku-siku $PQR$ yang siku-siku di $P$. Posisi segitiga tersebut diputar sedemikian rupa sehingga titik $P$ berada di atas. Jika panjang $PR = 8$ cm dan $QR = 17$ cm, maka nilai dari $\\sin Q$ adalah ...",
+    "clue": "Walaupun gambar diputar, sisi miring selalu berada di depan sudut siku-siku ($QR$). Sisi depan sudut $Q$ adalah sisi yang tidak menyentuh sudut $Q$ ($PR$). Rumus sinus adalah depan dibagi miring.",
+    "opsi": [
+      "$\\frac{8}{17}$",
+      "$\\frac{15}{17}$",
+      "$\\frac{8}{15}$",
+      "$\\frac{17}{8}$",
+      "$\\frac{17}{15}$"
+    ],
+    "jawaban_benar": "$\\frac{8}{17}$",
+    "pembahasan": "Sudut siku-siku di $P$, sehingga sisi miringnya pasti $QR = 17$ cm.<br>Fokus pada sudut $Q$, sisi yang berada tepat di depannya adalah $PR = 8$ cm.<br>Maka, $\\sin Q = \\frac{\\text{depan}}{\\text{miring}} = \\frac{PR}{QR} = \\frac{8}{17}$.<br>(Catatan: Panjang $PQ = 15$ cm tidak perlu dicari karena nilai sinus hanya membutuhkan sisi depan dan sisi miring)."
+  },
+  {
+    "id": "N5b9ZUQSiFlcjZFRg60m",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Pada segitiga $XYZ$ yang siku-siku di $Y$, diketahui panjang $XY = 6$ cm dan $YZ = 8$ cm. Nilai dari $\\tan Z$ adalah ...",
+    "clue": "Perhatikan sudut acuannya yaitu sudut $Z$. Tentukan mana sisi depan dan mana sisi samping dari sudut $Z$.",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{5}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{3}{4}$",
+    "pembahasan": "Fokus pada sudut $Z$.<br>Sisi di depan sudut $Z$ adalah $XY = 6$ cm.<br>Sisi di samping sudut $Z$ adalah $YZ = 8$ cm.<br><br>Maka, $\\tan Z = \\frac{\\text{depan}}{\\text{samping}} = \\frac{6}{8} = \\frac{3}{4}$."
+  },
+  {
+    "id": "PlQq6eyg4lD90d6FQv1x",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Diketahui sudut $\\alpha$ lancip dan $\\sin \\alpha = \\frac{8}{17}$. Nilai dari $\\cos \\alpha$ adalah ...",
+    "clue": "Gunakan Tripel Pythagoras. Jika depan $8$ dan miring $17$, berapakah sisi sampingnya?",
+    "opsi": [
+      "$\\frac{15}{17}$",
+      "$\\frac{8}{15}$",
+      "$\\frac{15}{8}$",
+      "$\\frac{17}{15}$",
+      "$\\frac{17}{8}$"
+    ],
+    "jawaban_benar": "$\\frac{15}{17}$",
+    "pembahasan": "$\\sin \\alpha = \\frac{\\text{depan}}{\\text{miring}} = \\frac{8}{17}$.<br>Sisi depan $= 8$, sisi miring $= 17$.<br><br>Hitung sisi samping menggunakan Pythagoras:<br>Samping $= \\sqrt{17^2 - 8^2} = \\sqrt{289 - 64} = \\sqrt{225} = 15$.<br><br>Maka, $\\cos \\alpha = \\frac{\\text{samping}}{\\text{miring}} = \\frac{15}{17}$."
+  },
+  {
+    "id": "53c8wjEHo7FtxRo8gSmM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Persamaan Linear Satu Variabel"],
+    "pertanyaan": "Segitiga $KLM$ siku-siku di $L$. Jika $\\sin M = \\frac{2}{3}$ dan panjang sisi $KL = 4$ cm, maka panjang sisi miring $KM$ adalah ...",
+    "clue": "Nilai $\\sin = \\frac{\\text{depan}}{\\text{miring}}$. Pecahan rasio $\\frac{2}{3}$ menunjukkan perbandingan, bukan selalu panjang aslinya. Jika panjang aslinya kelipatan dari pembilang, maka sisi miring juga kelipatan dari penyebut.",
+    "opsi": [
+      "$6$ cm",
+      "$8$ cm",
+      "$\\sqrt{13}$ cm",
+      "$2\\sqrt{5}$ cm",
+      "$3\\sqrt{2}$ cm"
+    ],
+    "jawaban_benar": "$6$ cm",
+    "pembahasan": "Sudut $M$ menghadap sisi $KL$, sehingga sisi depannya adalah $KL = 4$ cm. Sisi miringnya adalah $KM$.<br><br>Karena $\\sin M = \\frac{\\text{depan}}{\\text{miring}}$, maka $\\frac{2}{3} = \\frac{4}{KM}$.<br><br>Lakukan perkalian silang: $2 \\cdot KM = 12 \\implies KM = 6$ cm."
+  },
+  {
+    "id": "6cIsdZDJk5VlWppASIl4",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Manipulasi Aljabar Lanjutan",
+      "Sifat Pecahan Trigonometri"
+    ],
+    "pertanyaan": "Diketahui $\\tan \\theta = p$ dengan $\\theta$ adalah sudut lancip. Bentuk sederhana dari ekspresi $\\frac{\\sin \\theta - \\cos \\theta}{\\sin \\theta + \\cos \\theta}$ dalam variabel $p$ adalah ...",
+    "clue": "Ada dua cara: <i>pertama</i>, cari nilai $\\sin$ dan $\\cos$ dalam bentuk $p$ pakai segitiga (depan = $p$, samping = $1$). <i>Kedua</i>, bagi seluruh pembilang dan penyebut pada ekspresi tersebut dengan $\\cos \\theta$.",
+    "opsi": [
+      "$\\frac{p-1}{p+1}$",
+      "$\\frac{p+1}{p-1}$",
+      "$\\frac{1-p}{1+p}$",
+      "$\\frac{p^2-1}{p^2+1}$",
+      "$\\frac{p^2+1}{p^2-1}$"
+    ],
+    "jawaban_benar": "$\\frac{p-1}{p+1}$",
+    "pembahasan": "<b>Cara Cepat:</b><br>Bagi pembilang dan penyebut dengan $\\cos \\theta$:<br>$\\frac{\\frac{\\sin \\theta}{\\cos \\theta} - \\frac{\\cos \\theta}{\\cos \\theta}}{\\frac{\\sin \\theta}{\\cos \\theta} + \\frac{\\cos \\theta}{\\cos \\theta}} = \\frac{\\tan \\theta - 1}{\\tan \\theta + 1}$<br><br>Substitusikan $\\tan \\theta = p$, sehingga hasilnya adalah $\\frac{p-1}{p+1}$.<br><br><b>Cara Segitiga:</b><br>$\\tan \\theta = \\frac{p}{1} \\implies$ depan $= p$, samping $= 1$, miring $= \\sqrt{p^2+1}$.<br>$\\sin \\theta = \\frac{p}{\\sqrt{p^2+1}}$ dan $\\cos \\theta = \\frac{1}{\\sqrt{p^2+1}}$.<br>Masukkan ke ekspresi, penyebut $\\sqrt{p^2+1}$ akan saling mencoret, menghasilkan $\\frac{p-1}{p+1}$."
+  },
+  {
+    "id": "Ajay7MGHU5dMBaHAWqFe",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Bentuk Akar"],
+    "pertanyaan": "Jika $\\sin \\theta = \\frac{1}{2}$ untuk $\\theta$ sudut lancip, maka nilai $\\cot \\theta$ adalah ...",
+    "clue": "Bayangkan segitiga siku-siku. Letakkan sisi depan $1$ dan miring $2$. Cari panjang sisi samping dengan Pythagoras, lalu susun rasio cotangen (samping/depan).",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$2$",
+      "$\\frac{2}{3}\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\sqrt{3}$",
+    "pembahasan": "$\\sin \\theta = \\frac{\\text{depan}}{\\text{miring}} = \\frac{1}{2}$.<br>Berarti sisi depan $= 1$ dan miring $= 2$.<br><br>Hitung sisi samping:<br>Samping $= \\sqrt{2^2 - 1^2} = \\sqrt{4 - 1} = \\sqrt{3}$.<br><br>Maka, $\\cot \\theta = \\frac{\\text{samping}}{\\text{depan}} = \\frac{\\sqrt{3}}{1} = \\sqrt{3}$."
+  },
+  {
+    "id": "GnezLOaCjGIT01UEiQc1",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Visualisasi Spasial dan Arah"],
+    "pertanyaan": "<svg viewBox='0 0 200 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='130' x2='180' y2='130' stroke='black' stroke-width='3'/><rect x='140' y='30' width='10' height='100' fill='gray'/><rect x='40' y='130' width='100' height='6' fill='darkgray'/></svg><br><br>Sebuah tiang memiliki tinggi $12$ m dan panjang bayangannya di tanah adalah $5$ m. Jika $\\theta$ adalah sudut elevasi (sudut antara ujung bayangan di tanah dengan puncak tiang), maka nilai $\\cos \\theta$ adalah ...",
+    "clue": "Gambar segitiganya. Bayangan adalah sisi samping dan tinggi tiang adalah sisi depan. Cari sisi miring (jarak ujung bayangan ke puncak) pakai Pythagoras untuk mencari rasio cosinus.",
+    "opsi": [
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{5}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{13}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{13}$",
+    "pembahasan": "Bayangan di tanah bertindak sebagai sisi samping ($5$ m) dan tiang bertindak sebagai sisi depan ($12$ m).<br><br>Hitung sisi miring (jarak ujung bayangan ke puncak tiang):<br>Miring $= \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13$ m.<br><br>Sehingga, $\\cos \\theta = \\frac{\\text{samping}}{\\text{miring}} = \\frac{5}{13}$."
+  },
+  {
+    "id": "MAPNFtOFC6YEP7Anvw0f",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Pada segitiga siku-siku $PQR$ yang siku-siku di $Q$, diketahui $PQ = 5$ cm dan $PR = 13$ cm. Nilai $\\cos P$ adalah ...",
+    "clue": "Identifikasi posisi sisinya. Karena siku-siku di $Q$, maka $PR$ adalah sisi miring. $PQ$ adalah sisi samping dari sudut $P$. Nilai cosinus adalah perbandingan sisi samping dengan sisi miring.",
+    "opsi": [
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{13}{5}$",
+      "$\\frac{12}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{13}$",
+    "pembahasan": "Fokus pada sudut $P$.<br>Sisi samping sudut $P$ adalah $PQ = 5$. Sisi miring adalah $PR = 13$.<br><br>Rumus $\\cos P = \\frac{\\text{samping}}{\\text{miring}} = \\frac{5}{13}$.<br><br>(Catatan: sisi depan $QR = 12$ tidak perlu dicari jika hanya menanyakan $\\cos P$)."
+  },
+  {
+    "id": "tGqJ49uy2FrnRddtrOaj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Pemodelan Matematika"],
+    "pertanyaan": "Sebuah tangga yang panjangnya $10$ meter disandarkan pada tembok. Jarak ujung bawah tangga terhadap tembok adalah $6$ meter. Jika $\\theta$ adalah sudut yang dibentuk oleh tangga dan tanah, maka nilai $\\sin \\theta$ adalah ...",
+    "clue": "Buat sketsa segitiga siku-siku. Panjang tangga adalah sisi miring, jarak ke tembok adalah sisi samping dari sudut tanah. Kamu perlu mencari tinggi tembok (sisi depan) terlebih dahulu.",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "Berdasarkan cerita, terbentuk segitiga siku-siku dengan:<br>- Sisi miring (tangga) $= 10$ m<br>- Sisi samping sudut $\\theta$ (jarak ujung bawah ke tembok) $= 6$ m<br><br>Hitung sisi depan (tinggi tembok) dengan Pythagoras:<br>Depan $= \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8$ m.<br><br>Maka, $\\sin \\theta = \\frac{\\text{depan}}{\\text{miring}} = \\frac{8}{10} = \\frac{4}{5}$."
+  },
+  {
+    "id": "wIHC6qBCaFeCyBooyIMA",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Pemfaktoran Aljabar"],
+    "pertanyaan": "Diketahui $\\cos \\beta = \\frac{x^2 - 1}{x^2 + 1}$ dengan $x > 1$ dan $\\beta$ sudut lancip. Nilai dari $\\cot \\beta$ adalah ...",
+    "clue": "Anggap $x^2 - 1$ sebagai sisi samping dan $x^2 + 1$ sebagai sisi miring. Gunakan Pythagoras untuk mencari sisi depan. Hati-hati saat menguadratkan bentuk aljabar.",
+    "opsi": [
+      "$\\frac{2x}{x^2 - 1}$",
+      "$\\frac{x^2 - 1}{2x}$",
+      "$\\frac{x^2 + 1}{2x}$",
+      "$\\frac{2x}{x^2 + 1}$",
+      "$\\frac{x^2 - 1}{x^2 + 1}$"
+    ],
+    "jawaban_benar": "$\\frac{x^2 - 1}{2x}$",
+    "pembahasan": "$\\cos \\beta = \\frac{\\text{samping}}{\\text{miring}}$.<br>Samping $= x^2 - 1$<br>Miring $= x^2 + 1$<br><br>Cari sisi depan dengan Pythagoras:<br>Depan $= \\sqrt{(x^2 + 1)^2 - (x^2 - 1)^2}$<br>Gunakan sifat aljabar $A^2 - B^2 = (A+B)(A-B)$:<br>$A = x^2 + 1$ dan $B = x^2 - 1$<br>$A + B = 2x^2$<br>$A - B = 2$<br>Depan $= \\sqrt{2x^2 \\cdot 2} = \\sqrt{4x^2} = 2x$.<br><br>Nilai $\\cot \\beta = \\frac{\\text{samping}}{\\text{depan}} = \\frac{x^2 - 1}{2x}$."
+  },
+  {
+    "id": "ylKQL6ZQ5y8Z5oRTwuVj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Diketahui $\\tan \\alpha = \\frac{3}{4}$ dan $\\alpha$ adalah sudut lancip. Nilai dari $\\cos \\alpha$ adalah ...",
+    "clue": "$\\tan$ membandingkan sisi depan/samping. Hitung panjang sisi miring (5) dengan cara triple pythagoras. Susunlah $\\cos$ dengan perbandingan samping/miring.",
+    "opsi": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{5}{3}$",
+      "$\\frac{5}{4}$",
+      "$\\frac{4}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{4}{5}$",
+    "pembahasan": "$\\tan \\alpha = \\frac{\\text{depan}}{\\text{samping}} = \\frac{3}{4}$.<br>Berarti depan $= 3$ dan samping $= 4$.<br><br>Miring $= \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.<br><br>$\\cos \\alpha = \\frac{\\text{samping}}{\\text{miring}} = \\frac{4}{5}$."
+  },
+  {
+    "id": "TAA9pPLI2VraQ04JO2st",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras"],
+    "pertanyaan": "Sebuah segitiga siku-siku memiliki panjang sisi siku-siku $7$ cm dan $24$ cm. Nilai sinus untuk sudut terkecil pada segitiga tersebut adalah ...",
+    "clue": "Sudut terkecil dalam segitiga pasti selalu menghadap pada sisi yang paling pendek. Cari sisi miring (hipotenusa) pakai Pythagoras dulu.",
+    "opsi": [
+      "$\\frac{7}{24}$",
+      "$\\frac{24}{25}$",
+      "$\\frac{7}{25}$",
+      "$\\frac{25}{24}$",
+      "$\\frac{25}{7}$"
+    ],
+    "jawaban_benar": "$\\frac{7}{25}$",
+    "pembahasan": "Sisi siku-siku adalah sisi depan dan samping.<br>Miring $= \\sqrt{7^2 + 24^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25$.<br><br>Sudut terkecil berhadapan dengan sisi terpendek, yaitu $7$ cm. Jadi sisi depannya adalah $7$.<br><br>$\\sin(\\text{sudut terkecil}) = \\frac{\\text{depan}}{\\text{miring}} = \\frac{7}{25}$."
+  },
+  {
+    "id": "acJfTJOtMfcZEerjUSBh",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Bentuk Akar"],
+    "pertanyaan": "Diketahui segitiga siku-siku dengan salah satu sudut lancipnya adalah $A$. Jika $\\sin A = \\frac{\\sqrt{5}}{3}$, maka nilai $\\tan A$ adalah ...",
+    "clue": "Jangan takut dengan akar. Kuadratkan miring ($3^2$) lalu kurangi kuadrat depan ($(\\sqrt{5})^2$) di dalam proses Pythagoras untuk cari sisi sampingnya.",
+    "opsi": [
+      "$\\frac{\\sqrt{5}}{2}$",
+      "$\\frac{2}{3}$",
+      "$\\frac{3}{2}$",
+      "$\\frac{\\sqrt{5}}{4}$",
+      "$\\frac{2}{\\sqrt{5}}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{5}}{2}$",
+    "pembahasan": "$\\sin A = \\frac{\\sqrt{5}}{3}$, artinya sisi depan $= \\sqrt{5}$ dan miring $= 3$.<br><br>Hitung sisi samping:<br>Samping $= \\sqrt{3^2 - (\\sqrt{5})^2} = \\sqrt{9 - 5} = \\sqrt{4} = 2$.<br><br>Maka, $\\tan A = \\frac{\\text{depan}}{\\text{samping}} = \\frac{\\sqrt{5}}{2}$."
+  },
+  {
+    "id": "rAykbDIlZZu2tf9r9m2D",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Pada sebuah segitiga siku-siku, panjang sisi miring adalah $x$ dan panjang salah satu sisi siku-sikunya adalah $y$. Nilai tangen sudut yang berhadapan dengan sisi $y$ adalah ...",
+    "clue": "Susun persamaan Pythagoras-mu dalam variabel. Jika sisi yang ditanya ada berhadapan dengan $y$, artinya $y$ adalah sisi depannya.",
+    "opsi": [
+      "$\\frac{y}{x}$",
+      "$\\frac{y}{\\sqrt{x^2 - y^2}}$",
+      "$\\frac{\\sqrt{x^2 - y^2}}{y}$",
+      "$\\frac{x}{\\sqrt{x^2 - y^2}}$",
+      "$\\frac{\\sqrt{x^2 - y^2}}{x}$"
+    ],
+    "jawaban_benar": "$\\frac{y}{\\sqrt{x^2 - y^2}}$",
+    "pembahasan": "Diketahui miring $= x$ dan sisi depan (karena berhadapan dengan sudut yang ditanyakan) $= y$.<br><br>Panjang sisi samping menurut Teorema Pythagoras adalah $\\sqrt{\\text{miring}^2 - \\text{depan}^2} = \\sqrt{x^2 - y^2}$.<br><br>Nilai tangen adalah $\\frac{\\text{depan}}{\\text{samping}} = \\frac{y}{\\sqrt{x^2 - y^2}}$."
+  },
+  {
+    "id": "voFgy3CLpdSchL3uxVPB",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Rasio Trigonometri Dasar",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Operasi Pecahan"],
+    "pertanyaan": "Dalam suatu segitiga siku-siku, diketahui nilai $\\sec \\beta = \\frac{13}{5}$. Nilai dari $\\tan \\beta + 1$ adalah ...",
+    "clue": "Ingat $\\sec$ adalah miring/samping. Artinya miring = 13 dan samping = 5. Temukan sisi depan dengan Pythagoras terlebih dahulu sebelum mencari perbandingan $\\tan$.",
+    "opsi": [
+      "$\\frac{12}{5}$",
+      "$\\frac{17}{5}$",
+      "$\\frac{18}{5}$",
+      "$\\frac{13}{12}$",
+      "$\\frac{17}{12}$"
+    ],
+    "jawaban_benar": "$\\frac{17}{5}$",
+    "pembahasan": "$\\sec \\beta = \\frac{\\text{miring}}{\\text{samping}} = \\frac{13}{5}$.<br>Berarti miring $= 13$ dan samping $= 5$.<br><br>Hitung sisi depan:<br>Depan $= \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$.<br><br>$\\tan \\beta = \\frac{\\text{depan}}{\\text{samping}} = \\frac{12}{5}$.<br><br>Sehingga $\\tan \\beta + 1 = \\frac{12}{5} + \\frac{5}{5} = \\frac{17}{5}$."
+  }
+]

@@ -1,0 +1,50 @@
+
+const feedbackSalahDua = [
+  "Masih salah nih. Nyerah atau mau coba lagi?",
+  "Waduh, masih belum pas. Butuh baca pembahasan?",
+  "Jangan pantang menyerah! Coba lagi atau klik nyerah kalau mentok.",
+  "Nyerah aja ya... Of course not!",
+  "Salah sekali lagi, bakal langsung dikasih tau pembahasan...",
+  "Kadang, manusia juga mengulang kesalahan yang sama, tapi... coba lagi!",
+  "Percobaan kedua kurang tepat, mungkin yang ketiga bakal tepat?",
+];
+
+const feedbackSalahTiga = [
+  "Kesempatan habis! Yuk pelajari pembahasannya biar ngerti.",
+  "Udah 3x tebak nih, waktunya baca panduan!",
+  "Stop nebak-nebak! Pahami cara kerjanya di bawah ini ya.",
+  "Hm, pelajari pembahasannya dulu aja ya? Jawab engga juga tetap dikasih sih.",
+  "Jatuh tertimpa tangga, lalu terpeleset, untuk ada yang nolong (pembahasan).",
+  "Fyuh mentalmu masih oke? Tahan dulu dikit lagi buat liat pembahasannya!",
+  "Ini bukan hasil tebakan, ini bukan hasil tebakan, kann??!",
+];
+
+const feedbackPilihBahas = [
+  "Nggak masalah! Pelajari pembahasan ini dan pilih jawaban yang benar.",
+  "Mundur selangkah buat maju dua langkah. Yuk pahami caranya!",
+  "Oke, mari kita bedah soal ini sama-sama.",
+  "Jadi milih nyerah ya, ya kadang itu juga pilihan yang bijak.",
+  "Aku paham sih setelah lihat soal ini...",
+  "Disapointed? Nah, setiap orang punya jalannya masing-masing.",
+  "Setelah ini gakan menyerah lagi kan? Kalaupun iya, it's your choice.",
+];
+
+const feedbackBenarSempurna = [
+  "Hebat! 🎉 Jawaban yang tepat.",
+  "Mantap betul! Lanjut terus! 🚀",
+  "Insting matematikamu tajam! 🔥",
+  "Keren banget! Teruskan! 👊",
+  "Luar bisa! Tidak menyangka 😃",
+  "Okee not bad! 😁",
+  "Gimana, mantep kan kalau jawabannya benar? 😎",
+];
+
+const feedbackBenarBahas = [
+  "Nah, gitu dong! Paham kan polanya sekarang? 🙃",
+  "Akhirnya benar juga, fyuh! 😅",
+  "Sip! Jangan lupa cara ngerjainnya buat soal berikutnya ya. 👍",
+  "Let's goo soal selanjutnyaa!!! 😎",
+  "Mind blowing banget emang pembahasannya... 🤯",
+  "Cold... 🥶 ternyata caranya gitu aja, kan? Mungkin engga, it's okay",
+  "Alright alrigh alright, one down, thousand to go! 😤",
+];

@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "nama_siswa": "Fuada Sekar Arum",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika Lanjut",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "Kamis 4 Juni 2026"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan $\\tan(360^\\circ - 45^\\circ) + \\cos(180^\\circ - 60^\\circ) = -\\tan 45^\\circ + (-\\cos 60^\\circ) = -1 + (-\\frac{1}{2})$. Namun di hasil akhir siswa menghitungnya menjadi $\\frac{1}{2}$.",
+      "letak_kesalahan": [
+        "Kesalahan aritmetika penjumlahan pecahan $-1 + (-\\frac{1}{2}) = \\frac{1}{2}$, seharusnya $-1 - \\frac{1}{2} = -\\frac{3}{2}$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan aritmetika penjumlahan pecahan $-1 + (-\\frac{1}{2}) = \\frac{1}{2}$, seharusnya $-1 - \\frac{1}{2} = -\\frac{3}{2}$.\n> \n> Pemahaman konsep relasi kuadranmu sudah mantap sekali, Fufu! Cuma sayang banget kepeleset di hitungan dasar penjumlahan pecahan negatif."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Nilai dari sin 870°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan $\\sin(2 \\times 360^\\circ + 150^\\circ) = \\sin 150^\\circ$, kemudian mengonversinya menjadi $\\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Pencocokan opsi ganda juga dieksekusi dengan sempurna.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "> Excellent! Penjabaran sudut lebih dari 360 derajat sudah sangat rapi dan akurat."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Operasi tan 300° x cos 150° x sin(-210°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan relasi $\\tan 300^\\circ$ dan $\\cos 150^\\circ$ dengan benar. Namun untuk $\\sin(-210^\\circ)$ siswa menghitungnya menjadi $-\\sin(180^\\circ+30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$. Kemudian pada tahap akhir perkalian $-\\sqrt{3} \\times (-\\frac{1}{2}\\sqrt{3}) \\times (-\\frac{1}{2})$, siswa sepertinya melakukan kesalahan perkalian akar namun kebetulan hasil akhirnya menjadi $\\frac{3}{4}$ karena akumulasi perambatan kesalahan tanda negatif.",
+      "letak_kesalahan": [
+        "Kesalahan konsep sudut negatif pada $\\sin(-210^\\circ) = -\\sin 30^\\circ$, seharusnya $\\sin(-210^\\circ) = -\\sin(210^\\circ) = -(-\\sin 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan konsep sudut negatif pada $\\sin(-210^\\circ) = -\\sin 30^\\circ$, seharusnya $\\sin(-210^\\circ) = -\\sin(210^\\circ) = -(-\\sin 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$.\n> \n> Secara umum pengerjaannya sudah oke, Fufu. Hati-hati dengan tanda minus ganda pada sudut negatif fungsi sinus ya, jangan sampai terlewat!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan bentuk relasi atas bawah dengan sempurna hingga tahap akhir pembagian akar $\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}}$. Namun siswa menuliskan hasilnya $-\\sqrt{3}$ di coretan, meski pada akhirnya ia melingkari opsi $-1$ yang benar.",
+      "letak_kesalahan": [
+        "Kesalahan aritmetika pembagian di baris akhir $\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -\\sqrt{3}$, seharusnya $\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -1$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan aritmetika pembagian di baris akhir $\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -\\sqrt{3}$, seharusnya $\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -1$.\n> \n> Konsep trigonometrinya sudah 100% benar nih! Untung saja kamu sadar dan melingkari opsi $-1$ yang benar, walau di coretan sempat nyasar jadi $-\\sqrt{3}$."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengonversi fungsi identitas dengan sangat baik (sec, cot, csc dikembalikan ke cos, tan, sin) dan nilainya tepat: $\\sec 300^\\circ=2$, $\\cot 225^\\circ=1$, $\\csc 210^\\circ=-2$. Kesalahan terjadi di substitusi persamaan akhir yaitu $2 + 1 - 2 = 1$.",
+      "letak_kesalahan": [
+        "Kesalahan tanda operasi hitung pengurangan $2 + 1 - 2 = 1$, seharusnya substitusi $-\\csc 210^\\circ$ adalah $2 + 1 - (-2) = 5$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan tanda operasi hitung pengurangan $2 + 1 - 2 = 1$, seharusnya substitusi $-\\csc 210^\\circ$ adalah $2 + 1 - (-2) = 5$.\n> \n> Cara kamu membongkar fungsi invers (sec, cot, csc) patut diacungi jempol! Tetap teliti ya Fufu saat memindahkan angka negatif ke dalam persamaan biar poinnya nggak melayang."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan operasi bentuk trigonometri sudut berelasi",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menjawab fungsi yang menggunakan relasi horizontal $\\tan(180^\\circ+A)=\\tan A$. Namun siswa gagal memahami bahwa relasi vertikal ($270^\\circ$) akan mengubah nama fungsi trigonometri. Siswa menulis $\\cos(270^\\circ-A)=-\\cos A$ dan $\\sin(270^\\circ+A)=-\\sin A$.",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi vertikal $\\cos(270^\\circ - A) = -\\cos A$, seharusnya fungsi berubah nama menjadi $-\\sin A$.",
+        "Kesalahan konsep relasi vertikal $\\sin(270^\\circ + A) = -\\sin A$, seharusnya fungsi berubah nama menjadi $-\\cos A$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan konsep relasi vertikal $\\cos(270^\\circ - A) = -\\cos A$, seharusnya fungsi berubah nama menjadi $-\\sin A$.\n>   * Kesalahan konsep relasi vertikal $\\sin(270^\\circ + A) = -\\sin A$, seharusnya fungsi berubah nama menjadi $-\\cos A$.\n> \n> Jangan lupa aturan mainnya, Fufu. Kalau pakai sumbu Y ($90^\\circ$ atau $270^\\circ$), nama fungsinya wajib ganti baju ya (sin jadi cos, cos jadi sin)!"
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa memecah $-\\tan 600^\\circ$ secara runtun menjadi $-\\tan(360^\\circ+240^\\circ)$, lalu $-\\tan(180^\\circ+60^\\circ)$, hingga menemukan nilai akhir $-\\sqrt{3}$. Evaluasi silang pada tabel juga konsisten.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "> Superb! Urutan manipulasi sudut besar dan sudut negatifnya terstruktur dengan sangat rapi dan logis."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Terkait penyederhanaan operasi aljabar relasi sudut",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menyederhanakan $\\frac{-\\cos A (-\\cos A)}{\\cos A} = \\cos A$. Secara mengejutkan, siswa menyadari perubahan fungsi $\\sin(270^\\circ-A)$ menjadi $-\\cos A$ pada soal ini, berbeda dengan pengerjaannya di nomor 6.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "> Mantap! Di sini kamu membuktikan kalau kamu sebenarnya bisa melakukan transformasi relasi vertikal dengan benar."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Jika operasi perkalian cos 150° x sin 300° diselesaikan secara spesifik dengan konsep sudut berelasi vertikal",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengonversi menggunakan aturan vertikal dengan tepat: $\\cos(90^\\circ+60^\\circ)=-\\sin 60^\\circ=-\\frac{1}{2}\\sqrt{3}$ dan $\\sin(270^\\circ+30^\\circ)=-\\cos 30^\\circ=-\\frac{1}{2}\\sqrt{3}$. Sayangnya, di tahap perkalian akhir siswa menghitung $-\\frac{1}{2}\\sqrt{3} \\times -\\frac{1}{2}\\sqrt{3} = 1$.",
+      "letak_kesalahan": [
+        "Kesalahan perkalian pecahan akar $-\\frac{1}{2}\\sqrt{3} \\times -\\frac{1}{2}\\sqrt{3} = 1$, seharusnya $(-\\frac{1}{2} \\times -\\frac{1}{2}) \\times (\\sqrt{3} \\times \\sqrt{3}) = \\frac{1}{4} \\times 3 = \\frac{3}{4}$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan perkalian pecahan akar $-\\frac{1}{2}\\sqrt{3} \\times -\\frac{1}{2}\\sqrt{3} = 1$, seharusnya $(-\\frac{1}{2} \\times -\\frac{1}{2}) \\times (\\sqrt{3} \\times \\sqrt{3}) = \\frac{1}{4} \\times 3 = \\frac{3}{4}$.\n> \n> Eksekusi konsep vertikalnya keren banget! Cuma perlu lebih hati-hati saat mengalikan pecahan yang ada bentuk akarnya ya."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Tentukan Benar atau Salah untuk tahapan hitung operasi pembagian",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa terjebak pada $\\cos(-240^\\circ)$ dengan merubahnya menjadi $-\\cos 240^\\circ$ (seharusnya fungsi cosinus bersifat genap, $\\cos(-x)=\\cos x$). Namun untuk bagian $\\sin 570^\\circ$ dan $\\tan(-135^\\circ)$ sudah dieksekusi dengan baik. Di tahap akhir terjadi kompensasi tanda yang kebetulan menghasilkan $\\frac{1}{2} + \\frac{1}{2} = 1$.",
+      "letak_kesalahan": [
+        "Kesalahan konsep sudut negatif fungsi genap $\\cos(-240^\\circ) = -\\cos 240^\\circ$, seharusnya $\\cos(-240^\\circ) = \\cos(240^\\circ) = -\\frac{1}{2}$."
+      ],
+      "apresiasi_dan_catatan": "> * **Letak Kesalahan:**\n>   * Kesalahan konsep sudut negatif fungsi genap $\\cos(-240^\\circ) = -\\cos 240^\\circ$, seharusnya $\\cos(-240^\\circ) = \\cos(240^\\circ) = -\\frac{1}{2}$.\n> \n> Ingat lagi sifat spesial dari Cosinus ya, Fufu. Fungsi Cosinus itu kebal terhadap tanda negatif di dalam sudut: $\\cos(-A) = \\cos A$."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Jika sin(54°) = p, maka nilai",
+      "skor": 0,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa tidak mengerjakan soal opsional ini dan hanya melakukan coretan pengurangan acak yang tidak berhubungan dengan penurunan ekspresi variabel trigonometri.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak ada penyelesaian matematis menggunakan konsep sudut berelasi trigonometri, seharusnya menyertakan langkah pengerjaan lengkap."
+      ],
+      "apresiasi_dan_catatan": "> Yuk coba dilatih lagi soal tipe analisis variabel seperti ini. Identifikasi dulu relasi setiap sudut terhadap $54^\\circ$ atau $36^\\circ$!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 87,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 0,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "87 + 0",
+    "persentase_kelulusan": 87,
+    "predikat": "Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Fufu! Selamat ya, kamu dapat nilai wajib 87 dan bonus soal opsional 0 dengan total akhir 87 + 0 (Predikat Baik). Pemahaman konsep relasi trigonometri kamu sebenarnya sudah sangat kokoh, terbukti dari cara kamu mengurai sudut-sudut besar dan bentuk invers. Tapi, poinmu cukup banyak terkikis karena kesalahan hitung aljabar dasar seperti perkalian pecahan dan operasi tanda minus. Sempatkan untuk mengecek ulang baris-baris akhir hitunganmu ya, biar nilaimu bisa lebih sempurna di ujian berikutnya!"
+}

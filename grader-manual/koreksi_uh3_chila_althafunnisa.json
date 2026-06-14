@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "nama_siswa": "Chila Althafunnisa",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika Peminatan",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-07"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan penyelesaian dengan sangat tepat: $\\tan 315^\\circ = \\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ = -1$ dan $\\cos 120^\\circ = \\cos(180^\\circ - 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$. Hasil akhir $-1 - \\frac{1}{2} = -\\frac{3}{2}$ sesuai dengan pilihan A yang dicentang di lembar utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Koreksi yang sangat baik! Langkah-langkah penyelesaiannya runtut, pemahaman tanda kuadrannya tepat, dan perhitungan pecahan di akhir juga benar."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Nilai dari sin 870°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan konsep periodisitas dan relasi sudut dengan benar: $\\sin 870^\\circ = \\sin(2 \\\\times 360^\\circ + 150^\\circ) = \\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Pilihan A, C, dan D yang dicentang di lembar utama semuanya benar.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Pekerjaan yang sangat teliti! Semua pernyataan yang benar pada lembar utama berhasil dicentang dengan tepat sesuai pengerjaan di lembar buram."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Operasi tan 300° x cos 150° x sin(-210°)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa melakukan kesalahan konsep relasi sudut pada sinus: $\\sin(-210^\\circ) = -\\sin 210^\\circ = -\\sin(180^\\circ - 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$ (seharusnya $-\\sin(180^\\circ + 30^\\circ) = -(-\\sin 30^\\circ) = \\frac{1}{2}$). Siswa juga melakukan kesalahan hitung aljabar di mana perkalian $-\\sqrt{3} \\\\times -\\frac{1}{2}\\sqrt{3} \\\\times -\\frac{1}{2}$ menghasilkan $\\frac{1}{4}$ (seharusnya $-\\frac{3}{4}$). Opsi Benar/Salah yang dicentang konsisten dengan hasil coretan.",
+      "letak_kesalahan": [
+        "Kesalahan penerapan rumus relasi sudut dasar $\\sin(210^\\circ) = \\sin(180^\\circ - 30^\\circ)$, seharusnya $\\sin(210^\\circ) = \\sin(180^\\circ + 30^\\circ)$.",
+        "Kesalahan hitung aljabar perkalian pecahan dan akar $-\\sqrt{3} \\\\times -\\frac{1}{2}\\sqrt{3} \\\\times -\\frac{1}{2} = \\frac{1}{4}$, seharusnya $-\\sqrt{3} \\\\times -\\frac{1}{2}\\sqrt{3} \\\\times -\\frac{1}{2} = -\\frac{3}{4}$."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah memahami konsep sudut negatif dan relasi kuadran untuk tangen dan kosinus dengan baik. Namun, harap lebih teliti dalam memosisikan relasi sudut horizontal (210° ada di kuadran III, sehingga menggunakan 180° + 30°) dan pastikan kembali hasil perkalian bentuk akarmu ya."
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengerjakan dengan benar: $\\frac{\\tan(360^\\circ - 60^\\circ) - \\cos(180^\\circ - 30^\\circ)}{\\sin(180^\\circ - 60^\\circ)} = \\frac{-\\sqrt{3} - (-\\frac{1}{2}\\sqrt{3})}{\\frac{1}{2}\\sqrt{3}} = \\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -1$. Hasil akhir sesuai dengan pilihan B yang dicentang di lembar utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Luar biasa! Penyelesaian yang sangat rapi dan pemahaman konsep aljabar pecahan bentuk akar yang sangat baik."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa melakukan kesalahan konsep tanda kuadran pada sekan: $\\sec 300^\\circ = -\\sec 60^\\circ$ (seharusnya $\\sec 60^\\circ$ karena berada di kuadran IV). Siswa juga melakukan kesalahan konsep relasi sudut pada kotangen: $\\cot 225^\\circ = \\tan(270^\\circ - 45^\\circ)$ (seharusnya $\\cot(270^\\circ - 45^\\circ)$). Terjadi kesalahan substitusi nilai: $\\sec 60^\\circ = \\frac{1}{2}\\sqrt{3}$ (seharusnya 2) dan $\\csc 30^\\circ = \\frac{1}{2}$ (seharusnya 2). Perhitungan tidak diselesaikan hingga akhir dan tidak ada opsi yang dicentang di lembar utama.",
+      "letak_kesalahan": [
+        "Kesalahan menentukan tanda (+/-) kuadran $\\sec 300^\\circ = -\\sec 60^\\circ$, seharusnya $\\sec 300^\\circ = \\sec 60^\\circ$.",
+        "Kesalahan penerapan rumus relasi sudut dasar $\\cot 225^\\circ = \\tan(270^\\circ - 45^\\circ)$, seharusnya $\\cot 225^\\circ = \\cot(270^\\circ - 45^\\circ) = \\tan 45^\\circ$.",
+        "Kesalahan substitusi nilai $\\sec 60^\\circ = \\frac{1}{2}\\sqrt{3}$, seharusnya $\\sec 60^\\circ = 2$.",
+        "Kesalahan substitusi nilai $\\csc 30^\\circ = \\frac{1}{2}$, seharusnya $\\csc 30^\\circ = 2$.",
+        "Kesalahan administratif kesalahan administratif di mana opsi yang dicentang di lembar utama tidak diisi, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Konsep pengubahan sudut relasi untuk csc 210° sudah benar. Namun, hati-hati dengan tanda kuadran untuk sekan di kuadran IV (bernilai positif). Selain itu, pastikan untuk menggunakan notasi fungsi yang benar sebelum penyederhanaan relasi vertikal dan hafal nilai perbandingan trigonometri invers seperti sekan dan kosekan dengan tepat. Jangan lupa menyelesaikan hitungan dan memilih opsi jawabannya ya."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan operasi bentuk trigonometri",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjodohkan semua pernyataan dengan benar: $1) \\cos(270^\\circ - A) = -\\sin A$ (pilihan B), $2) \\tan(180^\\circ + A) = \\tan A$ (pilihan A), $3) \\sin(270^\\circ + A) = -\\cos A$ (pilihan C). Hasil coretan di sebelah kanan menunjukkan proses berpikir yang tepat.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sangat bagus! Seluruh konsep relasi sudut dengan variabel di kuadran III dan IV dijawab dengan benar dan konsisten."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan langkah pengerjaan dengan benar: $\\tan(-600^\\circ) = -\\tan 600^\\circ = -\\tan(360^\\circ + 240^\\circ) = -\\tan 240^\\circ = -\\tan(180^\\circ + 60^\\circ) = -\\tan 60^\\circ = -\\sqrt{3}$. Jawaban pada tabel pernyataan di lembar utama (B, S, B) juga sinkron dan benar.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Hebat! Penyelesaiannya sangat runtut dan detail, mulai dari sifat sudut negatif, periodisitas, hingga relasi kuadran III untuk tangen."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan cos(180°+A)*sin(270°-A)/cos(360°-A)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menggunakan relasi kuadran dengan benar: $\\frac{-\\cos A \\cdot (-\\cos A)}{\\cos A}$. Namun, terdapat kesalahan langkah aljabar di mana siswa menuliskan hasil perkalian pembilang $\\frac{\\cos A}{\\cos A} = \\cos A$ (seharusnya $\\frac{\\cos^2 A}{\\cos A} = \\cos A$). Opsi A, C, dan D yang dicentang di lembar utama sudah benar.",
+      "letak_kesalahan": [
+        "Kesalahan aljabar perkalian bentuk aljabar $-\\cos A \\cdot (-\\cos A) = \\cos A$, seharusnya $-\\cos A \\cdot (-\\cos A) = \\cos^2 A$."
+      ],
+      "apresiasi_dan_catatan": "Konsep trigonometri kuadran kamu sudah luar biasa. Hanya saja, berhati-hatilah pada operasi aljabar perkalian variabel seperti cos A dikalikan cos A."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian cos 150° x sin 300° (relasi vertikal sumbu Y)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyelesaikan dengan konsep relasi vertikal dengan benar: $\\cos 150^\\circ \\cdot \\sin 300^\\circ = \\cos(90^\\circ + 60^\\circ) \\cdot \\sin(270^\\circ + 30^\\circ) = -\\sin 60^\\circ \\cdot (-\\cos 30^\\circ) = -\\frac{1}{2}\\sqrt{3} \\cdot (-\\frac{1}{2}\\sqrt{3}) = \\frac{3}{4}$. Pilihan A, B, dan C dicentang secara tepat di lembar utama.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Pengerjaan yang sangat baik! Konsep relasi vertikal sumbu Y yang mengubah nama fungsi dikerjakan dengan sangat presisi dan tanpa kesalahan."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Operasi pembagian (cos(-240°) - sin(570°)) / tan(-135°)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa melakukan kesalahan penulisan konsep tanda pada langkah awal kosinus: $\\cos(-240^\\circ) = -\\cos 240^\\circ$ (seharusnya $\\cos 240^\\circ$). Siswa juga melakukan kesalahan tanda kuadran pada sinus: $\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ) = \\sin 30^\\circ$ (seharusnya $-\\sin 30^\\circ$). Substitusi nilai dan proses aljabar akhir konsisten dengan coretan dan tabel jawaban dicentang dengan benar (S, B, B, S).",
+      "letak_kesalahan": [
+        "Kesalahan menentukan tanda (+/-) kuadran $\\cos(-240^\\circ) = -\\cos 240^\\circ$, seharusnya $\\cos(-240^\\circ) = \\cos 240^\\circ$.",
+        "Kesalahan menentukan tanda (+/-) kuadran $\\sin(180^\\circ + 30^\\circ) = \\sin 30^\\circ$, seharusnya $\\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Kamu terbukti menguasai pengisian tabel pernyataan di lembar utama dengan baik. Namun, ada dua kesalahan konsep penentuan tanda negatif/positif kuadran pada kosinus dan sinus yang membuat hasil akhir perhitunganmu meleset menjadi -1. Tingkatkan ketelitian pada aturan tanda kuadran ya!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Jika sin(54°) = p, nilai ekspresi [SOAL BONUS]",
+      "skor": 0,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa tidak mengerjakan soal opsional ini. Lembar jawaban utama kosong dan tidak ada coretan di lembar pengerjaan.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Soal opsional tidak dikerjakan."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 88,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 0,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "88 + 0",
+    "persentase_kelulusan": 88.0,
+    "predikat": "Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Chila! Selamat ya, kamu dapat nilai wajib 88 dan bonus soal opsional 0 dengan total akhir 88 + 0 (Predikat Baik). Secara umum, pemahaman kamu mengenai konsep dasar sudut berelasi, sudut negatif, dan periodisitas trigonometri sudah sangat bagus. Kamu juga sangat konsisten dalam menyelaraskan hasil pengerjaan di lembar buram dengan lembar jawaban utama. Namun, kamu perlu lebih teliti lagi dalam menentukan tanda (+/-) kuadran (seperti pada sekan di kuadran IV dan sinus di kuadran III) serta pengerjaan aljabar pecahan dan perkalian bentuk akar. Tetap semangat berlatih soal-soal trigonometri ya agar nilaimu bisa lebih maksimal lagi!"
+}

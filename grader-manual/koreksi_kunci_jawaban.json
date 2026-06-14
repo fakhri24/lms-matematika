@@ -1,0 +1,83 @@
+{
+  "soal_1": {
+    "topik": "Nilai dari tan 315° + cos 120°",
+    "langkah_1_relasi": "$\\tan(360^\\circ - 45^\\circ) + \\cos(180^\\circ - 60^\\circ)$",
+    "langkah_2_tanda_kuadran": "$-\\tan 45^\\circ - \\cos 60^\\circ$",
+    "langkah_3_substitusi_nilai": "$-1 - \\frac{1}{2}$",
+    "langkah_4_hasil_akhir": "$-\\frac{3}{2}$"
+  },
+  "soal_2": {
+    "topik": "Nilai dari sin 870°",
+    "langkah_1_periodisitas": "$\\sin(2 \\times 360^\\circ + 150^\\circ)$",
+    "langkah_2_sudut_sisa": "$\\sin(150^\\circ)$",
+    "langkah_3_relasi": "$\\sin(180^\\circ - 30^\\circ)$",
+    "langkah_4_tanda_kuadran": "$\\sin 30^\\circ$",
+    "langkah_5_hasil_akhir": "$\\frac{1}{2}$",
+    "catatan_opsi": "$\\cos 60^\\circ = \\frac{1}{2}$"
+  },
+  "soal_3": {
+    "topik": "Operasi tan 300° x cos 150° x sin(-210°)",
+    "langkah_1_relasi": "$\\tan(360^\\circ - 60^\\circ) \\cdot \\cos(180^\\circ - 30^\\circ) \\cdot \\sin(150^\\circ)$",
+    "langkah_2_tanda_kuadran": "$-\\tan 60^\\circ \\cdot (-\\cos 30^\\circ) \\cdot \\sin 30^\\circ$",
+    "langkah_3_substitusi_nilai": "$-\\sqrt{3} \\cdot (-\\frac{1}{2}\\sqrt{3}) \\cdot \\frac{1}{2}$",
+    "langkah_4_hasil_akhir": "$\\frac{3}{4}$"
+  },
+  "soal_4": {
+    "topik": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+    "langkah_1_relasi": "$\\frac{\\tan(360^\\circ - 60^\\circ) - \\cos(180^\\circ - 30^\\circ)}{\\sin(180^\\circ - 60^\\circ)}$",
+    "langkah_2_tanda_kuadran": "$\\frac{-\\tan 60^\\circ - (-\\cos 30^\\circ)}{\\sin 60^\\circ}$",
+    "langkah_3_substitusi_nilai": "$\\frac{-\\sqrt{3} + \\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}}$",
+    "langkah_4_hasil_akhir": "$\\frac{-\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} = -1$"
+  },
+  "soal_5": {
+    "topik": "Operasi sec 300° + cot 225° - csc 210°",
+    "langkah_1_relasi": "$\\sec(360^\\circ - 60^\\circ) + \\cot(180^\\circ + 45^\\circ) - \\csc(180^\\circ + 30^\\circ)$",
+    "langkah_2_tanda_kuadran": "$\\sec 60^\\circ + \\cot 45^\\circ - (-\\csc 30^\\circ)$",
+    "langkah_3_konversi_dasar": "$\\frac{1}{\\cos 60^\\circ} + \\frac{1}{\\tan 45^\\circ} + \\frac{1}{\\sin 30^\\circ}$",
+    "langkah_4_substitusi_nilai": "$\\frac{1}{\\frac{1}{2}} + \\frac{1}{1} + \\frac{1}{\\frac{1}{2}}$",
+    "langkah_5_hasil_akhir": "2 + 1 + 2 = 5"
+  },
+  "soal_6": {
+    "topik": "Menjodohkan operasi bentuk trigonometri",
+    "butir_1": "$\\cos(270^\\circ - A) \\Rightarrow \\text{Kuadran III} \\Rightarrow -\\sin A$",
+    "butir_2": "$\\tan(180^\\circ + A) \\Rightarrow \\text{Kuadran III} \\Rightarrow \\tan A$",
+    "butir_3": "$\\sin(270^\\circ + A) \\Rightarrow \\text{Kuadran IV} \\Rightarrow -\\cos A$"
+  },
+  "soal_7": {
+    "topik": "Penentuan nilai tan(-600°)",
+    "langkah_1_sudut_negatif": "$-\\tan 600^\\circ$",
+    "langkah_2_periodisitas": "$-\\tan(360^\\circ + 240^\\circ)$",
+    "langkah_3_sudut_sisa": "$-\\tan 240^\\circ$",
+    "langkah_4_relasi": "$-\\tan(180^\\circ + 60^\\circ)$",
+    "langkah_5_tanda_kuadran": "$-\\tan 60^\\circ$",
+    "langkah_6_hasil_akhir": "$-\\sqrt{3}$",
+    "catatan_tambahan": "$\\tan 120^\\circ = \\tan(180^\\circ - 60^\\circ) = -\\tan 60^\\circ = -\\sqrt{3}$"
+  },
+  "soal_8": {
+    "topik": "Penyederhanaan cos(180°+A)*sin(270°-A)/cos(360°-A)",
+    "langkah_1_tanda_kuadran": "$\\frac{-\\cos A \\cdot (-\\cos A)}{\\cos A}$",
+    "langkah_2_hasil_akhir": "$\\cos A$"
+  },
+  "soal_9": {
+    "topik": "Perkalian cos 150° x sin 300° (relasi vertikal sumbu Y)",
+    "langkah_1_relasi": "$\\cos(90^\\circ + 60^\\circ) \\cdot \\sin(270^\\circ + 30^\\circ)$",
+    "langkah_2_tanda_kuadran": "$-\\sin 60^\\circ \\cdot (-\\cos 30^\\circ)$",
+    "langkah_3_substitusi_nilai": "$-\\frac{1}{2}\\sqrt{3} \\cdot (-\\frac{1}{2}\\sqrt{3})$",
+    "langkah_4_hasil_akhir": "$\\frac{3}{4}$"
+  },
+  "soal_10": {
+    "topik": "Operasi pembagian (cos(-240°) - sin(570°)) / tan(-135°)",
+    "langkah_1_sudut_negatif_dan_periodisitas": "$\\frac{\\cos 240^\\circ - \\sin(360^\\circ + 210^\\circ)}{-\\tan 135^\\circ}$",
+    "langkah_2_relasi": "$\\frac{\\cos(180^\\circ + 60^\\circ) - \\sin(180^\\circ + 30^\\circ)}{-\\tan(180^\\circ - 45^\\circ)}$",
+    "langkah_3_tanda_kuadran": "$\\frac{-\\cos 60^\\circ - (-\\sin 30^\\circ)}{-(-\\tan 45^\\circ)}$",
+    "langkah_4_substitusi_nilai": "$\\frac{-\\frac{1}{2} + \\frac{1}{2}}{1}$",
+    "langkah_5_hasil_akhir": "0"
+  },
+  "soal_11": {
+    "topik": "Jika sin(54°) = p, nilai ekspresi",
+    "langkah_1_relasi_dan_substitusi_p": "$\\frac{p + 2\\cos(270^\\circ - 54^\\circ)}{\\cos 60^\\circ \\cdot \\cos(270^\\circ + 54^\\circ)}$",
+    "langkah_2_tanda_kuadran": "$\\frac{p + 2(-\\sin 54^\\circ)}{\\frac{1}{2} \\cdot \\sin 54^\\circ}$",
+    "langkah_3_substitusi_p_dan_penyederhanaan": "$\\frac{p - 2p}{\\frac{1}{2}p}$",
+    "langkah_4_hasil_akhir": "$\\frac{-p}{\\frac{1}{2}p} = -1 \\cdot \\frac{2}{1} = -2$"
+  }
+}

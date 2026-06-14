@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "nama_siswa": "Alike Qotrunnada Faliha",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-06"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan relasi $-\\tan 45^\\circ + (-\\cos 60^\\circ)$ dan menyelesaikan penjumlahan pecahannya menjadi $-\\frac{3}{2}$ dengan sempurna.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Kerja bagus, Alike! Konsep relasi dan hitungan pecahanmu di awal sudah sangat mantap."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa membongkar sudut $870^\\circ$ menjadi $360^\\circ + 360^\\circ + 150^\\circ$ dan merelasikannya menjadi $\\sin 30^\\circ = \\frac{1}{2}$ dengan tepat, serta mengidentifikasi ekuivalensinya dengan $\\cos 60^\\circ$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Keren! Analisis sudut lebih dari $360^\\circ$ sudah kamu kuasai dengan baik."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menguraikan relasi sudut satu per satu dan mengalikan ketiganya dengan teliti hingga mendapat hasil akhir $\\frac{3}{4}$.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sangat teliti! Penentuan tanda negatif dan perkalian bentuk akarmu berjalan mulus tanpa hambatan."
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Konsep relasi trigonometri sudah tepat, namun terjadi kesalahan aljabar di baris akhir saat melakukan pembagian pecahan.",
+      "letak_kesalahan": [
+        "Kesalahan aljabar pembagian pecahan $\\frac{-\\sqrt{3} + \\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} = -\\sqrt{3}$, seharusnya diselesaikan menjadi $\\frac{-\\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} = -1$."
+      ],
+      "apresiasi_dan_catatan": "Konsep awalmu sudah sangat bagus, Alike. Hati-hati sedikit lagi ya saat membagi pecahan bentuk akar di langkah terakhir!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa sudah berhasil menemukan sudut referensi 60, 45, dan 30 dengan benar. Namun keliru menafsirkan fungsi secan dan cosecan sebagai cosinus dan sinus, serta salah menentukan tanda untuk cotangen di kuadran III.",
+      "letak_kesalahan": [
+        "Kesalahan konsep fungsi kebalikan $\\sec 300^\\circ = \\cos 60^\\circ$, seharusnya $\\sec 300^\\circ = \\frac{1}{\\cos 300^\\circ} = 2$.",
+        "Kesalahan tanda kuadran $\\cot 225^\\circ = -\\tan 45^\\circ$, seharusnya di kuadran III nilai $\\cot$ positif sehingga menjadi $\\cot 45^\\circ = 1$.",
+        "Kesalahan konsep fungsi kebalikan $\\csc 210^\\circ = -\\sin 30^\\circ$, seharusnya $\\csc 210^\\circ = \\frac{1}{\\sin 210^\\circ} = -2$."
+      ],
+      "apresiasi_dan_catatan": "Pencarian sudut referensimu (60, 45, 30) sudah tepat! Jangan lupa bahwa fungsi secan dan cosecan itu adalah *kebalikan* dari cos dan sin ya, bukan nilainya sama persis."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil merelasikan $\\tan$ dengan benar, namun tidak mengubah nama fungsi ke kebalikannya (cos dan sin) saat menggunakan relasi vertikal $270^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan relasi vertikal $\\cos(270^\\circ - A) = -\\cos A$, seharusnya fungsi berubah menjadi $\\sin$ sehingga menjadi $-\\sin A$.",
+        "Kesalahan relasi vertikal $\\sin(270^\\circ + A) = -\\sin A$, seharusnya fungsi berubah menjadi $\\cos$ sehingga menjadi $-\\cos A$."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah benar dalam menentukan $\\tan$ dan tanda minusnya, tapi ingat! Relasi $270^\\circ$ (sumbu Y) mewajibkan fungsinya berubah nama (sin jadi cos, cos jadi sin)."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan operasi $-(-\\tan(360^\\circ+240^\\circ+30^\\circ)) = \\tan 30^\\circ$, sehingga terdapat penambahan sudut $30^\\circ$ yang dipaksakan dari $600^\\circ = 360^\\circ + 240^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan manipulasi sudut, menambahkan $30^\\circ$ pada $360^\\circ + 240^\\circ$ sehingga menjadi $\\tan 30^\\circ$, seharusnya $\\tan(360^\\circ + 240^\\circ) = \\tan 240^\\circ = \\sqrt{3}$.",
+        "Kesalahan pemahaman sifat sudut negatif $\\tan(-600^\\circ) \\neq -\\tan 600^\\circ$ di lembar jawaban, padahal pernyataan tersebut secara matematis benar, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Untuk sudut negatif, minusnya bisa langsung dikedepankan. Hati-hati saat mengurai $600^\\circ$, karena angkanya adalah $360^\\circ + 240^\\circ$, kamu tidak perlu lagi memaksakan tambahan sudut $30^\\circ$ di belakangnya ya!"
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan ketiga relasi dengan sangat sempurna, namun terkecoh pada saat mengalikan bentuk yang sama di pembilang.",
+      "letak_kesalahan": [
+        "Kesalahan aljabar perkalian $(-\\cos A) \\cdot (-\\cos A) = \\cos A$, seharusnya $(-\\cos A) \\cdot (-\\cos A) = \\cos^2 A$."
+      ],
+      "apresiasi_dan_catatan": "Pemahaman relasi trigonometrimu di soal ini keren banget! Hanya saja, perhatikan lagi aturan dasar aljabar ya, $x$ dikali $x$ itu jadinya kuadrat, bukan kembali jadi $x$ tunggal."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa sukses menggunakan metode relasi vertikal (mengubah nama fungsi) dan melakukan perkalian pecahan bentuk akar dengan akurat.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sempurna! Kamu sukses menaklukkan relasi vertikal di sini tanpa ada kesalahan sama sekali."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Pernyataan Benar/Salah",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menyederhanakan tiga bentuk sudut sulit, namun luput memasukkan nilai minus dari kuadran III pada $\\sin(570^\\circ)$.",
+      "letak_kesalahan": [
+        "Kesalahan tanda kuadran $\\sin(570^\\circ) = \\sin(360^\\circ + 180^\\circ + 30^\\circ) = \\sin 30^\\circ$, seharusnya relasi $\\sin(180^\\circ + 30^\\circ)$ berada di kuadran III yang bernilai negatif sehingga menjadi $-\\sin 30^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Prosesmu mengurai sudut $570^\\circ$ sudah cerdas. Sedikit lagi saja, jangan lupa pastikan ulang letak kuadran terakhirnya agar tanda minusnya tidak tertinggal!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Soal Opsional / Bonus",
+      "skor": 3,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa sudah memikirkan relasi $270^\\circ$ namun terlalu cepat mengubah fungsi $\\cos$ menjadi $\\sin$ di tahap relasi awal, serta terdapat kesalahan penulisan variabel.",
+      "letak_kesalahan": [
+        "Kesalahan notasi penulisan relasi vertikal, menuliskan $2\\sin(270^\\circ - 54^\\circ)$ yang terlalu cepat diubah, seharusnya tetap ditulis $2\\cos(270^\\circ - 54^\\circ) = -2\\sin 54^\\circ$.",
+        "Kesalahan substitusi variabel $\\sin(54^\\circ) = p$, seharusnya nilainya langsung disubstitusi sebagai $p$, bukan $\\sin p$.",
+        "Kesalahan manipulasi tanda aljabar pada pembagian langkah akhir, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Pemikiranmu untuk merelasikan ke $270^\\circ$ sudah tepat sasaran! Hanya saja jangan terlalu cepat mengubah penulisan sin/cos di dalam kurung awal ya, selesaikan perlahan dan bedakan antara besar sudut dengan nilainya."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 76,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 3,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "76 + 3",
+    "persentase_kelulusan": 76,
+    "predikat": "Cukup"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Alike! Selamat ya, kamu dapat nilai wajib 76 dan bonus soal opsional 3 dengan total akhir 76 + 3 (Predikat Cukup). Secara keseluruhan, pemahamanmu mengenai relasi sudut horizontal dan pecahan awal sangat kuat. Namun, kamu perlu ekstra waspada saat menjumpai relasi vertikal (berpatokan pada sumbu Y / $270^\\circ$) dan fungsi kebalikan (secan, cosecan). Tetap semangat berlatih soal aljabar di langkah akhir, kamu pasti bisa jauh lebih baik lagi!"
+}

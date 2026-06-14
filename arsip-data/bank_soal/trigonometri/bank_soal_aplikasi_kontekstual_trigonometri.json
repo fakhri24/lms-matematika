@@ -1,0 +1,218 @@
+[
+  {
+    "id": "gF7vcih26qCkvyrjhE23",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Sifat Sudut (Berseberangan)",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='30' width='30' height='120' fill='darkgray'/><text x='5' y='100' font-size='12'>300 m</text><line x1='10' y1='150' x2='290' y2='150' stroke='black' stroke-width='3'/><circle cx='120' cy='145' r='5' fill='red'/><text x='120' y='170' font-size='12' text-anchor='middle'>Mobil 1</text><circle cx='250' cy='145' r='5' fill='green'/><text x='250' y='170' font-size='12' text-anchor='middle'>Mobil 2</text><line x1='50' y1='30' x2='120' y2='145' stroke='black' stroke-dasharray='3,3'/><line x1='50' y1='30' x2='250' y2='145' stroke='black' stroke-dasharray='3,3'/><line x1='50' y1='30' x2='280' y2='30' stroke='gray' stroke-dasharray='5,5'/><path d='M 80 30 A 30 30 0 0 1 65 56' fill='none' stroke='black'/><text x='62' y='55' font-size='11' text-anchor='end'>60°</text><path d='M 110 30 A 60 60 0 0 1 102 60' fill='none' stroke='black'/><text x='115' y='42' font-size='11'>30°</text></svg><br><br>Dari atas sebuah tebing yang tingginya $300$ meter secara vertikal, seorang pengamat memantau dua buah mobil yang melaju segaris lurus menjauhi dasar tebing. Sudut depresi ke mobil pertama adalah $60^\\circ$, dan sudut depresi ke mobil kedua yang berada lebih jauh adalah $30^\\circ$. Jarak antara mobil pertama dan mobil kedua adalah ...",
+    "clue": "Ubah sudut depresi menjadi sudut elevasi dari sudut pandang masing-masing mobil ke atas tebing. Hitung jarak masing-masing mobil ke kaki tebing secara terpisah menggunakan rasio tangen, lalu kurangi hasilnya.",
+    "opsi": [
+      "$100\\sqrt{3}$ meter",
+      "$150\\sqrt{3}$ meter",
+      "$200\\sqrt{3}$ meter",
+      "$300$ meter",
+      "$400\\sqrt{3}$ meter"
+    ],
+    "jawaban_benar": "$200\\sqrt{3}$ meter",
+    "pembahasan": "Sudut depresi = Sudut elevasi dari tanah.<br>Jarak mobil 1 ke kaki tebing ($x_1$):<br>$\\tan 60^\\circ = \\frac{300}{x_1} \\implies x_1 = \\frac{300}{\\sqrt{3}} = 100\\sqrt{3}$ m.<br><br>Jarak mobil 2 ke kaki tebing ($x_2$):<br>$\\tan 30^\\circ = \\frac{300}{x_2} \\implies \\frac{1}{\\sqrt{3}} = \\frac{300}{x_2} \\implies x_2 = 300\\sqrt{3}$ m.<br><br>Jarak antara kedua mobil = $x_2 - x_1$<br>$= 300\\sqrt{3} - 100\\sqrt{3} = 200\\sqrt{3}$ meter."
+  },
+  {
+    "id": "ZrHft7n5YjMfVtxMxiJs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Teorema Pythagoras",
+      "Sistem Persamaan Linear"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'><line x1='150' y1='100' x2='80' y2='150' stroke='gray' stroke-width='2'/><line x1='150' y1='100' x2='240' y2='130' stroke='gray' stroke-width='2'/><line x1='80' y1='150' x2='240' y2='130' stroke='black' stroke-dasharray='4,4'/><line x1='150' y1='100' x2='150' y2='30' stroke='blue' stroke-width='3'/><circle cx='150' cy='30' r='5' fill='black'/><line x1='80' y1='150' x2='150' y2='30' stroke='black' stroke-dasharray='2,2'/><line x1='240' y1='130' x2='150' y2='30' stroke='black' stroke-dasharray='2,2'/><text x='155' y='115' font-size='12'>O (Tanah)</text><text x='65' y='165'>P (Selatan)</text><text x='245' y='145'>Q (Timur)</text><text x='160' y='65' fill='blue'>h</text><text x='150' y='155'>40 m</text><path d='M 140 107 L 147 112 L 157 105' fill='none' stroke='black'/></svg><br><br>Sebuah drone melayang stasioner di udara. Pengamat P yang berada di tanah tepat di sebelah Selatan drone mengamatinya dengan sudut elevasi $45^\\circ$. Pengamat Q yang berada di tanah tepat di sebelah Timur drone mengamatinya dengan sudut elevasi $30^\\circ$. Jika jarak mendatar antara pengamat P dan Q di tanah adalah $40$ meter, berapakah ketinggian drone tersebut dari atas tanah?",
+    "clue": "Ini memodelkan 3 dimensi yang dapat diturunkan ke 2 dimensi. Titik pusat bayangan drone di tanah (O) membentuk segitiga siku-siku dengan P dan Q (karena Selatan tegak lurus dengan Timur). Nyatakan panjang OP dan OQ dalam variabel tinggi drone ($h$), lalu masukkan ke Pythagoras.",
+    "opsi": [
+      "$10$ meter",
+      "$15$ meter",
+      "$20$ meter",
+      "$20\\sqrt{2}$ meter",
+      "$40$ meter"
+    ],
+    "jawaban_benar": "$20$ meter",
+    "pembahasan": "Misalkan tinggi drone $= h$. Titik proyeksi jatuhnya drone di tanah adalah O.<br>Pada pengamat P (Selatan): $\\tan 45^\\circ = \\frac{h}{OP} \\implies 1 = \\frac{h}{OP} \\implies OP = h$.<br>Pada pengamat Q (Timur): $\\tan 30^\\circ = \\frac{h}{OQ} \\implies \\frac{1}{\\sqrt{3}} = \\frac{h}{OQ} \\implies OQ = h\\sqrt{3}$.<br>Di tanah, arah Selatan dan Timur membentuk sudut siku-siku di titik O. Maka berlaku Pythagoras pada $\\triangle OPQ$ dengan sisi miring $PQ = 40$ m:<br>$OP^2 + OQ^2 = PQ^2$<br>$(h)^2 + (h\\sqrt{3})^2 = 40^2$<br>$h^2 + 3h^2 = 1600$<br>$4h^2 = 1600 \\implies h^2 = 400 \\implies h = 20$ meter."
+  },
+  {
+    "id": "0fUZ1l1Qhshir24AhUoI",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Sinus",
+      "Jumlah Sudut Segitiga",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Dua orang pengamat terpisah pada jarak sejauh $10\\sqrt{3}$ km. Keduanya secara bersamaan melihat sebuah balon udara melayang di angkasa. Pengamat pertama melihat arah balon udara menyimpang sebesar $30^\\circ$ dari garis hubung antara mereka, sementara pengamat kedua juga melihat balon udara menyimpang sebesar $30^\\circ$ dari garis yang sama. Berapa jarak garis lurus dari balon udara ke pengamat pertama?",
+    "clue": "Gambarkan posisinya. Ini membentuk segitiga sama kaki di mana dua sudut kakinya sama-sama $30^\\circ$. Gunakan prinsip jumlah sudut $180^\\circ$ untuk mencari sudut di puncak (titik balon udara), lalu terapkan Aturan Sinus.",
+    "opsi": [
+      "$5$ km",
+      "$10$ km",
+      "$10\\sqrt{3}$ km",
+      "$15$ km",
+      "$20$ km"
+    ],
+    "jawaban_benar": "$10$ km",
+    "pembahasan": "Ini adalah segitiga dengan sudut pengamat pertama $\\angle A = 30^\\circ$ dan sudut pengamat kedua $\\angle B = 30^\\circ$. Sisi $c$ (jarak antar pengamat) $= 10\\sqrt{3}$ km.<br>Sudut balon udara $\\angle C = 180^\\circ - (30^\\circ + 30^\\circ) = 120^\\circ$.<br>Mencari jarak balon ke pengamat 1 (sisi $b$ yang berhadapan dengan $\\angle B$):<br>$\\frac{b}{\\sin B} = \\frac{c}{\\sin C} \\implies \\frac{b}{\\sin 30^\\circ} = \\frac{10\\sqrt{3}}{\\sin 120^\\circ}$<br>$\\frac{b}{1/2} = \\frac{10\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}}$<br>Coret $1/2$ di bawah, $\\sqrt{3}$ dibagi $\\sqrt{3} = 1$. Maka $b = 10$ km."
+  },
+  {
+    "id": "77uqmBWRqOH9SRf0X2sM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sistem Persamaan Linear",
+      "Rasio Trigonometri Dasar",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='120' x2='260' y2='120' stroke='black' stroke-width='2'/><line x1='240' y1='120' x2='240' y2='20' stroke='black' stroke-width='4'/><line x1='40' y1='120' x2='240' y2='20' stroke='blue' stroke-width='1.5'/><line x1='140' y1='120' x2='240' y2='20' stroke='red' stroke-width='1.5'/><text x='35' y='140'>A</text><text x='135' y='140'>B</text><text x='235' y='140'>C</text><text x='235' y='15'>D</text><path d='M 60 120 A 20 20 0 0 0 57 111' fill='none' stroke='black'/><text x='65' y='115' font-size='10'>30°</text><path d='M 160 120 A 20 20 0 0 0 151 100' fill='none' stroke='black'/><text x='165' y='110' font-size='10'>60°</text><text x='90' y='140'>20 m</text></svg><br><br>Seseorang berjalan lurus mendekati sebuah menara (CD) sejauh $20$ meter dari titik A ke titik B. Pada titik A, sudut elevasi ke puncak menara adalah $30^\\circ$. Setelah maju ke titik B, sudut elevasi berubah menjadi $60^\\circ$. Jika tinggi mata pengamat diabaikan, tinggi menara CD tersebut adalah ...",
+    "clue": "Terdapat dua segitiga siku-siku di sini: $\\triangle ACD$ dan $\\triangle BCD$. Buat persamaan tinggi $h$ dari kedua segitiga menggunakan Tangen, di mana alasnya adalah $(x+20)$ untuk segitiga besar, dan $x$ untuk segitiga kecil. Substitusikan persamaannya.",
+    "opsi": [
+      "$10\\sqrt{3}$ meter",
+      "$15$ meter",
+      "$20\\sqrt{3}$ meter",
+      "$30$ meter",
+      "$40\\sqrt{3}$ meter"
+    ],
+    "jawaban_benar": "$10\\sqrt{3}$ meter",
+    "pembahasan": "Misalkan tinggi menara $CD = h$ dan jarak $BC = x$.<br>Pada $\\triangle BCD$: $\\tan 60^\\circ = \\frac{h}{x} \\implies h = x\\sqrt{3}$ ... (1)<br>Pada $\\triangle ACD$: $\\tan 30^\\circ = \\frac{h}{x + 20} \\implies h = \\frac{x + 20}{\\sqrt{3}}$ ... (2)<br>Samakan (1) dan (2):<br>$x\\sqrt{3} = \\frac{x + 20}{\\sqrt{3}}$<br>Kalikan silang: $3x = x + 20 \\implies 2x = 20 \\implies x = 10$.<br>Substitusi nilai $x$ ke (1): $h = 10\\sqrt{3}$ meter."
+  },
+  {
+    "id": "OPZfsR57jOCAqzjLh9cK",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Seorang pengamat dengan tinggi badan $1,5$ meter berdiri pada jarak $12$ meter dari sebuah gedung bertingkat. Ia mengamati puncak gedung dengan sudut elevasi $60^\\circ$. Ketinggian total gedung tersebut dari permukaan tanah adalah ...",
+    "clue": "Hitung dulu tinggi dari garis mata pengamat ke puncak gedung menggunakan rasio tangen. Setelah dapat, jangan lupa tambahkan dengan tinggi badan pengamat untuk mendapatkan tinggi total dari tanah.",
+    "opsi": [
+      "$12\\sqrt{3}$ meter",
+      "$(12\\sqrt{3} + 1,5)$ meter",
+      "$(12\\sqrt{3} - 1,5)$ meter",
+      "$13,5$ meter",
+      "$(24 + 1,5)$ meter"
+    ],
+    "jawaban_benar": "$(12\\sqrt{3} + 1,5)$ meter",
+    "pembahasan": "Misalkan tinggi gedung dari mata pengamat ke puncak adalah $y$.<br>$\\tan 60^\\circ = \\frac{y}{12} \\implies \\sqrt{3} = \\frac{y}{12} \\implies y = 12\\sqrt{3}$ meter.<br>Tinggi total gedung = tinggi $y$ + tinggi badan pengamat.<br>Tinggi gedung = $(12\\sqrt{3} + 1,5)$ meter."
+  },
+  {
+    "id": "WYzAm9DBp0yZZI5dXRgg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Cosinus",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Dua buah kapal laut, Kapal A dan Kapal B, bertolak dari pelabuhan yang sama. Kapal A berlayar lurus sejauh $10$ km, sedangkan Kapal B berlayar lurus sejauh $16$ km. Jika sudut lintasan yang dibentuk oleh arah layar kedua kapal tersebut adalah $60^\\circ$, berapakah jarak antara kedua kapal saat ini?",
+    "clue": "Kamu mengetahui panjang dua sisi dan satu sudut yang diapitnya. Gunakan Aturan Cosinus ($c^2 = a^2 + b^2 - 2ab \\cos C$) untuk mencari jarak di antara kedua ujung lintasan.",
+    "opsi": [
+      "$12$ km",
+      "$14$ km",
+      "$15$ km",
+      "$18$ km",
+      "$26$ km"
+    ],
+    "jawaban_benar": "$14$ km",
+    "pembahasan": "Misalkan jarak kedua kapal adalah $x$.<br>Gunakan Aturan Cosinus:<br>$x^2 = 10^2 + 16^2 - 2(10)(16) \\cos 60^\\circ$<br>$x^2 = 100 + 256 - 320(\\frac{1}{2})$<br>$x^2 = 356 - 160 = 196$<br>$x = \\sqrt{196} = 14$ km."
+  },
+  {
+    "id": "iMciRIs4dYWLIIeqd1QN",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Sinus",
+      "Sudut Berelasi (Horizontal)"
+    ],
+    "pertanyaan": "Sebidang tanah berbentuk segitiga sembarang memiliki panjang dua sisi luarnya berturut-turut $8$ meter dan $12$ meter. Sudut apit yang dibentuk oleh kedua sisi tersebut adalah $150^\\circ$. Luas sebidang tanah tersebut adalah ...",
+    "clue": "Gunakan rumus luas segitiga trigonometri: $L = \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin C$. Ingat bahwa $\\sin 150^\\circ$ bernilai positif di Kuadran II dan ekuivalen dengan $\\sin 30^\\circ$.",
+    "opsi": [
+      "$24$ m$^2$",
+      "$24\\sqrt{3}$ m$^2$",
+      "$48$ m$^2$",
+      "$48\\sqrt{3}$ m$^2$",
+      "$96$ m$^2$"
+    ],
+    "jawaban_benar": "$24$ m$^2$",
+    "pembahasan": "Diketahui sisi $a = 8$, sisi $b = 12$, dan sudut apit $C = 150^\\circ$.<br>Luas $= \\frac{1}{2} a b \\sin C$<br>Luas $= \\frac{1}{2} (8)(12) \\sin 150^\\circ$<br>Luas $= 48 \\times \\frac{1}{2} = 24$ m$^2$."
+  },
+  {
+    "id": "vT9q9RMW080e5lcZTXjN",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Sinus",
+      "Jumlah Sudut Segitiga",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><path d='M 0 50 Q 150 70 300 40 L 300 10 L 0 10 Z' fill='lightblue'/><text x='150' y='35' font-style='italic' fill='darkblue'>Titik C</text><circle cx='150' cy='50' r='4' fill='red'/><line x1='20' y1='130' x2='280' y2='130' stroke='black' stroke-width='3'/><text x='150' y='145'>100 m</text><circle cx='80' cy='130' r='4' fill='black'/><text x='75' y='145'>A</text><circle cx='230' cy='130' r='4' fill='black'/><text x='230' y='145'>B</text><line x1='80' y1='130' x2='150' y2='50' stroke='black' stroke-dasharray='4,4'/><line x1='230' y1='130' x2='150' y2='50' stroke='black' stroke-dasharray='4,4'/><path d='M 95 130 A 15 15 0 0 0 89 120' fill='none' stroke='black'/><text x='95' y='115' font-size='10'>105°</text><path d='M 215 130 A 15 15 0 0 1 220 120' fill='none' stroke='black'/><text x='195' y='120' font-size='10'>30°</text></svg><br><br>Untuk mengukur jarak dari titik A ke titik C di seberang sungai, seorang pengukur tanah membuat garis pangkal lurus di tepi sungai dari A ke B sepanjang $100$ meter. Dari pengukuran, didapatkan besar $\\angle CBA = 30^\\circ$ dan $\\angle CAB = 105^\\circ$. Jarak garis lurus dari titik A ke titik C adalah ...",
+    "clue": "Cari terlebih dahulu besar sudut C dengan prinsip jumlah sudut segitiga 180°. Setelah itu, sandingkan sisi-sisi yang berhadapan dengan sudut menggunakan persamaan Aturan Sinus.",
+    "opsi": [
+      "$50\\sqrt{2}$ meter",
+      "$50\\sqrt{3}$ meter",
+      "$100\\sqrt{2}$ meter",
+      "$100\\sqrt{3}$ meter",
+      "$200$ meter"
+    ],
+    "jawaban_benar": "$50\\sqrt{2}$ meter",
+    "pembahasan": "Langkah 1: Tentukan $\\angle C$.<br>$\\angle C = 180^\\circ - (105^\\circ + 30^\\circ) = 45^\\circ$.<br>Langkah 2: Gunakan Aturan Sinus untuk mencari sisi $AC$ (berhadapan dengan sudut B).<br>$\\frac{AC}{\\sin B} = \\frac{AB}{\\sin C} \\implies \\frac{AC}{\\sin 30^\\circ} = \\frac{100}{\\sin 45^\\circ}$<br>$\\frac{AC}{1/2} = \\frac{100}{1/\\sqrt{2}} \\implies 2 AC = 100\\sqrt{2} \\implies AC = 50\\sqrt{2}$ meter."
+  },
+  {
+    "id": "dC7RE5d5XAlCaxm3Eudw",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Sifat Sudut (Berseberangan)",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Dari puncak mercusuar pengawas yang tingginya $60$ meter dari permukaan laut, seorang petugas melihat sebuah perahu nelayan mendekat dengan sudut depresi $30^\\circ$. Jarak mendatar perahu tersebut ke kaki mercusuar adalah ...",
+    "clue": "Sudut depresi diukur dari garis horizontal maya pengamat ke arah bawah. Berdasarkan sifat sudut berseberangan dalam, sudut ini besarnya sama dengan sudut elevasi jika perahu melihat ke puncak mercusuar.",
+    "opsi": [
+      "$20\\sqrt{3}$ meter",
+      "$30\\sqrt{3}$ meter",
+      "$60$ meter",
+      "$60\\sqrt{2}$ meter",
+      "$60\\sqrt{3}$ meter"
+    ],
+    "jawaban_benar": "$60\\sqrt{3}$ meter",
+    "pembahasan": "Sudut depresi $= 30^\\circ$, maka sudut elevasi dari kapal ke puncak mercusuar juga $30^\\circ$.<br>Tinggi mercusuar (sisi depan) $= 60$ m. Jarak kapal (sisi samping) $= x$.<br>$\\tan 30^\\circ = \\frac{60}{x}$<br>$\\frac{1}{3}\\sqrt{3} = \\frac{60}{x} \\implies x = \\frac{60}{\\frac{1}{\\sqrt{3}}} = 60\\sqrt{3}$ meter."
+  },
+  {
+    "id": "MFtXzrxzvSrvvloeRfIQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aplikasi Kontekstual Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Seseorang berdiri pada jarak mendatar $10$ meter dari pangkal sebuah tiang bendera vertikal. Ia melihat ke arah puncak tiang tersebut dengan sudut elevasi $45^\\circ$. Jika tinggi mata pengamat dari permukaan tanah diabaikan, berapakah tinggi tiang bendera tersebut?",
+    "clue": "Tiang vertikal dan tanah mendatar membentuk segitiga siku-siku. Gunakan rasio Tangen (depan/samping) dari sudut elevasi untuk mencari sisi depan (tinggi tiang).",
+    "opsi": [
+      "$5$ meter",
+      "$10$ meter",
+      "$10\\sqrt{2}$ meter",
+      "$10\\sqrt{3}$ meter",
+      "$20$ meter"
+    ],
+    "jawaban_benar": "$10$ meter",
+    "pembahasan": "Sudut elevasi $\\alpha = 45^\\circ$. Jarak mendatar (sisi samping) $= 10$ m.<br>Tinggi tiang bendera (sisi depan) dimisalkan $t$.<br>$\\tan 45^\\circ = \\frac{\\text{depan}}{\\text{samping}} = \\frac{t}{10}$<br>Karena $\\tan 45^\\circ = 1$, maka $1 = \\frac{t}{10} \\implies t = 10$ meter."
+  }
+]

@@ -1,0 +1,26 @@
+# Kredensial & Keamanan (SANGAT PENTING)
+kunci-rahasia-firebase.json
+.env
+
+# Node.js dependencies
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log
+firebase-debug.log.*
+
+# File sistem macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Folder Arsip & Artefak (Opsional, hapus tanda '#' jika ingin mengabaikan folder ini)
+# arsip-data/
+# artefak/
+
+# Data spesifik yang mungkin tidak ingin dilacak (misal data sensitif siswa)
+akses-admin/data_siswa.json
+arsip-data/**/*.json.DS_Store

@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "nama_siswa": "Yuniar Raudatul Jannah",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "04/05/26"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 5,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan $\\tan 315^\\circ = -\\tan(180^\\circ + 45^\\circ) = -\\tan 45^\\circ = -1$ dan $\\cos 120^\\circ = -\\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$. Meskipun secara kebetulan nilai akhirnya benar dan hasil penjumlahannya adalah $-\\frac{3}{2}$, penerapan relasi sudut dan fungsi awalnya salah.",
+      "letak_kesalahan": [
+        "Kesalahan penentuan relasi sudut $\\tan 315^\\circ = -\\tan(180^\\circ + 45^\\circ)$, seharusnya $\\tan 315^\\circ = \\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ$.",
+        "Kesalahan penentuan relasi sudut dan fungsi $\\cos 120^\\circ = -\\sin(180^\\circ + 30^\\circ)$, seharusnya $\\cos 120^\\circ = \\cos(180^\\circ - 60^\\circ) = -\\cos 60^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Halo Yuniar! Hati-hati ya saat memecah sudut, pastikan penjumlahan angkanya sesuai (seperti 180+45 itu 225, bukan 315). Untungnya nilai akhir kamu kebetulan pas!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mereduksi sudut besar $\\sin 870^\\circ$ menjadi $-\\sin(2 \\cdot 360^\\circ + 60^\\circ)$. Ia menetapkan sudut ini berada di Kuadran III lalu mengubahnya menjadi $-\\sin 60^\\circ$ dengan simpulan akhir bernilai $\\frac{1}{2}$.",
+      "letak_kesalahan": [
+        "Kesalahan reduksi sudut besar $\\sin 870^\\circ = -\\sin(2 \\cdot 360^\\circ + 60^\\circ)$, seharusnya $\\sin 870^\\circ = \\sin(2 \\cdot 360^\\circ + 150^\\circ) = \\sin 150^\\circ$.",
+        "Kesalahan perhitungan nilai fungsi $-\\sin 60^\\circ = \\frac{1}{2}$, seharusnya $-\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Yuniar, coba berlatih lagi melakukan pengurangan sudut besar dengan kelipatan 360 derajat ya. Hitungan sederhananya masih meleset nih."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengurai $\\cos 150^\\circ = -\\sin(180^\\circ + 30^\\circ) = -\\frac{1}{2}$ dan $\\sin(-210^\\circ) = -\\sin(180^\\circ + 60^\\circ) = -\\frac{1}{2}\\sqrt{3}$. Siswa juga mensubstitusi bentuk-bentuk tersebut ke operasi utama yang berujung pada hasil akhir $\\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan penentuan relasi sudut $\\cos 150^\\circ = -\\sin(180^\\circ + 30^\\circ)$, seharusnya $\\cos 150^\\circ = \\cos(180^\\circ - 30^\\circ) = -\\cos 30^\\circ$.",
+        "Kesalahan konsep sudut negatif $\\sin(-210^\\circ) = -\\sin(180^\\circ + 60^\\circ)$, seharusnya $\\sin(-210^\\circ) = -\\sin(210^\\circ) = -\\sin(180^\\circ + 30^\\circ) = \\sin 30^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Perhatikan lagi penggunaan relasi horizontal (180 derajat) ya, fungsinya tidak perlu berubah dari cos menjadi sin. Jangan terburu-buru!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan pembilang menjadi $(270^\\circ + 60^\\circ) - (180^\\circ + 60^\\circ) \\rightarrow -\\tan 60^\\circ - \\cos 60^\\circ$, serta penyebut $180^\\circ + 30^\\circ \\rightarrow \\sin 30^\\circ$. Hasil akhir dikalkulasi menjadi $\\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan perubahan fungsi pada relasi vertikal $\\tan(270^\\circ + 60^\\circ) = -\\tan 60^\\circ$, seharusnya $\\tan(270^\\circ + 60^\\circ) = -\\cot 60^\\circ$.",
+        "Kesalahan penentuan penjabaran sudut $\\cos 210^\\circ = \\cos(180^\\circ + 60^\\circ)$, seharusnya $\\cos 210^\\circ = \\cos(180^\\circ + 30^\\circ)$."
+      ],
+      "apresiasi_dan_catatan": "Yuniar, ingat kembali ya, jika kamu memakai sudut relasi 270 derajat (vertikal), nama fungsinya wajib berubah (tan jadi cot). Semangat belajarnya!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengubah ekspresi awal menjadi $\\sec 60^\\circ + \\cot 45^\\circ - \\csc 60^\\circ$ lalu mensubstitusi nilainya dengan angka yang salah seperti $\\sec 60^\\circ = \\frac{1}{2}\\sqrt{3}$. Pemecahan sudutnya juga keliru seperti $\\cot 225^\\circ = 180^\\circ - 45^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan dekomposisi sudut $\\cot 225^\\circ = (180^\\circ - 45^\\circ)$, seharusnya $\\cot 225^\\circ = \\cot(180^\\circ + 45^\\circ)$.",
+        "Kesalahan perubahan fungsi pada relasi vertikal $\\sec(270^\\circ + 60^\\circ) = \\sec 60^\\circ$, seharusnya $\\sec(270^\\circ + 60^\\circ) = \\csc 60^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Wah, nilai perbandingan sudut istimewanya masih agak tertukar nih. Pastikan kamu memecah sudut penjumlahannya dengan teliti ya, misal 225 itu 180 ditambah 45, bukan dikurang!"
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan relasi yang tepat pada dua soal pertama di lembar coretan. Namun, untuk $\\sin(270^\\circ + A)$ siswa menuliskannya sebagai $-\\sin A$ di coretan meskipun mencentang jawaban $-\\cos A$ di lembar utama.",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi vertikal $\\sin(270^\\circ + A) = -\\sin A$ di lembar coretan, seharusnya $\\sin(270^\\circ + A) = -\\cos A$."
+      ],
+      "apresiasi_dan_catatan": "Dua relasi pertama sudah keren! Tapi untuk yang ketiga, di coretanmu masih kurang tepat fungsinya. Fokus lagi pada aturan perubahan fungsi ya."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Pernyataan",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mereduksi $\\tan(-600^\\circ)$ menjadi $-\\tan(2 \\cdot 360^\\circ + 30^\\circ) = -\\tan 30^\\circ$. Selain itu, $\\tan 120^\\circ$ dijabarkan menjadi $-\\tan(180^\\circ - 30^\\circ)$.",
+      "letak_kesalahan": [
+        "Kesalahan reduksi sudut besar $\\tan(-600^\\circ) = -\\tan(2 \\cdot 360^\\circ + 30^\\circ)$, seharusnya $\\tan(-600^\\circ) = -\\tan(600^\\circ) = -\\tan(360^\\circ + 240^\\circ) = -\\tan 240^\\circ$.",
+        "Kesalahan dekomposisi sudut $\\tan 120^\\circ = -\\tan(180^\\circ - 30^\\circ)$, seharusnya $\\tan 120^\\circ = -\\tan(180^\\circ - 60^\\circ)$."
+      ],
+      "apresiasi_dan_catatan": "Hitungan aritmetika pengurangannya masih sering meleset ya Yuniar. Coba cek lagi penjumlahan kelipatan 360 derajat agar kamu tidak terjebak!"
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Pada coretan, siswa mengubah $\\cos(180^\\circ + A) = -\\sin A$, $\\sin(270^\\circ - A) = \\cos A$, dan $\\cos(360^\\circ - A) = -\\sin A$. Konsep perubahan fungsi dan penentuan tanda kuadran salah total di coretan pembuktiannya.",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi horizontal $\\cos(180^\\circ + A) = -\\sin A$, seharusnya $\\cos(180^\\circ + A) = -\\cos A$.",
+        "Kesalahan perubahan tanda pada relasi vertikal $\\sin(270^\\circ - A) = \\cos A$, seharusnya $\\sin(270^\\circ - A) = -\\cos A$."
+      ],
+      "apresiasi_dan_catatan": "Pembuktian aljabar di coretanmu masih belum konsisten dengan aturan fungsinya nih. Pegang teguh prinsip relasi horizontal yang fungsinya tetap ya."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Pilihan Ganda Kompleks",
+      "skor": 5,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa pada akhirnya menuliskan relasi vertikal yang tepat yaitu $\\cos 150^\\circ = -\\sin 60^\\circ$ dan $\\sin 300^\\circ = -\\cos 30^\\circ$ di bagian bawah coretan. Sayangnya, perhitungan eksekusi akhir untuk hasil perkalian tersebut disimpulkan menjadi $\\frac{1}{2}\\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan perhitungan nilai akhir perkalian $-\\sin 60^\\circ \\times -\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$, seharusnya $(-\\frac{\\sqrt{3}}{2}) \\times (-\\frac{\\sqrt{3}}{2}) = \\frac{3}{4}$."
+      ],
+      "apresiasi_dan_catatan": "Hebat, kamu akhirnya bisa menemukan relasi vertikal yang pas di bagian bawah coretanmu! Tinggal sedikit lagi di bagian perkalian pecahannya supaya lebih akurat."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Pernyataan",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjabarkan pembilang menjadi ($270^\\circ + 30^\\circ$) - ($2 \\cdot 360^\\circ - 30^\\circ$). Pemahaman terhadap sudut negatif dan reduksi sudut lebih dari 360 derajat kacau balau, seperti $\\cos(-240^\\circ)$ yang diabaikan tanda minusnya lalu diubah seolah-olah bernilai 300 derajat.",
+      "letak_kesalahan": [
+        "Kesalahan penanganan sudut negatif $\\cos(-240^\\circ) = \\cos(270^\\circ + 30^\\circ)$, seharusnya $\\cos(-240^\\circ) = \\cos 240^\\circ = \\cos(180^\\circ + 60^\\circ)$.",
+        "Kesalahan reduksi sudut besar $\\sin 570^\\circ = (2 \\cdot 360^\\circ - 30^\\circ)$, seharusnya $\\sin 570^\\circ = \\sin(360^\\circ + 210^\\circ) = \\sin 210^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Yuniar, jangan mengabaikan sudut negatif ya$. \\cos(-240^\\circ)$ itu tidak sama dengan 300 derajat lho. Ayo pelajari lagi materinya secara perlahan!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Pilihan Ganda",
+      "skor": 1,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa mencoba menulis ulang ekspresi trigonometri namun melakukan substitusi sudut secara sembarangan, misalnya mengubah $\\sin 54^\\circ$ menjadi ($90^\\circ - p$) dan $\\cos 216^\\circ$ menjadi $\\cos(180^\\circ + 30^\\circ)$. Proses aljabar dipaksakan agar hasilnya menjadi p.",
+      "letak_kesalahan": [
+        "Kesalahan dekomposisi sudut $\\cos 216^\\circ = \\cos(180^\\circ + 30^\\circ)$, seharusnya $\\cos 216^\\circ = \\cos(180^\\circ + 36^\\circ)$.",
+        "Kesalahan pemahaman substitusi variabel $\\sin 54^\\circ = (90^\\circ - p)$, seharusnya substitusi langsung nilai fungsinya menjadi p, bukan memodifikasi sudutnya."
+      ],
+      "apresiasi_dan_catatan": "Wah Yuniar, usahamu menulis ulang persamaan dan mencoba mencari bentuk aljabarnya patut diacungi jempol. Namun untuk soal model substitusi variabel seperti ini, jangan sampai sudutnya yang malah diubah menjadi p ya!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 31,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 1,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "31 + 1",
+    "persentase_kelulusan": 31,
+    "predikat": "Remedial"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Yuniar! Selamat ya, kamu sudah menyelesaikan ujian ini dengan nilai wajib 31 dan bonus soal opsional 1 dengan total akhir 31 + 1 (Predikat Remedial). Saat ini kamu masih sangat kebingungan dalam menentukan sudut relasi dan memilih fungsinya (misal kapan fungsi berubah dan kapan tetap). Kamu juga sering terbalik memasukkan angka saat memecah sudut, yang secara hitungan aritmetika menjadi kurang tepat. Mari kita pelajari kembali dasar penentuan kuadran agar ke depannya hitunganmu jauh lebih solid dan teliti!"
+}

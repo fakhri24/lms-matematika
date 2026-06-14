@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Materi - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .materi-card {
+        cursor: pointer;
+        margin-bottom: 15px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 2px solid transparent;
+      }
+      .materi-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        border-color: var(--primary-color);
+      }
+      .tahap-separator {
+        display: flex;
+        align-items: center;
+        margin: 25px 0 15px 0;
+        color: #475569;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tahap-separator::before,
+      .tahap-separator::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px dashed #cbd5e1;
+      }
+      .tahap-separator span {
+        padding: 0 15px;
+        background-color: var(--bg-body);
+        color: var(--primary-color);
+        border-radius: 20px;
+      }
+      .mode-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+      .mode-card {
+        padding: 22px 16px;
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        cursor: pointer;
+        background: white;
+        text-align: center;
+        transition: 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .mode-card:hover {
+        border-color: var(--primary-color);
+        background: #f8f9ff;
+      }
+      .mode-card input[type="radio"] {
+        display: none;
+      }
+      .mode-emoji {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      @media (max-width: 640px) {
+        .mode-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 960px; margin: 40px auto">
+      <header
+        class="flex-between mb-25"
+        style="
+          border-bottom: 2px solid var(--border-color);
+          padding-bottom: 15px;
+        "
+      >
+        <div>
+          <h2 class="text-primary" style="margin: 0">Pilih Materi Latihan</h2>
+          <p class="status-text" style="margin-top: 5px; margin-bottom: 0">
+            Fokus pada satu topik untuk hasil maksimal
+          </p>
+        </div>
+        <button
+          id="btn-kembali"
+          class="btn btn-secondary text-sm"
+          style="padding: 8px 15px; white-space: nowrap"
+        >
+          &laquo; Kembali
+        </button>
+      </header>
+
+      <p
+        class="font-semibold text-primary mb-10"
+        style="
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        "
+      >
+        ⚙️ Pilih Mode Latihan
+      </p>
+      <div class="mode-grid">
+        <label
+          id="label-formatif"
+          class="mode-card"
+          style="border-color: var(--primary-color); background: #f0fdfa"
+        >
+          <input
+            type="radio"
+            name="mode_latihan"
+            value="latihan_formatif"
+            checked
+          />
+          <span class="mode-emoji">🛠️</span>
+          <strong class="text-primary" style="font-size: 1rem">Formatif</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Konsep & eksplorasi dengan <i>clue</i> dan pembahasan. Cocok untuk
+            pemanasan.
+          </span>
+        </label>
+
+        <label id="label-normal" class="mode-card">
+          <input type="radio" name="mode_latihan" value="tes_normal" />
+          <span class="mode-emoji">🎯</span>
+          <strong style="font-size: 1rem">Sumatif Normal</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Soal terstruktur tanpa bantuan. Raih &ge;80 untuk masuk
+            <i>Wall of Mastery</i>.
+          </span>
+        </label>
+
+        <label id="label-acak" class="mode-card">
+          <input type="radio" name="mode_latihan" value="tes_acak" />
+          <span class="mode-emoji">🎲</span>
+          <strong style="font-size: 1rem">Sumatif Acak</strong>
+          <span class="text-sm" style="color: #64748b; line-height: 1.4">
+            Urutan soal diacak penuh. Buktikan penguasaan materimu!
+          </span>
+        </label>
+      </div>
+
+      <div
+        id="wadah-tombol-tab"
+        class="tab-nav-container"
+        style="display: none"
+      ></div>
+
+      <div id="wadah-konten-tab">
+        <p id="teks-loading" class="text-center text-muted mt-20">
+          Memuat kurikulum dan menyusun urutan materi...
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="js/pages/pilihMateri.js?v=2"></script>
+  </body>
+</html>

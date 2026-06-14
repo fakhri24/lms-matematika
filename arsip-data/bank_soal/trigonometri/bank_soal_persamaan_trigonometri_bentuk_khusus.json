@@ -1,0 +1,217 @@
+[
+  {
+    "id": "9u8dXDbFxwMqUncVwazD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pertidaksamaan Kuadrat",
+      "Manipulasi Aljabar Dasar",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Agar persamaan trigonometri $\\sqrt{p - 1} \\cos x + p \\sin x = p - 1$ memiliki himpunan penyelesaian riil, maka batas nilai parameter $p$ yang memenuhi adalah ...",
+    "clue": "Syarat utama persamaan bentuk khusus ini memiliki solusi adalah $a^2 + b^2 \\ge c^2$. Masukkan ke dalam pertidaksamaan, kuadratkan ruas kiri dan kanan, lalu cari irisan penyelesaiannya dengan syarat logis akar di dalam soal awal (nilai di dalam akar tidak boleh negatif).",
+    "opsi": [
+      "$p \\ge \\frac{2}{3}$",
+      "$p \\le 1$",
+      "$p \\ge 1$",
+      "$p \\ge \\sqrt{2}$",
+      "$\\frac{2}{3} \\le p \\le 1$"
+    ],
+    "jawaban_benar": "$p \\ge 1$",
+    "pembahasan": "Bentuk persamaan adalah $a \\cos x + b \\sin x = c$.<br>Syarat memiliki penyelesaian: $a^2 + b^2 \\ge c^2$.<br><br>Substitusikan parameter:<br>$(\\sqrt{p-1})^2 + p^2 \\ge (p-1)^2$<br>$(p - 1) + p^2 \\ge p^2 - 2p + 1$<br><br>Coret $p^2$ di kedua ruas dan kumpulkan variabel $p$:<br>$p + 2p \\ge 1 + 1$<br>$3p \\ge 2 \\implies p \\ge \\frac{2}{3}$ (Syarat 1).<br><br>Perhatikan juga syarat logis irasional pada awal soal (adanya bentuk $\\sqrt{p - 1}$).<br>Nilai di dalam akar harus bernilai positif atau nol. Maka $p - 1 \\ge 0 \\implies p \\ge 1$ (Syarat 2).<br><br>Irisan penyelesaian mutlak dari $p \\ge \\frac{2}{3}$ dan $p \\ge 1$ menghasilkan batas wilayah yang paling ketat, yaitu $p \\ge 1$."
+  },
+  {
+    "id": "DpacnZh9K3mu0Zilgq3s",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Teorema Pythagoras",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah fungsi pemodelan suhu (fluktuasi cuaca) mengikuti persamaan $f(x) = -5 \\sin x + 12 \\cos x - 3$. Suhu terendah (minimum) yang dapat dicapai fungsi tersebut adalah ...",
+    "clue": "Urutkan fungsinya menjadi bentuk $a \\cos x + b \\sin x + c$ agar kamu tidak tertukar saat mendata koefisiennya. Nilai minimum sebuah fungsi trigonometri majemuk dihitung dengan rumus $-k + c$.",
+    "opsi": [
+      "$-16$",
+      "$-15$",
+      "$-10$",
+      "$10$",
+      "$16$"
+    ],
+    "jawaban_benar": "$-16$",
+    "pembahasan": "Urutkan posisinya: $f(x) = 12 \\cos x - 5 \\sin x - 3$.<br>Didapatkan $a = 12, b = -5, c = -3$.<br>Hitung parameter amplitudo $k$:<br>$k = \\sqrt{12^2 + (-5)^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13$.<br><br>Rumus untuk Suhu Minimum adalah $-k + c$.<br>Min $= -13 + (-3) = -16$ derajat."
+  },
+  {
+    "id": "MiLdwith2PHmL2GEKUii",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Ganda",
+      "Persamaan Trigonometri Dasar",
+      "Aturan Kuadran",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sin(2x) - \\sqrt{3} \\cos(2x) = 1$ untuk interval $0^\\circ \\le x \\le 180^\\circ$ adalah ...",
+    "clue": "Urutkan persamaannya menjadi $-\\sqrt{3} \\cos(2x) + \\sin(2x) = 1$. Cari $k$ dan letak kuadran $\\alpha$. Terakhir, jangan lupa selesaikan persamaan sudut gandanya dengan membagi dua secara hati-hati.",
+    "opsi": [
+      "$\\{45^\\circ, 105^\\circ\\}$",
+      "$\\{15^\\circ, 75^\\circ\\}$",
+      "$\\{75^\\circ, 135^\\circ\\}$",
+      "$\\{45^\\circ, 165^\\circ\\}$",
+      "$\\{15^\\circ, 105^\\circ\\}$"
+    ],
+    "jawaban_benar": "$\\{45^\\circ, 105^\\circ\\}$",
+    "pembahasan": "Urutkan bentuknya: $-\\sqrt{3} \\cos(2x) + 1 \\sin(2x) = 1$.<br>Diketahui $a=-\\sqrt{3}$ dan $b=1$.<br>Cari $k = \\sqrt{(-\\sqrt{3})^2 + 1^2} = \\sqrt{4} = 2$.<br>Cari $\\alpha$: $\\tan \\alpha = \\frac{1}{-\\sqrt{3}} = -\\frac{1}{3}\\sqrt{3}$.<br>Karena $a$ negatif dan $b$ positif, maka sudut di Kuadran II adalah $\\alpha = 150^\\circ$.<br><br>Bentuk persamaan baru: $2 \\cos(2x - 150^\\circ) = 1 \\implies \\cos(2x - 150^\\circ) = \\frac{1}{2}$.<br>Cosinus bernilai $\\frac{1}{2}$ pada sudut $60^\\circ$ dan $-60^\\circ$ (atau ekuivalen dengan $300^\\circ$).<br><br>Kemungkinan 1:<br>$2x - 150^\\circ = 60^\\circ + n \\cdot 360^\\circ \\implies 2x = 210^\\circ + n \\cdot 360^\\circ \\implies x = 105^\\circ + n \\cdot 180^\\circ$.<br>Untuk interval $0^\\circ \\le x \\le 180^\\circ$, saat $n=0$, didapat $x = 105^\\circ$.<br><br>Kemungkinan 2:<br>$2x - 150^\\circ = -60^\\circ + n \\cdot 360^\\circ \\implies 2x = 90^\\circ + n \\cdot 360^\\circ \\implies x = 45^\\circ + n \\cdot 180^\\circ$.<br>Untuk interval $0^\\circ \\le x \\le 180^\\circ$, saat $n=0$, didapat $x = 45^\\circ$.<br><br>Maka HP = $\\{45^\\circ, 105^\\circ\\}$."
+  },
+  {
+    "id": "RnhnJ2KaGVXKFzf36Lag",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Untuk mengubah bentuk $-\\cos x - \\sqrt{3} \\sin x$ ke bentuk $k \\cos(x - \\alpha)$, sudut $\\alpha$ dipastikan harus berada di ...",
+    "clue": "Perhatikan tanda dari koefisien cosinus ($a$) yang merepresentasikan sumbu X, dan koefisien sinus ($b$) yang merepresentasikan sumbu Y.",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Antara Kuadran III dan IV"
+    ],
+    "jawaban_benar": "Kuadran III",
+    "pembahasan": "Bentuk standar adalah $a \\cos x + b \\sin x$.<br>Dari soal, didapatkan $a = -1$ dan $b = -\\sqrt{3}$.<br>Karena $a$ (sebagai representasi absis/sumbu X) bernilai negatif dan $b$ (sebagai representasi ordinat/sumbu Y) juga bernilai negatif, maka titik koordinat tersebut mutlak berada di Kuadran III."
+  },
+  {
+    "id": "iIU5rOqQrLTwx9cPKYk8",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pertidaksamaan Kuadrat",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Agar persamaan trigonometri $m \\cos x + 6 \\sin x = 10$ dapat diselesaikan, maka batas nilai $m$ yang memenuhi adalah ...",
+    "clue": "Syarat agar persamaan trigonometri bentuk majemuk ini memiliki penyelesaian adalah jika kuadrat parameternya memenuhi $a^2 + b^2 \\ge c^2$.",
+    "opsi": [
+      "$m \\ge 8$",
+      "$m \\le -8$",
+      "$-8 \\le m \\le 8$",
+      "$m \\le -8 \\text{ atau } m \\ge 8$",
+      "$m = 8$"
+    ],
+    "jawaban_benar": "$m \\le -8 \\text{ atau } m \\ge 8$",
+    "pembahasan": "Persamaan tersebut memuat koefisien $a = m, b = 6,$ dan konstanta $c = 10$.<br>Syarat agar persamaan bisa diselesaikan (memiliki akar real) adalah $a^2 + b^2 \\ge c^2$.<br>$m^2 + 6^2 \\ge 10^2$<br>$m^2 + 36 \\ge 100$<br>$m^2 \\ge 64$<br>Akar dari pertidaksamaan kuadrat ini membelah rentang solusi menjadi dua arah di luar akar:<br>$m \\le -8$ atau $m \\ge 8$."
+  },
+  {
+    "id": "jg6xyUtGHyWdqrffpidm",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar",
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Bentuk $k \\cos(x - \\alpha)$ yang ekuivalen dengan persamaan $\\cos x - \\sqrt{3} \\sin x$ adalah ...",
+    "clue": "Tentukan nilai $a$ (koefisien cosinus) dan $b$ (koefisien sinus). Karena $a$ positif dan $b$ negatif, sudut $\\alpha$ pasti berada di Kuadran IV.",
+    "opsi": [
+      "$2 \\cos(x - 60^\\circ)$",
+      "$2 \\cos(x - 300^\\circ)$",
+      "$-2 \\cos(x - 60^\\circ)$",
+      "$\\sqrt{2} \\cos(x - 300^\\circ)$",
+      "$2 \\cos(x - 330^\\circ)$"
+    ],
+    "jawaban_benar": "$2 \\cos(x - 300^\\circ)$",
+    "pembahasan": "Diketahui bentuk $a \\cos x + b \\sin x$ dengan $a = 1$ dan $b = -\\sqrt{3}$.<br>Langkah 1: Cari $k$<br>$k = \\sqrt{1^2 + (-\\sqrt{3})^2} = \\sqrt{1 + 3} = \\sqrt{4} = 2$.<br>Langkah 2: Cari sudut $\\alpha$<br>$\\tan \\alpha = \\frac{b}{a} = \\frac{-\\sqrt{3}}{1} = -\\sqrt{3}$.<br>Karena $a$ (sumbu X) positif dan $b$ (sumbu Y) negatif, $\\alpha$ berada di Kuadran IV.<br>Sudut Kuadran IV yang tangennya $-\\sqrt{3}$ adalah $300^\\circ$.<br>Maka bentuknya menjadi $2 \\cos(x - 300^\\circ)$."
+  },
+  {
+    "id": "kvSsJtABC0RCVsTlYyoi",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Teorema Pythagoras",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Tinggi maksimum dan minimum berturut-turut yang dapat dicapai oleh fungsi matematis gelombang pasang $f(x) = 3 \\sin x - 4 \\cos x + 10$ adalah ...",
+    "clue": "Ubah $3 \\sin x - 4 \\cos x$ menjadi nilai $k$ (amplitudo mutlak). Nilai maksimum adalah $(k + c)$ dan nilai minimum adalah $(-k + c)$. Ingat bentuk baku rumusnya diawali dengan komponen cosinus.",
+    "opsi": [
+      "$13$ dan $7$",
+      "$15$ dan $5$",
+      "$14$ dan $-6$",
+      "$17$ dan $3$",
+      "$15$ dan $-5$"
+    ],
+    "jawaban_benar": "$15$ dan $5$",
+    "pembahasan": "Ubah urutannya agar sesuai bentuk standar $a \\cos x + b \\sin x + c$:<br>$f(x) = -4 \\cos x + 3 \\sin x + 10$.<br>Diperoleh $a = -4, b = 3, c = 10$.<br><br>Hitung nilai $k$:<br>$k = \\sqrt{(-4)^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$.<br><br>Nilai maksimum $= k + c = 5 + 10 = 15$.<br>Nilai minimum $= -k + c = -5 + 10 = 5$."
+  },
+  {
+    "id": "qBra8MHruPHhTFDkTnhr",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Teorema Pythagoras",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Jika persamaan $5 \\cos x + 12 \\sin x = 10$ diubah ke dalam bentuk trigonometri tunggal $k \\cos(x - \\alpha) = c$, maka nilai amplitudo mutlak $k$ adalah ...",
+    "clue": "Nilai konstanta pengali $k$ didapatkan dari akar kuadrat dari jumlah kuadrat koefisien cosinus dan sinus ($k = \\sqrt{a^2 + b^2}$).",
+    "opsi": [
+      "$7$",
+      "$10$",
+      "$13$",
+      "$17$",
+      "$25$"
+    ],
+    "jawaban_benar": "$13$",
+    "pembahasan": "Koefisien cosinus adalah $a = 5$ dan koefisien sinus adalah $b = 12$.<br>Nilai $k = \\sqrt{a^2 + b^2}$<br>$k = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144}$<br>$k = \\sqrt{169} = 13$."
+  },
+  {
+    "id": "sLDCkc7plhTRyFPVsA6S",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Besar sudut pergeseran $\\alpha$ dari persamaan $\\sqrt{3}\\cos x + \\sin x = 2$ adalah ...",
+    "clue": "Gunakan rasio $\\tan \\alpha = \\frac{b}{a}$. Pastikan kamu mengidentifikasi letak kuadrannya terlebih dahulu sebelum menentukan sudut istimewanya.",
+    "opsi": [
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$120^\\circ$",
+      "$330^\\circ$"
+    ],
+    "jawaban_benar": "$30^\\circ$",
+    "pembahasan": "Diketahui $a = \\sqrt{3}$ dan $b = 1$. Keduanya bernilai positif sehingga sudut $\\alpha$ ada di Kuadran I.<br>Rasio tangen: $\\tan \\alpha = \\frac{b}{a} = \\frac{1}{\\sqrt{3}} = \\frac{1}{3}\\sqrt{3}$.<br>Sudut lancip di Kuadran I yang memiliki nilai tangen $\\frac{1}{3}\\sqrt{3}$ adalah $30^\\circ$."
+  },
+  {
+    "id": "vWhnBAwhMYSEaHZWKb63",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Persamaan Trigonometri Bentuk Khusus",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Trigonometri Dasar",
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $\\cos x + \\sin x = \\sqrt{2}$ untuk interval $0^\\circ \\le x \\le 360^\\circ$ adalah ...",
+    "clue": "Ubah dulu ke bentuk $k \\cos(x - \\alpha)$. Nilai $a$ dan $b$ dicari dari koefisien masing-masing, yang kebetulan sama-sama bernilai $1$.",
+    "opsi": [
+      "$\\{45^\\circ\\}$",
+      "$\\{135^\\circ\\}$",
+      "$\\{45^\\circ, 315^\\circ\\}$",
+      "$\\{135^\\circ, 225^\\circ\\}$",
+      "$\\{45^\\circ, 135^\\circ\\}$"
+    ],
+    "jawaban_benar": "$\\{45^\\circ\\}$",
+    "pembahasan": "Diketahui $a = 1, b = 1, c = \\sqrt{2}$.<br>Nilai $k = \\sqrt{1^2+1^2} = \\sqrt{2}$.<br>Sudut $\\alpha$: $\\tan \\alpha = \\frac{1}{1} = 1$ (Kuadran I). Maka $\\alpha=45^\\circ$.<br>Bentuk persamaan baru:<br>$\\sqrt{2}\\cos(x - 45^\\circ) = \\sqrt{2}$<br>$\\cos(x - 45^\\circ) = 1$<br><br>Satu-satunya titik di mana cosinus bernilai $1$ pada satu putaran penuh adalah $0^\\circ$ dan $360^\\circ$.<br>Jika disamakan: $x - 45^\\circ = 0^\\circ \\implies x = 45^\\circ$.<br>Jika dengan $360^\\circ$: $x - 45^\\circ = 360^\\circ \\implies x = 405^\\circ$ (Tidak memenuhi interval).<br>Maka himpunan penyelesaian tunggalnya adalah $\\{45^\\circ\\}$."
+  }
+]

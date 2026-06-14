@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "nama_siswa": "Atika Fitri Attaqwa",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika Peminatan (MTL)",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-06"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai Penjumlahan Sudut Berelasi",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan komponen pengerjaan secara terpisah di coretan, namun perhitungannya tidak selesai dan tidak memilih jawaban di lembar soal. Selain itu, terdapat kesalahan konsep relasi vertikal pada kedua komponen: $\\tan 315^\\circ$ ditulis sebagai $\\tan 45^\\circ$ (seharusnya $-\\cot 45^\\circ = -1$) dan $\\cos 120^\\circ$ ditulis sebagai $\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$ (seharusnya $-\\sin 30^\\circ = -\\frac{1}{2}$).",
+      "letak_kesalahan": [
+        "Kesalahan relasi sudut vertikal $\\tan 315^\\circ = \\tan 45^\\circ$, seharusnya $\\tan 315^\\circ = \\tan(270^\\circ + 45^\\circ) = -\\cot 45^\\circ = -1$.",
+        "Kesalahan relasi sudut vertikal $\\cos 120^\\circ = \\cos 30^\\circ$, seharusnya $\\cos 120^\\circ = \\cos(90^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$.",
+        "Kesalahan kelengkapan pengerjaan pada penyelesaian akhir, seharusnya menyelesaikan perhitungan akhir dan menyilang pilihan jawaban."
+      ],
+      "apresiasi_dan_catatan": "Halo Atika! Di nomor pertama ini kamu sudah mencoba menuliskan relasi tiap komponennya, itu bagus. Tapi hati-hati ya, kalau menggunakan sudut vertikal (90 atau 270 derajat), nama fungsinya wajib berubah (tan jadi cot, cos jadi sin). Jangan lupa juga selesaikan sampai akhir dan pilih jawaban di lembar soal."
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Periodisitas dan Relasi Sudut sin 870°",
+      "skor": 5,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa memahami konsep sudut lebih dari 360 derajat dengan benar ($\\sin 870^\\circ = \\sin 150^\\circ$) dan mengetahui letak kuadrannya di Kuadran II. Namun, siswa melakukan kesalahan relasi vertikal pada opsi C dengan menuliskan $\\sin 150^\\circ = \\sin 60^\\circ$ (seharusnya $\\cos 60^\\circ$). Karena $\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3} \\\\neq \\frac{1}{2}$, siswa menyilang opsi C sebagai salah padahal seharusnya benar. Opsi A dan D dicentang dengan benar, sedangkan opsi B disilang dengan benar. Namun, siswa tidak menjabarkan alasan pemilihan opsi C dan D secara lengkap di lembar coretan.",
+      "letak_kesalahan": [
+        "Kesalahan relasi sudut vertikal $\\sin 150^\\circ = \\sin 60^\\circ$, seharusnya $\\sin 150^\\circ = \\sin(90^\\circ + 60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$.",
+        "Kesalahan pengisian lembar jawaban untuk pernyataan C, seharusnya menyilang opsi C karena bernilai benar.",
+        "Kesalahan usaha pengerjaan tidak menjabarkan alasan/proses pemilihan opsi c dan d di lembar coretan secara lengkap, seharusnya menyertakan langkah pengerjaan lengkap."
+      ],
+      "apresiasi_dan_catatan": "Hebat, analisis kuadran dan periodisitas sudut besarmu untuk sin 870 derajat sudah mantap! Sayangnya, kamu terkecoh sedikit di opsi C karena tidak mengubah fungsi sin menjadi cos saat menggunakan relasi vertikal, serta tidak menuliskan alasan pemilihan opsi C dan D di coretanmu."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan Benar/Salah terkait Operasi Trigonometri",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengisi 3 dari 4 pernyataan di tabel dengan benar (Pernyataan 2, 3, dan 4). Namun, coretan pengerjaannya mengandung kesalahan konsep yang besar pada semua komponen: $\\tan 300^\\circ$ ditulis sebagai $\\tan 30^\\circ = \\sqrt{3}$ (seharusnya $-\\cot 30^\\circ = -\\sqrt{3}$), $\\cos 150^\\circ$ ditulis sebagai $\\cos 60^\\circ = \\frac{1}{2}$ (seharusnya $-\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$), dan $\\sin(-210^\\circ)$ ditulis sebagai $-60^\\circ = -\\frac{1}{2}$ (seharusnya $\\frac{1}{2}$). Siswa kemudian menghitung perkalian akhir di coretan menjadi $-\\frac{1}{4}\\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan relasi sudut vertikal dan tanda $\\tan 300^\\circ = \\tan 30^\\circ$, seharusnya $\\tan 300^\\circ = \\tan(270^\\circ + 30^\\circ) = -\\cot 30^\\circ = -\\sqrt{3}$.",
+        "Kesalahan nilai dasar trigonometri $\\tan 30^\\circ = \\sqrt{3}$, seharusnya $\\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$.",
+        "Kesalahan relasi sudut vertikal dan tanda $\\cos 150^\\circ = \\cos 60^\\circ = \\frac{1}{2}$, seharusnya $\\cos 150^\\circ = \\cos(90^\\circ + 60^\\circ) = -\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$.",
+        "Kesalahan penyederhanaan sudut negatif $\\sin(-210^\\circ) = -\\frac{1}{2}$, seharusnya $\\sin(-210^\\circ) = -\\sin 210^\\circ = -(-\\\\\\sin 30^\\circ) = \\frac{1}{2}$.",
+        "Kesalahan pengisian lembar jawaban untuk pernyataan 1, seharusnya menyilang kolom B karena bernilai benar."
+      ],
+      "apresiasi_dan_catatan": "Isian tabelmu sudah lumayan banyak yang benar, Atika. Tapi di coretan pengerjaan masih banyak kekeliruan konsep relasi vertikal dan tanda kuadran. Yuk, lebih teliti lagi mengidentifikasi tanda minus di kuadran II, III, dan IV!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Operasi Campuran Trigonometri Sudut Berelasi",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan beberapa komponen pengerjaan secara terpisah di coretan tetapi tidak menyelesaikannya dan tidak memilih jawaban. Selain itu, terdapat kesalahan menyalin soal ($\\cos 210^\\circ$ ditulis sebagai $\\cos 200^\\circ$) dan kesalahan konsep relasi vertikal pada tangen ($\\tan 300^\\circ$ ditulis sebagai $\\tan 30^\\circ = \\sqrt{3}$ yang seharusnya $-\\cot 30^\\circ = -\\sqrt{3}$).",
+      "letak_kesalahan": [
+        "Kesalahan relasi sudut vertikal dan tanda $\\tan 300^\\circ = \\tan 30^\\circ$, seharusnya $\\tan 300^\\circ = \\tan(270^\\circ + 30^\\circ) = -\\cot 30^\\circ = -\\sqrt{3}$.",
+        "Kesalahan nilai dasar trigonometri $\\tan 30^\\circ = \\sqrt{3}$, seharusnya $\\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$.",
+        "Kesalahan menyalin soal $\\cos 210^\\circ = \\cos 200^\\circ$, seharusnya $\\cos 210^\\circ$.",
+        "Kesalahan kelengkapan pengerjaan pada penyelesaian akhir, seharusnya menyelesaikan perhitungan akhir dan menyilang pilihan jawaban."
+      ],
+      "apresiasi_dan_catatan": "Sayang sekali pengerjaannya terhenti dan tidak ada pilihan jawaban yang dicentang. Selain itu, hati-hati saat menyalin soal ya, $\\cos 210^\\circ$ tertulis sebagai $\\cos 200^\\circ$ di coretanmu."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Identifikasi Nilai Trigonometri Berbagai Kuadran",
+      "skor": 0,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa sama sekali tidak menuliskan coretan pengerjaan dan tidak memilih satu pun opsi jawaban di lembar soal utama.",
+      "letak_kesalahan": [
+        "Kesalahan kelengkapan pengerjaan karena tidak menuliskan proses coretan, seharusnya menuliskan pengerjaan dan memilih jawaban."
+      ],
+      "apresiasi_dan_catatan": "Nomor ini kosong sama sekali. Kalau kesulitan dengan sec, cot, atau csc, coba ubah dulu ke kebalikannya (1/cos, 1/tan, 1/sin) baru dihitung pelan-pelan ya!"
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menyederhanakan Rumus Sudut Berelasi",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjodohkan baris ke-2 ke pilihan A dengan benar (meskipun meletakkannya di tanda kurung baris ke-1 lalu menarik panah dari baris ke-2). Namun, baris ke-1 dan ke-3 dibiarkan kosong tanpa jawaban huruf. Siswa hanya menuliskan catatan kecil 'sudut negatif kak!' untuk baris ke-3. Tidak ada coretan konsep yang lengkap.",
+      "letak_kesalahan": [
+        "Kesalahan kelengkapan pengerjaan karena tidak menjodohkan seluruh pernyataan, seharusnya menjodohkan seluruh pernyataan secara lengkap.",
+        "Kesalahan konsep relasi sudut vertikal karena tidak mengubah nama fungsi trigonometri, seharusnya mengubah nama fungsi trigonometri pada relasi vertikal 270 derajat."
+      ],
+      "apresiasi_dan_catatan": "Jawabanmu untuk $\\tan(180^\\circ + A) = \\tan A$ sudah benar. Catatanmu bahwa $\\sin(270^\\circ + A)$ menghasilkan sudut negatif juga sudah tepat. Hanya saja, jangan lupa ubah fungsinya ya: cos jadi sin, dan sin jadi cos karena memakai relasi vertikal 270 derajat."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan Nilai Sudut Negatif dan Periodisitas",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyilang 2 dari 3 pernyataan dengan benar (Pernyataan 2 dan 3). Namun, coretan pengerjaannya salah secara konsep: siswa menuliskan $\\tan(-600^\\circ) = \\tan(2 \\\\times 270^\\circ + 60^\\circ) = \\tan 60^\\circ = \\frac{1}{2}\\sqrt{3}$ (atau $\\frac{\\sqrt{3}}{2}$). Siswa tidak mengubah fungsi $\\tan$ menjadi $\\cot$ (relasi vertikal), mengabaikan tanda negatif sudut, dan salah menuliskan nilai dasar $\\tan 60^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan relasi sudut vertikal dan tanda $\\tan(-600^\\circ) = \\tan 60^\\circ = \\sqrt{3}/2$, seharusnya $\\tan(-600^\\circ) = -\\tan 600^\\circ = -\\tan(240^\\circ) = -\\tan(180^\\circ + 60^\\circ) = -\\tan 60^\\circ = -\\sqrt{3}$.",
+        "Kesalahan nilai dasar trigonometri $\\tan 60^\\circ = \\sqrt{3}/2$, seharusnya $\\tan 60^\\circ = \\sqrt{3}$.",
+        "Kesalahan pengisian lembar jawaban untuk pernyataan 1, seharusnya menyilang kolom B karena bernilai benar."
+      ],
+      "apresiasi_dan_catatan": "Isian tabelmu untuk nilai akhir sudah benar. Tapi di coretan masih ada kesalahan konsep: sudut negatif tangen menghasilkan nilai negatif, fungsinya harus berubah jadi cotangen jika memakai 270 derajat, dan nilai $\\tan 60^\\circ$ itu akar 3, bukan setengah akar 3."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan Operasi Aljabar Relasi Sudut",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan komponen '$\\cos 180^\\circ$.' di coretan tetapi tidak menyelesaikannya dan tidak memilih jawaban di lembar soal.",
+      "letak_kesalahan": [
+        "Kesalahan kelengkapan pengerjaan karena tidak menuliskan proses coretan, seharusnya menuliskan pengerjaan dan memilih jawaban."
+      ],
+      "apresiasi_dan_catatan": "Ayo dicoba dijabarkan satu-satu, Atika. $\\cos(180^\\circ + A) = -\\cos A$, $\\sin(270^\\circ - A) = -\\cos A$, dan $\\cos(360^\\circ - A) = \\cos A$. Dari situ kamu bisa coret cosinusnya dengan mudah."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Operasi Perkalian dengan Relasi Vertikal",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil memilih opsi A yang benar secara konsep. Namun, siswa melewatkan opsi B dan C yang juga benar. Di lembar coretan, siswa menuliskan $-\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$ (salah tanda, seharusnya $-\\frac{1}{2}\\sqrt{3}$) dan tidak melanjutkan perkalian.",
+      "letak_kesalahan": [
+        "Kesalahan tanda pada nilai $-\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$, seharusnya $-\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$.",
+        "Kesalahan kelengkapan pengerjaan karena tidak memilih semua pilihan jawaban yang benar, seharusnya menyilang opsi A, B, dan C."
+      ],
+      "apresiasi_dan_catatan": "Opsi A yang kamu pilih sudah sangat tepat! Hanya saja, opsi B dan C juga benar lho. Lalu hati-hati ya, $-\\sin 60^\\circ$ itu nilainya negatif setengah akar tiga, tanda minusnya jangan sampai hilang."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Tahapan Hitung Operasi Pembagian Sudut Berelasi",
+      "skor": 0,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa tidak menuliskan coretan pengerjaan dan tidak mengisi pilihan Benar/Salah pada tabel di lembar soal utama.",
+      "letak_kesalahan": [
+        "Kesalahan kelengkapan pengerjaan karena tidak menuliskan proses coretan, seharusnya menuliskan pengerjaan dan mengisi tabel."
+      ],
+      "apresiasi_dan_catatan": "Kosong lagi nih. Jangan takut duluan ya, step-stepnya sama kok dengan soal-soal sebelumnya. Coba dipecah per komponen dulu."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Substitusi Variabel Aljabar Trigonometri Sudut Berelasi (Bonus Opsional)",
+      "skor": 0,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa tidak menuliskan pengerjaan coretan dan tidak memilih opsi jawaban di lembar soal.",
+      "letak_kesalahan": [
+        "Kesalahan kelengkapan pengerjaan karena tidak menuliskan proses coretan, seharusnya menuliskan pengerjaan dan memilih jawaban."
+      ],
+      "apresiasi_dan_catatan": "Soal bonusnya terlewat ya. Tidak apa-apa, besok-besok dicoba orek-orek sedikit saja, siapa tahu bisa dapat tambahan poin!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 24,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 0,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "24 + 0",
+    "persentase_kelulusan": 24.0,
+    "predikat": "Remedial"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Atika! Selamat ya, kamu dapat nilai wajib 24 dan bonus soal opsional 0 dengan total akhir 24 + 0 (Predikat Remedial). Saya sangat menghargai usahamu yang tetap mencoba menulis coretan meskipun kemarin sempat tidak masuk kelas karena sakit. Wajar banget kok kalau merasa kesulitan, karena sub-bab sudut berelasi ini memang krusial banget. Untuk persiapan remediasinya, fokus pelajari dua hal utama ya: pertama, konsep relasi vertikal (90 dan 270 derajat) yang merubah nama fungsi; kedua, ketelitian tanda positif/negatif di kuadran II, III, dan IV. Jangan berkecil hati ya, lekas pulih sepenuhnya dan tetap semangat belajar matematikanya, kamu pasti bisa!"
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "yystcbivPBq4nMLnEUPt",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 200' width='100%' height='200' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='160' x2='270' y2='160' stroke='black' stroke-width='2'/><line x1='80' y1='20' x2='80' y2='180' stroke='black' stroke-width='2'/><line x1='40' y1='100' x2='150' y2='100' stroke='blue' stroke-width='3'/><path d='M 150 60 Q 200 60, 250 120' fill='none' stroke='blue' stroke-width='3'/><line x1='150' y1='160' x2='150' y2='60' stroke='gray' stroke-dasharray='3,3'/><text x='145' y='175' font-size='12'>3</text><line x1='80' y1='60' x2='150' y2='60' stroke='gray' stroke-dasharray='3,3'/><text x='65' y='65' font-size='12'>5</text><line x1='80' y1='100' x2='150' y2='100' stroke='gray' stroke-dasharray='3,3'/><text x='65' y='105' font-size='12'>2</text><circle cx='150' cy='100' r='5' fill='white' stroke='blue' stroke-width='2'/><circle cx='150' cy='60' r='5' fill='blue'/></svg><br><br>Perhatikan grafik fungsi terpotong (<i>piecewise</i>) di atas. Pada koordinat $x = 3$, grafik terbelah menjadi dua bagian. Ujung garis lurus di bawah diakhiri dengan titik kosong, sedangkan ujung kurva di atas dimulai dengan titik penuh. Berapakah nilai eksak dari $f(3)$?",
+    "clue": "Titik bolong (kosong) menandakan bahwa grafik hanya 'mendekati' nilai tersebut tapi tidak pernah sampai ke sana. Titik penuh menandakan letak nilai sebenarnya (inklusif).",
+    "opsi": [
+      "$2$",
+      "$3$",
+      "$5$",
+      "$7$ (Jumlah dari 2 dan 5)",
+      "Tidak terdefinisi secara pasti"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Mencari nilai $f(3)$ berarti kita mencari titik koordinat Y ketika kita berdiri tepat di garis vertikal $x = 3$.<br>Saat kita melihat ke atas sejajar dengan $x = 3$, ada dua titik potensial:<br>1. Titik di ketinggian $y = 2$ berbentuk kosong (bolong). Ini artinya fungsi <i>tidak</i> bernilai 2 di sana (itu hanyalah limit).<br>2. Titik di ketinggian $y = 5$ berbentuk penuh (solid). Ini adalah jangkar matematis dari nilai fungsinya.<br>Maka, nilai pasti dari fungsi saat $x = 3$ adalah $5$."
+  },
+  {
+    "id": "l563RhTLLz3dimbR413G",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'>    <line x1='20' y1='120' x2='280' y2='120' stroke='black' stroke-width='2'/>  <line x1='100' y1='20' x2='100' y2='150' stroke='black' stroke-width='2'/>      <path d='M 31 30 Q 130 190 229 30' fill='none' stroke='teal' stroke-width='3'/>      <line x1='30' y1='70' x2='270' y2='70' stroke='red' stroke-dasharray='5,5'/>  <text x='105' y='65' font-size='12' fill='red'>4</text>      <line x1='60' y1='120' x2='60' y2='70' stroke='gray' stroke-dasharray='3,3'/>  <text x='53' y='135' font-size='12'>-2</text>      <line x1='200' y1='120' x2='200' y2='70' stroke='gray' stroke-dasharray='3,3'/>  <text x='196' y='135' font-size='12'>5</text></svg><br><br>Diberikan grafik fungsi parabola $y = f(x)$. Jika diketahui persamaan $f(x) = 4$, maka nilai $x$ yang memenuhi persamaan tersebut adalah ...",
+    "clue": "Persamaan $f(x) = 4$ memintamu mencari koordinat $x$ manakah yang menghasilkan ketinggian $y = 4$. Perhatikan titik potong antara kurva dengan garis merah horizontal.",
+    "opsi": [
+      "Hanya $-2$",
+      "Hanya $5$",
+      "$-2$ dan $5$",
+      "$0$ dan $4$",
+      "Tidak ada penyelesaian"
+    ],
+    "jawaban_benar": "$-2$ dan $5$",
+    "pembahasan": "Mencari nilai $x$ jika $y$ diketahui adalah kebalikan dari membaca nilai fungsi.<br>Pada sumbu tegak (Y), kita tarik garis horizontal di angka 4 (garis merah).<br>Garis merah tersebut memotong kurva $f(x)$ di dua titik koordinat.<br>Titik potong sebelah kiri sejajar dengan absis $x = -2$.<br>Titik potong sebelah kanan sejajar dengan absis $x = 5$.<br>Maka, nilai $x$ yang memenuhi adalah $-2$ dan $5$."
+  },
+  {
+    "id": "GnOrNUxmgNZIhO42jJTH",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='90' x2='280' y2='90' stroke='black' stroke-width='2'/><line x1='150' y1='20' x2='150' y2='160' stroke='black' stroke-width='2'/><line x1='70' y1='170' x2='270' y2='70' stroke='green' stroke-width='3'/><text x='135' y='85' font-size='12'>0</text><circle cx='150' cy='130' r='4' fill='red'/><text x='160' y='140' font-size='12'>-2</text><circle cx='230' cy='90' r='4' fill='red'/><text x='225' y='110' font-size='12'>4</text></svg><br><br>Berdasarkan grafik garis lurus di atas, titik koordinat potong fungsi terhadap sumbu Y (Intersep Y) adalah ...",
+    "clue": "Titik potong sumbu Y adalah titik di mana garis grafik menabrak tiang vertikal. Pada titik tersebut, nilai $x$ pasti selalu 0.",
+    "opsi": ["$(4, 0)$", "$(0, 4)$", "$(0, -2)$", "$(-2, 0)$", "$(0, 0)$"],
+    "jawaban_benar": "$(0, -2)$",
+    "pembahasan": "Intersep Y adalah titik pertemuan antara grafik dengan sumbu tegak (sumbu Y).<br>Pada gambar, garis hijau menabrak sumbu tegak persis di angka $-2$.<br>Karena berada di sumbu Y, maka absisnya ($x$) adalah $0$.<br>Maka titik koordinatnya adalah $(0, -2)$."
+  },
+  {
+    "id": "Lj8H4cWQ9SXUIJForXEF",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Representasi Aljabar", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "<svg viewBox='0 0 300 200' width='100%' height='200' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='150' x2='270' y2='150' stroke='black' stroke-width='2'/><line x1='150' y1='30' x2='150' y2='180' stroke='black' stroke-width='2'/><path d='M 70 110 Q 150 30, 230 110' fill='none' stroke='purple' stroke-width='3'/><line x1='70' y1='110' x2='230' y2='110' stroke='gray' stroke-dasharray='3,3'/><text x='160' y='115' font-size='12'>3</text><circle cx='70' cy='110' r='5' fill='purple'/><circle cx='230' cy='110' r='5' fill='white' stroke='purple' stroke-width='2'/><line x1='145' y1='70' x2='155' y2='70' stroke='black'/><text x='160' y='75' font-size='12'>8</text><line x1='70' y1='150' x2='70' y2='110' stroke='gray' stroke-dasharray='3,3'/><text x='65' y='165' font-size='12'>-4</text><line x1='230' y1='150' x2='230' y2='110' stroke='gray' stroke-dasharray='3,3'/><text x='225' y='165' font-size='12'>4</text></svg><br><br>Perhatikan grafik fungsi $f(x)$ di atas. Ujung kiri grafik berupa titik penuh, sedangkan ujung kanan berupa titik kosong. Daerah hasil (<i>Range</i>) dari fungsi tersebut adalah ...",
+    "clue": "Daerah hasil (<i>Range</i>) adalah jangkauan grafik yang diukur secara vertikal dari titik terendah (bawah) hingga titik tertinggi (atas) pada sumbu Y.",
+    "opsi": [
+      "$-4 \\le y < 4$",
+      "$3 \\le y \\le 8$",
+      "$3 < y \\le 8$",
+      "$-4 \\le x < 4$",
+      "$y \\le 8$"
+    ],
+    "jawaban_benar": "$3 \\le y \\le 8$",
+    "pembahasan": "Daerah hasil (Range) dilihat dari jangkauan sumbu tegak (Y).<br>1. Titik terendah grafik sejajar dengan angka 3 di sumbu Y. Meskipun ujung kanannya titik kosong, ujung kirinya adalah titik penuh pada $y = 3$, sehingga angka 3 termasuk dalam range.<br>2. Titik tertinggi grafik (puncak kurva) berada di angka 8 di sumbu Y.<br>Maka, jangkauan vertikalnya membentang dari 3 hingga 8, atau ditulis $3 \\le y \\le 8$.<br><i>(Catatan: -4 hingga 4 adalah daerah asal / Domain pada sumbu X)</i>."
+  },
+  {
+    "id": "MhVBrFzwl8D3mCKPQZJ6",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='140' x2='270' y2='140' stroke='black' stroke-width='2'/><line x1='100' y1='20' x2='100' y2='160' stroke='black' stroke-width='2'/><path d='M 50 40 Q 150 140, 250 60' fill='none' stroke='purple' stroke-width='3'/><line x1='200' y1='140' x2='200' y2='90' stroke='gray' stroke-dasharray='4,4'/><line x1='100' y1='90' x2='200' y2='90' stroke='gray' stroke-dasharray='4,4'/><circle cx='200' cy='90' r='4' fill='black'/><text x='195' y='155' font-size='12'>3</text><text x='85' y='95' font-size='12'>5</text></svg><br><br>Perhatikan grafik kurva $y = f(x)$ di atas. Berapakah nilai dari $f(3)$?",
+    "clue": "Notasi $f(3)$ berarti kamu diminta mencari berapakah nilai Y jika nilai X-nya adalah 3. Tarik garis dari angka 3 di sumbu mendatar menuju ke kurva.",
+    "opsi": ["$0$", "$3$", "$5$", "$8$", "Tidak terdefinisi"],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Mencari nilai $f(3)$ sama dengan membaca peta koordinat pada saat $x = 3$.<br>Dari sumbu mendatar (X) di angka 3, kita tarik garis putus-putus vertikal ke atas hingga menyentuh kurva.<br>Dari titik sentuh tersebut, kita tarik garis horizontal ke sumbu tegak (Y), dan jarum menunjuk ke angka 5.<br>Maka, $f(3) = 5$."
+  },
+  {
+    "id": "NKhOT1iTL4fA4kXALfEw",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 200' width='100%' height='200' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='100' x2='280' y2='100' stroke='black' stroke-width='2'/><line x1='150' y1='20' x2='150' y2='180' stroke='black' stroke-width='2'/><circle cx='150' cy='100' r='60' fill='none' stroke='darkred' stroke-width='3'/><line x1='190' y1='20' x2='190' y2='180' stroke='blue' stroke-dasharray='5,5'/><circle cx='190' cy='55' r='4' fill='blue'/><circle cx='190' cy='145' r='4' fill='blue'/></svg><br><br>Perhatikan grafik lingkaran di atas. Mengapa grafik tersebut <b>BUKAN</b> merupakan sebuah grafik fungsi matematis $y = f(x)$ yang valid?",
+    "clue": "Ingat konsep dasar relasi vs fungsi: Sebuah fungsi tidak boleh 'selingkuh'. Satu nilai $x$ (masukan) hanya boleh memiliki tepat satu pasangan nilai $y$ (keluaran). Lakukan uji garis vertikal.",
+    "opsi": [
+      "Karena tidak menyentuh titik pusat (0,0)",
+      "Karena bentuknya melingkar, bukan lurus",
+      "Karena ada wilayah yang memiliki nilai $x$ dan $y$ negatif",
+      "Karena jika ditarik garis vertikal, garis tersebut memotong kurva di dua titik",
+      "Karena tidak memiliki ujung atau batas (domain tak terhingga)"
+    ],
+    "jawaban_benar": "Karena jika ditarik garis vertikal, garis tersebut memotong kurva di dua titik",
+    "pembahasan": "Syarat utama sebuah grafik dikategorikan sebagai fungsi adalah lulus <b>Uji Garis Vertikal</b>. Artinya, untuk setiap satu nilai $x$, hanya boleh ada maksimal satu nilai $y$.<br>Pada grafik lingkaran, jika kita menarik garis vertikal tegak lurus (seperti garis putus-putus biru), garis tersebut akan memotong bentuk lingkaran di dua titik (atas dan bawah).<br>Ini berarti satu nilai $x$ memiliki dua hasil $y$ yang berbeda, sehingga melanggar syarat mutlak sebuah fungsi."
+  },
+  {
+    "id": "Vm8nUuatnQ78sQXaizBA",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Representasi Aljabar", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='100' x2='280' y2='100' stroke='black' stroke-width='2'/><line x1='60' y1='20' x2='60' y2='150' stroke='black' stroke-width='2'/><path d='M 20 -20 Q 180 300, 340 -20' fill='none' stroke='magenta' stroke-width='3'/><circle cx='100' cy='100' r='4' fill='black'/><text x='96' y='115' font-size='12'>1</text><circle cx='260' cy='100' r='4' fill='black'/><text x='256' y='115' font-size='12'>5</text></svg><br><br>Berdasarkan grafik fungsi kuadrat (parabola) di atas, pada interval $x$ manakah nilai fungsi $f(x)$ bernilai <b>negatif</b> (yaitu $f(x) < 0$)?",
+    "clue": "Nilai fungsi $f(x)$ merepresentasikan nilai pada sumbu Y. Oleh karena itu, $f(x) < 0$ berarti mencari daerah di mana kurva tersebut berada di bawah sumbu X (berada di wilayah tanah/kedalaman).",
+    "opsi": [
+      "$x < 1$ atau $x > 5$",
+      "$1 < x < 5$",
+      "$x > 1$",
+      "$x < 5$",
+      "$-1 < x < 5$"
+    ],
+    "jawaban_benar": "$1 < x < 5$",
+    "pembahasan": "Nilai $f(x) < 0$ secara grafis berarti wilayah kurva yang tenggelam di bawah garis mendatar (sumbu X).<br>Dari gambar, kurva memotong sumbu X pada $x = 1$ dan $x = 5$.<br>Di antara $x = 1$ dan $x = 5$, kurva tersebut membentuk lembah di bawah sumbu X.<br>Maka, fungsi bernilai negatif pada interval $1 < x < 5$."
+  },
+  {
+    "id": "bGvNb84zFZ8wuOlIupq9",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 180' width='100%' height='180' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='120' x2='280' y2='120' stroke='black' stroke-width='2'/><line x1='150' y1='20' x2='150' y2='160' stroke='black' stroke-width='2'/><path d='M 70 120 Q 110 40, 150 40 T 230 120' fill='none' stroke='blue' stroke-width='3'/><circle cx='70' cy='120' r='4' fill='red'/><circle cx='230' cy='120' r='4' fill='red'/><circle cx='150' cy='40' r='4' fill='green'/><text x='155' y='35' font-size='12'>A</text><text x='65' y='140' font-size='12'>B</text><text x='225' y='140' font-size='12'>C</text><text x='280' y='110' font-size='12'>X</text><text x='160' y='20' font-size='12'>Y</text></svg><br><br>Perhatikan grafik fungsi $y = f(x)$ di atas. Titik manakah yang merepresentasikan 'pembuat nol fungsi' (akar-akar persamaan)?",
+    "clue": "Pembuat nol fungsi adalah nilai $x$ yang membuat grafik tersebut menyentuh angka nol pada sumbu Y (menabrak garis horizontal).",
+    "opsi": [
+      "Hanya titik A",
+      "Hanya titik B",
+      "Titik B dan C",
+      "Titik A dan B",
+      "Titik A, B, dan C"
+    ],
+    "jawaban_benar": "Titik B dan C",
+    "pembahasan": "Pembuat nol fungsi (akar) secara visual adalah titik-titik di mana grafik memotong sumbu mendatar (sumbu X). Pada titik tersebut, ketinggian grafik ($y$) bernilai 0.<br>Dari gambar, kurva memotong sumbu X tepat di titik B dan titik C.<br><i>(Catatan: Titik A adalah titik potong terhadap sumbu Y atau nilai intersep Y)</i>."
+  },
+  {
+    "id": "gculvGbhQ1J1aq0jduEY",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Representasi Aljabar", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='130' x2='280' y2='130' stroke='black' stroke-width='2'/><line x1='120' y1='20' x2='120' y2='150' stroke='black' stroke-width='2'/><line x1='60' y1='90' x2='240' y2='40' stroke='orange' stroke-width='3'/><circle cx='60' cy='90' r='4' fill='orange'/><circle cx='240' cy='40' r='4' fill='white' stroke='orange' stroke-width='2'/><line x1='60' y1='130' x2='60' y2='90' stroke='gray' stroke-dasharray='3,3'/><text x='55' y='145' font-size='12'>-2</text><line x1='240' y1='130' x2='240' y2='40' stroke='gray' stroke-dasharray='3,3'/><text x='235' y='145' font-size='12'>6</text></svg><br><br>Perhatikan grafik di atas. Ujung sebelah kiri ditandai dengan titik penuh, sedangkan ujung sebelah kanan ditandai dengan titik kosong. Daerah asal (<i>Domain</i>) dari fungsi tersebut adalah ...",
+    "clue": "Daerah asal (<i>Domain</i>) dibaca secara horizontal dari kiri ke kanan (sepanjang sumbu X). Titik penuh menggunakan tanda $\\le$ (kurang dari sama dengan), dan titik kosong menggunakan tanda $<$ (kurang dari).",
+    "opsi": [
+      "$-2 \\le y < 6$",
+      "$-2 \\le x < 6$",
+      "$-2 < x < 6$",
+      "$-2 \\le x \\le 6$",
+      "$x < 6$"
+    ],
+    "jawaban_benar": "$-2 \\le x < 6$",
+    "pembahasan": "Domain adalah rentang batas nilai $x$ (dibaca secara mendatar).<br>1. Batas paling kiri berada di angka $x = -2$. Karena ditandai dengan titik penuh (solid), maka batasnya adalah inklusif ($\\le$).<br>2. Batas paling kanan berada di angka $x = 6$. Karena ditandai dengan titik bolong (kosong), maka batasnya adalah eksklusif ($<$).<br>Maka penulisan domain yang tepat adalah $-2 \\le x < 6$."
+  },
+  {
+    "id": "nv5qjwpNJaKHX9rkhxJ2",
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Analisis Grafik Fungsi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Representasi Aljabar"],
+    "pertanyaan": "<svg viewBox='0 0 300 200' width='100%' height='200' xmlns='http://www.w3.org/2000/svg'><line x1='20' y1='100' x2='280' y2='100' stroke='black' stroke-width='2'/><line x1='50' y1='20' x2='50' y2='180' stroke='black' stroke-width='2'/><path d='M 30 160 Q 80 -20, 130 100 T 230 40' fill='none' stroke='red' stroke-width='3'/><line x1='20' y1='60' x2='280' y2='60' stroke='blue' stroke-dasharray='5,5'/><text x='35' y='55' font-size='12' fill='blue'>y = k</text><text x='100' y='20' font-size='12' fill='red'>y = f(x)</text><text x='35' y='115' font-size='12'>0</text></svg><br><br>Diberikan grafik kurva $y = f(x)$ dan sebuah garis mendatar $y = k$ seperti pada gambar. Berapakah banyaknya penyelesaian riil (akar) untuk persamaan $f(x) = k$?",
+    "clue": "Penyelesaian dari persamaan $f(x) = k$ secara grafis sama dengan menghitung berapa kali kurva $f(x)$ bertabrakan (memotong) garis horizontal $y = k$.",
+    "opsi": ["0 (Tidak ada penyelesaian)", "1", "2", "3", "Tak terhingga"],
+    "jawaban_benar": "3",
+    "pembahasan": "Persamaan $f(x) = k$ mencari titik di mana tinggi kurva $f(x)$ sama persis dengan tinggi garis horizontal $k$.<br>Jika kita melihat gambar, kurva berwarna merah bertabrakan (berpotongan) dengan garis putus-putus berwarna biru muda tepat di 3 (tiga) titik lokasi yang berbeda.<br>Maka, persamaan tersebut memiliki tepat 3 penyelesaian riil."
+  }
+]

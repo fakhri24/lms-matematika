@@ -1,0 +1,384 @@
+[
+  {
+    "id": "0cYgo4wK8y2Z7LRUss0Y",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Teorema Pythagoras",
+      "Rasio Trigonometri Dasar"
+    ],
+    "pertanyaan": "Diketahui titik $P(-3, 4)$ berada pada ujung kaki sudut $\\alpha$. Nilai dari $\\sin(180^\\circ + \\alpha) \\cdot \\cos(360^\\circ - \\alpha)$ adalah ...",
+    "clue": "Sudut $\\alpha$ berada di Kuadran II. Temukan nilai jari-jari (sisi miring) terlebih dahulu menggunakan Pythagoras untuk mendapatkan nilai sinus dan cosinus asli dari sudut $\\alpha$.",
+    "opsi": [
+      "$\\frac{12}{25}$",
+      "$-\\frac{12}{25}$",
+      "$\\frac{7}{25}$",
+      "$-\\frac{7}{25}$",
+      "$\\frac{24}{25}$"
+    ],
+    "jawaban_benar": "$\\frac{12}{25}$",
+    "pembahasan": "Titik $P(-3, 4)$ menunjukkan $x = -3$ dan $y = 4$ (Kuadran II).<br>Cari nilai sisi miring ($r$):<br>$r = \\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = 5$<br><br>Tentukan nilai rasio dasar sudut $\\alpha$:<br>$\\sin \\alpha = \\frac{y}{r} = \\frac{4}{5}$<br>$\\cos \\alpha = \\frac{x}{r} = -\\frac{3}{5}$<br><br>Evaluasi bentuk relasi pada soal:<br>$\\sin(180^\\circ + \\alpha) = -\\sin \\alpha = -\\frac{4}{5}$ (Kuadran III)<br>$\\cos(360^\\circ - \\alpha) = \\cos \\alpha = -\\frac{3}{5}$ (Kuadran IV)<br><br>Kalikan hasilnya:<br>$(-\\frac{4}{5}) \\cdot (-\\frac{3}{5}) = \\frac{12}{25}$."
+  },
+  {
+    "id": "q07a3qfUrFmcvUEXuHa9",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Rasio Trigonometri Dasar",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Diketahui $\\sin A = \\frac{3}{5}$ dan $A$ adalah sudut tumpul. Nilai dari $\\frac{\\cos(180^\\circ - A) - \\sin(180^\\circ + A)}{\\tan(360^\\circ - A)}$ adalah ...",
+    "clue": "Sudut tumpul berarti $A$ berada di Kuadran II. Temukan nilai cosinus dan tangen $A$ terlebih dahulu menggunakan segitiga siku-siku, lalu sederhanakan bentuk relasi horizontal pada persamaannya.",
+    "opsi": [
+      "$\\frac{28}{15}$",
+      "$-\\frac{28}{15}$",
+      "$\\frac{4}{15}$",
+      "$-\\frac{4}{15}$",
+      "$\\frac{15}{28}$"
+    ],
+    "jawaban_benar": "$\\frac{28}{15}$",
+    "pembahasan": "1. Analisis Kuadran terlebih dahulu:<br>Karena $A$ sudut tumpul, maka $A$ berada di Kuadran II.<br>Diketahui $\\sin A = \\frac{3}{5}$. Dengan menggunakan tripel Pythagoras (3, 4, 5), sisi sampingnya adalah 4.<br>Pada Kuadran II, cosinus dan tangen bernilai negatif. Maka:<br>$\\cos A = -\\frac{4}{5}$<br>$\\tan A = -\\frac{3}{4}$<br><br>2. Sederhanakan bentuk sudut berelasi:<br>$\\cos(180^\\circ - A) = -\\cos A$<br>$\\sin(180^\\circ + A) = -\\sin A$<br>$\\tan(360^\\circ - A) = -\\tan A$<br><br>3. Substitusi ke dalam bentuk soal:<br>$\\frac{-\\cos A - (-\\sin A)}{-\\tan A} = \\frac{-\\cos A + \\sin A}{-\\tan A}$<br><br>4. Masukkan rasio trigonometri dari langkah 1:<br>Pembilang: $-(-\\frac{4}{5}) + \\frac{3}{5} = \\frac{4}{5} + \\frac{3}{5} = \\frac{7}{5}$<br>Penyebut: $-(-\\frac{3}{4}) = \\frac{3}{4}$<br><br>Selesaikan pembagian pecahan:<br>$\\frac{\\frac{7}{5}}{\\frac{3}{4}} = \\frac{7}{5} \\times \\frac{4}{3} = \\frac{28}{15}$."
+  },
+  {
+    "id": "6nlgjyQty9sWF0dZ6StY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\cos^2 150^\\circ + \\sin^2 300^\\circ$ adalah ...",
+    "clue": "Cari nilai rasio trigonometrinya menggunakan relasi horizontal, lalu kuadratkan hasilnya. Tanda pangkat dua akan membuat nilai yang tadinya negatif menjadi positif.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\frac{3}{2}$",
+      "$2$",
+      "$\\frac{5}{2}$"
+    ],
+    "jawaban_benar": "$\\frac{3}{2}$",
+    "pembahasan": "Evaluasi nilai trigonometri dasarnya terlebih dahulu:<br>$\\cos 150^\\circ = \\cos(180^\\circ - 30^\\circ) = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$<br>$\\sin 300^\\circ = \\sin(360^\\circ - 60^\\circ) = -\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$<br><br>Kuadratkan masing-masing nilai:<br>$(-\\frac{1}{2}\\sqrt{3})^2 = \\frac{3}{4}$<br>$(-\\frac{1}{2}\\sqrt{3})^2 = \\frac{3}{4}$<br><br>Jumlahkan hasil kuadratnya:<br>$\\frac{3}{4} + \\frac{3}{4} = \\frac{6}{4} = \\frac{3}{2}$."
+  },
+  {
+    "id": "6wS5Izesg6rgfs1BsS2X",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Pecahan",
+      "Rasio Trigonometri Dasar"
+    ],
+    "pertanyaan": "Diberikan suatu segitiga siku-siku dengan besar salah satu sudut lancipnya $\\alpha$. Jika $\\tan \\alpha = \\frac{3}{4}$, nilai dari $\\cos(180^\\circ - \\alpha) - \\sin(360^\\circ - \\alpha)$ adalah ...",
+    "clue": "Cari rasio nilai sinus dan cosinus $\\alpha$ dari informasi tangen menggunakan konsep triple Pythagoras. Setelah itu hitung nilai relasinya.",
+    "opsi": [
+      "$\\frac{1}{5}$",
+      "$-\\frac{1}{5}$",
+      "$\\frac{7}{5}$",
+      "$-\\frac{7}{5}$",
+      "$-\\frac{6}{5}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{5}$",
+    "pembahasan": "Gunakan rasio segitiga siku-siku:<br>$\\tan \\alpha = \\frac{\\text{sisi depan}}{\\text{sisi samping}} = \\frac{3}{4}$.<br>Dengan Pythagoras, sisi miring ($r$) = $\\sqrt{3^2 + 4^2} = 5$.<br>Maka, $\\sin \\alpha = \\frac{3}{5}$ dan $\\cos \\alpha = \\frac{4}{5}$.<br><br>Evaluasi bentuk sudut berelasi:<br>$\\cos(180^\\circ - \\alpha) = -\\cos \\alpha = -\\frac{4}{5}$ (Kuadran II)<br>$\\sin(360^\\circ - \\alpha) = -\\sin \\alpha = -\\frac{3}{5}$ (Kuadran IV)<br><br>Masukkan ke dalam operasi pengurangan:<br>$(-\\frac{4}{5}) - (-\\frac{3}{5}) = -\\frac{4}{5} + \\frac{3}{5} = -\\frac{1}{5}$."
+  },
+  {
+    "id": "CAk3cjnnFMZFgQGY5E18",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Identitas Trigonometri Dasar",
+      "Aturan Kuadran",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk ekuivalen yang paling sederhana dari $\\frac{\\sin(180^\\circ - x) \\cdot \\tan(360^\\circ - x)}{\\cos(180^\\circ + x)}$ adalah ...",
+    "clue": "Ubah setiap fungsi ke dalam bentuk sudut $x$ dengan memperhatikan kuadrannya. Ingat juga identitas dasar bahwa tangen adalah hasil bagi sinus dengan cosinus.",
+    "opsi": [
+      "$\\cos^2 x$",
+      "$\\sin^2 x$",
+      "$\\tan^2 x$",
+      "$-\\tan^2 x$",
+      "$-\\cot^2 x$"
+    ],
+    "jawaban_benar": "$\\tan^2 x$",
+    "pembahasan": "Sederhanakan masing-masing pembilang dan penyebut:<br>1. $\\sin(180^\\circ - x) = \\sin x$ (Kuadran II, sinus positif)<br>2. $\\tan(360^\\circ - x) = -\\tan x$ (Kuadran IV, tangen negatif)<br>3. $\\cos(180^\\circ + x) = -\\cos x$ (Kuadran III, cosinus negatif)<br><br>Substitusikan ke dalam persamaan awal:<br>$\\frac{\\sin x \\cdot (-\\tan x)}{-\\cos x} = \\frac{\\sin x}{\\cos x} \\cdot \\tan x$<br><br>Gunakan identitas $\\frac{\\sin x}{\\cos x} = \\tan x$, maka diperoleh:<br>$\\tan x \\cdot \\tan x = \\tan^2 x$."
+  },
+  {
+    "id": "U2Llt873N3ZHRyulAhbD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $\\frac{\\sin 240^\\circ}{\\cos 150^\\circ}$ adalah ...",
+    "clue": "Kedua sudut berada di kuadran di mana sinus dan cosinus bernilai negatif. Tanda negatifnya akan saling meniadakan (menjadi positif) saat dibagikan.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Cari nilai pembilang dan penyebut secara terpisah:<br>1. $\\sin 240^\\circ = \\sin(180^\\circ + 60^\\circ) = -\\sin 60^\\circ = -\\frac{1}{2}\\sqrt{3}$<br>2. $\\cos 150^\\circ = \\cos(180^\\circ - 30^\\circ) = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$<br><br>Bagi pembilang dengan penyebut:<br>$\\frac{-\\frac{1}{2}\\sqrt{3}}{-\\frac{1}{2}\\sqrt{3}} = 1$."
+  },
+  {
+    "id": "r6tghVmJPlFPBYO4x9KB",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $\\sin^2 210^\\circ + \\tan^2 300^\\circ$ adalah ...",
+    "clue": "Cari nilai trigonometrinya masing-masing terlebih dahulu dengan relasi horizontal. Hati-hati, tanda negatif pada nilai fungsi akan hilang karena dikuadratkan.",
+    "opsi": [
+      "$\\frac{7}{4}$",
+      "$\\frac{13}{4}$",
+      "$\\frac{11}{4}$",
+      "$-\\frac{11}{4}$",
+      "$-\\frac{13}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{13}{4}$",
+    "pembahasan": "Evaluasi nilai trigonometrinya terlebih dahulu:<br>$\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br>$\\tan 300^\\circ = \\tan(360^\\circ - 60^\\circ) = -\\tan 60^\\circ = -\\sqrt{3}$<br><br>Selanjutnya, kuadratkan masing-masing nilai:<br>$(-\\frac{1}{2})^2 + (-\\sqrt{3})^2 = \\frac{1}{4} + 3 = \\frac{13}{4}$."
+  },
+  {
+    "id": "ImwNJXtRC8DhkQXhPQ0e",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Aturan Kuadran", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Jika $\\sin \\theta = p$ dan $\\theta$ berada di Kuadran I, maka bentuk sederhana dari $\\sin(180^\\circ + \\theta) + \\sin(180^\\circ - \\theta)$ adalah ...",
+    "clue": "Gunakan sifat sudut berelasi horizontal untuk mengubah kedua suku menjadi fungsi $\\sin \\theta$. Perhatikan tanda positif atau negatifnya pada masing-masing kuadran.",
+    "opsi": ["$2p$", "$p$", "$0$", "$-p$", "$-2p$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Terapkan aturan relasi horizontal untuk masing-masing suku:<br>1. $\\sin(180^\\circ + \\theta)$ berada di Kuadran III (sinus negatif), sehingga nilainya $-\\sin \\theta$. Karena $\\sin \\theta = p$, nilainya menjadi $-p$.<br>2. $\\sin(180^\\circ - \\theta)$ berada di Kuadran II (sinus positif), sehingga nilainya $\\sin \\theta$. Karena $\\sin \\theta = p$, nilainya menjadi $p$.<br><br>Jumlahkan kedua bentuk tersebut:<br>$-p + p = 0$."
+  },
+  {
+    "id": "WhhPoUV2vnH9g8AegwVp",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Hasil dari $\\cos 120^\\circ + \\sin 210^\\circ - \\tan 225^\\circ$ adalah ...",
+    "clue": "Tentukan nilai dan tanda masing-masing fungsi trigonometri berdasarkan kuadrannya sebelum melakukan operasi penjumlahan dan pengurangan.",
+    "opsi": ["$-2$", "$-1$", "$0$", "$1$", "$2$"],
+    "jawaban_benar": "$-2$",
+    "pembahasan": "Evaluasi nilai masing-masing fungsi:<br>1. $\\cos 120^\\circ = \\cos(180^\\circ - 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$<br>2. $\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br>3. $\\tan 225^\\circ = \\tan(180^\\circ + 45^\\circ) = \\tan 45^\\circ = 1$<br><br>Masukkan ke dalam operasi hitung:<br>$(-\\frac{1}{2}) + (-\\frac{1}{2}) - 1 = -1 - 1 = -2$."
+  },
+  {
+    "id": "PvDVhbo0S9tvVHn7eSva",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\tan 330^\\circ$ adalah ...",
+    "clue": "Posisi sudut berada di Kuadran IV (tangen bernilai negatif). Gunakan relasi poros putaran penuh ($360^\\circ$).",
+    "opsi": [
+      "$\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$-\\frac{1}{3}\\sqrt{3}$",
+      "$-\\sqrt{3}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{3}\\sqrt{3}$",
+    "pembahasan": "Sudut $330^\\circ$ berada di Kuadran IV. Pada Kuadran IV, nilai tangen adalah negatif.<br>Gunakan relasi poros horizontal ($360^\\circ$):<br>$\\tan 330^\\circ = \\tan(360^\\circ - 30^\\circ)$<br>$\\tan 330^\\circ = -\\tan 30^\\circ$<br>$\\tan 330^\\circ = -\\frac{1}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "0PduA1a8I9rOcbm40sg2",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Hasil dari $\\sin 150^\\circ + \\cos 300^\\circ$ adalah ...",
+    "clue": "Ingat aturan kuadran: sinus positif di Kuadran II, dan cosinus positif di Kuadran IV. Gunakan relasi $180^\\circ$ dan $360^\\circ$ agar fungsi trigonometrinya tidak berubah.",
+    "opsi": ["$0$", "$\\frac{1}{2}$", "$1$", "$\\frac{3}{2}$", "$2$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Cari nilai masing-masing terlebih dahulu:<br>$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 300^\\circ = \\cos(360^\\circ - 60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka, $\\sin 150^\\circ + \\cos 300^\\circ = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "8pMU5AVHFrt8JsDhbOQT",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\tan 120^\\circ$ adalah ...",
+    "clue": "Sudut $120^\\circ$ ada di Kuadran II, maka nilai tangennya pasti negatif. Kurangkan sudut $180^\\circ$ dengan $60^\\circ$ untuk menemukannya.",
+    "opsi": [
+      "$\\sqrt{3}$",
+      "$-\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$-\\frac{1}{3}\\sqrt{3}$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$-\\sqrt{3}$",
+    "pembahasan": "Sudut $120^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai tangen adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\tan 120^\\circ = \\tan(180^\\circ - 60^\\circ)$<br>$\\tan 120^\\circ = -\\tan 60^\\circ$<br>$\\tan 120^\\circ = -\\sqrt{3}$."
+  },
+  {
+    "id": "DDReV1rYeIQdgllblxyZ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\cos 240^\\circ \\times \\tan 315^\\circ$ adalah ...",
+    "clue": "Sudut $240^\\circ$ ada di Kuadran III (cos negatif). Sudut $315^\\circ$ ada di Kuadran IV (tan negatif). Gunakan relasi poros $180^\\circ$ dan $360^\\circ$ berturut-turut.",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$-1$",
+      "$1$",
+      "$\\frac{1}{2}\\sqrt{2}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Cari nilai masing-masing terlebih dahulu:<br>$\\cos 240^\\circ = \\cos(180^\\circ + 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$ (Kuadran III, cos negatif)<br>$\\tan 315^\\circ = \\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ = -1$ (Kuadran IV, tan negatif)<br><br>Maka, $(-\\frac{1}{2}) \\times (-1) = \\frac{1}{2}$."
+  },
+  {
+    "id": "DrDPJsfGE3tNRdZHyLKz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\cos 135^\\circ$ adalah ...",
+    "clue": "Letak $135^\\circ$ ada di Kuadran II. Karena cosinus bernilai negatif di sana, gunakan $(180^\\circ - 45^\\circ)$.",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$-\\frac{1}{2}\\sqrt{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$-\\sqrt{2}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}\\sqrt{2}$",
+    "pembahasan": "Sudut $135^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai cosinus adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\cos 135^\\circ = \\cos(180^\\circ - 45^\\circ)$<br>$\\cos 135^\\circ = -\\cos 45^\\circ$<br>$\\cos 135^\\circ = -\\frac{1}{2}\\sqrt{2}$."
+  },
+  {
+    "id": "ERhJWibVqv6auZuQXqxO",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\tan 225^\\circ$ adalah ...",
+    "clue": "Sudut $225^\\circ$ berada di Kuadran III. Tangen adalah hasil bagi dari sinus dan cosinus yang sama-sama negatif di kuadran ini, sehingga hasilnya positif.",
+    "opsi": ["$-1$", "$1$", "$-\\sqrt{2}$", "$\\sqrt{2}$", "$0$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sudut $225^\\circ$ berada di Kuadran III. Pada Kuadran III, nilai tangen adalah positif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\tan 225^\\circ = \\tan(180^\\circ + 45^\\circ)$<br>$\\tan 225^\\circ = +\\tan 45^\\circ$<br>$\\tan 225^\\circ = 1$."
+  },
+  {
+    "id": "RZNfNI9z9RniS9LLOZsi",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 150^\\circ$ adalah ...",
+    "clue": "Sudut $150^\\circ$ berjarak $30^\\circ$ menuju garis lurus $180^\\circ$. Karena berada di Kuadran II, nilai sinusnya tetap positif.",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $150^\\circ$ berada di Kuadran II. Pada Kuadran II, nilai sinus adalah positif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ)$<br>$\\sin 150^\\circ = +\\sin 30^\\circ$<br>$\\sin 150^\\circ = \\frac{1}{2}$."
+  },
+  {
+    "id": "ZqVqoAtHsYVesYxyPX2y",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Nilai Sudut Istimewa",
+      "Aturan Kuadran",
+      "Operasi Pecahan",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\sin 210^\\circ \\cdot \\cos 150^\\circ}{\\tan 330^\\circ}$ adalah ...",
+    "clue": "Ubah satu per satu pakai relasi poros horizontal biar aman. Awas, semua sudut di soal ini jatuh pada kuadran di mana asal nilainya adalah negatif!",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$-\\frac{3}{4}$",
+      "$\\frac{1}{4}$",
+      "$-\\frac{1}{4}$",
+      "$\\frac{4}{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{3}{4}$",
+    "pembahasan": "Tentukan nilai setiap fungsi:<br>1. $\\sin 210^\\circ = -\\sin 30^\\circ = -\\frac{1}{2}$<br>2. $\\cos 150^\\circ = -\\cos 30^\\circ = -\\frac{1}{2}\\sqrt{3}$<br>3. $\\tan 330^\\circ = -\\tan 30^\\circ = -\\frac{1}{3}\\sqrt{3}$<br><br>Kalikan bagian pembilang:<br>$(-\\frac{1}{2}) \\times (-\\frac{1}{2}\\sqrt{3}) = \\frac{1}{4}\\sqrt{3}$<br><br>Bagikan dengan penyebut:<br>$\\frac{\\frac{1}{4}\\sqrt{3}}{-\\frac{1}{3}\\sqrt{3}} = \\frac{\\frac{1}{4}}{-\\frac{1}{3}}$ (akar 3 saling membagi)<br>$= \\frac{1}{4} \\times (-\\frac{3}{1}) = -\\frac{3}{4}$."
+  },
+  {
+    "id": "cIWOHkQAfSAgVPyhs2Hs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 330^\\circ$ adalah ...",
+    "clue": "Kamu ada di Kuadran IV (sinus negatif). Gunakan relasi poros putaran penuh ($360^\\circ$).",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $330^\\circ$ berada di Kuadran IV. Pada Kuadran IV, nilai sinus adalah negatif.<br>Gunakan relasi poros horizontal ($360^\\circ$):<br>$\\sin 330^\\circ = \\sin(360^\\circ - 30^\\circ)$<br>$\\sin 330^\\circ = -\\sin 30^\\circ$<br>$\\sin 330^\\circ = -\\frac{1}{2}$."
+  },
+  {
+    "id": "vv7VCWD13i58Ynx9Y8jD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\sin 210^\\circ$ adalah ...",
+    "clue": "Kamu harus menjauh dari poros $180^\\circ$ sejauh $30^\\circ$ ke arah Kuadran III, daerah di mana sinus itu bertanda negatif.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $210^\\circ$ berada di Kuadran III. Pada Kuadran III, nilai sinus adalah negatif.<br>Gunakan relasi poros horizontal ($180^\\circ$):<br>$\\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ)$<br>$\\sin 210^\\circ = -\\sin 30^\\circ$<br>$\\sin 210^\\circ = -\\frac{1}{2}$."
+  },
+  {
+    "id": "zfXFWaKOEvzFxj3oRNyx",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Horizontal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Nilai Sudut Istimewa", "Aturan Kuadran"],
+    "pertanyaan": "Nilai dari $\\cos 300^\\circ$ adalah ...",
+    "clue": "Posisi sudutnya kurang sejauh $60^\\circ$ dari satu lingkaran penuh. Kebetulan Kuadran IV adalah rumahnya cosinus sehingga nilainya positif.",
+    "opsi": [
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Sudut $300^\\circ$ berada di Kuadran IV. Pada Kuadran IV, nilai cosinus adalah positif.<br>Gunakan relasi poros horizontal ($360^\\circ$):<br>$\\cos 300^\\circ = \\cos(360^\\circ - 60^\\circ)$<br>$\\cos 300^\\circ = +\\cos 60^\\circ$<br>$\\cos 300^\\circ = \\frac{1}{2}$."
+  }
+]

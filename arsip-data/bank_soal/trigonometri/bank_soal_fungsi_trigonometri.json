@@ -1,0 +1,213 @@
+[
+  {
+    "id": "T47nmICjyPEaPS6rAf1p",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi",
+      "Amplitudo",
+      "Periode Fungsi Trigonometri"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='75' x2='280' y2='75' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='140' stroke='black' stroke-width='2'/><path d='M 50 75 Q 100 -25, 150 75 T 250 75' fill='none' stroke='blue' stroke-width='3'/><text x='40' y='25' text-anchor='end'>3</text><text x='40' y='130' text-anchor='end'>-3</text><text x='150' y='95' text-anchor='middle'>90°</text><text x='250' y='95' text-anchor='middle'>180°</text><line x1='45' y1='25' x2='55' y2='25' stroke='black'/><line x1='45' y1='125' x2='55' y2='125' stroke='black'/></svg><br><br>Persamaan fungsi trigonometri yang paling tepat untuk memodelkan grafik di atas adalah ...",
+    "clue": "Grafik dimulai dari titik pusat $(0,0)$ dan bergerak ke atas, ini adalah ciri khas grafik sinus positif. Cari nilai Amplitudo (puncak) dan hitung periodenya untuk menemukan nilai $k$.",
+    "opsi": [
+      "$y = 3 \\sin(x)$",
+      "$y = 3 \\sin(2x)$",
+      "$y = 3 \\cos(2x)$",
+      "$y = 2 \\sin(3x)$",
+      "$y = 2 \\cos(3x)$"
+    ],
+    "jawaban_benar": "$y = 3 \\sin(2x)$",
+    "pembahasan": "1. <b>Amplitudo</b>: Grafik memiliki puncak di angka 3 dan lembah di -3, maka $A = 3$.<br>2. <b>Bentuk Dasar</b>: Dimulai dari $(0,0)$ ke arah atas, maka fungsinya adalah $\\sin(kx)$.<br>3. <b>Periode</b>: Grafik menyelesaikan satu gelombang penuh (satu bukit dan satu lembah) tepat pada $180^\\circ$. Maka periodenya $P = 180^\\circ$.<br>Rumus: $P = \\frac{360^\\circ}{k} \\implies 180^\\circ = \\frac{360^\\circ}{k} \\implies k = 2$.<br><br>Gabungkan semua parameter: $y = 3 \\sin(2x)$."
+  },
+  {
+    "id": "W0FLA7j7nZS7e2FRrPLN",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi",
+      "Translasi Vertikal"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='100' x2='280' y2='100' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='150' stroke='black' stroke-width='2'/><path d='M 50 25 C 100 25, 100 125, 150 125 C 200 125, 200 25, 250 25' fill='none' stroke='red' stroke-width='3'/><text x='40' y='30' text-anchor='end'>3</text><text x='40' y='130' text-anchor='end'>-1</text><text x='150' y='115' text-anchor='middle'>180°</text><text x='250' y='115' text-anchor='middle'>360°</text><line x1='45' y1='25' x2='55' y2='25' stroke='black'/><line x1='45' y1='125' x2='55' y2='125' stroke='black'/><line x1='50' y1='75' x2='280' y2='75' stroke='gray' stroke-dasharray='4,4'/><text x='40' y='80' text-anchor='end'>1</text></svg><br><br>Garis putus-putus pada grafik menunjukkan garis keseimbangan (<i>midline</i>). Persamaan yang sesuai dengan grafik di atas adalah ...",
+    "clue": "Grafik dimulai tepat dari titik puncaknya (maksimum), ini menandakan pola dasar cosinus. Translasi vertikal bisa dilihat dari garis putus-putusnya bergeser ke angka berapa.",
+    "opsi": [
+      "$y = 2 \\cos(x) + 1$",
+      "$y = 3 \\cos(x) - 1$",
+      "$y = 2 \\sin(x) + 1$",
+      "$y = 3 \\sin(x) - 1$",
+      "$y = 2 \\cos(x) - 1$"
+    ],
+    "jawaban_benar": "$y = 2 \\cos(x) + 1$",
+    "pembahasan": "1. <b>Bentuk Dasar</b>: Dimulai dari titik puncak ($y=3$) pada $x=0$, maka ini adalah grafik $\\cos(kx)$.<br>2. <b>Periode</b>: Grafik membentuk lintasan mangkuk kembali ke puncak pada $360^\\circ$. Maka $P = 360^\\circ \\implies k = 1$.<br>3. <b>Translasi Vertikal</b> ($c$): Titik tengah (garis keseimbangan) tidak berada di $0$, melainkan bergeser ke atas menjadi $1$. Maka $c = +1$.<br>4. <b>Amplitudo</b> ($A$): Jarak dari garis keseimbangan ($1$) ke puncak ($3$) adalah $2$. Maka $A = 2$.<br><br>Gabungkan semua parameter: $y = 2 \\cos(x) + 1$."
+  },
+  {
+    "id": "bE9lmbQbcp3hgCe3Lz6B",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Analisis Grafik Fungsi",
+      "Amplitudo",
+      "Periode Fungsi Trigonometri",
+      "Translasi Vertikal"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='140' x2='280' y2='140' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='150' stroke='black' stroke-width='2'/><path d='M 50 80 Q 100 0, 150 80 T 250 80' fill='none' stroke='green' stroke-width='3'/><line x1='50' y1='80' x2='280' y2='80' stroke='gray' stroke-dasharray='4,4'/><text x='40' y='85' text-anchor='end'>3</text><text x='40' y='45' text-anchor='end'>5</text><text x='40' y='125' text-anchor='end'>1</text><line x1='100' y1='40' x2='100' y2='140' stroke='gray' stroke-dasharray='4,4'/><line x1='200' y1='120' x2='200' y2='140' stroke='gray' stroke-dasharray='4,4'/><text x='100' y='155' text-anchor='middle'>45°</text><text x='150' y='155' text-anchor='middle'>90°</text><text x='200' y='155' text-anchor='middle'>135°</text><text x='250' y='155' text-anchor='middle'>180°</text><circle cx='100' cy='40' r='3' fill='black'/><circle cx='200' cy='120' r='3' fill='black'/></svg><br><br>Persamaan dari grafik fungsi gelombang majemuk di atas adalah ...",
+    "clue": "Bedah satu per satu. Garis keseimbangan ada di $y=3$ ($c$). Jarak garis ke puncak (angka 5) adalah Amplitudo ($A$). Lalu lihat siklus satu gelombangnya selesai di sudut berapa untuk mencari $k$.",
+    "opsi": [
+      "$y = 2 \\sin(2x) + 3$",
+      "$y = 3 \\sin(2x) + 2$",
+      "$y = 2 \\sin(4x) + 3$",
+      "$y = 2 \\cos(2x) + 3$",
+      "$y = 3 \\cos(2x) + 2$"
+    ],
+    "jawaban_benar": "$y = 2 \\sin(2x) + 3$",
+    "pembahasan": "Mari identifikasi empat komponen utama dari bentuk $y = A \\sin(kx) + c$:<br>1. <b>Bentuk Grafik</b>: Dimulai dari garis tengah naik ke atas (menyerupai model standar $\\sin x$).<br>2. <b>Garis Tengah ($c$)</b>: Terlihat sumbu grafiknya berada pada $y = 3$, maka translasi vertikal $c = 3$.<br>3. <b>Amplitudo ($A$)</b>: Jarak dari $y=3$ menuju nilai puncak $y=5$ adalah $5 - 3 = 2$. Maka $A = 2$.<br>4. <b>Periode ($P$)</b>: Satu siklus penuh gelombang (1 bukit dan 1 lembah) berakhir pada sudut $180^\\circ$.<br>Maka $\\frac{360^\\circ}{k} = 180^\\circ \\implies k = 2$.<br><br>Menyatukan parameter: $y = 2 \\sin(2x) + 3$."
+  },
+  {
+    "id": "kAd0sb67iqp6iZiksSSk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Amplitudo",
+      "Translasi Vertikal",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai minimum dari fungsi trigonometri $f(x) = -3 \\sin(2x) + 4$ adalah ...",
+    "clue": "Gunakan rumus nilai minimum: $-|A| + c$. Tanda minus di depan amplitudo (-3) hanya menandakan grafiknya terbalik, namun tinggi gelombangnya tetap 3.",
+    "opsi": [
+      "$-3$",
+      "$1$",
+      "$4$",
+      "$7$",
+      "$-7$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Fungsi memiliki bentuk $y = A \\sin(kx) + c$.<br>Nilai Amplitudo ($A$) $= -3$. Jangkauan gelombang mutlaknya adalah $|-3| = 3$.<br>Translasi vertikal ($c$) $= 4$.<br>Nilai Minimum $= -|A| + c = -3 + 4 = 1$."
+  },
+  {
+    "id": "lnUvXaPgcbADeAZgLhjM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Nilai amplitudo dari grafik fungsi trigonometri $f(x) = 4 \\sin x$ adalah ...",
+    "clue": "Amplitudo adalah simpangan terjauh dari titik tengah (keseimbangan). Lihat angka pengali yang berada tepat di depan fungsi sinus.",
+    "opsi": [
+      "$1$",
+      "$2$",
+      "$4$",
+      "$8$",
+      "$\\pi$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "Bentuk umum fungsi sinus adalah $y = A \\sin(kx) + c$.<br>Amplitudo diwakili oleh nilai mutlak dari $A$.<br>Pada fungsi $f(x) = 4 \\sin x$, nilai $A = 4$. Maka amplitudonya adalah $4$."
+  },
+  {
+    "id": "m9DqfEYV1C20PHdQcMMW",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Periode Fungsi Trigonometri",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Bentuk matematis sebuah gelombang dinyatakan dengan persamaan $y = 2 \\tan(\\frac{1}{2}x - \\frac{\\pi}{3})$. Periode dari gelombang tersebut dalam satuan radian adalah ...",
+    "clue": "Hati-hati! Periode dasar fungsi tangen bukanlah $2\\pi$, melainkan $\\pi$. Abaikan parameter $\\frac{\\pi}{3}$ karena itu hanya pergeseran, fokus pada angka di depan $x$.",
+    "opsi": [
+      "$\\frac{\\pi}{2}$",
+      "$\\pi$",
+      "$2\\pi$",
+      "$3\\pi$",
+      "$4\\pi$"
+    ],
+    "jawaban_benar": "$2\\pi$",
+    "pembahasan": "Rumus periode untuk fungsi tangen adalah $P = \\frac{\\pi}{|k|}$.<br>Dari persamaan $y = 2 \\tan(\\frac{1}{2}x - \\frac{\\pi}{3})$, didapatkan koefisien $k = \\frac{1}{2}$.<br>Maka periodenya adalah $P = \\frac{\\pi}{1/2} = 2\\pi$."
+  },
+  {
+    "id": "oi8NhTKGfYa8QNbPnPXn",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Translasi Vertikal"
+    ],
+    "pertanyaan": "Nilai maksimum yang dapat dicapai oleh grafik fungsi $h(x) = \\sin x + 5$ adalah ...",
+    "clue": "Ingat bahwa batas maksimal dari nilai $\\sin x$ murni (tanpa pengali amplitudo) adalah 1. Apa yang terjadi jika nilai tersebut ditambahkan 5?",
+    "opsi": [
+      "$1$",
+      "$4$",
+      "$5$",
+      "$6$",
+      "$10$"
+    ],
+    "jawaban_benar": "$6$",
+    "pembahasan": "Nilai dari $\\sin x$ selalu berada pada rentang $-1 \\le \\sin x \\le 1$.<br>Artinya, nilai maksimum dari $\\sin x$ adalah $1$.<br>Maka, nilai maksimum dari $h(x) = \\sin x + 5$ adalah $1 + 5 = 6$."
+  },
+  {
+    "id": "tmtvxHKh9XWY7rIUv3jx",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sistem Persamaan Linear",
+      "Amplitudo",
+      "Translasi Vertikal"
+    ],
+    "pertanyaan": "Diketahui sebuah fungsi trigonometri $f(x) = a \\cos(kx) + b$ dengan $a < 0$. Fungsi tersebut memiliki nilai maksimum $7$ dan nilai minimum $-1$. Jika periode dari fungsinya adalah $\\pi$, maka bentuk persamaan dari fungsi tersebut adalah ...",
+    "clue": "Susun dua persamaan dari rumus maks/min: $|a| + b = 7$ dan $-|a| + b = -1$. Eliminasi untuk menemukan $a$ dan $b$. Hati-hati dengan syarat $a < 0$ yang diberikan pada soal.",
+    "opsi": [
+      "$f(x) = -4 \\cos(2x) + 3$",
+      "$f(x) = 4 \\cos(2x) + 3$",
+      "$f(x) = -4 \\cos(x) + 3$",
+      "$f(x) = 3 \\cos(2x) - 4$",
+      "$f(x) = -3 \\cos(x) + 4$"
+    ],
+    "jawaban_benar": "$f(x) = -4 \\cos(2x) + 3$",
+    "pembahasan": "Langkah 1: Gunakan rumus maksimum dan minimum untuk mengeliminasi $b$.<br>Maks: $|a| + b = 7$<br>Min: $-|a| + b = -1$<br>Tambahkan kedua persamaan: $2b = 6 \\implies b = 3$.<br><br>Langkah 2: Cari nilai $a$.<br>$|a| + 3 = 7 \\implies |a| = 4$.<br>Karena ada syarat mutlak dari soal bahwa $a < 0$, maka $a = -4$.<br><br>Langkah 3: Cari nilai $k$ lewat periode.<br>$P = \\frac{2\\pi}{k} \\implies \\pi = \\frac{2\\pi}{k} \\implies k = 2$.<br><br>Bentuk akhir persamaannya: $f(x) = -4 \\cos(2x) + 3$."
+  },
+  {
+    "id": "xo6JRJ1k3OBtnmiX2gOk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Periode Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Berapakah periode dari grafik fungsi $g(x) = \\cos(3x)$?",
+    "clue": "Satu siklus normal fungsi cosinus adalah $360^\\circ$. Angka yang menempel pada variabel $x$ menunjukkan berapa kali gelombang tersebut dipercepat.",
+    "opsi": [
+      "$90^\\circ$",
+      "$120^\\circ$",
+      "$180^\\circ$",
+      "$360^\\circ$",
+      "$1080^\\circ$"
+    ],
+    "jawaban_benar": "$120^\\circ$",
+    "pembahasan": "Rumus periode fungsi cosinus adalah $P = \\frac{360^\\circ}{|k|}$.<br>Dari fungsi $g(x) = \\cos(3x)$, diketahui nilai $k = 3$.<br>Maka periodenya adalah $P = \\frac{360^\\circ}{3} = 120^\\circ$."
+  },
+  {
+    "id": "yvBJRLqs2sHk23HNSJMb",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Fungsi Trigonometri",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Translasi Horizontal"
+    ],
+    "pertanyaan": "Secara geometri analitik, grafik fungsi $y = \\cos(x - 30^\\circ)$ merupakan hasil pergeseran dari grafik dasar $y = \\cos x$ sejauh ...",
+    "clue": "Tanda minus pada parameter sudut (di dalam kurung) justru menandakan pergeseran ke arah positif sumbu X (ke kanan).",
+    "opsi": [
+      "$30^\\circ$ ke kiri",
+      "$30^\\circ$ ke kanan",
+      "$30^\\circ$ ke atas",
+      "$30^\\circ$ ke bawah",
+      "$60^\\circ$ ke kanan"
+    ],
+    "jawaban_benar": "$30^\\circ$ ke kanan",
+    "pembahasan": "Bentuk $y = f(x - \\alpha)$ menandakan grafik $f(x)$ digeser sejauh $\\alpha$ ke arah kanan searah sumbu X mendatar. Oleh karena itu, $y = \\cos(x - 30^\\circ)$ berarti grafik $y = \\cos x$ bergeser $30^\\circ$ ke kanan."
+  }
+]

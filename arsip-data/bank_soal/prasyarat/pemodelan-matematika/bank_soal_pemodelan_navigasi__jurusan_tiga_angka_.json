@@ -1,0 +1,204 @@
+[
+  {
+    "id": "eCUQCDpWlh64UBipoft1",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Dalam aturan navigasi laut dan udara, sebuah arah perjalanan yang melenceng sejauh $8$ derajat searah jarum jam dari arah Utara sejati harus dituliskan ke dalam logbook navigasi sebagai ...",
+    "clue": "Aturan mutlak jurusan tiga angka mengharuskan penulisan sudut selalu menggunakan format 3 digit angka.",
+    "opsi": [
+      "$8^\\circ$",
+      "$08^\\circ$",
+      "$008^\\circ$",
+      "$080^\\circ$",
+      "$800^\\circ$"
+    ],
+    "jawaban_benar": "$008^\\circ$",
+    "pembahasan": "Sesuai dengan namanya, jurusan tiga angka <b>wajib</b> ditulis menggunakan tiga digit angka penunjuk, meskipun nilai derajat aslinya hanya satuan atau puluhan.<br>Untuk sudut $8^\\circ$, kita harus menambahkan dua angka nol di depannya sebagai pengisi digit kosong.<br>Maka, penulisannya yang benar secara standar navigasi adalah $008^\\circ$."
+  },
+  {
+    "id": "0J7PiUgQP5Kx1OIiG1t4",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Sudut (Berseberangan)"
+    ],
+    "pertanyaan": "Sebuah kapal kargo terpantau bergerak meninggalkan menara pengawas dengan arah jurusan $240^\\circ$. Jika nakhoda kapal kargo tersebut melihat ke belakang dengan teropong ke arah menara pengawas, maka arah jurusan menara dari pandangan kapal kargo tersebut adalah ...",
+    "clue": "Gunakan aturan sudut putar balik (<i>back bearing</i>). Karena sudut aslinya sudah melebihi garis lurus (lebih dari $180^\\circ$), maka cara mencari kebalikannya adalah dengan menguranginya.",
+    "opsi": [
+      "$040^\\circ$",
+      "$060^\\circ$",
+      "$120^\\circ$",
+      "$160^\\circ$",
+      "$420^\\circ$"
+    ],
+    "jawaban_benar": "$060^\\circ$",
+    "pembahasan": "Mencari arah pandangan balik adalah proses mencari <i>Back Bearing</i>.<br>Aturan praktisnya:<br>Karena sudut lintasan ($240^\\circ$) lebih besar dari $180^\\circ$, maka sudut pandangan baliknya dikurangi oleh $180^\\circ$.<br>Sudut Balik $= 240^\\circ - 180^\\circ = 60^\\circ$.<br>Sesuai standar penulisan navigasi tiga digit, sudut tersebut ditulis sebagai $060^\\circ$."
+  },
+  {
+    "id": "46eQghyrsuD1cloOopPz",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Sudut (Berseberangan)",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah kapal penjelajah berangkat dari Pos $P$ menuju Pos $Q$ dengan arah lintasan $070^\\circ$. Setelah beristirahat di Pos $Q$, kapal tersebut melanjutkan perjalanan ke Pos $R$ dengan arah $160^\\circ$. Berapakah besar sudut dalam $PQR$ yang terbentuk oleh rute pelayaran tersebut?",
+    "clue": "Buat garis Utara imajiner di titik Q. Cari arah dari Q ke P (<i>back bearing</i> dari 070°). Kemudian, kurangi sudut tersebut dengan lintasan baru Q ke R (160°).",
+    "opsi": [
+      "$90^\\circ$",
+      "$110^\\circ$",
+      "$130^\\circ$",
+      "$230^\\circ$",
+      "$250^\\circ$"
+    ],
+    "jawaban_benar": "$90^\\circ$",
+    "pembahasan": "Untuk mengetahui sudut yang dibentuk di titik $Q$ (yaitu sudut $PQR$), kita perlu mengukur selisih dua arah lintasan dari titik $Q$ terhadap garis Utara.<br>1. <b>Arah menuju R dari Q</b> sudah diketahui dari soal, yaitu $160^\\circ$.<br>2. <b>Arah menuju P dari Q</b> adalah putar balik (<i>back bearing</i>) dari perjalanan awal.<br>Arah awal P ke Q $= 070^\\circ$<br>Sudut balik Q ke P $= 070^\\circ + 180^\\circ = 250^\\circ$.<br><br>Sudut yang mengapit di antara kedua rute tersebut adalah selisih antara keduanya di titik Q:<br>Sudut $PQR = 250^\\circ - 160^\\circ = 90^\\circ$."
+  },
+  {
+    "id": "BYAB0Cd8xTYQZzhlluhy",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Sudut (Berseberangan)"
+    ],
+    "pertanyaan": "Sebuah helikopter terbang dari Pangkalan A menuju Pos B dengan arah jurusan tiga angka $115^\\circ$. Setelah menurunkan bantuan, pilot ingin kembali ke Pangkalan A dengan rute garis lurus yang sama. Arah jurusan tiga angka yang harus diambil pilot dari Pos B adalah ...",
+    "clue": "Ini disebut dengan sudut balik (<i>back bearing</i>). Jika arah awal kurang dari $180^\\circ$, cukup tambahkan arah tersebut dengan $180^\\circ$ untuk mendapatkan arah putar baliknya.",
+    "opsi": [
+      "$065^\\circ$",
+      "$115^\\circ$",
+      "$285^\\circ$",
+      "$295^\\circ$",
+      "$305^\\circ$"
+    ],
+    "jawaban_benar": "$295^\\circ$",
+    "pembahasan": "Untuk menentukan sudut balik dari posisi baru, kita bisa menggunakan prinsip perpanjangan garis lurus yang bernilai $180^\\circ$.<br>Aturan praktis sudut balik (<i>Back Bearing</i>):<br>Jika sudut awal $< 180^\\circ$, maka Sudut Balik = Sudut Awal $+ 180^\\circ$<br>Jika sudut awal $> 180^\\circ$, maka Sudut Balik = Sudut Awal $- 180^\\circ$<br><br>Karena $115^\\circ$ lebih kecil dari $180^\\circ$, kita jumlahkan:<br>$115^\\circ + 180^\\circ = 295^\\circ$."
+  },
+  {
+    "id": "IgHdtyWh6WsLG7Zl9fGm",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Dari sebuah menara pelabuhan $P$, Kapal Feri berlayar dengan arah jurusan $045^\\circ$. Pada saat yang bersamaan dari pelabuhan yang sama, Kapal Kargo berlayar dengan arah jurusan $320^\\circ$. Berapakah besar sudut apit murni yang terbentuk di antara kedua lintasan kapal tersebut?",
+    "clue": "Kapal Feri bergerak ke arah kanan atas dari Utara, sedangkan Kapal Kargo bergerak ke arah kiri atas mendekati Utara lagi. Hitung jarak sudut Kapal Kargo ke garis Utara (360°), lalu tambahkan dengan sudut bukaan Kapal Feri.",
+    "opsi": [
+      "$45^\\circ$",
+      "$85^\\circ$",
+      "$95^\\circ$",
+      "$135^\\circ$",
+      "$275^\\circ$"
+    ],
+    "jawaban_benar": "$85^\\circ$",
+    "pembahasan": "Kita hitung selisih sudut lintasan keduanya dari titik acuan Utara ($000^\\circ$ atau $360^\\circ$).<br>1. Kapal Feri membuka sudut sejauh $45^\\circ$ ke sebelah kanan sumbu Utara.<br>2. Kapal Kargo berada di posisi $320^\\circ$. Ini berarti kapal tersebut berada $40^\\circ$ di sebelah kiri sumbu Utara (karena $360^\\circ - 320^\\circ = 40^\\circ$).<br><br>Sudut apit total adalah gabungan bukaan sudut di sisi kiri dan sisi kanan sumbu Utara.<br>Sudut Apit $= 40^\\circ \\text{ (kiri)} + 45^\\circ \\text{ (kanan)} = 85^\\circ$."
+  },
+  {
+    "id": "LCHPpTxo3XjTzlLsraoC",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Dua buah pesawat jet lepas landas secara bersamaan dari bandara yang sama. Pesawat pertama melesat dengan arah $065^\\circ$, sedangkan pesawat kedua mengambil lintasan dengan arah $140^\\circ$. Berapakah besar sudut apit murni yang terbentuk oleh lintasan kedua pesawat tersebut?",
+    "clue": "Karena kedua arah berada di kuadran sisi yang sama (keduanya ke arah timur dari utara), sudut apitnya murni adalah selisih langsung antara kedua angka tersebut.",
+    "opsi": [
+      "$65^\\circ$",
+      "$75^\\circ$",
+      "$140^\\circ$",
+      "$205^\\circ$",
+      "$285^\\circ$"
+    ],
+    "jawaban_benar": "$75^\\circ$",
+    "pembahasan": "Karena kedua pesawat berangkat dari titik awal yang sama dan diukur menggunakan acuan garis Utara yang sama, sudut apit lintasannya adalah selisih mutlak dari kedua arah jurusannya.<br>Sudut Apit $= 140^\\circ - 065^\\circ = 75^\\circ$."
+  },
+  {
+    "id": "UXMWJhGNl5fnZlWSmPBR",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Mata angin <b>Barat Daya</b> identik dengan arah jurusan tiga angka sebesar ...",
+    "clue": "Utara adalah $000^\\circ$, Selatan adalah $180^\\circ$, dan Barat adalah $270^\\circ$. Barat Daya membelah sudut antara Selatan dan Barat.",
+    "opsi": [
+      "$135^\\circ$",
+      "$225^\\circ$",
+      "$270^\\circ$",
+      "$315^\\circ$",
+      "$045^\\circ$"
+    ],
+    "jawaban_benar": "$225^\\circ$",
+    "pembahasan": "Arah Selatan berada di posisi putaran $180^\\circ$.<br>Arah Barat berada di posisi putaran $270^\\circ$.<br>Barat Daya terletak persis di tengah-tengah antara Selatan dan Barat.<br>Maka, posisinya adalah $180^\\circ + 45^\\circ = 225^\\circ$."
+  },
+  {
+    "id": "X1n4TJ4C9ARR5rE08cTG",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Sebuah kapal penangkap ikan bergerak lurus ke arah <b>Barat</b>. Penulisan arah lintasan kapal tersebut dalam sistem jurusan tiga angka adalah ...",
+    "clue": "Ingat satu putaran penuh adalah $360^\\circ$. Barat adalah 3/4 dari satu putaran penuh arah jarum jam yang dimulai dari Utara.",
+    "opsi": [
+      "$090^\\circ$",
+      "$180^\\circ$",
+      "$270^\\circ$",
+      "$360^\\circ$",
+      "$000^\\circ$"
+    ],
+    "jawaban_benar": "$270^\\circ$",
+    "pembahasan": "Dalam sistem navigasi:<br>Utara = $000^\\circ$<br>Timur = $090^\\circ$<br>Selatan = $180^\\circ$<br>Barat = $180^\\circ + 90^\\circ = 270^\\circ$."
+  },
+  {
+    "id": "eUftsU2hqT2Mt05EwbdV",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Sudut (Berseberangan)"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 200 200' width='100%' height='200' xmlns='http://www.w3.org/2000/svg'><line x1='100' y1='100' x2='100' y2='20' stroke='black' stroke-width='2'/><path d='M 100 20 L 95 30 L 105 30 Z' fill='black'/><text x='110' y='25' font-size='12' font-weight='bold'>U</text><line x1='100' y1='100' x2='180' y2='150' stroke='blue' stroke-width='3'/><circle cx='100' cy='100' r='4' fill='red'/><text x='85' y='110' font-size='12'>A</text><circle cx='180' cy='150' r='4' fill='red'/><text x='185' y='165' font-size='12'>B</text><path d='M 100 50 A 50 50 0 0 1 142 126' fill='none' stroke='black' stroke-dasharray='3,3'/><text x='130' y='80' font-size='12'>120°</text></svg><br><br>Berdasarkan peta navigasi di atas, sebuah kapal berlayar dari titik pelabuhan A menuju titik B. Jika kapal tersebut ingin putar balik dan berlayar tepat dari titik B kembali menuju titik A, arah jurusan tiga angka yang harus dikunci pada kompas kapal adalah ...",
+    "clue": "Gambar di atas menunjukkan arah berangkat (120°). Kamu diminta mencari sudut baliknya (<i>back bearing</i>) dari titik B.",
+    "opsi": [
+      "$120^\\circ$",
+      "$240^\\circ$",
+      "$300^\\circ$",
+      "$060^\\circ$",
+      "$000^\\circ$"
+    ],
+    "jawaban_benar": "$300^\\circ$",
+    "pembahasan": "Dari gambar, kita mengetahui bahwa arah berangkat kapal (dari A ke B) adalah $120^\\circ$ diukur dari garis Utara (U).<br>Perintahnya adalah mencari arah kembali (dari B ke A), yang merupakan prinsip sudut balik.<br>Karena sudut berangkat $< 180^\\circ$, maka arah kembalinya ditambahkan $180^\\circ$.<br>Arah kembali $= 120^\\circ + 180^\\circ = 300^\\circ$."
+  },
+  {
+    "id": "lM5QmL5vuypLrXJECaka",
+    "materi_utama": "Pemodelan Matematika",
+    "sub_materi": "Pemodelan Navigasi (Jurusan Tiga Angka)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Sebuah kapal pesiar berlayar mengarah tepat ke arah <b>Tenggara</b>. Jika arah pelayaran ini dituliskan dalam standar navigasi jurusan tiga angka, maka penulisannya yang paling tepat adalah ...",
+    "clue": "Tenggara berada tepat di tengah-tengah antara Timur (090°) dan Selatan (180°). Arah jurusan tiga angka selalu diukur searah jarum jam dari arah Utara asli (000°).",
+    "opsi": [
+      "$045^\\circ$",
+      "$090^\\circ$",
+      "$135^\\circ$",
+      "$225^\\circ$",
+      "$315^\\circ$"
+    ],
+    "jawaban_benar": "$135^\\circ$",
+    "pembahasan": "Dalam sistem jurusan tiga angka, poros Utara dihitung sebagai $000^\\circ$.<br>Arah Timur berada di $090^\\circ$ dan Selatan di $180^\\circ$.<br>Tenggara membelah sudut antara Timur dan Selatan secara sama rata (menambah $45^\\circ$ dari arah Timur).<br>Maka, $090^\\circ + 45^\\circ = 135^\\circ$."
+  }
+]

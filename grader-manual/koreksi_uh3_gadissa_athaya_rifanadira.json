@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "nama_siswa": "Gadissa Athaya Rifanadira",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "06 Juni 2026"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Pilihan Ganda - Penjumlahan Nilai Trigonometri",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa telah melakukan konversi sudut negatif dan sudut di kuadran II dengan benar menggunakan relasi horizontal ($360^\\circ$ dan $180^\\circ$). Akan tetapi, siswa melakukan keteledoran dalam operasi hitung pengurangan pecahan di baris terakhir, yakni $(-1) - \\frac{1}{2}$, yang seharusnya bernilai $-\\frac{3}{2}$ tetapi ditulis $\\frac{3}{2}$ sehingga mengarah pada opsi yang salah.",
+      "letak_kesalahan": [
+        "Kesalahan operasi hitung bilangan bulat dan pecahan $(-1) - \\frac{1}{2} = \\frac{3}{2}$, seharusnya $(-1) - \\frac{1}{2} = -\\frac{3}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Kerja bagus Dissa, pemahaman konsep relasi sudutmu sudah matang! Sayang banget di akhir salah hitung pecahan biasa. Ingat, ngutang 1 ngutang lagi setengah jadi ngutang satu setengah ya!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Pilihan Ganda Kompleks - Analisis Sudut Periodik",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menentukan sudut periodik (lebih dari $360^\\circ$) menjadi sudut kuadran II, dan kemudian merelasikannya dengan tepat menggunakan sumbu X ($180^\\circ$) menjadi $\\sin 30^\\circ = \\frac{1}{2}$. Siswa juga berhasil mengevaluasi opsi-opsi yang tersedia secara tepat di lembar jawaban.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sempurna! Kamu jeli banget mengubah sudut besarnya dan juga hati-hati mengecek satu-satu opsi jawabannya. Keren!"
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan Benar atau Salah - Perkalian Trigonometri",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil melakukan konversi untuk $\\tan 300^\\circ$ dan $\\cos 150^\\circ$ dengan benar, namun ada keteledoran administrasi saat menyalin hasil $\\cos 150^\\circ$ ke lembar jawaban utama. Pada pencarian $\\sin(-210^\\circ)$, siswa keliru menangani tanda untuk relasi kuadran III. Di akhir, ada kesalahan operasi hitung perkalian bentuk pecahan.",
+      "letak_kesalahan": [
+        "Kesalahan penjabaran tanda kuadran III pada $-\\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ$, seharusnya $-\\sin(180^\\circ + 30^\\circ) = -(-\\sin 30^\\circ)$.",
+        "Kesalahan pengisian lembar jawaban pada nilai $\\cos 150^\\circ$, hitungan di coretan $-\\frac{1}{2}\\sqrt{3}$ tapi mencentang pernyataan bahwa nilainya $-\\frac{1}{2}$ (Benar), seharusnya diselesaikan dengan benar.",
+        "Kesalahan perkalian akhir $\\frac{\\sqrt{3}}{2} \\times (-\\frac{\\sqrt{3}}{2}) = \\frac{3}{4}$, seharusnya $-\\frac{3}{4}$."
+      ],
+      "apresiasi_dan_catatan": "Konsep awalmu untuk sudut-sudut dasar udah oke, Dissa. Tapi hati-hati saat menghadapi sudut di kuadran III ya, ingat nilai sin selalu negatif di sana. Dan jangan sampai salah menyalin jawaban dari coretan ke tabel!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Pilihan Ganda - Operasi Pecahan Trigonometri",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa telah melakukan konversi sudut pada relasi kuadran dengan sangat baik untuk ketiga komponen ($\\tan 300^\\circ$, $\\cos 210^\\circ$, $\\sin 120^\\circ$). Akan tetapi, ketika mengoperasikan bentuk pecahan, siswa melakukan kesalahan fatal dalam aljabar pembagian suku di mana pembagi tidak dikenakan pada suku pertama, yang mengarah ke jawaban akhir salah.",
+      "letak_kesalahan": [
+        "Kesalahan manipulasi aljabar pembagian suku pecahan $\\frac{-\\sqrt{3} + \\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} = -\\sqrt{3} + 1$, seharusnya $\\frac{-\\sqrt{3} + \\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} = \\frac{-\\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} = -1$."
+      ],
+      "apresiasi_dan_catatan": "Dissa, konsep trigonometrinya udah keren banget nih dapet semua nilainya! Tapi awas jebakan batman di aljabar pecahannya ya, jangan main coret aja kalau ada penjumlahan di pembilang."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Pilihan Ganda Kompleks - Operasi Berbagai Fungsi Trigonometri",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mampu mengevaluasi relasi sudut untuk fungsi trigonometri sekunder ($\\sec$, $\\cot$, $\\csc$) dengan tanda dan besaran yang sangat tepat. Operasi akhir penjumlahan serta pemilihan pernyataan benar/salah dieksekusi dengan sempurna.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Sempurna! Kamu jago banget ngerjain secan, cotangen, dan cosecan. Lanjutkan ketelitian ini ya!"
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan - Relasi Sudut Vertikal dan Horizontal",
+      "skor": 4,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa gagal mengidentifikasi perubahan fungsi pada relasi sudut vertikal (sumbu Y / $270^\\circ$). Siswa memahami konsep penentuan tanda negatif berdasarkan kuadran, namun lupa mengubah $\\cos$ menjadi $\\sin$, dan $\\sin$ menjadi $\\cos$. Siswa hanya berhasil pada relasi horizontal $\\tan(180^\\circ + A)$.",
+      "letak_kesalahan": [
+        "Kesalahan perubahan fungsi relasi sudut vertikal $\\cos(270^\\circ - A) = -\\cos A$, seharusnya $\\cos(270^\\circ - A) = -\\sin A$.",
+        "Kesalahan perubahan fungsi relasi sudut vertikal $\\sin(270^\\circ + A) = -\\sin A$, seharusnya $\\sin(270^\\circ + A) = -\\cos A$."
+      ],
+      "apresiasi_dan_catatan": "Dissa, awas ketukar ya! Kalau pakai patokan sumbu Y ($90^\\circ$ atau $270^\\circ$), nama fungsinya wajib ganti (sin jadi cos, cos jadi sin). Kalau pakai sumbu X ($180^\\circ$ atau $360^\\circ$) baru namanya tetap."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Pernyataan Benar atau Salah - Sudut Negatif Lebih dari 360 Derajat",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mampu mengurai sudut periodik negatif $\\tan(-600^\\circ)$ dengan tepat menjadi $-\\tan 600^\\circ$ dan menguranginya dengan kelipatan periodik $720^\\circ$. Namun, siswa melakukan double error pada penandaan negatif yang kebetulan berujung pada nilai yang benar. Selain itu, ada ketidakkonsistenan saat mengevaluasi nilai pernyataan kedua pada tabel.",
+      "letak_kesalahan": [
+        "Kesalahan penjabaran tanda negatif pada sudut periodik $\\tan(2 \\cdot 360^\\circ - 120^\\circ) = \\tan 120^\\circ$, seharusnya $\\tan(720^\\circ - 120^\\circ) = \\tan(-120^\\circ) = -\\tan 120^\\circ$.",
+        "Kesalahan evaluasi relasi kuadran $-\\tan 120^\\circ = -\\tan 60^\\circ$, seharusnya $-\\tan 120^\\circ = -(-\\tan 60^\\circ)$.",
+        "Kesalahan mencentang tabel pernyataan bahwa nilai $\\tan 600^\\circ$ sama dengan $\\tan 120^\\circ$ (Benar), padahal keduanya berbeda tanda, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Dissa, hati-hati ya pas ketemu sudut gede banget apalagi yang ada minusnya. Kadang minusnya suka hilang di jalan. Ingat buat lebih teliti ngecek pilihan Benar/Salah-nya ya!"
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Pilihan Ganda Kompleks - Penyederhanaan Pecahan Trigonometri Sudut Berelasi",
+      "skor": 6,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa berhasil menentukan relasi sudut horizontal dengan tepat pada $\\cos(180^\\circ + A)$ dan $\\cos(360^\\circ - A)$. Akan tetapi, siswa gagal menerapkan aturan perubahan fungsi pada relasi vertikal $\\sin(270^\\circ - A)$. Selain itu, siswa tidak mencentang opsi A yang terbukti benar di coretannya, dan mencentang opsi D meski berlawanan dengan hasil perhitungannya sendiri.",
+      "letak_kesalahan": [
+        "Kesalahan perubahan fungsi relasi sudut vertikal $\\sin(270^\\circ - A) = -\\sin A$, seharusnya $\\sin(270^\\circ - A) = -\\cos A$.",
+        "Kesalahan administratif kesalahan administrasi tidak mencentang opsi a padahal pembuktiannya di coretan benar $\\cos(180^\\circ + a) = -\\cos a$, seharusnya disesuaikan dengan hasil coretan.",
+        "Kesalahan konsistensi pilihan: mencentang hasil penyederhanaan adalah $\\cos A$ (opsi D) padahal hasil perhitungan mandirinya adalah $-\\sin A$, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Dissa, balik lagi nih, inget banget aturan sumbu Y vertikal ya! Kalau nempel sumbu Y, sin pasti berubah jadi cos. Plus, kamu jangan sampai ragu sama hitunganmu sendiri pas milih jawaban ya!"
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Pilihan Ganda Kompleks - Relasi Sudut Spesifik Vertikal",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mampu mengonversi kedua sudut menggunakan relasi vertikal sumbu Y secara sempurna, termasuk perubahan fungsi dari $\\cos$ ke $\\sin$ dan sebaliknya. Perhitungan perkalian pecahan di akhir juga dieksekusi dengan baik, begitu pula dengan penentuan opsi ganda kompleksnya.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Nah ini baru mantap! Kalau ingat aturannya, soal relasi sumbu Y vertikal pun bisa dihabisin dengan gampang. Pertahankan!"
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Pernyataan Benar atau Salah - Pengurangan Trigonometri",
+      "skor": 3,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengalami kesulitan besar pada penentuan tanda kuadran di semua relasi komponennya. Tanda negatif diabaikan pada $\\cos(-240^\\circ)$ dan reduksi periodik $\\sin(570^\\circ)$, serta keliru dalam menangani sudut negatif pada $\\tan(-135^\\circ)$. Secara kebetulan kesalahan ini saling meniadakan di pembilang sehingga hasil akhirnya bernilai $0$ (benar), namun siswa salah mencentang semua opsi di tabel pernyataan.",
+      "letak_kesalahan": [
+        "Kesalahan tanda kuadran III pada $\\cos(180^\\circ + 60^\\circ) = \\cos 60^\\circ$, seharusnya $-\\cos 60^\\circ$.",
+        "Kesalahan penjabaran sudut periodik $\\sin(2 \\cdot 360^\\circ - 150^\\circ) = \\sin 150^\\circ$, seharusnya $\\sin(-150^\\circ) = -\\sin 150^\\circ$.",
+        "Kesalahan tanda kuadran II pada $-\\tan(180^\\circ - 45^\\circ) = -\\tan 45^\\circ$, seharusnya $-(-\\tan 45^\\circ) = \\tan 45^\\circ$.",
+        "Kesalahan konsistensi pilihan: mencentang S untuk opsi pernyataan yang benar secara teori, padahal tidak sesuai juga dengan perhitungannya, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Waduh Dissa, di soal ini banyak banget tanda minus yang hilang. Ingat rumus patokan kuadran ya! Kalau angkanya gede, ubah dulu pelan-pelan dan selalu cek kuadran letaknya buat pastiin tandanya positif atau negatif."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Pilihan Ganda - Variabel Trigonometri (Bonus)",
+      "skor": 2,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa berhasil menuliskan konsep relasi awal dan membedah sudut dengan patokan yang benar ($270^\\circ \\pm 54^\\circ$), bahkan sukses mengonversi $\\cos 324^\\circ$ menjadi $\\sin 54^\\circ$. Akan tetapi, terdapat manipulasi variabel keliru ($\\sin 54^\\circ = p$ ditulis menjadi $\\sin p$), dan terdapat forcing fatal di mana siswa memanipulasi koefisien menjadi pangkat, serta mencoret variabel dari penjumlahan pecahan sembarangan demi mencocokkan hasil dengan pilihan ganda.",
+      "letak_kesalahan": [
+        "Kesalahan baca variabel $\\sin 54^\\circ = p$ namun dioperasikan sebagai $\\sin p$, seharusnya diselesaikan dengan benar.",
+        "Kesalahan manipulasi aljabar fatal: mengubah koefisien $2\\cos 216^\\circ$ menjadi bentuk pangkat $\\sin p^2$, seharusnya diselesaikan dengan benar.",
+        "Kesalahan Forcing (Jawaban Dipaksa): mencoret variabel pecahan secara keliru pada penjumlahan $\\frac{\\sin p + \\sin p^2}{\\frac{1}{2} \\cdot \\sin p}$ menjadi $2\\sin p^2$, lalu memaksakan hasilnya menjadi $1$, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Dissa, kamu sebetulnya udah bener lho pakai patokan $270^\\circ$ buat mecah sudutnya, tapi awas ketukar antara nilai fungsi dan sudutnya ya! $\\sin 54^\\circ = p$, bukan berarti angkanya berubah jadi $\\sin p$. Terus, ingat aturan aljabar, jangan maksa nyoret penjumlahan pecahan dan ubah koefisien jadi pangkat biar jawabannya pas."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 76,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 2,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "76 + 2",
+    "persentase_kelulusan": 76,
+    "predikat": "Cukup"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Gadissa! Selamat ya, kamu dapat nilai wajib 76 dan bonus soal opsional 2 dengan total akhir 76 + 2 (Predikat Cukup). Secara keseluruhan, pemahaman konsep relasi sudut horizontal dan vertikalmu sudah cukup baik, terbukti dari beberapa soal yang berhasil kamu kerjakan dengan sempurna. Kekuatan utamamu ada di penguasaan sudut-sudut sekunder dan relasi dasar. Namun, kamu perlu lebih teliti lagi saat menangani tanda negatif di berbagai kuadran dan saat melakukan operasi pecahan aljabar. Terus berlatih supaya nggak terjebak keteledoran kecil lagi ya. Semangat!"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "agent-lms-matematika",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fakhri24/lms-matematika.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fakhri24/lms-matematika/issues"
+  },
+  "homepage": "https://github.com/fakhri24/lms-matematika#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.4.1"
+  }
+}

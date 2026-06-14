@@ -1,0 +1,974 @@
+[
+  {
+    "nis": "252610003",
+    "nama_lengkap": "AIRA RANIAH YASMIN AZRI",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610006",
+    "nama_lengkap": "AISYAH HUSNARA FIKA SANIYA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610011",
+    "nama_lengkap": "ALMIRA FATHIATURRAHMAH",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610014",
+    "nama_lengkap": "ARUMI NAJWA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610017",
+    "nama_lengkap": "AZKIYA NURUL AULIA AZZAHRA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610018",
+    "nama_lengkap": "CHILA ALTHAFUNNISA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610019",
+    "nama_lengkap": "CLIO AULIA MASYAEL",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610021",
+    "nama_lengkap": "FELYCIA RIZKYA ACHMAD",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610022",
+    "nama_lengkap": "FUADA SEKAR ARUM",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610025",
+    "nama_lengkap": "GHALIN NISA IZZATI",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610029",
+    "nama_lengkap": "INAYAH FARHANIYAH IKHSANI",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610038",
+    "nama_lengkap": "KEYSHA HANIFAH",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610043",
+    "nama_lengkap": "KHANSA PUTRI MUTHMAINNAH CAHYOGA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610047",
+    "nama_lengkap": "LOVELY ADARA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610049",
+    "nama_lengkap": "MARITSA SOFWAH AZIZA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610051",
+    "nama_lengkap": "NADIN EMIRA KAYYISA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610053",
+    "nama_lengkap": "NAILA ZAHRA PURNAMA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610056",
+    "nama_lengkap": "NAURA RAIHANA NUGRAHA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610057",
+    "nama_lengkap": "NAWA SYAFIYYA AZZAHRA HIJAZIAH",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610059",
+    "nama_lengkap": "NUZULUL HAWA AULIA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610064",
+    "nama_lengkap": "SYAKIRA KHAIRUNNISA ARMMAWADIN",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610065",
+    "nama_lengkap": "SYAKIRAN RAMADHANI ANDIRA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610073",
+    "nama_lengkap": "SYIFA SHABILA MESA",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610069",
+    "nama_lengkap": "ZAFINA NISA ISTIQOMAH",
+    "kelas": "X.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610007",
+    "nama_lengkap": "AISYAH KAYLA ZIHAN HAKIM",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610010",
+    "nama_lengkap": "ALIKE QOTRUNNADA FALIHA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610015",
+    "nama_lengkap": "ATIKA FITRI ATTAQWA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610020",
+    "nama_lengkap": "FATHIYYA AZZAHRA ADAM",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610023",
+    "nama_lengkap": "GADISSA ATHAYA RIFANADIRA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610024",
+    "nama_lengkap": "GAYATRI PRATIWI",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610026",
+    "nama_lengkap": "GHINA QONITA DZAKIYYA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610027",
+    "nama_lengkap": "HALIMAH NURULMARHAMAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610032",
+    "nama_lengkap": "JASMINE NAMIRA PRATAMA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610034",
+    "nama_lengkap": "KAMILA HUMAIRA HANIYA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610035",
+    "nama_lengkap": "KAYYISA ZAHIRA NANDYTA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610039",
+    "nama_lengkap": "KEYSHA MAGALI KHAIRUNNISA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610042",
+    "nama_lengkap": "KHALISA NAURA AFIFAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610045",
+    "nama_lengkap": "KHAYYIRAH RAIDAH LUBNA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610048",
+    "nama_lengkap": "MAIRA TANISHA",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610050",
+    "nama_lengkap": "MOZA AURELY AKBAR",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610055",
+    "nama_lengkap": "NAJMA BATRISYIA FADHILAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610058",
+    "nama_lengkap": "NAYLA ASRIANI HINDARSAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610062",
+    "nama_lengkap": "RAZITA SYADIAH SUARDI",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610063",
+    "nama_lengkap": "SALMA HAMIDAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610067",
+    "nama_lengkap": "WAFIYAH NABILAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610068",
+    "nama_lengkap": "YUNIAR RAUDATUL JANNAH",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610070",
+    "nama_lengkap": "ZAKIYA ZARLY AZ-ZAHRA FAUZI",
+    "kelas": "X.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610004",
+    "nama_lengkap": "AISHA NOOR AQEELA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610005",
+    "nama_lengkap": "AISYAH GHAZIYA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610008",
+    "nama_lengkap": "AISYAH NAJMA ARIEF",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610009",
+    "nama_lengkap": "AIZA ARDHANARESWARI KARTIKO",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610012",
+    "nama_lengkap": "ALMIRA NURAINI KUSNANDANG",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610013",
+    "nama_lengkap": "ALYA AZ ZAHRA WIJAYA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610016",
+    "nama_lengkap": "AURA SEKAR KIRANI",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610072",
+    "nama_lengkap": "CINDY FAUZIAH",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610028",
+    "nama_lengkap": "HAURA QONITA RAHMAN",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610030",
+    "nama_lengkap": "JANEETA HARA FAWNIA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610031",
+    "nama_lengkap": "JASMINE ALEXANDRIA DAIMAN",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610036",
+    "nama_lengkap": "KEIRA ZIVANA BINARKO",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610037",
+    "nama_lengkap": "KEISYA SYAHLA SYARAFANA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610040",
+    "nama_lengkap": "KHAERUNNISA NURUL JANNAH",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610041",
+    "nama_lengkap": "KHALISA ALTHAFUNNISA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610044",
+    "nama_lengkap": "KHAYYARAILMI EL ZATTA AMANI",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610046",
+    "nama_lengkap": "KYRA AULIA RAMADHANI",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610052",
+    "nama_lengkap": "NADIYYA ADZKI ZUHRAH SYAFIQA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610054",
+    "nama_lengkap": "NAILAH ZAHRA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610060",
+    "nama_lengkap": "OCTACHIARA CHOIRUNNISA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610061",
+    "nama_lengkap": "RAISSA RAMANIYA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610066",
+    "nama_lengkap": "THANAYYA NUR SHABRINA AQILAH",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "252610071",
+    "nama_lengkap": "ZIFANA RAIHANA KHALISHA",
+    "kelas": "X.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510136",
+    "nama_lengkap": "ALYSSA REGITA SYAHRANI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510142",
+    "nama_lengkap": "AURELIA KHANSA NAUTICA IRAWAN",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510150",
+    "nama_lengkap": "DWIMA NOZHAH MANIK",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510151",
+    "nama_lengkap": "EARLENE RAISSA MAZAYA MUKTAMAR",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510160",
+    "nama_lengkap": "FICHA NADHIRA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510161",
+    "nama_lengkap": "GAZBIYYA ALIANI EKA PERMANA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510162",
+    "nama_lengkap": "GAZNA LUTHFA FARAHY",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510164",
+    "nama_lengkap": "HASNA NAZILLATUL HIDAYAH",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510167",
+    "nama_lengkap": "JANEETA KAMILIA FATIN",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510168",
+    "nama_lengkap": "KAMIILAH MAISAAN SURYA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510170",
+    "nama_lengkap": "KAYISAH FADLAH NAFIAH",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510173",
+    "nama_lengkap": "KEISYA AURELIA RAMADHANI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510175",
+    "nama_lengkap": "KEZIA AULIA OZORA PRIANTO",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510176",
+    "nama_lengkap": "KHALISHAH PUTRIANNA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510180",
+    "nama_lengkap": "MARITZA BATRISYIA SIDDIK",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510181",
+    "nama_lengkap": "MARSYA ALEFTINA FAIZA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510182",
+    "nama_lengkap": "MARWA SYIFA AULIA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510186",
+    "nama_lengkap": "NAILA NAZHIFAH PUTRI DAMHUDI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510187",
+    "nama_lengkap": "NATASYA CHIKA NAWANGSARI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510188",
+    "nama_lengkap": "NATASYA PUTRI SALMA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510189",
+    "nama_lengkap": "NAURA AUNI KAYYASAH",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510191",
+    "nama_lengkap": "NAURA HANUN ZAKIRA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510197",
+    "nama_lengkap": "NAYLA ARDHINI HARAHAP",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510198",
+    "nama_lengkap": "NAYSA LUBNA ARKARNA MARINTO",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510200",
+    "nama_lengkap": "NAZNIN ALMIRA ZARA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510202",
+    "nama_lengkap": "NUR SHADRINA THUFAILA ADRIFIA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510205",
+    "nama_lengkap": "PUTRI AMANDARI BILQIST",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510207",
+    "nama_lengkap": "QUEENSA SALSABILA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510208",
+    "nama_lengkap": "RAFINA NURKARIMAH",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510209",
+    "nama_lengkap": "RAIHANA RAHMAT",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510211",
+    "nama_lengkap": "RANA AMIRAH NURWITASARI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510214",
+    "nama_lengkap": "RIFA RAISA AZKIYA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510226",
+    "nama_lengkap": "SABRINA AZREYNI RIZKI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510219",
+    "nama_lengkap": "SYAKIRAN NUR SHOFA",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510221",
+    "nama_lengkap": "TALITA AQILAH",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510222",
+    "nama_lengkap": "THIFANA SYAHRAHMANI",
+    "kelas": "XI.MIPA-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510129",
+    "nama_lengkap": "ADRYANA QATRUNNADA CHAIRUNISSA M.",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510130",
+    "nama_lengkap": "AFIFAH RANA KAYYISAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510132",
+    "nama_lengkap": "AISHA KINARI SETIAWAN",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510133",
+    "nama_lengkap": "AISYAH MAULA HAYATI",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510134",
+    "nama_lengkap": "ALFAINA ROSYADA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510137",
+    "nama_lengkap": "AMINA BERNESSA CHARIS",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510138",
+    "nama_lengkap": "ANTLIA ERVIAN",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510139",
+    "nama_lengkap": "ASYIFA NADIA KHUMAIRA RIDWAN",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510141",
+    "nama_lengkap": "ATHIYYA WAFA QONITA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510146",
+    "nama_lengkap": "CANEESA SEKOFNUVI",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510147",
+    "nama_lengkap": "CHIQUITA TSAQIFA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510153",
+    "nama_lengkap": "FADLILA KARIMA MUTAMMIMA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510154",
+    "nama_lengkap": "FAIRUZ FATIN KAMILAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510155",
+    "nama_lengkap": "FARHANATUZZAHRA HANIFAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510156",
+    "nama_lengkap": "FATHIYA AZZAHRA SYAHIDA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510158",
+    "nama_lengkap": "FAUZA H FATHIHA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242511227",
+    "nama_lengkap": "HALIMAH ASYHFIYA MAULIDA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510166",
+    "nama_lengkap": "HUMAIRA AZIZA SYUKMA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510171",
+    "nama_lengkap": "KAYLA AZDIA RAHMAN",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510172",
+    "nama_lengkap": "KEISHA NURAULIA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510174",
+    "nama_lengkap": "KEISYA LARASATI SUPRIYANTO",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510177",
+    "nama_lengkap": "KHANSA FADHILAH ADORIA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510178",
+    "nama_lengkap": "KINARY AMMALA SUMULIYYATA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510185",
+    "nama_lengkap": "NAILA HANA PRASETIO FAKHRIYAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510192",
+    "nama_lengkap": "NAURA SYIFA BHARATA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510193",
+    "nama_lengkap": "NAURA SYIFA KAMILAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510194",
+    "nama_lengkap": "NAURAH ZAHIDAH",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510196",
+    "nama_lengkap": "NAYLA ANNISA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510199",
+    "nama_lengkap": "NAYYARA DANISH ARA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510203",
+    "nama_lengkap": "NURIVA HAFIZHA SYAKIB",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510204",
+    "nama_lengkap": "PUTERI AUDINA BILKIS",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510213",
+    "nama_lengkap": "RAYSAH SAHIRA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510215",
+    "nama_lengkap": "RUZKA MAHIRA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510216",
+    "nama_lengkap": "SABRINA HANA SALSABIL",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510218",
+    "nama_lengkap": "SHAFIYA PUTRI AZ ZAHRA PRASETYA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510223",
+    "nama_lengkap": "ZAHIRA FATHIYYAH AZ-ZAHRA",
+    "kelas": "XI.MIPA-2",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510131",
+    "nama_lengkap": "AIESY HAURA HAMIDA KOSASIH",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510143",
+    "nama_lengkap": "AVYA DYANDRA HARYANTO",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510144",
+    "nama_lengkap": "AZKA NABILAH",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510145",
+    "nama_lengkap": "BALQIS ZHAFIRA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510148",
+    "nama_lengkap": "DEA RILYANI",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510149",
+    "nama_lengkap": "DINDA SHAE HANUNNISA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510152",
+    "nama_lengkap": "ELVINA ZENECHKA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510157",
+    "nama_lengkap": "FATIMAH WAJHAH",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510159",
+    "nama_lengkap": "FAWWAZAH KHAIRUN NISWAH",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510163",
+    "nama_lengkap": "GHAIDA WAFIYYA TAQIYURAHMANI",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510165",
+    "nama_lengkap": "HAZNA KHUMAIRA NUGRAHA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510169",
+    "nama_lengkap": "KANAYA AULIA WARGADIPURA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510179",
+    "nama_lengkap": "KIRA GHANIA PUTRI",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510183",
+    "nama_lengkap": "NADINA NIBRASS ARYANTI",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510195",
+    "nama_lengkap": "NAYAKA KHALISA RAMADHANI",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510201",
+    "nama_lengkap": "NUHA NADHIFA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510206",
+    "nama_lengkap": "QUEENA ZUKHRUFALLAYLA RADHIYYA",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510210",
+    "nama_lengkap": "RAISA SHAFA ZAHIDAH",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "242510212",
+    "nama_lengkap": "RANAA KALILA ARDININGRUM",
+    "kelas": "XI.IPS-1",
+    "status_akses": "true"
+  },
+  {
+    "nis": "1234",
+    "nama_lengkap": "FADLLAN AHMAD FARUQI",
+    "kelas": "X",
+    "status_akses": "true"
+  }
+]

@@ -1,0 +1,408 @@
+[
+  {
+    "id": "KyfMyLwpAS5PQYXzi7yE",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Tanda akhir dari hasil operasi aljabar $\\frac{\\sin 210^\\circ + \\cos 120^\\circ}{\\tan 315^\\circ}$ dipastikan akan bernilai ...",
+    "clue": "Tentukan tanda tiap fungsi. Bilangan negatif ditambah negatif hasilnya tetap negatif. Lalu perhatikan aturan pembagian.",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Nol (0)",
+      "Tak hingga",
+      "Tidak dapat ditentukan tanda mutlaknya"
+    ],
+    "jawaban_benar": "Positif (+)",
+    "pembahasan": "Bagian pembilang: $\\sin 210^\\circ$ (Kuadran III, negatif) dan $\\cos 120^\\circ$ (Kuadran II, negatif). Penjumlahan dua bilangan negatif menghasilkan bilangan NEGATIF (-).<br>Bagian penyebut: $\\tan 315^\\circ$ berada di Kuadran IV, sehingga nilainya NEGATIF (-).<br>Operasi akhir: Pembilang (-) dibagi penyebut (-) akan membuahkan hasil akhir bernilai POSITIF (+)."
+  },
+  {
+    "id": "XVLg39S0ADuBMhuLarSk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Rasio Trigonometri Dasar"
+    ],
+    "pertanyaan": "Jika nilai $\\sec \\theta$ bernilai positif dan $\\csc \\theta$ bernilai negatif, maka letak wilayah sudut $\\theta$ berada pada ...",
+    "clue": "Secan ($\\sec$) adalah kebalikan dari Cosinus, sedangkan Cosecan ($\\csc$) adalah kebalikan dari Sinus. Sifat tandanya akan sama persis dengan fungsi aslinya.",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Tidak ada kuadran yang memenuhi"
+    ],
+    "jawaban_benar": "Kuadran IV",
+    "pembahasan": "Nilai $\\sec \\theta$ positif berarti $\\cos \\theta$ juga positif (terjadi di Kuadran I dan IV).<br>Nilai $\\csc \\theta$ negatif berarti $\\sin \\theta$ juga negatif (terjadi di Kuadran III dan IV).<br>Kuadran yang memenuhi kedua kondisi tersebut secara bersamaan adalah Kuadran IV."
+  },
+  {
+    "id": "fHzPhVAx4RY7ZMmlCgFD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Rasio Trigonometri Dasar"
+    ],
+    "pertanyaan": "Sebuah titik $P(-4, 3)$ dihubungkan ke titik asal $(0,0)$ dan membentuk sudut $\\beta$ terhadap sumbu X positif. Tanda untuk nilai $\\cos \\beta$ dan $\\tan \\beta$ berturut-turut adalah ...",
+    "clue": "Visualisasikan letak titik $(-4, 3)$ pada bidang koordinat. Koordinat x negatif dan y positif menunjukkan kuadran berapa?",
+    "opsi": [
+      "Positif, Positif",
+      "Positif, Negatif",
+      "Negatif, Positif",
+      "Negatif, Negatif",
+      "Nol, Negatif"
+    ],
+    "jawaban_benar": "Negatif, Negatif",
+    "pembahasan": "Titik $P(-4, 3)$ memiliki absis (x) negatif dan ordinat (y) positif. Hal ini menempatkan sudut $\\beta$ di wilayah Kuadran II.<br>Pada Kuadran II, hanya fungsi Sinus (dan Cosecan) yang bernilai positif.<br>Sehingga, nilai $\\cos \\beta$ pasti NEGATIF dan nilai $\\tan \\beta$ juga pasti NEGATIF."
+  },
+  {
+    "id": "M36aRntWH5Zkva0ZfNAl",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Jika diketahui $\\sin \\alpha < 0$ (bernilai negatif) dan $\\tan \\alpha > 0$ (bernilai positif), maka sudut $\\alpha$ dipastikan berada pada rentang ...",
+    "clue": "Gunakan eliminasi. Cari kuadran tempat tangen bernilai positif, lalu dari pilihan tersebut, pilih yang sinusnya bernilai negatif.",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Kuadran I dan III"
+    ],
+    "jawaban_benar": "Kuadran III",
+    "pembahasan": "Kondisi pertama: $\\tan \\alpha > 0$ (positif) hanya terjadi di Kuadran I dan III.<br>Kondisi kedua: $\\sin \\alpha < 0$ (negatif) hanya terjadi di Kuadran III dan IV.<br>Irisan dari kedua syarat tersebut yang terpenuhi secara bersamaan adalah Kuadran III."
+  },
+  {
+    "id": "hVR3OmZmxx7Jvbzg4xMQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Di wilayah kuadran mana sajakah fungsi Cosinus dipastikan bernilai negatif?",
+    "clue": "Cosinus bernilai positif di Kuadran I dan IV. Maka di sisa kuadran lainnya, nilainya pasti negatif.",
+    "opsi": [
+      "Kuadran I dan II",
+      "Kuadran II dan III",
+      "Kuadran III dan IV",
+      "Kuadran I dan III",
+      "Hanya Kuadran II"
+    ],
+    "jawaban_benar": "Kuadran II dan III",
+    "pembahasan": "Fungsi Cosinus bernilai positif di Kuadran I (semua positif) dan Kuadran IV (khusus Cosinus). Oleh karena itu, Cosinus akan bernilai negatif saat masuk ke Kuadran II (milik Sinus) dan Kuadran III (milik Tangen)."
+  },
+  {
+    "id": "nKdavt5tFxqiKiNdknk5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Tanda akhir dari hasil perkalian $\\cos 150^\\circ \\times \\sin 300^\\circ$ dipastikan bernilai ...",
+    "clue": "Cek tanda $\\cos$ di Kuadran II, dan tanda $\\sin$ di Kuadran IV. Bagaimana hasil perkalian kedua tanda tersebut?",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Nol (0)",
+      "Tidak terdefinisi",
+      "Imajiner"
+    ],
+    "jawaban_benar": "Positif (+)",
+    "pembahasan": "Nilai $\\cos 150^\\circ$ berada di Kuadran II, sehingga bernilai NEGATIF (-).<br>Nilai $\\sin 300^\\circ$ berada di Kuadran IV, sehingga bernilai NEGATIF (-).<br>Perkalian antara (-) dikali (-) akan menghasilkan nilai POSITIF (+)."
+  },
+  {
+    "id": "rlj4zv22sUIr24oGse60",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Tanda (positif/negatif) dari hasil $\\tan 225^\\circ$ adalah ...",
+    "clue": "Cari tahu di mana letak $225^\\circ$, lalu ingat apakah fungsi Tangen bernilai positif atau negatif di kuadran tersebut.",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Nol (0)",
+      "Tidak Terdefinisi",
+      "Bergantung pada nilai r"
+    ],
+    "jawaban_benar": "Positif (+)",
+    "pembahasan": "Sudut $225^\\circ$ berada di Kuadran III (antara $180^\\circ$ dan $270^\\circ$). Sesuai aturan ALL-SIN-TAN-COS, Kuadran III adalah wilayah di mana fungsi Tangen dipastikan bernilai POSITIF (+)."
+  },
+  {
+    "id": "shW30HNRbJ1pON4tM6Ou",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Di kuadran manakah letak sudut $150^\\circ$ pada sistem koordinat Kartesius?",
+    "clue": "Perhatikan batasan derajat tiap kuadran. Sudut $150^\\circ$ berada di antara $90^\\circ$ dan $180^\\circ$.",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Sumbu X Negatif"
+    ],
+    "jawaban_benar": "Kuadran II",
+    "pembahasan": "Sistem koordinat membagi putaran menjadi 4 kuadran. Karena sudut $150^\\circ$ lebih besar dari $90^\\circ$ dan lebih kecil dari $180^\\circ$, maka sudut ini terletak di Kuadran II."
+  },
+  {
+    "id": "tC71qECymvzDQOdnuAsD",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Garis bersudut $270^\\circ$ yang terletak tepat di sumbu Y negatif merupakan sudut kuadranal yang menjadi batas pemisah antara wilayah ...",
+    "clue": "Rotasi $270^\\circ$ adalah titik akhir dari satu kuadran dan titik awal dari kuadran berikutnya sebelum mencapai satu putaran penuh ($360^\\circ$).",
+    "opsi": [
+      "Kuadran I dan II",
+      "Kuadran II dan III",
+      "Kuadran III dan IV",
+      "Kuadran IV dan I",
+      "Sumbu X positif dan negatif"
+    ],
+    "jawaban_benar": "Kuadran III dan IV",
+    "pembahasan": "Kuadran III berakhir tepat di sudut $270^\\circ$. Setelah melewati garis vertikal ke bawah ($270^\\circ$) ini, rentang sudut akan memasuki wilayah Kuadran IV hingga putaran penuh di $360^\\circ$. Jadi, garis ini memisahkan Kuadran III dan IV."
+  },
+  {
+    "id": "Tv5Xp7gwyPwkgXtIlBV7",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Fungsi trigonometri apa saja yang secara mutlak bernilai positif jika suatu sudut berada di Kuadran IV?",
+    "clue": "Ingat aturan ALL - SIN - TAN - COS. Kuadran IV adalah wilayah milik fungsi apa?",
+    "opsi": [
+      "Hanya Tangen",
+      "Sinus dan Cosecan",
+      "Tangen dan Cotangen",
+      "Cosinus dan Secan",
+      "Semua fungsi bernilai positif"
+    ],
+    "jawaban_benar": "Cosinus dan Secan",
+    "pembahasan": "Berdasarkan aturan ALL-SIN-TAN-COS, Kuadran IV (rentang $270^\\circ - 360^\\circ$) adalah wilayah di mana fungsi Cosinus bernilai positif. Kebalikan dari fungsi Cosinus, yaitu Secan, juga secara otomatis bernilai positif."
+  },
+  {
+    "id": "8KTsu9iDbjqh2mDtAdjN",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Fungsi trigonometri utama manakah yang bernilai sama-sama negatif secara bersamaan saat suatu sudut masuk ke dalam Kuadran III?",
+    "clue": "Di Kuadran III, hanya Tangen yang berkuasa (positif). Siapa yang dikalahkan (bernilai negatif) di sana?",
+    "opsi": [
+      "Sinus dan Tangen",
+      "Cosinus dan Tangen",
+      "Sinus dan Cosinus",
+      "Semua bernilai negatif",
+      "Semua bernilai positif"
+    ],
+    "jawaban_benar": "Sinus dan Cosinus",
+    "pembahasan": "Di rentang Kuadran III ($180^\\circ - 270^\\circ$), hak khusus untuk bernilai positif hanya dimiliki oleh fungsi Tangen (dan kebalikannya, Cotangen). Oleh karena itu, fungsi Sinus dan Cosinus secara otomatis akan bernilai negatif jika memasuki kuadran ini."
+  },
+  {
+    "id": "JR1TZdQyWLxzkJpF22Ms",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Berdasarkan prinsip trigonometri dasar, fungsi manakah yang bernilai mutlak POSITIF jika sudutnya berada di Kuadran II?",
+    "clue": "Gunakan jembatan keledai ALL - SIN - TAN - COS secara berurutan untuk Kuadran I, II, III, dan IV.",
+    "opsi": [
+      "Hanya Sinus",
+      "Hanya Cosinus",
+      "Hanya Tangen",
+      "Sinus dan Cosinus",
+      "Semua bernilai positif"
+    ],
+    "jawaban_benar": "Hanya Sinus",
+    "pembahasan": "Aturan ALL-SIN-TAN-COS menetapkan bahwa di Kuadran II (rentang $90^\\circ - 180^\\circ$), hanya fungsi Sinus (beserta kebalikannya yaitu Cosecan) yang memiliki nilai positif."
+  },
+  {
+    "id": "Mfa7sP58O1Besh7ccUWU",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Sudut $250^\\circ$ terletak pada kuadran ke berapa dalam sistem koordinat Kartesius?",
+    "clue": "Ingat batasan setiap kuadran: Kuadran I ($0^\\circ-90^\\circ$), Kuadran II ($90^\\circ-180^\\circ$), Kuadran III ($180^\\circ-270^\\circ$), dan Kuadran IV ($270^\\circ-360^\\circ$).",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Antara Kuadran III dan IV"
+    ],
+    "jawaban_benar": "Kuadran III",
+    "pembahasan": "Sudut $250^\\circ$ lebih besar dari $180^\\circ$ tetapi lebih kecil dari $270^\\circ$. Oleh karena itu, sudut ini secara mutlak berada di wilayah Kuadran III."
+  },
+  {
+    "id": "Ph6wBhEZqQulslk6wVLg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Jika diketahui bahwa nilai $\\sin \\alpha > 0$ (bernilai positif) dan nilai $\\cos \\alpha < 0$ (bernilai negatif), maka sudut $\\alpha$ dipastikan berada pada rentang ...",
+    "clue": "Lakukan seleksi. Di kuadran mana saja Sinus bernilai positif? Dari kuadran-kuadran terpilih itu, manakah yang Cosinusnya bernilai negatif?",
+    "opsi": [
+      "Kuadran I",
+      "Kuadran II",
+      "Kuadran III",
+      "Kuadran IV",
+      "Sumbu X"
+    ],
+    "jawaban_benar": "Kuadran II",
+    "pembahasan": "Kondisi pertama: $\\sin \\alpha > 0$ (positif) terjadi di Kuadran I dan II.<br>Kondisi kedua: $\\cos \\alpha < 0$ (negatif) terjadi di Kuadran II dan III.<br>Irisan penyelesaian dari kedua kondisi tersebut secara bersamaan hanyalah Kuadran II."
+  },
+  {
+    "id": "WaU0qPi5DwxHgajgU9uk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Sudut $180^\\circ$ sering disebut sebagai sudut kuadranal (sudut pembatas) yang terletak tepat di sumbu mendatar. Secara konseptual pemetaan, sudut datar ini menjadi dinding pembatas antara wilayah ...",
+    "clue": "Kuadran mana yang berakhir di titik 180 derajat, dan kuadran mana yang dimulai persis setelah melewati 180 derajat?",
+    "opsi": [
+      "Kuadran I dan II",
+      "Kuadran II dan III",
+      "Kuadran III dan IV",
+      "Kuadran IV dan I",
+      "Sumbu Y positif dan negatif"
+    ],
+    "jawaban_benar": "Kuadran II dan III",
+    "pembahasan": "Kuadran II mencakup rotasi dari $90^\\circ$ hingga berakhir di $180^\\circ$. Sementara itu, Kuadran III memulai rentangnya persis mulai dari $>180^\\circ$ menuju $270^\\circ$. Oleh karena itu, garis bersudut lurus $180^\\circ$ (berada di Sumbu X negatif) ini memisahkan wilayah Kuadran II (di bagian atas) dan Kuadran III (di bagian bawah)."
+  },
+  {
+    "id": "XmV55BxADBdYhVti9KCR",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Pernyataan yang benar mengenai nilai dari $\\cos 315^\\circ$ adalah ...",
+    "clue": "Cari tahu dulu letak kuadran untuk sudut $315^\\circ$. Setelah itu ingat siapa 'penguasa' (yang bernilai positif) di kuadran tersebut.",
+    "opsi": [
+      "Bernilai positif karena berada di Kuadran III",
+      "Bernilai positif karena berada di Kuadran IV",
+      "Bernilai negatif karena berada di Kuadran III",
+      "Bernilai negatif karena berada di Kuadran IV",
+      "Bernilai nol"
+    ],
+    "jawaban_benar": "Bernilai positif karena berada di Kuadran IV",
+    "pembahasan": "Sudut $315^\\circ$ terletak di Kuadran IV (antara $270^\\circ$ dan $360^\\circ$). Berdasarkan aturan ALL-SIN-TAN-COS, Kuadran IV adalah wilayah di mana fungsi Cosinus selalu bernilai positif."
+  },
+  {
+    "id": "bLmuEoB1uwSI30wp9A7k",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Tanda akhir dari hasil hitung perkalian $\\sin 200^\\circ \\times \\cos 100^\\circ$ dipastikan akan bernilai ...",
+    "clue": "Cari tanda untuk masing-masing suku. Ingat aturan dasar aritmatika: Bilangan negatif jika dikalikan dengan bilangan negatif, hasilnya akan menjadi apa?",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Nol (0)",
+      "Bergantung nilai desimal pastinya",
+      "Tidak terdefinisi"
+    ],
+    "jawaban_benar": "Positif (+)",
+    "pembahasan": "$\\sin 200^\\circ$ ada di Kuadran III, maka nilainya NEGATIF (-).<br>$\\cos 100^\\circ$ ada di Kuadran II, maka nilainya juga NEGATIF (-).<br>Perkalian bilangan negatif dengan bilangan negatif secara matematis akan menghasilkan bilangan berwujud POSITIF (+)."
+  },
+  {
+    "id": "eUJXghh9LfKIj6N58O25",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Tanda (positif/negatif) dari hasil $\\tan 120^\\circ$ adalah ...",
+    "clue": "Di Kuadran II, yang bernilai positif hanyalah fungsi Sinus. Apa yang terjadi pada fungsi Tangen dan Cosinus di sana?",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Tidak terdefinisi",
+      "Sama dengan $\\tan 45^\\circ$",
+      "Tidak memiliki tanda"
+    ],
+    "jawaban_benar": "Negatif (-)",
+    "pembahasan": "Sudut $120^\\circ$ berada di wilayah Kuadran II. Pada Kuadran II, hanya fungsi Sinus yang berhak bernilai positif, sehingga nilai fungsi Tangen pasti menghasilkan angka bernilai negatif (-)."
+  },
+  {
+    "id": "qdrnt8vBqA9L",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah fungsi rasio membagi dua nilai trigonometri yaitu $f(x) = \\frac{\\cos x}{\\tan x}$. Jika dimasukkan sudut $x = 300^\\circ$, maka tanda dari hasil fungsi tersebut adalah ...",
+    "clue": "Tentukan kuadran untuk sudut 300 derajat. Kemudian, cek tanda dari nilai cosinus dan tangen di sana sebelum saling dibagikan.",
+    "opsi": [
+      "Positif (+)",
+      "Negatif (-)",
+      "Tidak bisa ditentukan",
+      "Nol (0)",
+      "Tak hingga (Infinity)"
+    ],
+    "jawaban_benar": "Negatif (-)",
+    "pembahasan": "Sudut $300^\\circ$ berada di Kuadran IV.<br>Di Kuadran IV, nilai pembilang ($\\cos 300^\\circ$) adalah POSITIF (+).<br>Di Kuadran IV, nilai penyebut ($\\tan 300^\\circ$) adalah NEGATIF (-).<br>Hasil bagi antara bilangan positif (+) dibagi dengan bilangan negatif (-) akan memuntahkan nilai akhir NEGATIF (-)."
+  },
+  {
+    "id": "zrQjYgN3Awa8BpTDzMQG",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Aturan Kuadran",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pengenalan Sudut Dasar"
+    ],
+    "pertanyaan": "Jika nilai $\\tan \\theta$ diketahui bernilai positif, maka kemungkinan letak wilayah sudut $\\theta$ tersebut berada pada ...",
+    "clue": "Fungsi trigonometri selalu bernilai positif di dua kuadran yang berbeda. Jangan lupakan Kuadran I tempat di mana semuanya bernilai positif.",
+    "opsi": [
+      "Kuadran I atau II",
+      "Kuadran II atau III",
+      "Kuadran I atau III",
+      "Kuadran II atau IV",
+      "Kuadran III atau IV"
+    ],
+    "jawaban_benar": "Kuadran I atau III",
+    "pembahasan": "Berdasarkan aturan ALL-SIN-TAN-COS, fungsi Tangen menghasilkan nilai positif pada dua wilayah: Kuadran I (di mana SEMUA fungsi bernilai positif) dan Kuadran III (wilayah khusus di mana hanya Tangen yang positif)."
+  }
+]

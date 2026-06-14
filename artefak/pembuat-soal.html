@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albago Authoring Tool</title>
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      :root {
+        --primary: #4f46e5;
+        --bg-color: #f3f4f6;
+        --panel-bg: #ffffff;
+        --text-main: #1f2937;
+        --border: #d1d5db;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        height: 100vh;
+        box-sizing: border-box;
+        gap: 20px;
+      }
+      .panel {
+        background: var(--panel-bg);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .left-panel {
+        flex: 1;
+      }
+      .right-panel {
+        flex: 1;
+        border-left: 4px solid var(--primary);
+      }
+
+      h2 {
+        margin-top: 0;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-family: monospace;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .help-text {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .btn-tambah {
+        background-color: var(--primary);
+        color: white;
+        flex: 2;
+      }
+      .btn-tambah:hover {
+        background-color: #4338ca;
+      }
+      .btn-download {
+        background-color: #10b981;
+        color: white;
+        flex: 1;
+      }
+      .btn-download:hover {
+        background-color: #059669;
+      }
+
+      .preview-box {
+        padding: 20px;
+        border: 1px dashed var(--border);
+        border-radius: 8px;
+        background-color: #fafafa;
+        margin-bottom: 20px;
+        min-height: 150px;
+        font-size: 16px;
+      }
+      .status-bar {
+        background-color: #e0e7ff;
+        color: #3730a3;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .opsi-list {
+        list-style-type: upper-alpha;
+      }
+
+      .pembahasan-container {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 2px dashed #cbd5e1;
+        display: none;
+      }
+      .pembahasan-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #059669;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel left-panel">
+      <h2>Input Soal Baru</h2>
+
+      <div class="form-group" style="display: flex; gap: 10px">
+        <div style="flex: 1">
+          <label>Materi Utama</label>
+          <input
+            type="text"
+            id="materi_utama"
+            placeholder="Logaritma"
+            onkeyup="updatePreview()"
+            autofocus
+          />
+        </div>
+        <div style="flex: 1">
+          <label>Sub Materi</label>
+          <input
+            type="text"
+            id="sub_materi"
+            placeholder="Definisi Logaritma"
+            onkeyup="updatePreview()"
+          />
+        </div>
+      </div>
+      <div class="form-group" style="display: flex; gap: 10px">
+        <div style="flex: 2">
+          <label>Konsep Prasyarat</label>
+          <input
+            type="text"
+            id="konsep_prasyarat"
+            placeholder="Sifat Eksponen, Aljabar Dasar"
+            onkeyup="updatePreview()"
+          />
+          <div class="help-text">
+            Pisahkan dengan koma jika lebih dari satu.
+          </div>
+        </div>
+        <div style="flex: 1">
+          <label>Tingkat Kesulitan Awal (1-5)</label>
+          <input
+            type="number"
+            id="tingkat_kesulitan"
+            value="2"
+            min="1"
+            max="5"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Pertanyaan (Dukung MathJax)</label>
+        <textarea
+          id="pertanyaan"
+          placeholder="Nilai dari $$\log_2 16$$ adalah..."
+          onkeyup="updatePreview()"
+        ></textarea>
+        <div class="help-text">
+          Gunakan "\$\$...$$" untuk rumus tengah atau "\$...\$" untuk rumus
+          sebaris.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Pilihan Jawaban</label>
+        <textarea
+          id="pilihan_jawaban"
+          placeholder="2&#10;3&#10;4&#10;8"
+          onkeyup="updatePreview()"
+        ></textarea>
+        <div class="help-text">
+          Tekan ENTER untuk memisahkan setiap opsi jawaban.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Jawaban Benar (Kunci)</label>
+        <input type="text" id="jawaban_benar" placeholder="4" />
+      </div>
+
+      <div class="form-group">
+        <label>Pembahasan</label>
+        <textarea
+          id="pembahasan"
+          placeholder="Diketahui bahwa $$16 = 2^4$$, maka...&#10;(1) Langkah pertama...&#10;(2) Langkah kedua..."
+          onkeyup="updatePreview()"
+          style="min-height: 100px"
+        ></textarea>
+        <div class="help-text">
+          Tekan ENTER untuk membuat baris baru agar pernyataan mudah dibaca.
+          Mendukung format MathJax.
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn-tambah" onclick="tambahKeAntrean()">
+          + Simpan ke Antrean Bank Soal
+        </button>
+        <button class="btn-download" onclick="downloadJSON()">
+          Unduh JSON
+        </button>
+      </div>
+    </div>
+
+    <div class="panel right-panel">
+      <h2>Live Preview & Status</h2>
+
+      <div class="status-bar">
+        Total Soal di Antrean: <span id="counter">0</span> soal
+      </div>
+
+      <h3 style="margin-top: 20px">Tampilan Soal:</h3>
+      <div class="preview-box" id="preview-container">
+        <div
+          id="prev-meta"
+          style="color: gray; font-size: 12px; margin-bottom: 10px"
+        >
+          [ID: Auto-Generated | Materi: -]
+        </div>
+        <div id="prev-tanya" style="margin-bottom: 15px">
+          Mulai mengetik untuk melihat *preview*...
+        </div>
+        <ol class="opsi-list" id="prev-opsi"></ol>
+
+        <div class="pembahasan-container" id="prev-bahas-container">
+          <div class="pembahasan-title">Kunci & Pembahasan:</div>
+          <div id="prev-bahas-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let antreanSoal = [];
+
+      function updatePreview() {
+        const materi = document.getElementById("materi_utama").value || "-";
+        const sub = document.getElementById("sub_materi").value || "-";
+        const tanya = document.getElementById("pertanyaan").value;
+        const opsiRaw = document.getElementById("pilihan_jawaban").value;
+        const bahasRaw = document.getElementById("pembahasan").value;
+
+        // Meta (ID diset Auto-Generated di preview) & Pertanyaan
+        document.getElementById("prev-meta").innerText =
+          `[ID: Auto-Generated | Materi: ${materi} > ${sub}]`;
+        document.getElementById("prev-tanya").innerHTML = tanya.replace(
+          /\n/g,
+          "<br>",
+        );
+
+        // Opsi
+        const opsiArray = opsiRaw
+          .split("\n")
+          .filter((item) => item.trim() !== "");
+        const opsiList = document.getElementById("prev-opsi");
+        opsiList.innerHTML = "";
+        opsiArray.forEach((opt) => {
+          const li = document.createElement("li");
+          li.innerText = opt;
+          opsiList.appendChild(li);
+        });
+
+        // Pembahasan
+        const bahasContainer = document.getElementById("prev-bahas-container");
+        const bahasContent = document.getElementById("prev-bahas-content");
+
+        if (bahasRaw.trim() !== "") {
+          bahasContainer.style.display = "block";
+          bahasContent.innerHTML = bahasRaw.replace(/\n/g, "<br>");
+        } else {
+          bahasContainer.style.display = "none";
+        }
+
+        // Render ulang MathJax
+        if (window.MathJax) {
+          MathJax.typesetPromise([
+            document.getElementById("preview-container"),
+          ]).catch(function (err) {
+            console.log(err.message);
+          });
+        }
+      }
+
+      function tambahKeAntrean() {
+        const materi = document.getElementById("materi_utama").value.trim();
+        const sub = document.getElementById("sub_materi").value.trim();
+
+        // AUTO-GENERATE ID BERBASIS TIMESTAMP
+        // Mengambil 3 huruf pertama dari materi utama. Jika kosong, default ke "QST"
+        const prefix =
+          materi.length >= 3 ? materi.substring(0, 3).toUpperCase() : "QST";
+        const id = `${prefix}-${Date.now()}`;
+
+        const konsepRaw = document.getElementById("konsep_prasyarat").value;
+        const konsepArray = konsepRaw
+          .split(",")
+          .map((item) => item.trim())
+          .filter((item) => item !== "");
+
+        const kesulitan = Number(
+          document.getElementById("tingkat_kesulitan").value,
+        );
+        // Ubah \n menjadi <br> agar siap dirender HTML
+        const tanyaRaw = document.getElementById("pertanyaan").value.trim();
+        const tanya = tanyaRaw.replace(/\n/g, "<br>");
+
+        const opsiRaw = document.getElementById("pilihan_jawaban").value;
+        const opsiArray = opsiRaw
+          .split("\n")
+          .map((item) => item.trim())
+          .filter((item) => item !== "");
+
+        const jawaban = document.getElementById("jawaban_benar").value.trim();
+
+        // Lakukan hal yang sama untuk pembahasan
+        const pembahasanRaw = document
+          .getElementById("pembahasan")
+          .value.trim();
+        const pembahasan = pembahasanRaw.replace(/\n/g, "<br>");
+
+        // Validasi: Pertanyaan dan Jawaban tetap wajib
+        if (!tanya || !jawaban) {
+          alert("Pertanyaan dan Jawaban Benar wajib diisi!");
+          return;
+        }
+
+        const dataSoalBaru = {
+          id_soal: id, // ID yang digenerate masuk ke sini
+          materi_utama: materi,
+          sub_materi: sub,
+          konsep_prasyarat: konsepArray,
+          tingkat_kesulitan_awal: kesulitan,
+          pertanyaan: tanya,
+          pilihan_jawaban: opsiArray,
+          jawaban_benar: jawaban,
+          pembahasan: pembahasan,
+          total_dijawab: 0,
+          total_benar: 0,
+        };
+
+        antreanSoal.push(dataSoalBaru);
+        document.getElementById("counter").innerText = antreanSoal.length;
+
+        // Kosongkan form input yang berubah per soal
+        document.getElementById("pertanyaan").value = "";
+        document.getElementById("pilihan_jawaban").value = "";
+        document.getElementById("jawaban_benar").value = "";
+        document.getElementById("pembahasan").value = "";
+
+        // Fokuskan kembali ke input pertanyaan agar bisa langsung ngetik soal baru
+        document.getElementById("pertanyaan").focus();
+        updatePreview();
+      }
+
+      function downloadJSON() {
+        if (antreanSoal.length === 0) {
+          alert("Antrean kosong. Tambahkan minimal 1 soal dulu.");
+          return;
+        }
+
+        const dataStr = JSON.stringify(antreanSoal, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "bank_soal.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>

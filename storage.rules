@@ -1,0 +1,15 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /koreksi_uh/{fileName} {
+      // Siswa hanya bisa membaca file PDF miliknya sendiri (nama file diawali dengan NIS mereka)
+      allow read: if request.auth != null && (
+        request.auth.token.email == 'admin@albago.id' ||
+        fileName.startsWith(request.auth.token.email.replace('@albago.id', '') + '_')
+      );
+      
+      // Hanya admin yang boleh mengunggah (menulis) atau menghapus berkas PDF koreksi
+      allow write: if request.auth != null && request.auth.token.email == 'admin@albago.id';
+    }
+  }
+}

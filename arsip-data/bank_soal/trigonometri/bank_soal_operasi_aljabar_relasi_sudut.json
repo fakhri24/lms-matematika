@@ -1,0 +1,216 @@
+[
+  {
+    "id": "0WxEi5cEkpeosAUwtP5M",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sifat Sudut Negatif"
+    ],
+    "pertanyaan": "Hasil dari operasi $\\sin(-x) + \\sin(180^\\circ - x) + \\sin(360^\\circ - x)$ adalah ...",
+    "clue": "Sederhanakan setiap sukunya satu per satu. Ingat sifat $\\sin(-x) = -\\sin x$, lalu perhatikan tanda hasil relasi di Kuadran II dan Kuadran IV.",
+    "opsi": [
+      "$\\sin x$",
+      "$-\\sin x$",
+      "$3 \\sin x$",
+      "$-3 \\sin x$",
+      "$0$"
+    ],
+    "jawaban_benar": "$-\\sin x$",
+    "pembahasan": "Sederhanakan setiap suku:<br>1. $\\sin(-x) = -\\sin x$<br>2. $\\sin(180^\\circ - x) = \\sin x$<br>3. $\\sin(360^\\circ - x) = -\\sin x$<br><br>Jumlahkan semuanya:<br>$(-\\sin x) + \\sin x + (-\\sin x) = -\\sin x$."
+  },
+  {
+    "id": "D9x6FeYXu0qqoqxV3yOC",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk ekuivalen dari $\\frac{\\sin(90^\\circ - \\alpha)}{\\cos(180^\\circ - \\alpha)}$ adalah ...",
+    "clue": "Pada pembilang, sudut $(90^\\circ - \\alpha)$ berada di Kuadran I dan akan mengubah $\\sin$ jadi $\\cos$. Pada penyebut, $(180^\\circ - \\alpha)$ ada di Kuadran II di mana nilai $\\cos$ adalah negatif.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan \\alpha$",
+      "$\\cot \\alpha$",
+      "$-\\tan \\alpha$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Sederhanakan pembilang:<br>$\\sin(90^\\circ - \\alpha) = \\cos \\alpha$<br><br>Sederhanakan penyebut:<br>$\\cos(180^\\circ - \\alpha) = -\\cos \\alpha$<br><br>Bentuk pecahan menjadi:<br>$\\frac{\\cos \\alpha}{-\\cos \\alpha} = -1$."
+  },
+  {
+    "id": "R3tSwAPsMlAHEpB12gJQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Identitas Trigonometri Dasar"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\cos^2(180^\\circ - A) + \\sin^2(180^\\circ - A)$ adalah ...",
+    "clue": "Jangan tertipu dengan bentuknya yang rumit. Karena sudut di dalam kurungnya sama yaitu $(180^\\circ - A)$, kamu bisa langsung membayangkan Identitas Pythagoras dasar $\\cos^2 x + \\sin^2 x$.",
+    "opsi": [
+      "$-1$",
+      "$0$",
+      "$1$",
+      "$\\cos 2A$",
+      "$\\sin 2A$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Ubah masing-masing relasi terlebih dahulu:<br>$\\cos(180^\\circ - A) = -\\cos A$<br>$\\sin(180^\\circ - A) = \\sin A$<br><br>Substitusikan kembali ke persamaan:<br>$(-\\cos A)^2 + (\\sin A)^2$<br>$= \\cos^2 A + \\sin^2 A$<br><br>Berdasarkan identitas dasar trigonometri, $\\sin^2 A + \\cos^2 A = 1$."
+  },
+  {
+    "id": "SSucD3nBXUcAvvfPqfYk",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk paling sederhana dari $\\sin(180^\\circ - \\alpha) + \\sin(180^\\circ + \\alpha)$ adalah ...",
+    "clue": "Relasi sebelah kiri ada di Kuadran II sehingga bernilai positif. Relasi sebelah kanan menyeberang ke Kuadran III sehingga bernilai negatif. Jumlahkan keduanya.",
+    "opsi": [
+      "$2 \\sin \\alpha$",
+      "$-2 \\sin \\alpha$",
+      "$0$",
+      "$1$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Ubah masing-masing bentuk menggunakan aturan relasi:<br>1. $\\sin(180^\\circ - \\alpha)$ berada di Kuadran II (sin positif) $\\implies \\sin \\alpha$<br>2. $\\sin(180^\\circ + \\alpha)$ berada di Kuadran III (sin negatif) $\\implies -\\sin \\alpha$<br><br>Jumlahkan keduanya:<br>$\\sin \\alpha + (-\\sin \\alpha) = 0$."
+  },
+  {
+    "id": "TlTPisODfn5RcnnMFXLg",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Nilai dari $\\frac{\\tan(270^\\circ + \\theta)}{\\cot(180^\\circ - \\theta)}$ ekuivalen dengan ...",
+    "clue": "Relasi poros $270^\\circ$ akan mengubah fungsi $\\tan$ menjadi $\\cot$. Pastikan kamu tidak lupa tanda negatif karena sudutnya jatuh di Kuadran IV.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan^2 \\theta$",
+      "$\\cot^2 \\theta$",
+      "$-\\cot^2 \\theta$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (Kuadran IV, vertikal jadi $\\cot$):<br>$\\tan(270^\\circ + \\theta) = -\\cot \\theta$<br><br>Sederhanakan penyebut (Kuadran II, horizontal tetap $\\cot$):<br>$\\cot(180^\\circ - \\theta) = -\\cot \\theta$<br><br>Bentuk pecahan menjadi:<br>$\\frac{-\\cot \\theta}{-\\cot \\theta} = 1$."
+  },
+  {
+    "id": "bZ0DZzGlM5H0h2xaXKtm",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Identitas Trigonometri Dasar"
+    ],
+    "pertanyaan": "Hasil penyederhanaan dari $\\tan(180^\\circ - p) \\cdot \\tan(90^\\circ - p)$ adalah ...",
+    "clue": "Relasi suku kedua menggunakan $90^\\circ$ sehingga fungsi berubah jadi $\\cot$. Ingat bahwa $\\tan p \\cdot \\cot p$ akan saling membatalkan menjadi $1$.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan^2 p$",
+      "$-\\tan^2 p$",
+      "$\\cot^2 p$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Ubah masing-masing bentuk:<br>$\\tan(180^\\circ - p) = -\\tan p$ (Kuadran II)<br>$\\tan(90^\\circ - p) = \\cot p$ (Kuadran I, ko-fungsi)<br><br>Kalikan keduanya:<br>$(-\\tan p) \\cdot (\\cot p)$<br>Ingat bahwa $\\cot p = \\frac{1}{\\tan p}$, sehingga:<br>$(-\\tan p) \\cdot \\frac{1}{\\tan p} = -1$."
+  },
+  {
+    "id": "dB0i1Ceyvdk5mGnMUzwj",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\cos(180^\\circ + x)}{\\sin(270^\\circ - x)}$ adalah ...",
+    "clue": "Pembilang dan penyebut akan berubah menjadi nilai fungsi yang identik (baik fungsi maupun tandanya). Dua nilai yang sama persis jika dibagikan hasilnya adalah 1.",
+    "opsi": [
+      "$\\tan x$",
+      "$\\cot x$",
+      "$-1$",
+      "$1$",
+      "$-\\tan x$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (Kuadran III, horizontal):<br>$\\cos(180^\\circ + x) = -\\cos x$<br><br>Sederhanakan penyebut (Kuadran III, vertikal):<br>$\\sin(270^\\circ - x) = -\\cos x$<br><br>Bagikan:<br>$\\frac{-\\cos x}{-\\cos x} = 1$."
+  },
+  {
+    "id": "mt9QAcf7bedkUoEUuBoe",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk $\\cos(360^\\circ - A) - \\sin(90^\\circ + A)$ setara dengan ...",
+    "clue": "Ubah satu per satu. Suku pertama ada di Kuadran IV (cos positif). Suku kedua di Kuadran II menggunakan vertikal (sehingga sin berubah jadi cos positif).",
+    "opsi": [
+      "$2 \\cos A$",
+      "$-2 \\cos A$",
+      "$2 \\sin A$",
+      "$0$",
+      "$-1$"
+    ],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Ubah suku pertama (Kuadran IV, horizontal):<br>$\\cos(360^\\circ - A) = \\cos A$<br><br>Ubah suku kedua (Kuadran II, vertikal):<br>$\\sin(90^\\circ + A) = \\cos A$<br><br>Kurangkan keduanya:<br>$\\cos A - \\cos A = 0$."
+  },
+  {
+    "id": "oCZsA50cF0tB2QR1MqL2",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{\\sin(90^\\circ - \\beta) \\cdot \\cos(270^\\circ + \\beta)}{\\sin(180^\\circ + \\beta)}$ adalah ...",
+    "clue": "Hati-hati dengan $\\cos(270^\\circ + \\beta)$ di Kuadran IV, fungsinya berubah tapi nilai aslinya tetap positif.",
+    "opsi": [
+      "$\\sin \\beta$",
+      "$-\\sin \\beta$",
+      "$\\cos \\beta$",
+      "$-\\cos \\beta$",
+      "$\\tan \\beta$"
+    ],
+    "jawaban_benar": "$-\\cos \\beta$",
+    "pembahasan": "Sederhanakan setiap relasi:<br>1. $\\sin(90^\\circ - \\beta) = \\cos \\beta$<br>2. $\\cos(270^\\circ + \\beta) = \\sin \\beta$<br>3. $\\sin(180^\\circ + \\beta) = -\\sin \\beta$<br><br>Substitusi ke bentuk pecahan:<br>$\\frac{\\cos \\beta \\cdot \\sin \\beta}{-\\sin \\beta}$<br><br>Karena $\\sin \\beta$ saling membagi, hasilnya adalah:<br>$-\\cos \\beta$."
+  },
+  {
+    "id": "vtmDa82lZNWcR02dxOwy",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Operasi Aljabar Relasi Sudut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sudut Berelasi (Horizontal)",
+      "Sudut Berelasi (Vertikal)",
+      "Teorema Pythagoras"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\sec(270^\\circ + x) \\cdot \\sin(180^\\circ + x)$ adalah ...",
+    "clue": "Poros $270^\\circ$ akan merubah fungsi $\\sec$ menjadi $\\csc$. Kuadran IV menampung nilai asli positif, jadikan $\\csc x$. Kemudian kalikan dengan hasil relasi suku sebelahnya.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan x$",
+      "$-\\tan x$",
+      "$\\cot x$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Ubah suku pertama (Kuadran IV, $\\sec$ positif, vertikal berubah jadi $\\csc$):<br>$\\sec(270^\\circ + x) = \\csc x = \\frac{1}{\\sin x}$<br><br>Ubah suku kedua (Kuadran III, horizontal):<br>$\\sin(180^\\circ + x) = -\\sin x$<br><br>Kalikan keduanya:<br>$\\frac{1}{\\sin x} \\cdot (-\\sin x) = -1$."
+  }
+]

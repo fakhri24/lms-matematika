@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "nama_siswa": "Lovely Adara",
+    "kelas": "X.MIPA-1",
+    "mata_pelajaran": "Matematika Lanjut (MTL)",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-06"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai dari tan 315° + cos 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa merelasikan $\\tan 315^\\circ = -\\tan 45^\\circ = -1$. Siswa merelasikan $\\cos 120^\\circ = -\\cos 60^\\circ = -\\frac{1}{2}$. Siswa menjumlahkan $-1 + (-\\frac{1}{2}) = -\\frac{3}{2}$ dan mencentang opsi A dengan tepat.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Mantap Adara! Konsep relasi dan eksekusi penjumlahan pecahan negatifnya sudah sangat tepat. Pertahankan ketelitian ini!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Manakah pernyataan yang BENAR terkait nilai dari sin 870°?",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa memecah periodisitas dengan benar: $\\sin(2 \\times 360^\\circ + 150^\\circ) = \\sin 150^\\circ$. Merelasikan $\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Siswa juga mengetahui bahwa $\\frac{1}{2} = \\cos 60^\\circ$. Siswa mencentang opsi C dan D dengan benar, namun tidak mencentang opsi A padahal langkah tersebut tertulis jelas di coretannya.",
+      "letak_kesalahan": [
+        "Kesalahan administratif kesalahan keteledoran administratif tidak mencentang opsi a, padahal di coretan kamu sudah menuliskannya dengan benar, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Wah, proses perhitungannya sudah sempurna lho. Hati-hati ya, kalau soal Pilihan Ganda Kompleks, pastikan semua pernyataan yang terbukti benar di coretan ikut dicentang!"
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Pernyataan operasi tan 300° x cos 150° x sin(-210°)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menghitung $\\tan 300^\\circ = -\\sqrt{3}$ dan $\\cos 150^\\circ = -\\frac{1}{2}\\sqrt{3}$ dengan benar. Pada $\\sin(-210^\\circ)$, siswa menuliskan $-\\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$, padahal seharusnya $-\\sin(180^\\circ + 30^\\circ) = -(-\\sin 30^\\circ) = \\frac{1}{2}$. Kesalahan tanda ini menyebabkan hasil akhir perkalian menjadi $-\\frac{3}{4}$, sehingga pengisian tabel Benar/Salah menyesuaikan dengan hasil yang salah tersebut.",
+      "letak_kesalahan": [
+        "Kesalahan relasi tanda kuadran pada $-\\sin(180^\\circ + 30^\\circ) = -\\sin 30^\\circ$, seharusnya $-\\sin(180^\\circ + 30^\\circ) = -(-\\sin 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Dua fungsi awal sudah dieksekusi dengan keren! Jangan lupa, $\\sin$ di kuadran III itu negatif, jadi ketemu minus di depannya harusnya jadi positif ya. Tetap semangat!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Nilai dari (tan 300° - cos 210°) / sin 120°",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menghitung $\\tan 300^\\circ = -\\sqrt{3}$, $\\cos 210^\\circ = -\\frac{\\sqrt{3}}{2}$, dan $\\sin 120^\\circ = \\frac{\\sqrt{3}}{2}$. Substitusi dan operasi aljabar dieksekusi sempurna menjadi -1.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Keren banget! Aljabar bentuk akarnya dikerjakan dengan sangat rapi dan presisi. Good job!"
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi sec 300° + cot 225° - csc 210°",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengeksekusi relasi vertikal dan identitas kebalikan dengan baik. Namun, siswa melakukan kesalahan ganda dalam menentukan tanda kuadran: menuliskan $\\sec 300^\\circ = -\\sec 60^\\circ = -2$ (Kuadran IV seharusnya positif) dan $\\cot 225^\\circ = -\\tan 45^\\circ = -1$ (Kuadran III seharusnya positif). Fungsi ketiga $\\csc 210^\\circ = -\\csc 30^\\circ = -2$ dihitung benar. Karena perhitungan akhir mengikuti hasil awalnya yang keliru (-1), siswa mencentang opsi B dan C (konsisten dengan coretan yang salah).",
+      "letak_kesalahan": [
+        "Kesalahan penentuan tanda kuadran pada $\\sec(360^\\circ - 60^\\circ) = -\\sec 60^\\circ$, seharusnya positif karena di Kuadran IV.",
+        "Kesalahan penentuan tanda kuadran pada $\\cot(270^\\circ - 45^\\circ) = -\\tan 45^\\circ$, seharusnya positif karena di Kuadran III."
+      ],
+      "apresiasi_dan_catatan": "Terima kasih sudah menggunakan relasi vertikal dan konsep kebalikan (sec, csc, cot) dengan sangat terstruktur! Sayang sekali kamu sedikit terjebak di penentuan tanda plus-minus kuadrannya. Ingat-ingat lagi jembatan keledai penanda kuadrannya ya!"
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan operasi bentuk trigonometri sudut berelasi",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa merelasikan $\\cos(270^\\circ - A) = -\\sin A$, $\\tan(180^\\circ + A) = \\tan A$, dan $\\sin(270^\\circ + A) = -\\cos A$. Semua opsi dijodohkan dengan tepat.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Luar biasa! Pemahaman kamu tentang perubahan fungsi pada relasi sudut vertikal dan horizontal sudah seratus persen matang."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan nilai tan(-600°)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa merelasikan $\\tan(-600^\\circ) = -\\tan 240^\\circ = -\\sqrt{3}$. Siswa juga menghitung nilai $\\tan 120^\\circ = -\\sqrt{3}$. Namun, siswa keliru mengevaluasi logika pernyataan 2 dengan menganggap $\\tan 600^\\circ = \\tan 120^\\circ$, padahal $\\tan 600^\\circ = \\sqrt{3}$.",
+      "letak_kesalahan": [
+        "Kesalahan evaluasi logika pada pernyataan 2, seharusnya bernilai Salah (S) karena $\\tan 600^\\circ = \\sqrt{3}$, berbeda dengan $\\tan 120^\\circ = -\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Konsep pengerjaan sudut negatif dan sudut lebih dari 360 derajat kamu sudah benar banget! Cuma kurang teliti aja membedakan $\\tan 600^\\circ$ dengan $\\tan(-600^\\circ)$ di soal."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan operasi aljabar relasi sudut",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyederhanakan fungsi menjadi $-\\cos A$, $-\\cos A$, dan $\\cos A$. Substitusi menjadi $(-\\cos A)(-\\cos A) / \\cos A = \\cos A$ dieksekusi sempurna. Siswa mencentang A dan D, namun lupa mencentang C padahal pembuktiannya tertulis di coretan.",
+      "letak_kesalahan": [
+        "Kesalahan administratif kesalahan keteledoran administratif tidak mencentang opsi c, padahal langkah $\\cos(360^\\circ-a) = \\cos a$ tertulis jelas di jawabanmu, seharusnya disesuaikan dengan hasil coretan."
+      ],
+      "apresiasi_dan_catatan": "Proses penyederhanaan aljabar relasinya sangat mulus dan benar. Sedikit lagi menuju sempurna, ingat untuk cek semua kotak centangnya ya!"
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian cos 150° x sin 300° (relasi vertikal)",
+      "skor": 10,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menerapkan relasi vertikal secara presisi: $\\cos 150^\\circ = -\\sin 60^\\circ$ dan $\\sin 300^\\circ = -\\cos 30^\\circ$. Hasil akhir perkalian dihitung tepat $\\frac{3}{4}$. Siswa berhasil mengidentifikasi dan mencentang semua pernyataan yang benar (A, B, dan C) dengan sangat baik.",
+      "letak_kesalahan": [],
+      "apresiasi_dan_catatan": "Super! Transisi fungsi menggunakan sumbu Y (relasi vertikal) sudah kamu kuasai dengan sangat sempurna. Semua opsi yang tepat berhasil kamu pilih!"
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Tahapan hitung operasi pembagian",
+      "skor": 6,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menghitung nilai awal $\\cos(-240^\\circ) = -\\frac{1}{2}$, $\\sin(570^\\circ) = -\\frac{1}{2}$, dan $\\tan(-135^\\circ) = 1$ dengan benar. Namun saat substitusi, siswa mengubah tanda kurang menjadi kali dan salah memasukkan tanda dari komponen sebelumnya, lalu mencentang opsi yang berlawanan dengan hasil perhitungannya sendiri.",
+      "letak_kesalahan": [
+        "Kesalahan substitusi nilai akhir, seharusnya $\\frac{-\\frac{1}{2} - (-\\frac{1}{2})}{1}$ tetapi kamu mengubah operasi menjadi perkalian $\\frac{\\frac{1}{2} \\cdot (-\\frac{1}{2})}{-1}$.",
+        "Kesalahan kontradiksi pengisian, mencentang B pada pernyataan pertama padahal di coretan kamu menuliskan hasil yang benar yaitu $-\\frac{1}{2}$, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Sayang sekali, padahal usaha pencarian nilai awal dari ketiga fungsinya sudah benar lho. Jangan terburu-buru saat menggabungkannya di tahap akhir ya, pelan-pelan saja pasti bisa!"
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Soal Opsional (Bonus) Substitusi variabel p",
+      "skor": 4,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa merelasikan $\\cos(216^\\circ) = -p$ dan $\\cos(324^\\circ) = p$ dengan tepat. Substitusi berjalan lancar hingga mendapatkan -2. Namun di baris terakhir, nilai tersebut tiba-tiba diubah menjadi 2 tanpa alasan aljabar yang jelas.",
+      "letak_kesalahan": [
+        "Kesalahan keteledoran aritmetika di langkah paling akhir, seharusnya $\\frac{-p}{\\frac{p}{2}} = -2$, namun tiba-tiba diubah menjadi 2 secara sepihak."
+      ],
+      "apresiasi_dan_catatan": "Wah, padahal konsep penjabaran relasi aljabar dengan variabel p kamu sudah sangat pro! Lain kali hati-hati ya, jangan biarkan tanda minusnya hilang begitu saja di garis finish."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 88,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 4,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "88 + 4",
+    "persentase_kelulusan": 88,
+    "predikat": "Baik"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Adara! Selamat ya, kamu dapat nilai wajib 88 dan bonus soal opsional 4 dengan total akhir 88 + 4 (Predikat Baik). Secara keseluruhan, penguasaan konsep relasi sudut, termasuk relasi vertikal dan identitas kebalikan, sudah terlihat sangat terstruktur dan rapi. Namun, poinmu cukup banyak bocor karena keteledoran dalam menentukan tanda plus-minus di tiap kuadran, serta kurang hati-hati saat mensubstitusi nilai ke perhitungan akhir. Terus berlatih agar ketelitianmu semakin tajam ya, kamu pasti bisa dapat nilai sempurna!"
+}

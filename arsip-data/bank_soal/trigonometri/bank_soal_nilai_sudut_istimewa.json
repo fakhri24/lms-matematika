@@ -1,0 +1,505 @@
+[
+  {
+    "id": "h6KbqJ2hypvoktOlV6iK",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari operasi pecahan $\\frac{1 - \\tan^2 30^\\circ}{1 + \\tan^2 30^\\circ}$ adalah ...",
+    "clue": "Kuadratkan dulu nilai $\\tan 30^\\circ$. Setelah itu kurangi dengan 1 untuk pembilang, dan tambahkan dengan 1 untuk penyebut. Terakhir, bagi kedua pecahannya.",
+    "opsi": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{\\sqrt{3}}{2}$",
+      "$\\frac{3}{4}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\tan 30^\\circ = \\frac{1}{\\sqrt{3}} \\implies \\tan^2 30^\\circ = \\frac{1}{3}$.<br><br><b>Bagian Pembilang:</b><br>$1 - \\frac{1}{3} = \\frac{3}{3} - \\frac{1}{3} = \\frac{2}{3}$<br><br><b>Bagian Penyebut:</b><br>$1 + \\frac{1}{3} = \\frac{3}{3} + \\frac{1}{3} = \\frac{4}{3}$<br><br><b>Gabungkan:</b><br>$\\frac{2/3}{4/3} = \\frac{2}{3} \\times \\frac{3}{4} = \\frac{2}{4} = \\frac{1}{2}$."
+  },
+  {
+    "id": "7ebD8y5I7NfepNeiaTvR",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Bentuk paling sederhana dari $\\frac{\\sin 60^\\circ + \\cos 30^\\circ}{\\tan 60^\\circ}$ adalah ...",
+    "clue": "Jumlahkan dulu bagian pembilang (atas). Karena penyebutnya sama-sama 2, penjumlahan akarnya jadi gampang. Setelah itu, baru dibagi dengan nilai di bagian penyebut (bawah).",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$1$",
+      "$2$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "<b>Bagian atas (pembilang):</b><br>$\\sin 60^\\circ + \\cos 30^\\circ = \\frac{\\sqrt{3}}{2} + \\frac{\\sqrt{3}}{2} = \\frac{2\\sqrt{3}}{2} = \\sqrt{3}$<br><br><b>Bagian bawah (penyebut):</b><br>$\\tan 60^\\circ = \\sqrt{3}$<br><br><b>Gabungkan:</b><br>$\\frac{\\sqrt{3}}{\\sqrt{3}} = 1$."
+  },
+  {
+    "id": "dc8M0AZG6viqbIlpO8U1",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Hasil pembagian dari $\\frac{\\sin 60^\\circ}{\\cos 60^\\circ}$ adalah ...",
+    "clue": "Tuliskan pecahannya lalu bagi. Perhatikan bahwa membagi pecahan sama dengan mengalikan dengan kebalikannya. (Kamu juga bisa ingat bahwa $\\sin/\\cos$ sama dengan $\\tan$).",
+    "opsi": [
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$1$",
+      "$\\sqrt{3}$",
+      "$3$"
+    ],
+    "jawaban_benar": "$\\sqrt{3}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$<br>$\\cos 60^\\circ = \\frac{1}{2}$<br><br>$\\frac{\\frac{\\sqrt{3}}{2}}{\\frac{1}{2}} = \\frac{\\sqrt{3}}{2} \\times \\frac{2}{1} = \\sqrt{3}$.<br><br>(Ini juga membuktikan identitas $\\tan 60^\\circ = \\sqrt{3}$)."
+  },
+  {
+    "id": "div5o8lrkKbOA7NUtUiF",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Rasio Trigonometri Dasar"],
+    "pertanyaan": "Nilai eksak dari $\\csc 45^\\circ$ adalah ...",
+    "clue": "Kosekan (csc) adalah kebalikan dari sinus. Cari nilai $\\sin 45^\\circ$, balik posisinya, lalu rasionalkan pecahannya.",
+    "opsi": [
+      "$\\frac{1}{2}\\sqrt{2}$",
+      "$\\sqrt{2}$",
+      "$2\\sqrt{2}$",
+      "$1$",
+      "$2$"
+    ],
+    "jawaban_benar": "$\\sqrt{2}$",
+    "pembahasan": "$\\sin 45^\\circ = \\frac{1}{2}\\sqrt{2} = \\frac{\\sqrt{2}}{2}$.<br><br>$\\csc 45^\\circ$ adalah kebalikan dari $\\sin 45^\\circ$, maka:<br>$\\csc 45^\\circ = \\frac{2}{\\sqrt{2}}$<br><br>Rasionalkan:<br>$\\frac{2}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{2\\sqrt{2}}{2} = \\sqrt{2}$."
+  },
+  {
+    "id": "g19iQlscm78HjfWzOUm2",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\cos 0^\\circ - \\sin 30^\\circ$ adalah ...",
+    "clue": "Hati-hati, nilai $\\cos 0^\\circ$ bukanlah nol. Cek kembali tabel sudut istimewa Anda.",
+    "opsi": ["$-1$", "$-\\frac{1}{2}$", "$0$", "$\\frac{1}{2}$", "$1$"],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\cos 0^\\circ = 1$<br>$\\sin 30^\\circ = \\frac{1}{2}$<br><br>Maka, $1 - \\frac{1}{2} = \\frac{1}{2}$."
+  },
+  {
+    "id": "dWOdpS7x9MKlNrI5OLaa",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\tan 60^\\circ - \\tan 30^\\circ$ adalah ...",
+    "clue": "Ingat $\\tan 60^\\circ$ punya bentuk utuh $\\sqrt{3}$, sedangkan $\\tan 30^\\circ$ berbentuk pecahannya. Lakukan operasi pengurangan pecahan biasa (menyamakan penyebut).",
+    "opsi": [
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{2}{3}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$\\frac{4}{3}\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\frac{2}{3}\\sqrt{3}$",
+    "pembahasan": "$\\tan 60^\\circ = \\sqrt{3}$<br>$\\tan 30^\\circ = \\frac{1}{3}\\sqrt{3}$<br><br>Maka, $\\tan 60^\\circ - \\tan 30^\\circ = \\sqrt{3} - \\frac{1}{3}\\sqrt{3}$<br>Samakan penyebut (ingat $\\sqrt{3} = \\frac{3}{3}\\sqrt{3}$):<br>$= \\frac{3}{3}\\sqrt{3} - \\frac{1}{3}\\sqrt{3} = \\frac{2}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "lkuKSA7jcRJqvvohWJPo",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Rasio Trigonometri Dasar", "Operasi Pecahan"],
+    "pertanyaan": "Diketahui secan ($\\sec$) adalah kebalikan dari cosinus, dan cosecan ($\\csc$) adalah kebalikan dari sinus. Nilai dari $\\sec 60^\\circ + \\csc 30^\\circ$ adalah ...",
+    "clue": "Tulis dulu nilai asli $\\cos 60^\\circ$ dan $\\sin 30^\\circ$. Kebalikan pecahan gampangnya tinggal diputar posisi pembilang dan penyebutnya.",
+    "opsi": ["$1$", "$2$", "$3$", "$4$", "$5$"],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$\\sec 60^\\circ = \\frac{1}{\\cos 60^\\circ} = \\frac{1}{1/2} = 2$<br>$\\csc 30^\\circ = \\frac{1}{\\sin 30^\\circ} = \\frac{1}{1/2} = 2$<br><br>Maka, $2 + 2 = 4$."
+  },
+  {
+    "id": "INsUzUEhphSHNB9HyT66",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Rasio Trigonometri Dasar",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Diberikan segitiga siku-siku $ABC$ yang siku-siku di $B$. Jika besar $\\angle A = 30^\\circ$ dan panjang sisi miring $AC = 10$ cm, maka panjang sisi $BC$ adalah ...",
+    "clue": "Sudut $A$ menghadap sisi $BC$, artinya $BC$ adalah sisi depan. Hubungkan sisi depan dan sisi miring ($AC$) menggunakan rasio sinus.",
+    "opsi": [
+      "$5$ cm",
+      "$5\\sqrt{2}$ cm",
+      "$5\\sqrt{3}$ cm",
+      "$10$ cm",
+      "$10\\sqrt{3}$ cm"
+    ],
+    "jawaban_benar": "$5$ cm",
+    "pembahasan": "Sisi $BC$ adalah sisi depan untuk sudut $A$, dan sisi $AC$ adalah sisi miring.<br>Gunakan rasio sinus: $\\sin A = \\frac{\\text{depan}}{\\text{miring}}$<br><br>$\\sin 30^\\circ = \\frac{BC}{AC}$<br>$\\frac{1}{2} = \\frac{BC}{10}$<br><br>Kalikan silang:<br>$2 \\cdot BC = 10 \\implies BC = 5$ cm."
+  },
+  {
+    "id": "NrD1D24wrob42tX7QVSr",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $\\frac{\\sin 60^\\circ}{\\cos 30^\\circ} \\times \\tan 60^\\circ$ adalah ...",
+    "clue": "Perhatikan bahwa $\\sin 60^\\circ$ dan $\\cos 30^\\circ$ punya nilai yang persis sama. Jika dibagi, hasilnya pasti 1. Sisanya tinggal menyelesaikan yang di ujung.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$3$"
+    ],
+    "jawaban_benar": "$\\sqrt{3}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\tan 60^\\circ = \\sqrt{3}$<br><br>Substitusi ke persamaan:<br>$\\frac{\\frac{1}{2}\\sqrt{3}}{\\frac{1}{2}\\sqrt{3}} \\times \\sqrt{3}$<br><br>Karena pembilang dan penyebut pada pecahan pertama bernilai sama, hasilnya adalah $1$.<br>$= 1 \\times \\sqrt{3} = \\sqrt{3}$."
+  },
+  {
+    "id": "3EoC2yoly2Mb2Oqond3L",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Teorema Pythagoras", "Visualisasi Spasial dan Arah"],
+    "pertanyaan": "<svg viewBox='0 -15 220 160' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><polygon points='40,120 180,120 180,40' fill='none' stroke='black' stroke-width='2'/><polygon points='40,120 180,40 70,10' fill='none' stroke='black' stroke-width='2'/><text x='25' y='135' font-family='Arial' font-size='14'>A</text><text x='185' y='135' font-family='Arial' font-size='14'>B</text><text x='190' y='45' font-family='Arial' font-size='14'>C</text><text x='60' y='5' font-family='Arial' font-size='14'>D</text><polyline points='170,120 170,110 180,110' fill='none' stroke='black' stroke-width='1.5'/><polyline points='67,22 79,25 82,13' fill='none' stroke='black' stroke-width='1.5'/><path d='M 75 120 A 35 35 0 0 0 70 102' fill='none' stroke='black' stroke-width='1.2'/><text x='78' y='116' font-family='Arial' font-size='11'>30°</text><path d='M 79 97 A 45 45 0 0 0 52 76' fill='none' stroke='black' stroke-width='1.2'/><text x='56' y='92' font-family='Arial' font-size='11'>45°</text></svg><br><br>Diberikan dua buah segitiga siku-siku yang saling berhimpit pada sisi $AC$ seperti gambar di atas. Siku-siku terletak di titik $B$ dan titik $D$. Jika panjang $AB = 6$ cm, $\\angle BAC = 30^\\circ$, dan $\\angle CAD = 45^\\circ$, maka panjang sisi $CD$ adalah ...",
+    "clue": "Selesaikan berantai. Gunakan $\\cos 30^\\circ$ pada segitiga $ABC$ untuk mencari panjang sisi miring $AC$. Setelah $AC$ didapat, gunakan $\\sin 45^\\circ$ pada segitiga $ACD$ karena $CD$ adalah sisi depan dari sudut $45^\\circ$.",
+    "opsi": [
+      "$4\\sqrt{2}$ cm",
+      "$2\\sqrt{6}$ cm",
+      "$4\\sqrt{3}$ cm",
+      "$4\\sqrt{6}$ cm",
+      "$8\\sqrt{3}$ cm"
+    ],
+    "jawaban_benar": "$2\\sqrt{6}$ cm",
+    "pembahasan": "<b>Langkah 1: Tinjau $\\triangle ABC$</b><br>Kita punya sisi samping $AB = 6$ dan butuh sisi miring $AC$.<br>$\\cos 30^\\circ = \\frac{AB}{AC} \\implies \\frac{\\sqrt{3}}{2} = \\frac{6}{AC}$<br>$\\sqrt{3} \\cdot AC = 12 \\implies AC = \\frac{12}{\\sqrt{3}} = 4\\sqrt{3}$ cm.<br><br><b>Langkah 2: Tinjau $\\triangle ACD$</b><br>Siku-siku di $D$, sehingga $AC$ bertindak sebagai sisi miring. Kita mencari sisi depan $CD$.<br>$\\sin 45^\\circ = \\frac{CD}{AC} \\implies \\frac{\\sqrt{2}}{2} = \\frac{CD}{4\\sqrt{3}}$<br>Kalikan silang: $2 \\cdot CD = 4\\sqrt{3} \\cdot \\sqrt{2} = 4\\sqrt{6}$<br>$CD = \\frac{4\\sqrt{6}}{2} = 2\\sqrt{6}$ cm."
+  },
+  {
+    "id": "5K6RgHnwSKyFKxpzaYTQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\sin^2 30^\\circ + \\sin^2 60^\\circ$ adalah ...",
+    "clue": "Temukan nilai masing-masing sinusnya dulu, kuadratkan keduanya satu per satu, kemudian jumlahkan pecahannya.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{3}{4}$",
+      "$1$",
+      "$\\frac{5}{4}$",
+      "$\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$\\sin 30^\\circ = \\frac{1}{2} \\implies (\\sin 30^\\circ)^2 = \\frac{1}{4}$<br>$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2} \\implies (\\sin 60^\\circ)^2 = \\frac{3}{4}$<br><br>Jumlahkan: $\\frac{1}{4} + \\frac{3}{4} = \\frac{4}{4} = 1$."
+  },
+  {
+    "id": "DJSdsbz3gK18hqS8H6ov",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Bangun Datar", "Pemodelan Matematika"],
+    "pertanyaan": "Sebuah segi enam beraturan berada pas di dalam sebuah lingkaran yang memiliki jari-jari $8$ cm (semua titik sudut segi enam menyentuh garis keliling lingkaran). Luas segi enam beraturan tersebut adalah ...",
+    "clue": "Segi enam beraturan dapat dibagi menjadi $6$ buah segitiga yang sama besar dengan menarik garis dari pusat ke setiap titik sudut. Sudut pusat tiap segitiga adalah $360^\\circ / 6 = 60^\\circ$. Gunakan rumus luas segitiga dengan trigonometri: $L = \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\theta$.",
+    "opsi": [
+      "$48\\sqrt{3}$ cm$^2$",
+      "$96\\sqrt{3}$ cm$^2$",
+      "$192\\sqrt{3}$ cm$^2$",
+      "$96$ cm$^2$",
+      "$144\\sqrt{3}$ cm$^2$"
+    ],
+    "jawaban_benar": "$96\\sqrt{3}$ cm$^2$",
+    "pembahasan": "Segi enam beraturan tersusun atas 6 segitiga sama kaki (yang pada akhirnya terbukti sama sisi) yang berpusat di tengah lingkaran.<br>Panjang kaki-kaki segitiga adalah jari-jari lingkaran $= 8$ cm.<br>Sudut apit di pusat lingkaran $= \\frac{360^\\circ}{6} = 60^\\circ$.<br><br>Luas satu segitiga:<br>$L_1 = \\frac{1}{2} \\cdot r \\cdot r \\cdot \\sin 60^\\circ$<br>$L_1 = \\frac{1}{2} \\cdot 8 \\cdot 8 \\cdot \\frac{\\sqrt{3}}{2} = 32 \\cdot \\frac{\\sqrt{3}}{2} = 16\\sqrt{3}$ cm$^2$.<br><br>Luas Total Segi Enam:<br>$L_{total} = 6 \\times L_1 = 6 \\times 16\\sqrt{3} = 96\\sqrt{3}$ cm$^2$."
+  },
+  {
+    "id": "EMzdfuxVWNEnSbxgSnQ7",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Jika $x = 30^\\circ$ dan $y = 60^\\circ$, berapakah nilai dari $\\frac{\\sin x \\cos y + \\cos x \\sin y}{\\tan x + \\tan y}$?",
+    "clue": "Selesaikan bagian pembilang (atas) dan penyebut (bawah) secara terpisah. Jangan menjumlahkan sudutnya, selesaikan dengan memasukkan nilai akar satu per satu. Pada penyebut, samakan penyebut pecahannya.",
+    "opsi": [
+      "$\\frac{\\sqrt{3}}{2}$",
+      "$\\frac{\\sqrt{3}}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{3}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{3}}{4}$",
+    "pembahasan": "<b>Bagian Pembilang:</b><br>$\\sin 30^\\circ \\cos 60^\\circ + \\cos 30^\\circ \\sin 60^\\circ$<br>$= (\\frac{1}{2} \\cdot \\frac{1}{2}) + (\\frac{\\sqrt{3}}{2} \\cdot \\frac{\\sqrt{3}}{2})$<br>$= \\frac{1}{4} + \\frac{3}{4} = \\frac{4}{4} = 1$<br><br><b>Bagian Penyebut:</b><br>$\\tan 30^\\circ + \\tan 60^\\circ = \\frac{1}{\\sqrt{3}} + \\sqrt{3}$<br>Samakan penyebut:<br>$= \\frac{1}{\\sqrt{3}} + \\frac{3}{\\sqrt{3}} = \\frac{4}{\\sqrt{3}}$<br><br><b>Gabungkan:</b><br>$\\frac{\\text{Pembilang}}{\\text{Penyebut}} = \\frac{1}{4/\\sqrt{3}} = \\frac{\\sqrt{3}}{4}$."
+  },
+  {
+    "id": "G1AtfC2AWYbCmI8VixOJ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $(\\sin 60^\\circ \\times \\cos 30^\\circ) + \\tan 45^\\circ$ adalah ...",
+    "clue": "Ingat bahwa $\\sin 60^\\circ$ dan $\\cos 30^\\circ$ memiliki nilai yang sama persis. Kalikan keduanya dulu, baru jumlahkan dengan nilai $\\tan 45^\\circ$.",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$1$",
+      "$\\frac{5}{4}$",
+      "$\\frac{3}{2}$",
+      "$\\frac{7}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{7}{4}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$<br>$\\tan 45^\\circ = 1$<br><br>Substitusi ke persamaan:<br>$(\\frac{1}{2}\\sqrt{3} \\times \\frac{1}{2}\\sqrt{3}) + 1$<br>$= (\\frac{1}{4} \\times 3) + 1$<br>$= \\frac{3}{4} + \\frac{4}{4} = \\frac{7}{4}$."
+  },
+  {
+    "id": "Q2ZrnspMNPglaaFRICz5",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Pemodelan Matematika",
+      "Sistem Persamaan Linear",
+      "Visualisasi Spasial dan Arah"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 150' width='100%' height='150' xmlns='http://www.w3.org/2000/svg'><line x1='10' y1='130' x2='290' y2='130' stroke='black' stroke-width='2'/><line x1='250' y1='30' x2='250' y2='130' stroke='black' stroke-width='4'/><line x1='50' y1='130' x2='250' y2='30' stroke='black' stroke-dasharray='4'/><line x1='150' y1='130' x2='250' y2='30' stroke='black' stroke-dasharray='4'/><text x='45' y='145' font-family='Arial' font-size='12'>P</text><text x='145' y='145' font-family='Arial' font-size='12'>Q</text><text x='95' y='145' font-family='Arial' font-size='12'>20 m</text><path d='M 70 130 A 20 20 0 0 0 65 120' fill='none' stroke='black'/><text x='75' y='125' font-family='Arial' font-size='10'>30°</text><path d='M 170 130 A 20 20 0 0 0 160 115' fill='none' stroke='black'/><text x='175' y='125' font-family='Arial' font-size='10'>60°</text></svg><br><br>Seorang insinyur mengukur tinggi sebuah menara dari titik $P$ dan mendapati sudut elevasinya $30^\\circ$. Ia kemudian berjalan lurus sejauh $20$ meter mendekati menara hingga tiba di titik $Q$. Dari titik $Q$, sudut elevasinya menjadi $60^\\circ$. Tinggi menara tersebut adalah ...",
+    "clue": "Misalkan tinggi menara adalah $h$ dan jarak dari titik $Q$ ke dasar menara adalah $x$. Gunakan $\\tan 60^\\circ$ untuk menyatakan $x$ dalam bentuk $h$. Kemudian gunakan $\\tan 30^\\circ$ pada segitiga besar (jarak $x + 20$) dan substitusikan nilai $x$ tadi.",
+    "opsi": [
+      "$10\\sqrt{3}$ m",
+      "$20\\sqrt{3}$ m",
+      "$10$ m",
+      "$30$ m",
+      "$15\\sqrt{3}$ m"
+    ],
+    "jawaban_benar": "$10\\sqrt{3}$ m",
+    "pembahasan": "Misalkan tinggi menara $= h$ dan jarak titik $Q$ ke menara $= x$.<br><br><b>Tinjau dari titik Q:</b><br>$\\tan 60^\\circ = \\frac{h}{x} \\implies \\sqrt{3} = \\frac{h}{x} \\implies x = \\frac{h}{\\sqrt{3}}$<br><br><b>Tinjau dari titik P (jarak ke menara = $x + 20$):</b><br>$\\tan 30^\\circ = \\frac{h}{x + 20} \\implies \\frac{1}{\\sqrt{3}} = \\frac{h}{x + 20}$<br>Lakukan perkalian silang: $x + 20 = h\\sqrt{3}$<br><br><b>Substitusi nilai $x$:</b><br>$\\frac{h}{\\sqrt{3}} + 20 = h\\sqrt{3}$<br>Kalikan semua ruas dengan $\\sqrt{3}$ untuk menghilangkan penyebut:<br>$h + 20\\sqrt{3} = 3h$<br>$2h = 20\\sqrt{3}$<br>$h = 10\\sqrt{3}$ m."
+  },
+  {
+    "id": "RWVJOUGlIQCIcdxGPzVq",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sistem Persamaan Linear", "Operasi Bentuk Akar"],
+    "pertanyaan": "Diketahui dua variabel $A$ dan $B$ memenuhi persamaan berikut:<br>$A \\sqrt{3} \\cdot \\cos 30^\\circ - B \\cdot \\tan 45^\\circ = 0$<br>$A \\cdot \\cos 0^\\circ + B \\cdot \\sin 30^\\circ = 7$<br><br>Berapakah nilai dari $A + B$?",
+    "clue": "Ubah nilai trigonometri menjadi angka. Perhatikan pada persamaan pertama, $\\sqrt{3}$ dikali dengan nilai $\\cos 30^\\circ$ akan menghasilkan pecahan tanpa akar. Gunakan metode substitusi atau eliminasi setelahnya.",
+    "opsi": ["$8$", "$10$", "$12$", "$14$", "$16$"],
+    "jawaban_benar": "$10$",
+    "pembahasan": "Langkah pertama, substitusikan nilai sudut istimewa:<br>$\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$<br>$\\tan 45^\\circ = 1$<br>$\\cos 0^\\circ = 1$<br>$\\sin 30^\\circ = \\frac{1}{2}$<br><br><b>Persamaan 1:</b><br>$A \\sqrt{3} \\cdot (\\frac{\\sqrt{3}}{2}) - B \\cdot (1) = 0$<br>$A (\\frac{3}{2}) - B = 0$<br>$B = \\frac{3}{2}A$<br><br><b>Persamaan 2:</b><br>$A \\cdot (1) + B \\cdot (\\frac{1}{2}) = 7$<br>$A + \\frac{1}{2}B = 7$<br><br><b>Substitusi Persamaan 1 ke Persamaan 2:</b><br>$A + \\frac{1}{2}(\\frac{3}{2}A) = 7$<br>$A + \\frac{3}{4}A = 7$<br>Samakan penyebut:<br>$\\frac{4}{4}A + \\frac{3}{4}A = 7$<br>$\\frac{7}{4}A = 7 \\implies A = 4$<br><br>Cari nilai $B$:<br>$B = \\frac{3}{2}(4) = 6$<br><br>Maka nilai $A + B = 4 + 6 = 10$."
+  },
+  {
+    "id": "RdUB82g83rbG4Z73wxsx",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $2 \\sin 30^\\circ \\cos 30^\\circ$ adalah ...",
+    "clue": "Kalikan ketiganya secara berurutan. Angka 2 bisa saling mencoret dengan penyebut 2 pada salah satu nilai pecahan.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$\\frac{1}{4}\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}\\sqrt{3}$",
+    "pembahasan": "$\\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$<br><br>Masukkan ke soal:<br>$2 \\times \\frac{1}{2} \\times \\frac{\\sqrt{3}}{2}$<br>$= 1 \\times \\frac{\\sqrt{3}}{2} = \\frac{1}{2}\\sqrt{3}$."
+  },
+  {
+    "id": "SFqkBvFQOn0yFsbadLxs",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Bangun Datar",
+      "Operasi Bentuk Akar",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Segitiga $KLM$ siku-siku di $L$. Jika besar $\\angle K = 45^\\circ$ dan panjang sisi siku-siku $KL = 7$ cm, maka panjang sisi miring $KM$ adalah ...",
+    "clue": "Sisi $KL$ berada di samping sudut $K$. Untuk mencari sisi miring $KM$, susun perbandingan $\\cos 45^\\circ$.",
+    "opsi": [
+      "$7$ cm",
+      "$\\frac{7}{2}\\sqrt{2}$ cm",
+      "$7\\sqrt{2}$ cm",
+      "$7\\sqrt{3}$ cm",
+      "$14$ cm"
+    ],
+    "jawaban_benar": "$7\\sqrt{2}$ cm",
+    "pembahasan": "Fokus pada $\\angle K = 45^\\circ$.<br>Sisi samping $= KL = 7$ cm.<br>Sisi miring $= KM$.<br><br>$\\cos 45^\\circ = \\frac{\\text{samping}}{\\text{miring}}$<br>$\\frac{\\sqrt{2}}{2} = \\frac{7}{KM}$<br><br>Kalikan silang:<br>$\\sqrt{2} \\cdot KM = 14 \\implies KM = \\frac{14}{\\sqrt{2}}$<br><br>Rasionalkan:<br>$KM = \\frac{14}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{14\\sqrt{2}}{2} = 7\\sqrt{2}$ cm."
+  },
+  {
+    "id": "TgZFNHX9i0uG4wroHdaZ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Pemodelan Matematika",
+      "Persamaan Linear Satu Variabel"
+    ],
+    "pertanyaan": "Sebuah tangga panjangnya $8$ meter disandarkan pada tembok. Sudut yang dibentuk oleh tangga dengan tanah horizontal adalah $60^\\circ$. Jarak ujung bawah tangga ke tembok adalah ...",
+    "clue": "Gambarkan segitiga siku-sikunya. Panjang tangga adalah sisi miring, dan jarak ujung tangga ke tembok adalah sisi samping dari sudut tanah. Susun rasio cosinus.",
+    "opsi": [
+      "$4$ meter",
+      "$4\\sqrt{2}$ meter",
+      "$4\\sqrt{3}$ meter",
+      "$8\\sqrt{3}$ meter",
+      "$16$ meter"
+    ],
+    "jawaban_benar": "$4$ meter",
+    "pembahasan": "Tangga sebagai sisi miring $= 8$ m.<br>Sudut elevasi $= 60^\\circ$.<br>Jarak bawah tangga ke tembok adalah sisi samping.<br><br>$\\cos 60^\\circ = \\frac{\\text{samping}}{\\text{miring}}$<br>$\\frac{1}{2} = \\frac{\\text{samping}}{8}$<br><br>Kalikan silang:<br>$2 \\times \\text{samping} = 8 \\implies \\text{samping} = 4$ meter."
+  },
+  {
+    "id": "VCQVN7huR4EPtnvIpivC",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\sin 30^\\circ \\times \\cos 60^\\circ$ adalah ...",
+    "clue": "Ingat kembali tabel sudut istimewa. Nilai dari sinus $30^\\circ$ dan cosinus $60^\\circ$ adalah pecahan yang persis sama. Kalikan keduanya.",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{4}$",
+      "$1$",
+      "$\\frac{1}{4}\\sqrt{3}$",
+      "$\\frac{3}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{4}$",
+    "pembahasan": "$\\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka, $\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$."
+  },
+  {
+    "id": "XtaGebzINTSpDT1FzCI8",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Rasio Trigonometri Dasar"],
+    "pertanyaan": "Berapakah nilai dari $\\cot 60^\\circ$?",
+    "clue": "Kotangen (cot) adalah kebalikan dari tangen. Nilai $\\tan 60^\\circ$ adalah $\\sqrt{3}$. Jadikan $\\frac{1}{\\sqrt{3}}$ lalu rasionalkan.",
+    "opsi": [
+      "$\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{2}{3}\\sqrt{3}$",
+      "$1$",
+      "$3$"
+    ],
+    "jawaban_benar": "$\\frac{1}{3}\\sqrt{3}$",
+    "pembahasan": "$\\tan 60^\\circ = \\sqrt{3}$.<br><br>$\\cot 60^\\circ = \\frac{1}{\\tan 60^\\circ} = \\frac{1}{\\sqrt{3}}$.<br><br>Rasionalkan bentuk akar:<br>$\\frac{1}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3} = \\frac{1}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "VPIJT6ngCnSCjpaPLNr6",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\sin^2 45^\\circ + \\cos^2 30^\\circ$ adalah ...",
+    "clue": "Cari nilai $\\sin 45^\\circ$ dan $\\cos 30^\\circ$ pada tabel sudut istimewa terlebih dahulu. Setelah itu, kuadratkan masing-masing nilainya (ingat cara menguadratkan bentuk akar) sebelum dijumlahkan.",
+    "opsi": [
+      "$\\frac{3}{4}$",
+      "$1$",
+      "$\\frac{5}{4}$",
+      "$\\frac{3}{2}$",
+      "$\\frac{7}{4}$"
+    ],
+    "jawaban_benar": "$\\frac{5}{4}$",
+    "pembahasan": "Langkah 1: Tentukan nilai masing-masing sudut.<br>$\\sin 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br>$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3}$<br><br>Langkah 2: Kuadratkan masing-masing nilai.<br>$(\\frac{1}{2}\\sqrt{2})^2 = \\frac{1}{4} \\times 2 = \\frac{2}{4} = \\frac{1}{2}$<br>$(\\frac{1}{2}\\sqrt{3})^2 = \\frac{1}{4} \\times 3 = \\frac{3}{4}$<br><br>Langkah 3: Jumlahkan kedua hasilnya dengan menyamakan penyebut.<br>$\\frac{1}{2} + \\frac{3}{4} = \\frac{2}{4} + \\frac{3}{4} = \\frac{5}{4}$."
+  },
+  {
+    "id": "YrBjBG17q5qFepNz52sY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Rasio Trigonometri Dasar"],
+    "pertanyaan": "Bentuk rasional dari nilai $\\sec 30^\\circ$ adalah ...",
+    "clue": "Sekan (sec) adalah kebalikan dari cosinus. Tuliskan nilai $\\cos 30^\\circ$ lalu putar posisi pembilang dan penyebutnya. Ingat untuk merasionalkan penyebut jika bentuk akar berada di bawah.",
+    "opsi": [
+      "$\\sqrt{3}$",
+      "$\\frac{1}{3}\\sqrt{3}$",
+      "$\\frac{2}{3}\\sqrt{3}$",
+      "$2\\sqrt{3}$",
+      "$2$"
+    ],
+    "jawaban_benar": "$\\frac{2}{3}\\sqrt{3}$",
+    "pembahasan": "$\\cos 30^\\circ = \\frac{1}{2}\\sqrt{3} = \\frac{\\sqrt{3}}{2}$.<br><br>Karena $\\sec 30^\\circ$ adalah kebalikan dari $\\cos 30^\\circ$, maka:<br>$\\sec 30^\\circ = \\frac{2}{\\sqrt{3}}$<br><br>Rasionalkan dengan mengalikan $\\frac{\\sqrt{3}}{\\sqrt{3}}$:<br>$\\frac{2}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{2\\sqrt{3}}{3} = \\frac{2}{3}\\sqrt{3}$."
+  },
+  {
+    "id": "kxdE8z11AJBSrFPLeRBE",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sistem Persamaan Linear Tiga Variabel (SPLTV)",
+      "Sistem Persamaan Linear"
+    ],
+    "pertanyaan": "Diberikan sebuah sistem persamaan linear dalam variabel $x$ dan $y$ sebagai berikut:<br>$x \\sin 30^\\circ + y \\cos 60^\\circ = 5$<br>$x \\tan 45^\\circ - y \\sin 90^\\circ = 2$<br><br>Nilai dari $x \\times y$ adalah ...",
+    "clue": "Jangan panik melihat fungsi trigonometrinya. Ubah semua nilai $\\sin, \\cos$, dan $\\tan$ tersebut menjadi angka (sudut istimewa). Persamaan itu akan berubah menjadi SPLDV biasa dari kelas VIII.",
+    "opsi": ["$10$", "$12$", "$18$", "$24$", "$32$"],
+    "jawaban_benar": "$24$",
+    "pembahasan": "Ubah trigonometri menjadi nilai eksaknya:<br>$\\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 60^\\circ = \\frac{1}{2}$<br>$\\tan 45^\\circ = 1$<br>$\\sin 90^\\circ = 1$<br><br>Susun ulang sistem persamaannya:<br>1) $\\frac{1}{2}x + \\frac{1}{2}y = 5 \\implies$ kalikan 2 $\\implies x + y = 10$<br>2) $1x - 1y = 2 \\implies x - y = 2$<br><br>Eliminasi (jumlahkan kedua persamaan):<br>$(x + y) + (x - y) = 10 + 2$<br>$2x = 12 \\implies x = 6$<br><br>Substitusi ke $x + y = 10$:<br>$6 + y = 10 \\implies y = 4$<br><br>Maka, $x \\times y = 6 \\times 4 = 24$."
+  },
+  {
+    "id": "lwCdy4UhrsHzEr0wYYfv",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Hasil dari $\\sin^2 60^\\circ - \\cos^2 60^\\circ$ adalah ...",
+    "clue": "Jangan keliru memakai identitas Pythagoras karena ini operasi pengurangan (-). Cari manual nilai $\\sin 60^\\circ$ lalu kuadratkan, baru kurangi dengan kuadrat $\\cos 60^\\circ$.",
+    "opsi": [
+      "$0$",
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{3}{4}$",
+      "$1$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\sin 60^\\circ = \\frac{1}{2}\\sqrt{3} \\implies \\sin^2 60^\\circ = (\\frac{1}{2}\\sqrt{3})^2 = \\frac{3}{4}$<br>$\\cos 60^\\circ = \\frac{1}{2} \\implies \\cos^2 60^\\circ = (\\frac{1}{2})^2 = \\frac{1}{4}$<br><br>Maka, $\\frac{3}{4} - \\frac{1}{4} = \\frac{2}{4} = \\frac{1}{2}$."
+  },
+  {
+    "id": "pbjkCHvBhl0f6bHuOqe7",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\cos^2 45^\\circ + \\sin^2 45^\\circ + \\tan^2 45^\\circ$ adalah ...",
+    "clue": "Kamu bisa menghitungnya satu-satu dengan menguadratkan nilai sudut istimewanya, atau jika kamu sudah tahu rumus identitas Pythagoras, dua suku pertama bisa langsung kamu tebak nilainya.",
+    "opsi": ["$1$", "$\\frac{3}{2}$", "$2$", "$\\frac{5}{2}$", "$3$"],
+    "jawaban_benar": "$2$",
+    "pembahasan": "$\\cos 45^\\circ = \\frac{1}{\\sqrt{2}} \\implies \\cos^2 45^\\circ = \\frac{1}{2}$<br>$\\sin 45^\\circ = \\frac{1}{\\sqrt{2}} \\implies \\sin^2 45^\\circ = \\frac{1}{2}$<br>$\\tan 45^\\circ = 1 \\implies \\tan^2 45^\\circ = 1$<br><br>Jumlahkan:<br>$\\frac{1}{2} + \\frac{1}{2} + 1 = 1 + 1 = 2$.<br>(Bisa juga dengan langsung memakai identitas: $\\cos^2 45^\\circ + \\sin^2 45^\\circ = 1$, sehingga $1 + 1^2 = 2$)."
+  },
+  {
+    "id": "qG9NusiVKS2CCASpLkdY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hasil penjumlahan dari $\\tan 45^\\circ$ dan $\\sin 90^\\circ$ adalah ...",
+    "clue": "Kedua sudut ini menghasilkan nilai bilangan bulat yang sangat sederhana. Tinggal dijumlahkan saja.",
+    "opsi": ["$0$", "$1$", "$\\sqrt{2}$", "$2$", "$\\sqrt{3}$"],
+    "jawaban_benar": "$2$",
+    "pembahasan": "$\\tan 45^\\circ = 1$<br>$\\sin 90^\\circ = 1$<br><br>Maka, $1 + 1 = 2$."
+  },
+  {
+    "id": "oZUZTyYf6h0KKoDudvDQ",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\sin 30^\\circ + \\cos 60^\\circ$ adalah ...",
+    "clue": "Tuliskan nilai $\\sin 30^\\circ$ dan $\\cos 60^\\circ$. Dua-duanya adalah sudut istimewa dengan nilai pecahan yang kembar.",
+    "opsi": ["$0$", "$\\frac{1}{2}$", "$1$", "$\\sqrt{2}$", "$\\sqrt{3}$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$\\sin 30^\\circ = \\frac{1}{2}$<br>$\\cos 60^\\circ = \\frac{1}{2}$<br><br>Maka, $\\sin 30^\\circ + \\cos 60^\\circ = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "sJfhf4sTa1QIAvIlBX0T",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Operasi Pecahan"],
+    "pertanyaan": "Hasil dari $\\sin 45^\\circ \\times \\cos 45^\\circ$ adalah ...",
+    "clue": "Perkalian bilangan akar yang sama, bentuk akarnya akan terlepas. Hati-hati jangan lupakan angka $\\frac{1}{2}$ di depannya.",
+    "opsi": ["$\\frac{1}{4}$", "$\\frac{1}{2}$", "$1$", "$\\sqrt{2}$", "$2$"],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "$\\sin 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br>$\\cos 45^\\circ = \\frac{1}{2}\\sqrt{2}$<br><br>$\\sin 45^\\circ \\times \\cos 45^\\circ = (\\frac{1}{2}\\sqrt{2}) \\times (\\frac{1}{2}\\sqrt{2})$<br>$\\sin 45^\\circ \\times \\cos 45^\\circ = \\frac{1}{4} \\times 2 = \\frac{2}{4} = \\frac{1}{2}$."
+  },
+  {
+    "id": "x8etZHdgSbN8gos2ZiQ3",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Nilai Sudut Istimewa",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Berapakah hasil dari $\\cos 0^\\circ + \\sin 90^\\circ - \\tan 45^\\circ$?",
+    "clue": "Ketahui nilai tiap fungsi satu per satu, karena kebetulan semua di sini memiliki angka hasil yang sama cantiknya.",
+    "opsi": ["$-1$", "$0$", "$1$", "$2$", "$3$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Nilai dari masing-masing sudut:<br>$\\cos 0^\\circ = 1$<br>$\\sin 90^\\circ = 1$<br>$\\tan 45^\\circ = 1$<br><br>Substitusikan ke persamaan:<br>$1 + 1 - 1 = 1$."
+  }
+]

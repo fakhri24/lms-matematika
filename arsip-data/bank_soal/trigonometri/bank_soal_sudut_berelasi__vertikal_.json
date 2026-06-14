@@ -1,0 +1,207 @@
+[
+  {
+    "id": "5t2MsNqGHmnRR57TSGzz",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Bentuk sederhana dari $\\frac{\\cos(90^\\circ + \\alpha)}{\\sin(180^\\circ - \\alpha)}$ adalah ...",
+    "clue": "Pembilang menggunakan relasi poros vertikal ($90^\\circ$) sehingga fungsi $\\cos$ akan berubah menjadi $\\sin$. Jangan lupa cek tanda positif/negatif di Kuadran II untuk setiap suku.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan \\alpha$",
+      "$-\\tan \\alpha$",
+      "$\\cot \\alpha$"
+    ],
+    "jawaban_benar": "$-1$",
+    "pembahasan": "Sederhanakan pembilang (relasi vertikal, Kuadran II, cos negatif):<br>$\\cos(90^\\circ + \\alpha) = -\\sin \\alpha$<br><br>Sederhanakan penyebut (relasi horizontal, Kuadran II, sin positif):<br>$\\sin(180^\\circ - \\alpha) = \\sin \\alpha$<br><br>Bentuk pecahan menjadi:<br>$\\frac{-\\sin \\alpha}{\\sin \\alpha} = -1$."
+  },
+  {
+    "id": "BVckJmLZGs40hsR2z2pu",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Nilai dari $\\sin 150^\\circ + \\cos 120^\\circ$ jika diselesaikan dengan konsep sudut berelasi (vertikal) adalah ...",
+    "clue": "Gunakan acuan relasi $90^\\circ$. Ingat, poros vertikal akan menukar fungsinya ($\\sin$ menjadi $\\cos$, dan $\\cos$ menjadi $\\sin$). Pastikan tandanya mengikuti kuadran asal soal.",
+    "opsi": [
+      "$-1$",
+      "$0$",
+      "$1$",
+      "$\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Cari nilai dengan relasi poros vertikal ($90^\\circ$):<br>$\\sin 150^\\circ = \\sin(90^\\circ + 60^\\circ) = +\\cos 60^\\circ = \\frac{1}{2}$<br>$\\cos 120^\\circ = \\cos(90^\\circ + 30^\\circ) = -\\sin 30^\\circ = -\\frac{1}{2}$<br><br>Jumlahkan kedua hasil:<br>$\\frac{1}{2} + (-\\frac{1}{2}) = 0$."
+  },
+  {
+    "id": "E2jhzrheXkhNjpFIO8La",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Trigonometri Dasar"
+    ],
+    "pertanyaan": "Jika $\\sin(90^\\circ - x) = \\frac{1}{2}$ dan $x$ adalah sudut lancip, maka nilai $x$ adalah ...",
+    "clue": "Ubah ruas kiri terlebih dahulu menggunakan relasi poros vertikal Kuadran I. Apa fungsi yang ekuivalen dengan $\\sin(90^\\circ - x)$?",
+    "opsi": [
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$90^\\circ$",
+      "$120^\\circ$"
+    ],
+    "jawaban_benar": "$60^\\circ$",
+    "pembahasan": "Sederhanakan bentuk ruas kiri menggunakan sudut berelasi (vertikal):<br>$\\sin(90^\\circ - x) = \\cos x$<br><br>Maka persamaan menjadi:<br>$\\cos x = \\frac{1}{2}$<br><br>Sudut lancip (Kuadran I) yang nilai cosinusnya $\\frac{1}{2}$ adalah $x = 60^\\circ$."
+  },
+  {
+    "id": "NyZiEroeULJLRpWY1CaU",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Jika dihitung menggunakan relasi poros vertikal, nilai dari $\\sin 120^\\circ$ sama dengan nilai dari ...",
+    "clue": "Relasi poros vertikal menggunakan $90^\\circ$ atau $270^\\circ$. Karena $120^\\circ$ dekat dengan $90^\\circ$, pakai $(90^\\circ + 30^\\circ)$. Ingat, poros ini menukar fungsi sinus menjadi cosinus.",
+    "opsi": [
+      "$\\cos 30^\\circ$",
+      "$-\\cos 30^\\circ$",
+      "$\\sin 30^\\circ$",
+      "$-\\sin 30^\\circ$",
+      "$\\cos 60^\\circ$"
+    ],
+    "jawaban_benar": "$\\cos 30^\\circ$",
+    "pembahasan": "Sudut $120^\\circ$ di Kuadran II (sinus bernilai positif).<br>Ubah menjadi relasi poros vertikal:<br>$\\sin 120^\\circ = \\sin(90^\\circ + 30^\\circ)$<br><br>Karena menggunakan $90^\\circ$, fungsi $\\sin$ berubah menjadi $\\cos$.<br>$\\sin(90^\\circ + 30^\\circ) = +\\cos 30^\\circ$."
+  },
+  {
+    "id": "WbjIUkJSgzy3xHdisb2V",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Bentuk yang ekuivalen dengan $\\cos(90^\\circ + x)$ adalah ...",
+    "clue": "Poros vertikal ($90^\\circ$) selalu mengubah $\\cos$ jadi $\\sin$. Tapi periksa lagi letak $(90^\\circ + x)$, apakah $\\cos$ asli bernilai positif atau negatif di situ?",
+    "opsi": [
+      "$\\sin x$",
+      "$-\\sin x$",
+      "$\\cos x$",
+      "$-\\cos x$",
+      "$-\\tan x$"
+    ],
+    "jawaban_benar": "$-\\sin x$",
+    "pembahasan": "Sudut $(90^\\circ + x)$ berada di Kuadran II. Pada Kuadran II, nilai asal $\\cos$ adalah negatif (-).<br><br>Karena menggunakan poros vertikal ($90^\\circ$), maka fungsi $\\cos$ berubah menjadi $\\sin$.<br><br>Sehingga, $\\cos(90^\\circ + x) = -\\sin x$."
+  },
+  {
+    "id": "X6UEExcOalfSTeKAFJ7x",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Bentuk yang ekuivalen dengan $\\sin(270^\\circ + \\beta)$ adalah ...",
+    "clue": "Pola relasi vertikal akan menukar $\\sin$ jadi $\\cos$. Kuadran dari $(270^\\circ + \\beta)$ adalah Kuadran IV, nilai sinus di sana bernilai negatif.",
+    "opsi": [
+      "$\\cos \\beta$",
+      "$-\\cos \\beta$",
+      "$\\sin \\beta$",
+      "$-\\sin \\beta$",
+      "$\\csc \\beta$"
+    ],
+    "jawaban_benar": "$-\\cos \\beta$",
+    "pembahasan": "Sudut $(270^\\circ + \\beta)$ berada di Kuadran IV. Pada Kuadran IV, nilai asal $\\sin$ adalah negatif (-).<br><br>Karena menggunakan poros vertikal ($270^\\circ$), fungsi $\\sin$ berubah menjadi $\\cos$.<br><br>Sehingga, $\\sin(270^\\circ + \\beta) = -\\cos \\beta$."
+  },
+  {
+    "id": "cvG9mq0Sa3C4zQanm9dE",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Nilai Sudut Istimewa"
+    ],
+    "pertanyaan": "Nilai dari $\\cos 240^\\circ$ dapat dicari dengan menggunakan relasi $(270^\\circ - 30^\\circ)$. Hasil perhitungannya adalah ...",
+    "clue": "Patokan $270^\\circ$ menukar $\\cos$ jadi $\\sin$. Tanda asalnya harus dilihat dari Kuadran III (di mana $\\cos$ bernilai negatif).",
+    "opsi": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}\\sqrt{3}$",
+      "$-\\frac{1}{2}\\sqrt{3}$",
+      "$-\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$-\\frac{1}{2}$",
+    "pembahasan": "Sudut $240^\\circ$ ada di Kuadran III (cosinus bernilai negatif).<br><br>Gunakan relasi poros vertikal:<br>$\\cos 240^\\circ = \\cos(270^\\circ - 30^\\circ)$<br>$\\cos 240^\\circ = -\\sin 30^\\circ$<br><br>Karena $\\sin 30^\\circ = \\frac{1}{2}$, maka nilainya adalah $-\\frac{1}{2}$."
+  },
+  {
+    "id": "o5boLT96Pgv6wjskAPgY",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Bentuk yang setara dengan $\\tan(270^\\circ - \\theta)$ adalah ...",
+    "clue": "Poros $270^\\circ$ masuk klasifikasi vertikal, sehingga fungsi $\\tan$ di-tukar jadi $\\cot$. Cek tanda positif negatifnya bersandar pada rumah Kuadran III.",
+    "opsi": [
+      "$\\tan \\theta$",
+      "$-\\tan \\theta$",
+      "$\\cot \\theta$",
+      "$-\\cot \\theta$",
+      "$\\sec \\theta$"
+    ],
+    "jawaban_benar": "$\\cot \\theta$",
+    "pembahasan": "Sudut $(270^\\circ - \\theta)$ berada di Kuadran III. Pada Kuadran III, nilai $\\tan$ adalah positif (+).<br><br>Karena menggunakan poros vertikal ($270^\\circ$), fungsi $\\tan$ berubah menjadi ko-fungsinya, yaitu $\\cot$ (cotangen).<br><br>Sehingga, $\\tan(270^\\circ - \\theta) = +\\cot \\theta$."
+  },
+  {
+    "id": "rc5bNFCRrvvf5JPWo1os",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Aturan Kuadran",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Bentuk paling sederhana dari $\\frac{\\sin(270^\\circ + A)}{\\cos(180^\\circ - A)}$ adalah ...",
+    "clue": "Relasi pembilang menyeberang vertikal ke Kuadran IV, pastikan tandanya ikuti asal usul sinus. Bagikan dengan penyebut yang direlasikan mendatar di Kuadran II.",
+    "opsi": [
+      "$1$",
+      "$-1$",
+      "$\\tan A$",
+      "$\\cot A$",
+      "$\\sec A$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sederhanakan pembilang (relasi vertikal, Kuadran IV, sin asal bernilai negatif):<br>$\\sin(270^\\circ + A) = -\\cos A$<br><br>Sederhanakan penyebut (relasi horizontal, Kuadran II, cos asal bernilai negatif):<br>$\\cos(180^\\circ - A) = -\\cos A$<br><br>Bagi keduanya:<br>$\\frac{-\\cos A}{-\\cos A} = 1$."
+  },
+  {
+    "id": "ut4R04lSWGq91oDXu2kq",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Sudut Berelasi (Vertikal)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Aturan Kuadran"
+    ],
+    "pertanyaan": "Bentuk trigonometri yang nilainya setara dengan $\\sin(90^\\circ - \\alpha)$ adalah ...",
+    "clue": "Semua relasi trigonometri yang melibatkan acuan $90^\\circ$ di Kuadran I akan ditukar menjadi *ko-fungsi*-nya (berlawanan) dan semuanya tetap positif.",
+    "opsi": [
+      "$\\sin \\alpha$",
+      "$-\\sin \\alpha$",
+      "$\\cos \\alpha$",
+      "$-\\cos \\alpha$",
+      "$\\tan \\alpha$"
+    ],
+    "jawaban_benar": "$\\cos \\alpha$",
+    "pembahasan": "Sudut $(90^\\circ - \\alpha)$ berada di Kuadran I, sehingga semua nilai trigonometri bernilai positif.<br><br>Karena menggunakan relasi poros vertikal ($90^\\circ$), maka fungsi berubah (ko-fungsi):<br>$\\sin$ berubah menjadi $\\cos$.<br><br>Sehingga, $\\sin(90^\\circ - \\alpha) = +\\cos \\alpha$."
+  }
+]

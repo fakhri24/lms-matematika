@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "nama_siswa": "Gayatri Pratiwi",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika Peminatan (MTL) Kelas X",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "2026-06-05"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Sudut Berelasi Kuadran IV dan II (Pilihan Ganda)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan pengerjaan $\\tan 315^\\circ = -\\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ = -1$. Di sini terdapat kesalahan penulisan relasi awal (double error) di mana siswa menempatkan tanda minus di depan kurung sebelum reduksi dilakukan, namun kebetulan menghasilkan nilai akhir -1 yang benar. Untuk suku kedua, siswa menuliskan $\\cos 120^\\circ = -\\cos(180^\\circ - 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$ (terdapat coretan kecil pada tanda minus di dalam kurung sehingga sekilas tampak seperti tanda tambah, namun hasil penyederhanaan dan nilai akhirnya konsisten dengan aturan kuadran II). Namun pada penjumlahan akhir, terjadi keteledoran aritmetika di mana siswa menuliskan -1 + ($-\\frac{1}{2}$) = -1 - $\\frac{1}{2}$ = $-\\frac{2}{2}$ = -1 (seharusnya $-\\frac{3}{2}$). Akibat kesalahan hitung dasar ini, siswa menyilang opsi B pada lembar jawaban utama.",
+      "letak_kesalahan": [
+        "Kesalahan penulisan relasi awal (double error) pada tangen: menuliskan $\\tan 315^\\circ = -\\tan(360^\\circ - 45^\\circ)$, seharusnya tidak ada tanda minus di depan fungsi sebelum reduksi.",
+        "Kesalahan hitung aritmetika dasar pada penjumlahan akhir di coretan: menuliskan -1 - $\\frac{1}{2}$ = $-\\frac{2}{2}$ = -1, seharusnya $-\\frac{3}{2}$.",
+        "Kesalahan pengisian lembar jawaban: menyilang opsi B (-1) karena mengikuti hasil hitungan yang keliru, seharusnya menyilang opsi A."
+      ],
+      "apresiasi_dan_catatan": "Halo Gayatri! Untuk nomor ini, konsep dasar sudut berelasimu sebenarnya sudah baik. Namun, ada dua catatan penting: pertama, hati-hati dalam penulisan relasi awal tangen. Seharusnya $\\tan 315^\\circ = \\tan(360^\\circ - 45^\\circ) = -\\tan 45^\\circ$ (tidak perlu menuliskan minus di depan kurung sejak awal). Kedua, ada keteledoran aritmetika di baris paling akhir saat menjumlahkan -1 - $\\frac{1}{2}$ menjadi $-\\frac{2}{2}$ = -1. Hasil yang benar seharusnya adalah $-\\frac{3}{2}$ (opsi A). Lebih teliti lagi ya!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Periodisitas dan Relasi Sudut $\\sin 870^\\circ$ (Pilihan Ganda Kompleks)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menganalisis periodisitas sudut besar $\\sin 870^\\circ = \\sin(720^\\circ + 150^\\circ) = \\sin(0 + 150^\\circ) = \\sin 150^\\circ$ dengan tepat, lalu mereduksinya ke kuadran II menjadi $\\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$. Konsep dan perhitungan pada coretan 100% benar. Pada lembar jawaban utama, siswa menyilang opsi A dan C secara akurat, namun melewatkan opsi D ($\\sin 870^\\circ = \\cos 60^\\circ$) yang bernilai benar karena nilai $\\cos 60^\\circ$ sama-sama $\\frac{1}{2}$.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak menyilang opsi d ($\\sin 870^\\circ = \\cos 60^\\circ$) yang bernilai benar, seharusnya menyertakan langkah pengerjaan lengkap."
+      ],
+      "apresiasi_dan_catatan": "Langkah pengerjaanmu di coretan sudah sangat runtun dan tepat, Gayatri! Kamu menguasai konsep periodisitas dan relasi kuadran II dengan sangat baik. Namun, jangan terburu-buru ya. Opsi D juga benar karena nilai $\\cos 60^\\circ$ adalah $\\frac{1}{2}$, sama dengan nilai $\\sin 870^\\circ$. Lain kali periksa semua opsi dengan lebih jeli ya!"
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Operasi Campuran Sudut Berelasi (Pernyataan Benar/Salah)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menentukan nilai $\\tan 300^\\circ = -\\sqrt{3}$ dan $\\cos 150^\\circ = -\\frac{1}{2}\\sqrt{3}$ dengan benar. Namun untuk $\\sin(-210^\\circ)$, siswa melakukan kesalahan konsep dan forcing di coretan demi mendapatkan hasil akhir $\\frac{1}{2}$, yaitu menuliskan $\\sin(-210^\\circ) = -\\sin 210^\\circ = -(-\\cos 210^\\circ) = \\cos 210^\\circ = \\cos(270^\\circ - 60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$ (salah konsep relasi vertikal dan kuadran karena $\\cos(270^\\circ - A)$ seharusnya menjadi $-\\sin A$). Pada hasil akhir perkalian di coretan, siswa melakukan kesalahan perkalian bentuk akar dan tanda: $-\\sqrt{3} \\times (-\\frac{1}{2}\\sqrt{3}) \\times \\frac{1}{2} = -\\frac{1}{4}$ (seharusnya $\\frac{3}{4}$). Pada lembar jawaban utama, siswa menyilang kolom B/S dengan benar untuk keempat pernyataan sehingga tidak diberi penalti ganda (error propagation).",
+      "letak_kesalahan": [
+        "Kesalahan konsep dan forcing pada penyederhanaan $\\sin(-210^\\circ)$ di coretan $-\\sin 210^\\circ = -(-\\cos 210^\\circ) = \\cos 210^\\circ$, seharusnya tidak ada rumus relasi seperti ini.",
+        "Kesalahan konsep relasi sudut vertikal sumbu Y pada $\\cos(270^\\circ - 60^\\circ) = \\cos 60^\\circ$, seharusnya berubah nama fungsi menjadi $-\\sin 60^\\circ$ karena terletak di kuadran III.",
+        "Kesalahan aritmetika dan tanda pada perkalian akhir di coretan: $-\\sqrt{3} \\times (-\\frac{1}{2}\\sqrt{3}) \\times \\frac{1}{2} = -\\frac{1}{4}$, seharusnya $\\frac{3}{4}$."
+      ],
+      "apresiasi_dan_catatan": "Halo Gayatri! Untuk tangen dan kosinusnya sudah sangat bagus. Tapi tolong diperhatikan lagi langkahmu untuk $\\sin(-210^\\circ)$ ya. Di coretan kamu menuliskan $-\\sin 210^\\circ = \\cos 210^\\circ$ lalu diubah menjadi $\\cos(270^\\circ - 60^\\circ) = \\cos 60^\\circ$. Di sini ada kesalahan konsep relasi vertikal (sumbu Y) karena nama fungsi cosinus seharusnya berubah jadi sinus dan tandanya di kuadran III negatif. Nilai $\\sin(-210^\\circ)$ memang benar $\\frac{1}{2}$, tapi proses di coretanmu kurang tepat dan terkesan dipaksakan (forcing). Perhatikan juga perkalian akhir bentuk akarmu agar tidak keliru tandanya ya. Pengisian tabelmu di lembar soal sudah luar biasa benar semua!"
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Pembagian Operasi Sudut Berelasi (Pilihan Ganda)",
+      "skor": 9,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menentukan nilai $\\tan 300^\\circ = -\\sqrt{3}$, $\\cos 210^\\circ = -\\frac{1}{2}\\sqrt{3}$, dan $\\sin 120^\\circ = \\frac{1}{2}\\sqrt{3}$ secara tepat. Siswa menyusun pecahan dengan benar, namun melakukan kesalahan aljabar penyederhanaan pecahan (direct cancellation) di mana siswa mencoret suku $-\\sqrt{3}$ di pembilang dengan $\\sqrt{3}$ di penyebut. Akibatnya, menyisakan $-(-\\frac{1}{2}\\sqrt{3}) / \\frac{1}{2} = \\frac{1}{2}\\sqrt{3} \\times \\frac{2}{1} = \\sqrt{3}$. Siswa kemudian menyilang opsi E.",
+      "letak_kesalahan": [
+        "Kesalahan aljabar penyederhanaan pecahan (direct cancellation): langsung mencoret suku $-\\sqrt{3}$ di pembilang dengan $\\sqrt{3}$ di penyebut, seharusnya pembilang diselesaikan secara utuh terlebih dahulu."
+      ],
+      "apresiasi_dan_catatan": "Konsep nilai dasar sudut berelasimu untuk tangen, kosinus, dan sinus sudah 100% benar, Gayatri. Namun, hati-hati pada penyederhanaan pecahan aljabar. Suku penjumlahan/pengurangan di pembilang tidak boleh langsung dicoret dengan penyebut ya. Selesaikan dulu operasi di pembilang: $-\\sqrt{3} - (-\\frac{1}{2}\\sqrt{3}) = -\\frac{1}{2}\\sqrt{3}$, baru kemudian dibagi dengan penyebutnya."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi Kebalikan Sudut Berelasi (Pilihan Ganda Kompleks)",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa tidak menuliskan kelanjutan pengerjaan atau proses perhitungan pada coretan (hanya menuliskan label rumus $\\sec 300^\\circ =$ dan $\\cot 225^\\circ =$ lalu dikosongkan). Pada lembar jawaban utama, siswa menyilang opsi B dan C. Opsi B ($\\cot 225^\\circ = -1$) bernilai salah karena $\\cot 225^\\circ = 1$ (kuadran III positif), sedangkan opsi C ($\\csc 210^\\circ = -2$) bernilai benar (kemungkinan siswa bisa menjawab dengan menebak/melihat sudutnya di kuadran III). Siswa melewatkan opsi A ($\\sec 300^\\circ = 2$) dan opsi D (Hasil akhir = 5) yang bernilai benar. Karena pengerjaan tidak lengkap, diberikan penalti besar sesuai prinsip penilaian berbasis proses.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak menuliskan proses pengerjaan/perhitungan sama sekali di lembar coretan (hanya menyalin label rumusnya saja), seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan menyilang opsi B, seharusnya $\\cot 225^\\circ = -1$.",
+        "Kesalahan usaha pengerjaan tidak menyilang opsi a ($\\sec 300^\\circ = 2$) dan opsi d (hasil akhir = 5) yang bernilai benar, seharusnya menyertakan langkah pengerjaan lengkap."
+      ],
+      "apresiasi_dan_catatan": "Di nomor ini kamu mendapat penalti besar karena tidak mencantumkan cara pengerjaannya di coretan ya, Gayatri. Untuk fungsi kebalikan seperti sec, cot, dan csc, penting bagi saya untuk melihat proses berpikirmu. Silakan ubah dulu ke bentuk dasarnya (cos, tan, sin) dan hitung satu-satu. Tip dari saya, cotangen di kuadran III positif, jadi $\\cot 225^\\circ$ seharusnya 1 (bukan -1)."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menyederhanakan Rumus Sudut Berelasi (Menjodohkan)",
+      "skor": 5,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa melakukan kesalahan konsep sistematis pada relasi sudut vertikal ($270^\\circ$) di coretannya, di mana siswa tidak mengubah nama fungsi trigonometri (cos tetap cos, sin tetap sin). Siswa menuliskan $\\cos(270^\\circ - A) = -\\cos A$ (seharusnya $-\\sin A$) dan $\\sin(270^\\circ + A) = -\\sin A$ (seharusnya $-\\cos A$). Hanya relasi horizontal $\\tan(180^\\circ + A) = \\tan A$ yang ditulis dengan benar. Akibat kesalahan konsep ini, siswa menjodohkan baris 1 ke C, baris 2 ke A, dan baris 3 ke B (seharusnya baris 1 ke B dan baris 3 ke C).",
+      "letak_kesalahan": [
+        "Kesalahan konsep transisi sudut berelasi vertikal sumbu Y ($270^\\circ$): tidak mengubah nama fungsi trigonometri (cos menjadi sin, dan sin menjadi cos), seharusnya diselesaikan dengan benar.",
+        "Kesalahan Akibat kesalahan konsep tersebut, penjodohkan pada baris 1 dan 3 di lembar jawaban menjadi keliru, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Gayatri, analisis tanda kuadranmu sebenarnya sudah benar. Namun, ingat aturan penting sudut berelasi vertikal (sumbu Y / 90 dan 270 derajat): nama fungsi harus berubah (sin menjadi cos, cos menjadi sin). Karena kamu lupa mengubah nama fungsinya di coretan, jawaban menjodohkan untuk nomor 1 dan 3 jadi terbalik ya."
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Penentuan Nilai $\\tan(-600^\\circ)$ (Pernyataan Benar/Salah)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa membuktikan hubungan $\\tan(-600^\\circ) = -\\tan 600^\\circ = -\\tan(720^\\circ - 120^\\circ) = -\\tan(-120^\\circ) = -(-\\tan 120^\\circ) = \\tan 120^\\circ$ secara tepat di coretannya. Namun di langkah terakhir, terjadi kesalahan konsep tanda kuadran II untuk tangen: siswa menuliskan $\\tan 120^\\circ = \\tan(180^\\circ - 60^\\circ) = \\tan 60^\\circ = \\sqrt{3}$ (seharusnya $-\\tan 60^\\circ = -\\sqrt{3}$). Akibat kesalahan nilai akhir ini, siswa menyilang kolom pernyataan secara keliru pada lembar jawaban utama (menyilang Benar untuk Pernyataan 2 dan menyilang Salah untuk Pernyataan 3). Karena pengisian tabel konsisten dengan hasil draft yang keliru, penalti ganda dihindari (error propagation) dan skor hanya dikurangi pada kesalahan konsep tanda di coretan.",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi tanda kuadran II untuk tangen di coretan $\\tan(180^\\circ - 60^\\circ) = \\tan 60^\\circ = \\sqrt{3}$, seharusnya $-\\tan 60^\\circ = -\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Gayatri, langkah penyederhanaan sudut negatif dan periodisitasmu di coretan sebenarnya sudah sangat bagus sampai di $\\tan 120^\\circ$. Namun, hati-hati pada aturan tanda di kuadran II. Nilai tangen di kuadran II bernilai negatif, sehingga $\\tan 120^\\circ$ seharusnya berubah menjadi $-\\tan 60^circ = -\\sqrt{3}$. Karena kesalahan tanda ini, pengisian tabelmu untuk Pernyataan 2 dan 3 jadi ikut keliru ya."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan Operasi Aljabar Relasi Sudut (Pilihan Ganda Kompleks)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menyederhanakan $\\cos(180^\\circ + A) = -\\cos A$ dan $\\cos(360^\\circ - A) = \\cos A$ secara tepat. Namun, siswa melakukan kesalahan konsep relasi sudut vertikal pada $\\sin(270^\\circ - A)$ dengan menuliskan $= -\\sin A$ (seharusnya berubah nama fungsi menjadi $-\\cos A$ karena menggunakan sumbu Y / 270 derajat). Dari kesalahan tersebut, siswa menyederhanakan pecahan aljabar menjadi $(-\\cos A \\times -\\sin A) / \\cos A = \\sin A$. Pada lembar jawaban, siswa mencentang opsi A dan C secara akurat, namun melewatkan opsi D karena hasil penyederhanaan yang ia peroleh berbeda dengan kunci jawaban (seharusnya opsi D bernilai benar).",
+      "letak_kesalahan": [
+        "Kesalahan konsep relasi sudut vertikal pada $\\sin(270^\\circ - A) = -\\sin A$, seharusnya berubah nama fungsi menjadi $-\\cos A$ karena menggunakan sumbu Y / 270 derajat.",
+        "Kesalahan Akibat kesalahan tersebut, hasil akhir penyederhanaan di coretan menjadi $\\sin A$ sehingga siswa melewatkan opsi D yang bernilai benar, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Pengerjaanmu untuk relasi horizontal di nomor ini sudah sangat rapi, Gayatri. Catatan penting dari saya, ingat kembali aturan relasi vertikal (sumbu Y): nama fungsi harus berubah (sin menjadi cos, dan sebaliknya). Karena kamu lupa mengubah sin menjadi cos pada $\\sin(270^\\circ - A)$, hasil akhir penyederhanaanmu jadi $\\sin A$, dan kamu melewatkan opsi D yang bernilai benar."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Perkalian Sudut Berelasi Vertikal (Pilihan Ganda Kompleks)",
+      "skor": 8,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menentukan pilihan jawaban A, B, dan C dengan benar pada lembar soal. Namun di lembar coretan, terdapat kebingungan konsep/penulisan relasi vertikal yang cukup besar: siswa menuliskan $\\cos 150^\\circ = -\\sin 150^\\circ = -\\sin(90^\\circ + 60^\\circ) = -\\sin 60^\\circ$ (terdapat dua kesalahan konsep yang saling menghilangkan sehingga menghasilkan nilai akhir $-\\frac{1}{2}\\sqrt{3}$ yang benar), dan $\\sin 300^\\circ = -\\cos 300^\\circ = -\\cos(270^\\circ + 30^\\circ) = -\\cos 30^\\circ$ (sama-sama salah konsep penulisan relasi vertikal namun menghasilkan nilai akhir $-\\frac{1}{2}\\sqrt{3}$ yang benar). Perkalian akhir $(-\\frac{1}{2}\\sqrt{3}) \\times (-\\frac{1}{2}\\sqrt{3}) = \\frac{3}{4}$ dihitung dengan benar di coretan.",
+      "letak_kesalahan": [
+        "Kesalahan konsep/penulisan relasi vertikal di draft $\\cos 150^\\circ = -\\sin 150^\\circ = -\\sin(90^\\circ + 60^\\circ) = -\\sin 60^\\circ$, seharusnya $\\cos 150^\\circ = \\cos(90^\\circ + 60^\\circ$.",
+        "Kesalahan konsep/penulisan relasi vertikal di draft $\\sin 300^\\circ = -\\cos 300^\\circ = -\\cos(270^\\circ + 30^\\circ) = -\\cos 30^\\circ$, seharusnya $\\sin 300^\\circ = \\sin(270^\\circ + 30^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Gayatri, pilihan jawabanmu di lembar soal sudah benar semua. Hanya saja, tolong diperhatikan penulisan konsep relasi vertikal di coretanmu ya. Penulisan $\\cos 150^\\circ = -\\sin 150^\\circ$ dan $\\sin 300^\\circ = -\\cos 300^\\circ$ kurang tepat secara matematis, begitu pula langkah penyederhanaan setelahnya. Untung saja secara tidak sengaja tanda minusnya saling menutupi sehingga nilai akhir $-\\frac{1}{2}\\sqrt{3}$ dan hasil perkaliannya tetap benar."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Tahapan Hitung Operasi Pembagian Sudut Berelasi (Pernyataan Benar/Salah)",
+      "skor": 7,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan pengerjaan pecahan di coretannya: $\\cos(-240^\\circ) = \\frac{1}{2}$ (salah tanda, kuadran III), $\\sin 570^\\circ = \\sin 210^\\circ = \\frac{1}{2}$ (salah tanda, kuadran III), dan $\\tan(-135^\\circ) = -1$ (salah tanda, kuadran III). Hal ini menyebabkan hitungan akhir draft menjadi ($\\frac{1}{2}$ - $\\frac{1}{2}$) / -1 = 0. Di lembar jawaban, siswa menyilang B untuk Pernyataan 1 dan 2, serta S untuk Pernyataan 3 dan 4. Pilihan ini konsisten dengan hasil draft yang keliru (error propagation), sehingga penalti ganda dihindari dan hanya dikurangi 1 poin untuk masing-masing dari 3 kesalahan tanda di coretannya.",
+      "letak_kesalahan": [
+        "Kesalahan tanda pada penyederhanaan $\\cos(-240^\\circ) = \\cos 240^\\circ = \\cos(180^\\circ + 60^\\circ) = \\cos 60^\\circ = \\frac{1}{2}$, seharusnya $= -\\cos 60^\\circ = -\\frac{1}{2}$.",
+        "Kesalahan tanda pada penyederhanaan $\\sin 570^\\circ = \\sin 210^\\circ = \\sin(180^\\circ + 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$, seharusnya $= -\\sin 30^\\circ = -\\frac{1}{2}$.",
+        "Kesalahan tanda pada penyederhanaan penyebut $-\\tan(180^\\circ - 45^\\circ) = -\\tan 45^\\circ = -1$, seharusnya = -($-\\tan 45^\\circ$."
+      ],
+      "apresiasi_dan_catatan": "Gayatri, pengerjaan periodisitas untuk sin 570 derajat sudah benar. Namun, ada tiga catatan penting mengenai tanda negatif: pertama, $\\cos(180^\\circ+60^\\circ)$ berada di kuadran III sehingga nilainya negatif; kedua, $\\sin(180^\\circ+30^\\circ)$ juga di kuadran III sehingga bernilai negatif; ketiga, pada penyebut $-\\tan(180^\\circ-45^\\circ)$ seharusnya bernilai positif karena tangen kuadran II bernilai negatif bertemu minus di depan. Ketiga kesalahan tanda ini membuat tabel jawabanmu ikut bergeser meskipun sudah konsisten dengan draftmu."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Operasi Sudut Berelasi Variabel Aljabar (Pilihan Ganda - Opsional)",
+      "skor": 2,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa mengidentifikasi relasi awal $\\sin 54^\\circ = p$, $2\\cos 216^\\circ = -2\\sin 54^\\circ = -2p$, dan $\\cos 324^\\circ = \\sin 54^\\circ = p$ secara tepat. Namun, siswa melakukan kesalahan tanda pada $\\cos(-60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$ (seharusnya $\\frac{1}{2}$). Di langkah penyusunan pecahan, siswa salah menuliskan penjumlahan pembilang menjadi p + 2p = 3p (seharusnya p + (-2p) = -p). Pada penyederhanaan akhir, siswa memaksakan aljabar (forcing) dengan menuliskan $3p \\times (-\\frac{2}{3}) p = -2p$ untuk mencocokkan hasil akhir dengan opsi E (seharusnya hasil akhir yang tepat adalah -2 / opsi A). Diberikan nilai parsial untuk upaya relasi variabel di awal.",
+      "letak_kesalahan": [
+        "Kesalahan konsep tanda pada sudut negatif kosinus $\\cos(-60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$, seharusnya $\\cos(-60^\\circ$.",
+        "Kesalahan tanda/penulisan operasi di pembilang p + 2p = 3p, seharusnya p + (-2p.",
+        "Kesalahan Melakukan forcing (aljabar dipaksa) pada langkah penyederhanaan pecahan akhir agar menghasilkan -2p untuk memilih opsi E, seharusnya bernilai -2."
+      ],
+      "apresiasi_dan_catatan": "Gayatri, konsep perubahan sudut variabelmu di awal untuk 2cos 216 dan $\\cos 324^\\circ$ sudah benar. Namun, hati-hati pada $\\cos(-60^\\circ)$ yang seharusnya bernilai positif. Selain itu, ada keteledoran tanda di pembilang dan pemaksaan aljabar (forcing) di akhir agar hasilnya sama dengan -2p (opsi E). Saya berikan nilai bonus parsial 2 untuk upaya penyusunan variabelmu ya!"
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 72,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 2,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "72 + 2",
+    "persentase_kelulusan": 72.0,
+    "predikat": "Remedial"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Gayatri! Meskipun hasil akhirmu masih berada di kategori Remedial dengan nilai wajib 72 dan bonus soal opsional 2 (total 72 + 2), saya sangat menghargai usahamu dalam menyelesaikan semua soal ini. Pemahamanmu tentang relasi kuadran horizontal dan periodisitas (seperti no. 2, 4, dan 7) sudah cukup baik. Catatan penting untuk ke depannya: tolong lebih teliti pada tanda positif/negatif kuadran (no. 1, 7, 10), aturan fungsi kebalikan (no. 5), relasi vertikal sumbu Y (no. 6, 8, 9, 11), serta hindari mencoret suku pecahan secara langsung (no. 4) atau memaksakan aljabar (forcing) di akhir. Tetap semangat belajarnya, dengan latihan lebih tekun pasti nilaimu akan jauh lebih baik!"
+}

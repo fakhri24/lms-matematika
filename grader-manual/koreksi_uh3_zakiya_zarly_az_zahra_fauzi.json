@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "nama_siswa": "Zakiya Zarly Az-Zahra Fauzi",
+    "kelas": "X.MIPA-2",
+    "mata_pelajaran": "Matematika",
+    "topik_ujian": "UH 3 MTL - Sudut Berelasi Trigonometri",
+    "tanggal_koreksi": "Kamis 5 Juni 2026"
+  },
+  "daftar_soal": [
+    {
+      "nomor_soal": 1,
+      "topik_soal": "Nilai Operasi Trigonometri Sudut Berelasi",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa hanya menyalin ulang soal $\\tan 315^\\circ + \\cos 120^\\circ$ ke lembar coretan dan melakukan operasi aritmetika keliru seperti $(315^\\circ + 120^\\circ)$ yang kemudian dicoret. Opsi $-1$ yang dipilih besar kemungkinan hanyalah tebakan karena tidak didukung perhitungan relasi trigonometri yang valid.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak ada proses penyederhanaan sudut menggunakan relasi trigonometri yang benar, coretan hanya manipulasi penjumlahan angka sudut secara langsung, seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan perhitungan penjumlahan akhir, seharusnya $\\tan 315^\\circ + \\cos 120^\\circ = -1 + (-\\frac{1}{2}) = -\\frac{3}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Ingat ya, nilai fungsi dari dua sudut yang berbeda tidak boleh digabungkan atau ditambah sudutnya secara langsung. Cari nilainya satu per satu terlebih dahulu!"
+    },
+    {
+      "nomor_soal": 2,
+      "topik_soal": "Evaluasi Pernyataan Sinus Sudut Besar",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa hanya menyalin kembali Opsi A ($\\sin(2 \\times 360^\\circ + 150^\\circ)$) dan Opsi D ($\\cos 60^\\circ$) langsung ke dalam coretan tanpa menunjukkan proses perhitungan atau reduksi sudutnya sendiri. Siswa juga salah mencentang opsi B di lembar jawaban.",
+      "letak_kesalahan": [
+        "Kesalahan Hanya menyalin ulang teks dari pilihan ganda ke coretan tanpa membuktikan proses pencarian nilainya, seharusnya diselesaikan dengan benar.",
+        "Kesalahan pemilihan opsi, mencentang B padahal $150^\\circ$ berada di kuadran II, dan mencoret D padahal nilainya benar, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Catatan untukmu: usahakan tunjukkan proses dari mana kamu mendapatkan angka $150^\\circ$ atau $60^\\circ$ tersebut di coretan, jangan hanya menyalin persis dari pilihan ganda yang ada."
+    },
+    {
+      "nomor_soal": 3,
+      "topik_soal": "Perkalian Trigonometri Sudut Berelasi",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menjawab tabel dengan beberapa centang benar, namun pada coretan siswa hanya menyalin persis teks dari Pernyataan 3 ($\\sin(-210^\\circ) = \\frac{1}{2}$) tanpa menjabarkan bagaimana nilai tersebut didapat. Tidak ada pembuktian nilai untuk $\\tan 300^\\circ$ dan $\\cos 150^\\circ$.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan coretan tidak menunjukkan perhitungan, melainkan hanya menyalin teks pernyataan dari soal, seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan hasil akhir perkalian, seharusnya $-\\sqrt{3} \\times (-\\frac{1}{2}\\sqrt{3}) \\times \\frac{1}{2} = \\frac{3}{4}$, bukan $\\frac{1}{4}$."
+      ],
+      "apresiasi_dan_catatan": "Tebakanmu di tabel cukup akurat, tapi nilai dari suatu fungsi harus dibuktikan dengan cara berelasi ya, bukan sekadar disalin kembali ke buram."
+    },
+    {
+      "nomor_soal": 4,
+      "topik_soal": "Operasi Pembagian Trigonometri Sudut",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan pecahan substitusi $\\frac{\\sqrt{3} - \\frac{1}{2}}{\\frac{1}{2}}$ di coretan. Hal ini menunjukkan tidak adanya penyesuaian tanda negatif untuk kuadran yang tepat pada $\\tan 300^\\circ$ dan $\\cos 210^\\circ$, serta nilai numerik yang meleset.",
+      "letak_kesalahan": [
+        "Kesalahan nilai $\\tan 300^\\circ = \\sqrt{3}$, seharusnya $\\tan 300^\\circ = -\\sqrt{3}$.",
+        "Kesalahan nilai $\\cos 210^\\circ = \\frac{1}{2}$, seharusnya $\\cos 210^\\circ = -\\frac{1}{2}\\sqrt{3}$.",
+        "Kesalahan nilai $\\sin 120^\\circ = \\frac{1}{2}$, seharusnya $\\sin 120^\\circ = \\frac{1}{2}\\sqrt{3}$."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah mencoba mensubstitusi nilai, namun jangan lupa untuk mengecek kuadran masing-masing sudut agar tidak salah tanda positif/negatifnya."
+    },
+    {
+      "nomor_soal": 5,
+      "topik_soal": "Operasi Penjumlahan dan Pengurangan Trigonometri",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa hanya menebak centang untuk opsi A dan C tanpa adanya langkah logis yang membuktikan kebenaran nilai tersebut. Proses di coretan sangat fatal karena siswa menggunakan operasi aritmetika murni untuk mengekstraksi dan mengalikan sudutnya secara langsung: $(150 \\times 2) + (15^2) - (105 \\times 2) = -4$, yang menunjukkan ketiadaan pemahaman fungsi trigonometri.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak ada langkah logis penentuan nilai fungsi trigonometri, siswa murni menebak centang opsi a dan c, seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan konsep fatal dengan mengekstraksi dan mengalikan angka sudut secara aljabar murni (contoh: $(150 \\times 2)$ untuk $\\sec 300^\\circ$), seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Jangan hanya menebak opsi ya. Selain itu, kamu tidak boleh memecah angka di dalam fungsi trigonometri dengan operasi kali/tambah biasa layaknya aljabar, karena sifat fungsinya sama sekali berbeda."
+    },
+    {
+      "nomor_soal": 6,
+      "topik_soal": "Menjodohkan Relasi Sudut dengan Fungsi",
+      "skor": 0,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa menuliskan pasangan relasi sudut pada coretan: $\\cos(270^\\circ - A) = \\tan A$, $\\tan(180^\\circ + A) = -\\cos A$, dan $\\sin(270^\\circ + A) = -\\sin A$. Semuanya keliru secara fundamental dalam menentukan perubahan nama fungsi maupun penyesuaian tanda kuadran.",
+      "letak_kesalahan": [
+        "Kesalahan relasi $\\cos(270^\\circ - A) = \\tan A$, seharusnya fungsi berubah menjadi sinus dan bernilai negatif ($-\\sin A$).",
+        "Kesalahan relasi $\\tan(180^\\circ + A) = -\\cos A$, seharusnya fungsi tetap tangen dan bernilai positif ($\\tan A$).",
+        "Kesalahan relasi $\\sin(270^\\circ + A) = -\\sin A$, seharusnya fungsi berubah menjadi kosinus dan bernilai negatif ($-\\cos A$)."
+      ],
+      "apresiasi_dan_catatan": "Yuk buka lagi catatan tentang relasi vertikal (sumbu Y) dan horizontal (sumbu X). Ingat kapan nama fungsi harus berubah dan kapan tidak!"
+    },
+    {
+      "nomor_soal": 7,
+      "topik_soal": "Evaluasi Kebenaran Tangen Sudut Negatif",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mencentang tabel dengan benar, namun coretan $\\tan(-600^\\circ) = -\\tan 600^\\circ$ terindikasi hanya menyalin dari Pernyataan 1 yang ada di soal. Terlebih lagi, nilai akhir di coretan ditulis $\\sqrt{3}$ (seharusnya $-\\sqrt{3}$), membuktikan siswa tidak benar-benar menghitung melainkan sekadar menebak centang tabel.",
+      "letak_kesalahan": [
+        "Kesalahan Coretan hanya menyalin pernyataan soal tanpa bukti penurunan nilai relasi periode $360^\\circ$, seharusnya diselesaikan dengan benar.",
+        "Kesalahan Nilai akhir di coretan salah tanda (menuliskan $\\sqrt{3}$ alih-alih $-\\sqrt{3}$), seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Tebakanmu di tabel berhasil, tapi biasakan menguraikan penjabaran $600^\\circ$ menjadi $(360^\\circ + 240^\\circ)$ di coretanmu ya, jangan cuma menyalin pernyataan soal."
+    },
+    {
+      "nomor_soal": 8,
+      "topik_soal": "Penyederhanaan Operasi Aljabar Relasi Sudut",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mencentang opsi A, C, dan D yang memang benar. Namun, coretan menunjukkan proses yang sangat menyalahi aturan matematis, yaitu memecah fungsi menjadi aljabar aneh seperti $\\cos(180^\\circ + A)$ menjadi $\\frac{1}{2}\\sqrt{3} + A$ dan berujung pada hasil $+A - A - A$.",
+      "letak_kesalahan": [
+        "Kesalahan fundamental aljabar trigonometri, siswa memecah fungsi di dalam kurung menjadi variabel yang terpisah (contoh: $\\cos(180^\\circ + A)$ menjadi $\\frac{1}{2}\\sqrt{3} + A$) yang melanggar seluruh konsep trigonometri, seharusnya diselesaikan dengan benar."
+      ],
+      "apresiasi_dan_catatan": "Jawaban yang kamu pilih di lembar utama sudah tepat, sayangnya langkah di coretanmu melanggar aturan dasar. Jangan memisahkan sudut dari fungsi kosinus atau sinusnya ya."
+    },
+    {
+      "nomor_soal": 9,
+      "topik_soal": "Relasi Vertikal Operasi Perkalian",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mencentang opsi A dan B dengan benar, namun coretan yang memecah $(90^\\circ + 60^\\circ)$ dan $(270^\\circ + 30^\\circ)$ hanyalah salinan persis dari teks pilihan ganda tersebut tanpa adanya operasi lanjutan. Siswa juga tidak menyelesaikan operasi perkalian akhir.",
+      "letak_kesalahan": [
+        "Kesalahan Hanya menyalin langkah dari pilihan ganda ke coretan tanpa membuktikan proses secara mandiri, seharusnya diselesaikan dengan benar.",
+        "Kesalahan usaha pengerjaan tidak melanjutkan operasi perkalian $(-\\sin 60^\\circ) \\times (-\\cos 30^\\circ)$ hingga tuntas sehingga opsi c (hasil $\\frac{3}{4}$) terlewatkan, seharusnya menyertakan langkah pengerjaan lengkap."
+      ],
+      "apresiasi_dan_catatan": "Walaupun opsinya sudah mengarahkanmu ke cara relasi vertikal, kamu harus tetap melanjutkannya sampai mendapat nilai perkalian akhirnya ya, jangan berhenti di menyalin pilihannya saja."
+    },
+    {
+      "nomor_soal": 10,
+      "topik_soal": "Evaluasi Tahapan Hitung Operasi Pembagian",
+      "skor": 2,
+      "skor_maksimal": 10,
+      "koreksi_pengerjaan": "Siswa mengosongkan baris ke-2 dan ke-4. Pada baris ke-1, siswa mengevaluasi $\\cos(-240^\\circ)$ menjadi $-\\frac{1}{2}$ di coretan namun malah mencentang opsi Benar ($\\frac{1}{2}$) yang bertentangan, menunjukkan bahwa centangan tersebut murni tebakan. Untuk baris ke-3, siswa hanya memecah $135$ menjadi $(90+45)$ tanpa ada pembuktian nilai $\\tan(-135^\\circ)$.",
+      "letak_kesalahan": [
+        "Kesalahan Centang pada baris 1 adalah tebakan buta karena bertentangan dengan perhitungan di coretannya sendiri ($-\\frac{1}{2}$ vs $\\frac{1}{2}$), seharusnya diselesaikan dengan benar.",
+        "Kesalahan usaha pengerjaan tidak ada langkah logis penentuan nilai $\\tan(-135^\\circ) = 1$, siswa hanya mengurai $135$ menjadi $(90+45)$, seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan nilai $\\sin(570^\\circ) = \\frac{1}{2}\\sqrt{3}$, seharusnya $\\sin(570^\\circ) = \\sin 210^\\circ = -\\frac{1}{2}$."
+      ],
+      "apresiasi_dan_catatan": "Jangan menebak centangan opsi yang bertentangan dengan hasil coretanmu sendiri. Pastikan juga kamu tidak melewati pengisian opsi tabel jika kamu sebenarnya mencoba menghitung bagian soal tersebut."
+    },
+    {
+      "nomor_soal": 11,
+      "topik_soal": "Penyederhanaan Bentuk Aljabar Trigonometri",
+      "skor": 1,
+      "skor_maksimal": 5,
+      "koreksi_pengerjaan": "Siswa menunjukkan usaha awal dengan mensubstitusi variabel $p$, namun coretan menunjukkan manipulasi persamaan yang tidak berdasar tanpa mengubah $\\cos 216^\\circ$ dan $\\cos 324^\\circ$ ke dalam bentuk relasi sudut $36^\\circ$ atau $54^\\circ$. Siswa lalu memilih opsi jawaban $1$.",
+      "letak_kesalahan": [
+        "Kesalahan usaha pengerjaan tidak menyederhanakan $\\cos 216^\\circ$ menjadi $-\\cos 36^\\circ = -p$ dan $\\cos 324^\\circ$ menjadi $\\cos 36^\\circ = p$, seharusnya menyertakan langkah pengerjaan lengkap.",
+        "Kesalahan manipulasi aljabar yang menghasilkan jawaban salah ($1$), seharusnya hasil akhir adalah $\\frac{p - 2p}{\\frac{1}{2}p} = -2$."
+      ],
+      "apresiasi_dan_catatan": "Kamu sudah berani memulai pemisalan dengan variabel $p$. Untuk soal selevel ini, ubah dulu semua sudut kompleks ke sudut relasinya (di kuadran 1) sebelum kamu main coret aljabarnya."
+    }
+  ],
+  "ringkasan_nilai": {
+    "skor_wajib": 18,
+    "skor_wajib_maksimal": 100,
+    "skor_tambahan": 1,
+    "skor_tambahan_maksimal": 5,
+    "skor_total_akhir": "18 + 1",
+    "persentase_kelulusan": 18,
+    "predikat": "Remedial"
+  },
+  "catatan_motivasi_keseluruhan": "Halo Zarly! Selamat ya kamu sudah menyelesaikan ujian ini dengan nilai wajib 18 dan bonus 1 dengan total akhir 18 + 1 (Predikat Remedial). Saya perhatikan kamu sangat cerdik karena sering mencoba menebak jawaban dari pilihan ganda yang ada, tapi sayangnya kemampuan hitungan mandiri dengan logika yang benar hampir tidak terlihat di lembar coretanmu. Ingat, ujian matematika bukan hanya soal memilih jawaban benar secara kebetulan, melainkan membuktikan proses berpikirmu. Apalagi kamu sering melakukan kesalahan fatal seperti memisahkan dan memanipulasi sudut dari fungsinya secara aljabar murni. Fungsi trigonometri tidak bisa dipisah layaknya angka biasa lho! Yuk, ubah kebiasaan ini secara total. Kuatkan lagi konsep dasar sudut relasimu agar nilaimu ke depan bisa berkembang karena pemahaman yang solid, bukan sekadar tebakan. Tetap semangat, kamu pasti bisa!"
+}

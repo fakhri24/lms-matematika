@@ -1,0 +1,206 @@
+[
+  {
+    "id": "g0q8bL3PbT4Z218nMZkw",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "<svg viewBox='0 0 300 160' width='100%' height='160' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='130' x2='280' y2='130' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='150' stroke='black' stroke-width='2'/><path d='M 50 80 Q 100 -20, 150 80 T 250 80' fill='none' stroke='blue' stroke-width='3'/><line x1='50' y1='80' x2='280' y2='80' stroke='gray' stroke-dasharray='4,4'/><text x='40' y='35' text-anchor='end'>7</text><text x='40' y='85' text-anchor='end'>4</text><text x='40' y='135' text-anchor='end'>1</text><line x1='45' y1='30' x2='55' y2='30' stroke='black'/><line x1='45' y1='130' x2='55' y2='130' stroke='black'/></svg><br><br>Berdasarkan grafik gelombang di atas, nilai amplitudo dari fungsi tersebut adalah ...",
+    "clue": "Amplitudo bukan sekadar titik tertinggi grafik pada sumbu Y, melainkan jarak dari garis keseimbangan (garis putus-putus) ke puncak gelombang.",
+    "opsi": [
+      "$1$",
+      "$3$",
+      "$4$",
+      "$6$",
+      "$7$"
+    ],
+    "jawaban_benar": "$3$",
+    "pembahasan": "Dari grafik, kita bisa melihat tiga parameter penting:<br>1. Titik tertinggi (maksimum) berada di $y = 7$.<br>2. Titik terendah (minimum) berada di $y = 1$.<br>3. Garis keseimbangan (<i>midline</i>) berada di tengahnya, yaitu $y = 4$.<br><br>Amplitudo adalah selisih jarak dari garis keseimbangan ke puncak.<br>Amplitudo $= 7 - 4 = 3$.<br><i>(Bisa juga dihitung dengan rumus: $\\frac{\\text{Maks} - \\text{Min}}{2} = \\frac{7 - 1}{2} = 3$)</i>."
+  },
+  {
+    "id": "PixcuGNQiCH0Szzbiu1c",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Sebuah sistem pegas bergetar secara teratur dan lintasannya membentuk kurva trigonometri dengan persamaan $f(x) = A \\sin(x) + c$. Jika selisih jarak absolut antara titik tertinggi (puncak) dan titik terendah (lembah) dari getaran pegas tersebut adalah $18$ cm, maka nilai mutlak dari amplitudo gelombangnya adalah ...",
+    "clue": "Selisih dari puncak ke lembah dalam istilah teknis disebut *Peak-to-Peak*. Amplitudo didefinisikan sebagai simpangan dari titik keseimbangan ke puncak, yang berarti nilainya adalah tepat setengah dari jarak total puncak-ke-lembah.",
+    "opsi": [
+      "$4,5$ cm",
+      "$9$ cm",
+      "$18$ cm",
+      "$36$ cm",
+      "Tidak dapat ditentukan karena nilai parameter $c$ tidak diketahui"
+    ],
+    "jawaban_benar": "$9$ cm",
+    "pembahasan": "Jarak tegak lurus dari puncak tertinggi (maksimum) ke lembah terendah (minimum) mencakup dua bentangan amplitudo (yaitu jarak dari puncak ke tengah, ditambah jarak dari tengah ke lembah).<br><br>Secara matematis:<br>Jarak Maks ke Min $= 2 \\times \\text{Amplitudo}$<br>$18 = 2|A|$<br>$|A| = 18 / 2 = 9$ cm.<br>Nilai translasi konstan $c$ murni hanya menggeser sistem pegas ke atas/bawah dan sama sekali tidak memengaruhi besarnya amplitudo getaran."
+  },
+  {
+    "id": "HWDhoHBGBD1lF3Z8Hi08",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Jika pada sebuah simulasi <i>engine</i>, grafik fungsi $y = \\sin x$ diubah nilai amplitudonya menjadi <b>dua kali lipat lebih besar</b>, sementara parameter lainnya dipertahankan, apa yang akan terjadi pada wujud fisik grafiknya secara visual?",
+    "clue": "Amplitudo adalah tarikan/peregangan pada sumbu vertikal (sumbu Y). Ia tidak menggeser grafik maupun mengubah lebar siklus horizontalnya.",
+    "opsi": [
+      "Grafik akan bergeser lurus ke atas sejauh 2 satuan koordinat",
+      "Jarak antara puncak ke puncak berikutnya akan menjadi dua kali lebih lebar",
+      "Puncak gelombang akan menjadi dua kali lebih tinggi dan lembahnya dua kali lebih dalam",
+      "Seluruh grafik akan bergeser ke kanan sejauh 2 satuan",
+      "Kerapatan (frekuensi) gelombang akan bertambah menjadi dua kali lebih rapat"
+    ],
+    "jawaban_benar": "Puncak gelombang akan menjadi dua kali lebih tinggi dan lembahnya dua kali lebih dalam",
+    "pembahasan": "Memperbesar nilai amplitudo (misalnya dari $y = \\sin x$ menjadi $y = 2 \\sin x$) menghasilkan efek dilatasi (peregangan) vertikal. Ini membuat simpangan gelombangnya semakin ekstrem. Puncaknya akan ditarik ke atas menjadi dua kali lebih tinggi, dan lembahnya akan ditekan ke bawah menjadi dua kali lebih dalam. Parameter ini tidak menggeser posisi atau merapatkan gelombang."
+  },
+  {
+    "id": "47Lfr9SAwzknTZRZjL8a",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sistem Persamaan Linear",
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Diketahui sebuah fungsi memiliki persamaan $h(x) = A \\cos(bx) + c$ dengan syarat khusus $A < 0$. Jika diketahui bahwa nilai maksimum fungsi tersebut adalah $8$ dan nilai minimumnya adalah $2$, berapakah nilai konstanta $A$ yang memenuhi persamaan tersebut?",
+    "clue": "Gunakan rumus pencarian amplitudo dari nilai maksimum dan minimum ($\\frac{\\text{Maks} - \\text{Min}}{2}$). Setelah mendapatkan nilai skalar mutlaknya, cocokkan tandanya dengan syarat yang diminta oleh soal.",
+    "opsi": [
+      "$-6$",
+      "$-3$",
+      "$3$",
+      "$5$",
+      "$-5$"
+    ],
+    "jawaban_benar": "$-3$",
+    "pembahasan": "Langkah 1: Cari besar amplitudo mutlak dari data yang ada.<br>Amplitudo $= \\frac{\\text{Nilai Maksimum} - \\text{Nilai Minimum}}{2}$<br>Amplitudo $= \\frac{8 - 2}{2} = \\frac{6}{2} = 3$.<br><br>Langkah 2: Tentukan nilai parameter $A$.<br>Secara konsep, Amplitudo $= |A|$. Maka $|A| = 3$, yang berarti $A$ bisa bernilai $3$ atau $-3$.<br>Karena ada batasan dari soal bahwa $A < 0$ (bernilai negatif), maka nilai $A$ yang tepat untuk persamaan tersebut adalah $-3$."
+  },
+  {
+    "id": "6X861fOFmRDNZ4DTPOI4",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Diberikan dua buah fungsi pemodelan matematis: $f(x) = -4 \\cos(2x) + 1$ dan $g(x) = 3 \\sin(x) - 5$. Pernyataan matematis yang paling tepat mengenai amplitudo dari kedua fungsi tersebut adalah ...",
+    "clue": "Bandingkan nilai $|A|$ dari fungsi $f$ dan fungsi $g$. Ingat, amplitudo tidak memedulikan tanda minus dan juga tidak dipengaruhi oleh parameter lain seperti $2x$, $+1$, atau $-5$.",
+    "opsi": [
+      "Amplitudo $f(x)$ lebih kecil dari amplitudo $g(x)$",
+      "Amplitudo $f(x)$ lebih besar dari amplitudo $g(x)$",
+      "Amplitudo $f(x)$ sama dengan amplitudo $g(x)$",
+      "Amplitudo $f(x)$ bernilai negatif, sedangkan $g(x)$ positif",
+      "Amplitudo total kedua fungsi tersebut jika digabung adalah $7$"
+    ],
+    "jawaban_benar": "Amplitudo $f(x)$ lebih besar dari amplitudo $g(x)$",
+    "pembahasan": "Mari kita ekstrak nilai amplitudo dari masing-masing fungsi:<br>Pada $f(x) = -4 \\cos(2x) + 1$, nilai $A = -4$. Amplitudonya adalah $|-4| = 4$.<br>Pada $g(x) = 3 \\sin(x) - 5$, nilai $A = 3$. Amplitudonya adalah $|3| = 3$.<br><br>Dengan membandingkan kedua nilai mutlaknya ($4 > 3$), maka terbukti bahwa amplitudo fungsi $f(x)$ lebih besar dari amplitudo fungsi $g(x)$."
+  },
+  {
+    "id": "QA3ZWRTXHkxkGg9I9wHm",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Secara visual dan grafis, apa yang dimaksud dengan amplitudo pada sebuah fungsi trigonometri seperti sinus dan cosinus?",
+    "clue": "Amplitudo identik dengan seberapa 'tinggi' simpangan gelombang tersebut ditarik dari titik netralnya.",
+    "opsi": [
+      "Jarak horizontal dari satu puncak ke puncak berikutnya",
+      "Jarak vertikal dari garis keseimbangan (tengah) ke titik puncak",
+      "Jarak dari puncak tertinggi ke lembah terendah",
+      "Pergeseran grafik secara horizontal ke arah kanan atau kiri",
+      "Tinggi grafik yang diukur lurus dari sumbu X"
+    ],
+    "jawaban_benar": "Jarak vertikal dari garis keseimbangan (tengah) ke titik puncak",
+    "pembahasan": "Dalam grafik trigonometri, garis keseimbangan (*midline*) adalah sumbu tengah yang membelah gelombang menjadi atas dan bawah yang simetris. Amplitudo didefinisikan sebagai simpangan maksimum, yaitu jarak lurus dari garis keseimbangan ini menuju ke puncak (atau dari garis keseimbangan menuju ke lembah)."
+  },
+  {
+    "id": "VM9jluJ4yNO77ICdeLEv",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Diketahui persamaan sebuah gelombang elektromagnetik sederhana dinyatakan dengan $y = -\\frac{1}{2} \\sin(3x) - 5$. Amplitudo gelombang tersebut adalah ...",
+    "clue": "Amplitudo adalah jarak/skalar sehingga nilainya selalu dimutlakkan (selalu positif), tidak peduli apakah pengalinya bilangan bulat, pecahan, positif, atau negatif.",
+    "opsi": [
+      "$-5$",
+      "$-3$",
+      "$-\\frac{1}{2}$",
+      "$\\frac{1}{2}$",
+      "$3$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}$",
+    "pembahasan": "Dari persamaan $y = -\\frac{1}{2} \\sin(3x) - 5$, nilai koefisien pengali amplitudo ($A$) adalah $-\\frac{1}{2}$.<br>Karena amplitudo adalah jarak simpangan maksimal, nilainya adalah $|A|$.<br>Maka, Amplitudo $= |-\\frac{1}{2}| = \\frac{1}{2}$."
+  },
+  {
+    "id": "dMyWgxjbx3s8aEJYpDsq",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri",
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah fungsi trigonometri memodelkan ketinggian air laut saat pasang dan surut. Jika ketinggian maksimum muka air adalah $12$ meter dan ketinggian minimumnya adalah $4$ meter, maka nilai amplitudo dari fungsi model pasang surut tersebut adalah ...",
+    "clue": "Gunakan rumus analitik penentuan amplitudo tanpa harus menggambar grafiknya: Amplitudo $= \\frac{\\text{Nilai Maksimum} - \\text{Nilai Minimum}}{2}$.",
+    "opsi": [
+      "$4$ meter",
+      "$6$ meter",
+      "$8$ meter",
+      "$12$ meter",
+      "$16$ meter"
+    ],
+    "jawaban_benar": "$4$ meter",
+    "pembahasan": "Rentang keseluruhan gelombang dari atas ke bawah adalah selisih nilai maksimum dan minimum.<br>Rentang $= 12 - 4 = 8$ meter.<br>Karena amplitudo didefinisikan sebagai simpangan dari tengah menuju ke puncak, nilainya adalah tepat setengah dari rentang keseluruhan tersebut.<br>Amplitudo $= \\frac{8}{2} = 4$ meter."
+  },
+  {
+    "id": "8dBw9lRGGvUj83V9iFNM",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Nilai amplitudo dari fungsi trigonometri $y = 3 \\sin(2x) + 4$ adalah ...",
+    "clue": "Amplitudo hanya ditentukan oleh angka pengali yang berada tepat di depan fungsi trigonometri (sinus/cosinus). Angka penambah di belakang hanya menggeser grafik ke atas/bawah.",
+    "opsi": [
+      "$2$",
+      "$3$",
+      "$4$",
+      "$5$",
+      "$7$"
+    ],
+    "jawaban_benar": "$3$",
+    "pembahasan": "Bentuk standar fungsi adalah $y = A \\sin(kx) + c$.<br>Nilai Amplitudo direpresentasikan oleh $|A|$.<br>Dari persamaan $y = 3 \\sin(2x) + 4$, nilai $A$ adalah $3$.<br>Maka amplitudonya adalah $3$."
+  },
+  {
+    "id": "FHHPuR2vc9CL7j7UkEi0",
+    "materi_utama": "Trigonometri",
+    "sub_materi": "Amplitudo",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Bentuk Umum Fungsi Trigonometri"
+    ],
+    "pertanyaan": "Nilai amplitudo dari grafik fungsi $f(x) = -5 \\cos x$ adalah ...",
+    "clue": "Amplitudo adalah jarak dari titik tengah ke puncak, sehingga nilainya selalu positif (nilai mutlak dari koefisien di depan fungsi trigonometri).",
+    "opsi": [
+      "$-5$",
+      "$0$",
+      "$1$",
+      "$5$",
+      "$10$"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Bentuk fungsi adalah $y = A \\cos(x)$.<br>Amplitudo adalah nilai mutlak dari $A$.<br>Pada fungsi $f(x) = -5 \\cos x$, nilai koefisien $A = -5$.<br>Maka, Amplitudo $= |-5| = 5$. Tanda minus hanya menandakan bahwa grafik gelombangnya digambar terbalik (dimulai dari lembah, bukan puncak)."
+  }
+]

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwayat & Pembahasan - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      .history-card {
+        background: white;
+        padding: 15px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .history-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .review-box {
+        display: none;
+        margin-top: 20px;
+      }
+      .soal-review {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--primary-color);
+      }
+      .status-benar {
+        color: var(--success-color);
+        font-weight: bold;
+      }
+      .status-salah {
+        color: #ef4444;
+        font-weight: bold;
+      }
+      .box-pembahasan {
+        background: #f0fdfa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        border: 1px solid #99f6e4;
+      }
+      .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 960px; margin-top: 30px">
+      <header class="flex-between mb-25">
+        <h2 class="text-primary" style="margin: 0">Riwayat & Pembahasan</h2>
+        <button id="btn-kembali" class="btn btn-secondary btn-sm">
+          Kembali
+        </button>
+      </header>
+
+      <div id="pembungkus-daftar">
+        <div class="mb-20">
+          <input
+            type="text"
+            id="search-riwayat"
+            class="input-standard"
+            placeholder="🔍 Cari sub-materi..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div id="daftar-riwayat">
+          <p class="text-center text-muted">Memuat riwayat...</p>
+        </div>
+
+        <div
+          id="navigasi-halaman"
+          class="pagination-container"
+          style="display: none"
+        >
+          <span id="info-halaman" class="text-sm text-muted"></span>
+          <div class="flex-center gap-10">
+            <button id="btn-prev" class="btn btn-secondary btn-sm">
+              &laquo; Sebelumnya
+            </button>
+            <button id="btn-next" class="btn btn-secondary btn-sm">
+              Selanjutnya &raquo;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="detail-review" class="review-box">
+        <button
+          id="btn-tutup-review"
+          class="btn btn-secondary w-100 font-bold mb-20"
+        >
+          &laquo; Kembali ke Daftar Riwayat
+        </button>
+        <div id="wadah-pembahasan"></div>
+      </div>
+    </div>
+
+    <script type="module" src="js/pages/riwayat.js"></script>
+  </body>
+</html>
