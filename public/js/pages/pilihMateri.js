@@ -1,12 +1,20 @@
 // public/js/pages/pilihMateri.js
 
-import { getMetadataSoal } from "../services/latihanService.js";
+import {
+  getMetadataSoal,
+  getRiwayatLatihanSiswa,
+} from "../services/latihanService.js";
 import {
   DAFTAR_MATERI_INTI,
   PETA_PRASYARAT_MANUAL,
   PETA_TAHAPAN,
 } from "../utils/kurikulumData.js";
 import { MODE_LATIHAN, DATA_DEFAULT } from "../utils/constants.js";
+import {
+  hitungSetMaster,
+  hitungStatusKunci,
+  apakahModeDikunci,
+} from "../utils/kurikulumEngine.js";
 
 // IMPORT VIEW BARU
 import {
@@ -14,6 +22,7 @@ import {
   createTahapSeparatorHTML,
   createMateriCardHTML,
   createErrorStateHTML,
+  tampilkanToast,
 } from "../views/pilihMateriView.js";
 
 // =====================================================================
@@ -66,11 +75,58 @@ function bangunGraphKurikulum(dataBankSoalTab) {
 }
 
 // =====================================================================
+// GERBANG PRASYARAT ("KUNCI MATERI")
+// =====================================================================
+
+/**
+ * Mengambil status master siswa lalu menghitung materi mana yang terkunci.
+ *
+ * Sengaja fail-safe: bila riwayat gagal dimuat (jaringan/izin), kembalikan peta
+ * kosong sehingga TIDAK ADA materi yang terkunci. Kegagalan teknis tidak boleh
+ * memblokir seluruh siswa.
+ */
+async function muatStatusKunci() {
+  const nis = localStorage.getItem("nis_siswa");
+  if (!nis) return { statusKunci: {}, setMaster: new Set() };
+
+  try {
+    const riwayat = await getRiwayatLatihanSiswa(nis);
+    const setMaster = hitungSetMaster(riwayat);
+    return {
+      statusKunci: hitungStatusKunci(PETA_PRASYARAT_MANUAL, setMaster),
+      setMaster,
+    };
+  } catch (error) {
+    console.error("Gagal memuat status kunci materi:", error);
+    return { statusKunci: {}, setMaster: new Set() };
+  }
+}
+
+/**
+ * Memasang/melepas kelas `.locked` sesuai mode yang sedang dipilih.
+ * Formatif selalu terbuka, jadi kuncinya hanya menyala untuk mode ujian.
+ */
+function segarkanStatusKunci() {
+  const modeTerpilih = document.querySelector(
+    'input[name="mode_latihan"]:checked',
+  )?.value;
+  const modeDikunci = apakahModeDikunci(modeTerpilih);
+
+  document.querySelectorAll(".materi-card").forEach((card) => {
+    const berpotensiTerkunci = card.getAttribute("data-terkunci") === "true";
+    card.classList.toggle("locked", modeDikunci && berpotensiTerkunci);
+  });
+}
+
+// =====================================================================
 // FUNGSI UTAMA: MUAT, PISAHKAN TAB, DAN RENDER
 // =====================================================================
 async function muatMateri() {
   try {
-    const metaDataMap = await getMetadataSoal();
+    const [metaDataMap, { statusKunci, setMaster }] = await Promise.all([
+      getMetadataSoal(),
+      muatStatusKunci(),
+    ]);
 
     if (!metaDataMap) {
       document.getElementById("teks-loading").innerText =
@@ -149,6 +205,10 @@ async function muatMateri() {
           meta.materi_utama,
           meta.nama_asli,
           meta.jumlah_soal,
+          {
+            ...(statusKunci[subNormal] || {}),
+            master: setMaster.has(subNormal),
+          },
         );
       });
 
@@ -157,6 +217,7 @@ async function muatMateri() {
     });
 
     wadahTombol.style.display = "flex";
+    segarkanStatusKunci();
   } catch (error) {
     console.error("Gagal memuat materi:", error);
     document.getElementById("wadah-konten-tab").innerHTML =
@@ -193,6 +254,9 @@ function ubahTampilanMode() {
     labelAktif.style.backgroundColor = "#f0fdfa";
     labelAktif.querySelector("strong").style.color = "var(--primary-color)";
   }
+
+  // Kunci hanya berlaku untuk mode ujian, jadi tampilannya ikut berubah di sini.
+  segarkanStatusKunci();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -232,6 +296,15 @@ document.getElementById("wadah-konten-tab").addEventListener("click", (e) => {
     const modeTerpilih = document.querySelector(
       'input[name="mode_latihan"]:checked',
     ).value;
+
+    // GERBANG PRASYARAT: hadang sebelum navigasi apa pun terjadi.
+    if (card.classList.contains("locked")) {
+      const prasyarat = card.getAttribute("data-prereq");
+      tampilkanToast(
+        `🔒 <strong>${subMateri}</strong> masih terkunci.<br>Kuasai dulu: ${prasyarat}<br><span style="opacity:.8">Mode Formatif tetap bisa kamu kerjakan.</span>`,
+      );
+      return;
+    }
 
     localStorage.setItem("mode_latihan", modeTerpilih);
     localStorage.setItem("materi_utama_aktif", materiUtama);

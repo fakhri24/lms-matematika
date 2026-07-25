@@ -22,6 +22,13 @@ export const LEVEL_SOAL = {
   SULIT: 3,
 };
 
+// Ambang status "master" sebuah sub-materi.
+// Nilainya menyamai aturan gelar di services/gelarService.js agar satu definisi.
+export const MASTERY = {
+  NILAI_MIN: 80,
+  SOAL_MIN: 10,
+};
+
 export const DATA_DEFAULT = {
   GELAR: "Petarung Baru",
   MATERI: "Tidak ada Nama Materi",
