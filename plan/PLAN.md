@@ -33,6 +33,12 @@
 | 5 | Prasyarat tanpa soal | **Tetap memblokir** + tampilkan peringatan ke admin |
 | 6 | Sub-materi belum dipetakan | **Terbuka** (dianggap titik masuk) |
 | 7 | UX klik kartu terkunci | **Toast** berisi daftar prasyarat yang belum master |
+| 8 | Materi yang sendirinya sudah master | **Tidak pernah dikunci**, walau prasyaratnya belum *(baru 2026-07-25, temuan uji manual)* |
+
+### Dasar keputusan #8
+Gerbang ini memakai prasyarat untuk **menduga** kesiapan siswa. Nilai sumatif ≥80 atas materi itu sendiri adalah **bukti langsung** kesiapan, dan bukti langsung mengalahkan dugaan. Tanpa aturan ini, siswa yang menguasai materi lewat urutan lain — atau di bawah kurikulum lama — justru terhalang mengulang materinya sendiri untuk memperbaiki nilai. Aturan ini juga mengalahkan fail-safe siklus (§4), karena penyebab terkuncinya di situ adalah peta yang rusak, bukan siswa yang belum siap.
+
+Uji manual menemukan **7 kasus nyata** pada satu akun saja, jadi ini bukan kasus tepi.
 
 ### Catatan penting atas kombinasi #4 + #5
 Kombinasi **strict** + **prasyarat bermasalah tetap memblokir** berpotensi mengunci banyak siswa sekaligus di hari rilis. Karena semua rantai di `PETA_PRASYARAT_MANUAL` bersifat **linear**, satu simpul bermasalah dapat mengunci seluruh rantai sesudahnya. Karena itu **§8 Gate Pra-Rilis wajib dijalankan dan dinyatakan lolos sebelum fitur diaktifkan** — bukan langkah opsional.
@@ -173,14 +179,14 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 6. [x] Perbarui `pages/pilihMateri.js` (riwayat, hitung kunci, `segarkanStatusKunci()` reaktif mode, blokir klik, fail-safe).
 7. [x] Tambah CSS `.materi-card.locked`, `.materi-info-kunci`, `.toast-kunci` di `pilih-materi.html`.
 8. [ ] Tambah panel diagnostik kurikulum di `admin.html` (keputusan #5). *Prioritas turun: Gate A menemukan nol masalah, jadi panel ini bersifat pencegahan untuk materi yang ditambahkan nanti.*
-9. [ ] Uji manual dengan **akun siswa sungguhan**: siswa baru (hanya 2 titik masuk terbuka di mode ujian); siswa yang sudah master beberapa materi (unlock bertahap); pastikan mode Formatif selalu bisa diklik.
+9. [x] Uji manual dengan **akun siswa sungguhan** — lolos 7/7, memunculkan keputusan #8. Lihat "Uji manual" di bawah.
 10. [ ] (Opsional) Refactor `gelarService` & `ketuntasanController` memakai helper baru (DRY).
 11. [ ] **Opsi A Gate B**: perkaya peta prasyarat (§10.1–10.2) — pekerjaan kurikulum.
 12. [ ] Visualisasi peta materi (§11) — sesudah langkah 11.
 
 ### Verifikasi yang sudah dilakukan (2026-07-25)
 
-- **Unit test:** 63 test hijau, 6 suite, tanpa regresi pada 4 suite lama.
+- **Unit test:** 66 test hijau, 6 suite, tanpa regresi pada 4 suite lama.
 - **Sanity check mesin vs peta sungguhan:** `hitungStatusKunci(PETA_PRASYARAT_MANUAL, ∅)` menghasilkan **tepat 2** materi terbuka (`operasi aritmatika dasar`, `rasio trigonometri dasar`) — **cocok persis dengan angka Gate B dari Firestore live**, dan pola (master + 2) terkonfirmasi. Tanpa siklus; kedalaman maksimum 29.
 - **Uji integrasi di browser** (server statis lokal, modul & CSS sungguhan):
   - Mode **Formatif** → 0 kartu terkunci, `cursor: pointer`, info prasyarat tersembunyi. ✅
@@ -188,6 +194,26 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
   - Perpindahan mode lewat event `change` sungguhan → kunci menyala/mati secara reaktif. ✅
   - Klik kartu terkunci → navigasi **tercegah**, toast muncul dengan daftar prasyarat. ✅
   - Lencana ✅ tampil pada materi yang sudah master.
+
+### Uji manual dengan akun siswa sungguhan (2026-07-25)
+
+Akun **NIS 1 "Siswa Albago"**, 128 rekam riwayat, 22 sub-materi master. Dijalankan lewat server statis lokal terhadap Firestore live; siswa login sendiri, tanpa kredensial dipegang asisten. Tidak ada soal yang dikerjakan agar riwayat tidak bertambah.
+
+| Cek | Hasil |
+|---|---|
+| Formatif | 0/55 terkunci walau 32 kartu ber-`data-terkunci` ✅ |
+| Sumatif Normal & Acak | terkunci, `cursor: not-allowed`, info prasyarat tampil ✅ |
+| Ganti mode bolak-balik | reaktif tanpa reload ✅ |
+| Klik kartu terkunci | toast muncul, navigasi tercegah ✅ |
+| Klik kartu terbuka | masuk `latihan.html`, 10 soal, 0 error konsol ✅ |
+| Lencana master | tak ada yang salah pasang ✅ |
+| **Silang-periksa engine vs DOM** | himpunan terkunci **identik**, 0 selisih dua arah ✅ |
+
+Silang-periksa terakhir adalah buktinya: `hitungStatusKunci` atas riwayat Firestore live menghasilkan daftar yang persis sama dengan yang dirender — mesinnya benar terhadap data asli, bukan hanya lolos Jest. Nol siklus terdeteksi.
+
+**Temuan → keputusan #8.** Sebelum perbaikan: 32 terkunci, **7 di antaranya sudah master** (Sifat Sudut Berseberangan, Sifat Bangun Datar, Lingkaran Luar Segitiga, Sistem Persamaan Linear, Sudut Berelasi Vertikal, Identitas Trigonometri Dasar, Persamaan Trigonometri Dasar). Sesudah perbaikan: **25 terkunci, 0 master-tapi-terkunci**, dan silang-periksa engine↔DOM tetap 25 = 25 tanpa selisih.
+
+**Temuan sampingan — nama sub-materi lawas di riwayat.** Riwayat memuat `sifat sudut (berseberangan & berpelurus)` yang sudah tidak punya kartu karena kurikulum sekarang memecahnya jadi dua. Akibatnya penguasaan lama siswa hangus: master versi gabungan, tapi `Sifat Sudut (Berpelurus)` versi baru tercatat belum. Bukan cacat mesin — ini persis kasus yang butuh **tabel alias (§10.2)**, dan menambah alasan mengerjakan opsi A.
 
 ---
 

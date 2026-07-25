@@ -205,9 +205,28 @@ describe("hitungStatusKunci", () => {
   });
 
   test("simpul dalam siklus diperlakukan terkunci (fail-safe)", () => {
-    const status = hitungStatusKunci({ A: ["B"], B: ["A"] }, new Set(["a", "b"]));
+    const status = hitungStatusKunci({ A: ["B"], B: ["A"] }, new Set());
     expect(status["a"].locked).toBe(true);
     expect(status["a"].siklus).toBe(true);
+  });
+
+  test("materi yang sudah master tidak pernah terkunci walau prasyaratnya belum", () => {
+    // Kasus nyata: siswa master di bawah kurikulum lama, lalu peta berubah.
+    const status = hitungStatusKunci(rantai, new Set(["c"]));
+    expect(status["c"].locked).toBe(false);
+    expect(status["b"].locked).toBe(true);
+  });
+
+  test("prereqBelum tetap dilaporkan untuk materi master yang prasyaratnya bolong", () => {
+    const status = hitungStatusKunci(rantai, new Set(["c"]));
+    expect(status["c"].prereqBelum).toEqual(["B"]);
+  });
+
+  test("master mengalahkan fail-safe siklus", () => {
+    const status = hitungStatusKunci({ A: ["B"], B: ["A"] }, new Set(["a"]));
+    expect(status["a"].locked).toBe(false);
+    expect(status["a"].siklus).toBe(true);
+    expect(status["b"].locked).toBe(true);
   });
 
   test("menerima setMaster berupa array biasa", () => {

@@ -159,6 +159,12 @@ export function hitungUrutanTopologis(petaPrasyarat) {
  * Simpul yang terlibat siklus diperlakukan terkunci (fail-safe) agar peta yang
  * rusak tidak membuat materi lolos tanpa validasi.
  *
+ * Pengecualian: sub-materi yang SUDAH master tidak pernah terkunci. Gerbang ini
+ * memakai prasyarat untuk menduga kesiapan siswa, sedangkan nilai sumatif >=80
+ * atas materi itu sendiri adalah bukti kesiapan yang langsung. Bukti langsung
+ * mengalahkan dugaan; tanpa ini siswa yang menguasai materi lewat urutan lain
+ * (atau di bawah kurikulum lama) justru terhalang mengulang materinya sendiri.
+ *
  * @returns {Object} peta { subMateriTernormalisasi: { locked, prereqBelum, siklus } }
  */
 export function hitungStatusKunci(petaPrasyarat, setMaster) {
@@ -175,7 +181,8 @@ export function hitungStatusKunci(petaPrasyarat, setMaster) {
 
     const terlibatSiklus = setSiklus.has(simpul);
     status[simpul] = {
-      locked: terlibatSiklus || prereqBelum.length > 0,
+      locked:
+        !master.has(simpul) && (terlibatSiklus || prereqBelum.length > 0),
       prereqBelum,
       siklus: terlibatSiklus,
     };
