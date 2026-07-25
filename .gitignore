@@ -1,6 +1,15 @@
 # Kredensial & Keamanan (SANGAT PENTING)
 kunci-rahasia-firebase.json
 .env
+.env.*
+
+# Pola preventif: tangkap service account / kredensial dengan nama apa pun
+*serviceAccount*.json
+*firebase-adminsdk*.json
+*-kunci-rahasia*.json
+*.pem
+*.key
+*.p12
 
 # Node.js dependencies
 node_modules/
