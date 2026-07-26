@@ -201,7 +201,7 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 9. [x] Uji manual dengan **akun siswa sungguhan** — lolos 7/7, memunculkan keputusan #8. Lihat "Uji manual" di bawah.
 10. [ ] (Opsional) Refactor `gelarService` & `ketuntasanController` memakai helper baru (DRY).
 11. [x] ~~**Opsi A Gate B**: turunkan peta dari `konsep_prasyarat`~~ → **dibatalkan**, diganti tabel manual. Lihat §12.
-12. [ ] Visualisasi peta materi (§11) — prasyaratnya kini terpenuhi lewat §12.
+12. [x] Visualisasi peta materi (§11) — `peta-materi.html` + `tataLetakPeta.js` + `petaMateriView.js`, **21 test hijau**, terverifikasi terhadap Firestore live.
 
 ### Verifikasi yang sudah dilakukan (2026-07-25)
 
@@ -242,6 +242,8 @@ Dijalankan **sebelum** fitur diaktifkan untuk siswa. Berupa skrip diagnostik sek
 
 Skrip tersimpan di [`plan/diagnostik/`](plan/diagnostik) (tidak ikut ter-deploy — `firebase.json` hanya menyajikan `public/`).
 
+**Yang masih ada:** hanya [`gate-a-audit-kurikulum.mjs`](plan/diagnostik/gate-a-audit-kurikulum.mjs), karena pemeriksaannya berulang — setiap kali tabel prasyarat atau bank soal berubah. Dua skrip sekali-jalan (`gate-a-dampak-per-tab.mjs`, `gate-b-simulasi-dampak.js`) **dihapus 2026-07-26**; hasilnya sudah tercatat lengkap di bawah, dan menyimpan skripnya hanya mengundang orang menjalankan ulang analisis yang sudah usang terhadap peta yang sudah diganti (§12).
+
 ### ✅ HASIL GATE A — LOLOS (dijalankan 2026-07-25)
 
 Sumber: dump `arsip-data/` + `artefak/` — 22 berkas, 993 baris → **645 soal unik**, 62 sub-materi.
@@ -259,7 +261,7 @@ Verifikasi tambahan: engine ujian menargetkan **tepat 10 soal** (kuota 4-4-2 + f
 
 ### ⚠️ TEMUAN TAMBAHAN GATE A — cakupan fitur tidak merata antar tab
 
-Perintah: `node plan/diagnostik/gate-a-dampak-per-tab.mjs`
+Sumber: `gate-a-dampak-per-tab.mjs` (skrip sudah dihapus, angka di bawah adalah catatan hasilnya)
 
 | Tab | Sub-materi | Dipetakan | Efek fitur kunci |
 |---|---|---|---|
@@ -317,13 +319,9 @@ Terbukti di data: siswa 0-master → **2** terbuka (tepat 2 akar: `operasi aritm
 - **Ekspektasi setelah revisi #3:** dampaknya jauh lebih ringan daripada rencana sebelumnya, karena definisi master sekarang identik dengan aturan gelar yang sudah berjalan — siswa yang sudah bergelar otomatis master. Gate ini tetap dijalankan untuk mengonfirmasi, bukan untuk berjaga-jaga saja.
 - **Kriteria lolos:** angkanya Anda terima secara sadar. Jika terlalu besar, keputusan #4 (strict) dapat ditinjau ulang **dengan data di tangan**, bukan berdasarkan dugaan.
 
-**Cara menjalankan Gate B** — skrip: [`plan/diagnostik/gate-b-simulasi-dampak.js`](plan/diagnostik/gate-b-simulasi-dampak.js)
+**Cara menjalankan Gate B** — skrip `gate-b-simulasi-dampak.js` **sudah dihapus 2026-07-26**; Gate B sudah dijalankan dan hasilnya tercatat di atas, dan peta yang disimulasikannya sudah diganti (§12), jadi menjalankan ulang skrip itu hanya menghasilkan angka yang menyesatkan.
 
-Butuh sesi login (rules `hasil_latihan` mewajibkan autentikasi). Skrip **hanya membaca** — tidak ada `setDoc`/`updateDoc`/`deleteDoc`. Dua cara:
-1. **Console browser** — buka situs hosting, login sebagai admin, DevTools → Console, tempel seluruh isi skrip.
-2. **Panel Browser di sesi ini** — Anda login sendiri di panel (Anda yang mengetikkan sandi), lalu skrip dieksekusi dari sini dan hasilnya langsung dibahas.
-
-Skrip juga **memverifikasi ulang Gate A dengan data live** (`metadata/statistik_soal`), karena hasil Gate A di atas berbasis dump arsip yang bisa tertinggal dari Firestore.
+Bila suatu saat perlu disimulasikan ulang (misalnya sesudah tab Eksponen/Logaritma digerbangkan), tulis ulang dari pola yang sama: baca `hasil_latihan` dengan sesi login (rules mewajibkan autentikasi), **hanya membaca** — tanpa `setDoc`/`updateDoc`/`deleteDoc` — lalu jalankan `hitungSetMaster()` + `hitungStatusKunci()` per siswa. Login dilakukan sendiri oleh pemilik proyek di panel Browser; skrip tidak pernah menerima sandi.
 
 ---
 
@@ -338,7 +336,7 @@ Dua hal yang tampak terpisah ternyata satu akar masalah:
 
 ### 10.1 Bahan yang sudah tersedia: field `konsep_prasyarat`
 
-Dokumen `bank_soal` punya field `konsep_prasyarat` per-soal, dan isinya **sudah bercabang secara alami**. Diukur dari dump arsip (`node plan/diagnostik/gate-a-*.mjs` + analisis graf):
+Dokumen `bank_soal` punya field `konsep_prasyarat` per-soal, dan isinya **sudah bercabang secara alami**. Diukur dari dump arsip (skrip Gate A + analisis graf):
 
 | Properti | `PETA_PRASYARAT_MANUAL` (hard-code) | `konsep_prasyarat` (per-soal) |
 |---|---|---|
@@ -377,35 +375,65 @@ Opsi ini **tidak saling eksklusif** — B atau C bisa dipakai sebagai jembatan s
 - **A dikerjakan menyusul** → memperkaya peta prasyarat (§10.1–10.2) sebagai pekerjaan kurikulum terpisah, yang nanti sekaligus membuka jalan visualisasi pohon (§11).
 - **Urutan kerja:** fitur kunci (logika) lebih dulu, lalu A, lalu visualisasi.
 
-> **Dibatalkan 2026-07-26.** Opsi A dikerjakan sampai tuntas (peta 75 sisi, 17 node bercabang), lalu **dibuang** setelah terbukti melawan urutan mengajar. Tujuannya — peta bercabang — tetap tercapai lewat tabel manual: 44 sisi, kedalaman 6, lapisan pembukaan `[2,3,6,7,6,1]`. Rinciannya di §12.
+> **Dibatalkan 2026-07-26.** Opsi A dikerjakan sampai tuntas (peta 75 sisi, 17 node bercabang), lalu **dibuang** setelah terbukti melawan urutan mengajar. Tujuannya — peta bercabang — tetap tercapai lewat tabel manual: 45 sisi, kedalaman 6, lapisan pembukaan `[2,3,6,7,6,1]`. Rinciannya di §12.
 
 **Implikasi teknis penting dari C:** status terkunci sebuah kartu sekarang **bergantung pada mode yang sedang dipilih** di radio `mode_latihan`. Kartu harus **memperbarui tampilan kuncinya saat mode diganti** — bukan hanya sekali saat render. Lihat §5.4.
 
 ---
 
-## 11. Visualisasi Peta Materi (fase terpisah, sesudah fitur kunci)
+## 11. Visualisasi Peta Materi — ✅ TERIMPLEMENTASI (2026-07-26)
 
-**Prasyarat mutlak:** data prasyarat harus bercabang. **✅ Terpenuhi sejak §12** — tabel manual punya 17 materi berprasyarat ganda dan kedalaman 6, jadi visual berlapis sudah bermakna.
+Halaman [`peta-materi.html`](public/peta-materi.html), ditautkan dari tombol "🗺️ Peta Materi" di `pilih-materi.html`. Tampilan daftar **tetap ada** dan tetap jadi jalur utama mengerjakan soal; peta ini menjelaskan, bukan menggantikan.
 
-### 11.1 Pilihan tata letak
+**Prasyarat mutlak — data prasyarat harus bercabang — terpenuhi sejak §12** (18 materi berprasyarat ganda, kedalaman 6).
 
-| Bentuk | Cocok untuk | Catatan atas data ini |
+### 11.1 Bentuk yang dipilih: layered kiri→kanan
+
+Peta metro sempat direkomendasikan sebagai langkah awal, **tapi dilewati**: saran itu ditulis untuk rantai linear 53 sisi, di mana "jalur" adalah satu-satunya struktur yang ada. Tabel manual sudah bercabang, jadi bentuk berlapis bisa langsung dipakai tanpa tahap antara.
+
+| Bentuk | Putusan |
+|---|---|
+| **Layered kiri→kanan** | ✅ **Dipakai.** 7 kolom, kolom terlebar 9 simpul, 34 simpul, 45 sisi. Arah kiri→kanan langsung terbaca "maju". |
+| Peta metro / jalur | ⏭️ Dilewati — dirancang untuk data linear yang sudah tidak berlaku. |
+| Radial | ❌ Label panjang (`Sudut Berelasi (Negatif dan >360°)`) bertumpuk saat diputar, dan akarnya ada 9, bukan 1. |
+| Force-directed | ❌ Tidak menunjukkan arah progresi. |
+
+### 11.2 Cara kolom dihitung
+
+Kolom = **lapisan pembukaan**: kolom ke-N berisi materi yang terbuka setelah seluruh isi kolom 0..N-1 dikuasai. Dihitung di [`utils/tataLetakPeta.js`](public/js/utils/tataLetakPeta.js) dengan menjalankan `hitungStatusKunci()` berulang — mesin yang sama dengan yang mengunci kartu, jadi peta mustahil berbohong tentang gerbangnya. **Kahn tidak dihidupkan kembali**, termasuk untuk tata letak (§12).
+
+Hasil pada tabel produksi: `[9, 2, 3, 6, 7, 6, 1]`. Kolom 0 berisi 9 materi tab Prasyarat yang jadi pintu masuk.
+
+> **Menyimpang dari rencana awal:** lapisan dihitung **tanpa** status master siswa, sehingga bentuk peta sama untuk semua orang. Rencana semula menghitungnya per-siswa ("kapan ini terbuka bagimu"), tapi itu membuat peta menyusun ulang dirinya setiap kali satu materi tuntas — sebuah peta yang berubah bentuk berhenti berfungsi sebagai peta. Keadaan siswa dipakai untuk **mewarnai** simpul, bukan memindahkannya; simpul "siap" sudah menjadi garis depan yang dicari.
+
+Urutan baris dalam satu kolom memakai **barycenter** (rerata baris prasyaratnya), dengan urutan mengajar sebagai pemecah seri agar hasilnya stabil dan tidak bergantung urutan penulisan tabel.
+
+### 11.3 Implementasi
+
+| Lapisan | Berkas | Isi |
 |---|---|---|
-| **Layered kiri→kanan** (Sugiyama-lite: kolom = kedalaman topologis) | Progresi berprasyarat, "skill tree" | ✅ **Rekomendasi utama.** 16 kolom, kolom terlebar 17 node. Arah kiri→kanan langsung membaca sebagai "maju". Status kunci memetakan mulus ke warna simpul. |
-| **Radial / dari tengah ke segala arah** | Pohon dangkal & lebar, satu akar | ⚠️ Kedalaman 16 + label panjang (`Sistem Persamaan Kuadrat-Kuadrat (SPKK)`) bikin label berputar & bertumpuk. Butuh akar tunggal (sekarang ada banyak). Terlihat mengesankan, tapi sulit dibaca. |
-| **Peta metro / jalur** | Rantai panjang dengan sesekali cabang | ✅ Alternatif kuat: `PETA_TAHAPAN` sudah menyediakan "jalur" (6 tahap Prasyarat + 6 tahap Trigonometri) sebagai warna garis, materi sebagai stasiun. Cocok dengan bentuk data **sekarang** tanpa menunggu §10. |
-| Force-directed | Eksplorasi jaringan | ❌ Tidak menunjukkan urutan/arah progresi. Hindari. |
+| Utils | `utils/tataLetakPeta.js` | lapisan, koordinat grid, status simpul, pemenggalan label — murni, 21 test |
+| Utils | `utils/teksAman.js` | `amankanTeks()` yang tadinya terkubur di `pilihMateriView.js` |
+| View | `views/petaMateriView.js` | SVG murni tanpa dependensi; geometri piksel hanya di sini |
+| Controller | `pages/petaMateri.js` | muat riwayat → status → render → interaksi |
 
-**Saran bertahap:** mulai **peta metro** (bisa dikerjakan dengan data linear hari ini, langsung terasa manfaatnya), lalu naik ke **layered kiri→kanan** begitu peta diperkaya (§10.1). Radial disimpan sebagai mode tampilan opsional, bukan default.
+- **Status simpul** = 3 keadaan: ✅ master (hijau terisi) / ▶ siap (garis tebal) / 🔒 terkunci (redup).
+- **Gagal muat riwayat dilaporkan**, tidak diam-diam fail-safe seperti halaman daftar. Di sana fail-safe berarti "tidak ada yang terkunci" — aman. Di sini artinya "semua materi tampak siap", yang menyesatkan.
+- **Mobile** — peta digulung di dalam wadahnya sendiri (bukan `scrollIntoView`, yang ikut menggeser halaman), plus tombol **🎯 Materi siapku** dan **🔍 Lihat utuh**. Pinch-zoom SVG sengaja dihindari mengingat riwayat bug Safari proyek ini; menggulung wadah + satu tombol ikhtisar mencapai tujuan yang sama dengan risiko jauh lebih kecil.
+- **Aksesibilitas** — tiap simpul `tabindex`/`role="button"` dengan `aria-label` berisi status dan prasyarat yang belum tuntas, serta `<title>` untuk tooltip.
+- **Penamaan** — kolom disebut **"Lapis"**, bukan "Tahap". "Tahap" sudah dipakai `PETA_TAHAPAN` untuk tahap mengajar di kelas, dan keduanya **tidak** sama; memakai kata yang sama akan menyesatkan guru maupun siswa.
 
-### 11.2 Implementasi
+### 11.4 Verifikasi (2026-07-26, Firestore live, akun NIS 1)
 
-- **SVG murni, tanpa dependensi** — konsisten dengan gaya proyek (vanilla ES modules, tanpa build step). Sekitar 100–150 baris; tidak perlu d3.
-- **Kolom = lapisan pembukaan, bukan kedalaman topologis.** Kahn sudah dihapus (§12) dan **jangan dihidupkan lagi hanya untuk tata letak**. Lapisan dihitung dengan mensimulasikan `hitungStatusKunci()` berulang: yang terbuka pada iterasi ke-N masuk kolom ke-N. Ini persis yang dilakukan test "seluruh tab Trigonometri dapat dibuka" (§12.3), dan hasilnya lebih jujur bagi siswa — kolom berarti "kapan ini terbuka bagimu", bukan "berapa jauh dari akar".
-- **Satu sumber logika** — visual ini adalah **View murni** di atas `hitungStatusKunci()` yang sama.
-- **Status simpul** = 3 keadaan: 🔒 terkunci (redup) / ▶ siap (menonjol) / ✅ master (terisi). Ini membuat "kunci materi" bisa **dilihat**, bukan cuma dirasakan saat diklik.
-- **Mobile** — 16 kolom tidak muat di layar ponsel. Perlu pan + pinch-zoom (transform pada `<g>`), plus tombol "fokus ke materi saya" yang men-scroll ke frontier siswa. Uji di Safari iOS (proyek ini punya riwayat bug Safari).
-- **Aksesibilitas & fallback** — tampilan daftar sekarang tetap dipertahankan sebagai mode alternatif, jangan dihapus.
+| Pemeriksaan | Hasil |
+|---|---|
+| Simpul & sisi terender | 34 simpul, 45 sisi — sama persis dengan tabel |
+| Status DOM vs mesin | ✅ identik untuk 34 simpul (15 master, 9 siap, 10 terkunci) |
+| 10 terkunci di peta vs 10 terkunci di daftar materi | ✅ cocok |
+| Prasyarat selalu di kolom kiri materinya | ✅ 0 pelanggaran (dijaga test) |
+| Materi yatim | ✅ kosong |
+| Galat console | ✅ tidak ada |
+| Ponsel 375px | ✅ tanpa overflow mendatar pada halaman |
 
 ---
 
@@ -428,8 +456,8 @@ Analisis per-soal itu **tidak sia-sia**: angka persentasenya dipakai sebagai bah
 
 | | Rantai lama | Peta turunan (dibuang) | **Tabel manual** |
 |---|---|---|---|
-| Sisi | 53 | 75 | **44** |
-| Materi berprasyarat ganda | 0 | 17 | **17** |
+| Sisi | 53 | 75 | **45** |
+| Materi berprasyarat ganda | 0 | 17 | **18** |
 | Kedalaman | 29 | 11 | **6** |
 | Lingkup kunci | 2 tab | 2 tab | **hanya Trigonometri** |
 

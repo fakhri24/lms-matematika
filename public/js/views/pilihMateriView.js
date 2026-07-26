@@ -1,13 +1,6 @@
 // public/js/views/pilihMateriView.js
 
-/** Mencegah nama materi dari database merusak markup. */
-function amankanTeks(teks) {
-  return String(teks ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
+import { amankanTeks } from "../utils/teksAman.js";
 
 /**
  * Membuat tombol navigasi Tab
