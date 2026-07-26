@@ -29,5 +29,10 @@ Proyek ini dibagi menjadi peran-peran spesifik yang dipandu oleh berkas `AGENTS.
 - **Pencegahan Bug Safari**: Gunakan `getFirestore` biasa tanpa IndexedDB persistence/cache offline untuk mencegah crash browser di iOS/macOS.
 - **Keamanan Aturan Firestore**: Pastikan setiap kueri client-side mematuhi aturan keamanan Firestore (`firestore.rules`). Hanya ubah data yang dimiliki oleh pengguna (`nis_siswa`).
 - **Pengujian Sukses**: Kode baru atau perubahan logika wajib lolos Jest Unit Test sebelum di-commit.
+- **Ambang 10 Soal per Sub-Materi**: Setiap sub-materi wajib punya **minimal `MASTERY.SOAL_MIN` (10) soal** di bank soal sebelum boleh dipakai untuk ujian sumatif. Ambang ini bukan angka hiasan — `isHasilMasterSumatif()` mensyaratkan >= 10 soal dikerjakan, jadi sub-materi dengan soal kurang dari itu **tidak akan pernah bisa di-master**: gelarnya tak pernah terbit, dan kalau ia jadi prasyarat, semua materi di hilirnya terkunci permanen. Konsekuensinya:
+  - Menambah sub-materi ke `PETA_PRASYARAT_MANUAL` tanpa 10 soal = mengunci mati satu cabang kurikulum. Jalankan `plan/diagnostik/gate-a-audit-kurikulum.mjs` sebelum menambah.
+  - Idealnya ujian sumatif pada sub-materi di bawah ambang **ditolak di depan**, bukan dibiarkan tersimpan lalu dibersihkan belakangan. **Penjaga ini belum ada di kode** (per 2026-07-26) — jangan berasumsi sudah terpasang. Selama belum ada, rekaman semacam itu tetap bisa terbentuk dan akan tampak menyesatkan di panel admin.
+  - Data lama yang terlanjur di bawah ambang **sengaja dibiarkan** (keputusan pemilik proyek, 2026-07-26). Jangan menghapusnya tanpa permintaan eksplisit.
+  - Mode formatif **tidak** terkena ambang ini. Formatif adalah latihan terbimbing yang memang boleh pendek, dan tidak pernah dihitung sebagai bukti penguasaan.
 
 
