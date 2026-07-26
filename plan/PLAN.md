@@ -366,7 +366,7 @@ Diverifikasi dengan ekspor Firestore live segar (880 soal) lewat Gate A — **�
 
 Tab Fungsi Kuadrat sekarang aktif dan terisi penuh — 6 dari 8 tab baru selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat). Gerbang antar-tab Pertidaksamaan → "semua sub-materi Eksponen + Fungsi Kuadrat + Sistem Persamaan" (§11.4) sekarang **bisa ditulis penuh** — ketiga tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 6 (Pertidaksamaan) dikerjakan.
 
-**Fase 6 — Pertidaksamaan, disiapkan 2026-07-26 (menunggu impor & verifikasi).** 5 sub-materi baru (50 soal) + 1 reklasifikasi (`materi_utama` saja, isi tidak diubah) untuk tab Pertidaksamaan, dari Bab 6 prota (subbab 6.1 Pertidaksamaan Linear — termasuk Program Linear / 6.2 Pertidaksamaan Kuadrat / 6.3 Pertidaksamaan Rasional / 6.4 Pertidaksamaan Irasional / 6.5 Penyelesaian Masalah):
+**Fase 6 — Pertidaksamaan, SELESAI (kode + data), terverifikasi 2026-07-26.** 5 sub-materi baru (50 soal) + 1 reklasifikasi (`materi_utama` saja, isi tidak diubah) untuk tab Pertidaksamaan, dari Bab 6 prota (subbab 6.1 Pertidaksamaan Linear — termasuk Program Linear / 6.2 Pertidaksamaan Kuadrat / 6.3 Pertidaksamaan Rasional / 6.4 Pertidaksamaan Irasional / 6.5 Penyelesaian Masalah):
 
 1. **Pertidaksamaan Linear** (Tahap 1, pintu masuk, baru) — **dipecah** dari subbab 6.1 buku bersama Program Linear (dua unit asesmen berbeda di prota: UH tulis vs proyek, jadi layak dipisah, bukan digabung sesuai judul buku). Solusi pertidaksamaan linear satu variabel, majemuk, dan pecahan.
 2. **Program Linear** (Tahap 2, baru) — sisi lain subbab 6.1: menyusun sistem pertidaksamaan dari kendala verbal, mencari titik pojok daerah penyelesaian, mengevaluasi fungsi objektif (maksimum/minimum).
@@ -385,4 +385,6 @@ Kode lolos Jest 102/102 lokal (tambahan: cek rantai gerbang Pertidaksamaan bisa 
 
 `peta-materi.html` **catatan**: kolom peta gabungan sekarang tepat di ambang `15` (naik dari sebelumnya, karena rantai Eksponen→Pertidaksamaan makin panjang). Ambang test belum perlu dinaikkan lagi, tapi ini sinyal makin kuat bahwa keputusan pemisahan peta per tab (masih **belum diputuskan**, lihat catatan Fase 2) akan segera dibutuhkan di fase-fase berikutnya.
 
-Belum di-push — menunggu konfirmasi impor lalu verifikasi ekspor Firestore live segar.
+Diverifikasi dengan ekspor Firestore live segar (930 soal) lewat Gate A — **✅ LOLOS**, DAG 66 node valid, tidak ada deadlock, keenam sub-materi Pertidaksamaan 10 soal masing-masing di `materi_utama: "Pertidaksamaan"` (termasuk "Pertidaksamaan Kuadrat" yang sudah berpindah tab meski nama `sub_materi`-nya tidak berubah). Test Jest 102/102 lolos.
+
+Tab Pertidaksamaan sekarang aktif dan terisi penuh — 7 dari 8 tab baru selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan). Gerbang antar-tab Fungsi Rasional → "semua sub-materi Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan" (§11.4) sekarang **bisa ditulis penuh** — ketiga tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 7 (Fungsi Rasional) dikerjakan.
