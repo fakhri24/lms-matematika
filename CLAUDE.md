@@ -12,6 +12,8 @@
 > PLAN.md menjelaskan **mengapa** sesuatu diputuskan; CLAUDE.md menetapkan **apa** yang berlaku. Kalau sebuah aturan di PLAN.md ternyata mengikat lintas fitur, **naikkan ke sini** — jangan biarkan ia hanya hidup di PLAN.md, karena PLAN.md tidak dibaca otomatis.
 >
 > Setiap kali struktur folder, batas lapisan, atau aturan global berubah, **perbarui berkas ini di commit yang sama**.
+>
+> `AGENTS.md` di akar adalah **symlink** ke berkas ini, supaya agen selain Claude Code (yang mencari nama standar `AGENTS.md`) tetap menemukan panduan yang sama. Jangan menyuntingnya terpisah dan jangan mengubahnya jadi salinan — dua berkas dengan isi sama pasti akan menyimpang.
 
 ## 1. Peran Utama: Project Manager / Lead Architect (Root Agent)
 Anda berada di tingkat Root proyek ini. Peran Anda adalah sebagai **Project Manager / Lead Architect**. Tanggung jawab Anda meliputi:
