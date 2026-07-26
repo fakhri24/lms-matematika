@@ -37,6 +37,17 @@ export const DAFTAR_MATERI_INTI = [
 // Sub-materi tab baru yang belum punya soal (jadi belum punya data
 // konsep_prasyarat) memakai rantai sekuensial sederhana dulu — lihat §11.
 export const PETA_PRASYARAT = {
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB EKSPONEN — rantai sekuensial sederhana (2026-07-26, plan/PLAN.md
+  // §11). Belum ada data konsep_prasyarat (soal baru ditulis), jadi tiap
+  // sub-materi cuma butuh SATU pendahulu langsung — diperkaya jadi
+  // jaringan bercabang nanti setelah polanya kelihatan dari data nyata.
+  // ═══════════════════════════════════════════════════════════════════
+  "Operasi Bentuk Akar": ["Sifat Eksponen Bilangan Bulat"],
+  "Merasionalkan Penyebut": ["Operasi Bentuk Akar"],
+  "Eksponen Rasional (Pangkat Pecahan)": ["Merasionalkan Penyebut"],
+  "Fungsi Eksponen": ["Eksponen Rasional (Pangkat Pecahan)"],
+
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
   // Teorema Pythagoras, jadi siswa yang belum menguasainya belum siap.
@@ -177,30 +188,36 @@ export const PETA_PRASYARAT = {
 // =====================================================================
 // PETA TAHAPAN UNTUK UI (PEMBATAS VISUAL & LEVELING)
 // =====================================================================
-export const PETA_TAHAPAN = {
-  // =====================================================================
-  // MATERI EKSPONEN (tab "Eksponen", Bab 1 prota)
-  // =====================================================================
-  // Fase 1 lengkap 2026-07-26 (plan/PLAN.md §11). Urutan mengikuti buku
-  // (1.1 -> 1.2 -> 1.3), plus "Fungsi Eksponen" sebagai sisipan penutup
-  // (bukan subbab resmi buku, tapi celah CP Fase E/SNBT yang eksplisit
-  // dicatat di ROADMAP file prota).
+// Dipecah jadi blok per tab (bukan satu objek datar) sejak ekspansi
+// multi-tab (2026-07-26, plan/PLAN.md §11), supaya batas "mana yang tab
+// Prasyarat (SMP, tidak pernah dikunci) vs mana yang tab materi utama
+// (boleh digerbang)" tidak perlu ditebak dari komentar atau posisi index —
+// tes mengimpor SUB_MATERI_PRASYARAT_SMP di bawah untuk memverifikasinya.
+
+// --- MATERI EKSPONEN (tab "Eksponen", Bab 1 prota) ---
+// Fase 1 lengkap 2026-07-26 (plan/PLAN.md §11). Urutan mengikuti buku
+// (1.1 -> 1.2 -> 1.3), plus "Fungsi Eksponen" sebagai sisipan penutup
+// (bukan subbab resmi buku, tapi celah CP Fase E/SNBT yang eksplisit
+// dicatat di ROADMAP file prota).
+const TAHAPAN_EKSPONEN = {
   "sifat eksponen bilangan bulat": "Tahap 1: Bilangan Berpangkat Bulat",
   "operasi bentuk akar": "Tahap 2: Bentuk Akar",
   "merasionalkan penyebut": "Tahap 2: Bentuk Akar",
   "eksponen rasional (pangkat pecahan)": "Tahap 3: Bentuk Pangkat Rasional",
   "fungsi eksponen": "Tahap 4: Aplikasi Eksponen",
+};
 
-  // =====================================================================
-  // MATERI SISTEM PERSAMAAN (tab "Sistem Persamaan", Bab 3 prota)
-  // =====================================================================
-  // Dipindahkan dari tab Prasyarat 2026-07-26 (plan/PLAN.md §11). Nama
-  // PLSV/SPLDV distandarkan dengan akronim baku agar konsisten dengan SPLTV.
+// --- MATERI SISTEM PERSAMAAN (tab "Sistem Persamaan", Bab 3 prota) ---
+// Dipindahkan dari tab Prasyarat 2026-07-26 (plan/PLAN.md §11). Nama
+// PLSV/SPLDV distandarkan dengan akronim baku agar konsisten dengan SPLTV.
+const TAHAPAN_SISTEM_PERSAMAAN = {
   "persamaan linear satu variabel (plsv)": "Tahap 1: Satu Variabel",
   "sistem persamaan linear dua variabel (spldv)": "Tahap 2: Dua Variabel",
   "sistem persamaan linear tiga variabel (spltv)": "Tahap 3: Tiga Variabel",
+};
 
-  // --- PRASYARAT MATEMATIKA DASAR (SMP) ---
+// --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
+const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
   // Ditambahkan 2026-07-26 (bersama dua sub-materi lain di bawah) untuk
   // menutup tiga celah tersisa dari analisis Tes Diagnostik Numerasi Kelas X
@@ -245,12 +262,14 @@ export const PETA_TAHAPAN = {
   "persentase": "Tahap 7: Numerasi Terapan",
   "perbandingan dan skala": "Tahap 7: Numerasi Terapan",
   "pembulatan dan estimasi": "Tahap 7: Numerasi Terapan",
+};
 
-  // --- MATERI TRIGONOMETRI ---
-  // Teorema Pythagoras dipindah ke sini 2026-07-26 (plan/PLAN.md §11) —
-  // persis subbab 2.2 di buku, sebelum rasio sisi-sisi (2.3). Posisinya
-  // HARUS tetap sebelum "rasio trigonometri dasar" karena ia gerbangnya
-  // (lihat PETA_PRASYARAT di atas) — jangan dipindah ke bawah.
+// --- MATERI TRIGONOMETRI ---
+// Teorema Pythagoras dipindah ke sini 2026-07-26 (plan/PLAN.md §11) —
+// persis subbab 2.2 di buku, sebelum rasio sisi-sisi (2.3). Posisinya
+// HARUS tetap sebelum "rasio trigonometri dasar" karena ia gerbangnya
+// (lihat PETA_PRASYARAT di atas) — jangan dipindah ke bawah.
+const TAHAPAN_TRIGONOMETRI = {
   "teorema pythagoras": "Tahap 1: Pengenalan & Konsep Dasar",
   "rasio trigonometri dasar": "Tahap 1: Pengenalan & Konsep Dasar",
   "nilai sudut istimewa": "Tahap 1: Pengenalan & Konsep Dasar",
@@ -285,4 +304,15 @@ export const PETA_TAHAPAN = {
   "persamaan trigonometri standar": "Tahap 6: Persamaan Trigonometri",
   "persamaan trigonometri lanjutan": "Tahap 6: Persamaan Trigonometri",
   "persamaan trigonometri bentuk khusus": "Tahap 6: Persamaan Trigonometri",
+};
+
+// Dipakai test untuk memverifikasi tab Prasyarat (SMP) tidak pernah
+// dikunci, terlepas dari tab materi utama lain yang boleh punya gerbang.
+export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
+
+export const PETA_TAHAPAN = {
+  ...TAHAPAN_EKSPONEN,
+  ...TAHAPAN_SISTEM_PERSAMAAN,
+  ...TAHAPAN_PRASYARAT_SMP,
+  ...TAHAPAN_TRIGONOMETRI,
 };

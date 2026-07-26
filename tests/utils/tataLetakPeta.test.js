@@ -93,8 +93,10 @@ describe("susunTataLetakPeta", () => {
       Object.keys(PETA_TAHAPAN),
     );
     expect(hasil.yatim).toEqual([]);
-    // 25 materi tab Trigonometri + 9 gerbang dari tab Prasyarat.
-    expect(hasil.node).toHaveLength(34);
+    // 25 target tab Trigonometri + 4 target tab Eksponen (Fase 1, plan/PLAN.md
+    // §11: Operasi Bentuk Akar, Merasionalkan Penyebut, Eksponen Rasional,
+    // Fungsi Eksponen) + 9 akar (leaf, prasyarat:[]) gabungan Prasyarat & Eksponen.
+    expect(hasil.node).toHaveLength(38);
     // Peta yang butuh lebih dari ~8 kolom tidak lagi terbaca dalam satu layar.
     expect(hasil.jumlahKolom).toBeLessThanOrEqual(8);
   });

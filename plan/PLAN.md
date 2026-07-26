@@ -282,3 +282,19 @@ Fase 1–9 (isi konten baru, urutan mengikuti `RENCANA[].urut`): Eksponen (+ Fun
 Tab "Sistem Persamaan" sekarang aktif dan terisi penuh di `pilih-materi.html`. Siap lanjut ke Fase 1.
 
 **Housekeeping selesai (2026-07-26).** `arsip-data/bank_soal.json` (455 soal, kedaluwarsa) dihapus. `gate-a-audit-kurikulum.mjs` sekarang menunjuk ke `arsip-data/bank_soal_all.json` (715 soal unik gabungan seluruh dump per audit terakhir) sebagai sumber utama — nama berkas ini sengaja dipertahankan karena itulah nama default saat diekspor lewat `admin.html` → Bank Soal → "Unduh JSON" tanpa filter. Ekspor ulang berkas yang sama (timpa langsung) setiap kali butuh audit terbaru.
+
+**Fase 1 — SELESAI (kode + data), terverifikasi 2026-07-26.** Tab Eksponen sekarang berisi 5 sub-materi (40 soal baru + Operasi Bentuk Akar dari Fase 0):
+
+1. **Sifat Eksponen Bilangan Bulat** (Tahap 1) — pangkat positif/negatif/nol, sifat kali/bagi basis sama, pangkat berpangkat.
+2. **Operasi Bentuk Akar** (Tahap 2, sudah ada sejak Fase 0).
+3. **Merasionalkan Penyebut** (Tahap 2) — penyebut tunggal & berbentuk sekawan ($a \pm \sqrt{b}$).
+4. **Eksponen Rasional (Pangkat Pecahan)** (Tahap 3) — konversi pangkat pecahan ↔ akar dua arah.
+5. **Fungsi Eksponen** (Tahap 4, sisipan) — evaluasi $f(x)=a^x$, konteks pertumbuhan.
+
+Gerbang ditambahkan sebagai **rantai sekuensial** di `PETA_PRASYARAT` (§11 keputusan #4): Sifat Eksponen Bilangan Bulat → Operasi Bentuk Akar → Merasionalkan Penyebut → Eksponen Rasional → Fungsi Eksponen. Soal ditulis & diimpor **sebelum** gerbangnya ditambahkan ke kode (bukan urutan sebaliknya seperti Fase 0) — supaya "Operasi Bentuk Akar" yang sudah live tidak pernah mendadak terkunci di rentang waktu antara push kode dan impor data. Ini pola yang dipakai untuk semua fase berikutnya yang menambah gerbang baru pada sub-materi yang sudah live.
+
+`PETA_TAHAPAN` direfaktor jadi blok per tab (`TAHAPAN_EKSPONEN`, `TAHAPAN_SISTEM_PERSAMAAN`, `TAHAPAN_PRASYARAT_SMP`, `TAHAPAN_TRIGONOMETRI`, digabung lewat spread) supaya batas "mana yang tab Prasyarat SMP (tak pernah dikunci) vs mana yang tab materi utama (boleh digerbang)" tidak lagi bergantung pada posisi/komentar. `SUB_MATERI_PRASYARAT_SMP` diekspor dari `kurikulumData.js` untuk keperluan ini; test `kurikulumEngine.test.js` yang lama ("hanya materi tab Trigonometri yang dikunci", berasumsi posisi-sebelum-Trigonometri = tab Prasyarat) diganti jadi cek keanggotaan `SUB_MATERI_PRASYARAT_SMP`, karena asumsi lama gugur sejak gerbang meluas ke tab lain.
+
+Diverifikasi dengan ekspor Firestore live segar (720 soal) lewat Gate A — **✅ LOLOS**, DAG 38 node valid, kelima sub-materi Eksponen 10 soal masing-masing di `materi_utama: "Eksponen"`. Test Jest 95/95 lolos (tambahan: cek rantai gerbang Eksponen bisa dibuka berurutan tanpa deadlock).
+
+**Catatan terbuka:** gerbang antar-tab Logaritma → "semua sub-materi Eksponen" (§11.4) sekarang **bisa** ditulis karena tab Eksponen sudah lengkap 5/5 — akan ditambahkan saat Fase 2 (Logaritma) dikerjakan.

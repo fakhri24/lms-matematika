@@ -12,6 +12,7 @@ import { MODE_LATIHAN } from "../../public/js/utils/constants.js";
 import {
   PETA_PRASYARAT,
   PETA_TAHAPAN,
+  SUB_MATERI_PRASYARAT_SMP,
 } from "../../public/js/utils/kurikulumData.js";
 
 /** Pembantu: satu record ujian yang memenuhi semua syarat master. */
@@ -337,22 +338,42 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     expect(hasil.urutanMundur).toEqual([]);
   });
 
-  test("hanya materi tab Trigonometri yang dikunci", () => {
-    // Blok Trigonometri menempati ekor PETA_TAHAPAN, mulai dari materi ini.
-    const awalTrig = urutan.indexOf("rasio trigonometri dasar");
-    const diLuarBlok = Object.keys(PETA_PRASYARAT).filter(
-      (nama) => urutan.indexOf(normalisasiNama(nama)) < awalTrig,
+  test("tab Prasyarat (SMP) tidak pernah jadi target gerbang", () => {
+    // Sejak gerbang meluas ke tab lain (bukan cuma Trigonometri), invarian
+    // yang benar bukan lagi "posisi sebelum Trigonometri" melainkan "bukan
+    // anggota SUB_MATERI_PRASYARAT_SMP" — lihat plan/PLAN.md §11.
+    const targetPrasyaratSMP = Object.keys(PETA_PRASYARAT).filter((nama) =>
+      SUB_MATERI_PRASYARAT_SMP.includes(normalisasiNama(nama)),
     );
-    expect(diLuarBlok).toEqual([]);
+    expect(targetPrasyaratSMP).toEqual([]);
   });
 
-  test("tab Prasyarat sepenuhnya terbuka", () => {
+  test("tab Prasyarat (SMP) sepenuhnya terbuka", () => {
     const status = hitungStatusKunci(PETA_PRASYARAT, new Set());
-    const awalTrig = urutan.indexOf("rasio trigonometri dasar");
-    const prasyaratTerkunci = urutan
-      .slice(0, awalTrig)
-      .filter((nama) => status[nama]?.locked);
-    expect(prasyaratTerkunci).toEqual([]);
+    const terkunci = SUB_MATERI_PRASYARAT_SMP.filter(
+      (nama) => status[nama]?.locked,
+    );
+    expect(terkunci).toEqual([]);
+  });
+
+  test("seluruh rantai gerbang Eksponen dapat dibuka berurutan", () => {
+    const rantaiEksponen = [
+      "sifat eksponen bilangan bulat",
+      "operasi bentuk akar",
+      "merasionalkan penyebut",
+      "eksponen rasional (pangkat pecahan)",
+      "fungsi eksponen",
+    ];
+    const master = new Set();
+    for (let lapis = 0; lapis < rantaiEksponen.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiEksponen.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiEksponen.filter((n) => !master.has(n))).toEqual([]);
   });
 
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {

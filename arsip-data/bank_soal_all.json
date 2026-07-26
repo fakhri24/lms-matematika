@@ -1,5 +1,827 @@
 [
   {
+    "id": "4OBPkLatcWVPmg16faDx",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sederhanakan $\\frac{5^7}{5^3}$ menjadi bentuk pangkat tunggal.",
+    "clue": "Sifat pembagian basis sama: kurangkan pangkatnya, $\\frac{a^m}{a^n} = a^{m-n}$.",
+    "opsi": [
+      "$5^4$",
+      "$5^{10}$",
+      "$5^{2}$",
+      "$1^4$",
+      "$5^3$"
+    ],
+    "jawaban_benar": "$5^4$",
+    "pembahasan": "$\\frac{5^7}{5^3} = 5^{7-3} = 5^4$."
+  },
+  {
+    "id": "CD2MldzHJhHWh0Shzdj9",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui $2^x = 32$. Nilai $x$ adalah ...",
+    "clue": "Nyatakan 32 sebagai pangkat berbasis 2 juga, lalu samakan pangkatnya.",
+    "opsi": [
+      "$4$",
+      "$5$",
+      "$6$",
+      "$16$",
+      "$32$"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "$32 = 2^5$, sehingga $2^x = 2^5$.<br>Karena basisnya sama, pangkatnya juga harus sama: $x = 5$."
+  },
+  {
+    "id": "IDFicoy4eoeAuhnLl6Nb",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai dari $5^0$ adalah ...",
+    "clue": "Bilangan apa pun (kecuali 0) yang dipangkatkan nol selalu bernilai 1.",
+    "opsi": [
+      "$0$",
+      "$1$",
+      "$5$",
+      "$\\frac{1}{5}$",
+      "$25$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sesuai sifat eksponen, $a^0 = 1$ untuk $a \\ne 0$. Maka $5^0 = 1$."
+  },
+  {
+    "id": "S2oFS5dRZleU00eo0NRw",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sederhanakan $2^5 \\times 2^{-3}$, lalu tentukan nilainya.",
+    "clue": "Sifat perkalian basis sama tetap berlaku walau salah satu pangkatnya negatif — jumlahkan saja: $5 + (-3)$.",
+    "opsi": [
+      "$2$",
+      "$4$",
+      "$8$",
+      "$16$",
+      "$\\frac{1}{4}$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$2^5 \\times 2^{-3} = 2^{5 + (-3)} = 2^2 = 4$."
+  },
+  {
+    "id": "SKetgkd6EJwPSlaJrkah",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai dari $(2 \\times 3)^2$ adalah ...",
+    "clue": "Sifat pangkat dari perkalian: $(a \\times b)^n = a^n \\times b^n$. Bisa juga langsung dikalikan dulu baru dipangkatkan, hasilnya sama.",
+    "opsi": [
+      "$12$",
+      "$18$",
+      "$30$",
+      "$36$",
+      "$72$"
+    ],
+    "jawaban_benar": "$36$",
+    "pembahasan": "$(2 \\times 3)^2 = 6^2 = 36$. (Cara lain: $2^2 \\times 3^2 = 4 \\times 9 = 36$, hasilnya sama.)"
+  },
+  {
+    "id": "eRZ0nNJc8I8ZDl6k69eo",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai dari $4^{-2}$ adalah ...",
+    "clue": "Pangkat negatif berarti kebalikan dari pangkat positifnya.",
+    "opsi": [
+      "$-16$",
+      "$-\\frac{1}{16}$",
+      "$\\frac{1}{8}$",
+      "$\\frac{1}{16}$",
+      "$16$"
+    ],
+    "jawaban_benar": "$\\frac{1}{16}$",
+    "pembahasan": "$4^{-2} = \\frac{1}{4^2} = \\frac{1}{16}$."
+  },
+  {
+    "id": "eVHXP4ikejVVSKeiZ9Nr",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai dari $\\left(2^3\\right)^2$ adalah ...",
+    "clue": "Sifat pangkat dari pangkat: kalikan pangkatnya, $(a^m)^n = a^{m \\times n}$.",
+    "opsi": [
+      "$12$",
+      "$32$",
+      "$36$",
+      "$64$",
+      "$128$"
+    ],
+    "jawaban_benar": "$64$",
+    "pembahasan": "$\\left(2^3\\right)^2 = 2^{3 \\times 2} = 2^6 = 64$."
+  },
+  {
+    "id": "hwO88TTonGOH0lewf2Iw",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sederhanakan $\\frac{6^4 \\times 6^{-1}}{6^2}$ menjadi bentuk pangkat tunggal.",
+    "clue": "Gabungkan pembilang dulu (jumlahkan pangkatnya), baru kurangkan dengan pangkat penyebut.",
+    "opsi": [
+      "$6^1$",
+      "$6^3$",
+      "$6^5$",
+      "$6^{-1}$",
+      "$6^7$"
+    ],
+    "jawaban_benar": "$6^1$",
+    "pembahasan": "Pembilang: $6^4 \\times 6^{-1} = 6^{4 + (-1)} = 6^3$.<br>Bagi dengan penyebut: $\\frac{6^3}{6^2} = 6^{3-2} = 6^1$."
+  },
+  {
+    "id": "nPusgeiOhZWxLGZN4wFa",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sederhanakan $3^4 \\times 3^2$ menjadi bentuk pangkat tunggal.",
+    "clue": "Sifat perkalian basis sama: jumlahkan pangkatnya, $a^m \\times a^n = a^{m+n}$.",
+    "opsi": [
+      "$3^6$",
+      "$3^8$",
+      "$9^6$",
+      "$3^2$",
+      "$6^8$"
+    ],
+    "jawaban_benar": "$3^6$",
+    "pembahasan": "$3^4 \\times 3^2 = 3^{4+2} = 3^6$."
+  },
+  {
+    "id": "0ttbZ2MBHDVwFfyCPjGD",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Nilai dari $2^{-3}$ adalah ...",
+    "clue": "Pangkat negatif berarti kebalikan: $a^{-n} = \\frac{1}{a^n}$.",
+    "opsi": [
+      "$-8$",
+      "$-\\frac{1}{8}$",
+      "$\\frac{1}{8}$",
+      "$\\frac{1}{6}$",
+      "$8$"
+    ],
+    "jawaban_benar": "$\\frac{1}{8}$",
+    "pembahasan": "$2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$."
+  },
+  {
+    "id": "P5ahylrQxorYH3vjVhDN",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{5}{\\sqrt{7}-2}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $\\sqrt{7}+2$.",
+    "opsi": [
+      "$\\frac{5\\sqrt{7}+10}{3}$",
+      "$\\frac{5\\sqrt{7}-10}{3}$",
+      "$\\frac{5\\sqrt{7}+10}{9}$",
+      "$\\sqrt{7}+2$",
+      "$\\frac{5\\sqrt{7}+10}{5}$"
+    ],
+    "jawaban_benar": "$\\frac{5\\sqrt{7}+10}{3}$",
+    "pembahasan": "Kalikan dengan sekawan $\\sqrt7+2$:<br>$\\frac{5(\\sqrt7+2)}{(\\sqrt7-2)(\\sqrt7+2)} = \\frac{5(\\sqrt7+2)}{7-4} = \\frac{5\\sqrt7+10}{3}$."
+  },
+  {
+    "id": "UL7bjRqnHZimVRkfwJEr",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{10}{\\sqrt{5}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{5}$, lalu sederhanakan pecahannya.",
+    "opsi": [
+      "$2\\sqrt{5}$",
+      "$10\\sqrt{5}$",
+      "$\\frac{10\\sqrt{5}}{25}$",
+      "$5\\sqrt{5}$",
+      "$\\sqrt{5}$"
+    ],
+    "jawaban_benar": "$2\\sqrt{5}$",
+    "pembahasan": "$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$."
+  },
+  {
+    "id": "fA8CCO0PlHG2BT2fwsa9",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{4}{2-\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $2+\\sqrt{3}$.",
+    "opsi": [
+      "$8+4\\sqrt{3}$",
+      "$8-4\\sqrt{3}$",
+      "$2+\\sqrt{3}$",
+      "$\\frac{8+4\\sqrt{3}}{7}$",
+      "$4+4\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$8+4\\sqrt{3}$",
+    "pembahasan": "Kalikan dengan sekawan $2+\\sqrt3$:<br>$\\frac{4(2+\\sqrt3)}{(2-\\sqrt3)(2+\\sqrt3)} = \\frac{4(2+\\sqrt3)}{4-3} = \\frac{4(2+\\sqrt3)}{1} = 8+4\\sqrt3$."
+  },
+  {
+    "id": "qdJiGx4uM9YOdxH49hCd",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar",
+      "Manipulasi Aljabar Dasar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{2}{3+\\sqrt{2}}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $3 - \\sqrt{2}$, lalu gunakan sifat $(a+b)(a-b) = a^2 - b^2$.",
+    "opsi": [
+      "$\\frac{6-2\\sqrt{2}}{7}$",
+      "$\\frac{6+2\\sqrt{2}}{7}$",
+      "$\\frac{6-2\\sqrt{2}}{11}$",
+      "$3-\\sqrt{2}$",
+      "$\\frac{2(3-\\sqrt{2})}{9}$"
+    ],
+    "jawaban_benar": "$\\frac{6-2\\sqrt{2}}{7}$",
+    "pembahasan": "Kalikan dengan sekawan $3-\\sqrt2$:<br>$\\frac{2(3-\\sqrt2)}{(3+\\sqrt2)(3-\\sqrt2)} = \\frac{2(3-\\sqrt2)}{3^2 - (\\sqrt2)^2} = \\frac{2(3-\\sqrt2)}{9-2} = \\frac{6-2\\sqrt2}{7}$."
+  },
+  {
+    "id": "EQXFL7psT0K9rTWKR5WL",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{\\sqrt{2}}{\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{3}$, lalu ingat $\\sqrt{2} \\times \\sqrt{3} = \\sqrt{6}$.",
+    "opsi": [
+      "$\\frac{\\sqrt{6}}{3}$",
+      "$\\frac{\\sqrt{6}}{9}$",
+      "$\\frac{2}{3}$",
+      "$\\sqrt{6}$",
+      "$\\frac{\\sqrt{2}}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{6}}{3}$",
+    "pembahasan": "$\\frac{\\sqrt{2}}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{2} \\times \\sqrt{3}}{3} = \\frac{\\sqrt{6}}{3}$."
+  },
+  {
+    "id": "VdtVC8D6Ddn3B7lu9Uhz",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{1}{\\sqrt{2}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{2}$ agar penyebutnya menjadi bilangan rasional.",
+    "opsi": [
+      "$\\sqrt{2}$",
+      "$\\frac{\\sqrt{2}}{2}$",
+      "$\\frac{1}{2}$",
+      "$2\\sqrt{2}$",
+      "$\\frac{2}{\\sqrt{2}}$"
+    ],
+    "jawaban_benar": "$\\frac{\\sqrt{2}}{2}$",
+    "pembahasan": "$\\frac{1}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$."
+  },
+  {
+    "id": "XBs9lNFyt9AP8MU5czdQ",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional dari $\\frac{3}{\\sqrt{5}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{5}$.",
+    "opsi": [
+      "$\\frac{3\\sqrt{5}}{5}$",
+      "$\\frac{\\sqrt{5}}{5}$",
+      "$\\frac{3}{5}$",
+      "$3\\sqrt{5}$",
+      "$\\frac{5\\sqrt{5}}{3}$"
+    ],
+    "jawaban_benar": "$\\frac{3\\sqrt{5}}{5}$",
+    "pembahasan": "$\\frac{3}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$."
+  },
+  {
+    "id": "Xqf5Z1Rys1K8gtrqOLkF",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{4}{2\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{3}$ terlebih dahulu, lalu sederhanakan pecahannya.",
+    "opsi": [
+      "$\\frac{2\\sqrt{3}}{3}$",
+      "$\\frac{4\\sqrt{3}}{3}$",
+      "$\\frac{\\sqrt{3}}{3}$",
+      "$\\frac{2}{\\sqrt{3}}$",
+      "$6\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\frac{2\\sqrt{3}}{3}$",
+    "pembahasan": "$\\frac{4}{2\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{4\\sqrt{3}}{6}$.<br>Sederhanakan pecahan $\\frac{4}{6}$ menjadi $\\frac{2}{3}$: hasilnya $\\frac{2\\sqrt{3}}{3}$."
+  },
+  {
+    "id": "kHaUsiqpDj1AeZBdSC9D",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{6}{\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{3}$, lalu sederhanakan pecahannya.",
+    "opsi": [
+      "$2\\sqrt{3}$",
+      "$6\\sqrt{3}$",
+      "$\\frac{6\\sqrt{3}}{9}$",
+      "$3\\sqrt{3}$",
+      "$\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$2\\sqrt{3}$",
+    "pembahasan": "$\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$."
+  },
+  {
+    "id": "vFIMoHl7SWJ2zJVNJ26j",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Mengapa bentuk $\\frac{1}{\\sqrt{5}}$ perlu dirasionalkan?",
+    "clue": "Merasionalkan tidak mengubah NILAI pecahan — kita hanya mengalikan dengan bentuk yang senilai dengan 1 (mis. $\\frac{\\sqrt5}{\\sqrt5}$).",
+    "opsi": [
+      "Karena pembilang harus lebih besar dari penyebut",
+      "Karena penyebut sebaiknya bilangan rasional (bukan bentuk akar), sesuai konvensi penulisan matematika",
+      "Karena akar tidak boleh berada di pecahan sama sekali",
+      "Karena hasilnya akan berubah nilai",
+      "Karena pembilang dan penyebut harus sama-sama akar"
+    ],
+    "jawaban_benar": "Karena penyebut sebaiknya bilangan rasional (bukan bentuk akar), sesuai konvensi penulisan matematika",
+    "pembahasan": "Merasionalkan penyebut adalah konvensi penulisan agar bentuk akhir pecahan tidak memuat akar di penyebutnya. Nilai pecahannya sendiri tidak berubah, karena kita mengalikan dengan bentuk yang senilai dengan 1."
+  },
+  {
+    "id": "2AAr6bBq85BxyAOslBu6",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Ubahlah $\\sqrt[4]{x}$ menjadi bentuk pangkat.",
+    "clue": "Akar pangkat $n$ setara dengan pangkat $\\frac{1}{n}$.",
+    "opsi": [
+      "$x^{\\frac{1}{4}}$",
+      "$x^4$",
+      "$x^{-\\frac{1}{4}}$",
+      "$4x$",
+      "$\\frac{1}{x^4}$"
+    ],
+    "jawaban_benar": "$x^{\\frac{1}{4}}$",
+    "pembahasan": "$\\sqrt[4]{x} = x^{\\frac{1}{4}}$."
+  },
+  {
+    "id": "7Fl4VPOTDpiMcZN2bSsZ",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $27^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Ubah dulu ke bentuk akar pangkat 3, lalu cari bilangan yang jika dipangkatkan 3 hasilnya 27.",
+    "opsi": [
+      "$3$",
+      "$9$",
+      "$13,5$",
+      "$27$",
+      "$\\frac{1}{3}$"
+    ],
+    "jawaban_benar": "$3$",
+    "pembahasan": "$27^{\\frac{1}{3}} = \\sqrt[3]{27} = 3$, karena $3^3 = 27$."
+  },
+  {
+    "id": "87oMTpB2EWBx4WwwGAMT",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Ubahlah $5^{\\frac{1}{3}}$ menjadi bentuk akar.",
+    "clue": "Pangkat pecahan $\\frac{1}{n}$ setara dengan akar pangkat $n$.",
+    "opsi": [
+      "$\\sqrt[3]{5}$",
+      "$\\sqrt{5}$",
+      "$\\sqrt[5]{3}$",
+      "$3\\sqrt{5}$",
+      "$5\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$\\sqrt[3]{5}$",
+    "pembahasan": "$5^{\\frac{1}{3}} = \\sqrt[3]{5}$."
+  },
+  {
+    "id": "ETIe5C2KlsFDGHw25IFK",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $4^{\\frac{3}{2}}$ adalah ...",
+    "clue": "Pisahkan pangkat pecahannya: akar dulu (pangkat $\\frac{1}{2}$), baru pangkatkan hasilnya dengan 3.",
+    "opsi": [
+      "$6$",
+      "$8$",
+      "$12$",
+      "$16$",
+      "$64$"
+    ],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$4^{\\frac{3}{2}} = \\left(4^{\\frac12}\\right)^3 = (\\sqrt{4})^3 = 2^3 = 8$."
+  },
+  {
+    "id": "LOlY0RZCaztvAgEVOk2w",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat"
+    ],
+    "pertanyaan": "Sederhanakan $2^{\\frac{1}{2}} \\times 2^{\\frac{3}{2}}$, lalu tentukan nilainya.",
+    "clue": "Sifat perkalian basis sama tetap berlaku walau pangkatnya pecahan — jumlahkan saja pangkatnya.",
+    "opsi": [
+      "$2$",
+      "$4$",
+      "$8$",
+      "$16$",
+      "$2^{\\frac34}$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$2^{\\frac12} \\times 2^{\\frac32} = 2^{\\frac12+\\frac32} = 2^2 = 4$."
+  },
+  {
+    "id": "PZa3nGqdx1AkY9elgde4",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $16^{\\frac{3}{4}}$ adalah ...",
+    "clue": "Cari dulu akar pangkat 4 dari 16, baru pangkatkan hasilnya dengan 3.",
+    "opsi": [
+      "$4$",
+      "$8$",
+      "$12$",
+      "$24$",
+      "$64$"
+    ],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$16^{\\frac{3}{4}} = \\left(16^{\\frac14}\\right)^3 = (\\sqrt[4]{16})^3 = 2^3 = 8$."
+  },
+  {
+    "id": "W90GznOqMDQ4b5CW6d9y",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $9^{-\\frac{1}{2}}$ adalah ...",
+    "clue": "Gabungan dua sifat: pangkat negatif (kebalikan) dan pangkat pecahan (akar).",
+    "opsi": [
+      "$-3$",
+      "$-\\frac{1}{3}$",
+      "$\\frac{1}{3}$",
+      "$3$",
+      "$\\frac{1}{9}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{3}$",
+    "pembahasan": "$9^{-\\frac12} = \\frac{1}{9^{\\frac12}} = \\frac{1}{\\sqrt9} = \\frac{1}{3}$."
+  },
+  {
+    "id": "anqfqGxbZb82jNuGzEQZ",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\left(\\frac{1}{8}\\right)^{\\frac{2}{3}}$ adalah ...",
+    "clue": "Ubah dulu pangkat pecahannya menjadi bentuk akar dari $8$, baru terapkan sifat pangkat negatif dari bentuk pecahannya.",
+    "opsi": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{6}$",
+      "$4$",
+      "$6$",
+      "$\\frac{1}{16}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{4}$",
+    "pembahasan": "$\\left(\\frac18\\right)^{\\frac23} = \\frac{1}{8^{\\frac23}} = \\frac{1}{\\left(\\sqrt[3]{8}\\right)^2} = \\frac{1}{2^2} = \\frac{1}{4}$."
+  },
+  {
+    "id": "yoWMsoeKXnKLOOsI4JQ1",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Ubahlah $\\sqrt[5]{x^3}$ menjadi bentuk pangkat.",
+    "clue": "Sifat konversi: $\\sqrt[n]{a^m} = a^{\\frac{m}{n}}$.",
+    "opsi": [
+      "$x^{\\frac{3}{5}}$",
+      "$x^{\\frac{5}{3}}$",
+      "$x^{15}$",
+      "$x^{\\frac{1}{15}}$",
+      "$x^{-\\frac{3}{5}}$"
+    ],
+    "jawaban_benar": "$x^{\\frac{3}{5}}$",
+    "pembahasan": "$\\sqrt[5]{x^3} = x^{\\frac{3}{5}}$."
+  },
+  {
+    "id": "A0nXT7fwPiYHyFCL6hh3",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk akar dari $8^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Pangkat pecahan $\\frac{1}{n}$ setara dengan akar pangkat $n$: $a^{\\frac{1}{n}} = \\sqrt[n]{a}$.",
+    "opsi": [
+      "$\\sqrt[3]{8}$",
+      "$\\sqrt{8}$",
+      "$\\sqrt[8]{3}$",
+      "$8\\sqrt{3}$",
+      "$3\\sqrt{8}$"
+    ],
+    "jawaban_benar": "$\\sqrt[3]{8}$",
+    "pembahasan": "$8^{\\frac{1}{3}} = \\sqrt[3]{8}$."
+  },
+  {
+    "id": "1tkDVDOxt2FH2MevpAkA",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat"
+    ],
+    "pertanyaan": "Jumlah bakteri dalam suatu kultur dimodelkan dengan $N(t) = 100 \\times 2^t$, dengan $t$ dalam jam. Berapa jumlah bakteri setelah $2$ jam?",
+    "clue": "Substitusikan $t=2$ ke dalam rumus.",
+    "opsi": [
+      "$200$",
+      "$300$",
+      "$400$",
+      "$500$",
+      "$800$"
+    ],
+    "jawaban_benar": "$400$",
+    "pembahasan": "$N(2) = 100 \\times 2^2 = 100 \\times 4 = 400$."
+  },
+  {
+    "id": "9lv56xD4DkSpS9Akog8e",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi dan Konversi Desimal"
+    ],
+    "pertanyaan": "Nilai suatu investasi dimodelkan dengan $V(t) = 1.000.000 \\times (1,1)^t$, dengan $t$ dalam tahun. Berapa nilai investasi setelah $2$ tahun?",
+    "clue": "Hitung dulu $(1,1)^2 = 1,1 \\times 1,1$, baru kalikan dengan modal awal.",
+    "opsi": [
+      "Rp1.100.000",
+      "Rp1.200.000",
+      "Rp1.210.000",
+      "Rp1.331.000",
+      "Rp2.200.000"
+    ],
+    "jawaban_benar": "Rp1.210.000",
+    "pembahasan": "$(1,1)^2 = 1,21$.<br>$V(2) = 1.000.000 \\times 1,21 = 1.210.000$."
+  },
+  {
+    "id": "Jk023IJIGOi5hdsDzNoW",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 5 \\times 2^x$. Hitunglah $f(2)$.",
+    "clue": "Hitung dulu $2^2$, baru kalikan dengan 5.",
+    "opsi": [
+      "$10$",
+      "$14$",
+      "$20$",
+      "$25$",
+      "$40$"
+    ],
+    "jawaban_benar": "$20$",
+    "pembahasan": "$f(2) = 5 \\times 2^2 = 5 \\times 4 = 20$."
+  },
+  {
+    "id": "O5ydhkOte7bnruSwIWwv",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Jika $f(p) = 32$, berapakah nilai $p$?",
+    "clue": "Nyatakan 32 sebagai pangkat berbasis 2, lalu samakan pangkatnya.",
+    "opsi": [
+      "$4$",
+      "$5$",
+      "$6$",
+      "$16$",
+      "$32$"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "$2^p = 32 = 2^5$, sehingga $p = 5$."
+  },
+  {
+    "id": "Ro5Db1UL6h559Hb9u70W",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^{-x}$. Hitunglah $f(3)$.",
+    "clue": "Substitusikan $x=3$ dulu, baru terapkan sifat pangkat negatif.",
+    "opsi": [
+      "$-8$",
+      "$-\\frac{1}{8}$",
+      "$\\frac{1}{8}$",
+      "$\\frac{1}{6}$",
+      "$8$"
+    ],
+    "jawaban_benar": "$\\frac{1}{8}$",
+    "pembahasan": "$f(3) = 2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$."
+  },
+  {
+    "id": "UClSQn8x2e0g6XEG97Zu",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 3^{x+1}$. Hitunglah $f(1)$.",
+    "clue": "Substitusikan $x=1$ ke seluruh pangkatnya terlebih dahulu: $1+1=2$.",
+    "opsi": [
+      "$3$",
+      "$4$",
+      "$9$",
+      "$12$",
+      "$27$"
+    ],
+    "jawaban_benar": "$9$",
+    "pembahasan": "$f(1) = 3^{1+1} = 3^2 = 9$."
+  },
+  {
+    "id": "ZRTsvx6jH4s8qBF7SxzK",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Hitunglah $\\frac{f(5)}{f(2)}$.",
+    "clue": "Tidak perlu menghitung $f(5)$ dan $f(2)$ secara terpisah — gunakan langsung sifat pembagian basis sama.",
+    "opsi": [
+      "$2$",
+      "$4$",
+      "$8$",
+      "$16$",
+      "$32$"
+    ],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$\\frac{f(5)}{f(2)} = \\frac{2^5}{2^2} = 2^{5-2} = 2^3 = 8$."
+  },
+  {
+    "id": "wqLZ2TivwN6zbQWzncmA",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 4^x$. Untuk nilai $x$ berapakah $f(x) = 1$?",
+    "clue": "Ingat sifat pangkat nol: bilangan apa pun dipangkatkan nol hasilnya 1.",
+    "opsi": [
+      "$-1$",
+      "$0$",
+      "$1$",
+      "$2$",
+      "$4$"
+    ],
+    "jawaban_benar": "$0$",
+    "pembahasan": "$4^x = 1$ hanya terpenuhi saat $x = 0$, karena $4^0 = 1$."
+  },
+  {
+    "id": "1C328A1bNoD1gIP8ae5U",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 3^x$. Hitunglah $f(0)$.",
+    "clue": "Ingat sifat pangkat nol: bilangan apa pun dipangkatkan nol hasilnya 1.",
+    "opsi": [
+      "$0$",
+      "$1$",
+      "$3$",
+      "$9$",
+      "$\\frac13$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$f(0) = 3^0 = 1$."
+  },
+  {
+    "id": "d41OdTMQTDsKkzio30Qy",
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Pengenalan Variabel"
+    ],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Hitunglah $f(3)$.",
+    "clue": "Ganti $x$ pada rumus dengan angka 3, lalu hitung hasilnya.",
+    "opsi": [
+      "$5$",
+      "$6$",
+      "$8$",
+      "$9$",
+      "$16$"
+    ],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$f(3) = 2^3 = 8$."
+  },
+  {
     "id": "4FPzUKUi9id0Tn6xv8n9",
     "materi_utama": "Sistem Persamaan",
     "sub_materi": "Persamaan Linear Satu Variabel (PLSV)",
