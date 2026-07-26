@@ -33,3 +33,6 @@ firebase-debug.log.*
 # Data spesifik yang mungkin tidak ingin dilacak (misal data sensitif siswa)
 akses-admin/data_siswa.json
 arsip-data/**/*.json.DS_Store
+
+# Pengaturan Claude Code per-mesin (launch.json tetap dilacak agar tim seragam)
+.claude/settings.local.json

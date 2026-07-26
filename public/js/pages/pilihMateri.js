@@ -1,12 +1,21 @@
 // public/js/pages/pilihMateri.js
 
-import { getMetadataSoal } from "../services/latihanService.js";
+import {
+  getMetadataSoal,
+  getRiwayatLatihanSiswa,
+} from "../services/latihanService.js";
 import {
   DAFTAR_MATERI_INTI,
-  PETA_PRASYARAT_MANUAL,
+  PRASYARAT_TRIGONOMETRI,
   PETA_TAHAPAN,
 } from "../utils/kurikulumData.js";
 import { MODE_LATIHAN, DATA_DEFAULT } from "../utils/constants.js";
+import {
+  hitungSetMaster,
+  hitungStatusKunci,
+  apakahModeDikunci,
+  normalisasiNama,
+} from "../utils/kurikulumEngine.js";
 
 // IMPORT VIEW BARU
 import {
@@ -14,55 +23,75 @@ import {
   createTahapSeparatorHTML,
   createMateriCardHTML,
   createErrorStateHTML,
+  tampilkanToast,
 } from "../views/pilihMateriView.js";
 
+// Urutan kartu = urutan mengajar di kelas, disusun manual di PETA_TAHAPAN.
+// Dulu urutan ini dihitung dengan topological sort dari peta prasyarat; itu
+// dilepas karena prasyarat menjawab "boleh dibuka atau belum", bukan "diajarkan
+// nomor berapa". Dua pertanyaan itu berbeda dan tak selalu sejalan.
+const URUTAN_KURIKULUM = Object.keys(PETA_TAHAPAN);
+
+/**
+ * Mengurutkan sub-materi satu tab mengikuti urutan mengajar.
+ * Materi yang belum tercantum di PETA_TAHAPAN ditempel di akhir agar tidak
+ * hilang dari layar hanya karena kurikulumnya belum diperbarui.
+ */
+function urutkanMateriTab(dataBankSoalTab) {
+  const adaDiTab = new Set();
+  dataBankSoalTab.forEach((data) => {
+    if (data.sub_materi) adaDiTab.add(normalisasiNama(data.sub_materi));
+  });
+
+  const terdaftar = URUTAN_KURIKULUM.filter((nama) => adaDiTab.has(nama));
+  const belumTerdaftar = [...adaDiTab].filter(
+    (nama) => !URUTAN_KURIKULUM.includes(nama),
+  );
+  return [...terdaftar, ...belumTerdaftar];
+}
+
 // =====================================================================
-// ENGINE PENGURUT MATERI CERDAS (GRAF TERISOLASI)
+// GERBANG PRASYARAT ("KUNCI MATERI")
 // =====================================================================
-function bangunGraphKurikulum(dataBankSoalTab) {
-  // (Logika Graph Tetap Sama - Tidak Diubah)
-  const inDegree = {};
-  const adjList = {};
-  const semuaMateri = new Set();
-  const namaAsliMap = {};
-  const materiSahDiTabIni = new Set();
 
-  dataBankSoalTab.forEach((data) => {
-    if (data.sub_materi)
-      materiSahDiTabIni.add(data.sub_materi.toLowerCase().trim());
+/**
+ * Mengambil status master siswa lalu menghitung materi mana yang terkunci.
+ *
+ * Sengaja fail-safe: bila riwayat gagal dimuat (jaringan/izin), kembalikan peta
+ * kosong sehingga TIDAK ADA materi yang terkunci. Kegagalan teknis tidak boleh
+ * memblokir seluruh siswa.
+ */
+async function muatStatusKunci() {
+  const nis = localStorage.getItem("nis_siswa");
+  if (!nis) return { statusKunci: {}, setMaster: new Set() };
+
+  try {
+    const riwayat = await getRiwayatLatihanSiswa(nis);
+    const setMaster = hitungSetMaster(riwayat);
+    return {
+      statusKunci: hitungStatusKunci(PRASYARAT_TRIGONOMETRI, setMaster),
+      setMaster,
+    };
+  } catch (error) {
+    console.error("Gagal memuat status kunci materi:", error);
+    return { statusKunci: {}, setMaster: new Set() };
+  }
+}
+
+/**
+ * Memasang/melepas kelas `.locked` sesuai mode yang sedang dipilih.
+ * Formatif selalu terbuka, jadi kuncinya hanya menyala untuk mode ujian.
+ */
+function segarkanStatusKunci() {
+  const modeTerpilih = document.querySelector(
+    'input[name="mode_latihan"]:checked',
+  )?.value;
+  const modeDikunci = apakahModeDikunci(modeTerpilih);
+
+  document.querySelectorAll(".materi-card").forEach((card) => {
+    const berpotensiTerkunci = card.getAttribute("data-terkunci") === "true";
+    card.classList.toggle("locked", modeDikunci && berpotensiTerkunci);
   });
-
-  dataBankSoalTab.forEach((data) => {
-    if (!data.sub_materi) return;
-    const subNormal = data.sub_materi.toLowerCase().trim();
-    semuaMateri.add(subNormal);
-    namaAsliMap[subNormal] = data.sub_materi;
-    if (inDegree[subNormal] === undefined) inDegree[subNormal] = 0;
-    if (!adjList[subNormal]) adjList[subNormal] = [];
-  });
-
-  dataBankSoalTab.forEach((data) => {
-    if (!data.sub_materi) return;
-    const targetAsli = data.sub_materi.trim();
-    const targetLower = targetAsli.toLowerCase();
-    let prasyaratArray = PETA_PRASYARAT_MANUAL[targetAsli] || [];
-
-    prasyaratArray.forEach((p) => {
-      const sumberLower = p.toLowerCase().trim();
-      if (sumberLower !== "" && materiSahDiTabIni.has(sumberLower)) {
-        if (!adjList[sumberLower]) {
-          adjList[sumberLower] = [];
-          inDegree[sumberLower] = 0;
-        }
-        if (!adjList[sumberLower].includes(targetLower)) {
-          adjList[sumberLower].push(targetLower);
-          inDegree[targetLower]++;
-        }
-      }
-    });
-  });
-
-  return { inDegree, adjList, semuaMateri, namaAsliMap };
 }
 
 // =====================================================================
@@ -70,7 +99,10 @@ function bangunGraphKurikulum(dataBankSoalTab) {
 // =====================================================================
 async function muatMateri() {
   try {
-    const metaDataMap = await getMetadataSoal();
+    const [metaDataMap, { statusKunci, setMaster }] = await Promise.all([
+      getMetadataSoal(),
+      muatStatusKunci(),
+    ]);
 
     if (!metaDataMap) {
       document.getElementById("teks-loading").innerText =
@@ -101,23 +133,7 @@ async function muatMateri() {
       const dataTab = kelompokData[namaTab];
       if (dataTab.length === 0) return;
 
-      // BFS Topological Sort
-      const { inDegree, adjList, semuaMateri } = bangunGraphKurikulum(dataTab);
-      const queue = [];
-      const urutanHasil = [];
-
-      semuaMateri.forEach((materi) => {
-        if (inDegree[materi] === 0) queue.push(materi);
-      });
-
-      while (queue.length > 0) {
-        const saatIni = queue.shift();
-        urutanHasil.push(saatIni);
-        adjList[saatIni].forEach((target) => {
-          inDegree[target]--;
-          if (inDegree[target] === 0) queue.push(target);
-        });
-      }
+      const urutanHasil = urutkanMateriTab(dataTab);
 
       const isAktif = !tabPertamaAktif;
       if (isAktif) tabPertamaAktif = true;
@@ -149,6 +165,10 @@ async function muatMateri() {
           meta.materi_utama,
           meta.nama_asli,
           meta.jumlah_soal,
+          {
+            ...(statusKunci[subNormal] || {}),
+            master: setMaster.has(subNormal),
+          },
         );
       });
 
@@ -157,6 +177,7 @@ async function muatMateri() {
     });
 
     wadahTombol.style.display = "flex";
+    segarkanStatusKunci();
   } catch (error) {
     console.error("Gagal memuat materi:", error);
     document.getElementById("wadah-konten-tab").innerHTML =
@@ -193,6 +214,9 @@ function ubahTampilanMode() {
     labelAktif.style.backgroundColor = "#f0fdfa";
     labelAktif.querySelector("strong").style.color = "var(--primary-color)";
   }
+
+  // Kunci hanya berlaku untuk mode ujian, jadi tampilannya ikut berubah di sini.
+  segarkanStatusKunci();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -232,6 +256,15 @@ document.getElementById("wadah-konten-tab").addEventListener("click", (e) => {
     const modeTerpilih = document.querySelector(
       'input[name="mode_latihan"]:checked',
     ).value;
+
+    // GERBANG PRASYARAT: hadang sebelum navigasi apa pun terjadi.
+    if (card.classList.contains("locked")) {
+      const prasyarat = card.getAttribute("data-prereq");
+      tampilkanToast(
+        `🔒 <strong>${subMateri}</strong> masih terkunci.<br>Kuasai dulu: ${prasyarat}<br><span style="opacity:.8">Mode Formatif tetap bisa kamu kerjakan.</span>`,
+      );
+      return;
+    }
 
     localStorage.setItem("mode_latihan", modeTerpilih);
     localStorage.setItem("materi_utama_aktif", materiUtama);

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peta Materi - Albago LMS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* --- Wadah peta: geser mendatar, bukan zoom, agar aman di Safari iOS --- */
+      .peta-scroll {
+        overflow: auto;
+        /* Dibatasi agar peta digulung di dalam wadahnya sendiri; tanpa ini
+           halaman ikut memanjang dan legenda di bawah terdorong jauh. */
+        max-height: 72vh;
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 4px;
+        -webkit-overflow-scrolling: touch;
+      }
+      #svg-peta {
+        display: block;
+        max-width: none; /* biarkan melebar; wadahnya yang digeser */
+      }
+      /* Mode ikhtisar: seluruh peta dimampatkan agar bentuknya terlihat utuh.
+         Tulisan jadi kecil, jadi ini pilihan pengguna — bukan bawaan. */
+      .peta-scroll.pas-layar #svg-peta {
+        width: 100%;
+        height: auto;
+      }
+
+      /* --- Simpul --- */
+      .peta-node {
+        cursor: pointer;
+      }
+      .peta-kotak {
+        fill: white;
+        stroke: #cbd5e1;
+        stroke-width: 1.5;
+        transition:
+          fill 0.15s,
+          stroke 0.15s;
+      }
+      .peta-label {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--text-main, #1e293b);
+        pointer-events: none;
+      }
+      .peta-ikon {
+        font-size: 11px;
+        pointer-events: none;
+      }
+
+      .peta-node.master .peta-kotak {
+        fill: #ecfdf5;
+        stroke: #10b981;
+      }
+      .peta-node.siap .peta-kotak {
+        fill: #f0fdfa;
+        stroke: var(--primary-color);
+        stroke-width: 2.5;
+      }
+      .peta-node.terkunci .peta-kotak {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+      }
+      .peta-node.terkunci .peta-label {
+        fill: #94a3b8;
+      }
+      .peta-node:hover .peta-kotak {
+        stroke: var(--primary-color);
+      }
+      .peta-node.terpilih .peta-kotak {
+        stroke: #6366f1;
+        stroke-width: 3;
+      }
+      .peta-node:focus {
+        outline: none;
+      }
+      .peta-node:focus .peta-kotak {
+        stroke: #6366f1;
+        stroke-width: 3;
+      }
+
+      /* --- Garis prasyarat --- */
+      .peta-sisi {
+        fill: none;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+      }
+      .peta-sisi.tuntas {
+        stroke: #6ee7b7;
+        stroke-width: 2;
+      }
+
+      .peta-judul-kolom {
+        font-size: 11px;
+        font-weight: 700;
+        fill: #94a3b8;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* --- Panel keterangan --- */
+      .peta-panel {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 14px;
+      }
+      .peta-detail {
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 12px 14px;
+        min-height: 62px;
+      }
+      .peta-detail-judul {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+      .peta-detail-judul.terkunci {
+        color: #64748b;
+      }
+      .peta-detail-judul.master {
+        color: #059669;
+      }
+      .peta-detail-judul.siap {
+        color: var(--primary-color);
+      }
+      .peta-detail-prasyarat {
+        margin: 8px 0 0;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        color: #b45309;
+        background: #fffbeb;
+        border-left: 3px solid #f59e0b;
+        padding: 7px 10px;
+        border-radius: 4px;
+      }
+
+      .peta-aksi {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .peta-legenda {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.8rem;
+        color: #64748b;
+        margin: 12px 0 0;
+      }
+
+      #catatan-peta {
+        display: none;
+        margin: 0 0 14px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: #b45309;
+        background: #fffbeb;
+        border-left: 3px solid #f59e0b;
+        padding: 10px 12px;
+        border-radius: 4px;
+      }
+      #catatan-peta.tampil {
+        display: block;
+      }
+
+      @media (max-width: 640px) {
+        .peta-panel {
+          grid-template-columns: 1fr;
+        }
+        .peta-aksi {
+          flex-direction: row;
+        }
+        .peta-aksi .btn {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 1100px; margin: 40px auto">
+      <header
+        class="flex-between mb-25"
+        style="
+          border-bottom: 2px solid var(--border-color);
+          padding-bottom: 15px;
+        "
+      >
+        <div>
+          <h2 class="text-primary" style="margin: 0">Peta Materi Trigonometri</h2>
+          <p class="status-text" style="margin-top: 5px; margin-bottom: 0">
+            Urutan membuka materi, dari kiri ke kanan
+          </p>
+        </div>
+        <button
+          id="btn-kembali"
+          class="btn btn-secondary text-sm"
+          style="padding: 8px 15px; white-space: nowrap"
+        >
+          &laquo; Daftar Materi
+        </button>
+      </header>
+
+      <p id="catatan-peta" role="status" aria-live="polite"></p>
+
+      <div class="peta-panel">
+        <div id="detail-peta" class="peta-detail">
+          <p class="text-muted text-sm" style="margin: 0">
+            Memuat peta materi...
+          </p>
+        </div>
+        <div class="peta-aksi">
+          <button id="btn-fokus" class="btn btn-secondary text-sm">
+            🎯 Materi siapku
+          </button>
+          <button id="btn-zoom" class="btn btn-secondary text-sm">
+            🔍 Lihat utuh
+          </button>
+        </div>
+      </div>
+
+      <div class="peta-scroll">
+        <div id="wadah-peta">
+          <p class="text-center text-muted mt-20">Memuat peta materi...</p>
+        </div>
+      </div>
+
+      <p class="peta-legenda">
+        <span>✅ Sudah dikuasai</span>
+        <span>▶ Siap dikerjakan</span>
+        <span>🔒 Terkunci di mode sumatif</span>
+      </p>
+      <p class="text-sm text-muted" style="margin-top: 10px; line-height: 1.5">
+        Setiap <strong>Lapis</strong> terbuka begitu lapis di kirinya dikuasai.
+        Lapis bukan <em>Tahap</em> di daftar materi: tahap adalah urutan
+        mengajar di kelas, lapis adalah urutan terbukanya kunci.
+        <strong>Bekal awal</strong> berisi materi tab Prasyarat yang menjadi
+        pintu masuk Trigonometri — materi itu sendiri tidak pernah terkunci.
+        Kunci hanya berlaku untuk mode sumatif;
+        <strong>Mode Formatif selalu terbuka</strong>.
+      </p>
+      <p id="ringkasan-peta" class="text-sm text-muted" style="margin-top: 6px">
+        &nbsp;
+      </p>
+    </div>
+
+    <script type="module" src="js/pages/petaMateri.js?v=1"></script>
+  </body>
+</html>

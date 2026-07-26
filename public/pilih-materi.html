@@ -19,6 +19,72 @@
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
         border-color: var(--primary-color);
       }
+      /* --- GERBANG PRASYARAT: kartu terkunci --- */
+      .materi-card.locked {
+        cursor: not-allowed;
+        opacity: 0.6;
+        background: #f8fafc;
+        border-color: #e2e8f0;
+      }
+      .materi-card.locked:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--danger-color, #ef4444);
+        opacity: 0.75;
+      }
+      .materi-card.locked h4 {
+        color: #64748b !important;
+      }
+      /* Info prasyarat hanya relevan saat kartunya benar-benar terkunci */
+      .materi-info-kunci {
+        display: none;
+        margin: 10px 0 0 0;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        color: #b45309;
+        background: #fffbeb;
+        border-left: 3px solid #f59e0b;
+        padding: 7px 10px;
+        border-radius: 4px;
+      }
+      .materi-card.locked .materi-info-kunci {
+        display: block;
+      }
+      .materi-lencana-master {
+        font-size: 0.85rem;
+      }
+
+      /* --- Toast pesan terkunci --- */
+      .toast-kunci {
+        position: fixed;
+        left: 50%;
+        bottom: 28px;
+        transform: translate(-50%, 140%);
+        max-width: min(90vw, 420px);
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 14px 18px;
+        border-radius: 10px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transition:
+          transform 0.28s ease,
+          opacity 0.28s ease;
+        z-index: 9999;
+        pointer-events: none;
+      }
+      .toast-kunci.tampil {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .toast-kunci {
+          transition: opacity 0.28s ease;
+        }
+      }
+
       .tahap-separator {
         display: flex;
         align-items: center;
@@ -93,13 +159,23 @@
             Fokus pada satu topik untuk hasil maksimal
           </p>
         </div>
-        <button
-          id="btn-kembali"
-          class="btn btn-secondary text-sm"
-          style="padding: 8px 15px; white-space: nowrap"
-        >
-          &laquo; Kembali
-        </button>
+        <div style="display: flex; gap: 8px">
+          <a
+            id="btn-peta"
+            class="btn btn-secondary text-sm"
+            href="peta-materi.html"
+            style="padding: 8px 15px; white-space: nowrap; text-decoration: none"
+          >
+            🗺️ Peta Materi
+          </a>
+          <button
+            id="btn-kembali"
+            class="btn btn-secondary text-sm"
+            style="padding: 8px 15px; white-space: nowrap"
+          >
+            &laquo; Kembali
+          </button>
+        </div>
       </header>
 
       <p
@@ -165,6 +241,6 @@
       </div>
     </div>
 
-    <script type="module" src="js/pages/pilihMateri.js?v=2"></script>
+    <script type="module" src="js/pages/pilihMateri.js?v=3"></script>
   </body>
 </html>
