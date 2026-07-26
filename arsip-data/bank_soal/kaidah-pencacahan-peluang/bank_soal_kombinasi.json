@@ -1,0 +1,192 @@
+[
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Nilai dari $_5C_2$ (banyak cara memilih $2$ objek dari $5$ objek berbeda tanpa memperhatikan urutan) adalah ...",
+    "clue": "$_nC_r = \\frac{n!}{r!(n-r)!}$.",
+    "opsi": [
+      "$10$",
+      "$20$",
+      "$5$",
+      "$15$",
+      "$25$"
+    ],
+    "jawaban_benar": "$10$",
+    "pembahasan": "$_5C_2 = \\frac{5!}{2!\\,3!} = \\frac{5 \\times 4}{2 \\times 1} = 10$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Dari $7$ siswa akan dipilih $3$ siswa untuk mewakili sekolah dalam satu tim lomba (tidak ada perbedaan peran di antara ketiganya). Banyak cara pemilihannya adalah ...",
+    "clue": "Karena ketiga siswa punya peran yang sama (tidak dibedakan), gunakan kombinasi, bukan permutasi.",
+    "opsi": [
+      "$35$",
+      "$210$",
+      "$21$",
+      "$343$",
+      "$7$"
+    ],
+    "jawaban_benar": "$35$",
+    "pembahasan": "$_7C_3 = \\frac{7!}{3!\\,4!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Dalam sebuah kotak terdapat $8$ bola berbeda warna. Banyak cara memilih $4$ bola sekaligus (urutan pengambilan tidak diperhatikan) adalah ...",
+    "clue": "Karena pengambilan sekaligus dan tidak ada urutan, gunakan $_8C_4$.",
+    "opsi": [
+      "$70$",
+      "$1680$",
+      "$32$",
+      "$56$",
+      "$40$"
+    ],
+    "jawaban_benar": "$70$",
+    "pembahasan": "$_8C_4 = \\frac{8!}{4!\\,4!} = \\frac{8 \\times 7 \\times 6 \\times 5}{4 \\times 3 \\times 2 \\times 1} = 70$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Pembentukan panitia beranggotakan $3$ orang dari $10$ kandidat (tanpa jabatan yang membedakan anggota) paling tepat dihitung menggunakan konsep ..., karena ...",
+    "clue": "Perhatikan apakah anggota panitia punya peran/urutan yang berbeda satu sama lain.",
+    "opsi": [
+      "Kombinasi, karena urutan/peran anggota tidak diperhatikan",
+      "Permutasi, karena urutan/peran anggota diperhatikan",
+      "Aturan perkalian, karena dipilih satu per satu",
+      "Aturan penjumlahan, karena ada $10$ kandidat",
+      "Kombinasi, karena jumlah panitia sedikit"
+    ],
+    "jawaban_benar": "Kombinasi, karena urutan/peran anggota tidak diperhatikan",
+    "pembahasan": "Karena anggota panitia tidak dibedakan perannya (semua 'anggota' saja, bukan ketua/sekretaris/dst.), pemilihannya memakai kombinasi $_{10}C_3$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Dari $6$ pria dan $4$ wanita akan dibentuk panitia beranggotakan $2$ pria dan $2$ wanita. Banyak cara membentuk panitia tersebut adalah ...",
+    "clue": "Pilih pria dan wanita secara terpisah dengan kombinasi, lalu kalikan kedua hasilnya (aturan perkalian).",
+    "opsi": [
+      "$90$",
+      "$45$",
+      "$60$",
+      "$24$",
+      "$15$"
+    ],
+    "jawaban_benar": "$90$",
+    "pembahasan": "$_6C_2 \\times {_4C_2} = 15 \\times 6 = 90$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Banyak cara memilih $2$ kartu dari setumpuk $52$ kartu remi (urutan pengambilan tidak penting) adalah ...",
+    "clue": "Gunakan $_{52}C_2$.",
+    "opsi": [
+      "$1326$",
+      "$2652$",
+      "$104$",
+      "$2704$",
+      "$51$"
+    ],
+    "jawaban_benar": "$1326$",
+    "pembahasan": "$_{52}C_2 = \\frac{52 \\times 51}{2 \\times 1} = 1326$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Dalam suatu pertemuan terdapat $8$ orang, dan setiap pasang orang berjabat tangan tepat satu kali. Banyak jabat tangan yang terjadi adalah ...",
+    "clue": "Satu jabat tangan melibatkan $2$ orang tanpa urutan (jabat tangan A-B sama dengan B-A) — hitung dengan kombinasi.",
+    "opsi": [
+      "$28$",
+      "$56$",
+      "$16$",
+      "$64$",
+      "$40$"
+    ],
+    "jawaban_benar": "$28$",
+    "pembahasan": "$_8C_2 = \\frac{8 \\times 7}{2 \\times 1} = 28$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Nilai dari $_9C_9$ adalah ...",
+    "clue": "Memilih semua ($9$ dari $9$) objek hanya bisa dilakukan dengan satu cara.",
+    "opsi": [
+      "$1$",
+      "$9$",
+      "$0$",
+      "$362880$",
+      "$81$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$_nC_n = 1$ untuk semua $n$, karena hanya ada satu cara memilih SEMUA objek yang tersedia."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Dari $5$ soal ujian, siswa diminta mengerjakan $3$ soal saja (urutan pengerjaan tidak dinilai). Banyak cara siswa memilih $3$ soal dari $5$ soal tersebut adalah ...",
+    "clue": "Gunakan $_5C_3$.",
+    "opsi": [
+      "$10$",
+      "$60$",
+      "$20$",
+      "$15$",
+      "$5$"
+    ],
+    "jawaban_benar": "$10$",
+    "pembahasan": "$_5C_3 = \\frac{5!}{3!\\,2!} = \\frac{5 \\times 4}{2 \\times 1} = 10$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Kombinasi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Permutasi"
+    ],
+    "pertanyaan": "Sebuah tim futsal beranggotakan $5$ pemain akan dipilih dari $9$ pemain yang tersedia. Jika $2$ pemain tertentu (kapten dan wakil kapten) sudah pasti masuk tim, banyak cara memilih $3$ pemain sisanya adalah ...",
+    "clue": "Karena $2$ pemain sudah pasti masuk, tinggal pilih $3$ pemain dari $9-2=7$ pemain yang tersisa.",
+    "opsi": [
+      "$35$",
+      "$84$",
+      "$21$",
+      "$126$",
+      "$7$"
+    ],
+    "jawaban_benar": "$35$",
+    "pembahasan": "$_7C_3 = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$."
+  }
+]

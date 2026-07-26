@@ -9,6 +9,7 @@ export const DAFTAR_MATERI_INTI = [
   "Fungsi Kuadrat",
   "Pertidaksamaan",
   "Fungsi Rasional",
+  "Kaidah Pencacahan & Peluang",
 ];
 
 // =====================================================================
@@ -201,6 +202,30 @@ export const PETA_PRASYARAT = {
   "Domain dan Range Fungsi Rasional": ["Pengertian Fungsi Rasional"],
   "Asimtot Fungsi Rasional": ["Domain dan Range Fungsi Rasional"],
   "Menggambar Grafik Fungsi Rasional": ["Asimtot Fungsi Rasional"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB KAIDAH PENCACAHAN & PELUANG — rantai sekuensial, TANPA gerbang
+  // antar-tab (2026-07-26/27, plan/PLAN.md §11). Bab 10 (Kaidah Pencacahan)
+  // prasyarat [] di RENCANA prota, jadi pintu masuk tab ("Aturan Penjumlahan
+  // dan Perkalian") tidak digerbang tab lain. Tidak ada tab lain yang
+  // menjadikan tab ini prasyaratnya (dicek di seluruh field prasyarat
+  // RENCANA) -- satu-satunya pengecualian adalah Nilai Mutlak (Fase 9)
+  // yang butuh "semua" tab, kasus khusus tersendiri.
+  //
+  // "Ruang Sampel dan Peluang Kejadian Tunggal" (pintu masuk Bab 11
+  // Peluang) digerbangkan oleh SELURUH sub-materi Kaidah Pencacahan master
+  // (Bab 11 prasyarat ["bab10"]) -- pola sama seperti gerbang antar-bab di
+  // tab lain, hanya saja di sini kedua bab digabung jadi satu tab UI.
+  // ═══════════════════════════════════════════════════════════════════
+  "Permutasi": ["Aturan Penjumlahan dan Perkalian"],
+  "Kombinasi": ["Permutasi"],
+  "Ruang Sampel dan Peluang Kejadian Tunggal": [
+    "Aturan Penjumlahan dan Perkalian",
+    "Permutasi",
+    "Kombinasi",
+  ],
+  "Frekuensi Relatif dan Harapan": ["Ruang Sampel dan Peluang Kejadian Tunggal"],
+  "Peluang Kejadian Majemuk": ["Frekuensi Relatif dan Harapan"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -469,6 +494,25 @@ const TAHAPAN_FUNGSI_RASIONAL = {
   "menggambar grafik fungsi rasional": "Tahap 4: Menggambar Grafik",
 };
 
+// --- MATERI KAIDAH PENCACAHAN & PELUANG (tab gabungan, Bab 10+11 prota) ---
+// Fase 8 lengkap 2026-07-27 (plan/PLAN.md §11). Satu tab UI menggabungkan
+// dua bab buku (Bab 10 Kaidah Pencacahan, Bab 11 Peluang) karena Bab 11
+// digerbang penuh oleh Bab 10 (prasyarat ["bab10"]) -- pola sama seperti
+// Peluang di RENCANA prota, cukup jadi Tahap 4-6 lanjutan tab yang sama,
+// bukan tab terpisah. Nama sub-materi mengikuti subbab buku (10.1-10.3,
+// 11.1-11.3), "Ruang Sampel, Peluang Kejadian Tunggal dan Komplemennya"
+// dipendekkan jadi "Ruang Sampel dan Peluang Kejadian Tunggal" agar
+// konsisten dengan gaya penamaan tab lain.
+const TAHAPAN_KAIDAH_PENCACAHAN_PELUANG = {
+  "aturan penjumlahan dan perkalian": "Tahap 1: Aturan Pencacahan",
+  "permutasi": "Tahap 2: Permutasi",
+  "kombinasi": "Tahap 3: Kombinasi",
+  "ruang sampel dan peluang kejadian tunggal":
+    "Tahap 4: Ruang Sampel dan Peluang Tunggal",
+  "frekuensi relatif dan harapan": "Tahap 5: Frekuensi Relatif dan Harapan",
+  "peluang kejadian majemuk": "Tahap 6: Peluang Kejadian Majemuk",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
@@ -566,6 +610,7 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PERTIDAKSAMAAN,
   ...TAHAPAN_FUNGSI_RASIONAL,
+  ...TAHAPAN_KAIDAH_PENCACAHAN_PELUANG,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
 };
@@ -590,5 +635,8 @@ export const PETA_TAB_SUB_MATERI = {
   "Sistem Persamaan": Object.keys(TAHAPAN_SISTEM_PERSAMAAN),
   Pertidaksamaan: Object.keys(TAHAPAN_PERTIDAKSAMAAN),
   "Fungsi Rasional": Object.keys(TAHAPAN_FUNGSI_RASIONAL),
+  "Kaidah Pencacahan & Peluang": Object.keys(
+    TAHAPAN_KAIDAH_PENCACAHAN_PELUANG,
+  ),
   Trigonometri: Object.keys(TAHAPAN_TRIGONOMETRI),
 };

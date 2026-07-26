@@ -412,6 +412,29 @@ Diverifikasi dengan ekspor Firestore live segar (970 soal) lewat Gate A — **�
 
 Tab Fungsi Rasional sekarang aktif dan terisi penuh — 8 dari 8 tab bab-utama selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan, Fungsi Rasional). Sisa 2 fase di §11.5: Fase 8 (Kaidah Pencacahan & Peluang) dan Fase 9 (Nilai Mutlak) — keduanya berdiri sendiri tanpa gerbang antar-tab rumit (Bab 10 prasyarat `[]`, Bab 11 prasyarat `["bab10"]` saja), jadi tidak akan menambah kedalaman peta gabungan seperti fase-fase sebelumnya.
 
+**Fase 8 — Kaidah Pencacahan & Peluang, SELESAI (kode + data), terverifikasi 2026-07-27.** 6 sub-materi baru (60 soal), semuanya baru (tidak ada reklasifikasi), untuk tab baru "Kaidah Pencacahan & Peluang" — satu tab UI yang menggabungkan **dua bab buku sekaligus** (Bab 10 Kaidah Pencacahan, Bab 11 Peluang), karena Bab 11 di RENCANA prota digerbang penuh oleh Bab 10 (`prasyarat:["bab10"]`) sehingga secara pedagogis ia memang lanjutan langsung, bukan tab terpisah:
+
+1. **Aturan Penjumlahan dan Perkalian** (Tahap 1, pintu masuk) — subbab 10.1, kaidah dasar berhitung (aturan penjumlahan untuk kejadian saling lepas, aturan perkalian untuk tahap berurutan).
+2. **Permutasi** (Tahap 2) — subbab 10.2: susunan berurutan, termasuk faktorial, permutasi dengan unsur berulang, dan permutasi siklis.
+3. **Kombinasi** (Tahap 3) — subbab 10.3: pemilihan tanpa memperhatikan urutan.
+4. **Ruang Sampel dan Peluang Kejadian Tunggal** (Tahap 4, pintu masuk Bab 11) — **dipendekkan** dari judul subbab 11.1 asli ("Ruang Sampel, Peluang Kejadian Tunggal dan Komplemennya") agar konsisten dengan gaya penamaan tab lain; isinya tetap mencakup komplemen.
+5. **Frekuensi Relatif dan Harapan** (Tahap 5) — subbab 11.2.
+6. **Peluang Kejadian Majemuk** (Tahap 6) — subbab 11.3: kejadian saling lepas vs tidak saling lepas, saling bebas, dan peluang bersyarat sederhana (pengambilan tanpa pengembalian).
+
+Gerbang: **"Aturan Penjumlahan dan Perkalian" (pintu masuk tab) TIDAK digerbang tab lain** — Bab 10 prasyarat `[]` di RENCANA prota, sama seperti Persamaan Kuadrat/Relasi dan Fungsi di fase-fase awal. **"Ruang Sampel dan Peluang Kejadian Tunggal" (pintu masuk Bab 11) digerbangkan oleh SELURUH sub-materi Kaidah Pencacahan (Aturan Penjumlahan dan Perkalian, Permutasi, Kombinasi)** — pola sama seperti gerbang antar-tab di fase lain, hanya saja di sini kedua sisi gerbang ada di tab UI yang sama. Rantai internal: Aturan Penjumlahan dan Perkalian → Permutasi → Kombinasi → Ruang Sampel dan Peluang Kejadian Tunggal → Frekuensi Relatif dan Harapan → Peluang Kejadian Majemuk. Dicek di seluruh field `prasyarat` RENCANA prota: **tidak ada bab lain yang menjadikan Bab 10/11 sebagai prasyaratnya** (satu-satunya pengecualian Nilai Mutlak/Fase 9, yang butuh "semua" tab sebagai kasus khusus), jadi tab ini juga tidak menggerbang tab manapun.
+
+`TAHAPAN_KAIDAH_PENCACAHAN_PELUANG` ditambahkan ke `PETA_TAHAPAN`, ditempatkan setelah `TAHAPAN_FUNGSI_RASIONAL` dalam urutan spread (mengikuti urutan ajar prota: Fase 8 setelah Fase 7).
+
+**Alur impor**: 6 file baru (`bank_soal_aturan_penjumlahan_dan_perkalian.json`, `bank_soal_permutasi.json`, `bank_soal_kombinasi.json`, `bank_soal_ruang_sampel_dan_peluang_kejadian_tunggal.json`, `bank_soal_frekuensi_relatif_dan_harapan.json`, `bank_soal_peluang_kejadian_majemuk.json`, semua tanpa `id`) aman diimpor langsung — tidak ada file reklasifikasi di fase ini.
+
+Kode lolos Jest 114/114 lokal (tambahan: cek rantai gerbang Kaidah Pencacahan & Peluang bisa dibuka secara sekuensial tanpa gerbang antar-tab, dan cek Bab 11/Peluang tetap terkunci bila Bab 10/Kaidah Pencacahan belum lengkap). Gate A lokal LOLOS tanpa deadlock, DAG 76 node valid.
+
+`peta-materi.html`: ambang kolom test **TETAP 20** (tidak dinaikkan) — tab ini tidak digerbang tab manapun dan tidak menggerbang tab lain, jadi tidak menambah kedalaman jalur terpanjang (jalur terpanjang tetap dari rantai Fungsi Rasional/Fase 7). Node bertambah 70→76 (+5 target, +1 akar baru "Aturan Penjumlahan dan Perkalian" karena pintu masuk tab ini — beda dari kebanyakan tab lain — tidak digerbang tab sebelumnya).
+
+Diverifikasi dengan ekspor Firestore live segar (1030 soal) lewat Gate A — **✅ LOLOS**, DAG 76 node valid, tidak ada deadlock, keenam sub-materi baru 10 soal masing-masing di `materi_utama: "Kaidah Pencacahan & Peluang"`. Test Jest 114/114 lolos.
+
+Sisa 1 fase di §11.5: **Fase 9 (Nilai Mutlak)** — sisipan lintas-semua-tab (prasyarat `["semua"]`), sengaja dikerjakan paling akhir.
+
 ## 12. Peta materi: melipat tab tuntas jadi satu simpul (2026-07-26)
 
 Sejak Fase 2 (§11.5) ambang lebar kolom `tataLetakPeta.test.js` sudah dinaikkan tiga kali (8→15→20) karena setiap gerbang antar-tab baru menggambar SELURUH sub-materi tab prasyaratnya satu per satu — mis. "Pertidaksamaan Linear" menyebut 11 sub-materi dari 3 tab sekaligus. Ini keputusan yang sempat ditunda ("diputuskan belakangan") sejak Fase 2, diselesaikan sekarang setelah 8/8 tab bab-utama selesai (Fase 7).

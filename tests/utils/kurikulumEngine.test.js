@@ -612,6 +612,43 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     ]);
   });
 
+  test("seluruh rantai gerbang Kaidah Pencacahan & Peluang dapat dibuka secara sekuensial (tanpa gerbang antar-tab)", () => {
+    const rantaiKaidahPeluang = [
+      "aturan penjumlahan dan perkalian",
+      "permutasi",
+      "kombinasi",
+      "ruang sampel dan peluang kejadian tunggal",
+      "frekuensi relatif dan harapan",
+      "peluang kejadian majemuk",
+    ];
+    const master = new Set();
+    for (let lapis = 0; lapis < rantaiKaidahPeluang.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiKaidahPeluang.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiKaidahPeluang.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("Peluang (Bab 11) terkunci bila Kaidah Pencacahan (Bab 10) belum lengkap master", () => {
+    // Aturan Penjumlahan dan Perkalian + Permutasi master, tapi Kombinasi
+    // sengaja belum -- pintu masuk Peluang harus tetap terkunci.
+    const master = new Set([
+      "aturan penjumlahan dan perkalian",
+      "permutasi",
+    ]);
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["ruang sampel dan peluang kejadian tunggal"].locked).toBe(
+      true,
+    );
+    expect(
+      status["ruang sampel dan peluang kejadian tunggal"].prereqBelum,
+    ).toEqual(["Kombinasi"]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

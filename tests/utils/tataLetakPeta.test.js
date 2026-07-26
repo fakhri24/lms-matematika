@@ -102,22 +102,21 @@ describe("susunTataLetakPeta", () => {
     // (Fase 5 -- Sifat dan Grafik, Menyusun Persamaan Parabola, Aplikasi)
     // + 6 target Pertidaksamaan (Fase 6 -- Linear, Program Linear, Kuadrat,
     // Rasional, Irasional, Aplikasi) + 4 target Fungsi Rasional (Fase 7 --
-    // Pengertian, Domain dan Range, Asimtot, Menggambar Grafik; semua
-    // prasyaratnya sudah node lain, tidak menambah akar baru) = 58 target +
-    // 12 akar (leaf, prasyarat:[]) -- akar naik dari 10 ke 12 di Fase 6
-    // karena "Sistem Persamaan Linear Dua/Tiga Variabel (SPLDV/SPLTV)" baru
-    // pertama kali jadi prasyarat di situ (sebelumnya tidak pernah dirujuk
-    // PETA_PRASYARAT).
-    expect(hasil.node).toHaveLength(70);
-    // Ambang dinaikkan lagi dari 15 ke 20 di Fase 7 (plan/PLAN.md §11):
-    // "Pengertian Fungsi Rasional" digerbang oleh SELURUH sub-materi Relasi
-    // dan Fungsi + Fungsi Kuadrat + Pertidaksamaan, dan rantai Pertidaksamaan
-    // itu sendiri digerbang oleh SELURUH Eksponen + Fungsi Kuadrat + Sistem
-    // Persamaan -- jalur terpanjang sekarang 19 kolom. Sudah dinaikkan 3x
-    // (8->15 di Fase 2, 15->20 di sini) hanya dalam 7 fase; peta-materi.html
-    // (satu peta gabungan semua tab) SUDAH sulit dibaca, bukan lagi cuma
-    // berisiko. Keputusan pemisahan peta per tab (masih **belum diputuskan**
-    // sejak Fase 2) semestinya tidak ditunda lagi lebih lama.
+    // Pengertian, Domain dan Range, Asimtot, Menggambar Grafik) + 5 target
+    // Kaidah Pencacahan & Peluang (Fase 8 -- Permutasi, Kombinasi, Ruang
+    // Sampel dan Peluang Kejadian Tunggal, Frekuensi Relatif dan Harapan,
+    // Peluang Kejadian Majemuk) = 63 target + 13 akar (leaf, prasyarat:[])
+    // -- akar naik dari 12 ke 13 di Fase 8 karena "Aturan Penjumlahan dan
+    // Perkalian" adalah pintu masuk tab baru TANPA gerbang antar-tab (Bab 10
+    // prasyarat [] di RENCANA prota, beda dari kebanyakan tab lain yang
+    // pintu masuknya digerbang tab sebelumnya).
+    expect(hasil.node).toHaveLength(76);
+    // Ambang TETAP 20 di Fase 8 (tidak dinaikkan lagi): tab Kaidah
+    // Pencacahan & Peluang tidak digerbang tab manapun dan tidak menggerbang
+    // tab lain (Bab 10 prasyarat [], Bab 11 prasyarat ["bab10"] internal
+    // saja), jadi tidak menambah kedalaman jalur terpanjang -- jalur
+    // terpanjang tetap dari rantai Fungsi Rasional (Fase 7). Riwayat
+    // kenaikan ambang sebelumnya: 8->15 (Fase 2), 15->20 (Fase 7).
     expect(hasil.jumlahKolom).toBeLessThanOrEqual(20);
   });
 

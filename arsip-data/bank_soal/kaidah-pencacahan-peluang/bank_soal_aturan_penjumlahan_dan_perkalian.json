@@ -1,0 +1,192 @@
+[
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Seorang siswa memiliki $4$ pilihan baju dan $3$ pilihan celana. Banyak cara siswa tersebut memilih satu pasang baju dan celana adalah ...",
+    "clue": "Setiap pilihan baju bisa dipasangkan dengan setiap pilihan celana — gunakan aturan perkalian.",
+    "opsi": [
+      "$12$",
+      "$7$",
+      "$3$",
+      "$4$",
+      "$34$"
+    ],
+    "jawaban_benar": "$12$",
+    "pembahasan": "Aturan perkalian: banyak pasangan $= 4 \\times 3 = 12$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Dari kota A ke kota B tersedia $2$ jalur darat dan $3$ jalur laut yang berbeda (tidak ada jalur gabungan darat-laut). Banyak cara bepergian dari kota A ke kota B adalah ...",
+    "clue": "Kedua jenis jalur tidak bisa dipakai sekaligus (saling lepas) — gunakan aturan penjumlahan.",
+    "opsi": [
+      "$5$",
+      "$6$",
+      "$2$",
+      "$3$",
+      "$1$"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Aturan penjumlahan (kejadian saling lepas): banyak cara $= 2 + 3 = 5$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah kode sandi terdiri dari $3$ digit angka ($0$ sampai $9$) yang boleh berulang. Banyak kode sandi berbeda yang dapat dibentuk adalah ...",
+    "clue": "Tiap posisi digit punya $10$ pilihan bebas, termasuk boleh sama dengan posisi lain.",
+    "opsi": [
+      "$1000$",
+      "$720$",
+      "$100$",
+      "$30$",
+      "$999$"
+    ],
+    "jawaban_benar": "$1000$",
+    "pembahasan": "Karena digit boleh berulang, tiap dari $3$ posisi punya $10$ pilihan: $10 \\times 10 \\times 10 = 1000$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Banyak bilangan tiga angka berbeda (tanpa pengulangan digit) yang dapat dibentuk dari angka $1, 2, 3, 4, 5$ adalah ...",
+    "clue": "Posisi pertama $5$ pilihan, posisi kedua tinggal $4$ pilihan (satu sudah dipakai), posisi ketiga tinggal $3$ pilihan.",
+    "opsi": [
+      "$60$",
+      "$125$",
+      "$120$",
+      "$15$",
+      "$20$"
+    ],
+    "jawaban_benar": "$60$",
+    "pembahasan": "Karena digit tidak boleh berulang: $5 \\times 4 \\times 3 = 60$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Seorang siswa akan membeli SATU camilan. Ia bisa memilih dari $4$ jenis keripik, ATAU $3$ jenis biskuit, ATAU $2$ jenis cokelat (hanya boleh membeli satu jenis saja). Banyak pilihan camilan yang tersedia adalah ...",
+    "clue": "Ketiga kelompok camilan itu saling lepas: memilih dari satu kelompok berarti tidak memilih dari kelompok lain.",
+    "opsi": [
+      "$9$",
+      "$24$",
+      "$8$",
+      "$7$",
+      "$6$"
+    ],
+    "jawaban_benar": "$9$",
+    "pembahasan": "Karena kelompoknya saling lepas, gunakan aturan penjumlahan: $4 + 3 + 2 = 9$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Seorang siswa akan memilih SATU kegiatan ekstrakurikuler: $5$ pilihan cabang olahraga ATAU $3$ pilihan cabang seni (tidak boleh mengikuti keduanya). Aturan berhitung yang tepat, dan hasilnya, adalah ...",
+    "clue": "Karena hanya boleh memilih SATU dari dua kelompok yang terpisah, kejadian ini saling lepas — bukan langkah berurutan.",
+    "opsi": [
+      "Aturan penjumlahan, $5 + 3 = 8$",
+      "Aturan perkalian, $5 \\times 3 = 15$",
+      "Aturan penjumlahan, $5 \\times 3 = 15$",
+      "Aturan perkalian, $5 + 3 = 8$",
+      "Tidak bisa dihitung"
+    ],
+    "jawaban_benar": "Aturan penjumlahan, $5 + 3 = 8$",
+    "pembahasan": "Memilih SATU dari dua kelompok pilihan yang saling lepas (tidak berurutan, tidak keduanya sekaligus) memakai aturan penjumlahan: $5 + 3 = 8$. Aturan perkalian baru dipakai kalau kedua pilihan itu dipilih SEKALIGUS secara berurutan (misalnya baju DAN celana)."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah restoran menyediakan paket makan yang terdiri dari $1$ makanan pembuka ($3$ pilihan), $1$ makanan utama ($5$ pilihan), dan $1$ minuman ($2$ pilihan). Banyak paket makan berbeda yang bisa dipesan adalah ...",
+    "clue": "Ketiga bagian paket dipilih sekaligus dan saling bebas — gunakan aturan perkalian untuk tiga langkah berurutan.",
+    "opsi": [
+      "$30$",
+      "$10$",
+      "$15$",
+      "$8$",
+      "$25$"
+    ],
+    "jawaban_benar": "$30$",
+    "pembahasan": "Aturan perkalian: $3 \\times 5 \\times 2 = 30$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Banyak bilangan GENAP tiga angka berbeda (tanpa pengulangan digit) yang dapat dibentuk dari angka $1, 2, 3, 4, 5$ adalah ...",
+    "clue": "Syarat genap ada di angka satuan (digit terakhir), jadi tentukan dulu pilihan untuk posisi itu sebelum posisi lainnya.",
+    "opsi": [
+      "$24$",
+      "$60$",
+      "$48$",
+      "$12$",
+      "$20$"
+    ],
+    "jawaban_benar": "$24$",
+    "pembahasan": "Angka satuan harus genap: $2$ atau $4$ ($2$ pilihan). Dua posisi sisanya diisi dari $4$ digit yang tersisa: $4 \\times 3$. Total $= 2 \\times 4 \\times 3 = 24$."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Dari kota P ke kota Q tersedia $3$ jalur darat atau $2$ jalur udara. Dari kota Q ke kota R hanya tersedia $4$ jalur darat. Banyak cara bepergian dari kota P ke kota R (lewat Q) adalah ...",
+    "clue": "Hitung dulu banyak cara dari P ke Q (jalur darat ATAU udara, saling lepas), baru kalikan dengan banyak cara dari Q ke R.",
+    "opsi": [
+      "$20$",
+      "$9$",
+      "$24$",
+      "$14$",
+      "$40$"
+    ],
+    "jawaban_benar": "$20$",
+    "pembahasan": "P ke Q: $3 + 2 = 5$ cara (aturan penjumlahan, saling lepas). Lalu dikalikan dengan Q ke R: $5 \\times 4 = 20$ (aturan perkalian, dua tahap perjalanan berurutan)."
+  },
+  {
+    "materi_utama": "Kaidah Pencacahan & Peluang",
+    "sub_materi": "Aturan Penjumlahan dan Perkalian",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Operasi Aritmatika Dasar"
+    ],
+    "pertanyaan": "Sebuah percobaan terdiri dari melempar satu keping uang logam ($2$ hasil) dan satu dadu ($6$ hasil) secara bersamaan. Banyak hasil yang mungkin dari percobaan gabungan tersebut adalah ...",
+    "clue": "Hasil uang logam dan hasil dadu terjadi bersamaan dan saling bebas — gunakan aturan perkalian.",
+    "opsi": [
+      "$12$",
+      "$8$",
+      "$6$",
+      "$36$",
+      "$2$"
+    ],
+    "jawaban_benar": "$12$",
+    "pembahasan": "Aturan perkalian: $2 \\times 6 = 12$."
+  }
+]
