@@ -150,3 +150,32 @@ Field `konsep_prasyarat` tetap berharga sebagai **penasihat** — persentase pem
 **Tabel alias nama lawas tidak dibangun.** Riwayat masih memuat `Sifat Sudut (Berseberangan & Berpelurus)` — nama gabungan yang kini dipecah dua. Pengecekan data live: **tepat 1 record**, dan materinya bukan prasyarat siapa pun, jadi dampaknya ke penguncian nol. Perlu ditinjau ulang kalau Sifat Sudut suatu saat menjadi prasyarat.
 
 **Latihan spesial tidak pernah memberi status master.** Modenya di luar `MODE_UJIAN`, jadi berapa pun nilainya tidak membuka kunci apa pun. Sesuai desain, dicatat agar tidak jadi kejutan.
+
+---
+
+## 10. Cakupan tes diagnostik numerasi kelas X vs. tab "Prasyarat" (2026-07-26)
+
+Analisis ad-hoc atas berkas eksternal *Tes Diagnostik Numerasi — Kelas X* (50 soal, PDF, bukan bagian repo) dibandingkan dengan sub-materi yang tampil di tab "Prasyarat" (`pilih-materi.html`). Dicatat di sini karena menyingkap celah kurikulum, bukan karena ada perubahan kode.
+
+**Metode:** tab "Prasyarat" berisi setiap sub-materi dengan `materi_utama` di luar `["Eksponen","Logaritma","Trigonometri"]` (`pilihMateri.js:113-122`). Isinya di-cross-check ke `arsip-data/bank_soal.json` (455 soal, arsip — tidak ikut di-deploy) per teks `pertanyaan`, bukan cuma nama sub-materi, supaya tidak menebak dari label.
+
+| Bagian & No. Soal (PDF) | Topik | Sub-materi Prasyarat yang cocok | Status |
+|---|---|---|---|
+| Bagian 1, No. 1–3, 6–8 | Operasi hitung campuran, bilangan negatif | **Operasi Aritmatika Dasar** | Tercakup |
+| Bagian 1, No. 4–5 | Sifat distributif/komutatif/asosiatif (bilangan murni) | — | Tidak tercakup |
+| Bagian 2, No. 9–14 | Faktorisasi prima, FPB, KPK | **KPK dan FPB** | Tercakup |
+| Bagian 3, No. 15–17 | Operasi pecahan (+, −, ÷) | **Operasi Pecahan** | Tercakup |
+| Bagian 3, No. 18–24 | Desimal (operasi, konversi, bandingkan, urutkan) | — | Tidak tercakup |
+| Bagian 4, No. 25–29 | Sederhanakan & jabarkan bentuk aljabar (termasuk distributif aljabar) | **Manipulasi Aljabar Dasar** | Tercakup |
+| Bagian 4, No. 30–31 | Substitusi fungsi linear notasi $f(x)$ | — (`f(x)` di bank soal hanya dipakai untuk Fungsi Kuadrat & Trigonometri) | Tidak tercakup |
+| Bagian 5, No. 32–35 | Persamaan linear satu variabel | **Persamaan Linear Satu Variabel** | Tercakup |
+| Bagian 5, No. 36–39 | Sistem persamaan linear dua variabel | **Sistem Persamaan Linear** | Tercakup |
+| Bagian 6, No. 40–50 | Persen, perbandingan/rasio senilai, skala, estimasi, pembulatan | — | Tidak tercakup |
+
+**Hasil: 28/50 soal (56%) tercakup, 22/50 (44%) tidak.** Tiga celah konkret:
+
+1. **Sifat operasi pada bilangan murni** (No. 4–5) — versi aljabarnya ada (Manipulasi Aljabar Dasar), versi bilangan polos tidak.
+2. **Bilangan desimal** (No. 18–24, 7 soal) — "Operasi Pecahan" yang ada murni pecahan biasa; tidak ada satu pun soal desimal di 10 soalnya.
+3. **Bagian 6 · Numerasi Terapan** (No. 40–50, 11 soal / 22% dari seluruh tes) — persen, perbandingan senilai, skala, estimasi, pembulatan **tidak punya representasi di kurikulum aplikasi manapun**, bukan cuma di tab Prasyarat. Dicek ke seluruh 455 soal arsip, bukan cuma yang berlabel Prasyarat.
+
+**Belum ada keputusan atau pekerjaan kode dari analisis ini.** Kalau nanti sub-materi baru dibuat untuk menutup celah ini, berlaku ambang 10 soal (§4) — sub-materi baru tidak boleh dipakai untuk ujian sumatif sebelum bank soalnya ≥10.
