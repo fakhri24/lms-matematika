@@ -1,0 +1,112 @@
+[
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk akar dari $8^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Pangkat pecahan $\\frac{1}{n}$ setara dengan akar pangkat $n$: $a^{\\frac{1}{n}} = \\sqrt[n]{a}$.",
+    "opsi": ["$\\sqrt[3]{8}$", "$\\sqrt{8}$", "$\\sqrt[8]{3}$", "$8\\sqrt{3}$", "$3\\sqrt{8}$"],
+    "jawaban_benar": "$\\sqrt[3]{8}$",
+    "pembahasan": "$8^{\\frac{1}{3}} = \\sqrt[3]{8}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $27^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Ubah dulu ke bentuk akar pangkat 3, lalu cari bilangan yang jika dipangkatkan 3 hasilnya 27.",
+    "opsi": ["$3$", "$9$", "$13,5$", "$27$", "$\\frac{1}{3}$"],
+    "jawaban_benar": "$3$",
+    "pembahasan": "$27^{\\frac{1}{3}} = \\sqrt[3]{27} = 3$, karena $3^3 = 27$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Ubahlah $\\sqrt[4]{x}$ menjadi bentuk pangkat.",
+    "clue": "Akar pangkat $n$ setara dengan pangkat $\\frac{1}{n}$.",
+    "opsi": ["$x^{\\frac{1}{4}}$", "$x^4$", "$x^{-\\frac{1}{4}}$", "$4x$", "$\\frac{1}{x^4}$"],
+    "jawaban_benar": "$x^{\\frac{1}{4}}$",
+    "pembahasan": "$\\sqrt[4]{x} = x^{\\frac{1}{4}}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $4^{\\frac{3}{2}}$ adalah ...",
+    "clue": "Pisahkan pangkat pecahannya: akar dulu (pangkat $\\frac{1}{2}$), baru pangkatkan hasilnya dengan 3.",
+    "opsi": ["$6$", "$8$", "$12$", "$16$", "$64$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$4^{\\frac{3}{2}} = \\left(4^{\\frac12}\\right)^3 = (\\sqrt{4})^3 = 2^3 = 8$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $16^{\\frac{3}{4}}$ adalah ...",
+    "clue": "Cari dulu akar pangkat 4 dari 16, baru pangkatkan hasilnya dengan 3.",
+    "opsi": ["$4$", "$8$", "$12$", "$24$", "$64$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$16^{\\frac{3}{4}} = \\left(16^{\\frac14}\\right)^3 = (\\sqrt[4]{16})^3 = 2^3 = 8$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Ubahlah $\\sqrt[5]{x^3}$ menjadi bentuk pangkat.",
+    "clue": "Sifat konversi: $\\sqrt[n]{a^m} = a^{\\frac{m}{n}}$.",
+    "opsi": ["$x^{\\frac{3}{5}}$", "$x^{\\frac{5}{3}}$", "$x^{15}$", "$x^{\\frac{1}{15}}$", "$x^{-\\frac{3}{5}}$"],
+    "jawaban_benar": "$x^{\\frac{3}{5}}$",
+    "pembahasan": "$\\sqrt[5]{x^3} = x^{\\frac{3}{5}}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat"],
+    "pertanyaan": "Sederhanakan $2^{\\frac{1}{2}} \\times 2^{\\frac{3}{2}}$, lalu tentukan nilainya.",
+    "clue": "Sifat perkalian basis sama tetap berlaku walau pangkatnya pecahan — jumlahkan saja pangkatnya.",
+    "opsi": ["$2$", "$4$", "$8$", "$16$", "$2^{\\frac34}$"],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$2^{\\frac12} \\times 2^{\\frac32} = 2^{\\frac12+\\frac32} = 2^2 = 4$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Nilai dari $9^{-\\frac{1}{2}}$ adalah ...",
+    "clue": "Gabungan dua sifat: pangkat negatif (kebalikan) dan pangkat pecahan (akar).",
+    "opsi": ["$-3$", "$-\\frac{1}{3}$", "$\\frac{1}{3}$", "$3$", "$\\frac{1}{9}$"],
+    "jawaban_benar": "$\\frac{1}{3}$",
+    "pembahasan": "$9^{-\\frac12} = \\frac{1}{9^{\\frac12}} = \\frac{1}{\\sqrt9} = \\frac{1}{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Pecahan"],
+    "pertanyaan": "Nilai dari $\\left(\\frac{1}{8}\\right)^{\\frac{2}{3}}$ adalah ...",
+    "clue": "Ubah dulu pangkat pecahannya menjadi bentuk akar dari $8$, baru terapkan sifat pangkat negatif dari bentuk pecahannya.",
+    "opsi": ["$\\frac{1}{4}$", "$\\frac{1}{6}$", "$4$", "$6$", "$\\frac{1}{16}$"],
+    "jawaban_benar": "$\\frac{1}{4}$",
+    "pembahasan": "$\\left(\\frac18\\right)^{\\frac23} = \\frac{1}{8^{\\frac23}} = \\frac{1}{\\left(\\sqrt[3]{8}\\right)^2} = \\frac{1}{2^2} = \\frac{1}{4}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi Bentuk Akar"],
+    "pertanyaan": "Ubahlah $5^{\\frac{1}{3}}$ menjadi bentuk akar.",
+    "clue": "Pangkat pecahan $\\frac{1}{n}$ setara dengan akar pangkat $n$.",
+    "opsi": ["$\\sqrt[3]{5}$", "$\\sqrt{5}$", "$\\sqrt[5]{3}$", "$3\\sqrt{5}$", "$5\\sqrt{3}$"],
+    "jawaban_benar": "$\\sqrt[3]{5}$",
+    "pembahasan": "$5^{\\frac{1}{3}} = \\sqrt[3]{5}$."
+  }
+]

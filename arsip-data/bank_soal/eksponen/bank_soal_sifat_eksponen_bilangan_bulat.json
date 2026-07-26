@@ -1,0 +1,112 @@
+[
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Nilai dari $2^{-3}$ adalah ...",
+    "clue": "Pangkat negatif berarti kebalikan: $a^{-n} = \\frac{1}{a^n}$.",
+    "opsi": ["$-8$", "$-\\frac{1}{8}$", "$\\frac{1}{8}$", "$\\frac{1}{6}$", "$8$"],
+    "jawaban_benar": "$\\frac{1}{8}$",
+    "pembahasan": "$2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Nilai dari $5^0$ adalah ...",
+    "clue": "Bilangan apa pun (kecuali 0) yang dipangkatkan nol selalu bernilai 1.",
+    "opsi": ["$0$", "$1$", "$5$", "$\\frac{1}{5}$", "$25$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Sesuai sifat eksponen, $a^0 = 1$ untuk $a \\ne 0$. Maka $5^0 = 1$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Sederhanakan $3^4 \\times 3^2$ menjadi bentuk pangkat tunggal.",
+    "clue": "Sifat perkalian basis sama: jumlahkan pangkatnya, $a^m \\times a^n = a^{m+n}$.",
+    "opsi": ["$3^6$", "$3^8$", "$9^6$", "$3^2$", "$6^8$"],
+    "jawaban_benar": "$3^6$",
+    "pembahasan": "$3^4 \\times 3^2 = 3^{4+2} = 3^6$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Sederhanakan $\\frac{5^7}{5^3}$ menjadi bentuk pangkat tunggal.",
+    "clue": "Sifat pembagian basis sama: kurangkan pangkatnya, $\\frac{a^m}{a^n} = a^{m-n}$.",
+    "opsi": ["$5^4$", "$5^{10}$", "$5^{2}$", "$1^4$", "$5^3$"],
+    "jawaban_benar": "$5^4$",
+    "pembahasan": "$\\frac{5^7}{5^3} = 5^{7-3} = 5^4$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Nilai dari $\\left(2^3\\right)^2$ adalah ...",
+    "clue": "Sifat pangkat dari pangkat: kalikan pangkatnya, $(a^m)^n = a^{m \\times n}$.",
+    "opsi": ["$12$", "$32$", "$36$", "$64$", "$128$"],
+    "jawaban_benar": "$64$",
+    "pembahasan": "$\\left(2^3\\right)^2 = 2^{3 \\times 2} = 2^6 = 64$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Nilai dari $4^{-2}$ adalah ...",
+    "clue": "Pangkat negatif berarti kebalikan dari pangkat positifnya.",
+    "opsi": ["$-16$", "$-\\frac{1}{16}$", "$\\frac{1}{8}$", "$\\frac{1}{16}$", "$16$"],
+    "jawaban_benar": "$\\frac{1}{16}$",
+    "pembahasan": "$4^{-2} = \\frac{1}{4^2} = \\frac{1}{16}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Sederhanakan $2^5 \\times 2^{-3}$, lalu tentukan nilainya.",
+    "clue": "Sifat perkalian basis sama tetap berlaku walau salah satu pangkatnya negatif — jumlahkan saja: $5 + (-3)$.",
+    "opsi": ["$2$", "$4$", "$8$", "$16$", "$\\frac{1}{4}$"],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$2^5 \\times 2^{-3} = 2^{5 + (-3)} = 2^2 = 4$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Nilai dari $(2 \\times 3)^2$ adalah ...",
+    "clue": "Sifat pangkat dari perkalian: $(a \\times b)^n = a^n \\times b^n$. Bisa juga langsung dikalikan dulu baru dipangkatkan, hasilnya sama.",
+    "opsi": ["$12$", "$18$", "$30$", "$36$", "$72$"],
+    "jawaban_benar": "$36$",
+    "pembahasan": "$(2 \\times 3)^2 = 6^2 = 36$. (Cara lain: $2^2 \\times 3^2 = 4 \\times 9 = 36$, hasilnya sama.)"
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Sederhanakan $\\frac{6^4 \\times 6^{-1}}{6^2}$ menjadi bentuk pangkat tunggal.",
+    "clue": "Gabungkan pembilang dulu (jumlahkan pangkatnya), baru kurangkan dengan pangkat penyebut.",
+    "opsi": ["$6^1$", "$6^3$", "$6^5$", "$6^{-1}$", "$6^7$"],
+    "jawaban_benar": "$6^1$",
+    "pembahasan": "Pembilang: $6^4 \\times 6^{-1} = 6^{4 + (-1)} = 6^3$.<br>Bagi dengan penyebut: $\\frac{6^3}{6^2} = 6^{3-2} = 6^1$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Sifat Eksponen Bilangan Bulat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui $2^x = 32$. Nilai $x$ adalah ...",
+    "clue": "Nyatakan 32 sebagai pangkat berbasis 2 juga, lalu samakan pangkatnya.",
+    "opsi": ["$4$", "$5$", "$6$", "$16$", "$32$"],
+    "jawaban_benar": "$5$",
+    "pembahasan": "$32 = 2^5$, sehingga $2^x = 2^5$.<br>Karena basisnya sama, pangkatnya juga harus sama: $x = 5$."
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Hitunglah $f(3)$.",
+    "clue": "Ganti $x$ pada rumus dengan angka 3, lalu hitung hasilnya.",
+    "opsi": ["$5$", "$6$", "$8$", "$9$", "$16$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$f(3) = 2^3 = 8$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 3^x$. Hitunglah $f(0)$.",
+    "clue": "Ingat sifat pangkat nol: bilangan apa pun dipangkatkan nol hasilnya 1.",
+    "opsi": ["$0$", "$1$", "$3$", "$9$", "$\\frac13$"],
+    "jawaban_benar": "$1$",
+    "pembahasan": "$f(0) = 3^0 = 1$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Jika $f(p) = 32$, berapakah nilai $p$?",
+    "clue": "Nyatakan 32 sebagai pangkat berbasis 2, lalu samakan pangkatnya.",
+    "opsi": ["$4$", "$5$", "$6$", "$16$", "$32$"],
+    "jawaban_benar": "$5$",
+    "pembahasan": "$2^p = 32 = 2^5$, sehingga $p = 5$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 5 \\times 2^x$. Hitunglah $f(2)$.",
+    "clue": "Hitung dulu $2^2$, baru kalikan dengan 5.",
+    "opsi": ["$10$", "$14$", "$20$", "$25$", "$40$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": "$f(2) = 5 \\times 2^2 = 5 \\times 4 = 20$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^{-x}$. Hitunglah $f(3)$.",
+    "clue": "Substitusikan $x=3$ dulu, baru terapkan sifat pangkat negatif.",
+    "opsi": ["$-8$", "$-\\frac{1}{8}$", "$\\frac{1}{8}$", "$\\frac{1}{6}$", "$8$"],
+    "jawaban_benar": "$\\frac{1}{8}$",
+    "pembahasan": "$f(3) = 2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 3^{x+1}$. Hitunglah $f(1)$.",
+    "clue": "Substitusikan $x=1$ ke seluruh pangkatnya terlebih dahulu: $1+1=2$.",
+    "opsi": ["$3$", "$4$", "$9$", "$12$", "$27$"],
+    "jawaban_benar": "$9$",
+    "pembahasan": "$f(1) = 3^{1+1} = 3^2 = 9$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat"],
+    "pertanyaan": "Jumlah bakteri dalam suatu kultur dimodelkan dengan $N(t) = 100 \\times 2^t$, dengan $t$ dalam jam. Berapa jumlah bakteri setelah $2$ jam?",
+    "clue": "Substitusikan $t=2$ ke dalam rumus.",
+    "opsi": ["$200$", "$300$", "$400$", "$500$", "$800$"],
+    "jawaban_benar": "$400$",
+    "pembahasan": "$N(2) = 100 \\times 2^2 = 100 \\times 4 = 400$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Operasi dan Konversi Desimal"],
+    "pertanyaan": "Nilai suatu investasi dimodelkan dengan $V(t) = 1.000.000 \\times (1,1)^t$, dengan $t$ dalam tahun. Berapa nilai investasi setelah $2$ tahun?",
+    "clue": "Hitung dulu $(1,1)^2 = 1,1 \\times 1,1$, baru kalikan dengan modal awal.",
+    "opsi": ["Rp1.100.000", "Rp1.200.000", "Rp1.210.000", "Rp1.331.000", "Rp2.200.000"],
+    "jawaban_benar": "Rp1.210.000",
+    "pembahasan": "$(1,1)^2 = 1,21$.<br>$V(2) = 1.000.000 \\times 1,21 = 1.210.000$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2^x$. Hitunglah $\\frac{f(5)}{f(2)}$.",
+    "clue": "Tidak perlu menghitung $f(5)$ dan $f(2)$ secara terpisah — gunakan langsung sifat pembagian basis sama.",
+    "opsi": ["$2$", "$4$", "$8$", "$16$", "$32$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$\\frac{f(5)}{f(2)} = \\frac{2^5}{2^2} = 2^{5-2} = 2^3 = 8$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Fungsi Eksponen",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Eksponen Bilangan Bulat", "Pengenalan Variabel"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 4^x$. Untuk nilai $x$ berapakah $f(x) = 1$?",
+    "clue": "Ingat sifat pangkat nol: bilangan apa pun dipangkatkan nol hasilnya 1.",
+    "opsi": ["$-1$", "$0$", "$1$", "$2$", "$4$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "$4^x = 1$ hanya terpenuhi saat $x = 0$, karena $4^0 = 1$."
+  }
+]

@@ -181,9 +181,15 @@ export const PETA_TAHAPAN = {
   // =====================================================================
   // MATERI EKSPONEN (tab "Eksponen", Bab 1 prota)
   // =====================================================================
-  // Baru "Operasi Bentuk Akar" yang sudah pindah ke sini (2026-07-26,
-  // plan/PLAN.md §11) — sisa sub-materi Bab 1 lainnya menyusul di Fase 1.
-  "operasi bentuk akar": "Tahap 1: Eksponen dan Bentuk Akar",
+  // Fase 1 lengkap 2026-07-26 (plan/PLAN.md §11). Urutan mengikuti buku
+  // (1.1 -> 1.2 -> 1.3), plus "Fungsi Eksponen" sebagai sisipan penutup
+  // (bukan subbab resmi buku, tapi celah CP Fase E/SNBT yang eksplisit
+  // dicatat di ROADMAP file prota).
+  "sifat eksponen bilangan bulat": "Tahap 1: Bilangan Berpangkat Bulat",
+  "operasi bentuk akar": "Tahap 2: Bentuk Akar",
+  "merasionalkan penyebut": "Tahap 2: Bentuk Akar",
+  "eksponen rasional (pangkat pecahan)": "Tahap 3: Bentuk Pangkat Rasional",
+  "fungsi eksponen": "Tahap 4: Aplikasi Eksponen",
 
   // =====================================================================
   // MATERI SISTEM PERSAMAAN (tab "Sistem Persamaan", Bab 3 prota)

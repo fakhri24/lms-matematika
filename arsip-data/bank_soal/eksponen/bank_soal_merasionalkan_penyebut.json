@@ -1,0 +1,118 @@
+[
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{1}{\\sqrt{2}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{2}$ agar penyebutnya menjadi bilangan rasional.",
+    "opsi": ["$\\sqrt{2}$", "$\\frac{\\sqrt{2}}{2}$", "$\\frac{1}{2}$", "$2\\sqrt{2}$", "$\\frac{2}{\\sqrt{2}}$"],
+    "jawaban_benar": "$\\frac{\\sqrt{2}}{2}$",
+    "pembahasan": "$\\frac{1}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{3}{\\sqrt{5}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{5}$.",
+    "opsi": ["$\\frac{3\\sqrt{5}}{5}$", "$\\frac{\\sqrt{5}}{5}$", "$\\frac{3}{5}$", "$3\\sqrt{5}$", "$\\frac{5\\sqrt{5}}{3}$"],
+    "jawaban_benar": "$\\frac{3\\sqrt{5}}{5}$",
+    "pembahasan": "$\\frac{3}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{4}{2\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{3}$ terlebih dahulu, lalu sederhanakan pecahannya.",
+    "opsi": ["$\\frac{2\\sqrt{3}}{3}$", "$\\frac{4\\sqrt{3}}{3}$", "$\\frac{\\sqrt{3}}{3}$", "$\\frac{2}{\\sqrt{3}}$", "$6\\sqrt{3}$"],
+    "jawaban_benar": "$\\frac{2\\sqrt{3}}{3}$",
+    "pembahasan": "$\\frac{4}{2\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{4\\sqrt{3}}{6}$.<br>Sederhanakan pecahan $\\frac{4}{6}$ menjadi $\\frac{2}{3}$: hasilnya $\\frac{2\\sqrt{3}}{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Mengapa bentuk $\\frac{1}{\\sqrt{5}}$ perlu dirasionalkan?",
+    "clue": "Merasionalkan tidak mengubah NILAI pecahan — kita hanya mengalikan dengan bentuk yang senilai dengan 1 (mis. $\\frac{\\sqrt5}{\\sqrt5}$).",
+    "opsi": [
+      "Karena pembilang harus lebih besar dari penyebut",
+      "Karena penyebut sebaiknya bilangan rasional (bukan bentuk akar), sesuai konvensi penulisan matematika",
+      "Karena akar tidak boleh berada di pecahan sama sekali",
+      "Karena hasilnya akan berubah nilai",
+      "Karena pembilang dan penyebut harus sama-sama akar"
+    ],
+    "jawaban_benar": "Karena penyebut sebaiknya bilangan rasional (bukan bentuk akar), sesuai konvensi penulisan matematika",
+    "pembahasan": "Merasionalkan penyebut adalah konvensi penulisan agar bentuk akhir pecahan tidak memuat akar di penyebutnya. Nilai pecahannya sendiri tidak berubah, karena kita mengalikan dengan bentuk yang senilai dengan 1."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{6}{\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{3}$, lalu sederhanakan pecahannya.",
+    "opsi": ["$2\\sqrt{3}$", "$6\\sqrt{3}$", "$\\frac{6\\sqrt{3}}{9}$", "$3\\sqrt{3}$", "$\\sqrt{3}$"],
+    "jawaban_benar": "$2\\sqrt{3}$",
+    "pembahasan": "$\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{\\sqrt{2}}{\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan pembilang dan penyebut dengan $\\sqrt{3}$, lalu ingat $\\sqrt{2} \\times \\sqrt{3} = \\sqrt{6}$.",
+    "opsi": ["$\\frac{\\sqrt{6}}{3}$", "$\\frac{\\sqrt{6}}{9}$", "$\\frac{2}{3}$", "$\\sqrt{6}$", "$\\frac{\\sqrt{2}}{3}$"],
+    "jawaban_benar": "$\\frac{\\sqrt{6}}{3}$",
+    "pembahasan": "$\\frac{\\sqrt{2}}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{2} \\times \\sqrt{3}}{3} = \\frac{\\sqrt{6}}{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{2}{3+\\sqrt{2}}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $3 - \\sqrt{2}$, lalu gunakan sifat $(a+b)(a-b) = a^2 - b^2$.",
+    "opsi": ["$\\frac{6-2\\sqrt{2}}{7}$", "$\\frac{6+2\\sqrt{2}}{7}$", "$\\frac{6-2\\sqrt{2}}{11}$", "$3-\\sqrt{2}$", "$\\frac{2(3-\\sqrt{2})}{9}$"],
+    "jawaban_benar": "$\\frac{6-2\\sqrt{2}}{7}$",
+    "pembahasan": "Kalikan dengan sekawan $3-\\sqrt2$:<br>$\\frac{2(3-\\sqrt2)}{(3+\\sqrt2)(3-\\sqrt2)} = \\frac{2(3-\\sqrt2)}{3^2 - (\\sqrt2)^2} = \\frac{2(3-\\sqrt2)}{9-2} = \\frac{6-2\\sqrt2}{7}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{5}{\\sqrt{7}-2}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $\\sqrt{7}+2$.",
+    "opsi": ["$\\frac{5\\sqrt{7}+10}{3}$", "$\\frac{5\\sqrt{7}-10}{3}$", "$\\frac{5\\sqrt{7}+10}{9}$", "$\\sqrt{7}+2$", "$\\frac{5\\sqrt{7}+10}{5}$"],
+    "jawaban_benar": "$\\frac{5\\sqrt{7}+10}{3}$",
+    "pembahasan": "Kalikan dengan sekawan $\\sqrt7+2$:<br>$\\frac{5(\\sqrt7+2)}{(\\sqrt7-2)(\\sqrt7+2)} = \\frac{5(\\sqrt7+2)}{7-4} = \\frac{5\\sqrt7+10}{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Bentuk Akar", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Bentuk rasional dari $\\frac{4}{2-\\sqrt{3}}$ adalah ...",
+    "clue": "Kalikan dengan sekawan penyebutnya, yaitu $2+\\sqrt{3}$.",
+    "opsi": ["$8+4\\sqrt{3}$", "$8-4\\sqrt{3}$", "$2+\\sqrt{3}$", "$\\frac{8+4\\sqrt{3}}{7}$", "$4+4\\sqrt{3}$"],
+    "jawaban_benar": "$8+4\\sqrt{3}$",
+    "pembahasan": "Kalikan dengan sekawan $2+\\sqrt3$:<br>$\\frac{4(2+\\sqrt3)}{(2-\\sqrt3)(2+\\sqrt3)} = \\frac{4(2+\\sqrt3)}{4-3} = \\frac{4(2+\\sqrt3)}{1} = 8+4\\sqrt3$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Merasionalkan Penyebut",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Bentuk Akar"],
+    "pertanyaan": "Bentuk rasional paling sederhana dari $\\frac{10}{\\sqrt{5}}$ adalah ...",
+    "clue": "Kalikan dengan $\\sqrt{5}$, lalu sederhanakan pecahannya.",
+    "opsi": ["$2\\sqrt{5}$", "$10\\sqrt{5}$", "$\\frac{10\\sqrt{5}}{25}$", "$5\\sqrt{5}$", "$\\sqrt{5}$"],
+    "jawaban_benar": "$2\\sqrt{5}$",
+    "pembahasan": "$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$."
+  }
+]

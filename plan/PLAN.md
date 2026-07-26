@@ -271,12 +271,14 @@ Fase 1–9 (isi konten baru, urutan mengikuti `RENCANA[].urut`): Eksponen (+ Fun
 
 ### 11.7 Status saat ini
 
-Fase 0 kode sudah selesai & lolos Jest + Gate A. **Tersisa langkah data manual** (butuh ekspor dari `admin.html`, lihat §11.6) untuk 3 kelompok sebelum Gate A hijau lagi:
+**Fase 0 — SELESAI (kode + data), terverifikasi 2026-07-26.** Kode lolos Jest + Gate A sejak commit `d4b74c3`. Reklasifikasi 5 kelompok soal (lihat §11.6) sudah diekspor dari `admin.html`, diedit (`materi_utama`/`sub_materi`, `id` tetap utuh), dan diimpor ulang oleh pemilik proyek. Diverifikasi dengan ekspor "semua materi" segar dari Firestore live (`arsip-data/bank_soal_all.json`, 680 soal) dijalankan lewat Gate A — **✅ LOLOS**, nol deadlock, DAG valid, kelima sub-materi berada di `materi_utama` yang benar dengan 10 soal masing-masing:
 
-1. "Persamaan Linear Satu Variabel" → rename jadi "Persamaan Linear Satu Variabel (PLSV)", `materi_utama` → "Sistem Persamaan".
-2. "Sistem Persamaan Linear" → rename jadi "Sistem Persamaan Linear Dua Variabel (SPLDV)", `materi_utama` → "Sistem Persamaan".
-3. "Sistem Persamaan Linear Tiga Variabel (SPLTV)" → nama sub-materi tetap sama, `materi_utama` → "Sistem Persamaan".
-4. "Operasi Bentuk Akar" → nama tetap, `materi_utama` → "Eksponen".
-5. "Teorema Pythagoras" → nama tetap, `materi_utama` → "Trigonometri".
+1. "Persamaan Linear Satu Variabel (PLSV)" — `materi_utama: "Sistem Persamaan"`.
+2. "Sistem Persamaan Linear Dua Variabel (SPLDV)" — `materi_utama: "Sistem Persamaan"`.
+3. "Sistem Persamaan Linear Tiga Variabel (SPLTV)" — `materi_utama: "Sistem Persamaan"`.
+4. "Operasi Bentuk Akar" — `materi_utama: "Eksponen"`.
+5. "Teorema Pythagoras" — `materi_utama: "Trigonometri"`.
 
-Sampai langkah ini selesai, Gate A akan melaporkan "persamaan linear satu variabel (plsv)" 0 soal (mengunci seluruh rantai persamaan Trigonometri) — ini **diketahui dan sementara**, bukan bug.
+Tab "Sistem Persamaan" sekarang aktif dan terisi penuh di `pilih-materi.html`. Siap lanjut ke Fase 1.
+
+**Housekeeping selesai (2026-07-26).** `arsip-data/bank_soal.json` (455 soal, kedaluwarsa) dihapus. `gate-a-audit-kurikulum.mjs` sekarang menunjuk ke `arsip-data/bank_soal_all.json` (715 soal unik gabungan seluruh dump per audit terakhir) sebagai sumber utama — nama berkas ini sengaja dipertahankan karena itulah nama default saat diekspor lewat `admin.html` → Bank Soal → "Unduh JSON" tanpa filter. Ekspor ulang berkas yang sama (timpa langsung) setiap kali butuh audit terbaru.

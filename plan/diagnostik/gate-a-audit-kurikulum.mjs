@@ -23,7 +23,7 @@ function walk(dir, acc = []) {
   return acc;
 }
 const kandidat = [
-  join(ROOT, "arsip-data/bank_soal.json"),
+  join(ROOT, "arsip-data/bank_soal_all.json"),
   join(ROOT, "arsip-data/bank_soal_revisi.json"),
   join(ROOT, "artefak/bank_soal_artefak.json"),
   ...walk(join(ROOT, "arsip-data/bank_soal")),
