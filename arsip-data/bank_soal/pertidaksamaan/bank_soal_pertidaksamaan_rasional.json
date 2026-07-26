@@ -1,0 +1,172 @@
+[
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{x-2}{x+1} > 0$ adalah ...",
+    "clue": "Tentukan titik kritis dari pembilang dan penyebut, lalu susun garis bilangan tanda.",
+    "opsi": [
+      "$x<-1 \\text{ atau } x>2$",
+      "$-1<x<2$",
+      "$x>2$",
+      "$x<-1$",
+      "$-1\\le x\\le2$"
+    ],
+    "jawaban_benar": "$x<-1 \\text{ atau } x>2$",
+    "pembahasan": "Titik kritis $x=2$ (pembilang) dan $x=-1$ (penyebut, tak terdefinisi). Tanda positif saat kedua faktor sama tanda: $x<-1$ atau $x>2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{x+3}{x-4} \\le 0$ adalah ...",
+    "clue": "$x=-3$ boleh disertakan (pembilang nol), tapi $x=4$ tidak (penyebut nol).",
+    "opsi": [
+      "$-3\\le x<4$",
+      "$-3<x\\le4$",
+      "$x\\le-3 \\text{ atau } x>4$",
+      "$-3<x<4$",
+      "$-3\\le x\\le4$"
+    ],
+    "jawaban_benar": "$-3\\le x<4$",
+    "pembahasan": "Titik kritis $x=-3$ (disertakan) dan $x=4$ (dikecualikan). Tanda negatif/nol untuk $-3\\le x<4$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{2x-6}{x+1} \\ge 0$ adalah ...",
+    "clue": "$x=3$ boleh disertakan (pembilang nol), tapi $x=-1$ tidak (penyebut nol).",
+    "opsi": [
+      "$x<-1 \\text{ atau } x\\ge3$",
+      "$-1<x\\le3$",
+      "$x\\le-1 \\text{ atau } x\\ge3$",
+      "$-1\\le x\\le3$",
+      "$x>3$"
+    ],
+    "jawaban_benar": "$x<-1 \\text{ atau } x\\ge3$",
+    "pembahasan": "Titik kritis $x=3$ (disertakan) dan $x=-1$ (dikecualikan). Tanda positif/nol untuk $x<-1$ atau $x\\ge3$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{x^2-x-6}{x-1} > 0$ adalah ...",
+    "clue": "Faktorkan pembilang menjadi $(x-3)(x+2)$, lalu susun garis bilangan dengan tiga titik kritis.",
+    "opsi": [
+      "$-2<x<1 \\text{ atau } x>3$",
+      "$x<-2 \\text{ atau } 1<x<3$",
+      "$-2<x<3$",
+      "$x>3$",
+      "$-2<x<1$"
+    ],
+    "jawaban_benar": "$-2<x<1 \\text{ atau } x>3$",
+    "pembahasan": "$\\frac{(x-3)(x+2)}{x-1}$, titik kritis $-2,1,3$. Uji tiap interval: positif pada $-2<x<1$ dan $x>3$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{4}{x-2} < 1$ adalah ...",
+    "clue": "Pindahkan $1$ ke ruas kiri dan gabungkan jadi satu pecahan sebelum menentukan titik kritis.",
+    "opsi": [
+      "$x<2 \\text{ atau } x>6$",
+      "$2<x<6$",
+      "$x>6$",
+      "$x<2$",
+      "$x\\le2 \\text{ atau } x\\ge6$"
+    ],
+    "jawaban_benar": "$x<2 \\text{ atau } x>6$",
+    "pembahasan": "$\\frac{4}{x-2}-1<0 \\Rightarrow \\frac{6-x}{x-2}<0$. Titik kritis $2,6$; hasilnya $x<2$ atau $x>6$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{x}{x-3} \\ge 2$ adalah ...",
+    "clue": "Pindahkan $2$ ke ruas kiri dan gabungkan jadi satu pecahan sebelum menentukan titik kritis.",
+    "opsi": [
+      "$3<x\\le6$",
+      "$3\\le x<6$",
+      "$x\\le3 \\text{ atau } x\\ge6$",
+      "$3<x<6$",
+      "$x\\ge6$"
+    ],
+    "jawaban_benar": "$3<x\\le6$",
+    "pembahasan": "$\\frac{x}{x-3}-2\\ge0 \\Rightarrow \\frac{6-x}{x-3}\\ge0$. Titik kritis $3$ (dikecualikan) dan $6$ (disertakan): $3<x\\le6$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Nilai $x$ yang menyebabkan pertidaksamaan $\\frac{x-5}{x+2}<0$ bernilai benar berada pada interval ...",
+    "clue": "Susun garis bilangan dari kedua titik kritis, lalu uji tanda tiap interval.",
+    "opsi": [
+      "$-2<x<5$",
+      "$x<-2$",
+      "$x>5$",
+      "$x\\le-2 \\text{ atau }x\\ge5$",
+      "$-2\\le x\\le5$"
+    ],
+    "jawaban_benar": "$-2<x<5$",
+    "pembahasan": "Titik kritis $-2$ dan $5$. Tanda negatif hanya pada interval di antara keduanya: $-2<x<5$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{(x-1)(x+4)}{x-2} \\le 0$ adalah ...",
+    "clue": "Ada tiga titik kritis dari tiga faktor; urutkan pada garis bilangan sebelum menguji tanda.",
+    "opsi": [
+      "$x\\le-4 \\text{ atau } 1\\le x<2$",
+      "$-4\\le x\\le1$",
+      "$x\\le-4 \\text{ atau } x\\ge1$",
+      "$-4<x<1 \\text{ atau } x>2$",
+      "$1\\le x<2$"
+    ],
+    "jawaban_benar": "$x\\le-4 \\text{ atau } 1\\le x<2$",
+    "pembahasan": "Titik kritis $-4,1$ (disertakan) dan $2$ (dikecualikan). Uji tiap interval: memenuhi $\\le0$ pada $x\\le-4$ dan $1\\le x<2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{3}{x+5}>0$ adalah ...",
+    "clue": "Pembilang selalu positif ($3$), jadi tanda pecahan hanya ditentukan oleh penyebut.",
+    "opsi": [
+      "$x>-5$",
+      "$x<-5$",
+      "semua bilangan real kecuali $-5$",
+      "$x\\ge-5$",
+      "$x=-5$"
+    ],
+    "jawaban_benar": "$x>-5$",
+    "pembahasan": "Karena pembilang $3>0$ selalu positif, pecahan positif ketika penyebut juga positif: $x+5>0 \\Rightarrow x>-5$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Kuadrat", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\frac{x^2-4}{x+3} \\ge 0$ adalah ...",
+    "clue": "Faktorkan pembilang menjadi $(x-2)(x+2)$, lalu susun garis bilangan dengan tiga titik kritis.",
+    "opsi": [
+      "$-3<x\\le-2 \\text{ atau } x\\ge2$",
+      "$-3\\le x\\le2$",
+      "$x\\le-2 \\text{ atau } x\\ge2$",
+      "$-3<x<-2$",
+      "$x\\ge2$"
+    ],
+    "jawaban_benar": "$-3<x\\le-2 \\text{ atau } x\\ge2$",
+    "pembahasan": "$\\frac{(x-2)(x+2)}{x+3}$, titik kritis $-3$ (dikecualikan), $-2$ dan $2$ (disertakan). Hasil: $-3<x\\le-2$ atau $x\\ge2$."
+  }
+]

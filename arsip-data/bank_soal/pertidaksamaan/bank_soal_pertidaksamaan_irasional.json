@@ -1,0 +1,130 @@
+[
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Syarat domain (agar terdefinisi) dari $\\sqrt{2x-6}$ adalah ...",
+    "clue": "Bentuk di dalam akar kuadrat harus tidak negatif.",
+    "opsi": ["$x\\ge3$", "$x>3$", "$x\\le3$", "$x\\ge-3$", "$x\\ge6$"],
+    "jawaban_benar": "$x\\ge3$",
+    "pembahasan": "$2x-6\\ge0 \\Rightarrow x\\ge3$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{x-1} < 3$ adalah ...",
+    "clue": "Gabungkan syarat domain (dalam akar $\\ge0$) dengan hasil pengkuadratan kedua ruas.",
+    "opsi": ["$1\\le x<10$", "$x<10$", "$1<x<10$", "$x\\ge1$", "$1\\le x\\le10$"],
+    "jawaban_benar": "$1\\le x<10$",
+    "pembahasan": "Domain: $x\\ge1$. Kuadratkan: $x-1<9 \\Rightarrow x<10$. Gabungan: $1\\le x<10$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{2x+3} \\le 5$ adalah ...",
+    "clue": "Gabungkan syarat domain dengan hasil pengkuadratan kedua ruas.",
+    "opsi": [
+      "$-\\frac{3}{2}\\le x\\le11$",
+      "$-\\frac{3}{2}<x<11$",
+      "$x\\le11$",
+      "$x\\ge-\\frac{3}{2}$",
+      "$-\\frac{3}{2}\\le x<11$"
+    ],
+    "jawaban_benar": "$-\\frac{3}{2}\\le x\\le11$",
+    "pembahasan": "Domain: $2x+3\\ge0 \\Rightarrow x\\ge-\\frac{3}{2}$. Kuadratkan: $2x+3\\le25 \\Rightarrow x\\le11$. Gabungan: $-\\frac{3}{2}\\le x\\le11$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{x+7} > x+1$ adalah ...",
+    "clue": "Pisahkan menjadi dua kasus: ruas kanan negatif (otomatis benar selama domain terpenuhi), dan ruas kanan tak negatif (kuadratkan).",
+    "opsi": ["$-7\\le x<2$", "$-1\\le x<2$", "$-7\\le x\\le2$", "$x<2$", "$-7<x<2$"],
+    "jawaban_benar": "$-7\\le x<2$",
+    "pembahasan": "Domain $x\\ge-7$. Kasus $x+1<0$ ($x<-1$): otomatis benar, jadi $-7\\le x<-1$. Kasus $x+1\\ge0$: $x+7>(x+1)^2 \\Rightarrow x^2+x-6<0 \\Rightarrow -3<x<2$, digabung $x\\ge-1$: $-1\\le x<2$. Total: $-7\\le x<2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{3x-2} < \\sqrt{x+6}$ adalah ...",
+    "clue": "Kedua ruas sudah tak negatif, jadi cukup bandingkan isi akarnya setelah memastikan domain.",
+    "opsi": [
+      "$\\frac{2}{3}\\le x<4$",
+      "$x<4$",
+      "$\\frac{2}{3}<x<4$",
+      "$x\\ge\\frac{2}{3}$",
+      "$\\frac{2}{3}\\le x\\le4$"
+    ],
+    "jawaban_benar": "$\\frac{2}{3}\\le x<4$",
+    "pembahasan": "Domain: $x\\ge\\frac{2}{3}$ (lebih ketat dari $x\\ge-6$). Karena kedua ruas tak negatif: $3x-2<x+6 \\Rightarrow x<4$. Gabungan: $\\frac{2}{3}\\le x<4$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{x^2-9} \\le x-1$ adalah ...",
+    "clue": "Ruas kanan harus tak negatif dulu (karena ruas kiri selalu $\\ge0$), baru kuadratkan.",
+    "opsi": ["$3\\le x\\le5$", "$x\\ge3$", "$-3\\le x\\le5$", "$3<x<5$", "$x\\le5$"],
+    "jawaban_benar": "$3\\le x\\le5$",
+    "pembahasan": "Domain: $x\\le-3$ atau $x\\ge3$. Ruas kanan harus $\\ge0$: $x\\ge1$, sehingga domain efektif $x\\ge3$. Kuadratkan: $x^2-9\\le x^2-2x+1 \\Rightarrow x\\le5$. Gabungan: $3\\le x\\le5$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{5x-1} > 3$ adalah ...",
+    "clue": "Karena ruas kanan konstanta positif, langsung kuadratkan kedua ruas.",
+    "opsi": ["$x>2$", "$x\\ge2$", "$x>\\frac{1}{5}$", "$x<2$", "$x\\ge\\frac{1}{5}$"],
+    "jawaban_benar": "$x>2$",
+    "pembahasan": "Kuadratkan: $5x-1>9 \\Rightarrow x>2$. Domain $x\\ge\\frac{1}{5}$ otomatis terpenuhi karena $x>2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{4-x^2} \\ge 0$ adalah ...",
+    "clue": "Nilai akar kuadrat selalu tak negatif, jadi pertidaksamaan ini benar di seluruh domainnya.",
+    "opsi": ["$-2\\le x\\le2$", "$x\\ge0$", "$-2<x<2$", "$x\\le2$", "$x\\ge-2$"],
+    "jawaban_benar": "$-2\\le x\\le2$",
+    "pembahasan": "Karena $\\sqrt{\\ }\\ge0$ selalu benar, penyelesaiannya sama dengan domain: $4-x^2\\ge0 \\Rightarrow -2\\le x\\le2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{x+2} < x$ adalah ...",
+    "clue": "Ruas kanan harus positif dulu (karena ruas kiri selalu $\\ge0$), baru kuadratkan.",
+    "opsi": ["$x>2$", "$x>0$", "$x<-1 \\text{ atau } x>2$", "$x\\ge2$", "$-2\\le x<2$"],
+    "jawaban_benar": "$x>2$",
+    "pembahasan": "Karena ruas kiri $\\ge0$, perlu $x>0$. Kuadratkan: $x+2<x^2 \\Rightarrow x^2-x-2>0 \\Rightarrow x<-1$ atau $x>2$. Digabung $x>0$ dan domain $x\\ge-2$: $x>2$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Pertidaksamaan Irasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Rasional", "Operasi Bentuk Akar"],
+    "pertanyaan": "Himpunan penyelesaian dari $\\sqrt{2x-1} \\le \\sqrt{x+8}$ adalah ...",
+    "clue": "Kedua ruas sudah tak negatif, jadi cukup bandingkan isi akarnya setelah memastikan domain.",
+    "opsi": [
+      "$\\frac{1}{2}\\le x\\le9$",
+      "$x\\le9$",
+      "$\\frac{1}{2}<x<9$",
+      "$x\\ge\\frac{1}{2}$",
+      "$\\frac{1}{2}\\le x<9$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}\\le x\\le9$",
+    "pembahasan": "Domain: $x\\ge\\frac{1}{2}$ (lebih ketat dari $x\\ge-8$). Karena kedua ruas tak negatif: $2x-1\\le x+8 \\Rightarrow x\\le9$. Gabungan: $\\frac{1}{2}\\le x\\le9$."
+  }
+]

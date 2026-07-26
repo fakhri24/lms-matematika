@@ -97,10 +97,14 @@ describe("susunTataLetakPeta", () => {
     // Logaritma (Fase 2) + 6 target Relasi dan Fungsi (Fase 3) + 4 target
     // Persamaan Kuadrat (Fase 4, plan/PLAN.md §11 -- Diskriminan dan Jenis
     // Akar, Vieta, Menyusun PK Baru, Aplikasi) + 3 target Fungsi Kuadrat
-    // (Fase 5 -- Sifat dan Grafik, Menyusun Persamaan Parabola, Aplikasi;
-    // semua prasyaratnya sudah node lain, tidak menambah akar baru) = 48
-    // target + 10 akar (leaf, prasyarat:[]).
-    expect(hasil.node).toHaveLength(58);
+    // (Fase 5 -- Sifat dan Grafik, Menyusun Persamaan Parabola, Aplikasi)
+    // + 6 target Pertidaksamaan (Fase 6 -- Linear, Program Linear, Kuadrat,
+    // Rasional, Irasional, Aplikasi) = 54 target + 12 akar (leaf,
+    // prasyarat:[]) -- naik dari 10 karena "Sistem Persamaan Linear Dua/Tiga
+    // Variabel (SPLDV/SPLTV)" baru pertama kali jadi prasyarat di sini
+    // (sebelumnya tidak pernah dirujuk PETA_PRASYARAT), jadi masuk sebagai
+    // akar baru.
+    expect(hasil.node).toHaveLength(66);
     // Ambang dinaikkan dari 8 ke 15 di Fase 2 (plan/PLAN.md §11): Logaritma
     // digerbang oleh SELURUH sub-materi Eksponen, jadi rantai Eksponen(5)+
     // Logaritma(6) tersambung lurus jadi satu jalur sedalam 11 kolom. Ini

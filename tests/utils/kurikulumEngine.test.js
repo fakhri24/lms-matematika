@@ -493,6 +493,62 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     ]);
   });
 
+  test("seluruh rantai gerbang Pertidaksamaan dapat dibuka setelah Eksponen + Fungsi Kuadrat + Sistem Persamaan master", () => {
+    const rantaiPertidaksamaan = [
+      "pertidaksamaan linear",
+      "program linear",
+      "pertidaksamaan kuadrat",
+      "pertidaksamaan rasional",
+      "pertidaksamaan irasional",
+      "aplikasi pertidaksamaan",
+    ];
+    const master = new Set([
+      "sifat eksponen bilangan bulat",
+      "operasi bentuk akar",
+      "merasionalkan penyebut",
+      "eksponen rasional (pangkat pecahan)",
+      "fungsi eksponen",
+      "sifat dan grafik fungsi kuadrat",
+      "menyusun persamaan parabola",
+      "aplikasi fungsi kuadrat",
+      "persamaan linear satu variabel (plsv)",
+      "sistem persamaan linear dua variabel (spldv)",
+      "sistem persamaan linear tiga variabel (spltv)",
+    ]);
+    for (let lapis = 0; lapis < rantaiPertidaksamaan.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiPertidaksamaan.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiPertidaksamaan.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("tab Pertidaksamaan terkunci bila Sistem Persamaan belum lengkap master", () => {
+    // Eksponen dan Fungsi Kuadrat lengkap master, tapi Sistem Persamaan
+    // sengaja dibiarkan bolong satu ("sistem persamaan linear tiga
+    // variabel (spltv)").
+    const master = new Set([
+      "sifat eksponen bilangan bulat",
+      "operasi bentuk akar",
+      "merasionalkan penyebut",
+      "eksponen rasional (pangkat pecahan)",
+      "fungsi eksponen",
+      "sifat dan grafik fungsi kuadrat",
+      "menyusun persamaan parabola",
+      "aplikasi fungsi kuadrat",
+      "persamaan linear satu variabel (plsv)",
+      "sistem persamaan linear dua variabel (spldv)",
+    ]);
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["pertidaksamaan linear"].locked).toBe(true);
+    expect(status["pertidaksamaan linear"].prereqBelum).toEqual([
+      "Sistem Persamaan Linear Tiga Variabel (SPLTV)",
+    ]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

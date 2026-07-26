@@ -1,0 +1,124 @@
+[
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Diberikan sistem pertidaksamaan $x\\ge0$, $y\\ge0$, $x+y\\le6$. Salah satu titik pojok daerah penyelesaiannya adalah ...",
+    "clue": "Titik pojok terbentuk dari perpotongan garis-garis batas, termasuk sumbu koordinat.",
+    "opsi": ["$(6,0)$", "$(3,3)$", "$(7,0)$", "$(0,7)$", "$(6,6)$"],
+    "jawaban_benar": "$(6,0)$",
+    "pembahasan": "Garis $x+y=6$ memotong sumbu X di $(6,0)$ — salah satu titik pojok daerah segitiga yang terbentuk bersama $(0,0)$ dan $(0,6)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Nilai maksimum dari $f(x,y)=3x+2y$ pada daerah penyelesaian $x\\ge0$, $y\\ge0$, $x+y\\le5$ adalah ...",
+    "clue": "Evaluasi $f$ di setiap titik pojok daerah penyelesaian, lalu bandingkan.",
+    "opsi": ["$15$", "$10$", "$12$", "$20$", "$5$"],
+    "jawaban_benar": "$15$",
+    "pembahasan": "Titik pojok: $(0,0)\\to0$, $(5,0)\\to15$, $(0,5)\\to10$. Nilai maksimum $15$ di $(5,0)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Nilai minimum dari $f(x,y)=4x+3y$ pada daerah penyelesaian $x\\ge1$, $y\\ge1$, $x+y\\le6$ adalah ...",
+    "clue": "Titik pojok terbentuk dari perpotongan $x=1$, $y=1$, dan $x+y=6$.",
+    "opsi": ["$7$", "$19$", "$23$", "$4$", "$10$"],
+    "jawaban_benar": "$7$",
+    "pembahasan": "Titik pojok: $(1,1)\\to7$, $(1,5)\\to19$, $(5,1)\\to23$. Nilai minimum $7$ di $(1,1)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Titik potong antara garis $x+y=8$ dan $2x+y=10$ adalah ...",
+    "clue": "Eliminasi salah satu variabel dengan mengurangkan kedua persamaan.",
+    "opsi": ["$(2,6)$", "$(6,2)$", "$(4,4)$", "$(3,5)$", "$(5,3)$"],
+    "jawaban_benar": "$(2,6)$",
+    "pembahasan": "$(2x+y)-(x+y)=10-8 \\Rightarrow x=2$. Substitusi: $2+y=8 \\Rightarrow y=6$. Titik potong $(2,6)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Sebuah pabrik memproduksi barang A ($x$ unit) dan barang B ($y$ unit) dengan kendala waktu produksi $2x+y\\le10$ dan bahan baku $x+3y\\le15$, $x,y\\ge0$. Salah satu titik pojok daerah penyelesaian (selain titik asal dan titik potong sumbu) adalah ...",
+    "clue": "Cari perpotongan kedua garis kendala $2x+y=10$ dan $x+3y=15$.",
+    "opsi": ["$(3,4)$", "$(4,3)$", "$(5,0)$", "$(0,5)$", "$(2,6)$"],
+    "jawaban_benar": "$(3,4)$",
+    "pembahasan": "Dari $2x+y=10$: $y=10-2x$. Substitusi ke $x+3y=15$: $x+3(10-2x)=15 \\Rightarrow -5x=-15 \\Rightarrow x=3, y=4$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Melanjutkan kendala pabrik sebelumnya ($2x+y\\le10$, $x+3y\\le15$, $x,y\\ge0$), jika keuntungan tiap unit barang A adalah Rp$40.000$ dan barang B Rp$30.000$ (fungsi keuntungan $L=40000x+30000y$), keuntungan maksimum yang dapat diperoleh pabrik tersebut adalah ...",
+    "clue": "Evaluasi $L$ di semua titik pojok: $(0,0)$, $(5,0)$, $(3,4)$, $(0,5)$.",
+    "opsi": ["Rp$240.000$", "Rp$200.000$", "Rp$150.000$", "Rp$210.000$", "Rp$270.000$"],
+    "jawaban_benar": "Rp$240.000$",
+    "pembahasan": "$(0,0)\\to0$, $(5,0)\\to200000$, $(0,5)\\to150000$, $(3,4)\\to40000(3)+30000(4)=240000$. Maksimum Rp$240.000$ di $(3,4)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Seorang pedagang memiliki modal Rp$2.000.000$ untuk membeli baju seharga Rp$50.000$/potong ($x$ potong) dan celana seharga Rp$80.000$/potong ($y$ potong). Pertidaksamaan yang menyatakan kendala modal tersebut adalah ...",
+    "clue": "Total biaya kedua barang tidak boleh melebihi modal yang tersedia.",
+    "opsi": [
+      "$50000x+80000y\\le2000000$",
+      "$50000x+80000y\\ge2000000$",
+      "$80000x+50000y\\le2000000$",
+      "$50000x+80000y\\le200000$",
+      "$50x+80y\\le2000000$"
+    ],
+    "jawaban_benar": "$50000x+80000y\\le2000000$",
+    "pembahasan": "Biaya total $=$ (harga baju $\\times$ jumlah baju) $+$ (harga celana $\\times$ jumlah celana), tidak boleh melebihi modal."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Seorang peternak akan mengangkut sapi ($x$ ekor) dan kambing ($y$ ekor) dengan truk berkapasitas maksimum $20$ ekor dan anggaran pakan Rp$3.000.000$, dengan biaya pakan sapi Rp$300.000$/ekor dan kambing Rp$100.000$/ekor. Sistem pertidaksamaan yang tepat (selain $x\\ge0,y\\ge0$) adalah ...",
+    "clue": "Susun satu pertidaksamaan untuk kapasitas truk dan satu lagi untuk anggaran pakan (boleh disederhanakan).",
+    "opsi": [
+      "$x+y\\le20,\\ 3x+y\\le30$",
+      "$x+y\\le20,\\ x+3y\\le30$",
+      "$x+y\\ge20,\\ 3x+y\\le30$",
+      "$x+y\\le20,\\ 3x+y\\ge30$",
+      "$x+y\\le30,\\ 3x+y\\le20$"
+    ],
+    "jawaban_benar": "$x+y\\le20,\\ 3x+y\\le30$",
+    "pembahasan": "Kapasitas: $x+y\\le20$. Anggaran: $300000x+100000y\\le3000000$, sederhanakan (bagi $100000$): $3x+y\\le30$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Nilai minimum dari $f(x,y)=2x+5y$ pada daerah penyelesaian $x+y\\ge4$, $0\\le x\\le4$, $0\\le y\\le6$ adalah ...",
+    "clue": "Cari seluruh titik pojok daerah penyelesaian, termasuk yang dibentuk oleh batas $x+y=4$.",
+    "opsi": ["$8$", "$20$", "$30$", "$38$", "$4$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "Titik pojok: $(0,4)\\to20$, $(4,0)\\to8$, $(4,6)\\to38$, $(0,6)\\to30$. Nilai minimum $8$ di $(4,0)$."
+  },
+  {
+    "materi_utama": "Pertidaksamaan",
+    "sub_materi": "Program Linear",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pertidaksamaan Linear"],
+    "pertanyaan": "Daerah penyelesaian suatu sistem pertidaksamaan memiliki titik-titik pojok $(0,0)$, $(5,0)$, $(3,4)$, dan $(0,5)$. Titik pojok manakah yang menghasilkan nilai fungsi objektif $f(x,y)=x+y$ terbesar?",
+    "clue": "Evaluasi $f$ di setiap titik pojok yang diberikan.",
+    "opsi": ["$(3,4)$", "$(5,0)$", "$(0,5)$", "$(0,0)$", "$(4,3)$"],
+    "jawaban_benar": "$(3,4)$",
+    "pembahasan": "$(0,0)\\to0$, $(5,0)\\to5$, $(3,4)\\to7$, $(0,5)\\to5$. Nilai terbesar $7$ di $(3,4)$."
+  }
+]
