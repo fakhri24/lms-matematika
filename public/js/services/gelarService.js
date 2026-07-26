@@ -9,12 +9,10 @@ import {
   setDoc,
   arrayUnion,
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-import {
-  MODE_LATIHAN,
-  STATUS_LATIHAN,
-  DATA_DEFAULT,
-  LEVEL_SOAL,
-} from "../utils/constants.js";
+// STATUS_LATIHAN & LEVEL_SOAL sebelumnya diimpor tapi tak pernah dipakai di
+// berkas ini; ikut dibersihkan bersama refactor definisi master.
+import { MODE_LATIHAN, DATA_DEFAULT, MASTERY } from "../utils/constants.js";
+import { isSubMateriMaster } from "../utils/kurikulumEngine.js";
 
 // --- FUNGSI CEK MASTERY & UNLOCK GELAR ---
 export async function cekMasteryDanGelar(
@@ -30,8 +28,9 @@ export async function cekMasteryDanGelar(
   )
     return null;
 
-  // Kalau nilainya di bawah 80, batal
-  if (nilaiSekarang < 80) return null;
+  // Saringan awal yang murah: kalau nilai kali ini saja belum cukup, tak perlu
+  // menarik histori. Keputusan sesungguhnya tetap di isSubMateriMaster().
+  if (nilaiSekarang < MASTERY.NILAI_MIN) return null;
 
   try {
     // 1. Tarik semua histori ujian di sub-materi ini
@@ -42,31 +41,12 @@ export async function cekMasteryDanGelar(
     );
     const snap = await getDocs(q);
 
-    let countMastery = 0;
-    snap.forEach((docSnap) => {
-      const d = docSnap.data();
-      const mode = d.mode_latihan || MODE_LATIHAN.NORMAL;
+    const riwayat = snap.docs.map((docSnap) => docSnap.data());
 
-      // Hitung jumlah soal yang dikerjakan di riwayat ini
-      let soalDikerjakan = 0;
-      if (d.detail_jawaban) {
-        soalDikerjakan = Object.keys(d.detail_jawaban).length;
-      } else if (d.log_percobaan) {
-        soalDikerjakan = Object.keys(d.log_percobaan).length;
-      }
-
-      // Syarat Ketat: Mode Ujian, Nilai >= 80, dan MINIMAL 10 SOAL
-      if (
-        (mode === MODE_LATIHAN.NORMAL || mode === MODE_LATIHAN.ACAK) &&
-        d.nilai >= 80 &&
-        soalDikerjakan >= 10
-      ) {
-        countMastery++;
-      }
-    });
-
-    // 2. Jika SUDAH 1 KALI ATAU LEBIH, persiapkan gelar
-    if (countMastery >= 1) {
+    // 2. Aturan "master" tidak ditulis ulang di sini — satu definisi di
+    //    kurikulumEngine, sama persis dengan yang dipakai gerbang prasyarat
+    //    dan panel Ketuntasan. Dulu disalin manual dan sempat menyimpang.
+    if (isSubMateriMaster(riwayat)) {
       let namaMateriSingkat = subMateri;
       if (subMateri.length > 25) {
         namaMateriSingkat = subMateri.substring(0, 25).trim() + "...";

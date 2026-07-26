@@ -2,6 +2,7 @@ import { describe, test, expect } from "@jest/globals";
 import {
   normalisasiNama,
   apakahModeDikunci,
+  isHasilMasterSumatif,
   isSubMateriMaster,
   hitungSetMaster,
   hitungStatusKunci,
@@ -52,6 +53,56 @@ describe("apakahModeDikunci", () => {
   test("formatif TIDAK dikunci — siswa selalu boleh belajar", () => {
     expect(apakahModeDikunci(MODE_LATIHAN.FORMATIF)).toBe(false);
     expect(apakahModeDikunci(MODE_LATIHAN.LAMA_LATIHAN)).toBe(false);
+  });
+});
+
+describe("isHasilMasterSumatif — satu definisi untuk gerbang, gelar, dan panel admin", () => {
+  test("nilai cukup tapi soal kurang dari 10 TIDAK dihitung lulus", () => {
+    // Inilah selisih yang dulu memisahkan panel Ketuntasan dari gerbang dan
+    // gelar: panel hanya mengecek nilai >= 80, sehingga menulis "Lulus" untuk
+    // ujian yang tidak membuka materi lanjutan dan tidak menerbitkan gelar.
+    const pendek = hasilLulus("Aturan Kuadran", {
+      nilai: 100,
+      detail_jawaban: { a: 1, b: 1, c: 1 },
+    });
+    expect(pendek.nilai >= 80).toBe(true);
+    expect(isHasilMasterSumatif(pendek)).toBe(false);
+  });
+
+  test("mode ujian lama tetap dihitung", () => {
+    // gelarService dulu hanya mengenal tes_normal/tes_acak, sehingga rekaman
+    // lama tidak pernah menerbitkan gelar padahal gerbang menganggapnya master.
+    expect(
+      isHasilMasterSumatif(
+        hasilLulus("Aturan Kuadran", { mode_latihan: MODE_LATIHAN.LAMA_ACAK }),
+      ),
+    ).toBe(true);
+  });
+
+  test("draf tidak pernah lulus", () => {
+    // gelarService dulu tidak mengecek status sama sekali.
+    expect(
+      isHasilMasterSumatif(hasilLulus("Aturan Kuadran", { status: "draf" })),
+    ).toBe(false);
+  });
+
+  test("sepakat dengan isSubMateriMaster untuk rekaman tunggal", () => {
+    const contoh = [
+      hasilLulus("A"),
+      hasilLulus("A", { nilai: 79 }),
+      hasilLulus("A", { status: "draf" }),
+      hasilLulus("A", { detail_jawaban: { a: 1 } }),
+      hasilLulus("A", { mode_latihan: MODE_LATIHAN.FORMATIF }),
+    ];
+    contoh.forEach((hasil) => {
+      expect(isSubMateriMaster([hasil])).toBe(isHasilMasterSumatif(hasil));
+    });
+  });
+
+  test("data rusak tidak menyebabkan exception", () => {
+    [null, undefined, {}, { nilai: "abc" }].forEach((rusak) => {
+      expect(isHasilMasterSumatif(rusak)).toBe(false);
+    });
   });
 });
 

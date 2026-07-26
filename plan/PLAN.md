@@ -77,7 +77,9 @@ Formatif tetap berperan sebagai sarana belajar, tapi **tidak** menjadi syarat un
 
 Ambang `80` dan `10` diangkat ke konstanta `MASTERY` di `constants.js`.
 
-**Konsekuensi positif — definisi ini kini identik dengan aturan gelar** di [`gelarService.js:59-63`](public/js/services/gelarService.js:59). Artinya: siswa yang sudah punya gelar untuk suatu sub-materi otomatis sudah master, sehingga **dampak rollout strict jauh lebih ringan** daripada rencana sebelumnya, dan refactor DRY (§7 langkah 10) menjadi lurus.
+**Konsekuensi positif — definisi ini praktis sama dengan aturan gelar**, sehingga siswa yang sudah bergelar untuk suatu sub-materi hampir selalu sudah master, dan **dampak rollout strict jauh lebih ringan** daripada rencana sebelumnya.
+
+> **Dikoreksi 2026-07-26 (§13):** "identik" ternyata terlalu percaya diri. `gelarService` tidak mengecek `status ≠ draf` dan tidak mengenal mode ujian warisan; `ketuntasanController` melewatkan syarat ≥10 soal sama sekali. Ketiganya kini memanggil `isHasilMasterSumatif()` yang sama, jadi barulah sekarang kata "identik" benar-benar berlaku.
 
 > Meski begitu, `gelar_terbuka` **tidak boleh** dipakai sebagai sumber status master: nama gelar dipotong 25 karakter ([`gelarService.js:70-73`](public/js/services/gelarService.js:70)) sehingga lossy dan ambigu antar sub-materi berawalan sama. Status master tetap dihitung dari `hasil_latihan`.
 
@@ -158,7 +160,7 @@ Pakai `getRiwayatLatihanSiswa(nis)` yang sudah ada. *(Refactor opsional §7: ara
   - Terkunci → kelas `locked`, ikon 🔒, teks "Selesaikan dulu: <daftar>", `data-locked="true"`.
   - Terbuka → tampilan sekarang (opsional badge ✅ bila sudah master).
 - **BARU** helper toast (mis. `createToastHTML` + fungsi tampil) — cek dulu apakah sudah ada pola toast/notifikasi di proyek agar tidak duplikat.
-- **Diagnostik admin** (keputusan #5): tampilkan daftar `prasyaratTakMungkinMaster` + `siklus` dari `validasiKurikulum()` di `admin.html`. Penempatan pasti ditentukan saat implementasi (kandidat: dekat panel Ketuntasan).
+- **Diagnostik admin** (keputusan #5): tampilkan `namaTakDikenal`, `urutanMundur`, dan `prasyaratTakMungkinMaster` dari `validasiKurikulum()` di `admin.html`. Penempatan pasti ditentukan saat implementasi (kandidat: dekat panel Ketuntasan). *(Keluaran `siklus` sudah tidak ada sejak §12 — jangan dicari lagi.)*
 
 ### 5.6 CSS
 Tambah `.materi-card.locked` (redup, `cursor: not-allowed`, gembok) + gaya toast, di berkas CSS yang relevan di `public/css/`.
@@ -199,7 +201,7 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 7. [x] Tambah CSS `.materi-card.locked`, `.materi-info-kunci`, `.toast-kunci` di `pilih-materi.html`.
 8. [ ] Tambah panel diagnostik kurikulum di `admin.html` (keputusan #5). *Prioritas turun: Gate A menemukan nol masalah, jadi panel ini bersifat pencegahan untuk materi yang ditambahkan nanti.*
 9. [x] Uji manual dengan **akun siswa sungguhan** — lolos 7/7, memunculkan keputusan #8. Lihat "Uji manual" di bawah.
-10. [ ] (Opsional) Refactor `gelarService` & `ketuntasanController` memakai helper baru (DRY).
+10. [x] Satukan definisi master: `gelarService` & `ketuntasanController` memakai `isHasilMasterSumatif()`. *Label "opsional" dicabut — ini bukan kerapian kode, ketiganya terbukti berselisih di data live (§13).*
 11. [x] ~~**Opsi A Gate B**: turunkan peta dari `konsep_prasyarat`~~ → **dibatalkan**, diganti tabel manual. Lihat §12.
 12. [x] Visualisasi peta materi (§11) — `peta-materi.html` + `tataLetakPeta.js` + `petaMateriView.js`, **21 test hijau**, terverifikasi terhadap Firestore live.
 
@@ -520,3 +522,45 @@ Empat yang pertama jalan di Jest tiap kali tabel disunting. Yang kelima butuh da
 > **Sudah dicoba dan ditutup 2026-07-26 (§12).** Menurunkan peta dari data terbukti melawan urutan mengajar. Field ini tetap berharga sebagai **penasihat** — persentase pemakaiannya tercatat sebagai komentar di `PRASYARAT_TRIGONOMETRI` — tapi tidak boleh jadi sumber kebenaran urutan.
 
 **Eksponen & Logaritma belum punya gerbang.** Kedua tab itu tidak ada di `PRASYARAT_TRIGONOMETRI` (keputusan #10), dan soalnya juga belum masuk Firestore. Saat soalnya nanti dimasukkan, perlu diputuskan apakah kedua tab itu ikut digerbangkan — kalau ya, tabel prasyaratnya disusun manual dengan cara yang sama.
+
+---
+
+## 13. SATU DEFINISI "MASTER" (2026-07-26)
+
+Aturan "sumatif lulus" ternyata ditulis di **tiga** tempat, dan ketiganya tidak sama:
+
+| Tempat | Mode ujian | Nilai ≥80 | Status ≠ draf | **Soal ≥10** |
+|---|---|---|---|---|
+| `kurikulumEngine` (gerbang prasyarat) | termasuk mode lama | ✅ | ✅ | ✅ |
+| `gelarService` | **hanya** `tes_normal`/`tes_acak` | ✅ | ❌ **tidak dicek** | ✅ |
+| `ketuntasanController` (panel Ketuntasan) | termasuk mode lama | ✅ | ✅ | ❌ **tidak dicek** |
+
+### 13.1 Akibatnya di data sungguhan
+
+Diukur atas seluruh `hasil_latihan` (585 rekaman, agregat tanpa identitas):
+
+| | Jumlah |
+|---|---|
+| "Lulus" versi panel Ketuntasan (aturan lama) | 149 |
+| "Master" versi gerbang & gelar | 140 |
+| **Rekaman berselisih** | **9, menyangkut 6 siswa** |
+
+Sebaran jumlah soal pada 9 rekaman itu: lima ujian **1 soal**, dua ujian 2 soal, dua ujian 9 soal — semuanya bernilai ≥80.
+
+Sebarannya per sub-materi: `Rasio Trigonometri Dasar` (6), `Aturan Kuadran` (1), `Identitas Trigonometri Dasar` (1), `Sudut Berelasi (Horizontal)` (1).
+
+Enam dari sembilan menumpuk di **`Rasio Trigonometri Dasar`** — pintu masuk seluruh tab Trigonometri. Artinya siswa-siswa itu melihat ✅ "Lulus" di panel guru sementara **seluruh tab Trigonometri** tetap terkunci bagi mereka, dan gelarnya tidak pernah terbit. Tiga sumber kebenaran, tiga jawaban berbeda, di layar yang dilihat orang berbeda.
+
+### 13.2 Perbaikan
+
+`isHasilMasterSumatif(hasil, ambang)` di `kurikulumEngine.js` menjadi **satu-satunya** tempat aturan ini ditulis. `isSubMateriMaster()` kini hanya `.some()` di atasnya, dan kedua pemanggil lain ikut memakainya.
+
+Efek samping yang disengaja, keduanya menyelaraskan ke definisi §3:
+- **Gelar jadi lebih ketat** — draf tidak lagi bisa menerbitkan gelar.
+- **Gelar jadi lebih longgar untuk data lama** — mode `normal`/`acak` warisan kini diakui.
+
+Ambang `80` yang sebelumnya ditulis literal di `gelarService` diganti `MASTERY.NILAI_MIN`.
+
+### 13.3 Catatan pengukuran
+
+Pengukuran pertama sempat melaporkan "2 rekaman, 2 siswa". Itu **salah**: kueri pembandingnya lupa menyertakan fallback `d.mode_latihan || MODE_LATIHAN.NORMAL` yang dipakai kode panel, sehingga rekaman lama tanpa `mode_latihan` tidak ikut terhitung. Angka yang benar — hasil replikasi persis kode panel lama — adalah **9 rekaman, 6 siswa**.
