@@ -4,6 +4,7 @@ export const DAFTAR_MATERI_INTI = [
   "Logaritma",
   "Trigonometri",
   "Sistem Persamaan",
+  "Relasi dan Fungsi",
 ];
 
 // =====================================================================
@@ -67,6 +68,24 @@ export const PETA_PRASYARAT = {
   "Identitas Pangkat Logaritma": ["Mengubah Basis Logaritma"],
   "Persamaan Logaritma": ["Identitas Pangkat Logaritma"],
   "Fungsi Logaritma": ["Persamaan Logaritma"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB RELASI DAN FUNGSI — rantai sekuensial (2026-07-26, plan/PLAN.md
+  // §11). Bab 7 prasyarat [] di RENCANA prota, jadi TIDAK ada gerbang
+  // antar-tab di pintu masuknya ("Substitusi Fungsi Linear") — tab ini
+  // terbuka begitu siswa masuk, hanya sekuensial di dalamnya.
+  //
+  // "Analisis Grafik Fungsi" digerbang belakangan (bukan bersamaan dengan
+  // sisanya) setelah "Fungsi Piecewise" dikonfirmasi live — sub-materi ini
+  // sudah live duluan sejak §10, jadi gerbangnya sengaja ditahan agar tidak
+  // mendadak terkunci di rentang push-vs-impor (pola sama seperti Fase 1).
+  // ═══════════════════════════════════════════════════════════════════
+  "Definisi Relasi dan Fungsi": ["Substitusi Fungsi Linear"],
+  "Jenis-jenis Fungsi": ["Definisi Relasi dan Fungsi"],
+  "Fungsi Piecewise": ["Jenis-jenis Fungsi"],
+  "Analisis Grafik Fungsi": ["Fungsi Piecewise"],
+  "Sifat-sifat Fungsi": ["Fungsi Piecewise"],
+  "Operasi Aljabar Fungsi": ["Sifat-sifat Fungsi"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -252,6 +271,24 @@ const TAHAPAN_SISTEM_PERSAMAAN = {
   "sistem persamaan linear tiga variabel (spltv)": "Tahap 3: Tiga Variabel",
 };
 
+// --- MATERI RELASI DAN FUNGSI (tab "Relasi dan Fungsi", Bab 7 prota) ---
+// Fase 3 lengkap 2026-07-26 (plan/PLAN.md §11). "Substitusi Fungsi Linear"
+// dipindah dari tab Prasyarat jadi pintu masuk tab ini (skill paling dasar
+// sebelum definisi formal). "Analisis Grafik Fungsi" juga dipindah dari
+// blok Prasyarat SMP -- sudah ada 10 soal live, gerbangnya (dari Fungsi
+// Piecewise) SENGAJA BELUM ditambahkan di PETA_PRASYARAT sampai soal
+// Fungsi Piecewise dikonfirmasi sudah diimpor, supaya ia tidak mendadak
+// terkunci di rentang push-kode-vs-impor-data (pola sama seperti Fase 1).
+const TAHAPAN_RELASI_FUNGSI = {
+  "substitusi fungsi linear": "Tahap 1: Substitusi Fungsi",
+  "definisi relasi dan fungsi": "Tahap 2: Definisi Relasi dan Fungsi",
+  "jenis-jenis fungsi": "Tahap 3: Jenis-jenis Fungsi",
+  "fungsi piecewise": "Tahap 4: Fungsi Piecewise",
+  "analisis grafik fungsi": "Tahap 5: Analisis Grafik Fungsi",
+  "sifat-sifat fungsi": "Tahap 6: Sifat-sifat Fungsi",
+  "operasi aljabar fungsi": "Tahap 7: Operasi Aljabar Fungsi",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
@@ -265,7 +302,6 @@ const TAHAPAN_PRASYARAT_SMP = {
 
   "pengenalan variabel": "Tahap 2: Gerbang Logika & Sudut",
   "manipulasi aljabar dasar": "Tahap 2: Gerbang Logika & Sudut",
-  "substitusi fungsi linear": "Tahap 2: Gerbang Logika & Sudut",
   "pengenalan sudut dasar": "Tahap 2: Gerbang Logika & Sudut",
   "sifat sudut (berpelurus)": "Tahap 2: Gerbang Logika & Sudut",
   "sifat sudut (berseberangan)": "Tahap 2: Gerbang Logika & Sudut",
@@ -287,7 +323,6 @@ const TAHAPAN_PRASYARAT_SMP = {
   "sistem persamaan linear-kuadrat (splk)": "Tahap 5: Area Kuadratik",
   "sistem persamaan kuadrat-kuadrat (spkk)": "Tahap 5: Area Kuadratik",
 
-  "analisis grafik fungsi": "Tahap 6: Fungsi & Transformasi Dasar",
   "translasi horizontal": "Tahap 6: Fungsi & Transformasi Dasar",
   "translasi vertikal": "Tahap 6: Fungsi & Transformasi Dasar",
 
@@ -349,6 +384,7 @@ export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
 export const PETA_TAHAPAN = {
   ...TAHAPAN_EKSPONEN,
   ...TAHAPAN_LOGARITMA,
+  ...TAHAPAN_RELASI_FUNGSI,
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,

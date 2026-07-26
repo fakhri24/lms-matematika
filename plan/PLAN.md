@@ -315,3 +315,23 @@ Gerbang: **"Pengenalan Logaritma" digerbangkan oleh SELURUH 5 sub-materi Ekspone
 Diverifikasi dengan ekspor Firestore live segar (780 soal) lewat Gate A — **✅ LOLOS**, DAG 44 node valid, keenam sub-materi Logaritma 10 soal masing-masing di `materi_utama: "Logaritma"`. Test Jest 97/97 lolos (tambahan: cek rantai gerbang Logaritma bisa dibuka setelah Eksponen master, dan cek tab Logaritma tetap terkunci bila Eksponen belum lengkap).
 
 Tab Logaritma sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) masih menunggu kedua tab itu dibangun (Fase 3 & 4).
+
+**Fase 3 — Relasi dan Fungsi, SELESAI (kode + data), terverifikasi 2026-07-26.** 5 sub-materi baru (50 soal) + 2 reklasifikasi/pindahan untuk tab Relasi dan Fungsi:
+
+1. **Substitusi Fungsi Linear** (Tahap 1, pintu masuk) — **dipindahkan** dari tab Prasyarat (`materi_utama` "Aritmatika dan Aljabar Dasar" → "Relasi dan Fungsi"), sudah 10 soal live sejak §10.
+2. **Definisi Relasi dan Fungsi** (Tahap 2, baru) — syarat fungsi, uji garis vertikal, domain-kodomain-range.
+3. **Jenis-jenis Fungsi** (Tahap 3, baru) — fungsi konstan, identitas, linear, kuadrat (pengenalan).
+4. **Fungsi Piecewise** (Tahap 4, baru) — evaluasi fungsi tercacah, termasuk konteks tarif berjenjang.
+5. **Analisis Grafik Fungsi** (Tahap 5) — **tidak disentuh isinya**, cuma dipindah dari blok Prasyarat SMP di `PETA_TAHAPAN`; `materi_utama`-nya sudah persis "Relasi dan Fungsi" sejak awal jadi otomatis ikut tab baru tanpa reklasifikasi data.
+6. **Sifat-sifat Fungsi** (Tahap 6, baru) — injektif, surjektif, bijektif.
+7. **Operasi Aljabar Fungsi** (Tahap 7, baru) — jumlah/kurang/kali/bagi/komposisi fungsi.
+
+Gerbang: tab ini **tidak punya gerbang antar-tab** (Bab 7 prasyarat `[]` di RENCANA prota) — rantai sekuensial internal saja: Substitusi Fungsi Linear → Definisi → Jenis-jenis → Piecewise → Sifat-sifat → Operasi Aljabar.
+
+**"Analisis Grafik Fungsi" digerbang belakangan** — soal Fase 3 utama diimpor dulu (termasuk reklasifikasi "Substitusi Fungsi Linear" lewat ekspor-edit-impor ber-`id`), baru setelah "Fungsi Piecewise" dikonfirmasi live, entri `"Analisis Grafik Fungsi": ["Fungsi Piecewise"]` ditambahkan ke `PETA_PRASYARAT` — supaya sub-materi yang sudah live itu tidak sempat mendadak terkunci di rentang push-vs-impor (pola sama seperti Fase 1).
+
+Diverifikasi dengan ekspor Firestore live segar (830 soal) lewat Gate A — **✅ LOLOS**, DAG 51 node valid, ketujuh sub-materi Relasi dan Fungsi 10 soal masing-masing di `materi_utama: "Relasi dan Fungsi"`, dan tidak ada sisa soal "Substitusi Fungsi Linear" tertinggal di grup lama. Test Jest 98/98 lolos (tambahan: cek rantai gerbang Relasi dan Fungsi bisa dibuka berurutan).
+
+Tab Relasi dan Fungsi sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) sekarang separuh siap (Relasi dan Fungsi selesai); masih menunggu tab Persamaan Kuadrat dibangun (Fase 4).
+
+Lalu diverifikasi dengan ekspor segar sebelum di-commit & push.

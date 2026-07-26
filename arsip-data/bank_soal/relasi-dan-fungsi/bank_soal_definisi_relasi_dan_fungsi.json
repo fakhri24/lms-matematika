@@ -1,0 +1,142 @@
+[
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Suatu relasi disebut fungsi jika ...",
+    "clue": "Fokus pada syarat DOMAIN, bukan kodomain.",
+    "opsi": [
+      "Setiap anggota domain punya tepat satu pasangan di kodomain",
+      "Setiap anggota kodomain punya tepat satu pasangan di domain",
+      "Domain dan kodomain harus sama",
+      "Semua anggota domain harus dipasangkan lebih dari satu kali",
+      "Kodomain harus lebih besar dari domain"
+    ],
+    "jawaban_benar": "Setiap anggota domain punya tepat satu pasangan di kodomain",
+    "pembahasan": "Syarat sebuah relasi disebut fungsi adalah: setiap anggota domain dipasangkan dengan TEPAT SATU anggota kodomain (tidak boleh dua atau lebih, tidak boleh tidak dipasangkan sama sekali)."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Diketahui himpunan pasangan berurutan $\\{(1,2),(2,3),(3,4)\\}$. Apakah ini fungsi?",
+    "clue": "Cek apakah ada nilai $x$ (anggota pertama) yang muncul lebih dari sekali dengan pasangan $y$ berbeda.",
+    "opsi": [
+      "Ya, karena tiap $x$ punya tepat satu $y$",
+      "Tidak, karena $y$ lebih besar dari $x$",
+      "Tidak, karena ada 3 pasangan",
+      "Ya, tapi hanya untuk domain positif",
+      "Tidak cukup informasi"
+    ],
+    "jawaban_benar": "Ya, karena tiap $x$ punya tepat satu $y$",
+    "pembahasan": "Nilai $x$ yang muncul ($1,2,3$) semuanya berbeda dan masing-masing hanya punya satu pasangan $y$, sehingga ini adalah fungsi."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Diketahui himpunan pasangan berurutan $\\{(1,2),(1,3),(2,4)\\}$. Apakah ini fungsi?",
+    "clue": "Perhatikan nilai $x=1$ — ia muncul lebih dari sekali dengan pasangan $y$ yang berbeda.",
+    "opsi": [
+      "Ya",
+      "Tidak, karena $x=1$ punya dua pasangan $y$ berbeda",
+      "Tidak, karena ada $y$ yang sama",
+      "Ya, karena semua $x$ berbeda",
+      "Tidak cukup informasi"
+    ],
+    "jawaban_benar": "Tidak, karena $x=1$ punya dua pasangan $y$ berbeda",
+    "pembahasan": "$x=1$ dipasangkan dengan $y=2$ DAN $y=3$ sekaligus — melanggar syarat fungsi (harus tepat satu pasangan). Ini bukan fungsi."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Uji garis vertikal dipakai untuk memeriksa apakah suatu grafik merupakan ...",
+    "clue": "Kalau ada garis vertikal yang memotong grafik di lebih dari satu titik, berarti satu $x$ punya lebih dari satu $y$.",
+    "opsi": ["fungsi", "relasi simetris", "fungsi genap", "fungsi ganjil", "fungsi linear"],
+    "jawaban_benar": "fungsi",
+    "pembahasan": "Uji garis vertikal: jika ada garis vertikal yang memotong grafik lebih dari satu kali, grafik itu BUKAN fungsi."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Mengapa grafik lingkaran BUKAN merupakan fungsi?",
+    "clue": "Bayangkan garis vertikal ditarik melewati bagian tengah lingkaran.",
+    "opsi": [
+      "Karena bentuknya melengkung",
+      "Karena satu nilai $x$ bisa berpasangan dengan dua nilai $y$ berbeda",
+      "Karena tidak melewati titik asal",
+      "Karena domainnya terbatas",
+      "Karena tidak simetris"
+    ],
+    "jawaban_benar": "Karena satu nilai $x$ bisa berpasangan dengan dua nilai $y$ berbeda",
+    "pembahasan": "Garis vertikal yang ditarik melalui tengah lingkaran memotong grafik di DUA titik (atas dan bawah) — berarti satu $x$ punya dua $y$, melanggar syarat fungsi."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Diketahui fungsi $f: A \\to B$ dengan $A=\\{1,2,3\\}$ dan $f(x)=x+1$. Tentukan daerah hasil (range) fungsi tersebut.",
+    "clue": "Hitung $f(1)$, $f(2)$, $f(3)$ satu per satu.",
+    "opsi": ["$\\{2,3,4\\}$", "$\\{1,2,3\\}$", "$\\{1,2,3,4\\}$", "$\\{2,4,6\\}$", "$\\{0,1,2\\}$"],
+    "jawaban_benar": "$\\{2,3,4\\}$",
+    "pembahasan": "$f(1)=2$, $f(2)=3$, $f(3)=4$. Daerah hasilnya $\\{2,3,4\\}$."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Domain dari fungsi $f(x) = \\frac{1}{x}$ adalah semua bilangan real KECUALI ...",
+    "clue": "Pembagian dengan nol tidak terdefinisi.",
+    "opsi": ["$0$", "$1$", "$-1$", "semua bilangan negatif", "tidak ada pengecualian"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "$f(x)=\\frac1x$ tidak terdefinisi saat $x=0$ (pembagian dengan nol), sehingga domainnya semua bilangan real kecuali $0$."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Diagram panah menunjukkan $A=\\{a,b,c\\}$ memetakan ke $B=\\{1,2\\}$ dengan $a\\to1$, $b\\to1$, $c\\to2$. Apakah ini fungsi?",
+    "clue": "Syarat fungsi hanya soal domain (A) — bukan soal apakah semua anggota kodomain (B) terpakai.",
+    "opsi": [
+      "Ya, karena setiap anggota $A$ punya tepat satu pasangan di $B$",
+      "Tidak, karena $1$ punya dua pasangan",
+      "Tidak, karena $B$ lebih kecil dari $A$",
+      "Ya, hanya jika semua anggota $B$ terpakai",
+      "Tidak cukup informasi"
+    ],
+    "jawaban_benar": "Ya, karena setiap anggota $A$ punya tepat satu pasangan di $B$",
+    "pembahasan": "$a$, $b$, $c$ masing-masing punya TEPAT SATU pasangan di $B$ (boleh sama, seperti $a$ dan $b$ sama-sama ke $1$). Ini tetap fungsi — dua anggota domain boleh punya bayangan yang sama."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear", "Operasi Bentuk Akar"],
+    "pertanyaan": "Domain dari fungsi $f(x) = \\sqrt{x-3}$ adalah ...",
+    "clue": "Bilangan di dalam akar (bentuk akar pangkat genap) harus $\\ge 0$.",
+    "opsi": ["$x \\ge 3$", "$x>3$", "$x \\le 3$", "$x \\ge 0$", "semua bilangan real"],
+    "jawaban_benar": "$x \\ge 3$",
+    "pembahasan": "Syarat bentuk akar: $x-3 \\ge 0 \\implies x \\ge 3$."
+  },
+  {
+    "materi_utama": "Relasi dan Fungsi",
+    "sub_materi": "Definisi Relasi dan Fungsi",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Substitusi Fungsi Linear"],
+    "pertanyaan": "Diketahui fungsi $f(x) = 2x+1$ dengan domain $\\{-1,0,1,2\\}$. Tentukan daerah hasil (range) fungsi tersebut.",
+    "clue": "Hitung $f(x)$ untuk setiap anggota domain satu per satu.",
+    "opsi": ["$\\{-1,1,3,5\\}$", "$\\{-1,0,1,2\\}$", "$\\{0,1,2,3\\}$", "$\\{1,2,3,4\\}$", "$\\{-2,0,2,4\\}$"],
+    "jawaban_benar": "$\\{-1,1,3,5\\}$",
+    "pembahasan": "$f(-1)=-1$, $f(0)=1$, $f(1)=3$, $f(2)=5$. Daerah hasilnya $\\{-1,1,3,5\\}$."
+  }
+]

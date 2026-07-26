@@ -418,6 +418,27 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     ]);
   });
 
+  test("seluruh rantai gerbang Relasi dan Fungsi dapat dibuka berurutan", () => {
+    const rantaiRelasiFungsi = [
+      "substitusi fungsi linear",
+      "definisi relasi dan fungsi",
+      "jenis-jenis fungsi",
+      "fungsi piecewise",
+      "sifat-sifat fungsi",
+      "operasi aljabar fungsi",
+    ];
+    const master = new Set();
+    for (let lapis = 0; lapis < rantaiRelasiFungsi.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiRelasiFungsi.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiRelasiFungsi.filter((n) => !master.has(n))).toEqual([]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(
