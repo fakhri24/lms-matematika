@@ -439,6 +439,60 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     expect(rantaiRelasiFungsi.filter((n) => !master.has(n))).toEqual([]);
   });
 
+  test("seluruh rantai gerbang Fungsi Kuadrat dapat dibuka setelah Relasi dan Fungsi + Persamaan Kuadrat master", () => {
+    const rantaiFungsiKuadrat = [
+      "sifat dan grafik fungsi kuadrat",
+      "menyusun persamaan parabola",
+      "aplikasi fungsi kuadrat",
+    ];
+    const master = new Set([
+      "substitusi fungsi linear",
+      "definisi relasi dan fungsi",
+      "jenis-jenis fungsi",
+      "fungsi piecewise",
+      "analisis grafik fungsi",
+      "sifat-sifat fungsi",
+      "operasi aljabar fungsi",
+      "akar persamaan kuadrat",
+      "diskriminan dan jenis akar",
+      "jumlah dan hasil kali akar (vieta)",
+      "menyusun persamaan kuadrat baru",
+      "aplikasi persamaan kuadrat",
+    ]);
+    for (let lapis = 0; lapis < rantaiFungsiKuadrat.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiFungsiKuadrat.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiFungsiKuadrat.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("tab Fungsi Kuadrat terkunci bila Persamaan Kuadrat belum lengkap master", () => {
+    // Seluruh Relasi dan Fungsi master, tapi Persamaan Kuadrat sengaja
+    // dibiarkan bolong satu ("aplikasi persamaan kuadrat").
+    const master = new Set([
+      "substitusi fungsi linear",
+      "definisi relasi dan fungsi",
+      "jenis-jenis fungsi",
+      "fungsi piecewise",
+      "analisis grafik fungsi",
+      "sifat-sifat fungsi",
+      "operasi aljabar fungsi",
+      "akar persamaan kuadrat",
+      "diskriminan dan jenis akar",
+      "jumlah dan hasil kali akar (vieta)",
+      "menyusun persamaan kuadrat baru",
+    ]);
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["sifat dan grafik fungsi kuadrat"].locked).toBe(true);
+    expect(status["sifat dan grafik fungsi kuadrat"].prereqBelum).toEqual([
+      "Aplikasi Persamaan Kuadrat",
+    ]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

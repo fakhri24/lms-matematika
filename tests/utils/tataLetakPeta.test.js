@@ -94,11 +94,13 @@ describe("susunTataLetakPeta", () => {
     );
     expect(hasil.yatim).toEqual([]);
     // 25 target tab Trigonometri + 4 target Eksponen (Fase 1) + 6 target
-    // Logaritma (Fase 2) + 6 target Relasi dan Fungsi (Fase 3) + 3 target
-    // Persamaan Kuadrat (Fase 4, plan/PLAN.md §11 -- Vieta, Menyusun PK
-    // Baru, Aplikasi; "Diskriminan dan Jenis Akar" masih akar sampai
-    // gerbangnya menyusul) + 11 akar (leaf, prasyarat:[]).
-    expect(hasil.node).toHaveLength(55);
+    // Logaritma (Fase 2) + 6 target Relasi dan Fungsi (Fase 3) + 4 target
+    // Persamaan Kuadrat (Fase 4, plan/PLAN.md §11 -- Diskriminan dan Jenis
+    // Akar, Vieta, Menyusun PK Baru, Aplikasi) + 3 target Fungsi Kuadrat
+    // (Fase 5 -- Sifat dan Grafik, Menyusun Persamaan Parabola, Aplikasi;
+    // semua prasyaratnya sudah node lain, tidak menambah akar baru) = 48
+    // target + 10 akar (leaf, prasyarat:[]).
+    expect(hasil.node).toHaveLength(58);
     // Ambang dinaikkan dari 8 ke 15 di Fase 2 (plan/PLAN.md §11): Logaritma
     // digerbang oleh SELURUH sub-materi Eksponen, jadi rantai Eksponen(5)+
     // Logaritma(6) tersambung lurus jadi satu jalur sedalam 11 kolom. Ini

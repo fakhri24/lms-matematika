@@ -350,4 +350,18 @@ Diverifikasi dengan ekspor Firestore live segar (860 soal) lewat Gate A — **�
 
 Tab Persamaan Kuadrat sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) sekarang **bisa ditulis penuh** — kedua tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 5 (Fungsi Kuadrat) dikerjakan.
 
+**Fase 5 — Fungsi Kuadrat, disiapkan 2026-07-26 (menunggu impor & verifikasi).** 2 sub-materi baru (20 soal) + 1 reklasifikasi (rename saja, isi tidak diubah) untuk tab Fungsi Kuadrat, dari Bab 9 prota (subbab 9.1 Definisi dan Karakteristik / 9.2 Menyusun Persamaan Parabola / 9.3 Penyelesaian Masalah):
+
+1. **Sifat dan Grafik Fungsi Kuadrat** (Tahap 1, pintu masuk) — **rename** dari "Fungsi Kuadrat" (`materi_utama` "Aljabar Lanjutan" → "Fungsi Kuadrat", tab Prasyarat → tab sendiri), isi TIDAK diubah: sifat & grafik parabola (arah buka, titik puncak, translasi, akar dari grafik).
+2. **Menyusun Persamaan Parabola** (Tahap 2, baru) — menyusun persamaan dari akar-akar+titik, titik puncak+titik, tiga titik sembarang, akar kembar (tangen sumbu X), dan penalaran sumbu simetri.
+3. **Aplikasi Fungsi Kuadrat** (Tahap 3, baru) — pemodelan dari deskripsi verbal (bukan fungsi yang sudah diberikan) lalu optimasi lewat titik puncak: luas maksimum berpagar, lintasan proyektil, titik impas (BEP), laba maksimum — sesuai `temaPM` Bab 9 ("Model lintasan, titik impas, laba maksimum").
+
+Gerbang: **"Sifat dan Grafik Fungsi Kuadrat" digerbangkan oleh SELURUH sub-materi Relasi dan Fungsi (7) + SELURUH sub-materi Persamaan Kuadrat (5)** — beda dari Fase 1/3/4, gerbang ini **langsung ditulis penuh sekaligus** (tidak ditunda) karena kedua tab prasyaratnya sudah lengkap & terverifikasi sejak Fase 3 & 4. Konsekuensi yang disengaji: begitu data reimport (nama baru) masuk, 10 soal "Sifat dan Grafik Fungsi Kuadrat" yang sebelumnya TIDAK PERNAH terkunci (tab Prasyarat) langsung menjadi gerbang pertama tab baru — bagian dari promosi "Fungsi Kuadrat" jadi tab materi utama sendiri, bukan bug. Rantai internal: Sifat dan Grafik → Menyusun Persamaan Parabola → Aplikasi Fungsi Kuadrat.
+
+`TAHAPAN_FUNGSI_KUADRAT` ditambahkan ke `PETA_TAHAPAN`; entri "fungsi kuadrat" dihapus dari `TAHAPAN_PRASYARAT_SMP` (Tahap 5: Area Kuadratik kini cuma 3 sub-materi tersisa).
+
+**Alur impor**: dua file baru (`bank_soal_menyusun_persamaan_parabola.json`, `bank_soal_aplikasi_fungsi_kuadrat.json`, tanpa `id`) aman diimpor langsung. File reklasifikasi (`~/Downloads/reimport/bank_soal_sifat_dan_grafik_fungsi_kuadrat.json`, `id` diambil dari ekspor Firestore live terakhir, `materi_utama`/`sub_materi` diganti) **wajib** diimpor lewat jalur replace (§11.6), bukan file baru — supaya tidak duplikat dengan 10 soal "Fungsi Kuadrat" lama.
+
+Kode lolos Jest 100/100 lokal (tambahan: cek rantai gerbang Fungsi Kuadrat bisa dibuka setelah Relasi dan Fungsi + Persamaan Kuadrat master, dan cek tab ini tetap terkunci bila Persamaan Kuadrat belum lengkap). Gate A lokal terhadap arsip campuran menunjukkan "sifat dan grafik fungsi kuadrat" 0 soal (temuan 1, deadlock) — **ini diharapkan**, karena datanya masih bernama "fungsi kuadrat" di Firestore sampai reimport dilakukan; sama seperti pola rename Fase 4. Belum di-push — menunggu konfirmasi impor lalu verifikasi ekspor Firestore live segar.
+
 Lalu diverifikasi dengan ekspor segar sebelum di-commit & push.

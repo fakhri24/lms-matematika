@@ -6,6 +6,7 @@ export const DAFTAR_MATERI_INTI = [
   "Sistem Persamaan",
   "Relasi dan Fungsi",
   "Persamaan Kuadrat",
+  "Fungsi Kuadrat",
 ];
 
 // =====================================================================
@@ -97,6 +98,40 @@ export const PETA_PRASYARAT = {
   "Jumlah dan Hasil Kali Akar (Vieta)": ["Diskriminan dan Jenis Akar"],
   "Menyusun Persamaan Kuadrat Baru": ["Jumlah dan Hasil Kali Akar (Vieta)"],
   "Aplikasi Persamaan Kuadrat": ["Menyusun Persamaan Kuadrat Baru"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB FUNGSI KUADRAT — gerbang antar-tab + rantai sekuensial
+  // (2026-07-26, plan/PLAN.md §11). Pintu masuk tab ("Sifat dan Grafik
+  // Fungsi Kuadrat") digerbangkan oleh SELURUH sub-materi Relasi dan
+  // Fungsi + SELURUH sub-materi Persamaan Kuadrat master (Bab 9 prasyarat
+  // ["bab7","bab5"] di RENCANA prota) — kedua tab itu sudah lengkap sejak
+  // Fase 3 & 4, jadi gerbang ini langsung ditulis penuh, tidak ditunda.
+  //
+  // "Sifat dan Grafik Fungsi Kuadrat" adalah RENAME dari sub-materi lama
+  // "Fungsi Kuadrat" (materi_utama dulu "Aljabar Lanjutan", tab Prasyarat)
+  // -- isinya sudah cocok (sifat & grafik parabola), tidak diubah, cuma
+  // nama & materi_utama yang pindah. Karena ia sudah PUNYA 10 soal live
+  // dan SEBELUMNYA tidak pernah dikunci (tab Prasyarat), begitu kode ini
+  // aktif dan data reimport (nama baru) sudah masuk, ia otomatis jadi
+  // gerbang pertama tab ini -- konsekuensi yang disengaja dari promosi
+  // "Fungsi Kuadrat" jadi tab materi utama sendiri.
+  // ═══════════════════════════════════════════════════════════════════
+  "Sifat dan Grafik Fungsi Kuadrat": [
+    "Substitusi Fungsi Linear",
+    "Definisi Relasi dan Fungsi",
+    "Jenis-jenis Fungsi",
+    "Fungsi Piecewise",
+    "Analisis Grafik Fungsi",
+    "Sifat-sifat Fungsi",
+    "Operasi Aljabar Fungsi",
+    "Akar Persamaan Kuadrat",
+    "Diskriminan dan Jenis Akar",
+    "Jumlah dan Hasil Kali Akar (Vieta)",
+    "Menyusun Persamaan Kuadrat Baru",
+    "Aplikasi Persamaan Kuadrat",
+  ],
+  "Menyusun Persamaan Parabola": ["Sifat dan Grafik Fungsi Kuadrat"],
+  "Aplikasi Fungsi Kuadrat": ["Menyusun Persamaan Parabola"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -317,6 +352,19 @@ const TAHAPAN_PERSAMAAN_KUADRAT = {
   "aplikasi persamaan kuadrat": "Tahap 5: Aplikasi Persamaan Kuadrat",
 };
 
+// --- MATERI FUNGSI KUADRAT (tab "Fungsi Kuadrat", Bab 9 prota) ---
+// Fase 5 lengkap 2026-07-26 (plan/PLAN.md §11). "Sifat dan Grafik Fungsi
+// Kuadrat" adalah RENAME dari "Fungsi Kuadrat" (dulu tab Prasyarat, materi_
+// utama "Aljabar Lanjutan") -- lihat catatan panjang di PETA_PRASYARAT di
+// atas. "Menyusun Persamaan Parabola" dan "Aplikasi Fungsi Kuadrat" (dari
+// subbab buku 9.2 dan 9.3 "Penyelesaian Masalah", nama disesuaikan standar
+// "Aplikasi X" biar konsisten dengan tab lain) adalah sub-materi baru.
+const TAHAPAN_FUNGSI_KUADRAT = {
+  "sifat dan grafik fungsi kuadrat": "Tahap 1: Sifat dan Grafik",
+  "menyusun persamaan parabola": "Tahap 2: Menyusun Persamaan Parabola",
+  "aplikasi fungsi kuadrat": "Tahap 3: Aplikasi Fungsi Kuadrat",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
@@ -344,7 +392,6 @@ const TAHAPAN_PRASYARAT_SMP = {
   "representasi aljabar": "Tahap 4: Sistem & Realita",
   "relasi dinamis (jarak, kecepatan, waktu)": "Tahap 4: Sistem & Realita",
 
-  "fungsi kuadrat": "Tahap 5: Area Kuadratik",
   "pertidaksamaan kuadrat": "Tahap 5: Area Kuadratik",
   "sistem persamaan linear-kuadrat (splk)": "Tahap 5: Area Kuadratik",
   "sistem persamaan kuadrat-kuadrat (spkk)": "Tahap 5: Area Kuadratik",
@@ -412,6 +459,7 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_LOGARITMA,
   ...TAHAPAN_RELASI_FUNGSI,
   ...TAHAPAN_PERSAMAAN_KUADRAT,
+  ...TAHAPAN_FUNGSI_KUADRAT,
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
