@@ -1,7 +1,7 @@
 // public/js/pages/petaMateri.js
 //
 // Halaman "Peta Materi": tampilan visual dari gerbang prasyarat yang sama
-// dengan yang mengunci kartu di pilih-materi.html. Rencana: plan/PLAN.md §11.
+// dengan yang mengunci kartu di pilih-materi.html. Rancangan: plan/PLAN.md §6.
 
 import { getRiwayatLatihanSiswa } from "../services/latihanService.js";
 import {

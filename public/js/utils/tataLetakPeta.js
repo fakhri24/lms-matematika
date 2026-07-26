@@ -1,6 +1,6 @@
 // public/js/utils/tataLetakPeta.js
 //
-// Tata letak murni untuk visualisasi peta materi (rencana: plan/PLAN.md §11).
+// Tata letak murni untuk visualisasi peta materi (rancangan: plan/PLAN.md §6).
 // Tanpa DOM, tanpa Firestore — fungsi di sini hanya memetakan nama materi ke
 // koordinat grid (kolom, baris). Ukuran piksel dan warna ditentukan di
 // views/petaMateriView.js.
