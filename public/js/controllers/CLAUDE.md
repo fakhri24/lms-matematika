@@ -23,7 +23,7 @@ Anda adalah **Controller Developer** yang logis dan terstruktur. Anda bertanggun
 
   Semua markup lahir di `views/` sebagai `createXxxHTML(...)` atau fungsi render. Controller memanggilnya, menempelkan hasilnya, lalu mengurus interaksi.
 
-  > *Versi sebelumnya melarang controller menyentuh DOM sama sekali. Aturan itu dilanggar oleh 13 dari 13 kontroler sejak lama, jadi diganti dengan batas yang benar-benar dipakai — aturan yang tak pernah diikuti hanya mengajarkan bahwa AGENTS.md boleh diabaikan.*
+  > *Versi sebelumnya melarang controller menyentuh DOM sama sekali. Aturan itu dilanggar oleh 13 dari 13 kontroler sejak lama, jadi diganti dengan batas yang benar-benar dipakai — aturan yang tak pernah diikuti hanya mengajarkan bahwa CLAUDE.md boleh diabaikan.*
 
 - **Toggle kelas, bukan gaya inline**: Untuk perubahan visual pakai `classList`, jangan `element.style.xxx`. Definisi gayanya ada di CSS halaman terkait.
 - **TIDAK BOLEH memanggil SDK Firebase langsung**: Jangan mengimpor `db`, `auth`, atau modul-modul Firebase (`firestore`, `auth`) di dalam controller. Komunikasi data ke backend Firebase wajib didelegasikan ke folder `services/`.

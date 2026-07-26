@@ -1,5 +1,18 @@
 # Panduan Proyek: Learning Management Siswa (LMS) - Matematika
 
+> **Berkas ini adalah sumber kebenaran struktur & aturan proyek.** Ia dibaca otomatis di setiap sesi, jadi apa pun yang harus selalu diketahui sebelum menyentuh kode ditulis di sini — bukan di tempat lain.
+>
+> **Hierarki dokumen:**
+>
+> | Berkas | Peran | Kalau bertentangan |
+> |---|---|---|
+> | `CLAUDE.md` (ini) + `CLAUDE.md` per-folder | Struktur, batas antar lapisan, aturan yang mengikat | **Menang** |
+> | `plan/PLAN.md` | Catatan rancangan satu fitur: keputusan, alasan, jalan buntu | Menyesuaikan diri |
+>
+> PLAN.md menjelaskan **mengapa** sesuatu diputuskan; CLAUDE.md menetapkan **apa** yang berlaku. Kalau sebuah aturan di PLAN.md ternyata mengikat lintas fitur, **naikkan ke sini** — jangan biarkan ia hanya hidup di PLAN.md, karena PLAN.md tidak dibaca otomatis.
+>
+> Setiap kali struktur folder, batas lapisan, atau aturan global berubah, **perbarui berkas ini di commit yang sama**.
+
 ## 1. Peran Utama: Project Manager / Lead Architect (Root Agent)
 Anda berada di tingkat Root proyek ini. Peran Anda adalah sebagai **Project Manager / Lead Architect**. Tanggung jawab Anda meliputi:
 - Mengawasi keseluruhan integrasi sistem (MVC/Service) dan alur bisnis utama.
@@ -16,17 +29,17 @@ Satu halaman = satu berkas HTML di `public/` + satu kontroler. Tidak ada router.
 
 | Lokasi | Isi | Panduan |
 |---|---|---|
-| `public/js/pages/` | Kontroler halaman siswa (6) — `pilihMateri`, `petaMateri`, `dashboardSiswa`, `riwayat`, `rekapHasil`, `koreksiUhSiswa` | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
-| `public/js/admin/` | Kontroler panel admin (7) — bank soal, analisis, ketuntasan, koreksi UH, latihan spesial, status | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
-| `public/js/controllers/` | `LatihanController.js` — mesin pengerjaan soal, satu-satunya kontroler berbasis kelas | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
-| `public/js/views/` | Pembangun markup + render DOM | [views/AGENTS.md](public/js/views/AGENTS.md) |
-| `public/js/services/` | Kueri Firestore & autentikasi | [services/AGENTS.md](public/js/services/AGENTS.md) |
-| `public/js/utils/` | Fungsi murni (kurikulum, soal, timer, teks) | [utils/AGENTS.md](public/js/utils/AGENTS.md) |
+| `public/js/pages/` | Kontroler halaman siswa (6) — `pilihMateri`, `petaMateri`, `dashboardSiswa`, `riwayat`, `rekapHasil`, `koreksiUhSiswa` | [controllers/CLAUDE.md](public/js/controllers/CLAUDE.md) |
+| `public/js/admin/` | Kontroler panel admin (7) — bank soal, analisis, ketuntasan, koreksi UH, latihan spesial, status | [controllers/CLAUDE.md](public/js/controllers/CLAUDE.md) |
+| `public/js/controllers/` | `LatihanController.js` — mesin pengerjaan soal, satu-satunya kontroler berbasis kelas | [controllers/CLAUDE.md](public/js/controllers/CLAUDE.md) |
+| `public/js/views/` | Pembangun markup + render DOM | [views/CLAUDE.md](public/js/views/CLAUDE.md) |
+| `public/js/services/` | Kueri Firestore & autentikasi | [services/CLAUDE.md](public/js/services/CLAUDE.md) |
+| `public/js/utils/` | Fungsi murni (kurikulum, soal, timer, teks) | [utils/CLAUDE.md](public/js/utils/CLAUDE.md) |
 | `public/js/config/` | `firebase.js` — **satu-satunya** tempat SDK diinisialisasi | — |
 | `public/js/*.js` | Entry point lepas: `app.js`, `auth.js`, `admin.js`, `leaderboard.js` | — |
-| `tests/` | Jest (jsdom, `NODE_OPTIONS=--experimental-vm-modules`) | [tests/AGENTS.md](tests/AGENTS.md) |
+| `tests/` | Jest (jsdom, `NODE_OPTIONS=--experimental-vm-modules`) | [tests/CLAUDE.md](tests/CLAUDE.md) |
 | `plan/` | Catatan rancangan + skrip diagnostik. Tidak di-deploy. | [plan/PLAN.md](plan/PLAN.md) |
-| `grader-manual/` | Koreksi UH manual & data siswa. Tidak di-deploy. | [grader-manual/AGENTS.md](grader-manual/AGENTS.md) |
+| `grader-manual/` | Koreksi UH manual & data siswa. Tidak di-deploy. | [grader-manual/CLAUDE.md](grader-manual/CLAUDE.md) |
 
 > **Catatan penamaan:** `pages/` dan `admin/` berisi kontroler, sama seperti `controllers/`. Pemisahannya historis, bukan arsitektural — ketiganya tunduk pada panduan controller yang sama.
 

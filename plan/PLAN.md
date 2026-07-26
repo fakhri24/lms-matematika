@@ -2,7 +2,9 @@
 
 > Sebuah sub-materi di tab Trigonometri hanya bisa dikerjakan sebagai **ujian** bila semua prasyaratnya sudah berstatus **master**. Prasyaratnya disusun **manual oleh guru**; urutan tampil kartu diambil dari urutan mengajar di `PETA_TAHAPAN`.
 
-**Status: selesai dan terverifikasi terhadap Firestore live.** Dokumen ini bukan lagi rencana kerja — isinya aturan yang berlaku sekarang, ditambah catatan jalan buntu yang sudah dicoba agar tidak diulang.
+**Status: selesai dan terverifikasi terhadap Firestore live.** Dokumen ini bukan lagi rencana kerja — isinya keputusan yang berlaku, alasannya, dan catatan jalan buntu yang sudah dicoba agar tidak diulang.
+
+> **Berkas ini tunduk pada [CLAUDE.md](../CLAUDE.md).** CLAUDE.md menetapkan struktur dan aturan yang mengikat; PLAN.md menyimpan *mengapa*-nya untuk satu fitur. Kalau keduanya bertentangan, CLAUDE.md yang benar dan berkas ini yang harus diperbarui. Aturan di sini yang ternyata mengikat lintas fitur harus **dinaikkan ke CLAUDE.md** — PLAN.md tidak dibaca otomatis oleh agen.
 
 Riwayat lengkap penyusunannya (rencana bertahap, hasil Gate A/B, analisis `konsep_prasyarat`, tiga kali perubahan arah) ada di riwayat git berkas ini sampai commit `96a2e71`. Sengaja dipangkas 2026-07-26 karena sudah terlaksana semua.
 
@@ -79,7 +81,7 @@ Status master sepenuhnya bergantung pada satu ujian dengan **minimal 10 soal dik
 
 Kriteria bahaya bukan `jumlah_soal = 0` melainkan `jumlah_soal < 10`. Sub-materi bersoal 7 terlihat normal di UI tapi berperilaku seperti dinding buntu.
 
-Saat ini **aman**: semua 34 node peta bersoal ≥10. Yang di bawah ambang hanya 6 sub-materi Eksponen & Logaritma (1–4 soal), dan tak satu pun ada di peta. Aturan lengkapnya di [AGENTS.md](../AGENTS.md).
+Saat ini **aman**: semua 34 node peta bersoal ≥10. Yang di bawah ambang hanya 6 sub-materi Eksponen & Logaritma (1–4 soal), dan tak satu pun ada di peta. Aturan lengkapnya di [CLAUDE.md](../CLAUDE.md).
 
 Jalankan [`gate-a-audit-kurikulum.mjs`](diagnostik/gate-a-audit-kurikulum.mjs) setiap kali tabel prasyarat atau bank soal berubah.
 
