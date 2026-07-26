@@ -105,19 +105,22 @@ describe("susunTataLetakPeta", () => {
     // Pengertian, Domain dan Range, Asimtot, Menggambar Grafik) + 5 target
     // Kaidah Pencacahan & Peluang (Fase 8 -- Permutasi, Kombinasi, Ruang
     // Sampel dan Peluang Kejadian Tunggal, Frekuensi Relatif dan Harapan,
-    // Peluang Kejadian Majemuk) = 63 target + 13 akar (leaf, prasyarat:[])
-    // -- akar naik dari 12 ke 13 di Fase 8 karena "Aturan Penjumlahan dan
-    // Perkalian" adalah pintu masuk tab baru TANPA gerbang antar-tab (Bab 10
-    // prasyarat [] di RENCANA prota, beda dari kebanyakan tab lain yang
-    // pintu masuknya digerbang tab sebelumnya).
-    expect(hasil.node).toHaveLength(76);
-    // Ambang TETAP 20 di Fase 8 (tidak dinaikkan lagi): tab Kaidah
-    // Pencacahan & Peluang tidak digerbang tab manapun dan tidak menggerbang
-    // tab lain (Bab 10 prasyarat [], Bab 11 prasyarat ["bab10"] internal
-    // saja), jadi tidak menambah kedalaman jalur terpanjang -- jalur
-    // terpanjang tetap dari rantai Fungsi Rasional (Fase 7). Riwayat
-    // kenaikan ambang sebelumnya: 8->15 (Fase 2), 15->20 (Fase 7).
-    expect(hasil.jumlahKolom).toBeLessThanOrEqual(20);
+    // Peluang Kejadian Majemuk) + 4 target Nilai Mutlak (Fase 9 -- Definisi
+    // dan Sifat, Persamaan, Pertidaksamaan, Grafik Fungsi; semua 70
+    // prasyarat gerbang "semua"-nya sudah node lain, tidak menambah akar
+    // baru) = 67 target + 13 akar (leaf, prasyarat:[]).
+    expect(hasil.node).toHaveLength(80);
+    // Ambang dinaikkan lagi dari 20 ke 23 di Fase 9 (plan/PLAN.md §11):
+    // "Definisi dan Sifat Nilai Mutlak" sengaja digerbang oleh SELURUH
+    // sub-materi SELURUH tab lain (RENCANA prota: prasyarat literal
+    // ["semua"]), jadi ia menempati kolom SETELAH kolom terdalam dari
+    // SEMUA rantai lain sekaligus (kolom 19), lalu +3 kolom lagi untuk
+    // rantai internalnya sendiri (Persamaan -> Pertidaksamaan -> Grafik,
+    // kolom 20-22) = 23 kolom total. Ini kenaikan terakhir yang direncanakan
+    // -- Fase 9 adalah fase penutup roadmap §11.5, tidak ada tab baru
+    // sesudahnya yang akan memperdalam peta gabungan lagi. Riwayat kenaikan
+    // sebelumnya: 8->15 (Fase 2), 15->20 (Fase 7).
+    expect(hasil.jumlahKolom).toBeLessThanOrEqual(23);
   });
 
   test("kolom nol tabel produksi hanya berisi materi tab Prasyarat", () => {

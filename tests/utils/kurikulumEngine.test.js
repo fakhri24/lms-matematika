@@ -649,6 +649,57 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     ).toEqual(["Kombinasi"]);
   });
 
+  test("seluruh rantai gerbang Nilai Mutlak dapat dibuka setelah SELURUH tab lain (kecuali Prasyarat SMP) master", () => {
+    const rantaiNilaiMutlak = [
+      "definisi dan sifat nilai mutlak",
+      "persamaan nilai mutlak",
+      "pertidaksamaan nilai mutlak",
+      "grafik fungsi nilai mutlak",
+    ];
+    const smp = new Set(SUB_MATERI_PRASYARAT_SMP.map(normalisasiNama));
+    const master = new Set(
+      urutan
+        .map(normalisasiNama)
+        .filter((n) => !smp.has(n) && !rantaiNilaiMutlak.includes(n)),
+    );
+    for (let lapis = 0; lapis < rantaiNilaiMutlak.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiNilaiMutlak.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiNilaiMutlak.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("tab Nilai Mutlak terkunci bila SATU SAJA sub-materi tab lain belum master", () => {
+    // Seluruh tab lain master KECUALI "Peluang Kejadian Majemuk" -- gerbang
+    // "semua" harus benar-benar berarti semua, bukan "sebagian besar".
+    const rantaiNilaiMutlak = new Set([
+      "definisi dan sifat nilai mutlak",
+      "persamaan nilai mutlak",
+      "pertidaksamaan nilai mutlak",
+      "grafik fungsi nilai mutlak",
+    ]);
+    const smp = new Set(SUB_MATERI_PRASYARAT_SMP.map(normalisasiNama));
+    const master = new Set(
+      urutan
+        .map(normalisasiNama)
+        .filter(
+          (n) =>
+            !smp.has(n) &&
+            !rantaiNilaiMutlak.has(n) &&
+            n !== "peluang kejadian majemuk",
+        ),
+    );
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["definisi dan sifat nilai mutlak"].locked).toBe(true);
+    expect(status["definisi dan sifat nilai mutlak"].prereqBelum).toEqual([
+      "Peluang Kejadian Majemuk",
+    ]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

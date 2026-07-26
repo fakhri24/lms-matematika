@@ -1,0 +1,192 @@
+[
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|x|<5$ adalah ...",
+    "clue": "Semua titik yang jaraknya KURANG dari $5$ dari titik $0$.",
+    "opsi": [
+      "$-5<x<5$",
+      "$x<5$",
+      "$x>-5$",
+      "$x<-5 \\text{ atau } x>5$",
+      "$x \\le 5$"
+    ],
+    "jawaban_benar": "$-5<x<5$",
+    "pembahasan": "$|x|<5 \\Rightarrow -5<x<5$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|x|>3$ adalah ...",
+    "clue": "Semua titik yang jaraknya LEBIH dari $3$ dari titik $0$ — ada di dua arah.",
+    "opsi": [
+      "$x<-3 \\text{ atau } x>3$",
+      "$-3<x<3$",
+      "$x>3$ saja",
+      "$x<-3$ saja",
+      "$x \\ge 3$"
+    ],
+    "jawaban_benar": "$x<-3 \\text{ atau } x>3$",
+    "pembahasan": "$|x|>3 \\Rightarrow x<-3 \\text{ atau } x>3$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|x-2| \\le 4$ adalah ...",
+    "clue": "Ubah menjadi bentuk $-4 \\le x-2 \\le 4$, lalu selesaikan.",
+    "opsi": [
+      "$-2 \\le x \\le 6$",
+      "$-6 \\le x \\le 2$",
+      "$2 \\le x \\le 6$",
+      "$-2 \\le x \\le 4$",
+      "$-4 \\le x \\le 4$"
+    ],
+    "jawaban_benar": "$-2 \\le x \\le 6$",
+    "pembahasan": "$-4 \\le x-2 \\le 4$. Tambahkan $2$ ke semua ruas: $-2 \\le x \\le 6$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|2x+1|<9$ adalah ...",
+    "clue": "Ubah menjadi $-9<2x+1<9$, lalu selesaikan untuk $x$.",
+    "opsi": [
+      "$-5<x<4$",
+      "$-4<x<5$",
+      "$-5<x<9$",
+      "$-9<x<9$",
+      "$-10<x<8$"
+    ],
+    "jawaban_benar": "$-5<x<4$",
+    "pembahasan": "$-9<2x+1<9 \\Rightarrow -10<2x<8 \\Rightarrow -5<x<4$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|x+3| \\ge 5$ adalah ...",
+    "clue": "Pisahkan menjadi $x+3 \\le -5$ atau $x+3 \\ge 5$.",
+    "opsi": [
+      "$x \\le -8 \\text{ atau } x \\ge 2$",
+      "$-8 \\le x \\le 2$",
+      "$x \\le -2 \\text{ atau } x \\ge 8$",
+      "$x \\ge 2$ saja",
+      "$x \\le -8$ saja"
+    ],
+    "jawaban_benar": "$x \\le -8 \\text{ atau } x \\ge 2$",
+    "pembahasan": "$x+3 \\le -5 \\Rightarrow x \\le -8$, atau $x+3 \\ge 5 \\Rightarrow x \\ge 2$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|3x-2|>7$ adalah ...",
+    "clue": "Pisahkan menjadi $3x-2<-7$ atau $3x-2>7$.",
+    "opsi": [
+      "$x<-\\frac{5}{3} \\text{ atau } x>3$",
+      "$-\\frac{5}{3}<x<3$",
+      "$x<-3 \\text{ atau } x>\\frac{5}{3}$",
+      "$x>3$ saja",
+      "$x<-\\frac{5}{3}$ saja"
+    ],
+    "jawaban_benar": "$x<-\\frac{5}{3} \\text{ atau } x>3$",
+    "pembahasan": "$3x-2<-7 \\Rightarrow 3x<-5 \\Rightarrow x<-\\frac{5}{3}$, atau $3x-2>7 \\Rightarrow 3x>9 \\Rightarrow x>3$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Banyak bilangan BULAT yang memenuhi $|x| \\le 3$ adalah ...",
+    "clue": "Daftar semua bilangan bulat dari batas bawah sampai batas atas.",
+    "opsi": [
+      "$7$",
+      "$6$",
+      "$3$",
+      "$8$",
+      "$4$"
+    ],
+    "jawaban_benar": "$7$",
+    "pembahasan": "$|x| \\le 3 \\Rightarrow -3 \\le x \\le 3$. Bilangan bulatnya: $-3,-2,-1,0,1,2,3$, total $7$ bilangan."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|4-x| \\le 6$ adalah ...",
+    "clue": "Ubah menjadi $-6 \\le 4-x \\le 6$. Hati-hati membalik tanda pertidaksamaan saat mengalikan dengan $-1$.",
+    "opsi": [
+      "$-2 \\le x \\le 10$",
+      "$-10 \\le x \\le 2$",
+      "$2 \\le x \\le 10$",
+      "$-2 \\le x \\le 6$",
+      "$-6 \\le x \\le 2$"
+    ],
+    "jawaban_benar": "$-2 \\le x \\le 10$",
+    "pembahasan": "$-6 \\le 4-x \\le 6$. Kurangkan $4$: $-10 \\le -x \\le 2$. Kalikan $-1$ (tanda dibalik): $-2 \\le x \\le 10$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Nilai $x$ BULAT TERBESAR yang memenuhi $|2x-5|<11$ adalah ...",
+    "clue": "Selesaikan pertidaksamaannya dulu untuk mendapat rentang nilai $x$, baru cari bilangan bulat terbesar di rentang itu.",
+    "opsi": [
+      "$7$",
+      "$8$",
+      "$6$",
+      "$-3$",
+      "$5$"
+    ],
+    "jawaban_benar": "$7$",
+    "pembahasan": "$-11<2x-5<11 \\Rightarrow -6<2x<16 \\Rightarrow -3<x<8$. Bilangan bulat terbesar yang kurang dari $8$ adalah $7$."
+  },
+  {
+    "materi_utama": "Nilai Mutlak",
+    "sub_materi": "Pertidaksamaan Nilai Mutlak",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Persamaan Nilai Mutlak"
+    ],
+    "pertanyaan": "Himpunan penyelesaian dari $|x| \\ge 0$ adalah ...",
+    "clue": "Ingat kembali: nilai mutlak SELALU tak negatif, untuk $x$ apa pun.",
+    "opsi": [
+      "Seluruh bilangan real",
+      "Hanya $x=0$",
+      "$x>0$ saja",
+      "$x \\ge 0$ saja",
+      "Tidak ada penyelesaian"
+    ],
+    "jawaban_benar": "Seluruh bilangan real",
+    "pembahasan": "Karena $|x|$ selalu $\\ge 0$ untuk SEMUA nilai $x$, pertidaksamaan ini dipenuhi oleh seluruh bilangan real."
+  }
+]

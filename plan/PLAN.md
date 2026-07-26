@@ -143,6 +143,8 @@ Field `konsep_prasyarat` tetap berharga sebagai **penasihat** — persentase pem
 
 **Data lama di bawah ambang sengaja dibiarkan** (keputusan pemilik proyek, 2026-07-26). Jangan menghapusnya tanpa permintaan eksplisit.
 
+**Soal duplikat di tab Eksponen, belum dibahas** (ditemukan 2026-07-27 saat verifikasi Fase 8, di luar cakupan Fase 8). Pertanyaan identik "Bentuk rasional dari $\frac{1}{\sqrt{2}}$ adalah ..." muncul di dua sub-materi berbeda: **Merasionalkan Penyebut** (`id: VdtVC8D6Ddn3B7lu9Uhz`) dan **Operasi Bentuk Akar** (`id: UHxUqe2COIic9B0N5H98`). Sengaja belum ditindaklanjuti — dibahas lagi setelah Fase 9 (Nilai Mutlak) selesai.
+
 ---
 
 ## 9. Catatan yang tidak diambil
@@ -434,6 +436,27 @@ Kode lolos Jest 114/114 lokal (tambahan: cek rantai gerbang Kaidah Pencacahan & 
 Diverifikasi dengan ekspor Firestore live segar (1030 soal) lewat Gate A — **✅ LOLOS**, DAG 76 node valid, tidak ada deadlock, keenam sub-materi baru 10 soal masing-masing di `materi_utama: "Kaidah Pencacahan & Peluang"`. Test Jest 114/114 lolos.
 
 Sisa 1 fase di §11.5: **Fase 9 (Nilai Mutlak)** — sisipan lintas-semua-tab (prasyarat `["semua"]`), sengaja dikerjakan paling akhir.
+
+**Fase 9 — Nilai Mutlak, SELESAI (kode + data), terverifikasi 2026-07-27. Roadmap §11.5 tuntas — seluruh kurikulum kelas X sekarang tercakup.** 4 sub-materi baru (40 soal), tab sisipan "Nilai Mutlak" yang TIDAK ada di buku cetak (RENCANA prota: handout ±15 halaman, prasyarat literal `["semua"]`):
+
+1. **Definisi dan Sifat Nilai Mutlak** (Tahap 1, pintu masuk) — definisi piecewise $|x|$, makna geometris (jarak dari 0), sifat dasar ($|ab|=|a||b|$, $\sqrt{x^2}=|x|$, pertidaksamaan segitiga). Judul "Definisi dan sifat" di RENCANA **diperjelas** jadi "Definisi dan Sifat Nilai Mutlak" — tiga sub-materi lain sudah menyebut "nilai mutlak" di judulnya sendiri, judul asli ini satu-satunya yang generik.
+2. **Persamaan Nilai Mutlak** (Tahap 2) — $|x|=a$, kasus tanpa penyelesaian ($a<0$), persamaan dua nilai mutlak ($|f(x)|=|g(x)|$).
+3. **Pertidaksamaan Nilai Mutlak** (Tahap 3) — $|x|<a$, $|x|>a$, dan variasinya ($\le$, $\ge$).
+4. **Grafik Fungsi Nilai Mutlak** (Tahap 4) — bentuk V, translasi titik puncak $(h,k)$ dari $y=|x-h|+k$, efek koefisien dan tanda negatif, domain/range.
+
+**Gerbang KHUSUS — satu-satunya di seluruh kurikulum**: "Definisi dan Sifat Nilai Mutlak" digerbangkan oleh **SELURUH 71 sub-materi SELURUH tab lain** (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan, Fungsi Rasional, Kaidah Pencacahan & Peluang, Trigonometri — TIDAK termasuk tab Prasyarat SMP, yang memang tidak pernah jadi target gerbang siapa pun) — sesuai RENCANA prota yang menulis prasyaratnya literal `["semua"]`, bukan daftar bab tertentu.
+
+**Implementasi teknis** (`public/js/utils/kurikulumData.js`): daftar 71 sub-materi ini **tidak ditulis tangan** sebagai entri literal di tabel `PETA_PRASYARAT` utama (rawan salah ketik/lupa sinkron), melainkan **dihasilkan lewat assignment** `PETA_PRASYARAT["Definisi dan Sifat Nilai Mutlak"] = ...` di paling akhir modul, setelah `PETA_TAB_SUB_MATERI` selesai dideklarasikan — memakai `PETA_TAB_SUB_MATERI` (dikecualikan tab "Nilai Mutlak" sendiri) sebagai sumber daftar, lalu helper lokal `labelAsli()` (reimplementasi kecil dari `kumpulkanLabel()` di `tataLetakPeta.js`) untuk memastikan ejaan Title Case-nya tetap benar di panel "Kuasai dulu: ..." — bukan kunci ternormalisasi huruf kecil. Tiga sub-materi lain (Persamaan, Pertidaksamaan, Grafik) tetap entri literal biasa di tabel utama seperti tab lain. `TAHAPAN_NILAI_MUTLAK` ditambahkan ke `PETA_TAHAPAN`, ditempatkan **paling akhir** dalam urutan spread (setelah `TAHAPAN_TRIGONOMETRI`) — wajib, karena gerbangnya mensyaratkan SEMUA tab lain (termasuk Trigonometri) sudah diajarkan lebih dulu.
+
+**Alur impor**: 4 file baru (`bank_soal_definisi_dan_sifat_nilai_mutlak.json`, `bank_soal_persamaan_nilai_mutlak.json`, `bank_soal_pertidaksamaan_nilai_mutlak.json`, `bank_soal_grafik_fungsi_nilai_mutlak.json`, semua tanpa `id`) aman diimpor langsung.
+
+Kode lolos Jest 116/116 lokal (tambahan: cek rantai Nilai Mutlak bisa dibuka setelah SELURUH tab lain kecuali Prasyarat SMP master, dan cek tetap terkunci bila SATU SAJA sub-materi tab lain — mis. Peluang Kejadian Majemuk — belum master, membuktikan gerbang "semua" benar-benar berarti semua). Gate A lokal LOLOS tanpa deadlock, DAG 80 node valid.
+
+`peta-materi.html`: ambang kolom test dinaikkan dari 20 ke **23** — kenaikan ke-4 dan **terakhir** (roadmap §11.5 sudah tuntas, tidak ada tab baru lagi yang akan memperdalam peta gabungan). "Definisi dan Sifat Nilai Mutlak" menempati kolom 19 (satu kolom setelah kolom terdalam dari SEMUA rantai lain sekaligus), lalu +3 kolom untuk rantai internalnya sendiri = 23 kolom. Fitur lipat-tab-tuntas (§12) tetap jadi mitigasi utama untuk kepadatan visual peta yang belum dilipat.
+
+Diverifikasi dengan ekspor Firestore live segar (1070 soal) lewat Gate A — **✅ LOLOS**, DAG 80 node valid, tidak ada deadlock, keempat sub-materi baru 10 soal masing-masing di `materi_utama: "Nilai Mutlak"`, gerbang "semua" tepat 71 entri. Test Jest 116/116 lolos.
+
+**Roadmap §11.5 SELESAI** — 9/9 tab bab-utama + tab sisipan Nilai Mutlak, seluruh kurikulum kelas X (Fase 0-9) sudah tercakup di `PETA_PRASYARAT`/`PETA_TAHAPAN`. Kerja rutin berikutnya di luar §11 adalah pemeliharaan data (lihat §8 soal duplikat Eksponen yang masih menunggu dibahas) dan penyempurnaan UI peta materi (§12).
 
 ## 12. Peta materi: melipat tab tuntas jadi satu simpul (2026-07-26)
 

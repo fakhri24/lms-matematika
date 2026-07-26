@@ -10,6 +10,7 @@ export const DAFTAR_MATERI_INTI = [
   "Pertidaksamaan",
   "Fungsi Rasional",
   "Kaidah Pencacahan & Peluang",
+  "Nilai Mutlak",
 ];
 
 // =====================================================================
@@ -226,6 +227,26 @@ export const PETA_PRASYARAT = {
   ],
   "Frekuensi Relatif dan Harapan": ["Ruang Sampel dan Peluang Kejadian Tunggal"],
   "Peluang Kejadian Majemuk": ["Frekuensi Relatif dan Harapan"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB NILAI MUTLAK — sisipan penutup kurikulum, gerbang KHUSUS "semua"
+  // (2026-07-27, plan/PLAN.md §11). Bab ini TIDAK ada di buku cetak
+  // (RENCANA prota: sisipan handout ±15 halaman), dan prasyaratnya di
+  // RENCANA bukan daftar bab tertentu melainkan literal ["semua"] --
+  // dikerjakan paling akhir (Fase 9) karena mensyaratkan SELURUH sub-materi
+  // SELURUH tab lain sudah master lebih dulu.
+  //
+  // Rantai internal sekuensial biasa (3 entri di bawah). Gerbang pintu
+  // masuknya ("Definisi dan Sifat Nilai Mutlak") TIDAK ditulis di sini --
+  // isinya butuh Object.keys() dari SEMUA konstanta TAHAPAN_*, yang baru
+  // dideklarasikan di bawah (const, jadi mengaksesnya di sini kena TDZ
+  // error). Ditambahkan lewat assignment terpisah setelah TAHAPAN_TRIGONOMETRI
+  // dideklarasikan, tepat sebelum `export const PETA_TAHAPAN` -- lihat
+  // komentar di sana.
+  // ═══════════════════════════════════════════════════════════════════
+  "Persamaan Nilai Mutlak": ["Definisi dan Sifat Nilai Mutlak"],
+  "Pertidaksamaan Nilai Mutlak": ["Persamaan Nilai Mutlak"],
+  "Grafik Fungsi Nilai Mutlak": ["Pertidaksamaan Nilai Mutlak"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -597,6 +618,19 @@ const TAHAPAN_TRIGONOMETRI = {
   "persamaan trigonometri bentuk khusus": "Tahap 6: Persamaan Trigonometri",
 };
 
+// --- MATERI NILAI MUTLAK (tab "Nilai Mutlak", sisipan penutup prota) ---
+// Fase 9 lengkap 2026-07-27 (plan/PLAN.md §11). Sisipan handout, bukan bab
+// buku -- judul subbab diambil dari RENCANA prota apa adanya, cuma "Definisi
+// dan sifat" diperjelas jadi "Definisi dan Sifat Nilai Mutlak" (aslinya
+// terlalu generik dibanding tiga sub-materi lain yang sudah menyebut
+// "nilai mutlak" di judulnya sendiri).
+const TAHAPAN_NILAI_MUTLAK = {
+  "definisi dan sifat nilai mutlak": "Tahap 1: Definisi dan Sifat",
+  "persamaan nilai mutlak": "Tahap 2: Persamaan Nilai Mutlak",
+  "pertidaksamaan nilai mutlak": "Tahap 3: Pertidaksamaan Nilai Mutlak",
+  "grafik fungsi nilai mutlak": "Tahap 4: Grafik Fungsi Nilai Mutlak",
+};
+
 // Dipakai test untuk memverifikasi tab Prasyarat (SMP) tidak pernah
 // dikunci, terlepas dari tab materi utama lain yang boleh punya gerbang.
 export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
@@ -613,6 +647,7 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_KAIDAH_PENCACAHAN_PELUANG,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
+  ...TAHAPAN_NILAI_MUTLAK,
 };
 
 // =====================================================================
@@ -639,4 +674,50 @@ export const PETA_TAB_SUB_MATERI = {
     TAHAPAN_KAIDAH_PENCACAHAN_PELUANG,
   ),
   Trigonometri: Object.keys(TAHAPAN_TRIGONOMETRI),
+  "Nilai Mutlak": Object.keys(TAHAPAN_NILAI_MUTLAK),
 };
+
+// =====================================================================
+// GERBANG KHUSUS "SEMUA" — pintu masuk tab Nilai Mutlak (Fase 9)
+// =====================================================================
+// "Definisi dan Sifat Nilai Mutlak" digerbangkan oleh SELURUH sub-materi
+// SELURUH tab lain (RENCANA prota mencantumkan prasyaratnya literal
+// ["semua"]) -- TIDAK termasuk tab Prasyarat SMP, karena tab itu memang
+// tidak pernah jadi target gerbang siapa pun (alasan sama seperti
+// PETA_TAB_SUB_MATERI di atas mengecualikannya).
+//
+// Ditulis lewat assignment di SINI (paling akhir modul), bukan sebagai
+// entri literal di tabel PETA_PRASYARAT di atas, karena dua alasan:
+//   1. Daftarnya perlu SELURUH isi PETA_TAB_SUB_MATERI, yang baru selesai
+//      dideklarasikan tepat di atas -- menuliskan ~70 nama sub-materi satu
+//      per satu dengan tangan terlalu rawan salah ketik atau lupa sinkron
+//      kalau kurikulum berubah.
+//   2. Ejaannya harus Title Case (sama seperti seluruh entri PETA_PRASYARAT
+//      lain) supaya panel "Kuasai dulu: ..." di peta-materi.html tetap
+//      terbaca -- BUKAN kunci ternormalisasi huruf kecil dari
+//      PETA_TAB_SUB_MATERI. `labelAsli()` menelusuri PETA_PRASYARAT yang
+//      sudah lengkap terisi (tabel literal di atas) untuk kemunculan Title
+//      Case ASLI tiap nama, memakai aturan prioritas yang sama seperti
+//      `kumpulkanLabel()` di tataLetakPeta.js (kunci target menang, lalu
+//      kemunculan pertama sebagai nilai menang atas sisanya).
+function labelAsli(petaPrasyarat) {
+  const label = new Map();
+  Object.entries(petaPrasyarat).forEach(([target, daftar]) => {
+    (daftar || []).forEach((p) => {
+      const kunci = String(p).toLowerCase().trim();
+      if (kunci && !label.has(kunci)) label.set(kunci, p);
+    });
+  });
+  Object.keys(petaPrasyarat).forEach((target) => {
+    label.set(String(target).toLowerCase().trim(), target);
+  });
+  return label;
+}
+
+const LABEL_SEBELUM_NILAI_MUTLAK = labelAsli(PETA_PRASYARAT);
+PETA_PRASYARAT["Definisi dan Sifat Nilai Mutlak"] = Object.entries(
+  PETA_TAB_SUB_MATERI,
+)
+  .filter(([tab]) => tab !== "Nilai Mutlak")
+  .flatMap(([, anggota]) => anggota)
+  .map((nama) => LABEL_SEBELUM_NILAI_MUTLAK.get(nama) || nama);
