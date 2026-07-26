@@ -7,13 +7,17 @@ import { getRiwayatLatihanSiswa } from "../services/latihanService.js";
 import {
   PETA_PRASYARAT,
   PETA_TAHAPAN,
+  PETA_TAB_SUB_MATERI,
 } from "../utils/kurikulumData.js";
 import {
   hitungSetMaster,
   hitungStatusKunci,
+  normalisasiNama,
 } from "../utils/kurikulumEngine.js";
 import {
+  hitungLapisanPembukaan,
   susunTataLetakPeta,
+  kolapsTabTuntas,
   tentukanStatusNode,
 } from "../utils/tataLetakPeta.js";
 import {
@@ -24,8 +28,18 @@ import {
 
 const URUTAN_KURIKULUM = Object.keys(PETA_TAHAPAN);
 
+// Ejaan asli tiap sub-materi (bukan versi terlipat) — dipakai untuk menampilkan
+// anggota sebuah tab yang sudah dilipat, karena begitu dilipat, sub-materinya
+// tidak lagi jadi simpul tersendiri di `tataLetak`.
+const { label: LABEL_ASLI } = hitungLapisanPembukaan(PETA_PRASYARAT);
+
 let tataLetak = null;
 let statusPerNode = {};
+let setMasterCache = new Set();
+let metaCache = { gagal: false, tanpaSesi: false };
+// Tab yang sudah 100% master tapi sengaja dibuka manual oleh siswa (sesi ini
+// saja, tidak disimpan) — lihat tombolPerluas di petaMateriView.js.
+const tabDiperluas = new Set();
 
 /**
  * Mengambil riwayat siswa lalu mengubahnya jadi status per materi.
@@ -68,11 +82,27 @@ function pilihNode(nama) {
       ?.classList.add("terpilih");
   }
 
+  // Simpul tab-tuntas tidak punya anggotanya sendiri di `tataLetak` (sudah
+  // dilipat), jadi anggotanya dicari dari PETA_TAB_SUB_MATERI + ejaan aslinya.
+  const anggotaTab = info.tab
+    ? (PETA_TAB_SUB_MATERI[node?.label] || []).map(
+        (nama2) => LABEL_ASLI.get(nama2) || nama2,
+      )
+    : [];
+
   wadahDetail.innerHTML = createDetailHTML(
     node,
     info.status || "siap",
     info.prereqBelum || [],
+    anggotaTab,
   );
+}
+
+/** Melipat/membuka satu tab secara manual, lalu me-render ulang peta. */
+function togglePerluasTab(namaSimpul) {
+  if (tabDiperluas.has(namaSimpul)) tabDiperluas.delete(namaSimpul);
+  else tabDiperluas.add(namaSimpul);
+  renderPeta();
 }
 
 /**
@@ -117,44 +147,68 @@ function fokusKeGarisDepan(halus = true) {
   pilihNode(target.nama);
 }
 
-async function muatPeta() {
+/**
+ * Menyusun ulang peta dari cache riwayat (`setMasterCache`) tanpa memanggil
+ * Firestore lagi — dipakai baik untuk pemuatan awal maupun setelah siswa
+ * melipat/membuka satu tab secara manual (`togglePerluasTab`).
+ */
+function renderPeta() {
   const wadah = document.getElementById("wadah-peta");
 
+  const kolaps = kolapsTabTuntas(
+    PETA_PRASYARAT,
+    URUTAN_KURIKULUM,
+    PETA_TAB_SUB_MATERI,
+    setMasterCache,
+    tabDiperluas,
+  );
+  tataLetak = susunTataLetakPeta(kolaps.peta, kolaps.urutanKurikulum);
+
+  // Tab yang dilipat dianggap master di peta yang sudah dilipat ini, meski
+  // "nama tab"-nya sendiri bukan sub-materi yang pernah dikerjakan siswa.
+  const tabTuntasSet = new Set(kolaps.tabTuntas.map(normalisasiNama));
+  const masterEfektif = new Set([...setMasterCache, ...tabTuntasSet]);
+  const statusKunci = hitungStatusKunci(kolaps.peta, masterEfektif);
+
+  statusPerNode = {};
+  tataLetak.node.forEach((n) => {
+    statusPerNode[n.nama] = {
+      status: tentukanStatusNode(n.nama, statusKunci, masterEfektif),
+      prereqBelum: statusKunci[n.nama]?.prereqBelum || [],
+      tab: tabTuntasSet.has(n.nama),
+    };
+  });
+
+  wadah.innerHTML = createPetaSVG(tataLetak, statusPerNode);
+
+  const jumlahMaster = tataLetak.node.filter(
+    (n) => statusPerNode[n.nama].status === "master",
+  ).length;
+  document.getElementById("ringkasan-peta").textContent =
+    `${jumlahMaster} dari ${tataLetak.node.length} materi/tab sudah dikuasai.`;
+
+  if (metaCache.gagal) {
+    tampilkanCatatan(
+      "Riwayat latihanmu gagal dimuat, jadi peta ini menampilkan keadaan awal. Muat ulang halaman untuk mencoba lagi.",
+    );
+  } else if (metaCache.tanpaSesi) {
+    tampilkanCatatan(
+      "Kamu belum masuk, jadi peta ini menampilkan keadaan awal tanpa progresmu.",
+    );
+  } else {
+    tampilkanCatatan("");
+  }
+
+  fokusKeGarisDepan(false);
+}
+
+async function muatPeta() {
+  const wadah = document.getElementById("wadah-peta");
   try {
     const { setMaster, gagal, tanpaSesi } = await muatStatus();
-
-    tataLetak = susunTataLetakPeta(PETA_PRASYARAT, URUTAN_KURIKULUM);
-    const statusKunci = hitungStatusKunci(PETA_PRASYARAT, setMaster);
-
-    statusPerNode = {};
-    tataLetak.node.forEach((n) => {
-      statusPerNode[n.nama] = {
-        status: tentukanStatusNode(n.nama, statusKunci, setMaster),
-        prereqBelum: statusKunci[n.nama]?.prereqBelum || [],
-      };
-    });
-
-    wadah.innerHTML = createPetaSVG(tataLetak, statusPerNode);
-
-    const jumlahMaster = tataLetak.node.filter(
-      (n) => statusPerNode[n.nama].status === "master",
-    ).length;
-    document.getElementById("ringkasan-peta").textContent =
-      `${jumlahMaster} dari ${tataLetak.node.length} materi sudah dikuasai.`;
-
-    if (gagal) {
-      tampilkanCatatan(
-        "Riwayat latihanmu gagal dimuat, jadi peta ini menampilkan keadaan awal. Muat ulang halaman untuk mencoba lagi.",
-      );
-    } else if (tanpaSesi) {
-      tampilkanCatatan(
-        "Kamu belum masuk, jadi peta ini menampilkan keadaan awal tanpa progresmu.",
-      );
-    } else {
-      tampilkanCatatan("");
-    }
-
-    fokusKeGarisDepan(false);
+    setMasterCache = setMaster;
+    metaCache = { gagal, tanpaSesi };
+    renderPeta();
   } catch (error) {
     console.error("Gagal menyusun peta materi:", error);
     wadah.innerHTML = createPetaErrorHTML();
@@ -165,6 +219,12 @@ async function muatPeta() {
 // EVENT
 // =====================================================================
 document.getElementById("wadah-peta").addEventListener("click", (e) => {
+  const tombolPerluas = e.target.closest('[data-aksi="perluas"]');
+  if (tombolPerluas) {
+    const nama = tombolPerluas.closest(".peta-node")?.getAttribute("data-nama");
+    if (nama) togglePerluasTab(nama);
+    return;
+  }
   const node = e.target.closest(".peta-node");
   if (node) pilihNode(node.getAttribute("data-nama"));
 });
@@ -172,6 +232,13 @@ document.getElementById("wadah-peta").addEventListener("click", (e) => {
 // Simpul SVG bisa difokus dengan tab, jadi Enter/Spasi harus ikut bekerja.
 document.getElementById("wadah-peta").addEventListener("keydown", (e) => {
   if (e.key !== "Enter" && e.key !== " ") return;
+  const tombolPerluas = e.target.closest('[data-aksi="perluas"]');
+  if (tombolPerluas) {
+    e.preventDefault();
+    const nama = tombolPerluas.closest(".peta-node")?.getAttribute("data-nama");
+    if (nama) togglePerluasTab(nama);
+    return;
+  }
   const node = e.target.closest(".peta-node");
   if (node) {
     e.preventDefault();
@@ -191,6 +258,11 @@ document.getElementById("btn-zoom").addEventListener("click", (e) => {
   const utuh = wadah.classList.toggle("pas-layar");
   e.currentTarget.textContent = utuh ? "🔍 Ukuran asli" : "🔍 Lihat utuh";
   if (!utuh) fokusKeGarisDepan(false);
+});
+
+document.getElementById("btn-lipat").addEventListener("click", () => {
+  tabDiperluas.clear();
+  renderPeta();
 });
 
 document

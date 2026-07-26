@@ -3,12 +3,14 @@
 import {
   hitungLapisanPembukaan,
   susunTataLetakPeta,
+  kolapsTabTuntas,
   tentukanStatusNode,
   pecahBaris,
 } from "../../public/js/utils/tataLetakPeta.js";
 import {
   PETA_PRASYARAT,
   PETA_TAHAPAN,
+  PETA_TAB_SUB_MATERI,
 } from "../../public/js/utils/kurikulumData.js";
 import { hitungStatusKunci } from "../../public/js/utils/kurikulumEngine.js";
 
@@ -130,6 +132,88 @@ describe("susunTataLetakPeta", () => {
     kolomNol.forEach((nama) => {
       expect(materiTrigonometri.has(nama)).toBe(false);
     });
+  });
+});
+
+describe("kolapsTabTuntas", () => {
+  // Tab "Merah" punya rantai internal a1 -> a2; tab "Biru" cuma b1. Gerbang X
+  // mensyaratkan ketiganya sekaligus -- kasus persis seperti "Pertidaksamaan
+  // Linear" menyebut 11 sub-materi dari 3 tab.
+  const petaTab = { Merah: ["a1", "a2"], Biru: ["b1"] };
+  const peta = { a2: ["a1"], X: ["a1", "a2", "b1"] };
+  const urutan = ["a1", "a2", "b1", "X"];
+
+  test("tab yang seluruh anggotanya master dilipat jadi satu simpul", () => {
+    const hasil = kolapsTabTuntas(peta, urutan, petaTab, ["a1", "a2", "b1"]);
+    expect(hasil.tabTuntas.sort()).toEqual(["Biru", "Merah"]);
+    expect(hasil.peta.X.sort()).toEqual(["Biru", "Merah"]);
+  });
+
+  test("rantai internal tab yang dilipat tidak lagi digambar sebagai sisi", () => {
+    const hasil = kolapsTabTuntas(peta, urutan, petaTab, ["a1", "a2", "b1"]);
+    // "a2" tadinya prasyarat "a1" (sesama Merah) -- sisi ini hilang, bukan
+    // muncul sebagai self-loop "Merah" -> "Merah".
+    expect(hasil.peta.Merah).toEqual([]);
+  });
+
+  test("tab yang belum lengkap master TIDAK dilipat", () => {
+    // Merah belum lengkap (a2 belum master); Biru sudah.
+    const hasil = kolapsTabTuntas(peta, urutan, petaTab, ["a1", "b1"]);
+    expect(hasil.tabTuntas).toEqual(["Biru"]);
+    expect(hasil.peta.X.sort()).toEqual(["Biru", "a1", "a2"].sort());
+  });
+
+  test("kecualikanTab mencegah pelipatan meski 100% master", () => {
+    const hasil = kolapsTabTuntas(
+      peta,
+      urutan,
+      petaTab,
+      ["a1", "a2", "b1"],
+      ["Merah"],
+    );
+    expect(hasil.tabTuntas).toEqual(["Biru"]);
+    expect(hasil.peta.X.sort()).toEqual(["Biru", "a1", "a2"].sort());
+  });
+
+  test("urutanKurikulum dilipat & dedup, tab muncul di posisi anggota pertamanya", () => {
+    const hasil = kolapsTabTuntas(peta, urutan, petaTab, ["a1", "a2", "b1"]);
+    expect(hasil.urutanKurikulum).toEqual(["Merah", "Biru", "X"]);
+  });
+
+  test("setMaster berupa Set juga diterima", () => {
+    const hasil = kolapsTabTuntas(
+      peta,
+      urutan,
+      petaTab,
+      new Set(["a1", "a2", "b1"]),
+    );
+    expect(hasil.tabTuntas.sort()).toEqual(["Biru", "Merah"]);
+  });
+
+  test("masukan kosong tidak melempar galat dan tidak melipat apa pun", () => {
+    expect(() => kolapsTabTuntas({}, [], {}, [])).not.toThrow();
+    const hasil = kolapsTabTuntas(peta, urutan, petaTab, []);
+    expect(hasil.tabTuntas).toEqual([]);
+    expect(hasil.peta).toEqual(peta);
+  });
+
+  test("gerbang produksi 'Pertidaksamaan Linear' terlipat jadi 3 nama tab saat prasyaratnya lengkap master", () => {
+    // Kasus nyata yang memotivasi fitur ini: 11 sub-materi dari Eksponen +
+    // Fungsi Kuadrat + Sistem Persamaan jadi cuma 3 simpul.
+    const master = [
+      ...PETA_TAB_SUB_MATERI["Eksponen"],
+      ...PETA_TAB_SUB_MATERI["Fungsi Kuadrat"],
+      ...PETA_TAB_SUB_MATERI["Sistem Persamaan"],
+    ];
+    const hasil = kolapsTabTuntas(
+      PETA_PRASYARAT,
+      Object.keys(PETA_TAHAPAN),
+      PETA_TAB_SUB_MATERI,
+      master,
+    );
+    expect(hasil.peta["Pertidaksamaan Linear"].sort()).toEqual(
+      ["Eksponen", "Fungsi Kuadrat", "Sistem Persamaan"].sort(),
+    );
   });
 });
 

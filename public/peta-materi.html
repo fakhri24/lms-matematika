@@ -75,6 +75,42 @@
         stroke: #6366f1;
         stroke-width: 3;
       }
+
+      /* --- Simpul tab-tuntas: satu tab yang dilipat jadi satu simpul --- */
+      .peta-kotak-luar {
+        fill: none;
+        stroke: #10b981;
+        stroke-width: 1.5;
+        opacity: 0.55;
+      }
+      .peta-node.simpul-tab .peta-kotak {
+        stroke-width: 2;
+      }
+      .peta-perluas circle {
+        fill: white;
+        stroke: #10b981;
+        stroke-width: 1.5;
+        transition: fill 0.15s;
+      }
+      .peta-perluas text {
+        font-size: 13px;
+        font-weight: 700;
+        fill: #10b981;
+        pointer-events: none;
+      }
+      .peta-perluas {
+        cursor: pointer;
+      }
+      .peta-perluas:hover circle {
+        fill: #ecfdf5;
+      }
+      .peta-perluas:focus {
+        outline: none;
+      }
+      .peta-perluas:focus circle {
+        fill: #ecfdf5;
+        stroke-width: 2.5;
+      }
       .peta-node:focus {
         outline: none;
       }
@@ -140,6 +176,16 @@
         padding: 7px 10px;
         border-radius: 4px;
       }
+      .peta-detail-anggota {
+        margin: 8px 0 0;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: #059669;
+        background: #ecfdf5;
+        border-left: 3px solid #10b981;
+        padding: 7px 10px;
+        border-radius: 4px;
+      }
 
       .peta-aksi {
         display: flex;
@@ -194,7 +240,7 @@
         "
       >
         <div>
-          <h2 class="text-primary" style="margin: 0">Peta Materi Trigonometri</h2>
+          <h2 class="text-primary" style="margin: 0">Peta Materi</h2>
           <p class="status-text" style="margin-top: 5px; margin-bottom: 0">
             Urutan membuka materi, dari kiri ke kanan
           </p>
@@ -223,6 +269,9 @@
           <button id="btn-zoom" class="btn btn-secondary text-sm">
             🔍 Lihat utuh
           </button>
+          <button id="btn-lipat" class="btn btn-secondary text-sm">
+            🧩 Lipat semua tab
+          </button>
         </div>
       </div>
 
@@ -236,13 +285,18 @@
         <span>✅ Sudah dikuasai</span>
         <span>▶ Siap dikerjakan</span>
         <span>🔒 Terkunci di mode sumatif</span>
+        <span>⊕ Tab tuntas, ketuk + untuk membuka rinciannya</span>
       </p>
       <p class="text-sm text-muted" style="margin-top: 10px; line-height: 1.5">
         Setiap <strong>Lapis</strong> terbuka begitu lapis di kirinya dikuasai.
         Lapis bukan <em>Tahap</em> di daftar materi: tahap adalah urutan
         mengajar di kelas, lapis adalah urutan terbukanya kunci.
-        <strong>Bekal awal</strong> berisi materi tab Prasyarat yang menjadi
-        pintu masuk Trigonometri — materi itu sendiri tidak pernah terkunci.
+        <strong>Bekal awal</strong> berisi materi yang jadi pintu masuk paling
+        dasar — materi itu sendiri tidak pernah terkunci. Begitu seluruh
+        sub-materi satu tab sudah kamu kuasai, tab itu dilipat jadi satu
+        simpul bercincin ganda supaya peta tidak melebar tanpa henti — ketuk
+        tombol + pada simpulnya untuk melihat rinciannya, atau
+        <strong>🧩 Lipat semua tab</strong> untuk menutupnya lagi.
         Kunci hanya berlaku untuk mode sumatif;
         <strong>Mode Formatif selalu terbuka</strong>.
       </p>

@@ -60,7 +60,8 @@ function garisSisi(dariNode, keNode, statusSumber) {
   return `<path class="peta-sisi ${statusSumber === "master" ? "tuntas" : ""}" d="M ${x1} ${y1} C ${x1 + lengkung} ${y1}, ${x2 - lengkung} ${y2}, ${x2} ${y2}" />`;
 }
 
-function kotakNode(node, status, prereqBelum) {
+function kotakNode(node, info) {
+  const { status, prereqBelum = [], tab: apakahTab = false } = info || {};
   const x = posisiX(node.kolom);
   const y = posisiY(node.barisTampil);
   const baris = pecahBaris(node.label, 23, 3);
@@ -75,20 +76,37 @@ function kotakNode(node, status, prereqBelum) {
     )
     .join("");
 
-  const keterangan =
-    status === "terkunci"
+  const keterangan = apakahTab
+    ? "Seluruh sub-materi tab ini sudah dikuasai — dilipat jadi satu simpul. Ketuk tombol + untuk melihat rinciannya."
+    : status === "terkunci"
       ? `Terkunci. Perlu dikuasai dulu: ${prereqBelum.join(", ")}`
       : status === "master"
         ? "Sudah dikuasai"
         : "Siap dikerjakan";
 
+  // Simpul tab-tuntas mendapat cincin luar (menandai ia "wakil" dari beberapa
+  // sub-materi yang dilipat) plus tombol + untuk membuka rinciannya. Klik
+  // tombol ini ditangkap terpisah dari klik simpul di controller.
+  const cincinLuar = apakahTab
+    ? `<rect class="peta-kotak-luar" x="${x - 4}" y="${y - 4}" width="${UKURAN.lebarNode + 8}" height="${UKURAN.tinggiNode + 8}" rx="14" />`
+    : "";
+  const tombolPerluas = apakahTab
+    ? `<g class="peta-perluas" data-aksi="perluas" tabindex="0" role="button"
+         aria-label="Buka rincian sub-materi ${amankanTeks(node.label)}">
+         <circle cx="${x + UKURAN.lebarNode - 14}" cy="${y + 14}" r="10" />
+         <text x="${x + UKURAN.lebarNode - 14}" y="${y + 18}" text-anchor="middle">+</text>
+       </g>`
+    : "";
+
   return `
-    <g class="peta-node ${status}" data-nama="${amankanTeks(node.nama)}" tabindex="0" role="button"
+    <g class="peta-node ${status}${apakahTab ? " simpul-tab" : ""}" data-nama="${amankanTeks(node.nama)}" tabindex="0" role="button"
        aria-label="${amankanTeks(`${node.label}. ${keterangan}`)}">
       <title>${amankanTeks(`${node.label} — ${keterangan}`)}</title>
+      ${cincinLuar}
       <rect class="peta-kotak" x="${x}" y="${y}" width="${UKURAN.lebarNode}" height="${UKURAN.tinggiNode}" rx="10" />
       <text class="peta-ikon" x="${x + 12}" y="${y + 16}">${IKON_STATUS[status] || ""}</text>
       <text class="peta-label" text-anchor="middle">${tspan}</text>
+      ${tombolPerluas}
     </g>`;
 }
 
@@ -118,26 +136,28 @@ export function createPetaSVG(tataLetak, statusPerNode = {}) {
     .join("");
 
   const gambarNode = node
-    .map((n) =>
-      kotakNode(
-        n,
-        statusPerNode[n.nama]?.status || "siap",
-        statusPerNode[n.nama]?.prereqBelum || [],
-      ),
-    )
+    .map((n) => kotakNode(n, statusPerNode[n.nama] || { status: "siap" }))
     .join("");
 
   return `
     <svg id="svg-peta" viewBox="0 0 ${lebar} ${tinggi}" width="${lebar}" height="${tinggi}"
-         role="img" aria-label="Peta prasyarat materi Trigonometri" xmlns="http://www.w3.org/2000/svg">
+         role="img" aria-label="Peta prasyarat materi" xmlns="http://www.w3.org/2000/svg">
       <g class="peta-lapisan-judul">${judulKolom(jumlahKolom)}</g>
       <g class="peta-lapisan-sisi">${gambarSisi}</g>
       <g class="peta-lapisan-node">${gambarNode}</g>
     </svg>`;
 }
 
-/** Panel penjelasan saat satu materi dipilih. */
-export function createDetailHTML(node, status, prereqBelum = []) {
+/**
+ * Panel penjelasan saat satu materi dipilih.
+ * @param {string[]} anggotaTab isi tab yang dilipat (kosong bila bukan simpul tab).
+ */
+export function createDetailHTML(
+  node,
+  status,
+  prereqBelum = [],
+  anggotaTab = [],
+) {
   if (!node) {
     return `<p class="text-muted text-sm" style="margin:0">Ketuk salah satu materi di peta untuk melihat statusnya.</p>`;
   }
@@ -147,6 +167,14 @@ export function createDetailHTML(node, status, prereqBelum = []) {
     siap: "Prasyaratnya sudah lengkap — materi ini siap kamu kerjakan.",
     terkunci: "Masih terkunci untuk mode sumatif. Mode Formatif tetap terbuka.",
   };
+
+  if (anggotaTab.length > 0) {
+    return `
+      <h4 class="peta-detail-judul master">${IKON_STATUS.master} ${amankanTeks(node.label)} <span class="text-muted text-sm">(tab tuntas)</span></h4>
+      <p class="text-sm" style="margin:6px 0 0">Seluruh ${anggotaTab.length} sub-materi tab ini sudah kamu kuasai, jadi dilipat jadi satu simpul di peta.</p>
+      <p class="peta-detail-anggota">${anggotaTab.map(amankanTeks).join(" &bull; ")}</p>
+      <p class="text-muted text-sm" style="margin:6px 0 0">Ketuk tombol + pada simpulnya untuk menampilkan sub-materi ini satu per satu lagi.</p>`;
+  }
 
   const daftar =
     status === "terkunci" && prereqBelum.length > 0

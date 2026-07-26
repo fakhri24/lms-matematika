@@ -163,6 +163,84 @@ export function susunTataLetakPeta(petaPrasyarat, urutanKurikulum = []) {
 }
 
 /**
+ * Melipat setiap tab yang SELURUH sub-materinya sudah master jadi satu simpul
+ * "persimpangan" (plan/PLAN.md §12) — presentasi murni, `petaPrasyarat` asli
+ * (mis. PETA_PRASYARAT) tidak disentuh, cuma disusun ulang untuk lapisan
+ * tampilan. Gerbang antar-tab yang tadinya menyebut belasan sub-materi satu
+ * per satu (mis. "Pertidaksamaan Linear" menyebut 11 sub-materi dari 3 tab)
+ * jadi cuma menyebut nama tabnya begitu tab itu 100% master; sisi di DALAM
+ * tab yang sudah dilipat tidak digambar lagi karena sudah "di dalam" simpul
+ * yang sama.
+ *
+ * @param {Object}   petaPrasyarat    PETA_PRASYARAT asli
+ * @param {string[]} urutanKurikulum  urutan mengajar asli, mis. Object.keys(PETA_TAHAPAN)
+ * @param {Object}   petaTabSubMateri { "Nama Tab": ["sub-materi ternormalisasi", ...] }
+ * @param {Set|Array} setMaster       sub-materi ternormalisasi yang sudah master
+ * @param {Set|Array} kecualikanTab   nama tab yang sengaja TIDAK dilipat meski
+ *                                    100% master (siswa membuka rinciannya manual)
+ * @returns {{ peta: Object, urutanKurikulum: string[], tabTuntas: string[] }}
+ */
+export function kolapsTabTuntas(
+  petaPrasyarat,
+  urutanKurikulum = [],
+  petaTabSubMateri = {},
+  setMaster,
+  kecualikanTab = [],
+) {
+  const master =
+    setMaster instanceof Set ? setMaster : new Set(setMaster || []);
+  const dikecualikan = new Set(
+    [...(kecualikanTab instanceof Set ? kecualikanTab : kecualikanTab || [])].map(
+      normalisasiNama,
+    ),
+  );
+
+  const tabDariAnggota = new Map(); // sub-materi ternormalisasi -> nama tab
+  const tabTuntas = new Set();
+  Object.entries(petaTabSubMateri || {}).forEach(([tab, anggota]) => {
+    (anggota || []).forEach((nama) => tabDariAnggota.set(normalisasiNama(nama), tab));
+    const semuaMaster =
+      (anggota || []).length > 0 &&
+      !dikecualikan.has(normalisasiNama(tab)) &&
+      anggota.every((nama) => master.has(normalisasiNama(nama)));
+    if (semuaMaster) tabTuntas.add(tab);
+  });
+
+  const ganti = (nama) => {
+    const tab = tabDariAnggota.get(normalisasiNama(nama));
+    return tab && tabTuntas.has(tab) ? tab : nama;
+  };
+
+  const peta = {};
+  Object.entries(petaPrasyarat || {}).forEach(([target, daftarPrasyarat]) => {
+    const targetBaru = ganti(target);
+    if (!peta[targetBaru]) peta[targetBaru] = [];
+    (daftarPrasyarat || [])
+      .map(ganti)
+      .filter((p) => normalisasiNama(p) !== normalisasiNama(targetBaru))
+      .forEach((p) => {
+        const sudahAda = peta[targetBaru].some(
+          (x) => normalisasiNama(x) === normalisasiNama(p),
+        );
+        if (!sudahAda) peta[targetBaru].push(p);
+      });
+  });
+
+  const terlihat = new Set();
+  const urutanBaru = [];
+  (urutanKurikulum || []).forEach((nama) => {
+    const namaBaru = ganti(nama);
+    const kunci = normalisasiNama(namaBaru);
+    if (!terlihat.has(kunci)) {
+      terlihat.add(kunci);
+      urutanBaru.push(namaBaru);
+    }
+  });
+
+  return { peta, urutanKurikulum: urutanBaru, tabTuntas: [...tabTuntas] };
+}
+
+/**
  * Tiga keadaan yang ditampilkan di peta.
  * "siap" berarti seluruh prasyaratnya sudah dikuasai — inilah garis depan siswa.
  */

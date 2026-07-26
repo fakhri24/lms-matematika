@@ -569,3 +569,26 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
 };
+
+// =====================================================================
+// KEANGGOTAAN TAB — untuk melipat tab yang tuntas jadi satu simpul di peta
+// =====================================================================
+// Dipakai oleh `kolapsTabTuntas()` (utils/tataLetakPeta.js) untuk tahu sub-
+// materi mana saja milik tab yang sama, supaya begitu SEMUANYA master, peta
+// materi bisa melipatnya jadi satu simpul "persimpangan" alih-alih menggambar
+// tiap anggotanya satu per satu (plan/PLAN.md §12). Presentasi murni — tidak
+// mengubah PETA_PRASYARAT ataupun gerbangnya.
+//
+// Sengaja tidak memasukkan TAHAPAN_PRASYARAT_SMP: tab Prasyarat bukan target
+// gerbang siapa pun (§11), jadi tidak ada gunanya dilipat.
+export const PETA_TAB_SUB_MATERI = {
+  Eksponen: Object.keys(TAHAPAN_EKSPONEN),
+  Logaritma: Object.keys(TAHAPAN_LOGARITMA),
+  "Relasi dan Fungsi": Object.keys(TAHAPAN_RELASI_FUNGSI),
+  "Persamaan Kuadrat": Object.keys(TAHAPAN_PERSAMAAN_KUADRAT),
+  "Fungsi Kuadrat": Object.keys(TAHAPAN_FUNGSI_KUADRAT),
+  "Sistem Persamaan": Object.keys(TAHAPAN_SISTEM_PERSAMAAN),
+  Pertidaksamaan: Object.keys(TAHAPAN_PERTIDAKSAMAAN),
+  "Fungsi Rasional": Object.keys(TAHAPAN_FUNGSI_RASIONAL),
+  Trigonometri: Object.keys(TAHAPAN_TRIGONOMETRI),
+};

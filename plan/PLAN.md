@@ -411,3 +411,21 @@ Kode lolos Jest 104/104 lokal (tambahan: cek rantai gerbang Fungsi Rasional bisa
 Diverifikasi dengan ekspor Firestore live segar (970 soal) lewat Gate A — **✅ LOLOS**, DAG 70 node valid, tidak ada deadlock, keempat sub-materi Fungsi Rasional 10 soal masing-masing di `materi_utama: "Fungsi Rasional"`. Test Jest 104/104 lolos.
 
 Tab Fungsi Rasional sekarang aktif dan terisi penuh — 8 dari 8 tab bab-utama selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan, Fungsi Rasional). Sisa 2 fase di §11.5: Fase 8 (Kaidah Pencacahan & Peluang) dan Fase 9 (Nilai Mutlak) — keduanya berdiri sendiri tanpa gerbang antar-tab rumit (Bab 10 prasyarat `[]`, Bab 11 prasyarat `["bab10"]` saja), jadi tidak akan menambah kedalaman peta gabungan seperti fase-fase sebelumnya.
+
+## 12. Peta materi: melipat tab tuntas jadi satu simpul (2026-07-26)
+
+Sejak Fase 2 (§11.5) ambang lebar kolom `tataLetakPeta.test.js` sudah dinaikkan tiga kali (8→15→20) karena setiap gerbang antar-tab baru menggambar SELURUH sub-materi tab prasyaratnya satu per satu — mis. "Pertidaksamaan Linear" menyebut 11 sub-materi dari 3 tab sekaligus. Ini keputusan yang sempat ditunda ("diputuskan belakangan") sejak Fase 2, diselesaikan sekarang setelah 8/8 tab bab-utama selesai (Fase 7).
+
+**Keputusan**: bukan memisah `peta-materi.html` jadi banyak peta per tab (tab-tab itu benar-benar saling bergantung — Logaritma butuh Eksponen, Pertidaksamaan butuh tiga tab sekaligus — jadi pemisahan akan menduplikasi atau memutus simpul), melainkan **melipat satu tab jadi satu simpul "persimpangan" begitu SELURUH sub-materinya sudah master**. `PETA_PRASYARAT` sendiri **tidak diubah sama sekali** — ini murni transformasi presentasi yang dijalankan sebelum tata letak dihitung.
+
+Mockup dibuat lebih dulu (metafora peta transit: tab = jalur, tab tuntas = stasiun persimpangan) dan disetujui sebelum implementasi.
+
+**Implementasi:**
+- `PETA_TAB_SUB_MATERI` (baru, `kurikulumData.js`) — memetakan nama tab ke daftar sub-materi ternormalisasi anggotanya, diturunkan dari blok `TAHAPAN_*` yang sudah ada. Tab Prasyarat (SMP) sengaja tidak dimasukkan (bukan target gerbang siapa pun).
+- `kolapsTabTuntas()` (baru, `tataLetakPeta.js`) — fungsi murni: menerima `PETA_PRASYARAT`, urutan mengajar, `PETA_TAB_SUB_MATERI`, dan `setMaster` siswa; mengembalikan peta baru di mana tab yang 100% master diganti jadi satu simpul bernama tab tersebut (sisi internal tab itu hilang, sisi lintas-tab dialihkan ke simpul barunya, deduplikasi otomatis). Parameter `kecualikanTab` memungkinkan satu tab sengaja TIDAK dilipat (dipakai untuk fitur buka-manual). 8 unit test, termasuk satu test terhadap `PETA_PRASYARAT` produksi yang membuktikan "Pertidaksamaan Linear" benar-benar terlipat jadi 3 nama tab.
+- `petaMateriView.js` — simpul tab-tuntas dirender dengan cincin luar tambahan (`.peta-kotak-luar`) dan tombol "+" (`data-aksi="perluas"`) untuk membuka rinciannya; panel detail menampilkan daftar anggota asli tab tersebut.
+- `petaMateri.js` (controller) — `muatPeta()` dipecah jadi pengambilan riwayat (sekali, ke Firestore) dan `renderPeta()` (bisa dipanggil berulang tanpa refetch). Status "master" simpul tab-tuntas ditambahkan ke `setMaster` efektif hanya untuk perhitungan tata letak, bukan disimpan sebagai data siswa. Klik tombol "+" membuka satu tab manual (state sesi, tidak disimpan); tombol baru "🧩 Lipat semua tab" mengembalikannya.
+
+**Konsekuensi yang disengaja**: peta jadi **berbeda per siswa** — siswa yang lebih maju melihat peta lebih ringkas (tab-tab yang sudah dikuasainya terlipat) daripada siswa yang baru mulai. Ini konsisten dengan filosofi "fokus ke garis depan" yang sudah ada sebelumnya di halaman ini.
+
+Diverifikasi: Jest 112/112 lolos (8 test baru untuk `kolapsTabTuntas`, termasuk kasus produksi nyata). Karena tidak ada alat browser di lingkungan pengerjaan ini, verifikasi render+interaksi (klik simpul, klik tombol +, klik "Lipat semua tab") dilakukan lewat skrip jsdom sekali pakai (di-mock `getRiwayatLatihanSiswa`, dihapus setelah dipakai) — bukan pengecekan visual di browser sungguhan. Hasilnya: render awal melipat Eksponen jadi 1 simpul (66 dari 70 simpul tampil), panel detail menampilkan kelima nama sub-materi aslinya dengan benar, tombol + membuka lagi sub-materi individual, dan "Lipat semua tab" melipatnya kembali.
