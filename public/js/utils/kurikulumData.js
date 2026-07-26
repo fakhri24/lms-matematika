@@ -194,6 +194,14 @@ export const PETA_TAHAPAN = {
   "translasi horizontal": "Tahap 6: Fungsi & Transformasi Dasar",
   "translasi vertikal": "Tahap 6: Fungsi & Transformasi Dasar",
 
+  // Ditambahkan 2026-07-26 untuk menutup celah cakupan Bagian 6 (Numerasi
+  // Terapan) pada Tes Diagnostik Numerasi Kelas X — lihat plan/PLAN.md §10.
+  // Posisi "Tahap 7" bersifat sementara; belum ditinjau oleh guru, cukup
+  // ubah string tahapnya di sini kalau urutan mengajar sebenarnya berbeda.
+  "persentase": "Tahap 7: Numerasi Terapan",
+  "perbandingan dan skala": "Tahap 7: Numerasi Terapan",
+  "pembulatan dan estimasi": "Tahap 7: Numerasi Terapan",
+
   // --- MATERI TRIGONOMETRI ---
   "rasio trigonometri dasar": "Tahap 1: Pengenalan & Konsep Dasar",
   "nilai sudut istimewa": "Tahap 1: Pengenalan & Konsep Dasar",

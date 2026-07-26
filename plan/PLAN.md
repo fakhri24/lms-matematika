@@ -179,3 +179,13 @@ Analisis ad-hoc atas berkas eksternal *Tes Diagnostik Numerasi — Kelas X* (50 
 3. **Bagian 6 · Numerasi Terapan** (No. 40–50, 11 soal / 22% dari seluruh tes) — persen, perbandingan senilai, skala, estimasi, pembulatan **tidak punya representasi di kurikulum aplikasi manapun**, bukan cuma di tab Prasyarat. Dicek ke seluruh 455 soal arsip, bukan cuma yang berlabel Prasyarat.
 
 **Belum ada keputusan atau pekerjaan kode dari analisis ini.** Kalau nanti sub-materi baru dibuat untuk menutup celah ini, berlaku ambang 10 soal (§4) — sub-materi baru tidak boleh dipakai untuk ujian sumatif sebelum bank soalnya ≥10.
+
+**Update 2026-07-26 — celah Bagian 6 ditutup.** Dibuat 3 sub-materi baru, masing-masing 10 soal, `materi_utama: "Numerasi Terapan"` (grup baru, otomatis masuk tab Prasyarat karena bukan Eksponen/Logaritma/Trigonometri):
+
+- **Persentase** — mencakup gaya soal No. 40–44 (persen dasar, diskon, kenaikan harga, persen dari perbandingan).
+- **Perbandingan dan Skala** — mencakup gaya soal No. 45–48 (sederhanakan rasio, perbandingan senilai & berbalik nilai, skala peta/denah).
+- **Pembulatan dan Estimasi** — mencakup gaya soal No. 49–50 (pembulatan bilangan bulat & desimal, taksiran hasil operasi).
+
+Soalnya baru berupa berkas arsip di `arsip-data/bank_soal/prasyarat/numerasi-terapan/*.json` (format sama seperti dump arsip lain) — **belum masuk Firestore**. Perlu diimpor manual lewat `admin.html` → tab Bank Soal → tombol "Impor JSON" untuk ketiga berkas itu sebelum sub-materinya nyata muncul di tab Prasyarat siswa. Urutan tampilnya didaftarkan sebagai `"Tahap 7: Numerasi Terapan"` di `PETA_TAHAPAN` (`kurikulumData.js`) — posisi ini pilihan sementara penulis dokumen, **belum ditinjau guru**, dan mudah diubah karena tak ada satu pun sub-materi baru ini yang menjadi prasyarat di `PRASYARAT_TRIGONOMETRI`. Gate A (`gate-a-audit-kurikulum.mjs`) dan seluruh test Jest sudah dijalankan ulang dan lolos.
+
+Celah No. 4–5 (sifat operasi bilangan murni), No. 18–24 (desimal), dan No. 30–31 (substitusi fungsi linear $f(x)$) **belum digarap** — di luar cakupan permintaan ini.
