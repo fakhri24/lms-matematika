@@ -76,88 +76,15 @@ export function hitungSetMaster(riwayatLatihan, ambang = MASTERY) {
   return setMaster;
 }
 
-/**
- * Membangun graf prasyarat -> target beserta inDegree.
- * Peta dipakai UTUH (lintas tab), tanpa penyaringan per tab.
- */
-function bangunGraf(petaPrasyarat) {
-  const anak = new Map();
-  const prasyaratDari = new Map();
-  const inDegree = new Map();
-  const namaAsli = new Map();
-
-  const daftarkan = (nama) => {
-    const kunci = normalisasiNama(nama);
-    if (!anak.has(kunci)) anak.set(kunci, []);
-    if (!prasyaratDari.has(kunci)) prasyaratDari.set(kunci, []);
-    if (!inDegree.has(kunci)) inDegree.set(kunci, 0);
-    if (!namaAsli.has(kunci)) namaAsli.set(kunci, String(nama).trim());
-    return kunci;
-  };
-
-  Object.entries(petaPrasyarat || {}).forEach(([target, daftarPrasyarat]) => {
-    const targetKunci = daftarkan(target);
-    (daftarPrasyarat || []).forEach((prasyarat) => {
-      const prasyaratKunci = daftarkan(prasyarat);
-      if (prasyaratKunci === "" || prasyaratKunci === targetKunci) return;
-      if (anak.get(prasyaratKunci).includes(targetKunci)) return;
-      anak.get(prasyaratKunci).push(targetKunci);
-      prasyaratDari.get(targetKunci).push(prasyaratKunci);
-      inDegree.set(targetKunci, inDegree.get(targetKunci) + 1);
-    });
-  });
-
-  return { anak, prasyaratDari, inDegree, namaAsli };
-}
-
-/**
- * Urutan topologis (Algoritma Kahn) sekaligus kedalaman tiap simpul.
- * Simpul yang tidak pernah keluar dari antrian berarti terlibat siklus.
- */
-export function hitungUrutanTopologis(petaPrasyarat) {
-  const { anak, inDegree, namaAsli } = bangunGraf(petaPrasyarat);
-  const sisaDerajat = new Map(inDegree);
-  const kedalaman = new Map();
-
-  const antrian = [];
-  inDegree.forEach((derajat, simpul) => {
-    if (derajat === 0) {
-      antrian.push(simpul);
-      kedalaman.set(simpul, 0);
-    }
-  });
-
-  const urutan = [];
-  while (antrian.length > 0) {
-    const sekarang = antrian.shift();
-    urutan.push(sekarang);
-    anak.get(sekarang).forEach((target) => {
-      kedalaman.set(
-        target,
-        Math.max(kedalaman.get(target) ?? 0, (kedalaman.get(sekarang) ?? 0) + 1),
-      );
-      sisaDerajat.set(target, sisaDerajat.get(target) - 1);
-      if (sisaDerajat.get(target) === 0) antrian.push(target);
-    });
-  }
-
-  const siklus = [];
-  sisaDerajat.forEach((derajat, simpul) => {
-    if (derajat > 0) siklus.push(simpul);
-  });
-
-  return { urutan, kedalaman, siklus, namaAsli };
-}
 
 /**
  * Inti fitur: menentukan status terkunci setiap sub-materi.
  *
  * Sebuah sub-materi terkunci jika ada prasyarat langsungnya yang belum master.
  * Transitivitas tercapai sendiri: prasyarat yang terkunci pasti belum master,
- * sehingga simpul di belakangnya tetap terkunci.
+ * sehingga materi di belakangnya ikut tertahan.
  *
- * Simpul yang terlibat siklus diperlakukan terkunci (fail-safe) agar peta yang
- * rusak tidak membuat materi lolos tanpa validasi.
+ * Materi yang tidak terdaftar di peta tidak muncul di hasil — artinya terbuka.
  *
  * Pengecualian: sub-materi yang SUDAH master tidak pernah terkunci. Gerbang ini
  * memakai prasyarat untuk menduga kesiapan siswa, sedangkan nilai sumatif >=80
@@ -165,26 +92,26 @@ export function hitungUrutanTopologis(petaPrasyarat) {
  * mengalahkan dugaan; tanpa ini siswa yang menguasai materi lewat urutan lain
  * (atau di bawah kurikulum lama) justru terhalang mengulang materinya sendiri.
  *
- * @returns {Object} peta { subMateriTernormalisasi: { locked, prereqBelum, siklus } }
+ * @returns {Object} peta { subMateriTernormalisasi: { locked, prereqBelum } }
  */
 export function hitungStatusKunci(petaPrasyarat, setMaster) {
-  const master = setMaster instanceof Set ? setMaster : new Set(setMaster || []);
-  const { prasyaratDari, namaAsli } = bangunGraf(petaPrasyarat);
-  const { siklus } = hitungUrutanTopologis(petaPrasyarat);
-  const setSiklus = new Set(siklus);
+  const master =
+    setMaster instanceof Set ? setMaster : new Set(setMaster || []);
 
   const status = {};
-  prasyaratDari.forEach((daftarPrasyarat, simpul) => {
-    const prereqBelum = daftarPrasyarat
-      .filter((prasyarat) => !master.has(prasyarat))
-      .map((prasyarat) => namaAsli.get(prasyarat) || prasyarat);
+  Object.entries(petaPrasyarat || {}).forEach(([target, daftarPrasyarat]) => {
+    const kunci = normalisasiNama(target);
+    if (!kunci) return;
 
-    const terlibatSiklus = setSiklus.has(simpul);
-    status[simpul] = {
-      locked:
-        !master.has(simpul) && (terlibatSiklus || prereqBelum.length > 0),
+    // Nama prasyarat dibiarkan apa adanya supaya bisa ditampilkan ke siswa.
+    const prereqBelum = (daftarPrasyarat || []).filter((prasyarat) => {
+      const p = normalisasiNama(prasyarat);
+      return p && p !== kunci && !master.has(p);
+    });
+
+    status[kunci] = {
+      locked: !master.has(kunci) && prereqBelum.length > 0,
       prereqBelum,
-      siklus: terlibatSiklus,
     };
   });
 
@@ -192,29 +119,60 @@ export function hitungStatusKunci(petaPrasyarat, setMaster) {
 }
 
 /**
- * Diagnostik kurikulum untuk admin.
+ * Diagnostik untuk peta prasyarat yang disusun manual.
  *
- * Menandai prasyarat yang MUSTAHIL dicapai: sub-materi dengan jumlah soal di
- * bawah SOAL_MIN tidak akan pernah bisa di-master, sehingga seluruh rantai
- * sesudahnya terkunci permanen.
+ * Tabel tulisan tangan rentan salah secara senyap, jadi tiga hal diperiksa:
  *
- * @param {Object} petaPrasyarat  PETA_PRASYARAT_MANUAL
- * @param {Object} petaJumlahSoal { subMateriTernormalisasi: jumlahSoal }
+ *  1. `namaTakDikenal` — salah ketik. Nama yang tidak ada di urutan kurikulum
+ *     tak akan pernah cocok dengan riwayat siswa, sehingga materinya terkunci
+ *     selamanya tanpa pesan salah apa pun.
+ *  2. `urutanMundur` — prasyarat yang ditulis SESUDAH materinya dalam urutan
+ *     mengajar. Ini pengganti deteksi siklus: pada daftar berurut, siklus
+ *     mustahil terbentuk selama setiap prasyarat berada lebih awal.
+ *  3. `prasyaratTakMungkinMaster` — prasyarat dengan soal < SOAL_MIN. Materi
+ *     seperti itu tak akan pernah bisa di-master, jadi semua materi di
+ *     belakangnya terkunci permanen.
+ *
+ * @param {Object}   petaPrasyarat   { "Nama Materi": ["Prasyarat", ...] }
+ * @param {string[]} urutanKurikulum urutan mengajar, mis. Object.keys(PETA_TAHAPAN)
+ * @param {Object}   petaJumlahSoal  { subMateriTernormalisasi: jumlahSoal }
  */
 export function validasiKurikulum(
   petaPrasyarat,
+  urutanKurikulum = [],
   petaJumlahSoal = {},
   ambang = MASTERY,
 ) {
-  const { anak, namaAsli } = bangunGraf(petaPrasyarat);
-  const { siklus } = hitungUrutanTopologis(petaPrasyarat);
-
-  const semuaPrasyarat = new Set();
-  Object.values(petaPrasyarat || {}).forEach((daftar) =>
-    (daftar || []).forEach((p) => semuaPrasyarat.add(normalisasiNama(p))),
+  const posisi = new Map(
+    urutanKurikulum.map((nama, i) => [normalisasiNama(nama), i]),
   );
 
-  // Seluruh materi hilir yang ikut terkunci bila satu simpul bermasalah.
+  const namaTakDikenal = [];
+  const urutanMundur = [];
+  const prasyaratDipakai = new Map(); // ternormalisasi -> nama asli
+  const anak = new Map(); // prasyarat -> [materi yang membutuhkannya]
+
+  Object.entries(petaPrasyarat || {}).forEach(([target, daftarPrasyarat]) => {
+    const t = normalisasiNama(target);
+    if (!posisi.has(t)) namaTakDikenal.push(target);
+
+    (daftarPrasyarat || []).forEach((prasyarat) => {
+      const p = normalisasiNama(prasyarat);
+      if (!posisi.has(p)) {
+        namaTakDikenal.push(prasyarat);
+        return;
+      }
+      prasyaratDipakai.set(p, prasyarat);
+      if (!anak.has(p)) anak.set(p, []);
+      anak.get(p).push(t);
+
+      if (posisi.has(t) && posisi.get(p) >= posisi.get(t)) {
+        urutanMundur.push({ subMateri: target, prasyarat });
+      }
+    });
+  });
+
+  // Seluruh materi hilir yang ikut terkunci bila satu prasyarat bermasalah.
   const hilir = (mulai) => {
     const hasil = new Set();
     const antrian = [mulai];
@@ -230,11 +188,11 @@ export function validasiKurikulum(
   };
 
   const prasyaratTakMungkinMaster = [];
-  semuaPrasyarat.forEach((prasyarat) => {
+  prasyaratDipakai.forEach((namaAsli, prasyarat) => {
     const jumlahSoal = petaJumlahSoal[prasyarat] ?? 0;
     if (jumlahSoal < ambang.SOAL_MIN) {
       prasyaratTakMungkinMaster.push({
-        subMateri: namaAsli.get(prasyarat) || prasyarat,
+        subMateri: namaAsli,
         jumlahSoal,
         dibutuhkan: ambang.SOAL_MIN,
         materiTerkunci: hilir(prasyarat).size,
@@ -243,8 +201,12 @@ export function validasiKurikulum(
   });
 
   return {
+    namaTakDikenal,
+    urutanMundur,
     prasyaratTakMungkinMaster,
-    siklus: siklus.map((s) => namaAsli.get(s) || s),
-    valid: prasyaratTakMungkinMaster.length === 0 && siklus.length === 0,
+    valid:
+      namaTakDikenal.length === 0 &&
+      urutanMundur.length === 0 &&
+      prasyaratTakMungkinMaster.length === 0,
   };
 }

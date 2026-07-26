@@ -1,8 +1,14 @@
 # RENCANA FITUR: "Kunci Materi" (Prerequisite Gating)
 
-> **Tujuan:** Sebuah sub-materi bisa dibuka **hanya jika** semua materi prasyaratnya sudah berstatus **`master`**. Fitur ini menggabungkan **Algoritma Kahn (topological sort)** yang sudah ada dengan **peta prasyarat hard-code** (`PETA_PRASYARAT_MANUAL`).
+> **Tujuan:** Sebuah sub-materi di tab Trigonometri bisa dibuka **hanya jika** semua materi prasyaratnya sudah berstatus **`master`**. Prasyaratnya disusun **manual oleh guru** dalam tabel `PRASYARAT_TRIGONOMETRI`; urutan tampil kartu diambil dari urutan mengajar di `PETA_TAHAPAN`.
 
-**Status:** keputusan desain sudah final (§2). Siap implementasi setelah **Gate Pra-Rilis** (§8) lolos.
+**Status:** terimplementasi dan terverifikasi terhadap Firestore live (§7).
+
+> ### ⚠️ PERUBAHAN ARAH 2026-07-26 — algoritma diganti tabel manual
+>
+> Rencana ini semula dibangun di atas **Algoritma Kahn (topological sort)** dan peta prasyarat yang **diturunkan dari data soal**. Keduanya sudah **dibongkar**. Alasannya dicatat di **§12**; ringkasnya: `konsep_prasyarat` per-soal mencatat apa yang dibutuhkan untuk *mengerjakan* soal, bukan apa yang harus *dipelajari lebih dulu*, sehingga penurunan otomatis membalik 30 dari 53 urutan mengajar.
+>
+> Bagian yang masih menyebut Kahn, `PETA_PRASYARAT_MANUAL`, atau deteksi siklus sebagai rencana **sudah diperbarui**. Hasil Gate A dan Gate B (§8) sengaja **dipertahankan apa adanya** sebagai catatan sejarah — angka-angkanya benar untuk peta yang berlaku saat itu, dan justru itulah yang memicu perubahan arah ini.
 
 ---
 
@@ -10,15 +16,17 @@
 
 | Komponen | Berkas | Kondisi sekarang |
 |---|---|---|
-| Peta prasyarat (hard-code) | `public/js/utils/kurikulumData.js` → `PETA_PRASYARAT_MANUAL` | Rantai linear `target → [prasyarat]`. Sudah ada. |
-| Graf + Algoritma Kahn | `public/js/pages/pilihMateri.js` → `bangunGraphKurikulum()` + BFS `inDegree` | Sudah memakai Kahn, tapi **hanya untuk mengurutkan** kartu, bukan mengunci. Prasyarat difilter per-tab (`materiSahDiTabIni`) — filter ini **akan dilepas** untuk evaluasi kunci. |
+| Peta prasyarat (hard-code) | `public/js/utils/kurikulumData.js` → `PETA_PRASYARAT_MANUAL` | Rantai linear `target → [prasyarat]`. Sudah ada. **→ Diganti `PRASYARAT_TRIGONOMETRI` (§12).** |
+| Graf + Algoritma Kahn | `public/js/pages/pilihMateri.js` → `bangunGraphKurikulum()` + BFS `inDegree` | Sudah memakai Kahn, tapi **hanya untuk mengurutkan** kartu, bukan mengunci. **→ Dihapus; urutan kini dari `PETA_TAHAPAN` (§12).** |
 | Render kartu | `public/js/views/pilihMateriView.js` → `createMateriCardHTML()` | Kartu selalu bisa diklik; belum ada state terkunci. |
 | Klik → navigasi | `pilihMateri.js` listener `wadah-konten-tab` | Selalu mengarahkan ke `latihan.html`/halaman formatif. |
 | Definisi "master" | `services/gelarService.js` (`nilai>=80` & `>=10 soal`) dan `admin/ketuntasanController.js` (`sumatif_lulus`) | Logika **terduplikasi** di dua tempat, belum ada helper murni bersama. Definisi final (§3) **identik** dengan aturan `gelarService`. |
 | Sumber data hasil | koleksi `hasil_latihan` (sumatif **dan** draf formatif), `progres_belajar` (log per-soal) | `getRiwayatLatihanSiswa(nis)` sudah tersedia di `latihanService.js`. |
 | Identitas siswa | `localStorage.nis_siswa` | Tersedia di sisi klien. |
 
-**Kesimpulan:** infrastruktur graf + Kahn sudah ada. Yang belum ada: (a) definisi "master" tunggal & murni, (b) lapisan penilaian status kunci, (c) tampilan & pemblokiran klik kartu terkunci, (d) diagnostik kurikulum untuk admin.
+**Kesimpulan (saat rencana ini ditulis):** infrastruktur graf + Kahn sudah ada. Yang belum ada: (a) definisi "master" tunggal & murni, (b) lapisan penilaian status kunci, (c) tampilan & pemblokiran klik kartu terkunci, (d) diagnostik kurikulum untuk admin.
+
+> **Ditinjau ulang 2026-07-26:** poin (a)–(c) selesai. Infrastruktur Kahn ternyata **bukan aset melainkan beban** — lihat §12.
 
 ---
 
@@ -34,6 +42,12 @@
 | 6 | Sub-materi belum dipetakan | **Terbuka** (dianggap titik masuk) |
 | 7 | UX klik kartu terkunci | **Toast** berisi daftar prasyarat yang belum master |
 | 8 | Materi yang sendirinya sudah master | **Tidak pernah dikunci**, walau prasyaratnya belum *(baru 2026-07-25, temuan uji manual)* |
+| 9 | Sumber peta prasyarat | **Disusun manual oleh guru**, bukan diturunkan dari `konsep_prasyarat` *(2026-07-26, lihat §12)* |
+| 10 | Lingkup penguncian | **Hanya tab Trigonometri.** Tab Prasyarat sepenuhnya terbuka *(2026-07-26)* |
+| 11 | Sumber urutan kartu | **`PETA_TAHAPAN`** (urutan mengajar di kelas), bukan hasil topological sort *(2026-07-26)* |
+
+### Dasar keputusan #9–#11
+Lihat §12. Inti: urutan mengajar adalah keputusan pedagogis milik guru, dan tidak dapat disimpulkan dari data soal. Keputusan #10 menggantikan keputusan #1 dalam praktik — prasyarat masih boleh **lintas-tab** (materi Trigonometri boleh mensyaratkan Teorema Pythagoras), tetapi yang **dikunci** hanya kartu di tab Trigonometri.
 
 ### Dasar keputusan #8
 Gerbang ini memakai prasyarat untuk **menduga** kesiapan siswa. Nilai sumatif ≥80 atas materi itu sendiri adalah **bukti langsung** kesiapan, dan bukti langsung mengalahkan dugaan. Tanpa aturan ini, siswa yang menguasai materi lewat urutan lain — atau di bawah kurikulum lama — justru terhalang mengulang materinya sendiri untuk memperbaiki nilai. Aturan ini juga mengalahkan fail-safe siklus (§4), karena penyebab terkuncinya di situ adalah peta yang rusak, bukan siswa yang belum siap.
@@ -42,6 +56,8 @@ Uji manual menemukan **7 kasus nyata** pada satu akun saja, jadi ini bukan kasus
 
 ### Catatan penting atas kombinasi #4 + #5
 Kombinasi **strict** + **prasyarat bermasalah tetap memblokir** berpotensi mengunci banyak siswa sekaligus di hari rilis. Karena semua rantai di `PETA_PRASYARAT_MANUAL` bersifat **linear**, satu simpul bermasalah dapat mengunci seluruh rantai sesudahnya. Karena itu **§8 Gate Pra-Rilis wajib dijalankan dan dinyatakan lolos sebelum fitur diaktifkan** — bukan langkah opsional.
+
+> **Diperbarui 2026-07-26:** peta manual (§12) memperlonggar risiko ini secara struktural. Rantai terpanjang kini **6 langkah**, bukan 25, dan tab Prasyarat tidak dikunci sama sekali — jadi satu materi bermasalah tidak lagi mematikan seluruh rantai di belakangnya.
 
 Revisi #3 **meringankan** risiko dari sisi siswa (definisi master kini sama dengan aturan gelar yang sudah berjalan), tapi **memperberat** risiko dari sisi data soal — lihat **§4.1**, ambang 10 soal sekarang menjadi satu-satunya penentu dan bisa mengunci rantai secara permanen.
 
@@ -71,28 +87,28 @@ Ambang `80` dan `10` diangkat ke konstanta `MASTERY` di `constants.js`.
 
 ---
 
-## 4. Bagaimana Kahn + Hard-code Digabung untuk Mengunci
+## 4. Bagaimana Tabel Manual Dipakai untuk Mengunci
 
-Algoritma Kahn tidak lagi hanya mengurutkan, tapi menjadi **gerbang unlock bertahap**:
+*(Direvisi 2026-07-26. Versi sebelumnya memakai Algoritma Kahn; lihat §12.)*
+
+Tidak ada algoritma graf. Penguncian hanyalah pencarian di tabel:
 
 ```
-INPUT : daftar sub-materi, PETA_PRASYARAT_MANUAL (penuh, tanpa filter tab),
-        setMaster (sub-materi yang sudah master), katalogMateri (yang punya soal > 0)
+INPUT : PRASYARAT_TRIGONOMETRI (tabel manual, hanya tab Trigonometri),
+        setMaster (sub-materi yang sudah master)
 PROSES:
-  1. Bangun graf berarah prasyarat→target + inDegree
-  2. Kahn BFS untuk urutan topologis
-  3. Untuk tiap node, tandai:
-       prereqBelum = prasyarat langsung yang ∉ setMaster
-       locked      = prereqBelum.length > 0
+  untuk tiap entri (materi → daftar prasyarat):
+    prereqBelum = prasyarat yang ∉ setMaster
+    locked      = (materi ∉ setMaster) ∧ (prereqBelum tidak kosong)
 OUTPUT: { subMateri → { locked, prereqBelum } }
 ```
 
 Sifat penting:
-- **Transitivitas otomatis** — cukup cek prasyarat **langsung**. Jika prasyarat terkunci maka ia belum master, sehingga node sesudahnya ikut terkunci.
-- **Node tanpa prasyarat** → `locked = false` (keputusan #6).
-- **Lintas-tab** (keputusan #1) — evaluasi kunci memakai peta **penuh**. Pengurutan kartu tetap boleh per-tab agar tampilan tidak berubah; hanya penguncian yang global.
-- **Prasyarat yang tak mungkin di-master** (keputusan #5) — tetap masuk `prereqBelum` (memblokir), **dan** dicatat ke daftar diagnostik untuk admin (§5.5). Lihat peringatan §4.1 — kriterianya **bukan** hanya "tanpa soal".
-- **Deteksi siklus** — node yang tak pernah keluar dari antrian Kahn (`inDegree > 0` tersisa) menandakan siklus di peta hard-code → diperlakukan **terkunci** (fail-safe) + masuk diagnostik admin.
+- **Transitivitas otomatis** — cukup cek prasyarat **langsung**. Jika prasyarat terkunci maka ia belum master, sehingga materi sesudahnya ikut tertahan.
+- **Materi yang tidak terdaftar di tabel** → tidak muncul di hasil, artinya **terbuka** (keputusan #6). Inilah cara tab Prasyarat dibiarkan bebas: materinya memang tidak ditulis (keputusan #10).
+- **Prasyarat boleh lintas-tab** (keputusan #1) — `Rasio Trigonometri Dasar` mensyaratkan `Teorema Pythagoras` yang ada di tab Prasyarat. Yang tidak pernah dikunci adalah **kartunya**, bukan perannya sebagai syarat.
+- **Prasyarat yang tak mungkin di-master** (keputusan #5) — tetap masuk `prereqBelum` (memblokir), **dan** dicatat ke daftar diagnostik untuk admin (§5.5). Lihat peringatan §4.1.
+- **Siklus tidak lagi mungkin terbentuk**, jadi fail-safe siklus dihapus. Penggantinya `urutanMundur` di `validasiKurikulum`: pada daftar berurut, satu-satunya cara peta memutar balik adalah menulis prasyarat **sesudah** materinya. Itu perbandingan indeks, bukan penelusuran graf — dan pesan salahnya jauh lebih berguna bagi penyusun kurikulum ("prasyarat C ditulis sesudah A") ketimbang "ada siklus".
 
 ### 4.1 ⚠️ RISIKO BARU akibat revisi #3: ambang `SOAL_MIN` bisa mengunci permanen
 
@@ -115,8 +131,10 @@ Keputusan ini **ditunda sampai ada angka dari Gate A** — bisa jadi tidak ada s
 ### 5.1 Utils — **BARU** `public/js/utils/kurikulumEngine.js` (fungsi murni, dapat di-Jest)
 - `isSubMateriMaster(riwayatSub, ambang)` → bool — menerapkan definisi §3.
 - `hitungSetMaster(riwayatLatihan)` → `Set<string>` — sub-materi yang sudah master.
-- `hitungStatusKunci(daftarSubMateri, petaPrasyarat, setMaster)` → `{ [subLower]: { locked, prereqBelum } }` — Kahn + gerbang unlock (§4).
-- `validasiKurikulum(petaPrasyarat, metaDataMap, ambang)` → `{ prasyaratTakMungkinMaster[], siklus[] }` — untuk diagnostik admin (keputusan #5). Menandai prasyarat dengan `jumlah_soal < ambang.SOAL_MIN`, **termasuk** yang tidak ada di katalog (§4.1).
+- `hitungStatusKunci(petaPrasyarat, setMaster)` → `{ [subLower]: { locked, prereqBelum } }` — gerbang unlock (§4).
+- `validasiKurikulum(petaPrasyarat, urutanKurikulum, petaJumlahSoal, ambang)` → `{ namaTakDikenal[], urutanMundur[], prasyaratTakMungkinMaster[], valid }` — penjaga tabel manual (§12.3) sekaligus bahan diagnostik admin (keputusan #5).
+
+*(Direvisi 2026-07-26: `hitungUrutanTopologis()` dihapus bersama Kahn; `validasiKurikulum` bertambah parameter `urutanKurikulum` dan mengganti keluaran `siklus` dengan `namaTakDikenal` + `urutanMundur`.)*
 
 Semua murni: tanpa DOM, tanpa Firestore.
 
@@ -128,7 +146,8 @@ Pakai `getRiwayatLatihanSiswa(nis)` yang sudah ada. *(Refactor opsional §7: ara
 
 ### 5.4 Controller — `public/js/pages/pilihMateri.js`
 - Di `muatMateri()`: ambil `nis` dari localStorage → `getRiwayatLatihanSiswa(nis)` → `hitungSetMaster(riwayat)`.
-- Hitung `hitungStatusKunci()` **sekali** dengan peta penuh (bukan per-tab), lalu pakai hasilnya saat merender tiap tab.
+- Hitung `hitungStatusKunci()` **sekali** dengan tabel penuh, lalu pakai hasilnya saat merender tiap tab.
+- **Urutan kartu** (keputusan #11): `urutkanMateriTab()` menyaring `Object.keys(PETA_TAHAPAN)` sesuai isi tab. Materi yang belum tercantum di sana ditempel di akhir agar tidak hilang dari layar hanya karena kurikulumnya belum diperbarui.
 - Teruskan `{ locked, prereqBelum }` ke `createMateriCardHTML`.
 - **Reaktif terhadap mode (revisi #2):** kunci hanya aktif untuk mode ujian. Simpan `prereqBelum` di `data-prereq-belum` pada kartu, lalu fungsi `segarkanStatusKunci(mode)` menyalakan/mematikan kelas `.locked` — dipanggil saat render **dan** dari `ubahTampilanMode()` setiap kali radio mode berubah.
 - Listener klik: jika kartu terkunci **dan** mode aktif adalah mode ujian → **cegah navigasi**, tampilkan toast berisi `prereqBelum` (keputusan #7).
@@ -155,15 +174,15 @@ Penguncian ini **UX sisi-klien**, bukan kontrol keamanan. Siswa yang paham tekni
 1. `isSubMateriMaster` — lolos saat nilai≥80 ∧ soal≥10 ∧ mode ujian ∧ bukan draf; gagal bila salah satu tak terpenuhi; mode lama (`normal`/`acak`) tetap dihitung; **formatif diabaikan sepenuhnya** (revisi #3).
 2. `hitungSetMaster` — sumatif lulus **tanpa** formatif apa pun → tetap **master**.
 3. `hitungStatusKunci`:
-   - Rantai `A → B → C`, `setMaster = {}` → hanya `A` terbuka.
+   - Rantai `A → B → C`, `setMaster = {}` → `B` dan `C` terkunci.
    - `setMaster = {A}` → `B` terbuka, `C` terkunci.
-   - Node tanpa prasyarat selalu terbuka (keputusan #6).
+   - Materi tak terdaftar tidak muncul di hasil = terbuka (keputusan #6).
    - Prasyarat lintas-tab tetap dievaluasi (keputusan #1).
-   - Prasyarat yang belum master → memblokir (keputusan #5).
-   - Siklus → node terlibat terkunci, tidak crash.
+   - Materi yang sendirinya master tidak pernah terkunci (keputusan #8).
    - `prereqBelum` memuat nama prasyarat yang tepat (untuk toast).
-4. `validasiKurikulum` — mendeteksi prasyarat dengan `jumlah_soal < SOAL_MIN`, prasyarat di luar katalog, dan siklus (§4.1).
-5. **Data legacy defensif** — record tanpa `nilai`, tanpa `mode_latihan`, atau tanpa `detail_jawaban` tidak menyebabkan exception.
+4. `validasiKurikulum` — mendeteksi `namaTakDikenal` (salah ketik), `urutanMundur` (prasyarat ditulis sesudah materinya), dan prasyarat dengan `jumlah_soal < SOAL_MIN` (§4.1).
+5. **Integritas tabel produksi** — `PRASYARAT_TRIGONOMETRI` diuji langsung, bukan hanya lewat fixture; lihat §12.3.
+6. **Data legacy defensif** — record tanpa `nilai`, tanpa `mode_latihan`, atau tanpa `detail_jawaban` tidak menyebabkan exception.
 
 Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 
@@ -173,7 +192,7 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 
 1. [x] **Gate Pra-Rilis (§8)** — Gate A lolos, Gate B menghasilkan keputusan A+C.
 2. [x] Tambah konstanta `MASTERY` di `utils/constants.js`.
-3. [x] Buat `utils/kurikulumEngine.js` (§5.1) — termasuk `apakahModeDikunci()` & `hitungUrutanTopologis()` (kedalaman untuk tata letak §11).
+3. [x] Buat `utils/kurikulumEngine.js` (§5.1) — termasuk `apakahModeDikunci()`. *(`hitungUrutanTopologis()` sempat ada, lalu dihapus 2026-07-26 — §12.)*
 4. [x] `tests/utils/kurikulumEngine.test.js` — **32 test hijau**.
 5. [x] Perbarui `views/pilihMateriView.js` (state terkunci, lencana master, toast, escaping) + `tests/views/pilihMateriView.test.js` — **10 test hijau**.
 6. [x] Perbarui `pages/pilihMateri.js` (riwayat, hitung kunci, `segarkanStatusKunci()` reaktif mode, blokir klik, fail-safe).
@@ -181,8 +200,8 @@ Semua wajib hijau sebelum commit (aturan global [AGENTS.md](AGENTS.md)).
 8. [ ] Tambah panel diagnostik kurikulum di `admin.html` (keputusan #5). *Prioritas turun: Gate A menemukan nol masalah, jadi panel ini bersifat pencegahan untuk materi yang ditambahkan nanti.*
 9. [x] Uji manual dengan **akun siswa sungguhan** — lolos 7/7, memunculkan keputusan #8. Lihat "Uji manual" di bawah.
 10. [ ] (Opsional) Refactor `gelarService` & `ketuntasanController` memakai helper baru (DRY).
-11. [ ] **Opsi A Gate B**: perkaya peta prasyarat (§10.1–10.2) — pekerjaan kurikulum.
-12. [ ] Visualisasi peta materi (§11) — sesudah langkah 11.
+11. [x] ~~**Opsi A Gate B**: turunkan peta dari `konsep_prasyarat`~~ → **dibatalkan**, diganti tabel manual. Lihat §12.
+12. [ ] Visualisasi peta materi (§11) — prasyaratnya kini terpenuhi lewat §12.
 
 ### Verifikasi yang sudah dilakukan (2026-07-25)
 
@@ -282,7 +301,7 @@ Terbukti di data: siswa 0-master → **2** terbuka (tepat 2 akar: `operasi aritm
 **Verdikt Gate B: ⏸️ TERTAHAN** — bukan karena cacat teknis, tapi karena bentuk kurikulumnya. Lihat §10 untuk opsi mitigasi; keputusan ada di Anda (kriteria lolos §8.B = angka diterima secara sadar).
 
 ### Catatan status tab Eksponen & Logaritma
-`metadata/statistik_soal` live hanya memuat **55** sub-materi — sub-materi Eksponen & Logaritma **belum ada** karena soalnya belum dimasukkan (dikonfirmasi pemilik proyek, akan menyusul). Jadi Temuan Tambahan Gate A soal "2 tab tanpa gerbang" **belum relevan sekarang** (tab-nya praktis kosong; `pilihMateri` melewati materi dengan `jumlah_soal = 0`). Yang perlu diingat: **saat soalnya nanti dimasukkan, materi Eksponen/Logaritma wajib sekalian dipetakan ke `PETA_PRASYARAT_MANUAL`**, kalau tidak kedua tab itu akan sepenuhnya tanpa kunci.
+`metadata/statistik_soal` live hanya memuat **55** sub-materi — sub-materi Eksponen & Logaritma **belum ada** karena soalnya belum dimasukkan (dikonfirmasi pemilik proyek, akan menyusul). Jadi Temuan Tambahan Gate A soal "2 tab tanpa gerbang" **belum relevan sekarang** (tab-nya praktis kosong; `pilihMateri` melewati materi dengan `jumlah_soal = 0`). Yang perlu diingat: **saat soalnya nanti dimasukkan, perlu diputuskan apakah kedua tab itu ikut digerbangkan** — kalau ya, tabel prasyaratnya disusun manual dengan cara yang sama seperti §12; kalau tidak, keduanya tetap sepenuhnya terbuka.
 
 ### Skrip Gate B
 
@@ -352,11 +371,13 @@ Hub terbesar: `operasi pecahan` (32 anak), `manipulasi aljabar dasar` (27), `ope
 
 Opsi ini **tidak saling eksklusif** — B atau C bisa dipakai sebagai jembatan sementara sambil A dikerjakan.
 
-### ✅ KEPUTUSAN GATE B (2026-07-25): **A + C**
+### ✅ KEPUTUSAN GATE B (2026-07-25): **A + C** *(opsi A kemudian dibatalkan — §12)*
 
 - **C dipakai sekarang** → merevisi keputusan #2: **formatif selalu terbuka, hanya ujian yang dikunci.** Siswa tak akan pernah terkunci dari belajar; gerbang hanya berlaku saat hendak *dinilai*. Ini yang membuat Gate B lolos: siswa yang mentok tetap punya 55 materi untuk dipelajari.
 - **A dikerjakan menyusul** → memperkaya peta prasyarat (§10.1–10.2) sebagai pekerjaan kurikulum terpisah, yang nanti sekaligus membuka jalan visualisasi pohon (§11).
 - **Urutan kerja:** fitur kunci (logika) lebih dulu, lalu A, lalu visualisasi.
+
+> **Dibatalkan 2026-07-26.** Opsi A dikerjakan sampai tuntas (peta 75 sisi, 17 node bercabang), lalu **dibuang** setelah terbukti melawan urutan mengajar. Tujuannya — peta bercabang — tetap tercapai lewat tabel manual: 44 sisi, kedalaman 6, lapisan pembukaan `[2,3,6,7,6,1]`. Rinciannya di §12.
 
 **Implikasi teknis penting dari C:** status terkunci sebuah kartu sekarang **bergantung pada mode yang sedang dipilih** di radio `mode_latihan`. Kartu harus **memperbarui tampilan kuncinya saat mode diganti** — bukan hanya sekali saat render. Lihat §5.4.
 
@@ -364,7 +385,7 @@ Opsi ini **tidak saling eksklusif** — B atau C bisa dipakai sebagai jembatan s
 
 ## 11. Visualisasi Peta Materi (fase terpisah, sesudah fitur kunci)
 
-**Prasyarat mutlak:** §10.1–10.2 selesai. Tanpa data bercabang, visual pohon tidak ada gunanya.
+**Prasyarat mutlak:** data prasyarat harus bercabang. **✅ Terpenuhi sejak §12** — tabel manual punya 17 materi berprasyarat ganda dan kedalaman 6, jadi visual berlapis sudah bermakna.
 
 ### 11.1 Pilihan tata letak
 
@@ -379,14 +400,95 @@ Opsi ini **tidak saling eksklusif** — B atau C bisa dipakai sebagai jembatan s
 
 ### 11.2 Implementasi
 
-- **SVG murni, tanpa dependensi** — konsisten dengan gaya proyek (vanilla ES modules, tanpa build step). Tata letak berlapis = kedalaman topologis (Kahn, **sudah ada** di `kurikulumEngine`) → kolom; urutan dalam kolom diminimalkan persilangannya. Sekitar 100–150 baris; tidak perlu d3.
-- **Satu sumber logika** — visual ini adalah **View murni** di atas `hitungStatusKunci()` yang sama. Tambahkan `hitungKedalaman()` ke `kurikulumEngine.js` agar layout dan kunci memakai satu Kahn yang sama (DRY).
+- **SVG murni, tanpa dependensi** — konsisten dengan gaya proyek (vanilla ES modules, tanpa build step). Sekitar 100–150 baris; tidak perlu d3.
+- **Kolom = lapisan pembukaan, bukan kedalaman topologis.** Kahn sudah dihapus (§12) dan **jangan dihidupkan lagi hanya untuk tata letak**. Lapisan dihitung dengan mensimulasikan `hitungStatusKunci()` berulang: yang terbuka pada iterasi ke-N masuk kolom ke-N. Ini persis yang dilakukan test "seluruh tab Trigonometri dapat dibuka" (§12.3), dan hasilnya lebih jujur bagi siswa — kolom berarti "kapan ini terbuka bagimu", bukan "berapa jauh dari akar".
+- **Satu sumber logika** — visual ini adalah **View murni** di atas `hitungStatusKunci()` yang sama.
 - **Status simpul** = 3 keadaan: 🔒 terkunci (redup) / ▶ siap (menonjol) / ✅ master (terisi). Ini membuat "kunci materi" bisa **dilihat**, bukan cuma dirasakan saat diklik.
 - **Mobile** — 16 kolom tidak muat di layar ponsel. Perlu pan + pinch-zoom (transform pada `<g>`), plus tombol "fokus ke materi saya" yang men-scroll ke frontier siswa. Uji di Safari iOS (proyek ini punya riwayat bug Safari).
 - **Aksesibilitas & fallback** — tampilan daftar sekarang tetap dipertahankan sebagai mode alternatif, jangan dihapus.
 
 ---
 
+## 12. PERUBAHAN ARAH (2026-07-26): Algoritma Diganti Tabel Manual
+
+Keputusan pemilik proyek: **urutan materi disusun manual oleh guru; sistem hanya menegakkannya.** Algoritma Kahn dibongkar, peta turunan dibuang.
+
+### 12.1 Mengapa penurunan otomatis gagal
+
+Opsi A (§10.3) dikerjakan sampai tuntas lebih dulu: alias dinormalisasi, 2 siklus dihilangkan, ambang bobot 25% dipasang, transitive reduction diterapkan. Hasilnya secara angka bagus — 75 sisi, 17 node bercabang, kedalaman 11. Tapi dua temuan membatalkannya:
+
+1. **Urutan mengajar terbalik di 30 dari 53 pasangan.** `Persamaan Trigonometri Bentuk Khusus` bisa terbuka sebelum `Lanjutan`; `Periode` sebelum `Amplitudo`. Sebabnya mendasar: `konsep_prasyarat` mencatat apa yang dibutuhkan untuk **mengerjakan** sebuah soal, bukan apa yang harus **dipelajari lebih dulu**. Soal "Bentuk Khusus" memang tidak membutuhkan materi "Lanjutan".
+2. **Prasyarat konseptual tidak tercatat.** `Aturan Kuadran` menyebut `Rasio Trigonometri Dasar` hanya di 2 dari 20 soal (10%), jadi tersaring ambang — padahal mustahil mengajarkan kuadran tanpa rasio.
+
+Keduanya harus ditambal dengan aturan koreksi buatan. **Kalau algoritmanya butuh dua tambalan agar tidak melawan urutan guru, maka urutan guru yang benar dan algoritmanya yang mengganggu.**
+
+Analisis per-soal itu **tidak sia-sia**: angka persentasenya dipakai sebagai bahan pertimbangan saat menyusun tabel manual, dan tersimpan sebagai komentar `// 63%` di sebelah tiap prasyarat. Perannya berubah dari penentu menjadi penasihat.
+
+### 12.2 Bentuk sesudahnya
+
+| | Rantai lama | Peta turunan (dibuang) | **Tabel manual** |
+|---|---|---|---|
+| Sisi | 53 | 75 | **44** |
+| Materi berprasyarat ganda | 0 | 17 | **17** |
+| Kedalaman | 29 | 11 | **6** |
+| Lingkup kunci | 2 tab | 2 tab | **hanya Trigonometri** |
+
+Lapisan pembukaan tab Trigonometri: `[2, 3, 6, 7, 6, 1]` — 25 materi tuntas dalam 6 lapis.
+
+**Konsekuensi yang disengaja** (disetujui pemilik proyek): `Rasio Trigonometri Dasar` digerbangkan oleh `Teorema Pythagoras`, sehingga siswa yang belum menyentuh tab Prasyarat melihat **0 materi terbuka** di tab Trigonometri. Tab Prasyarat menjadi jalur wajib, bukan opsional.
+
+### 12.3 Penjaga tabel manual
+
+Tabel tulisan tangan salah secara **senyap**: materi yang tak pernah terbuka tidak melempar error, ia hanya hilang dari jangkauan siswa. Empat pemeriksaan menggantikan jaminan yang dulu diberikan algoritma:
+
+| Pemeriksaan | Menangkap | Di mana |
+|---|---|---|
+| `namaTakDikenal` | salah ketik (`Teorema Pytagoras`) | test + `validasiKurikulum` |
+| `urutanMundur` | prasyarat ditulis sesudah materinya — **pengganti deteksi siklus** | test + `validasiKurikulum` |
+| kunci di dalam blok Trigonometri | materi tab Prasyarat ikut terkunci | test |
+| tidak ada materi yatim | materi yang mustahil dibuka walau semua prasyarat tuntas | test |
+| prasyarat ber-soal < 10 | deadlock permanen (§4.1) | `gate-a-audit-kurikulum.mjs` |
+
+Empat yang pertama jalan di Jest tiap kali tabel disunting. Yang kelima butuh data bank soal, jadi tetap di skrip Gate A.
+
+### 12.4 Yang dibuang dari kode
+
+| Dihapus | Penggantinya | Δ baris |
+|---|---|---|
+| `bangunGraphKurikulum()` + BFS di `pilihMateri.js` | `Object.keys(PETA_TAHAPAN)` | −40 |
+| `hitungUrutanTopologis()` di `kurikulumEngine.js` | cek indeks di `validasiKurikulum` | −38 |
+| fail-safe siklus di `hitungStatusKunci` | mustahil terbentuk pada daftar berurut | — |
+
+`PETA_PRASYARAT_MANUAL` → `PRASYARAT_TRIGONOMETRI`. `latihanSpesialController` ikut disesuaikan: pengurutan sampel soal beralih ke `PETA_TAHAPAN`, karena tabel prasyarat kini hanya memuat satu tab.
+
+### 12.5 Verifikasi (2026-07-26)
+
+- **69 test hijau**, 6 suite — termasuk 5 test integritas tabel produksi (§12.3).
+- **Gate A dijalankan ulang: lolos** — nol prasyarat bersoal < 10.
+- **Uji live** dengan akun NIS 1 terhadap Firestore, siswa login sendiri, tanpa mengerjakan soal:
+
+| Cek | Hasil |
+|---|---|
+| Tab Prasyarat | 30 kartu, **0 terkunci** ✅ |
+| Tab Trigonometri | 25 kartu, 12 terkunci ✅ |
+| Silang-periksa engine ↔ DOM | **identik**, 0 selisih ✅ |
+| Separator Tahap 1→6 | urut rapi (dulu bisa teracak topological sort) ✅ |
+| Mode Sumatif → klik kartu terkunci | navigasi tercegah, toast menyebut prasyaratnya ✅ |
+| Mode Formatif | 0 terkunci ✅ |
+| Error konsol | nihil ✅ |
+
+### 12.6 Catatan yang tidak diambil
+
+**Tabel alias nama lawas tidak dibangun.** Riwayat masih memuat `Sifat Sudut (Berseberangan & Berpelurus)` — nama gabungan yang kini dipecah dua. Pengecekan atas data live: **tepat 1 record**, dan materinya bukan prasyarat siapa pun, jadi dampaknya ke penguncian **nol**. Kalau suatu saat Sifat Sudut menjadi prasyarat, ini perlu ditinjau ulang.
+
+**Latihan spesial tidak pernah memberi status master.** Modenya di luar `MODE_UJIAN`, jadi berapa pun nilainya tidak membuka kunci apa pun. Sesuai desain sekarang, dicatat agar tidak jadi kejutan.
+
+---
+
 ## 9. Catatan untuk Ditinjau Nanti (di luar cakupan)
 
-**Field `konsep_prasyarat` per-soal.** Dokumen di `bank_soal` punya field `konsep_prasyarat` (mis. soal Aturan Kuadran mencantumkan `["Pengenalan Sudut Dasar", "Operasi Aritmatika Dasar"]`) — yaitu sumber prasyarat **berbasis data** yang hidup berdampingan dengan `PETA_PRASYARAT_MANUAL` yang hard-code. Keduanya berpotensi tidak sinkron. Rencana ini sengaja **hanya** memakai peta hard-code sesuai permintaan Anda; menyatukan keduanya (atau menurunkan peta dari data) adalah kandidat perbaikan terpisah.
+**Field `konsep_prasyarat` per-soal.** Dokumen di `bank_soal` punya field `konsep_prasyarat` (mis. soal Aturan Kuadran mencantumkan `["Pengenalan Sudut Dasar", "Operasi Aritmatika Dasar"]`) — yaitu sumber prasyarat **berbasis data** yang hidup berdampingan dengan peta hard-code. Keduanya berpotensi tidak sinkron. Rencana ini sengaja **hanya** memakai peta hard-code sesuai permintaan Anda; menyatukan keduanya (atau menurunkan peta dari data) adalah kandidat perbaikan terpisah.
+
+> **Sudah dicoba dan ditutup 2026-07-26 (§12).** Menurunkan peta dari data terbukti melawan urutan mengajar. Field ini tetap berharga sebagai **penasihat** — persentase pemakaiannya tercatat sebagai komentar di `PRASYARAT_TRIGONOMETRI` — tapi tidak boleh jadi sumber kebenaran urutan.
+
+**Eksponen & Logaritma belum punya gerbang.** Kedua tab itu tidak ada di `PRASYARAT_TRIGONOMETRI` (keputusan #10), dan soalnya juga belum masuk Firestore. Saat soalnya nanti dimasukkan, perlu diputuskan apakah kedua tab itu ikut digerbangkan — kalau ya, tabel prasyaratnya disusun manual dengan cara yang sama.

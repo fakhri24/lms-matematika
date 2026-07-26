@@ -4,11 +4,14 @@ import {
   apakahModeDikunci,
   isSubMateriMaster,
   hitungSetMaster,
-  hitungUrutanTopologis,
   hitungStatusKunci,
   validasiKurikulum,
 } from "../../public/js/utils/kurikulumEngine.js";
 import { MODE_LATIHAN } from "../../public/js/utils/constants.js";
+import {
+  PRASYARAT_TRIGONOMETRI,
+  PETA_TAHAPAN,
+} from "../../public/js/utils/kurikulumData.js";
 
 /** Pembantu: satu record ujian yang memenuhi semua syarat master. */
 function hasilLulus(subMateri, tambahan = {}) {
@@ -142,34 +145,17 @@ describe("hitungSetMaster", () => {
   });
 });
 
-describe("hitungUrutanTopologis", () => {
-  const peta = { B: ["A"], C: ["B"] };
-
-  test("mengurutkan dari prasyarat ke target", () => {
-    const { urutan } = hitungUrutanTopologis(peta);
-    expect(urutan.indexOf("a")).toBeLessThan(urutan.indexOf("b"));
-    expect(urutan.indexOf("b")).toBeLessThan(urutan.indexOf("c"));
-  });
-
-  test("kedalaman dipakai sebagai kolom untuk tata letak", () => {
-    const { kedalaman } = hitungUrutanTopologis(peta);
-    expect(kedalaman.get("a")).toBe(0);
-    expect(kedalaman.get("b")).toBe(1);
-    expect(kedalaman.get("c")).toBe(2);
-  });
-
-  test("mendeteksi siklus tanpa menggantung", () => {
-    const { siklus } = hitungUrutanTopologis({ A: ["B"], B: ["A"] });
-    expect(siklus.sort()).toEqual(["a", "b"]);
-  });
-});
 
 describe("hitungStatusKunci", () => {
   const rantai = { B: ["A"], C: ["B"] };
 
-  test("tanpa master, hanya akar yang terbuka", () => {
+  test("materi yang tak terdaftar di peta tidak muncul di hasil, artinya terbuka", () => {
+    // Inilah cara tab Prasyarat dibiarkan bebas: materinya memang tak ditulis.
+    expect(hitungStatusKunci(rantai, new Set())["a"]).toBeUndefined();
+  });
+
+  test("tanpa master, semua materi berprasyarat terkunci", () => {
     const status = hitungStatusKunci(rantai, new Set());
-    expect(status["a"].locked).toBe(false);
     expect(status["b"].locked).toBe(true);
     expect(status["c"].locked).toBe(true);
   });
@@ -181,7 +167,10 @@ describe("hitungStatusKunci", () => {
   });
 
   test("prereqBelum memuat nama asli untuk ditampilkan di toast", () => {
-    const status = hitungStatusKunci({ "Nilai Sudut Istimewa": ["Rasio Trigonometri Dasar"] }, new Set());
+    const status = hitungStatusKunci(
+      { "Nilai Sudut Istimewa": ["Rasio Trigonometri Dasar"] },
+      new Set(),
+    );
     expect(status["nilai sudut istimewa"].prereqBelum).toEqual([
       "Rasio Trigonometri Dasar",
     ]);
@@ -193,7 +182,7 @@ describe("hitungStatusKunci", () => {
   });
 
   test("prasyarat lintas-tab tetap dievaluasi (keputusan #1)", () => {
-    // Trigonometri disyaratkan menuntaskan materi dari tab Prasyarat
+    // Materi Trigonometri boleh mensyaratkan materi dari tab Prasyarat.
     const status = hitungStatusKunci(
       { "Rasio Trigonometri Dasar": ["Teorema Pythagoras"] },
       new Set(),
@@ -204,12 +193,6 @@ describe("hitungStatusKunci", () => {
     ]);
   });
 
-  test("simpul dalam siklus diperlakukan terkunci (fail-safe)", () => {
-    const status = hitungStatusKunci({ A: ["B"], B: ["A"] }, new Set());
-    expect(status["a"].locked).toBe(true);
-    expect(status["a"].siklus).toBe(true);
-  });
-
   test("materi yang sudah master tidak pernah terkunci walau prasyaratnya belum", () => {
     // Kasus nyata: siswa master di bawah kurikulum lama, lalu peta berubah.
     const status = hitungStatusKunci(rantai, new Set(["c"]));
@@ -218,20 +201,13 @@ describe("hitungStatusKunci", () => {
   });
 
   test("prereqBelum tetap dilaporkan untuk materi master yang prasyaratnya bolong", () => {
-    const status = hitungStatusKunci(rantai, new Set(["c"]));
-    expect(status["c"].prereqBelum).toEqual(["B"]);
-  });
-
-  test("master mengalahkan fail-safe siklus", () => {
-    const status = hitungStatusKunci({ A: ["B"], B: ["A"] }, new Set(["a"]));
-    expect(status["a"].locked).toBe(false);
-    expect(status["a"].siklus).toBe(true);
-    expect(status["b"].locked).toBe(true);
+    expect(hitungStatusKunci(rantai, new Set(["c"]))["c"].prereqBelum).toEqual([
+      "B",
+    ]);
   });
 
   test("menerima setMaster berupa array biasa", () => {
-    const status = hitungStatusKunci(rantai, ["a"]);
-    expect(status["b"].locked).toBe(false);
+    expect(hitungStatusKunci(rantai, ["a"])["b"].locked).toBe(false);
   });
 
   test("peta kosong tidak menyebabkan exception", () => {
@@ -241,8 +217,14 @@ describe("hitungStatusKunci", () => {
 });
 
 describe("validasiKurikulum", () => {
+  const urutan = ["A", "B", "C"];
+
   test("menandai prasyarat yang soalnya di bawah ambang beserta dampaknya", () => {
-    const hasil = validasiKurikulum({ B: ["A"], C: ["B"] }, { a: 3, b: 10, c: 10 });
+    const hasil = validasiKurikulum({ B: ["A"], C: ["B"] }, urutan, {
+      a: 3,
+      b: 10,
+      c: 10,
+    });
     expect(hasil.valid).toBe(false);
     expect(hasil.prasyaratTakMungkinMaster).toHaveLength(1);
     expect(hasil.prasyaratTakMungkinMaster[0]).toMatchObject({
@@ -254,19 +236,86 @@ describe("validasiKurikulum", () => {
   });
 
   test("prasyarat yang tidak ada di katalog dianggap 0 soal", () => {
-    const hasil = validasiKurikulum({ B: ["A"] }, { b: 10 });
+    const hasil = validasiKurikulum({ B: ["A"] }, urutan, { b: 10 });
     expect(hasil.prasyaratTakMungkinMaster[0].jumlahSoal).toBe(0);
   });
 
   test("kurikulum sehat dinyatakan valid", () => {
-    const hasil = validasiKurikulum({ B: ["A"] }, { a: 10, b: 10 });
-    expect(hasil).toMatchObject({ valid: true, siklus: [] });
-    expect(hasil.prasyaratTakMungkinMaster).toEqual([]);
+    const hasil = validasiKurikulum({ B: ["A"] }, urutan, { a: 10, b: 10 });
+    expect(hasil).toMatchObject({
+      valid: true,
+      namaTakDikenal: [],
+      urutanMundur: [],
+    });
   });
 
-  test("melaporkan siklus", () => {
-    const hasil = validasiKurikulum({ A: ["B"], B: ["A"] }, { a: 10, b: 10 });
+  test("salah ketik nama tertangkap sebagai namaTakDikenal", () => {
+    // Tanpa cek ini, "Teorema Pytagoras" mengunci materinya selamanya, diam-diam.
+    const hasil = validasiKurikulum({ B: ["Aa"] }, urutan, { b: 10 });
     expect(hasil.valid).toBe(false);
-    expect(hasil.siklus.sort()).toEqual(["A", "B"]);
+    expect(hasil.namaTakDikenal).toEqual(["Aa"]);
+  });
+
+  test("prasyarat yang ditulis sesudah materinya tertangkap sebagai urutanMundur", () => {
+    // Pengganti deteksi siklus: pada daftar berurut, ini satu-satunya cara
+    // sebuah peta bisa memutar balik.
+    const hasil = validasiKurikulum({ A: ["C"] }, urutan, { a: 10, c: 10 });
+    expect(hasil.valid).toBe(false);
+    expect(hasil.urutanMundur).toEqual([{ subMateri: "A", prasyarat: "C" }]);
+  });
+
+  test("materi yang menjadi prasyarat dirinya sendiri juga urutanMundur", () => {
+    const hasil = validasiKurikulum({ B: ["B"] }, urutan, { b: 10 });
+    expect(hasil.urutanMundur).toHaveLength(1);
+  });
+});
+
+describe("PRASYARAT_TRIGONOMETRI — integritas tabel yang dipakai produksi", () => {
+  // Tabel ini disusun tangan, jadi salahnya senyap: materi yang tak pernah
+  // terbuka tidak melempar error, ia hanya hilang dari jangkauan siswa.
+  // Catatan: syarat "prasyarat harus punya >= 10 soal" tidak diuji di sini
+  // karena butuh data bank soal; lihat plan/diagnostik/gate-a-audit-kurikulum.mjs.
+  const urutan = Object.keys(PETA_TAHAPAN);
+  const hasil = validasiKurikulum(PRASYARAT_TRIGONOMETRI, urutan);
+
+  test("semua nama dikenal kurikulum", () => {
+    expect(hasil.namaTakDikenal).toEqual([]);
+  });
+
+  test("setiap prasyarat diajarkan lebih dulu daripada materinya", () => {
+    expect(hasil.urutanMundur).toEqual([]);
+  });
+
+  test("hanya materi tab Trigonometri yang dikunci", () => {
+    // Blok Trigonometri menempati ekor PETA_TAHAPAN, mulai dari materi ini.
+    const awalTrig = urutan.indexOf("rasio trigonometri dasar");
+    const diLuarBlok = Object.keys(PRASYARAT_TRIGONOMETRI).filter(
+      (nama) => urutan.indexOf(normalisasiNama(nama)) < awalTrig,
+    );
+    expect(diLuarBlok).toEqual([]);
+  });
+
+  test("tab Prasyarat sepenuhnya terbuka", () => {
+    const status = hitungStatusKunci(PRASYARAT_TRIGONOMETRI, new Set());
+    const awalTrig = urutan.indexOf("rasio trigonometri dasar");
+    const prasyaratTerkunci = urutan
+      .slice(0, awalTrig)
+      .filter((nama) => status[nama]?.locked);
+    expect(prasyaratTerkunci).toEqual([]);
+  });
+
+  test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
+    // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
+    const master = new Set(
+      urutan.slice(0, urutan.indexOf("rasio trigonometri dasar")),
+    );
+    const trig = urutan.slice(urutan.indexOf("rasio trigonometri dasar"));
+    for (let lapis = 0; lapis < trig.length; lapis++) {
+      const status = hitungStatusKunci(PRASYARAT_TRIGONOMETRI, master);
+      const terbuka = trig.filter((n) => !master.has(n) && !status[n]?.locked);
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(trig.filter((n) => !master.has(n))).toEqual([]);
   });
 });

@@ -5,7 +5,8 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
-const { PETA_PRASYARAT_MANUAL, DAFTAR_MATERI_INTI } = await import(
+const { PRASYARAT_TRIGONOMETRI: PETA_PRASYARAT_MANUAL, DAFTAR_MATERI_INTI } =
+  await import(
   pathToFileURL(join(ROOT, "public/js/utils/kurikulumData.js")).href
 );
 function walk(d,a=[]){for(const e of readdirSync(d)){const p=join(d,e);statSync(p).isDirectory()?walk(p,a):e.endsWith(".json")&&a.push(p)}return a}

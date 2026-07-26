@@ -20,7 +20,8 @@
   const { collection, getDocs, doc, getDoc } = await import(
     "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"
   );
-  const { PETA_PRASYARAT_MANUAL, DAFTAR_MATERI_INTI } = await import(
+  const { PRASYARAT_TRIGONOMETRI: PETA_PRASYARAT_MANUAL, DAFTAR_MATERI_INTI } =
+  await import(
     "/js/utils/kurikulumData.js"
   );
 

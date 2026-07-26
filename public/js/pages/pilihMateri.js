@@ -6,7 +6,7 @@ import {
 } from "../services/latihanService.js";
 import {
   DAFTAR_MATERI_INTI,
-  PETA_PRASYARAT_MANUAL,
+  PRASYARAT_TRIGONOMETRI,
   PETA_TAHAPAN,
 } from "../utils/kurikulumData.js";
 import { MODE_LATIHAN, DATA_DEFAULT } from "../utils/constants.js";
@@ -14,6 +14,7 @@ import {
   hitungSetMaster,
   hitungStatusKunci,
   apakahModeDikunci,
+  normalisasiNama,
 } from "../utils/kurikulumEngine.js";
 
 // IMPORT VIEW BARU
@@ -25,53 +26,28 @@ import {
   tampilkanToast,
 } from "../views/pilihMateriView.js";
 
-// =====================================================================
-// ENGINE PENGURUT MATERI CERDAS (GRAF TERISOLASI)
-// =====================================================================
-function bangunGraphKurikulum(dataBankSoalTab) {
-  // (Logika Graph Tetap Sama - Tidak Diubah)
-  const inDegree = {};
-  const adjList = {};
-  const semuaMateri = new Set();
-  const namaAsliMap = {};
-  const materiSahDiTabIni = new Set();
+// Urutan kartu = urutan mengajar di kelas, disusun manual di PETA_TAHAPAN.
+// Dulu urutan ini dihitung dengan topological sort dari peta prasyarat; itu
+// dilepas karena prasyarat menjawab "boleh dibuka atau belum", bukan "diajarkan
+// nomor berapa". Dua pertanyaan itu berbeda dan tak selalu sejalan.
+const URUTAN_KURIKULUM = Object.keys(PETA_TAHAPAN);
 
+/**
+ * Mengurutkan sub-materi satu tab mengikuti urutan mengajar.
+ * Materi yang belum tercantum di PETA_TAHAPAN ditempel di akhir agar tidak
+ * hilang dari layar hanya karena kurikulumnya belum diperbarui.
+ */
+function urutkanMateriTab(dataBankSoalTab) {
+  const adaDiTab = new Set();
   dataBankSoalTab.forEach((data) => {
-    if (data.sub_materi)
-      materiSahDiTabIni.add(data.sub_materi.toLowerCase().trim());
+    if (data.sub_materi) adaDiTab.add(normalisasiNama(data.sub_materi));
   });
 
-  dataBankSoalTab.forEach((data) => {
-    if (!data.sub_materi) return;
-    const subNormal = data.sub_materi.toLowerCase().trim();
-    semuaMateri.add(subNormal);
-    namaAsliMap[subNormal] = data.sub_materi;
-    if (inDegree[subNormal] === undefined) inDegree[subNormal] = 0;
-    if (!adjList[subNormal]) adjList[subNormal] = [];
-  });
-
-  dataBankSoalTab.forEach((data) => {
-    if (!data.sub_materi) return;
-    const targetAsli = data.sub_materi.trim();
-    const targetLower = targetAsli.toLowerCase();
-    let prasyaratArray = PETA_PRASYARAT_MANUAL[targetAsli] || [];
-
-    prasyaratArray.forEach((p) => {
-      const sumberLower = p.toLowerCase().trim();
-      if (sumberLower !== "" && materiSahDiTabIni.has(sumberLower)) {
-        if (!adjList[sumberLower]) {
-          adjList[sumberLower] = [];
-          inDegree[sumberLower] = 0;
-        }
-        if (!adjList[sumberLower].includes(targetLower)) {
-          adjList[sumberLower].push(targetLower);
-          inDegree[targetLower]++;
-        }
-      }
-    });
-  });
-
-  return { inDegree, adjList, semuaMateri, namaAsliMap };
+  const terdaftar = URUTAN_KURIKULUM.filter((nama) => adaDiTab.has(nama));
+  const belumTerdaftar = [...adaDiTab].filter(
+    (nama) => !URUTAN_KURIKULUM.includes(nama),
+  );
+  return [...terdaftar, ...belumTerdaftar];
 }
 
 // =====================================================================
@@ -93,7 +69,7 @@ async function muatStatusKunci() {
     const riwayat = await getRiwayatLatihanSiswa(nis);
     const setMaster = hitungSetMaster(riwayat);
     return {
-      statusKunci: hitungStatusKunci(PETA_PRASYARAT_MANUAL, setMaster),
+      statusKunci: hitungStatusKunci(PRASYARAT_TRIGONOMETRI, setMaster),
       setMaster,
     };
   } catch (error) {
@@ -157,23 +133,7 @@ async function muatMateri() {
       const dataTab = kelompokData[namaTab];
       if (dataTab.length === 0) return;
 
-      // BFS Topological Sort
-      const { inDegree, adjList, semuaMateri } = bangunGraphKurikulum(dataTab);
-      const queue = [];
-      const urutanHasil = [];
-
-      semuaMateri.forEach((materi) => {
-        if (inDegree[materi] === 0) queue.push(materi);
-      });
-
-      while (queue.length > 0) {
-        const saatIni = queue.shift();
-        urutanHasil.push(saatIni);
-        adjList[saatIni].forEach((target) => {
-          inDegree[target]--;
-          if (inDegree[target] === 0) queue.push(target);
-        });
-      }
+      const urutanHasil = urutkanMateriTab(dataTab);
 
       const isAktif = !tabPertamaAktif;
       if (isAktif) tabPertamaAktif = true;

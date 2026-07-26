@@ -2,94 +2,156 @@
 export const DAFTAR_MATERI_INTI = ["Eksponen", "Logaritma", "Trigonometri"];
 
 // =====================================================================
-// PETA KURIKULUM MANUAL (LINEAR PROGRESSION)
+// PRASYARAT TAB TRIGONOMETRI — GERBANG "KUNCI MATERI"
 // =====================================================================
-export const PETA_PRASYARAT_MANUAL = {
-  // --- PRASYARAT MATEMATIKA DASAR ---
-
-  // Tahap 1: Aritmatika
-  "KPK dan FPB": ["Operasi Aritmatika Dasar"],
-  "Operasi Pecahan": ["KPK dan FPB"],
-  "Operasi Bentuk Akar": ["Operasi Pecahan"],
-
-  // Tahap 2: Gerbang Logika & Sudut
-  "Pengenalan Variabel": ["Operasi Bentuk Akar"],
-  "Manipulasi Aljabar Dasar": ["Pengenalan Variabel"],
-  "Persamaan Linear Satu Variabel": ["Manipulasi Aljabar Dasar"],
-  "Pengenalan Sudut Dasar": ["Persamaan Linear Satu Variabel"],
-  "Sifat Sudut (Berpelurus)": ["Pengenalan Sudut Dasar"],
-  "Sifat Sudut (Berseberangan)": ["Sifat Sudut (Berpelurus)"],
-
-  // Tahap 3: Spasial & Pemodelan
-  "Terminologi Bangun Geometri": ["Sifat Sudut (Berseberangan)"],
-  "Sifat Bangun Datar": ["Terminologi Bangun Geometri"],
-  "Jumlah Sudut Segitiga": ["Sifat Bangun Datar"],
-  "Teorema Pythagoras": ["Jumlah Sudut Segitiga"],
-  "Visualisasi Spasial dan Arah": ["Teorema Pythagoras"],
-  "Pemodelan Navigasi (Jurusan Tiga Angka)": ["Visualisasi Spasial dan Arah"],
-  "Lingkaran Luar Segitiga": ["Pemodelan Navigasi (Jurusan Tiga Angka)"],
-
-  // Tahap 4: Sistem & Realita
-  "Representasi Aljabar": ["Lingkaran Luar Segitiga"],
-  "Sistem Persamaan Linear": ["Representasi Aljabar"],
-  "Sistem Persamaan Linear Tiga Variabel (SPLTV)": ["Sistem Persamaan Linear"],
-  "Relasi Dinamis (Jarak, Kecepatan, Waktu)": [
-    "Sistem Persamaan Linear Tiga Variabel (SPLTV)",
+// Disusun MANUAL oleh guru. Boleh disunting tangan; test menjaga
+// integritasnya (tests/utils/kurikulumEngine.test.js).
+//
+// Aturan:
+//   - Kunci  = sub-materi tab Trigonometri, nama persis seperti di Firestore.
+//   - Nilai  = daftar sub-materi yang wajib berstatus master lebih dulu.
+//   - Materi yang tidak terdaftar di sini => selalu terbuka.
+//   - Tab Prasyarat tidak pernah dikunci, tetapi materinya boleh menjadi
+//     syarat di sini (mis. Teorema Pythagoras).
+//
+// Urutan tampil kartu TIDAK diambil dari tabel ini, melainkan dari urutan
+// kunci PETA_TAHAPAN di bawah — itulah urutan mengajar di kelas.
+//
+// Angka "%" pada komentar = porsi soal materi itu yang menyebut konsep
+// tersebut di field `konsep_prasyarat`. Bukti pemakaian, bukan urutan ajar;
+// dipakai sebagai bahan pertimbangan saat menyusun, bukan sebagai aturan.
+export const PRASYARAT_TRIGONOMETRI = {
+  // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
+  // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
+  // Teorema Pythagoras, jadi siswa yang belum menguasainya belum siap.
+  // Konsekuensi yang disengaja: SELURUH tab Trigonometri terkunci sampai
+  // Teorema Pythagoras master.
+  "Rasio Trigonometri Dasar": [
+    "Teorema Pythagoras", // 63%
   ],
 
-  // Tahap 5: Area Kuadratik
-  "Persamaan Kuadrat Dasar": ["Relasi Dinamis (Jarak, Kecepatan, Waktu)"],
-  "Persamaan Kuadrat Lanjutan": ["Persamaan Kuadrat Dasar"],
-  "Fungsi Kuadrat": ["Persamaan Kuadrat Lanjutan"],
-  "Pertidaksamaan Kuadrat": ["Fungsi Kuadrat"],
-  "Sistem Persamaan Linear-Kuadrat (SPLK)": ["Pertidaksamaan Kuadrat"],
-  "Sistem Persamaan Kuadrat-Kuadrat (SPKK)": [
-    "Sistem Persamaan Linear-Kuadrat (SPLK)",
+  "Nilai Sudut Istimewa": [
+    "Rasio Trigonometri Dasar",
+    "Operasi Bentuk Akar", // 48% — isinya √2/2, √3/2, dst.
   ],
 
-  // Tahap 6: Fungsi & Transformasi Dasar (BARU)
-  "Analisis Grafik Fungsi": ["Sistem Persamaan Kuadrat-Kuadrat (SPKK)"],
-  "Translasi Horizontal": ["Analisis Grafik Fungsi"],
-  "Translasi Vertikal": ["Translasi Horizontal"],
+  // ── Tahap 2: Ekspansi ke Sistem Koordinat ──────────────────────────
+  "Aturan Kuadran": [
+    "Rasio Trigonometri Dasar",
+    "Pengenalan Sudut Dasar", // 100%
+  ],
 
-  // --- MATERI TRIGONOMETRI ---
+  "Sudut Berelasi (Horizontal)": [
+    "Aturan Kuadran", // 100%
+    "Nilai Sudut Istimewa", // 75%
+  ],
 
-  // Tahap 1: Pengenalan & Konsep Dasar
-  "Nilai Sudut Istimewa": ["Rasio Trigonometri Dasar"],
+  "Sudut Berelasi (Vertikal)": [
+    "Sudut Berelasi (Horizontal)", // urutan ajar
+  ],
 
-  // Tahap 2: Ekspansi ke Sistem Koordinat
-  "Aturan Kuadran": ["Nilai Sudut Istimewa"],
-  "Sudut Berelasi (Horizontal)": ["Aturan Kuadran"],
-  "Sudut Berelasi (Vertikal)": ["Sudut Berelasi (Horizontal)"],
-  "Sifat Sudut Negatif": ["Sudut Berelasi (Vertikal)"],
-  "Sudut Berelasi (Negatif dan >360°)": ["Sifat Sudut Negatif"],
-  "Operasi Aljabar Relasi Sudut": ["Sudut Berelasi (Negatif dan >360°)"],
+  "Sifat Sudut Negatif": [
+    "Aturan Kuadran", // 90%
+  ],
 
-  // Tahap 3: Aplikasi & Geometri Sembarang
-  "Aturan Sinus": ["Operasi Aljabar Relasi Sudut"],
-  "Aturan Cosinus": ["Aturan Sinus"],
-  "Luas Segitiga Trigonometri": ["Aturan Cosinus"],
-  "Aplikasi Kontekstual Trigonometri": ["Luas Segitiga Trigonometri"],
+  "Sudut Berelasi (Negatif dan >360°)": [
+    "Sifat Sudut Negatif", // 64%
+    "Sudut Berelasi (Horizontal)", // 27%
+  ],
 
-  // Tahap 4: Analitik & Identitas Lanjutan
-  "Identitas Trigonometri Dasar": ["Aplikasi Kontekstual Trigonometri"],
-  "Jumlah dan Selisih Dua Sudut": ["Identitas Trigonometri Dasar"],
-  "Sudut Ganda": ["Jumlah dan Selisih Dua Sudut"],
-  "Trigonometri Analitik Lanjutan": ["Sudut Ganda"],
+  "Operasi Aljabar Relasi Sudut": [
+    "Sudut Berelasi (Horizontal)", // 100%
+    "Sudut Berelasi (Vertikal)", // 70%
+  ],
 
-  // Tahap 5: Analisis Grafik & Fungsi Trigonometri (DIPISAH)
-  "Konversi Derajat dan Radian": ["Trigonometri Analitik Lanjutan"],
-  "Bentuk Umum Fungsi Trigonometri": ["Konversi Derajat dan Radian"],
-  Amplitudo: ["Bentuk Umum Fungsi Trigonometri"],
-  "Periode Fungsi Trigonometri": ["Amplitudo"],
-  "Fungsi Trigonometri": ["Periode Fungsi Trigonometri"],
+  // ── Tahap 3: Aplikasi & Geometri Sembarang ─────────────────────────
+  "Aturan Sinus": [
+    "Nilai Sudut Istimewa", // 50%
+    "Jumlah Sudut Segitiga", // 30%
+  ],
 
-  // Tahap 6: Persamaan Trigonometri (DIPISAH)
-  "Persamaan Trigonometri Dasar": ["Fungsi Trigonometri"],
-  "Persamaan Trigonometri Standar": ["Persamaan Trigonometri Dasar"],
-  "Persamaan Trigonometri Lanjutan": ["Persamaan Trigonometri Standar"],
-  "Persamaan Trigonometri Bentuk Khusus": ["Persamaan Trigonometri Lanjutan"],
+  "Aturan Cosinus": [
+    "Aturan Sinus", // urutan ajar
+    "Manipulasi Aljabar Dasar", // 70%
+  ],
+
+  "Luas Segitiga Trigonometri": [
+    "Aturan Cosinus", // urutan ajar
+  ],
+
+  "Aplikasi Kontekstual Trigonometri": [
+    "Aturan Sinus", // 30%
+    "Aturan Cosinus",
+  ],
+
+  // ── Tahap 4: Analitik & Identitas Lanjutan ─────────────────────────
+  "Identitas Trigonometri Dasar": [
+    "Rasio Trigonometri Dasar", // 50%
+    "Teorema Pythagoras", // 60% — sin²+cos²=1 memang Pythagoras
+  ],
+
+  "Jumlah dan Selisih Dua Sudut": [
+    "Identitas Trigonometri Dasar", // urutan ajar
+    "Nilai Sudut Istimewa", // 70%
+  ],
+
+  "Sudut Ganda": [
+    "Jumlah dan Selisih Dua Sudut", // urutan ajar
+  ],
+
+  "Trigonometri Analitik Lanjutan": [
+    "Sudut Ganda", // urutan ajar
+    "Manipulasi Aljabar Dasar", // 50%
+  ],
+
+  // ── Tahap 5: Analisis Grafik & Fungsi Trigonometri ─────────────────
+  "Konversi Derajat dan Radian": [
+    "Pengenalan Sudut Dasar",
+    "Operasi Pecahan", // 100%
+  ],
+
+  "Bentuk Umum Fungsi Trigonometri": [
+    "Nilai Sudut Istimewa", // 80%
+    "Aturan Kuadran", // 40%
+  ],
+
+  "Amplitudo": [
+    "Bentuk Umum Fungsi Trigonometri", // 100%
+  ],
+
+  "Periode Fungsi Trigonometri": [
+    "Bentuk Umum Fungsi Trigonometri",
+    "Konversi Derajat dan Radian", // 40%
+  ],
+
+  "Fungsi Trigonometri": [
+    "Amplitudo", // 40%
+    "Periode Fungsi Trigonometri", // 40%
+    "Translasi Vertikal", // 50%
+  ],
+
+  // ── Tahap 6: Persamaan Trigonometri ────────────────────────────────
+  "Persamaan Trigonometri Dasar": [
+    "Nilai Sudut Istimewa", // 100%
+    "Persamaan Linear Satu Variabel", // 60%
+  ],
+
+  "Persamaan Trigonometri Standar": [
+    "Persamaan Trigonometri Dasar", // 100%
+    "Aturan Kuadran", // 50%
+  ],
+
+  "Persamaan Trigonometri Lanjutan": [
+    "Persamaan Trigonometri Standar", // urutan ajar
+    "Persamaan Kuadrat Dasar", // 100%
+    "Identitas Trigonometri Dasar", // 50%
+  ],
+
+  "Persamaan Trigonometri Bentuk Khusus": [
+    "Persamaan Trigonometri Lanjutan", // urutan ajar
+  ],
 };
+
 
 // =====================================================================
 // PETA TAHAPAN UNTUK UI (PEMBATAS VISUAL & LEVELING)

@@ -10,7 +10,7 @@ import {
 import { state } from "./adminState.js";
 import { MODE_LATIHAN } from "../utils/constants.js";
 import { siapkanDraftSoal } from "../utils/soalEngine.js";
-import { PETA_PRASYARAT_MANUAL } from "../utils/kurikulumData.js";
+import { PETA_TAHAPAN } from "../utils/kurikulumData.js";
 
 // DOM Elements
 const formSpesial = document.getElementById("form-latihan-spesial");
@@ -252,7 +252,9 @@ function downloadSampelSoal(subMateriList, judul) {
 
   const sampel = siapkanDraftSoal(soalPool, MODE_LATIHAN.SPESIAL);
 
-  const urutanKurikulum = Object.keys(PETA_PRASYARAT_MANUAL);
+  // Urutan mengajar, memuat seluruh 55 sub-materi. Peta prasyarat tidak dipakai
+  // di sini: isinya hanya tab Trigonometri dan urutannya bukan urutan ajar.
+  const urutanKurikulum = Object.keys(PETA_TAHAPAN);
   const indexKurikulum = (sub) => {
     const idx = urutanKurikulum.findIndex(
       (k) => k.toLowerCase() === sub.toLowerCase()
