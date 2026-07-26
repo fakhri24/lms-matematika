@@ -8,31 +8,56 @@ Anda berada di tingkat Root proyek ini. Peran Anda adalah sebagai **Project Mana
 
 ---
 
-## 2. Peta Sub-Agent (Hierarki Peran)
-Proyek ini dibagi menjadi peran-peran spesifik yang dipandu oleh berkas `AGENTS.md` lokal di masing-masing sub-folder berikut:
+## 2. Bentuk Aplikasi
 
-1. **Controller Developer** ([public/js/controllers/AGENTS.md](file:///Users/fakhri246/Dokumen/01_PROYEK/lms-matematika/public/js/controllers/AGENTS.md))
-   - Mengatur alur halaman, state interaksi, memproses input dari View, dan memanggil Service.
-2. **UI/UX Designer & DOM Engineer** ([public/js/views/AGENTS.md](file:///Users/fakhri246/Dokumen/01_PROYEK/lms-matematika/public/js/views/AGENTS.md))
-   - Bertanggung jawab atas visualisasi, render DOM, transisi CSS, dan class toggling.
-3. **Database & Auth Specialist** ([public/js/services/AGENTS.md](file:///Users/fakhri246/Dokumen/01_PROYEK/lms-matematika/public/js/services/AGENTS.md))
-   - Mengelola kueri Firestore, status autentikasi, serta kepatuhan aturan keamanan Firestore.
-4. **Mathematician & Core Logic Expert** ([public/js/utils/AGENTS.md](file:///Users/fakhri246/Dokumen/01_PROYEK/lms-matematika/public/js/utils/AGENTS.md))
-   - Menulis fungsi murni (pure helpers) matematika dan timer yang independen.
-5. **QA Engineer / Automated Tester** ([tests/AGENTS.md](file:///Users/fakhri246/Dokumen/01_PROYEK/lms-matematika/tests/AGENTS.md))
-   - Menulis test suite dengan Jest, melakukan mock behavior, dan meminimalkan regresi/bug.
+Vanilla ES module, **tanpa build step**. Firebase JS SDK 10.8.1 diimpor langsung dari CDN gstatic. Di-deploy ke Firebase Hosting, dan `firebase.json` **hanya menyajikan `public/`** — berkas di luar itu (`plan/`, `arsip-data/`, `grader-manual/`) tidak pernah ikut ter-deploy.
+
+Satu halaman = satu berkas HTML di `public/` + satu kontroler. Tidak ada router.
+
+| Lokasi | Isi | Panduan |
+|---|---|---|
+| `public/js/pages/` | Kontroler halaman siswa (6) — `pilihMateri`, `petaMateri`, `dashboardSiswa`, `riwayat`, `rekapHasil`, `koreksiUhSiswa` | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
+| `public/js/admin/` | Kontroler panel admin (7) — bank soal, analisis, ketuntasan, koreksi UH, latihan spesial, status | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
+| `public/js/controllers/` | `LatihanController.js` — mesin pengerjaan soal, satu-satunya kontroler berbasis kelas | [controllers/AGENTS.md](public/js/controllers/AGENTS.md) |
+| `public/js/views/` | Pembangun markup + render DOM | [views/AGENTS.md](public/js/views/AGENTS.md) |
+| `public/js/services/` | Kueri Firestore & autentikasi | [services/AGENTS.md](public/js/services/AGENTS.md) |
+| `public/js/utils/` | Fungsi murni (kurikulum, soal, timer, teks) | [utils/AGENTS.md](public/js/utils/AGENTS.md) |
+| `public/js/config/` | `firebase.js` — **satu-satunya** tempat SDK diinisialisasi | — |
+| `public/js/*.js` | Entry point lepas: `app.js`, `auth.js`, `admin.js`, `leaderboard.js` | — |
+| `tests/` | Jest (jsdom, `NODE_OPTIONS=--experimental-vm-modules`) | [tests/AGENTS.md](tests/AGENTS.md) |
+| `plan/` | Catatan rancangan + skrip diagnostik. Tidak di-deploy. | [plan/PLAN.md](plan/PLAN.md) |
+| `grader-manual/` | Koreksi UH manual & data siswa. Tidak di-deploy. | [grader-manual/AGENTS.md](grader-manual/AGENTS.md) |
+
+> **Catatan penamaan:** `pages/` dan `admin/` berisi kontroler, sama seperti `controllers/`. Pemisahannya historis, bukan arsitektural — ketiganya tunduk pada panduan controller yang sama.
 
 ---
 
-## 3. Aturan Lintas Peran (Global Rules)
-- **DRY (Don't Repeat Yourself)**: Jangan menduplikasi logika. Logika data harus di Service, logika murni di Utils, visual di View.
-- **Pencegahan Bug Safari**: Gunakan `getFirestore` biasa tanpa IndexedDB persistence/cache offline untuk mencegah crash browser di iOS/macOS.
-- **Keamanan Aturan Firestore**: Pastikan setiap kueri client-side mematuhi aturan keamanan Firestore (`firestore.rules`). Hanya ubah data yang dimiliki oleh pengguna (`nis_siswa`).
-- **Pengujian Sukses**: Kode baru atau perubahan logika wajib lolos Jest Unit Test sebelum di-commit.
-- **Ambang 10 Soal per Sub-Materi**: Setiap sub-materi wajib punya **minimal `MASTERY.SOAL_MIN` (10) soal** di bank soal sebelum boleh dipakai untuk ujian sumatif. Ambang ini bukan angka hiasan — `isHasilMasterSumatif()` mensyaratkan >= 10 soal dikerjakan, jadi sub-materi dengan soal kurang dari itu **tidak akan pernah bisa di-master**: gelarnya tak pernah terbit, dan kalau ia jadi prasyarat, semua materi di hilirnya terkunci permanen. Konsekuensinya:
-  - Menambah sub-materi ke `PETA_PRASYARAT_MANUAL` tanpa 10 soal = mengunci mati satu cabang kurikulum. Jalankan `plan/diagnostik/gate-a-audit-kurikulum.mjs` sebelum menambah.
-  - Idealnya ujian sumatif pada sub-materi di bawah ambang **ditolak di depan**, bukan dibiarkan tersimpan lalu dibersihkan belakangan. **Penjaga ini belum ada di kode** (per 2026-07-26) — jangan berasumsi sudah terpasang. Selama belum ada, rekaman semacam itu tetap bisa terbentuk dan akan tampak menyesatkan di panel admin.
+## 3. Alur Data Utama
+
+**Identitas siswa** — `localStorage.nis_siswa`. Tidak ada sesi Firebase Auth per-siswa.
+
+**Sumber kebenaran hasil** — koleksi `hasil_latihan` (ujian sumatif **dan** draf formatif), plus `progres_belajar` untuk log per-soal.
+
+**Gerbang prasyarat** — sebuah materi Trigonometri hanya bisa dikerjakan sebagai *ujian* bila semua prasyaratnya sudah `master`. Prasyaratnya tabel manual (`PRASYARAT_TRIGONOMETRI`), urutan kartu dari `PETA_TAHAPAN`. Formatif **selalu terbuka**. Rinciannya di [plan/PLAN.md](plan/PLAN.md).
+
+**Definisi "master" ada di SATU tempat** — `isHasilMasterSumatif()` di `utils/kurikulumEngine.js`. `gelarService` dan `ketuntasanController` mengimpornya. **Jangan pernah menyalin ulang aturannya**: sebelum 2026-07-26 aturan itu ditulis di tiga tempat dan ketiganya berselisih, sehingga panel guru menampilkan "Lulus" untuk siswa yang materinya justru terkunci.
+
+**Penguncian adalah UX sisi-klien, bukan kontrol keamanan.** Siswa yang paham teknis bisa membuka `latihan.html` langsung. Itu dapat diterima karena skor tetap tercatat per-siswa; menegakkannya sungguhan butuh Cloud Function dan di luar cakupan hosting statis.
+
+---
+
+## 4. Aturan Lintas Peran (Global Rules)
+
+- **DRY (Don't Repeat Yourself)**: Jangan menduplikasi logika. Logika data di Service, logika murni di Utils, visual di View. Kalau sebuah aturan bisnis ditulis di dua tempat, ia **akan** menyimpang — lihat kasus "master" di §3.
+- **Batas View ↔ Controller**: **View memiliki markup, Controller merangkai.** View membangun HTML (`createXxxHTML`) atau merender elemen; Controller boleh `querySelector` untuk memasang listener, membaca `data-*`, dan menyalakan/mematikan kelas CSS untuk state. Yang **tidak boleh** di Controller: merakit string HTML, menulis `innerHTML` berisi markup, atau mengatur gaya inline. Semua markup lahir di `views/`.
+- **View dilarang menyentuh data**: Tidak ada impor Firebase di `views/`. Sekarang 100% patuh — pertahankan.
+- **Controller dilarang memanggil Firebase langsung**: Impor `db`/`auth` atau modul Firestore hanya boleh di `services/`. *(Pengecualian yang tersisa: `admin/latihanSpesialController.js` — utang teknis, jangan ditiru.)*
+- **Pencegahan Bug Safari**: Gunakan `getFirestore` biasa tanpa IndexedDB persistence/cache offline untuk mencegah crash browser di iOS/macOS. Hindari juga pinch-zoom berbasis transform; pakai kontainer bergulir + toggle kelas CSS.
+- **Keamanan Aturan Firestore**: Pastikan setiap kueri client-side mematuhi `firestore.rules`. Hanya ubah data yang dimiliki pengguna (`nis_siswa`).
+- **Pengujian Sukses**: Kode baru atau perubahan logika wajib lolos Jest sebelum di-commit. Fungsi di `utils/` **wajib** punya unit test pendamping.
+- **Ambang 10 Soal per Sub-Materi**: Setiap sub-materi wajib punya **minimal `MASTERY.SOAL_MIN` (10) soal** di bank soal sebelum boleh dipakai untuk ujian sumatif. Ambang ini bukan angka hiasan — `isHasilMasterSumatif()` mensyaratkan >= 10 soal dikerjakan, jadi sub-materi bersoal kurang dari itu **tidak akan pernah bisa di-master**: gelarnya tak pernah terbit, dan kalau ia jadi prasyarat, semua materi di hilirnya terkunci permanen. Konsekuensinya:
+  - Menambah sub-materi ke `PRASYARAT_TRIGONOMETRI` tanpa 10 soal = mengunci mati satu cabang kurikulum. Jalankan `plan/diagnostik/gate-a-audit-kurikulum.mjs` sebelum menambah.
+  - Idealnya ujian sumatif pada sub-materi di bawah ambang **ditolak di depan**. **Penjaga ini belum ada di kode** (per 2026-07-26) — jangan berasumsi sudah terpasang.
   - Data lama yang terlanjur di bawah ambang **sengaja dibiarkan** (keputusan pemilik proyek, 2026-07-26). Jangan menghapusnya tanpa permintaan eksplisit.
   - Mode formatif **tidak** terkena ambang ini. Formatif adalah latihan terbimbing yang memang boleh pendek, dan tidak pernah dihitung sebagai bukti penguasaan.
-
-
+- **Jangan menghidupkan kembali topological sort.** Urutan materi adalah keputusan pedagogis milik guru, bukan sesuatu yang disimpulkan mesin. Kahn pernah dipakai lalu dibongkar; alasannya di [plan/PLAN.md](plan/PLAN.md) §7. Berlaku juga untuk sekadar tata letak.
