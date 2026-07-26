@@ -4,7 +4,7 @@
 // Tanpa DOM, tanpa Firestore — semuanya dapat diuji dengan Jest.
 // Rujukan rancangan: plan/PLAN.md
 
-import { MODE_LATIHAN, MASTERY } from "./constants.js";
+import { MODE_LATIHAN, MASTERY, STATUS_LATIHAN } from "./constants.js";
 
 /** Normalisasi nama sub-materi agar perbandingan konsisten. */
 export function normalisasiNama(nama) {
@@ -37,20 +37,30 @@ function jumlahSoalDikerjakan(hasil) {
 }
 
 /**
- * Apakah kumpulan riwayat ini membuktikan satu sub-materi sudah "master"?
+ * Apakah SATU rekaman hasil membuktikan penguasaan?
  * Syarat: ujian sumatif selesai, nilai >= NILAI_MIN, dan >= SOAL_MIN soal dikerjakan.
+ *
+ * Inilah **satu-satunya** tempat aturan itu ditulis. Sebelumnya aturan yang sama
+ * disalin di tiga tempat dan ketiganya sempat berselisih — panel Ketuntasan
+ * admin melewatkan syarat SOAL_MIN, sehingga menampilkan "Lulus" untuk latihan
+ * yang tidak menerbitkan gelar dan tidak membuka gerbang prasyarat.
+ */
+export function isHasilMasterSumatif(hasil, ambang = MASTERY) {
+  if (!hasil) return false;
+  if (!apakahModeDikunci(hasil.mode_latihan || MODE_LATIHAN.NORMAL))
+    return false;
+  if (hasil.status === STATUS_LATIHAN.DRAF) return false;
+  if (!(Number(hasil.nilai) >= ambang.NILAI_MIN)) return false;
+  return jumlahSoalDikerjakan(hasil) >= ambang.SOAL_MIN;
+}
+
+/**
+ * Apakah kumpulan riwayat ini membuktikan satu sub-materi sudah "master"?
+ * Cukup satu rekaman yang memenuhi syarat.
  */
 export function isSubMateriMaster(riwayatSubMateri, ambang = MASTERY) {
   if (!Array.isArray(riwayatSubMateri)) return false;
-
-  return riwayatSubMateri.some((hasil) => {
-    if (!hasil) return false;
-    if (!apakahModeDikunci(hasil.mode_latihan || MODE_LATIHAN.NORMAL))
-      return false;
-    if (hasil.status === "draf") return false;
-    if (!(Number(hasil.nilai) >= ambang.NILAI_MIN)) return false;
-    return jumlahSoalDikerjakan(hasil) >= ambang.SOAL_MIN;
-  });
+  return riwayatSubMateri.some((hasil) => isHasilMasterSumatif(hasil, ambang));
 }
 
 /**

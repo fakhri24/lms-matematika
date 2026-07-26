@@ -2,6 +2,7 @@
 
 import { state } from "./adminState.js";
 import { DATA_DEFAULT, MODE_LATIHAN, STATUS_LATIHAN } from "../utils/constants.js";
+import { isHasilMasterSumatif } from "../utils/kurikulumEngine.js";
 
 let petaMateriKetuntasan = {};
 
@@ -177,13 +178,12 @@ export function renderTabelKetuntasan() {
       }
     }
     
-    // Sumatif & >= 80 (Hanya untuk yang sudah selesai)
-    if (d.status !== STATUS_LATIHAN.DRAF) {
-      if (mode === MODE_LATIHAN.NORMAL || mode === MODE_LATIHAN.ACAK || mode === MODE_LATIHAN.LAMA_NORMAL || mode === MODE_LATIHAN.LAMA_ACAK) {
-        if (d.nilai >= 80) {
-          rek.sumatif_lulus++;
-        }
-      }
+    // Sumatif lulus = definisi "master" yang sama dengan gerbang prasyarat dan
+    // gelar. Dulu di sini hanya `nilai >= 80`, tanpa syarat minimal 10 soal,
+    // sehingga panel ini bisa menulis "Lulus" untuk materi yang bagi siswa
+    // masih terkunci dan belum berhak gelar.
+    if (isHasilMasterSumatif(d)) {
+      rek.sumatif_lulus++;
     }
   });
 
@@ -369,10 +369,9 @@ export function getKetuntasanDataForExport() {
       }
     }
     
-    if (d.status !== STATUS_LATIHAN.DRAF) {
-      if (mode === MODE_LATIHAN.NORMAL || mode === MODE_LATIHAN.ACAK || mode === MODE_LATIHAN.LAMA_NORMAL || mode === MODE_LATIHAN.LAMA_ACAK) {
-        if (d.nilai >= 80) rek.sumatif_lulus++;
-      }
+    // Definisi sama dengan agregasi tabel di atas — lihat catatan di sana.
+    if (isHasilMasterSumatif(d)) {
+      rek.sumatif_lulus++;
     }
   });
 
