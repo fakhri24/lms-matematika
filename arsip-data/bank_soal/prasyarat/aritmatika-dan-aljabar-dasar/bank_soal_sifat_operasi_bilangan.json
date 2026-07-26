@@ -1,0 +1,148 @@
+[
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Manakah penjabaran yang tepat dari sifat distributif untuk $6 \\times (10 + 4)$?",
+    "clue": "Sifat distributif: $a \\times (b+c) = a\\times b + a\\times c$. Angka pengali harus dikalikan ke SETIAP suku di dalam kurung.",
+    "opsi": [
+      "$6\\times10 + 4$",
+      "$6\\times10 + 6\\times4$",
+      "$6+10 \\times 6+4$",
+      "$60+4$",
+      "$6\\times14$"
+    ],
+    "jawaban_benar": "$6\\times10 + 6\\times4$",
+    "pembahasan": "Sifat distributif mengharuskan angka $6$ dikalikan ke kedua suku di dalam kurung, yaitu $10$ dan $4$.<br>$6 \\times (10+4) = 6\\times10 + 6\\times4$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Manakah persamaan berikut yang menunjukkan sifat komutatif PERKALIAN?",
+    "clue": "Sifat komutatif berarti urutan bisa ditukar tanpa mengubah hasil: $a\\times b = b\\times a$. Perhatikan operasi yang dipakai pada tiap opsi, bukan hanya bentuknya.",
+    "opsi": [
+      "$3 \\times 8 = 8 \\times 3$",
+      "$3 \\times 8 = 3 + 8$",
+      "$(3\\times2)\\times4 = 3\\times(2\\times4)$",
+      "$3\\times(2+4)=3\\times2+3\\times4$",
+      "$3+8=8+3$"
+    ],
+    "jawaban_benar": "$3 \\times 8 = 8 \\times 3$",
+    "pembahasan": "Sifat komutatif perkalian menukar urutan dua bilangan yang DIKALIKAN tanpa mengubah hasil, yaitu $3\\times8=8\\times3$.<br>Opsi \"$3+8=8+3$\" juga komutatif, tetapi untuk operasi penjumlahan, bukan perkalian."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Manakah persamaan berikut yang menunjukkan sifat asosiatif PENJUMLAHAN?",
+    "clue": "Sifat asosiatif berarti cara pengelompokan tiga bilangan bisa diubah tanpa mengubah hasil: $(a+b)+c = a+(b+c)$.",
+    "opsi": [
+      "$(2+5)+9 = 2+(5+9)$",
+      "$2+5=5+2$",
+      "$(2\\times5)\\times9=2\\times(5\\times9)$",
+      "$2\\times(5+9)=2\\times5+2\\times9$",
+      "$2+5+9=16$"
+    ],
+    "jawaban_benar": "$(2+5)+9 = 2+(5+9)$",
+    "pembahasan": "Sifat asosiatif penjumlahan mengubah pengelompokan tiga bilangan yang DIJUMLAHKAN tanpa mengubah hasil akhirnya."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Gunakan sifat distributif untuk menghitung $12 \\times 105$ dengan cara yang lebih mudah (uraikan $105 = 100 + 5$).",
+    "clue": "Pecah $105$ menjadi $100+5$, lalu kalikan $12$ ke masing-masing bagian sebelum dijumlahkan.",
+    "opsi": ["$1.200$", "$1.250$", "$1.260$", "$1.300$", "$1.320$"],
+    "jawaban_benar": "$1.260$",
+    "pembahasan": "$12 \\times 105 = 12 \\times (100+5) = (12\\times100) + (12\\times5) = 1.200 + 60 = 1.260$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Dengan memakai sifat komutatif dan asosiatif, hitunglah $4 \\times 17 \\times 25$ dengan cara yang lebih mudah (kelompokkan $4$ dan $25$ terlebih dahulu).",
+    "clue": "Tukar urutan ($4\\times17\\times25 \\to 17\\times4\\times25$), lalu kelompokkan $4\\times25$ karena hasilnya bilangan bulat yang rapi.",
+    "opsi": ["$1.600$", "$1.650$", "$1.700$", "$1.720$", "$1.750$"],
+    "jawaban_benar": "$1.700$",
+    "pembahasan": "Tukar urutan (komutatif): $4\\times17\\times25 = 17\\times4\\times25$.<br>Kelompokkan (asosiatif): $17\\times(4\\times25) = 17\\times100 = 1.700$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Sifat distributif memenuhi bentuk $a \\times (b - c) = \\dots$",
+    "clue": "Sama seperti distributif pada penjumlahan, tetapi tandanya mengikuti pengurangan di dalam kurung.",
+    "opsi": [
+      "$a\\times b - a\\times c$",
+      "$a\\times b - c$",
+      "$ab - ac \\times a$",
+      "$a - b\\times c$",
+      "$(a-b)\\times c$"
+    ],
+    "jawaban_benar": "$a\\times b - a\\times c$",
+    "pembahasan": "Sifat distributif tetap berlaku untuk pengurangan: angka $a$ dikalikan ke kedua suku, $b$ dan $c$, sehingga $a\\times(b-c) = a\\times b - a\\times c$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hitunglah $99 \\times 48$ dengan memanfaatkan sifat distributif, dengan mengubah $99$ menjadi $100 - 1$.",
+    "clue": "$99\\times48 = (100-1)\\times48$. Distribusikan $48$ ke $100$ dan ke $1$, lalu kurangkan.",
+    "opsi": ["$4.700$", "$4.740$", "$4.750$", "$4.752$", "$4.800$"],
+    "jawaban_benar": "$4.752$",
+    "pembahasan": "$99\\times48 = (100-1)\\times48 = (100\\times48) - (1\\times48) = 4.800 - 48 = 4.752$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Manakah cara berikut yang <b>BUKAN</b> merupakan penerapan sifat distributif yang benar untuk menghitung $7\\times(20+3)$?",
+    "clue": "Sifat distributif mengharuskan angka pengali ($7$) dikalikan ke SETIAP suku di dalam kurung, bukan hanya suku pertama.",
+    "opsi": [
+      "$7\\times20+7\\times3$",
+      "$7\\times23$",
+      "$140+21$",
+      "$7\\times20+3$",
+      "$161$"
+    ],
+    "jawaban_benar": "$7\\times20+3$",
+    "pembahasan": "Empat opsi lainnya sama-sama bernilai $161$ dan sah secara matematis.<br>\"$7\\times20+3$\" salah karena angka $3$ tidak ikut dikalikan dengan $7$ — hasilnya $143$, bukan $161$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Manakah operasi hitung berikut yang <b>TIDAK</b> memenuhi sifat komutatif?",
+    "clue": "Coba tukar urutan dua bilangan pada tiap operasi. Jika hasilnya berubah, berarti operasi itu tidak komutatif.",
+    "opsi": [
+      "Penjumlahan ($a+b=b+a$)",
+      "Perkalian ($a\\times b = b\\times a$)",
+      "Pengurangan ($a-b=b-a$)",
+      "Penjumlahan bilangan pecahan",
+      "Perkalian bilangan negatif"
+    ],
+    "jawaban_benar": "Pengurangan ($a-b=b-a$)",
+    "pembahasan": "Pengurangan tidak komutatif karena menukar urutan mengubah hasil. Contoh: $5-3=2$, tetapi $3-5=-2$.<br>Penjumlahan dan perkalian selalu komutatif, untuk bilangan apa pun."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Sifat Operasi Bilangan",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Lengkapi: $8 \\times 7 + 8 \\times 13 = 8 \\times (\\dots)$. Berapakah nilai yang tepat mengisi titik-titik tersebut?",
+    "clue": "Ini kebalikan dari distributif (faktorisasi): $a\\times b + a\\times c = a\\times(b+c)$.",
+    "opsi": ["$15$", "$18$", "$20$", "$21$", "$26$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": "Bentuk $a\\times b + a\\times c$ bisa difaktorkan menjadi $a\\times(b+c)$.<br>Di sini $a=8$, $b=7$, $c=13$, sehingga titik-titiknya adalah $7+13=20$.<br>(Cek: $8\\times7+8\\times13 = 56+104 = 160$, dan $8\\times20=160$ — cocok.)"
+  }
+]

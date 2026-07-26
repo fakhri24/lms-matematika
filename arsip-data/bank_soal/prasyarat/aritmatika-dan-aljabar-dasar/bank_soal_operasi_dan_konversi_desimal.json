@@ -1,0 +1,124 @@
+[
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hitunglah $2,4 + 1,5$.",
+    "clue": "Jajarkan koma desimalnya, lalu jumlahkan seperti bilangan bulat biasa.",
+    "opsi": ["$3,7$", "$3,8$", "$3,9$", "$4,0$", "$4,1$"],
+    "jawaban_benar": "$3,9$",
+    "pembahasan": "$2,4 + 1,5 = 3,9$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hitunglah $6,3 - 2,75$.",
+    "clue": "Samakan jumlah angka di belakang koma dulu ($6,3 = 6,30$), baru kurangkan.",
+    "opsi": ["$3,45$", "$3,5$", "$3,55$", "$3,65$", "$4,05$"],
+    "jawaban_benar": "$3,55$",
+    "pembahasan": "$6,3 = 6,30$.<br>$6,30 - 2,75 = 3,55$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hitunglah $4,8 \\div 0,6$.",
+    "clue": "Kalikan pembagi dan yang dibagi dengan $10$ agar pembaginya menjadi bilangan bulat, hasilnya tidak berubah.",
+    "opsi": ["$0,8$", "$6$", "$7,2$", "$8$", "$8,8$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$4,8 \\div 0,6 = 48 \\div 6 = 8$ (kedua bilangan dikalikan $10$ terlebih dahulu)."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Ubahlah pecahan $\\frac{1}{4}$ menjadi bentuk desimal.",
+    "clue": "Bagi pembilang dengan penyebutnya: $1 \\div 4$.",
+    "opsi": ["$0,14$", "$0,25$", "$0,4$", "$1,25$", "$4,0$"],
+    "jawaban_benar": "$0,25$",
+    "pembahasan": "$\\frac{1}{4} = 1 \\div 4 = 0,25$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Ubahlah desimal $0,125$ menjadi pecahan paling sederhana.",
+    "clue": "Tulis dulu sebagai pecahan per seribu ($\\frac{125}{1000}$), baru sederhanakan dengan FPB-nya.",
+    "opsi": ["$\\frac{1}{8}$", "$\\frac{1}{5}$", "$\\frac{1}{4}$", "$\\frac{1}{125}$", "$\\frac{125}{1000}$"],
+    "jawaban_benar": "$\\frac{1}{8}$",
+    "pembahasan": "$0,125 = \\frac{125}{1000}$.<br>FPB dari $125$ dan $1000$ adalah $125$, sehingga $\\frac{125}{1000} = \\frac{1}{8}$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Bandingkan $\\frac{2}{5}$ dan $0,5$. Manakah pernyataan yang benar?",
+    "clue": "Ubah pecahan menjadi desimal dulu supaya bisa dibandingkan langsung.",
+    "opsi": [
+      "$\\frac{2}{5} > 0,5$",
+      "$\\frac{2}{5} < 0,5$",
+      "$\\frac{2}{5} = 0,5$",
+      "Tidak bisa dibandingkan",
+      "$\\frac{2}{5} \\ge 0,5$"
+    ],
+    "jawaban_benar": "$\\frac{2}{5} < 0,5$",
+    "pembahasan": "$\\frac{2}{5} = 0,4$.<br>Karena $0,4 < 0,5$, maka $\\frac{2}{5} < 0,5$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Urutkan dari yang terkecil ke terbesar: $0,6$ ; $\\frac{1}{2}$ ; $\\frac{3}{4}$.",
+    "clue": "Ubah semuanya ke bentuk desimal terlebih dahulu supaya mudah dibandingkan.",
+    "opsi": [
+      "$\\frac{1}{2}, 0,6, \\frac{3}{4}$",
+      "$0,6, \\frac{1}{2}, \\frac{3}{4}$",
+      "$\\frac{3}{4}, 0,6, \\frac{1}{2}$",
+      "$\\frac{1}{2}, \\frac{3}{4}, 0,6$",
+      "$0,6, \\frac{3}{4}, \\frac{1}{2}$"
+    ],
+    "jawaban_benar": "$\\frac{1}{2}, 0,6, \\frac{3}{4}$",
+    "pembahasan": "Ubah ke desimal: $\\frac{1}{2}=0,5$; $0,6$ tetap $0,6$; $\\frac{3}{4}=0,75$.<br>Urutan dari terkecil: $0,5 < 0,6 < 0,75$, yaitu $\\frac{1}{2}, 0,6, \\frac{3}{4}$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Hitunglah $3,25 \\times 4$.",
+    "clue": "Kalikan seperti bilangan bulat biasa, lalu letakkan komanya sesuai jumlah angka di belakang koma pada bilangan awal.",
+    "opsi": ["$12$", "$12,5$", "$13$", "$13,25$", "$13,5$"],
+    "jawaban_benar": "$13$",
+    "pembahasan": "$3,25 \\times 4 = 13$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aritmatika Dasar"],
+    "pertanyaan": "Seorang pedagang membeli $2,5$ kg apel dengan harga Rp18.000 per kg. Berapa total uang yang harus dibayar?",
+    "clue": "Kalikan berat (dalam desimal) dengan harga per kg.",
+    "opsi": ["Rp36.000", "Rp40.500", "Rp45.000", "Rp47.500", "Rp50.000"],
+    "jawaban_benar": "Rp45.000",
+    "pembahasan": "Total harga $= 2,5 \\times 18.000 = 45.000$."
+  },
+  {
+    "materi_utama": "Aritmatika dan Aljabar Dasar",
+    "sub_materi": "Operasi dan Konversi Desimal",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Pecahan"],
+    "pertanyaan": "Bentuk desimal dari $\\frac{3}{10}$ adalah ...",
+    "clue": "Pecahan berpenyebut $10$ langsung bisa dibaca sebagai satu angka di belakang koma.",
+    "opsi": ["$0,03$", "$0,3$", "$3,0$", "$0,31$", "$3,10$"],
+    "jawaban_benar": "$0,3$",
+    "pembahasan": "$\\frac{3}{10} = 0,3$."
+  }
+]

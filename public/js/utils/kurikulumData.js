@@ -159,12 +159,18 @@ export const PRASYARAT_TRIGONOMETRI = {
 export const PETA_TAHAPAN = {
   // --- PRASYARAT MATEMATIKA DASAR ---
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
+  // Ditambahkan 2026-07-26 (bersama dua sub-materi lain di bawah) untuk
+  // menutup tiga celah tersisa dari analisis Tes Diagnostik Numerasi Kelas X
+  // — lihat plan/PLAN.md §10. Posisi tahap belum ditinjau guru.
+  "sifat operasi bilangan": "Tahap 1: Aritmatika",
   "kpk dan fpb": "Tahap 1: Aritmatika",
   "operasi pecahan": "Tahap 1: Aritmatika",
+  "operasi dan konversi desimal": "Tahap 1: Aritmatika",
   "operasi bentuk akar": "Tahap 1: Aritmatika",
 
   "pengenalan variabel": "Tahap 2: Gerbang Logika & Sudut",
   "manipulasi aljabar dasar": "Tahap 2: Gerbang Logika & Sudut",
+  "substitusi fungsi linear": "Tahap 2: Gerbang Logika & Sudut",
   "persamaan linear satu variabel": "Tahap 2: Gerbang Logika & Sudut",
   "pengenalan sudut dasar": "Tahap 2: Gerbang Logika & Sudut",
   "sifat sudut (berpelurus)": "Tahap 2: Gerbang Logika & Sudut",

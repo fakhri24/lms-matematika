@@ -189,3 +189,15 @@ Analisis ad-hoc atas berkas eksternal *Tes Diagnostik Numerasi — Kelas X* (50 
 Soalnya sempat berupa berkas arsip di `arsip-data/bank_soal/prasyarat/numerasi-terapan/*.json` (format sama seperti dump arsip lain), lalu **sudah diimpor ke Firestore** lewat `admin.html` → tab Bank Soal → tombol "Impor JSON" (2026-07-26). Berkas arsipnya dihapus lagi setelah impor sukses supaya tidak ter-impor dobel bila di-upload ulang tanpa sengaja — sumber kebenarannya sekarang Firestore, bukan berkas ini. Urutan tampilnya didaftarkan sebagai `"Tahap 7: Numerasi Terapan"` di `PETA_TAHAPAN` (`kurikulumData.js`) — posisi ini pilihan sementara penulis dokumen, **belum ditinjau guru**, dan mudah diubah karena tak ada satu pun sub-materi baru ini yang menjadi prasyarat di `PRASYARAT_TRIGONOMETRI`. Gate A (`gate-a-audit-kurikulum.mjs`) dan seluruh test Jest sudah dijalankan ulang dan lolos sebelum impor.
 
 Celah No. 4–5 (sifat operasi bilangan murni), No. 18–24 (desimal), dan No. 30–31 (substitusi fungsi linear $f(x)$) **belum digarap** — di luar cakupan permintaan ini.
+
+**Update 2026-07-26 — tiga celah sisanya juga ditutup.** Dibuat 3 sub-materi baru, masing-masing 10 soal, `materi_utama: "Aritmatika dan Aljabar Dasar"` (grup yang sudah ada, sejalan dengan sub-materi sejenis seperti "Operasi Aritmatika Dasar" dan "Manipulasi Aljabar Dasar"):
+
+- **Sifat Operasi Bilangan** — menutup No. 4–5 (distributif/komutatif/asosiatif pada bilangan murni, versi bukan-aljabar dari "Manipulasi Aljabar Dasar").
+- **Operasi dan Konversi Desimal** — menutup No. 18–24 (operasi hitung desimal, konversi pecahan↔desimal, membandingkan & mengurutkan campuran pecahan-desimal).
+- **Substitusi Fungsi Linear** — menutup No. 30–31 (evaluasi $f(x)$ untuk fungsi linear, termasuk mencari $x$ atau koefisien dari $f(x)$ yang diketahui).
+
+Didaftarkan di `PETA_TAHAPAN`: "Sifat Operasi Bilangan" dan "Operasi dan Konversi Desimal" masuk **Tahap 1: Aritmatika** (bersanding dengan Operasi Aritmatika Dasar / Operasi Pecahan); "Substitusi Fungsi Linear" masuk **Tahap 2: Gerbang Logika & Sudut**, tepat setelah "Manipulasi Aljabar Dasar" — sebagai jembatan sebelum notasi $f(x)$ dipakai serius di "Fungsi Kuadrat" (Tahap 5) dan "Analisis Grafik Fungsi" (Tahap 6). Ketiga posisi tahap ini pilihan sementara penulis dokumen, **belum ditinjau guru**.
+
+Soalnya masih berupa berkas arsip di `arsip-data/bank_soal/prasyarat/aritmatika-dan-aljabar-dasar/*.json` — **belum masuk Firestore**. Perlu diimpor manual lewat `admin.html` → tab Bank Soal → "Impor JSON" untuk ketiga berkas itu (pola yang sama seperti Numerasi Terapan di atas), lalu berkas arsipnya boleh dihapus setelah impor sukses agar tidak ter-impor dobel. Gate A dan seluruh test Jest sudah dijalankan ulang dan lolos.
+
+**Cakupan Tes Diagnostik Numerasi Kelas X kini lengkap secara desain (50/50 soal)** — enam celah yang tercatat di analisis awal (§10 bagian atas) semuanya sudah punya sub-materi padanan, menunggu langkah impor di atas.
