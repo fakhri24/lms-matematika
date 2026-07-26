@@ -53,7 +53,7 @@ Satu halaman = satu berkas HTML di `public/` + satu kontroler. Tidak ada router.
 
 **Sumber kebenaran hasil** — koleksi `hasil_latihan` (ujian sumatif **dan** draf formatif), plus `progres_belajar` untuk log per-soal.
 
-**Gerbang prasyarat** — sebuah materi Trigonometri hanya bisa dikerjakan sebagai *ujian* bila semua prasyaratnya sudah `master`. Prasyaratnya tabel manual (`PRASYARAT_TRIGONOMETRI`), urutan kartu dari `PETA_TAHAPAN`. Formatif **selalu terbuka**. Rinciannya di [plan/PLAN.md](plan/PLAN.md).
+**Gerbang prasyarat** — sebuah sub-materi (di tab manapun, bukan cuma Trigonometri lagi sejak 2026-07-26) hanya bisa dikerjakan sebagai *ujian* bila semua prasyaratnya sudah `master`. Prasyaratnya tabel manual (`PETA_PRASYARAT` di `kurikulumData.js`, dulu bernama `PRASYARAT_TRIGONOMETRI`), urutan kartu dari `PETA_TAHAPAN`. Formatif **selalu terbuka**. Rinciannya di [plan/PLAN.md](plan/PLAN.md) §11.
 
 **Definisi "master" ada di SATU tempat** — `isHasilMasterSumatif()` di `utils/kurikulumEngine.js`. `gelarService` dan `ketuntasanController` mengimpornya. **Jangan pernah menyalin ulang aturannya**: sebelum 2026-07-26 aturan itu ditulis di tiga tempat dan ketiganya berselisih, sehingga panel guru menampilkan "Lulus" untuk siswa yang materinya justru terkunci.
 
@@ -71,7 +71,7 @@ Satu halaman = satu berkas HTML di `public/` + satu kontroler. Tidak ada router.
 - **Keamanan Aturan Firestore**: Pastikan setiap kueri client-side mematuhi `firestore.rules`. Hanya ubah data yang dimiliki pengguna (`nis_siswa`).
 - **Pengujian Sukses**: Kode baru atau perubahan logika wajib lolos Jest sebelum di-commit. Fungsi di `utils/` **wajib** punya unit test pendamping.
 - **Ambang 10 Soal per Sub-Materi**: Setiap sub-materi wajib punya **minimal `MASTERY.SOAL_MIN` (10) soal** di bank soal sebelum boleh dipakai untuk ujian sumatif. Ambang ini bukan angka hiasan — `isHasilMasterSumatif()` mensyaratkan >= 10 soal dikerjakan, jadi sub-materi bersoal kurang dari itu **tidak akan pernah bisa di-master**: gelarnya tak pernah terbit, dan kalau ia jadi prasyarat, semua materi di hilirnya terkunci permanen. Konsekuensinya:
-  - Menambah sub-materi ke `PRASYARAT_TRIGONOMETRI` tanpa 10 soal = mengunci mati satu cabang kurikulum. Jalankan `plan/diagnostik/gate-a-audit-kurikulum.mjs` sebelum menambah.
+  - Menambah sub-materi ke `PETA_PRASYARAT` tanpa 10 soal = mengunci mati satu cabang kurikulum. Jalankan `plan/diagnostik/gate-a-audit-kurikulum.mjs` sebelum menambah.
   - Idealnya ujian sumatif pada sub-materi di bawah ambang **ditolak di depan**. **Penjaga ini belum ada di kode** (per 2026-07-26) — jangan berasumsi sudah terpasang.
   - Data lama yang terlanjur di bawah ambang **sengaja dibiarkan** (keputusan pemilik proyek, 2026-07-26). Jangan menghapusnya tanpa permintaan eksplisit.
   - Mode formatif **tidak** terkena ambang ini. Formatif adalah latihan terbimbing yang memang boleh pendek, dan tidak pernah dihitung sebagai bukti penguasaan.

@@ -5,7 +5,7 @@
 
 import { getRiwayatLatihanSiswa } from "../services/latihanService.js";
 import {
-  PRASYARAT_TRIGONOMETRI,
+  PETA_PRASYARAT,
   PETA_TAHAPAN,
 } from "../utils/kurikulumData.js";
 import {
@@ -123,8 +123,8 @@ async function muatPeta() {
   try {
     const { setMaster, gagal, tanpaSesi } = await muatStatus();
 
-    tataLetak = susunTataLetakPeta(PRASYARAT_TRIGONOMETRI, URUTAN_KURIKULUM);
-    const statusKunci = hitungStatusKunci(PRASYARAT_TRIGONOMETRI, setMaster);
+    tataLetak = susunTataLetakPeta(PETA_PRASYARAT, URUTAN_KURIKULUM);
+    const statusKunci = hitungStatusKunci(PETA_PRASYARAT, setMaster);
 
     statusPerNode = {};
     tataLetak.node.forEach((n) => {

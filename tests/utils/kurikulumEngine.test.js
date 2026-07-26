@@ -10,7 +10,7 @@ import {
 } from "../../public/js/utils/kurikulumEngine.js";
 import { MODE_LATIHAN } from "../../public/js/utils/constants.js";
 import {
-  PRASYARAT_TRIGONOMETRI,
+  PETA_PRASYARAT,
   PETA_TAHAPAN,
 } from "../../public/js/utils/kurikulumData.js";
 
@@ -321,13 +321,13 @@ describe("validasiKurikulum", () => {
   });
 });
 
-describe("PRASYARAT_TRIGONOMETRI — integritas tabel yang dipakai produksi", () => {
+describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
   // Tabel ini disusun tangan, jadi salahnya senyap: materi yang tak pernah
   // terbuka tidak melempar error, ia hanya hilang dari jangkauan siswa.
   // Catatan: syarat "prasyarat harus punya >= 10 soal" tidak diuji di sini
   // karena butuh data bank soal; lihat plan/diagnostik/gate-a-audit-kurikulum.mjs.
   const urutan = Object.keys(PETA_TAHAPAN);
-  const hasil = validasiKurikulum(PRASYARAT_TRIGONOMETRI, urutan);
+  const hasil = validasiKurikulum(PETA_PRASYARAT, urutan);
 
   test("semua nama dikenal kurikulum", () => {
     expect(hasil.namaTakDikenal).toEqual([]);
@@ -340,14 +340,14 @@ describe("PRASYARAT_TRIGONOMETRI — integritas tabel yang dipakai produksi", ()
   test("hanya materi tab Trigonometri yang dikunci", () => {
     // Blok Trigonometri menempati ekor PETA_TAHAPAN, mulai dari materi ini.
     const awalTrig = urutan.indexOf("rasio trigonometri dasar");
-    const diLuarBlok = Object.keys(PRASYARAT_TRIGONOMETRI).filter(
+    const diLuarBlok = Object.keys(PETA_PRASYARAT).filter(
       (nama) => urutan.indexOf(normalisasiNama(nama)) < awalTrig,
     );
     expect(diLuarBlok).toEqual([]);
   });
 
   test("tab Prasyarat sepenuhnya terbuka", () => {
-    const status = hitungStatusKunci(PRASYARAT_TRIGONOMETRI, new Set());
+    const status = hitungStatusKunci(PETA_PRASYARAT, new Set());
     const awalTrig = urutan.indexOf("rasio trigonometri dasar");
     const prasyaratTerkunci = urutan
       .slice(0, awalTrig)
@@ -362,7 +362,7 @@ describe("PRASYARAT_TRIGONOMETRI — integritas tabel yang dipakai produksi", ()
     );
     const trig = urutan.slice(urutan.indexOf("rasio trigonometri dasar"));
     for (let lapis = 0; lapis < trig.length; lapis++) {
-      const status = hitungStatusKunci(PRASYARAT_TRIGONOMETRI, master);
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
       const terbuka = trig.filter((n) => !master.has(n) && !status[n]?.locked);
       if (terbuka.length === 0) break;
       terbuka.forEach((n) => master.add(n));

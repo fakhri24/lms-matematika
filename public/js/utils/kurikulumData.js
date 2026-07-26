@@ -1,31 +1,52 @@
 // --- DAFTAR MATERI INTI ---
-export const DAFTAR_MATERI_INTI = ["Eksponen", "Logaritma", "Trigonometri"];
+export const DAFTAR_MATERI_INTI = [
+  "Eksponen",
+  "Logaritma",
+  "Trigonometri",
+  "Sistem Persamaan",
+];
 
 // =====================================================================
-// PRASYARAT TAB TRIGONOMETRI — GERBANG "KUNCI MATERI"
+// PETA PRASYARAT LINTAS TAB — GERBANG "KUNCI MATERI"
 // =====================================================================
-// Disusun MANUAL oleh guru. Boleh disunting tangan; test menjaga
-// integritasnya (tests/utils/kurikulumEngine.test.js).
+// Sampai 2026-07-26 tabel ini cuma berisi tab Trigonometri (nama lamanya
+// PRASYARAT_TRIGONOMETRI). Sejak ekspansi kurikulum ke banyak tab baru
+// (plan/PLAN.md §11), cakupannya digeneralisasi: SETIAP tab materi utama
+// boleh punya gerbang di sini, bukan cuma Trigonometri.
+//
+// Disusun MANUAL oleh guru/penyusun kurikulum. Boleh disunting tangan; test
+// menjaga integritasnya (tests/utils/kurikulumEngine.test.js).
 //
 // Aturan:
-//   - Kunci  = sub-materi tab Trigonometri, nama persis seperti di Firestore.
+//   - Kunci  = sub-materi APA SAJA (di tab manapun), nama persis seperti di Firestore.
 //   - Nilai  = daftar sub-materi yang wajib berstatus master lebih dulu.
 //   - Materi yang tidak terdaftar di sini => selalu terbuka.
-//   - Tab Prasyarat tidak pernah dikunci, tetapi materinya boleh menjadi
-//     syarat di sini (mis. Teorema Pythagoras).
+//   - Tab Prasyarat (SMP) tidak pernah dikunci, tetapi materinya boleh
+//     menjadi syarat di sini (mis. Teorema Pythagoras dulu berperan begitu;
+//     sekarang ia sendiri sudah pindah jadi sub-materi tab Trigonometri).
 //
 // Urutan tampil kartu TIDAK diambil dari tabel ini, melainkan dari urutan
-// kunci PETA_TAHAPAN di bawah — itulah urutan mengajar di kelas.
+// kunci PETA_TAHAPAN di bawah — itulah urutan mengajar di kelas. Untuk
+// gerbang ANTAR-TAB (mis. "seluruh sub-materi Eksponen" jadi syarat tab
+// Logaritma), urutan tab-tab baru di PETA_TAHAPAN harus mengikuti urutan
+// ajar prota (field RENCANA[].urut di file prota, bukan nomor bab buku).
 //
 // Angka "%" pada komentar = porsi soal materi itu yang menyebut konsep
 // tersebut di field `konsep_prasyarat`. Bukti pemakaian, bukan urutan ajar;
 // dipakai sebagai bahan pertimbangan saat menyusun, bukan sebagai aturan.
-export const PRASYARAT_TRIGONOMETRI = {
+// Sub-materi tab baru yang belum punya soal (jadi belum punya data
+// konsep_prasyarat) memakai rantai sekuensial sederhana dulu — lihat §11.
+export const PETA_PRASYARAT = {
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
   // Teorema Pythagoras, jadi siswa yang belum menguasainya belum siap.
   // Konsekuensi yang disengaja: SELURUH tab Trigonometri terkunci sampai
   // Teorema Pythagoras master.
+  //
+  // Teorema Pythagoras sendiri TIDAK didaftarkan sebagai kunci (target) di
+  // sini — sesuai buku, ia subbab 2.2 (persis sebelum rasio sisi-sisi),
+  // jadi sub-materi PERTAMA tab Trigonometri, bukan gerbang generik dari
+  // luar. Ia tidak butuh prasyarat lagi (2026-07-26, plan/PLAN.md §11).
   "Rasio Trigonometri Dasar": [
     "Teorema Pythagoras", // 63%
   ],
@@ -133,7 +154,7 @@ export const PRASYARAT_TRIGONOMETRI = {
   // ── Tahap 6: Persamaan Trigonometri ────────────────────────────────
   "Persamaan Trigonometri Dasar": [
     "Nilai Sudut Istimewa", // 100%
-    "Persamaan Linear Satu Variabel", // 60%
+    "Persamaan Linear Satu Variabel (PLSV)", // 60% — nama disamakan dgn tab Sistem Persamaan, lihat §11
   ],
 
   "Persamaan Trigonometri Standar": [
@@ -157,7 +178,23 @@ export const PRASYARAT_TRIGONOMETRI = {
 // PETA TAHAPAN UNTUK UI (PEMBATAS VISUAL & LEVELING)
 // =====================================================================
 export const PETA_TAHAPAN = {
-  // --- PRASYARAT MATEMATIKA DASAR ---
+  // =====================================================================
+  // MATERI EKSPONEN (tab "Eksponen", Bab 1 prota)
+  // =====================================================================
+  // Baru "Operasi Bentuk Akar" yang sudah pindah ke sini (2026-07-26,
+  // plan/PLAN.md §11) — sisa sub-materi Bab 1 lainnya menyusul di Fase 1.
+  "operasi bentuk akar": "Tahap 1: Eksponen dan Bentuk Akar",
+
+  // =====================================================================
+  // MATERI SISTEM PERSAMAAN (tab "Sistem Persamaan", Bab 3 prota)
+  // =====================================================================
+  // Dipindahkan dari tab Prasyarat 2026-07-26 (plan/PLAN.md §11). Nama
+  // PLSV/SPLDV distandarkan dengan akronim baku agar konsisten dengan SPLTV.
+  "persamaan linear satu variabel (plsv)": "Tahap 1: Satu Variabel",
+  "sistem persamaan linear dua variabel (spldv)": "Tahap 2: Dua Variabel",
+  "sistem persamaan linear tiga variabel (spltv)": "Tahap 3: Tiga Variabel",
+
+  // --- PRASYARAT MATEMATIKA DASAR (SMP) ---
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
   // Ditambahkan 2026-07-26 (bersama dua sub-materi lain di bawah) untuk
   // menutup tiga celah tersisa dari analisis Tes Diagnostik Numerasi Kelas X
@@ -166,12 +203,10 @@ export const PETA_TAHAPAN = {
   "kpk dan fpb": "Tahap 1: Aritmatika",
   "operasi pecahan": "Tahap 1: Aritmatika",
   "operasi dan konversi desimal": "Tahap 1: Aritmatika",
-  "operasi bentuk akar": "Tahap 1: Aritmatika",
 
   "pengenalan variabel": "Tahap 2: Gerbang Logika & Sudut",
   "manipulasi aljabar dasar": "Tahap 2: Gerbang Logika & Sudut",
   "substitusi fungsi linear": "Tahap 2: Gerbang Logika & Sudut",
-  "persamaan linear satu variabel": "Tahap 2: Gerbang Logika & Sudut",
   "pengenalan sudut dasar": "Tahap 2: Gerbang Logika & Sudut",
   "sifat sudut (berpelurus)": "Tahap 2: Gerbang Logika & Sudut",
   "sifat sudut (berseberangan)": "Tahap 2: Gerbang Logika & Sudut",
@@ -179,14 +214,11 @@ export const PETA_TAHAPAN = {
   "terminologi bangun geometri": "Tahap 3: Spasial & Pemodelan",
   "sifat bangun datar": "Tahap 3: Spasial & Pemodelan",
   "jumlah sudut segitiga": "Tahap 3: Spasial & Pemodelan",
-  "teorema pythagoras": "Tahap 3: Spasial & Pemodelan",
   "visualisasi spasial dan arah": "Tahap 3: Spasial & Pemodelan",
   "pemodelan navigasi (jurusan tiga angka)": "Tahap 3: Spasial & Pemodelan",
   "lingkaran luar segitiga": "Tahap 3: Spasial & Pemodelan",
 
   "representasi aljabar": "Tahap 4: Sistem & Realita",
-  "sistem persamaan linear": "Tahap 4: Sistem & Realita",
-  "sistem persamaan linear tiga variabel (spltv)": "Tahap 4: Sistem & Realita",
   "relasi dinamis (jarak, kecepatan, waktu)": "Tahap 4: Sistem & Realita",
 
   "persamaan kuadrat dasar": "Tahap 5: Area Kuadratik",
@@ -209,6 +241,11 @@ export const PETA_TAHAPAN = {
   "pembulatan dan estimasi": "Tahap 7: Numerasi Terapan",
 
   // --- MATERI TRIGONOMETRI ---
+  // Teorema Pythagoras dipindah ke sini 2026-07-26 (plan/PLAN.md §11) —
+  // persis subbab 2.2 di buku, sebelum rasio sisi-sisi (2.3). Posisinya
+  // HARUS tetap sebelum "rasio trigonometri dasar" karena ia gerbangnya
+  // (lihat PETA_PRASYARAT di atas) — jangan dipindah ke bawah.
+  "teorema pythagoras": "Tahap 1: Pengenalan & Konsep Dasar",
   "rasio trigonometri dasar": "Tahap 1: Pengenalan & Konsep Dasar",
   "nilai sudut istimewa": "Tahap 1: Pengenalan & Konsep Dasar",
 

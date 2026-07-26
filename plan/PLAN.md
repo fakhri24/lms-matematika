@@ -1,6 +1,6 @@
 # Kunci Materi & Peta Materi — Catatan Rancangan
 
-> Sebuah sub-materi di tab Trigonometri hanya bisa dikerjakan sebagai **ujian** bila semua prasyaratnya sudah berstatus **master**. Prasyaratnya disusun **manual oleh guru**; urutan tampil kartu diambil dari urutan mengajar di `PETA_TAHAPAN`.
+> Sebuah sub-materi hanya bisa dikerjakan sebagai **ujian** bila semua prasyaratnya sudah berstatus **master**. Prasyaratnya disusun **manual oleh guru**; urutan tampil kartu diambil dari urutan mengajar di `PETA_TAHAPAN`. Sampai 2026-07-26 ini cuma berlaku untuk tab Trigonometri (tabelnya dulu bernama `PETA_PRASYARAT`); sejak §11, cakupannya digeneralisasi ke tab manapun lewat `PETA_PRASYARAT`.
 
 **Status: selesai dan terverifikasi terhadap Firestore live.** Dokumen ini bukan lagi rencana kerja — isinya keputusan yang berlaku, alasannya, dan catatan jalan buntu yang sudah dicoba agar tidak diulang.
 
@@ -23,7 +23,7 @@ Riwayat lengkap penyusunannya (rencana bertahap, hasil Gate A/B, analisis `konse
 | 7 | UX klik kartu terkunci | **Toast** berisi daftar prasyarat yang belum master |
 | 8 | Materi yang sendirinya sudah master | **Tidak pernah dikunci**, walau prasyaratnya belum |
 | 9 | Sumber peta prasyarat | **Disusun manual oleh guru**, bukan diturunkan dari data soal |
-| 10 | Lingkup penguncian | **Hanya tab Trigonometri.** Tab Prasyarat sepenuhnya terbuka |
+| 10 | Lingkup penguncian | ~~Hanya tab Trigonometri~~ → **direvisi 2026-07-26 (§11): tab manapun boleh digerbang**, mengikuti rantai prasyarat bab di prota. Tab Prasyarat (SMP) tetap selalu terbuka |
 | 11 | Sumber urutan kartu | **`PETA_TAHAPAN`** (urutan mengajar), bukan hasil topological sort |
 
 **Dasar keputusan #8.** Gerbang ini memakai prasyarat untuk *menduga* kesiapan siswa. Nilai sumatif ≥80 atas materi itu sendiri adalah *bukti langsung*, dan bukti langsung mengalahkan dugaan. Tanpa aturan ini, siswa yang menguasai materi lewat urutan lain justru terhalang mengulang materinya sendiri. Uji manual menemukan 7 kasus nyata pada satu akun saja.
@@ -56,7 +56,7 @@ Aturan ini ditulis **hanya di satu tempat**: `isHasilMasterSumatif()` di `kuriku
 Tidak ada algoritma graf. Penguncian hanyalah pencarian di tabel:
 
 ```
-INPUT : PRASYARAT_TRIGONOMETRI (tabel manual), setMaster
+INPUT : PETA_PRASYARAT (tabel manual), setMaster
 PROSES: untuk tiap entri (materi → daftar prasyarat):
           prereqBelum = prasyarat yang ∉ setMaster
           locked      = (materi ∉ setMaster) ∧ (prereqBelum tidak kosong)
@@ -129,7 +129,7 @@ Catatan implementasi yang mudah terlupa:
 
 > Kalau algoritmanya butuh dua tambalan buatan agar tidak melawan urutan guru, maka urutan guru yang benar dan algoritmanya yang mengganggu.
 
-Field `konsep_prasyarat` tetap berharga sebagai **penasihat** — persentase pemakaiannya tersimpan sebagai komentar `// 63%` di sebelah tiap prasyarat di `PRASYARAT_TRIGONOMETRI` — tapi tidak boleh jadi sumber kebenaran urutan.
+Field `konsep_prasyarat` tetap berharga sebagai **penasihat** — persentase pemakaiannya tersimpan sebagai komentar `// 63%` di sebelah tiap prasyarat di `PETA_PRASYARAT` — tapi tidak boleh jadi sumber kebenaran urutan.
 
 **Peta linear.** Bentuk lama (55 node, tiap node tepat 1 prasyarat dan 1 anak) membuat siswa **selalu** hanya melihat `master + 2` materi terbuka, dan membuat visualisasi pohon mustahil — tidak ada algoritma tata letak yang bisa menciptakan cabang yang tidak ada di datanya. Tabel manual bercabang menyelesaikan keduanya sekaligus.
 
@@ -139,7 +139,7 @@ Field `konsep_prasyarat` tetap berharga sebagai **penasihat** — persentase pem
 
 **Panel diagnostik kurikulum di `admin.html`** (keputusan #5) — menampilkan `namaTakDikenal`, `urutanMundur`, dan `prasyaratTakMungkinMaster` dari `validasiKurikulum()`. Prioritas rendah: Gate A menemukan nol masalah, jadi panel ini murni pencegahan untuk materi yang ditambahkan nanti.
 
-**Eksponen & Logaritma.** Soalnya belum masuk Firestore dan sub-materinya bersoal 1–4. Keduanya tidak ada di `PRASYARAT_TRIGONOMETRI`, jadi sepenuhnya terbuka dan tidak ada yang rusak. Saat soalnya nanti dimasukkan, perlu diputuskan apakah kedua tab itu ikut digerbangkan — kalau ya, tabelnya disusun manual dengan cara yang sama, **dan soalnya harus ≥10 dulu** (§4).
+**Eksponen & Logaritma.** ~~Soalnya belum masuk Firestore~~ → superseded oleh §11: kedua tab ini sekarang bagian dari ekspansi kurikulum penuh, dikerjakan bertahap (Fase 1 & 2). "Operasi Bentuk Akar" sudah pindah ke tab Eksponen per 2026-07-26.
 
 **Data lama di bawah ambang sengaja dibiarkan** (keputusan pemilik proyek, 2026-07-26). Jangan menghapusnya tanpa permintaan eksplisit.
 
@@ -186,7 +186,7 @@ Analisis ad-hoc atas berkas eksternal *Tes Diagnostik Numerasi — Kelas X* (50 
 - **Perbandingan dan Skala** — mencakup gaya soal No. 45–48 (sederhanakan rasio, perbandingan senilai & berbalik nilai, skala peta/denah).
 - **Pembulatan dan Estimasi** — mencakup gaya soal No. 49–50 (pembulatan bilangan bulat & desimal, taksiran hasil operasi).
 
-Soalnya sempat berupa berkas arsip di `arsip-data/bank_soal/prasyarat/numerasi-terapan/*.json` (format sama seperti dump arsip lain), lalu **sudah diimpor ke Firestore** lewat `admin.html` → tab Bank Soal → tombol "Impor JSON" (2026-07-26). Berkas arsipnya dihapus lagi setelah impor sukses supaya tidak ter-impor dobel bila di-upload ulang tanpa sengaja — sumber kebenarannya sekarang Firestore, bukan berkas ini. Urutan tampilnya didaftarkan sebagai `"Tahap 7: Numerasi Terapan"` di `PETA_TAHAPAN` (`kurikulumData.js`) — posisi ini pilihan sementara penulis dokumen, **belum ditinjau guru**, dan mudah diubah karena tak ada satu pun sub-materi baru ini yang menjadi prasyarat di `PRASYARAT_TRIGONOMETRI`. Gate A (`gate-a-audit-kurikulum.mjs`) dan seluruh test Jest sudah dijalankan ulang dan lolos sebelum impor.
+Soalnya sempat berupa berkas arsip di `arsip-data/bank_soal/prasyarat/numerasi-terapan/*.json` (format sama seperti dump arsip lain), lalu **sudah diimpor ke Firestore** lewat `admin.html` → tab Bank Soal → tombol "Impor JSON" (2026-07-26). Berkas arsipnya dihapus lagi setelah impor sukses supaya tidak ter-impor dobel bila di-upload ulang tanpa sengaja — sumber kebenarannya sekarang Firestore, bukan berkas ini. Urutan tampilnya didaftarkan sebagai `"Tahap 7: Numerasi Terapan"` di `PETA_TAHAPAN` (`kurikulumData.js`) — posisi ini pilihan sementara penulis dokumen, **belum ditinjau guru**, dan mudah diubah karena tak ada satu pun sub-materi baru ini yang menjadi prasyarat di `PETA_PRASYARAT`. Gate A (`gate-a-audit-kurikulum.mjs`) dan seluruh test Jest sudah dijalankan ulang dan lolos sebelum impor.
 
 Celah No. 4–5 (sifat operasi bilangan murni), No. 18–24 (desimal), dan No. 30–31 (substitusi fungsi linear $f(x)$) **belum digarap** — di luar cakupan permintaan ini.
 
@@ -201,3 +201,82 @@ Didaftarkan di `PETA_TAHAPAN`: "Sifat Operasi Bilangan" dan "Operasi dan Konvers
 Soalnya sempat berupa berkas arsip di `arsip-data/bank_soal/prasyarat/aritmatika-dan-aljabar-dasar/*.json`, lalu **sudah diimpor ke Firestore** lewat `admin.html` → tab Bank Soal → "Impor JSON" (2026-07-26). Berkas arsipnya dihapus lagi setelah impor sukses (pola yang sama seperti Numerasi Terapan di atas) — sumber kebenarannya sekarang Firestore. Gate A dan seluruh test Jest sudah dijalankan ulang dan lolos sebelum impor.
 
 **Cakupan Tes Diagnostik Numerasi Kelas X kini lengkap (50/50 soal)** — enam celah yang tercatat di analisis awal (§10 bagian atas) semuanya sudah punya sub-materi padanan dan sudah masuk Firestore.
+
+---
+
+## 11. Ekspansi kurikulum ke prota/prosem penuh (2026-07-26, berjalan)
+
+Sumber: `/Users/fakhri246/project/matematika/supermath-mtk-x/index.html` (rencana pembelajaran satu tahun, di luar repo ini) — 11 bab + 1 sisipan (Nilai Mutlak), lengkap dengan urutan ajar (`RENCANA[].urut`), prasyarat antar-bab (`RENCANA[].prasyarat`), dan halaman per subbab. Tujuannya: aplikasi ini akhirnya mencakup seluruh materi kelas X, bukan cuma Trigonometri.
+
+### 11.1 Keputusan
+
+| # | Pertanyaan | Keputusan |
+|---|---|---|
+| 1 | Nama sub-materi baru | **Tidak mengikuti judul bab/subbab buku persis.** Buku kadang menggabung terlalu banyak konsep dalam satu subbab (bab 7.2 "Jenis-jenis Fungsi" = 15 halaman), kadang memecah konsep yang sama jadi dua (logaritma 4.2+4.3 = sifat +/− basis sama). Nama & granularitas ditentukan sendiri, lihat §11.2 |
+| 2 | Cakupan gerbang prasyarat | **Diperluas ke semua tab baru** (sebelumnya cuma Trigonometri, keputusan #10 di §1 direvisi) |
+| 3 | Sumber gerbang antar-tab | `RENCANA[].prasyarat` di file prota — *seluruh* sub-materi bab prasyarat harus master dulu, bukan cuma representasi sebagian |
+| 4 | Kerumitan gerbang di tab baru | **Rantai sekuensial dulu** (tiap sub-materi cuma butuh satu pendahulu langsung). Jaringan bercabang ala Trigonometri (bukti `konsep_prasyarat`, banyak-ke-banyak) baru disusun setelah soalnya ada dan polanya kelihatan — persis riwayat Trigonometri sendiri |
+| 5 | "Pengenalan Eksponen" | **Ditolak** sebagai sub-materi tab Eksponen — pangkat bilangan bulat positif materi SMP, bukan hal baru di kelas X. Kalau untuk remedial, masuk **tab Prasyarat**, bukan tab Eksponen |
+| 6 | Fungsi Eksponen/Logaritma | **Dimasukkan** — bukan subbab resmi buku, tapi ROADMAP di file prota sendiri menandainya sebagai celah CP Fase E/SNBT |
+| 7 | Folder `artefak/` (stub lama, "percobaan_gagal") | **Diabaikan sepenuhnya** — pengingat sejarah, bukan bahan baku |
+| 8 | Sumber soal SNBT/TKA (disebut di `RAMBU_ASESMEN`) | **Ditunda** — pemilik proyek sudah punya referensi soal asli, akan dipakai belakangan, di luar rencana ini dulu |
+
+### 11.2 Prinsip penamaan sub-materi
+
+1. Frasa benda (noun phrase), Title Case — bukan kalimat instruksi.
+2. Nama menggambarkan **konsep**, bukan lokasi di buku (tidak ada "7.2"/"Bab 6" dalam nama).
+3. "Dasar"/"Lanjutan" hanya untuk jenjang tingkat yang jelas — bukan tempat sampah generik.
+4. Akronim baku dalam kurung untuk istilah yang memang lazim disingkat guru/siswa (PLSV, SPLDV, SPLTV, FPB/KPK) — bukan singkatan buatan sendiri.
+5. Varian dalam kurung untuk memecah satu konsep jadi beberapa sub-materi paralel (pola sudah ada: "Sudut Berelasi (Horizontal/Vertikal)").
+6. **Pisah** kalau dua konsep butuh mastery terpisah — indikator: teknik pengerjaan beda, atau prota menandainya sebagai unit asesmen/proyek sendiri, atau jumlah halaman subbab jauh di atas tetangganya.
+7. **Gabung** kalau dua subbab cuma dipecah demi tata letak buku, padahal satu keterampilan sama (indikator: berdekatan, kecil, salah satu operasi invers dari yang lain).
+
+### 11.3 Rename engine (2026-07-26)
+
+`PRASYARAT_TRIGONOMETRI` → **`PETA_PRASYARAT`** di `kurikulumData.js` — satu tabel gabungan untuk gerbang tab manapun, bukan cuma Trigonometri. Mesinnya (`hitungStatusKunci`) sudah generik sejak awal, jadi tidak ada perubahan logika, cuma nama + isi tabel. Semua pemanggil ikut diperbarui: `pilihMateri.js`, `petaMateri.js`, `kurikulumEngine.test.js`, `tataLetakPeta.test.js`, `gate-a-audit-kurikulum.mjs`.
+
+`DAFTAR_MATERI_INTI` bertambah: `["Eksponen", "Logaritma", "Trigonometri", "Sistem Persamaan"]` — tab baru lain menyusul per fase (§11.5).
+
+**Teorema Pythagoras** pindah dari tab Prasyarat ke tab **Trigonometri** sendiri (sesuai buku, subbab 2.2 — tepat sebelum rasio sisi-sisi 2.3), sebagai sub-materi Trigonometri PERTAMA di `PETA_TAHAPAN`. Ia tetap gerbang untuk "Rasio Trigonometri Dasar" — mekanismenya di `PETA_PRASYARAT` tidak berubah, cuma `materi_utama`-nya.
+
+### 11.4 Gerbang antar-tab (diturunkan dari `RENCANA[].prasyarat`)
+
+| Tab | Digerbangkan oleh | Sumber |
+|---|---|---|
+| Eksponen, Relasi dan Fungsi, Persamaan Kuadrat, Sistem Persamaan, Kaidah Pencacahan | — (terbuka) | Bab 1/7/5/3/10 prasyarat `[]` |
+| Trigonometri | Teorema Pythagoras (gerbang internal, sudah ada) | Independen dari rantai bab |
+| Peluang (11.x, dalam tab Kaidah Pencacahan & Peluang yang sama) | Semua sub-materi Kaidah Pencacahan (10.x) | Bab 11 prasyarat `["bab10"]` |
+| Logaritma | Semua sub-materi Eksponen | Bab 4 prasyarat `["bab1"]` |
+| Fungsi Kuadrat | Semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat | Bab 9 prasyarat `["bab7","bab5"]` |
+| Pertidaksamaan | Semua sub-materi Eksponen + Fungsi Kuadrat + Sistem Persamaan | Bab 6 prasyarat `["bab1","bab9","bab3"]` |
+| Fungsi Rasional | Semua sub-materi Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan | Bab 8 prasyarat `["bab7","bab9","bab6"]` |
+| Nilai Mutlak | **Semua** sub-materi semua tab lain | Bab sisipan prasyarat `["semua"]` — kasus khusus, dikerjakan terakhir (Fase 9) |
+
+Entri gerbang di atas baru bisa ditulis ke `PETA_PRASYARAT` setelah tab prasyaratnya benar-benar punya sub-materi lengkap (mis. gerbang Logaritma baru final setelah Fase 1/Eksponen selesai seluruhnya).
+
+### 11.5 Rencana bertahap
+
+**Fase 0 (kode, sedang berjalan)** — rename engine (§11.3), reklasifikasi 3 kelompok sub-materi existing tanpa soal baru:
+- Tab "Sistem Persamaan" baru: "Persamaan Linear Satu Variabel (PLSV)" · "Sistem Persamaan Linear Dua Variabel (SPLDV)" · "Sistem Persamaan Linear Tiga Variabel (SPLTV)" — Tahap 1/2/3 masing-masing.
+- "Operasi Bentuk Akar" → tab Eksponen (`Tahap 1: Eksponen dan Bentuk Akar`).
+- "Teorema Pythagoras" → tab Trigonometri (§11.3).
+
+Fase 1–9 (isi konten baru, urutan mengikuti `RENCANA[].urut`): Eksponen (+ Fungsi Eksponen) → Logaritma (+ Fungsi Logaritma) → Relasi dan Fungsi → Persamaan Kuadrat → Fungsi Kuadrat → *(Sistem Persamaan sudah kelar di Fase 0)* → Pertidaksamaan → Fungsi Rasional → Kaidah Pencacahan & Peluang → Nilai Mutlak. Rincian sub-materi tiap fase (nama + status baru/pindah/split/gabung) ada di riwayat obrolan penyusunan rencana ini — dipindahkan ke sini saat fase itu benar-benar dikerjakan, supaya bagian ini tidak jadi terlalu panjang sebelum konten aslinya ada.
+
+### 11.6 Alur impor aman (menghindari duplikat)
+
+`upsertSoalImportDB`: ada `id` di JSON → replace dokumen; tanpa `id` → dokumen baru. Konsekuensinya:
+- **Soal benar-benar baru** (belum ada di Firestore): tulis JSON tanpa `id`, aman diimpor langsung — pola yang sudah dipakai di §10.
+- **Reklasifikasi soal existing** (ganti `materi_utama`/`sub_materi` pada soal yang SUDAH ada di Firestore, seperti Fase 0 di atas): **wajib** diekspor dulu lewat `admin.html` → Bank Soal → filter sub-materi → "Unduh JSON" (otomatis menyertakan `id`), field-nya diedit dengan `id` tetap utuh, baru diimpor ulang — supaya jadi *replace*, bukan duplikat. Setiap kali sebuah fase butuh langkah ini, akan ditandai eksplisit sebelum soal ditulis/diedit.
+
+### 11.7 Status saat ini
+
+Fase 0 kode sudah selesai & lolos Jest + Gate A. **Tersisa langkah data manual** (butuh ekspor dari `admin.html`, lihat §11.6) untuk 3 kelompok sebelum Gate A hijau lagi:
+
+1. "Persamaan Linear Satu Variabel" → rename jadi "Persamaan Linear Satu Variabel (PLSV)", `materi_utama` → "Sistem Persamaan".
+2. "Sistem Persamaan Linear" → rename jadi "Sistem Persamaan Linear Dua Variabel (SPLDV)", `materi_utama` → "Sistem Persamaan".
+3. "Sistem Persamaan Linear Tiga Variabel (SPLTV)" → nama sub-materi tetap sama, `materi_utama` → "Sistem Persamaan".
+4. "Operasi Bentuk Akar" → nama tetap, `materi_utama` → "Eksponen".
+5. "Teorema Pythagoras" → nama tetap, `materi_utama` → "Trigonometri".
+
+Sampai langkah ini selesai, Gate A akan melaporkan "persamaan linear satu variabel (plsv)" 0 soal (mengunci seluruh rantai persamaan Trigonometri) — ini **diketahui dan sementara**, bukan bug.

@@ -7,7 +7,7 @@ import {
   pecahBaris,
 } from "../../public/js/utils/tataLetakPeta.js";
 import {
-  PRASYARAT_TRIGONOMETRI,
+  PETA_PRASYARAT,
   PETA_TAHAPAN,
 } from "../../public/js/utils/kurikulumData.js";
 import { hitungStatusKunci } from "../../public/js/utils/kurikulumEngine.js";
@@ -68,7 +68,7 @@ describe("susunTataLetakPeta", () => {
 
   test("prasyarat selalu berada di kolom kiri materinya", () => {
     // Inilah janji visual peta ini: arah kiri ke kanan berarti "maju".
-    const { node, sisi } = susunTataLetakPeta(PRASYARAT_TRIGONOMETRI);
+    const { node, sisi } = susunTataLetakPeta(PETA_PRASYARAT);
     const kolom = new Map(node.map((n) => [n.nama, n.kolom]));
     const melanggar = sisi.filter(
       ({ dari, ke }) => kolom.get(dari) >= kolom.get(ke),
@@ -89,7 +89,7 @@ describe("susunTataLetakPeta", () => {
 
   test("tabel produksi tersusun penuh tanpa materi yatim", () => {
     const hasil = susunTataLetakPeta(
-      PRASYARAT_TRIGONOMETRI,
+      PETA_PRASYARAT,
       Object.keys(PETA_TAHAPAN),
     );
     expect(hasil.yatim).toEqual([]);
@@ -102,10 +102,10 @@ describe("susunTataLetakPeta", () => {
   test("kolom nol tabel produksi hanya berisi materi tab Prasyarat", () => {
     // Tab Prasyarat tidak pernah dikunci (keputusan #10), jadi kolom nol memang
     // tempatnya: bekal yang dibawa siswa sebelum masuk Trigonometri.
-    const { node } = susunTataLetakPeta(PRASYARAT_TRIGONOMETRI);
+    const { node } = susunTataLetakPeta(PETA_PRASYARAT);
     const kolomNol = node.filter((n) => n.kolom === 0).map((n) => n.nama);
     const materiTrigonometri = new Set(
-      Object.keys(PRASYARAT_TRIGONOMETRI).map((n) => n.toLowerCase()),
+      Object.keys(PETA_PRASYARAT).map((n) => n.toLowerCase()),
     );
     kolomNol.forEach((nama) => {
       expect(materiTrigonometri.has(nama)).toBe(false);

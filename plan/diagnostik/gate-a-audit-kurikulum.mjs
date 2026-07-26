@@ -9,7 +9,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const SOAL_MIN = 10;
 
-const { PRASYARAT_TRIGONOMETRI: PETA_PRASYARAT_MANUAL } = await import(
+const { PETA_PRASYARAT: PETA_PRASYARAT_MANUAL } = await import(
   pathToFileURL(join(ROOT, "public/js/utils/kurikulumData.js")).href
 );
 

@@ -6,7 +6,7 @@ import {
 } from "../services/latihanService.js";
 import {
   DAFTAR_MATERI_INTI,
-  PRASYARAT_TRIGONOMETRI,
+  PETA_PRASYARAT,
   PETA_TAHAPAN,
 } from "../utils/kurikulumData.js";
 import { MODE_LATIHAN, DATA_DEFAULT } from "../utils/constants.js";
@@ -69,7 +69,7 @@ async function muatStatusKunci() {
     const riwayat = await getRiwayatLatihanSiswa(nis);
     const setMaster = hitungSetMaster(riwayat);
     return {
-      statusKunci: hitungStatusKunci(PRASYARAT_TRIGONOMETRI, setMaster),
+      statusKunci: hitungStatusKunci(PETA_PRASYARAT, setMaster),
       setMaster,
     };
   } catch (error) {
