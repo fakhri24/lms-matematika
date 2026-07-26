@@ -389,7 +389,7 @@ Diverifikasi dengan ekspor Firestore live segar (930 soal) lewat Gate A — **�
 
 Tab Pertidaksamaan sekarang aktif dan terisi penuh — 7 dari 8 tab baru selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan). Gerbang antar-tab Fungsi Rasional → "semua sub-materi Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan" (§11.4) sekarang **bisa ditulis penuh** — ketiga tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 7 (Fungsi Rasional) dikerjakan.
 
-**Fase 7 — Fungsi Rasional, disiapkan 2026-07-26 (menunggu impor & verifikasi).** 4 sub-materi baru (40 soal), semuanya baru (tidak ada reklasifikasi), untuk tab Fungsi Rasional, dari Bab 8 prota (subbab beralfabet A. Pengertian / B. Mengidentifikasi / C. Domain / D. Daerah Hasil (Range) / E. Asimtot / F. Menggambar Fungsi Rasional):
+**Fase 7 — Fungsi Rasional, SELESAI (kode + data), terverifikasi 2026-07-26.** 4 sub-materi baru (40 soal), semuanya baru (tidak ada reklasifikasi), untuk tab Fungsi Rasional, dari Bab 8 prota (subbab beralfabet A. Pengertian / B. Mengidentifikasi / C. Domain / D. Daerah Hasil (Range) / E. Asimtot / F. Menggambar Fungsi Rasional):
 
 1. **Pengertian Fungsi Rasional** (Tahap 1, pintu masuk) — **gabungan** subbab A+B buku (definisi bentuk $\frac{p(x)}{q(x)}$ + identifikasi contoh/bukan-contoh) — terlalu tipis untuk 2 sub-materi terpisah mengingat total bab ini cuma 8 JP. Termasuk pengantar konsep lubang (hole) lewat penyederhanaan aljabar.
 2. **Domain dan Range Fungsi Rasional** (Tahap 2) — **gabungan** subbab C+D buku (dua sisi dari batasan nilai yang berkaitan: domain dari titik tak terdefinisi penyebut, range dari nilai yang tidak pernah dicapai akibat asimtot horizontal).
@@ -408,4 +408,6 @@ Kode lolos Jest 104/104 lokal (tambahan: cek rantai gerbang Fungsi Rasional bisa
 
 `peta-materi.html` **catatan penting**: kolom peta gabungan melonjak ke **19** (dari ambang 15 sebelumnya) karena "Pengertian Fungsi Rasional" mewarisi kedalaman rantai Pertidaksamaan yang sendirinya mewarisi rantai Eksponen. Ambang test dinaikkan lagi jadi **20** — ini kenaikan ke-3 (8→15 Fase 2, 15→20 di sini) hanya dalam 7 fase. Peta gabungan **sudah** sulit dibaca, bukan lagi sekadar berisiko; keputusan pemisahan peta per tab (masih belum diputuskan sejak Fase 2) semestinya diambil sebelum fase-fase berikutnya menambah kedalaman lagi.
 
-Belum di-push — menunggu konfirmasi impor lalu verifikasi ekspor Firestore live segar.
+Diverifikasi dengan ekspor Firestore live segar (970 soal) lewat Gate A — **✅ LOLOS**, DAG 70 node valid, tidak ada deadlock, keempat sub-materi Fungsi Rasional 10 soal masing-masing di `materi_utama: "Fungsi Rasional"`. Test Jest 104/104 lolos.
+
+Tab Fungsi Rasional sekarang aktif dan terisi penuh — 8 dari 8 tab bab-utama selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan, Fungsi Rasional). Sisa 2 fase di §11.5: Fase 8 (Kaidah Pencacahan & Peluang) dan Fase 9 (Nilai Mutlak) — keduanya berdiri sendiri tanpa gerbang antar-tab rumit (Bab 10 prasyarat `[]`, Bab 11 prasyarat `["bab10"]` saja), jadi tidak akan menambah kedalaman peta gabungan seperti fase-fase sebelumnya.
