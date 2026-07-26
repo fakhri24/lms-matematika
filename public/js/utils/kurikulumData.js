@@ -5,6 +5,7 @@ export const DAFTAR_MATERI_INTI = [
   "Trigonometri",
   "Sistem Persamaan",
   "Relasi dan Fungsi",
+  "Persamaan Kuadrat",
 ];
 
 // =====================================================================
@@ -86,6 +87,16 @@ export const PETA_PRASYARAT = {
   "Analisis Grafik Fungsi": ["Fungsi Piecewise"],
   "Sifat-sifat Fungsi": ["Fungsi Piecewise"],
   "Operasi Aljabar Fungsi": ["Sifat-sifat Fungsi"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB PERSAMAAN KUADRAT — rantai sekuensial (2026-07-26, plan/PLAN.md
+  // §11). Bab 5 prasyarat [] di RENCANA prota, jadi TIDAK ada gerbang
+  // antar-tab di pintu masuknya ("Akar Persamaan Kuadrat").
+  // ═══════════════════════════════════════════════════════════════════
+  "Diskriminan dan Jenis Akar": ["Akar Persamaan Kuadrat"],
+  "Jumlah dan Hasil Kali Akar (Vieta)": ["Diskriminan dan Jenis Akar"],
+  "Menyusun Persamaan Kuadrat Baru": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+  "Aplikasi Persamaan Kuadrat": ["Menyusun Persamaan Kuadrat Baru"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -214,7 +225,7 @@ export const PETA_PRASYARAT = {
 
   "Persamaan Trigonometri Lanjutan": [
     "Persamaan Trigonometri Standar", // urutan ajar
-    "Persamaan Kuadrat Dasar", // 100%
+    "Akar Persamaan Kuadrat", // 100% -- nama lama "Persamaan Kuadrat Dasar", diganti 2026-07-26 (Fase 4, plan/PLAN.md §11)
     "Identitas Trigonometri Dasar", // 50%
   ],
 
@@ -289,6 +300,23 @@ const TAHAPAN_RELASI_FUNGSI = {
   "operasi aljabar fungsi": "Tahap 7: Operasi Aljabar Fungsi",
 };
 
+// --- MATERI PERSAMAAN KUADRAT (tab "Persamaan Kuadrat", Bab 5 prota) ---
+// Fase 4 lengkap 2026-07-26 (plan/PLAN.md §11). "Akar Persamaan Kuadrat"
+// adalah RENAME dari "Persamaan Kuadrat Dasar" (isinya sudah cocok, tidak
+// diubah). "Diskriminan dan Jenis Akar" adalah RENAME + ROMBAK ISI dari
+// "Persamaan Kuadrat Lanjutan" (10 soal lama itu campur diskriminan/Vieta/
+// PK baru; ditulis ulang jadi murni diskriminan, id tetap sama). Vieta dan
+// Menyusun PK Baru yang tadinya bercampur di situ sekarang jadi sub-materi
+// baru sendiri. Keduanya (materi_utama dulu "Aljabar Lanjutan") masih
+// menunggu impor -- lihat status di plan/PLAN.md §11.
+const TAHAPAN_PERSAMAAN_KUADRAT = {
+  "akar persamaan kuadrat": "Tahap 1: Mencari Akar",
+  "diskriminan dan jenis akar": "Tahap 2: Diskriminan dan Jenis Akar",
+  "jumlah dan hasil kali akar (vieta)": "Tahap 3: Jumlah dan Hasil Kali Akar",
+  "menyusun persamaan kuadrat baru": "Tahap 4: Menyusun Persamaan Kuadrat Baru",
+  "aplikasi persamaan kuadrat": "Tahap 5: Aplikasi Persamaan Kuadrat",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
@@ -316,8 +344,6 @@ const TAHAPAN_PRASYARAT_SMP = {
   "representasi aljabar": "Tahap 4: Sistem & Realita",
   "relasi dinamis (jarak, kecepatan, waktu)": "Tahap 4: Sistem & Realita",
 
-  "persamaan kuadrat dasar": "Tahap 5: Area Kuadratik",
-  "persamaan kuadrat lanjutan": "Tahap 5: Area Kuadratik",
   "fungsi kuadrat": "Tahap 5: Area Kuadratik",
   "pertidaksamaan kuadrat": "Tahap 5: Area Kuadratik",
   "sistem persamaan linear-kuadrat (splk)": "Tahap 5: Area Kuadratik",
@@ -385,6 +411,7 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_EKSPONEN,
   ...TAHAPAN_LOGARITMA,
   ...TAHAPAN_RELASI_FUNGSI,
+  ...TAHAPAN_PERSAMAAN_KUADRAT,
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,

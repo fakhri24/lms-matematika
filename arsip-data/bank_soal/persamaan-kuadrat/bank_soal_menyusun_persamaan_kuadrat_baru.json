@@ -1,0 +1,124 @@
+[
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2-5x+6=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru yang akar-akarnya $2x_1$ dan $2x_2$.",
+    "clue": "Cari dulu jumlah dan hasil kali akar LAMA (Vieta), lalu kalikan dengan faktor skala yang sesuai untuk jumlah dan hasil kali akar BARU.",
+    "opsi": ["$x^2-10x+24=0$", "$x^2-5x+12=0$", "$x^2-20x+24=0$", "$x^2-10x+6=0$", "$2x^2-5x+6=0$"],
+    "jawaban_benar": "$x^2-10x+24=0$",
+    "pembahasan": "Akar lama: jumlah $=5$, hasil kali $=6$.<br>Akar baru $2x_1,2x_2$: jumlah baru $=2(5)=10$, hasil kali baru $=4(6)=24$.<br>PK baru: $x^2-10x+24=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2-4x+3=0$ adalah $\\alpha$ dan $\\beta$. Susunlah persamaan kuadrat baru yang akar-akarnya $(\\alpha+1)$ dan $(\\beta+1)$.",
+    "clue": "Jumlah baru $=(\\alpha+1)+(\\beta+1)$. Hasil kali baru $=(\\alpha+1)(\\beta+1)$ — jabarkan dengan sifat distributif, lalu substitusi jumlah & hasil kali akar lama.",
+    "opsi": ["$x^2-6x+8=0$", "$x^2-4x+3=0$", "$x^2-6x+3=0$", "$x^2-8x+6=0$", "$x^2-4x+8=0$"],
+    "jawaban_benar": "$x^2-6x+8=0$",
+    "pembahasan": "Akar lama: jumlah $=4$, hasil kali $=3$.<br>Jumlah baru $=(\\alpha+\\beta)+2=6$.<br>Hasil kali baru $=(\\alpha+1)(\\beta+1)=\\alpha\\beta+\\alpha+\\beta+1=3+4+1=8$.<br>PK baru: $x^2-6x+8=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)", "Operasi Pecahan"],
+    "pertanyaan": "Akar-akar persamaan $2x^2+3x-2=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru (koefisien bulat) yang akar-akarnya $\\frac{1}{x_1}$ dan $\\frac{1}{x_2}$.",
+    "clue": "Jumlah baru $=\\frac{1}{x_1}+\\frac{1}{x_2}=\\frac{x_1+x_2}{x_1x_2}$. Hasil kali baru $=\\frac{1}{x_1x_2}$. Kalikan hasil akhirnya dengan bilangan yang tepat agar koefisiennya bulat.",
+    "opsi": ["$2x^2-3x-2=0$", "$2x^2+3x-2=0$", "$x^2-3x-2=0$", "$2x^2-3x+2=0$", "$-2x^2-3x-2=0$"],
+    "jawaban_benar": "$2x^2-3x-2=0$",
+    "pembahasan": "Akar lama: jumlah $=-\\frac32$, hasil kali $=-1$.<br>Jumlah baru $=\\frac{-\\frac32}{-1}=\\frac32$. Hasil kali baru $=\\frac{1}{-1}=-1$.<br>PK baru: $x^2-\\frac32x-1=0$, dikalikan $2$ agar bulat: $2x^2-3x-2=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2+2x-8=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru yang akar-akarnya $-x_1$ dan $-x_2$.",
+    "clue": "Membalik tanda kedua akar membalik tanda jumlahnya, tapi hasil kalinya tetap sama (negatif kali negatif).",
+    "opsi": ["$x^2-2x-8=0$", "$x^2+2x-8=0$", "$x^2-2x+8=0$", "$x^2+2x+8=0$", "$-x^2-2x-8=0$"],
+    "jawaban_benar": "$x^2-2x-8=0$",
+    "pembahasan": "Akar lama: jumlah $=-2$, hasil kali $=-8$.<br>Jumlah baru $=-(-2)=2$. Hasil kali baru $=(-1)(-1)(-8)=-8$ (tetap sama).<br>PK baru: $x^2-2x-8=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2-6x+5=0$ adalah $\\alpha$ dan $\\beta$. Susunlah persamaan kuadrat baru yang akar-akarnya $\\alpha^2$ dan $\\beta^2$.",
+    "clue": "Jumlah baru $=\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta$. Hasil kali baru $=(\\alpha\\beta)^2$.",
+    "opsi": ["$x^2-26x+25=0$", "$x^2-36x+25=0$", "$x^2-6x+25=0$", "$x^2-26x+5=0$", "$x^2-10x+25=0$"],
+    "jawaban_benar": "$x^2-26x+25=0$",
+    "pembahasan": "Akar lama: jumlah $=6$, hasil kali $=5$.<br>Jumlah baru $=6^2-2(5)=36-10=26$. Hasil kali baru $=5^2=25$.<br>PK baru: $x^2-26x+25=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Metode umum menyusun persamaan kuadrat baru dari transformasi akar adalah dengan menghitung ...",
+    "clue": "Ingat bentuk umum persamaan kuadrat dari jumlah dan hasil kali akarnya.",
+    "opsi": [
+      "Jumlah dan hasil kali akar baru, lalu bentuk $x^2-(\\text{jumlah})x+(\\text{hasil kali})=0$",
+      "Akar-akar baru satu per satu secara eksplisit lebih dulu",
+      "Diskriminan baru saja",
+      "Mengalikan persamaan lama dengan konstanta",
+      "Substitusi langsung tanpa Vieta"
+    ],
+    "jawaban_benar": "Jumlah dan hasil kali akar baru, lalu bentuk $x^2-(\\text{jumlah})x+(\\text{hasil kali})=0$",
+    "pembahasan": "Cara paling efisien: hitung jumlah dan hasil kali akar BARU (dari hubungan Vieta akar lama), lalu langsung bentuk $x^2-(\\text{jumlah})x+(\\text{hasil kali})=0$ — tanpa perlu tahu nilai akar aslinya."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2-3x-10=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru yang akar-akarnya $(x_1+2)$ dan $(x_2+2)$.",
+    "clue": "Jabarkan hasil kali baru $(x_1+2)(x_2+2)$ dengan sifat distributif sebelum mensubstitusi nilai Vieta.",
+    "opsi": ["$x^2-7x=0$", "$x^2-3x-10=0$", "$x^2-7x-10=0$", "$x^2-3x=0$", "$x^2+7x=0$"],
+    "jawaban_benar": "$x^2-7x=0$",
+    "pembahasan": "Akar lama: jumlah $=3$, hasil kali $=-10$.<br>Jumlah baru $=3+4=7$. Hasil kali baru $=(x_1+2)(x_2+2)=x_1x_2+2(x_1+x_2)+4=-10+6+4=0$.<br>PK baru: $x^2-7x+0=0$, yaitu $x^2-7x=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Akar-akar persamaan $x^2-7x+12=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru yang akar-akarnya $3x_1$ dan $3x_2$.",
+    "clue": "Jumlah baru dikalikan $3$, hasil kali baru dikalikan $3^2=9$.",
+    "opsi": ["$x^2-21x+108=0$", "$x^2-7x+12=0$", "$x^2-21x+36=0$", "$3x^2-7x+12=0$", "$x^2-63x+108=0$"],
+    "jawaban_benar": "$x^2-21x+108=0$",
+    "pembahasan": "Akar lama: jumlah $=7$, hasil kali $=12$.<br>Jumlah baru $=3(7)=21$. Hasil kali baru $=9(12)=108$.<br>PK baru: $x^2-21x+108=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Akar-akar persamaan $2x^2-4x-6=0$ adalah $x_1$ dan $x_2$. Susunlah persamaan kuadrat baru (koefisien bulat sederhana) yang akar-akarnya $(x_1-1)$ dan $(x_2-1)$.",
+    "clue": "Sederhanakan dulu persamaan lama (bagi semua suku dengan $2$) sebelum menghitung Vieta-nya.",
+    "opsi": ["$x^2-4=0$", "$x^2-2x-3=0$", "$x^2+4=0$", "$x^2-2x-4=0$", "$2x^2-4=0$"],
+    "jawaban_benar": "$x^2-4=0$",
+    "pembahasan": "Sederhanakan: $2x^2-4x-6=0 \\to x^2-2x-3=0$. Akar lama: jumlah $=2$, hasil kali $=-3$.<br>Jumlah baru $=2-2=0$. Hasil kali baru $=(x_1-1)(x_2-1)=x_1x_2-(x_1+x_2)+1=-3-2+1=-4$.<br>PK baru: $x^2+0x-4=0$, yaitu $x^2-4=0$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Menyusun Persamaan Kuadrat Baru",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Jumlah dan Hasil Kali Akar (Vieta)"],
+    "pertanyaan": "Mengapa saat menyusun persamaan kuadrat baru kita cukup memakai jumlah dan hasil kali akar (Vieta), tanpa perlu mencari nilai akar aslinya secara eksplisit?",
+    "clue": "Perhatikan bentuk umum persamaan kuadrat: $x^2-(\\text{jumlah akar})x+(\\text{hasil kali akar})=0$.",
+    "opsi": [
+      "Karena bentuk umumnya hanya membutuhkan dua besaran itu, bukan nilai akar satu per satu",
+      "Karena akar aslinya selalu bilangan bulat",
+      "Karena diskriminannya pasti nol",
+      "Karena metode substitusi tidak berlaku untuk persamaan kuadrat",
+      "Karena persamaan kuadrat baru selalu sama dengan yang lama"
+    ],
+    "jawaban_benar": "Karena bentuk umumnya hanya membutuhkan dua besaran itu, bukan nilai akar satu per satu",
+    "pembahasan": "Persamaan kuadrat sepenuhnya ditentukan oleh jumlah dan hasil kali akarnya ($x^2-(\\text{jumlah})x+(\\text{hasil kali})=0$), sehingga kita tidak perlu tahu nilai akar-akarnya satu per satu — cukup tahu bagaimana jumlah dan hasil kalinya berubah."
+  }
+]

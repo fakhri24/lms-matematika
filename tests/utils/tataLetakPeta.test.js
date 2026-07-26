@@ -94,10 +94,11 @@ describe("susunTataLetakPeta", () => {
     );
     expect(hasil.yatim).toEqual([]);
     // 25 target tab Trigonometri + 4 target Eksponen (Fase 1) + 6 target
-    // Logaritma (Fase 2) + 6 target Relasi dan Fungsi (Fase 3, plan/PLAN.md
-    // §11 — termasuk "Analisis Grafik Fungsi" yang digerbang belakangan
-    // setelah Fungsi Piecewise live) + 10 akar (leaf, prasyarat:[]).
-    expect(hasil.node).toHaveLength(51);
+    // Logaritma (Fase 2) + 6 target Relasi dan Fungsi (Fase 3) + 3 target
+    // Persamaan Kuadrat (Fase 4, plan/PLAN.md §11 -- Vieta, Menyusun PK
+    // Baru, Aplikasi; "Diskriminan dan Jenis Akar" masih akar sampai
+    // gerbangnya menyusul) + 11 akar (leaf, prasyarat:[]).
+    expect(hasil.node).toHaveLength(55);
     // Ambang dinaikkan dari 8 ke 15 di Fase 2 (plan/PLAN.md §11): Logaritma
     // digerbang oleh SELURUH sub-materi Eksponen, jadi rantai Eksponen(5)+
     // Logaritma(6) tersambung lurus jadi satu jalur sedalam 11 kolom. Ini

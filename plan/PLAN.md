@@ -334,4 +334,20 @@ Diverifikasi dengan ekspor Firestore live segar (830 soal) lewat Gate A — **�
 
 Tab Relasi dan Fungsi sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) sekarang separuh siap (Relasi dan Fungsi selesai); masih menunggu tab Persamaan Kuadrat dibangun (Fase 4).
 
+**Fase 4 — Persamaan Kuadrat, SELESAI (kode + data), terverifikasi 2026-07-26.** 3 sub-materi baru (30 soal) + 2 reklasifikasi (satu di antaranya rombak isi total) untuk tab Persamaan Kuadrat:
+
+1. **Akar Persamaan Kuadrat** (Tahap 1, pintu masuk) — **rename** dari "Persamaan Kuadrat Dasar" (`materi_utama` "Aljabar Lanjutan" → "Persamaan Kuadrat"), isi TIDAK diubah: faktorisasi/kuadrat sempurna/rumus abc.
+2. **Diskriminan dan Jenis Akar** (Tahap 2) — **rename + rombak total isi** dari "Persamaan Kuadrat Lanjutan" (`id` sama, `materi_utama` "Aljabar Lanjutan" → "Persamaan Kuadrat"). 10 soal lama campur diskriminan/Vieta/PK baru — ditulis ulang jadi murni diskriminan & jenis akar (mengganti seluruh `pertanyaan`/`opsi`/`jawaban_benar`/`pembahasan`, `id` tetap dipertahankan).
+3. **Jumlah dan Hasil Kali Akar (Vieta)** (Tahap 3, baru) — 10 soal murni Vieta yang tadinya bercampur di "Lanjutan".
+4. **Menyusun Persamaan Kuadrat Baru** (Tahap 4, baru) — 10 soal murni menyusun PK baru dari transformasi akar.
+5. **Aplikasi Persamaan Kuadrat** (Tahap 5, baru) — konteks optimasi (luas maksimum, gerak parabola, keuntungan), sesuai `temaPM` Bab 5 di file prota.
+
+Gerbang: Bab 5 prasyarat `[]` — tidak ada gerbang antar-tab. Rantai internal lengkap: Akar Persamaan Kuadrat → Diskriminan dan Jenis Akar → Vieta → Menyusun PK Baru → Aplikasi Persamaan Kuadrat. Gerbang pertama (`"Diskriminan dan Jenis Akar": ["Akar Persamaan Kuadrat"]`) sempat ditahan sampai kedua rename dikonfirmasi live, lalu ditambahkan begitu terverifikasi (pola sama seperti Fase 1/3).
+
+Referensi lama di `PETA_PRASYARAT` juga diperbarui: "Persamaan Trigonometri Lanjutan" tadinya mensyaratkan `"Persamaan Kuadrat Dasar"`, sekarang `"Akar Persamaan Kuadrat"`.
+
+Diverifikasi dengan ekspor Firestore live segar (860 soal) lewat Gate A — **✅ LOLOS**, DAG 55 node valid, kelima sub-materi Persamaan Kuadrat 10 soal masing-masing di `materi_utama: "Persamaan Kuadrat"`, nama lama ("Persamaan Kuadrat Dasar"/"Lanjutan") sudah 0 soal (tidak ada sisa). Test Jest 98/98 lolos.
+
+Tab Persamaan Kuadrat sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) sekarang **bisa ditulis penuh** — kedua tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 5 (Fungsi Kuadrat) dikerjakan.
+
 Lalu diverifikasi dengan ekspor segar sebelum di-commit & push.

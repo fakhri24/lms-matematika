@@ -1,0 +1,112 @@
+[
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah persegi panjang memiliki keliling $20$ cm. Jika panjang sisinya dinyatakan sebagai $x$ dan lebar $(10-x)$, luas maksimum persegi panjang tersebut dicapai saat $x = ...$",
+    "clue": "Luas $L(x)=x(10-x)$ berbentuk fungsi kuadrat. Titik puncaknya berada di $x=-\\frac{b}{2a}$.",
+    "opsi": ["$3$", "$4$", "$5$", "$6$", "$7$"],
+    "jawaban_benar": "$5$",
+    "pembahasan": "$L(x)=x(10-x)=10x-x^2=-x^2+10x$.<br>Puncak parabola: $x=-\\frac{10}{2(-1)}=5$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah persegi panjang memiliki keliling $20$ cm dengan panjang $x$ dan lebar $(10-x)$. Berapakah luas maksimum persegi panjang tersebut?",
+    "clue": "Substitusikan nilai $x$ yang membuat luas maksimum (dari soal sebelumnya) ke rumus luas.",
+    "opsi": ["$20$", "$24$", "$25$", "$30$", "$50$"],
+    "jawaban_benar": "$25$",
+    "pembahasan": "Luas maksimum di $x=5$: $L(5)=5(10-5)=5\\times5=25$ cm$^2$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah bola dilempar ke atas dengan tinggi $h(t) = 20t - 5t^2$ (meter), $t$ dalam detik. Kapan bola mencapai tinggi maksimum?",
+    "clue": "Cari titik puncak parabola $h(t)=-5t^2+20t$.",
+    "opsi": ["$1$", "$2$", "$3$", "$4$", "$5$"],
+    "jawaban_benar": "$2$",
+    "pembahasan": "Puncak: $t=-\\frac{20}{2(-5)}=2$ detik."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah bola dilempar ke atas dengan tinggi $h(t) = 20t - 5t^2$ (meter), $t$ dalam detik. Berapakah tinggi maksimum bola tersebut?",
+    "clue": "Substitusikan $t$ saat tinggi maksimum (dari soal sebelumnya) ke rumus $h(t)$.",
+    "opsi": ["$15$", "$20$", "$25$", "$30$", "$40$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": "$h(2) = 20(2) - 5(2)^2 = 40 - 20 = 20$ meter."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah perusahaan memperoleh keuntungan $P(x) = -2x^2+80x-150$ (ribuan rupiah), dengan $x$ jumlah barang terjual. Berapa jumlah barang $x$ agar keuntungan maksimum?",
+    "clue": "Cari titik puncak parabola $P(x)$.",
+    "opsi": ["$15$", "$20$", "$25$", "$30$", "$40$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": "Puncak: $x=-\\frac{80}{2(-2)}=20$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Sebuah perusahaan memperoleh keuntungan $P(x) = -2x^2+80x-150$ (ribuan rupiah). Berapakah keuntungan maksimum perusahaan tersebut?",
+    "clue": "Substitusikan $x=20$ (dari soal sebelumnya) ke rumus $P(x)$.",
+    "opsi": ["$500$", "$600$", "$650$", "$700$", "$800$"],
+    "jawaban_benar": "$650$",
+    "pembahasan": "$P(20) = -2(20)^2+80(20)-150 = -800+1600-150 = 650$ (ribuan rupiah)."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Sebuah kawat sepanjang $40$ cm akan dibentuk menjadi persegi panjang dengan panjang $x$ dan lebar $(20-x)$. Tuliskan fungsi luasnya $L(x)$.",
+    "clue": "Kalikan panjang dan lebar, lalu jabarkan dengan sifat distributif.",
+    "opsi": ["$L(x)=20x-x^2$", "$L(x)=x^2-20x$", "$L(x)=40x-x^2$", "$L(x)=x(20+x)$", "$L(x)=20-x^2$"],
+    "jawaban_benar": "$L(x)=20x-x^2$",
+    "pembahasan": "$L(x) = x(20-x) = 20x - x^2$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Lintasan sebuah peluru dimodelkan dengan $h(x) = -0,1x^2+4x$ (meter), $x$ jarak mendatar (meter). Berapa jarak mendatar saat peluru mencapai titik tertinggi?",
+    "clue": "Cari titik puncak parabola $h(x)$.",
+    "opsi": ["$10$", "$15$", "$20$", "$25$", "$40$"],
+    "jawaban_benar": "$20$",
+    "pembahasan": "Puncak: $x=-\\frac{4}{2(-0,1)}=20$."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru"],
+    "pertanyaan": "Lintasan sebuah peluru dimodelkan dengan $h(x) = -0,1x^2+4x$ (meter). Berapakah tinggi maksimum peluru tersebut?",
+    "clue": "Substitusikan $x=20$ (dari soal sebelumnya) ke rumus $h(x)$.",
+    "opsi": ["$20$", "$30$", "$40$", "$50$", "$80$"],
+    "jawaban_benar": "$40$",
+    "pembahasan": "$h(20) = -0,1(20)^2+4(20) = -40+80 = 40$ meter."
+  },
+  {
+    "materi_utama": "Persamaan Kuadrat",
+    "sub_materi": "Aplikasi Persamaan Kuadrat",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Menyusun Persamaan Kuadrat Baru", "Manipulasi Aljabar Dasar"],
+    "pertanyaan": "Sebuah taman berbentuk persegi panjang akan dipagari pada 3 sisi (satu sisi menempel tembok) dengan total panjang pagar $30$ m. Jika lebar (tegak lurus tembok) $=x$ dan panjang (sejajar tembok) $=(30-2x)$, nilai $x$ agar luas taman maksimum adalah ...",
+    "clue": "Tuliskan dulu fungsi luas $L(x)=x(30-2x)$, lalu cari titik puncaknya.",
+    "opsi": ["$5$", "$6$", "$7$", "$7,5$", "$10$"],
+    "jawaban_benar": "$7,5$",
+    "pembahasan": "$L(x) = x(30-2x) = -2x^2+30x$.<br>Puncak: $x=-\\frac{30}{2(-2)}=7,5$."
+  }
+]
