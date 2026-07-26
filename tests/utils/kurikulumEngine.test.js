@@ -376,6 +376,48 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     expect(rantaiEksponen.filter((n) => !master.has(n))).toEqual([]);
   });
 
+  test("seluruh rantai gerbang Logaritma dapat dibuka setelah Eksponen master", () => {
+    const rantaiLogaritma = [
+      "pengenalan logaritma",
+      "sifat operasi logaritma",
+      "mengubah basis logaritma",
+      "identitas pangkat logaritma",
+      "persamaan logaritma",
+      "fungsi logaritma",
+    ];
+    const master = new Set([
+      "sifat eksponen bilangan bulat",
+      "operasi bentuk akar",
+      "merasionalkan penyebut",
+      "eksponen rasional (pangkat pecahan)",
+      "fungsi eksponen",
+    ]);
+    for (let lapis = 0; lapis < rantaiLogaritma.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiLogaritma.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiLogaritma.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("tab Logaritma terkunci bila Eksponen belum lengkap master", () => {
+    // 4 dari 5 sub-materi Eksponen master, satu sengaja belum ("fungsi eksponen").
+    const master = new Set([
+      "sifat eksponen bilangan bulat",
+      "operasi bentuk akar",
+      "merasionalkan penyebut",
+      "eksponen rasional (pangkat pecahan)",
+    ]);
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["pengenalan logaritma"].locked).toBe(true);
+    expect(status["pengenalan logaritma"].prereqBelum).toEqual([
+      "Fungsi Eksponen",
+    ]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

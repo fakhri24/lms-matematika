@@ -1,0 +1,118 @@
+[
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Bentuk lain dari $\\log_2 8$ menggunakan basis 10 adalah ...",
+    "clue": "Rumus ubah basis: $\\log_a b = \\frac{\\log_c b}{\\log_c a}$.",
+    "opsi": ["$\\frac{\\log 8}{\\log 2}$", "$\\frac{\\log 2}{\\log 8}$", "$\\log 8 \\times \\log 2$", "$\\log 8 - \\log 2$", "$\\log(8-2)$"],
+    "jawaban_benar": "$\\frac{\\log 8}{\\log 2}$",
+    "pembahasan": "$\\log_2 8 = \\frac{\\log 8}{\\log 2}$ (basis 10 di pembilang dan penyebut)."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Nilai dari $\\log_4 8$ adalah ... (nyatakan dalam basis 2)",
+    "clue": "Ubah $\\log_4 8$ menjadi $\\frac{\\log_2 8}{\\log_2 4}$.",
+    "opsi": ["$\\frac32$", "$\\frac23$", "$2$", "$3$", "$4$"],
+    "jawaban_benar": "$\\frac32$",
+    "pembahasan": "$\\log_4 8 = \\frac{\\log_2 8}{\\log_2 4} = \\frac{3}{2}$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Sederhanakan $\\log_2 5 \\times \\log_5 8$.",
+    "clue": "Sifat rantai basis: $\\log_a b \\times \\log_b c = \\log_a c$.",
+    "opsi": ["$\\log_2 8 = 3$", "$\\log_5 40$", "$40$", "$\\log_2 40$", "$13$"],
+    "jawaban_benar": "$\\log_2 8 = 3$",
+    "pembahasan": "$\\log_2 5 \\times \\log_5 8 = \\log_2 8$ (basis $5$ saling menghilangkan) $= 3$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Nilai dari $\\log_9 27$ adalah ...",
+    "clue": "Nyatakan $9$ dan $27$ dalam basis $3$ yang sama.",
+    "opsi": ["$\\frac32$", "$\\frac23$", "$2$", "$3$", "$9$"],
+    "jawaban_benar": "$\\frac32$",
+    "pembahasan": "$9=3^2$ dan $27=3^3$, sehingga $\\log_9 27 = \\log_{3^2} 3^3 = \\frac{3}{2}$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Bentuk sederhana dari $\\log_2 3 \\times \\log_3 4 \\times \\log_4 8$ adalah ...",
+    "clue": "Rangkaikan dari kiri: $\\log_2 3 \\times \\log_3 4 = \\log_2 4$, lalu lanjutkan rantainya.",
+    "opsi": ["$\\log_2 8 = 3$", "$\\log_2 4 = 2$", "$24$", "$\\log_3 8$", "$9$"],
+    "jawaban_benar": "$\\log_2 8 = 3$",
+    "pembahasan": "$\\log_2 3 \\times \\log_3 4 \\times \\log_4 8 = \\log_2 8$ (basis $3$ dan $4$ saling menghilangkan berantai) $= 3$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Manakah pernyataan yang benar tentang hubungan $\\log_a b$ dan $\\log_b a$?",
+    "clue": "Sifat kebalikan basis: $\\log_a b = \\frac{1}{\\log_b a}$.",
+    "opsi": [
+      "$\\log_a b = \\log_b a$",
+      "$\\log_a b \\times \\log_b a = 1$",
+      "$\\log_a b + \\log_b a = 1$",
+      "$\\log_a b = -\\log_b a$",
+      "Keduanya tidak berhubungan"
+    ],
+    "jawaban_benar": "$\\log_a b \\times \\log_b a = 1$",
+    "pembahasan": "$\\log_a b = \\frac{1}{\\log_b a}$, sehingga $\\log_a b \\times \\log_b a = 1$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Nilai dari $\\log_8 2$ adalah ...",
+    "clue": "Gunakan sifat kebalikan basis dari $\\log_2 8 = 3$.",
+    "opsi": ["$\\frac13$", "$\\frac14$", "$3$", "$4$", "$8$"],
+    "jawaban_benar": "$\\frac13$",
+    "pembahasan": "Karena $\\log_2 8 = 3$, maka $\\log_8 2 = \\frac{1}{\\log_2 8} = \\frac13$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Diketahui $\\log_2 3 = p$. Nyatakan $\\log_3 2$ dalam $p$.",
+    "clue": "Gunakan sifat kebalikan basis.",
+    "opsi": ["$\\frac1p$", "$p$", "$-p$", "$1-p$", "$p^2$"],
+    "jawaban_benar": "$\\frac1p$",
+    "pembahasan": "$\\log_3 2 = \\frac{1}{\\log_2 3} = \\frac1p$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Nilai dari $\\log_{27} 9$ adalah ...",
+    "clue": "Nyatakan $27$ dan $9$ dalam basis $3$ yang sama.",
+    "opsi": ["$\\frac23$", "$\\frac32$", "$2$", "$3$", "$\\frac13$"],
+    "jawaban_benar": "$\\frac23$",
+    "pembahasan": "$27=3^3$ dan $9=3^2$, sehingga $\\log_{27} 9 = \\log_{3^3} 3^2 = \\frac{2}{3}$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Mengubah Basis Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Sifat Operasi Logaritma"],
+    "pertanyaan": "Diketahui $\\log_2 5 = a$. Nyatakan $\\log_5 32$ dalam $a$.",
+    "clue": "Nyatakan $32 = 2^5$, ubah basisnya, lalu gunakan sifat kebalikan basis.",
+    "opsi": ["$\\frac5a$", "$5a$", "$\\frac{a}{5}$", "$\\frac{1}{5a}$", "$a-5$"],
+    "jawaban_benar": "$\\frac5a$",
+    "pembahasan": "$\\log_5 32 = \\log_5 2^5 = 5\\log_5 2 = 5 \\times \\frac{1}{\\log_2 5} = 5 \\times \\frac1a = \\frac5a$."
+  }
+]

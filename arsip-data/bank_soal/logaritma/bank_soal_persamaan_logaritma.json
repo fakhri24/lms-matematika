@@ -1,0 +1,112 @@
+[
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_2 x = 4$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat: $x = 2^4$.",
+    "opsi": ["$2$", "$4$", "$8$", "$16$", "$32$"],
+    "jawaban_benar": "$16$",
+    "pembahasan": "$\\log_2 x = 4 \\iff x = 2^4 = 16$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_3 x = 2$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat: $x = 3^2$.",
+    "opsi": ["$3$", "$6$", "$9$", "$27$", "$81$"],
+    "jawaban_benar": "$9$",
+    "pembahasan": "$\\log_3 x = 2 \\iff x = 3^2 = 9$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_5(2x) = 2$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat dulu: $2x = 5^2$, baru selesaikan untuk $x$.",
+    "opsi": ["$10$", "$12,5$", "$20$", "$25$", "$50$"],
+    "jawaban_benar": "$12,5$",
+    "pembahasan": "$\\log_5(2x) = 2 \\iff 2x = 5^2 = 25$.<br>$x = \\frac{25}{2} = 12,5$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log(x+3) = 2$ adalah ... (basis 10)",
+    "clue": "Ubah ke bentuk pangkat: $x+3 = 10^2$.",
+    "opsi": ["$7$", "$97$", "$100$", "$103$", "$200$"],
+    "jawaban_benar": "$97$",
+    "pembahasan": "$\\log(x+3) = 2 \\iff x+3 = 10^2 = 100$.<br>$x = 100 - 3 = 97$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_2(x-1) = 3$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat: $x-1 = 2^3$.",
+    "opsi": ["$7$", "$8$", "$9$", "$10$", "$24$"],
+    "jawaban_benar": "$9$",
+    "pembahasan": "$\\log_2(x-1) = 3 \\iff x-1 = 2^3 = 8$.<br>$x = 8+1 = 9$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log(3x-4) = \\log(x+2)$ adalah ...",
+    "clue": "Karena basisnya sama, numerusnya harus sama: $3x-4 = x+2$. Setelah dapat $x$, cek lagi apakah numerusnya tetap positif.",
+    "opsi": ["$2$", "$3$", "$4$", "$6$", "$9$"],
+    "jawaban_benar": "$3$",
+    "pembahasan": "$3x-4 = x+2 \\implies 2x = 6 \\implies x = 3$.<br>Cek numerus: $3(3)-4=5>0$ dan $3+2=5>0$, keduanya valid. Maka $x=3$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_2 x + \\log_2 3 = \\log_2 12$ adalah ...",
+    "clue": "Gabungkan dulu ruas kiri dengan sifat penjumlahan logaritma.",
+    "opsi": ["$2$", "$4$", "$6$", "$9$", "$12$"],
+    "jawaban_benar": "$4$",
+    "pembahasan": "$\\log_2 x + \\log_2 3 = \\log_2(3x)$.<br>$\\log_2(3x) = \\log_2 12 \\implies 3x = 12 \\implies x = 4$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ (dengan $x>0$) yang memenuhi $2\\log x = \\log 36$ adalah ... (basis 10)",
+    "clue": "Ubah ruas kiri jadi $\\log x^2$, samakan dengan ruas kanan, lalu ingat syarat $x>0$ untuk memilih akar yang valid.",
+    "opsi": ["$6$", "$-6$", "$6$ atau $-6$", "$18$", "$36$"],
+    "jawaban_benar": "$6$",
+    "pembahasan": "$2\\log x = \\log x^2$, sehingga $\\log x^2 = \\log 36 \\implies x^2 = 36 \\implies x = 6$ atau $x=-6$.<br>Karena numerus logaritma harus positif ($x>0$), maka $x=-6$ ditolak. Jawabannya $x=6$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ yang memenuhi $\\log_4 x = \\frac{1}{2}$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat: $x = 4^{\\frac12}$.",
+    "opsi": ["$1$", "$2$", "$4$", "$8$", "$16$"],
+    "jawaban_benar": "$2$",
+    "pembahasan": "$\\log_4 x = \\frac12 \\iff x = 4^{\\frac12} = 2$."
+  },
+  {
+    "materi_utama": "Logaritma",
+    "sub_materi": "Persamaan Logaritma",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Identitas Pangkat Logaritma", "Persamaan Linear Satu Variabel (PLSV)"],
+    "pertanyaan": "Nilai $x$ (dengan $x>0$) yang memenuhi $\\log_2(x^2) = 6$ adalah ...",
+    "clue": "Ubah ke bentuk pangkat dulu, lalu pilih akar yang sesuai dengan syarat $x>0$.",
+    "opsi": ["$-8$", "$8$", "$8$ atau $-8$", "$32$", "$64$"],
+    "jawaban_benar": "$8$",
+    "pembahasan": "$\\log_2(x^2) = 6 \\iff x^2 = 2^6 = 64 \\implies x = 8$ atau $x=-8$.<br>Karena disyaratkan $x>0$, maka $x=-8$ ditolak. Jawabannya $x=8$."
+  }
+]

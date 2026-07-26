@@ -48,6 +48,26 @@ export const PETA_PRASYARAT = {
   "Eksponen Rasional (Pangkat Pecahan)": ["Merasionalkan Penyebut"],
   "Fungsi Eksponen": ["Eksponen Rasional (Pangkat Pecahan)"],
 
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB LOGARITMA — gerbang antar-tab + rantai sekuensial (2026-07-26,
+  // plan/PLAN.md §11). Pintu masuk tab (Pengenalan Logaritma) digerbangkan
+  // oleh SELURUH sub-materi Eksponen master (Bab 4 prasyarat ["bab1"] di
+  // RENCANA prota) — bukan representasi sebagian, karena belum ada data
+  // konsep_prasyarat untuk memilih mana yang paling relevan.
+  // ═══════════════════════════════════════════════════════════════════
+  "Pengenalan Logaritma": [
+    "Sifat Eksponen Bilangan Bulat",
+    "Operasi Bentuk Akar",
+    "Merasionalkan Penyebut",
+    "Eksponen Rasional (Pangkat Pecahan)",
+    "Fungsi Eksponen",
+  ],
+  "Sifat Operasi Logaritma": ["Pengenalan Logaritma"],
+  "Mengubah Basis Logaritma": ["Sifat Operasi Logaritma"],
+  "Identitas Pangkat Logaritma": ["Mengubah Basis Logaritma"],
+  "Persamaan Logaritma": ["Identitas Pangkat Logaritma"],
+  "Fungsi Logaritma": ["Persamaan Logaritma"],
+
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
   // Teorema Pythagoras, jadi siswa yang belum menguasainya belum siap.
@@ -207,6 +227,22 @@ const TAHAPAN_EKSPONEN = {
   "fungsi eksponen": "Tahap 4: Aplikasi Eksponen",
 };
 
+// --- MATERI LOGARITMA (tab "Logaritma", Bab 4 prota) ---
+// Fase 2 lengkap 2026-07-26 (plan/PLAN.md §11). "Sifat Operasi Logaritma"
+// menggabungkan subbab 4.2+4.3 buku (penjumlahan & pengurangan basis sama
+// — satu sifat, dua arah). "Fungsi Logaritma" sisipan penutup, sama seperti
+// "Fungsi Eksponen" — celah CP Fase E/SNBT yang dicatat di ROADMAP prota.
+// HARUS tetap di bawah TAHAPAN_EKSPONEN: gerbangnya (lihat PETA_PRASYARAT)
+// mensyaratkan seluruh sub-materi Eksponen master lebih dulu.
+const TAHAPAN_LOGARITMA = {
+  "pengenalan logaritma": "Tahap 1: Definisi Logaritma",
+  "sifat operasi logaritma": "Tahap 2: Sifat Operasi",
+  "mengubah basis logaritma": "Tahap 3: Mengubah Basis",
+  "identitas pangkat logaritma": "Tahap 4: Identitas Pangkat",
+  "persamaan logaritma": "Tahap 5: Persamaan Logaritma",
+  "fungsi logaritma": "Tahap 6: Aplikasi Logaritma",
+};
+
 // --- MATERI SISTEM PERSAMAAN (tab "Sistem Persamaan", Bab 3 prota) ---
 // Dipindahkan dari tab Prasyarat 2026-07-26 (plan/PLAN.md §11). Nama
 // PLSV/SPLDV distandarkan dengan akronim baku agar konsisten dengan SPLTV.
@@ -312,6 +348,7 @@ export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
 
 export const PETA_TAHAPAN = {
   ...TAHAPAN_EKSPONEN,
+  ...TAHAPAN_LOGARITMA,
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,

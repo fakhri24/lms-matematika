@@ -93,12 +93,17 @@ describe("susunTataLetakPeta", () => {
       Object.keys(PETA_TAHAPAN),
     );
     expect(hasil.yatim).toEqual([]);
-    // 25 target tab Trigonometri + 4 target tab Eksponen (Fase 1, plan/PLAN.md
-    // §11: Operasi Bentuk Akar, Merasionalkan Penyebut, Eksponen Rasional,
-    // Fungsi Eksponen) + 9 akar (leaf, prasyarat:[]) gabungan Prasyarat & Eksponen.
-    expect(hasil.node).toHaveLength(38);
-    // Peta yang butuh lebih dari ~8 kolom tidak lagi terbaca dalam satu layar.
-    expect(hasil.jumlahKolom).toBeLessThanOrEqual(8);
+    // 25 target tab Trigonometri + 4 target tab Eksponen (Fase 1) + 6 target
+    // tab Logaritma (Fase 2, plan/PLAN.md §11) + 9 akar (leaf, prasyarat:[])
+    // gabungan Prasyarat & Eksponen.
+    expect(hasil.node).toHaveLength(44);
+    // Ambang dinaikkan dari 8 ke 15 di Fase 2 (plan/PLAN.md §11): Logaritma
+    // digerbang oleh SELURUH sub-materi Eksponen, jadi rantai Eksponen(5)+
+    // Logaritma(6) tersambung lurus jadi satu jalur sedalam 11 kolom. Ini
+    // gejala nyata bahwa peta-materi.html (satu peta gabungan semua tab)
+    // akan makin sulit dibaca seiring tab baru bertambah — pertimbangkan
+    // memisah peta per tab alih-alih terus menaikkan ambang ini.
+    expect(hasil.jumlahKolom).toBeLessThanOrEqual(15);
   });
 
   test("kolom nol tabel produksi hanya berisi materi tab Prasyarat", () => {

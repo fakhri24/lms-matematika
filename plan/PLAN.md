@@ -298,3 +298,20 @@ Gerbang ditambahkan sebagai **rantai sekuensial** di `PETA_PRASYARAT` (§11 kepu
 Diverifikasi dengan ekspor Firestore live segar (720 soal) lewat Gate A — **✅ LOLOS**, DAG 38 node valid, kelima sub-materi Eksponen 10 soal masing-masing di `materi_utama: "Eksponen"`. Test Jest 95/95 lolos (tambahan: cek rantai gerbang Eksponen bisa dibuka berurutan tanpa deadlock).
 
 **Catatan terbuka:** gerbang antar-tab Logaritma → "semua sub-materi Eksponen" (§11.4) sekarang **bisa** ditulis karena tab Eksponen sudah lengkap 5/5 — akan ditambahkan saat Fase 2 (Logaritma) dikerjakan.
+
+**Fase 2 — Logaritma, SELESAI (kode + data), terverifikasi 2026-07-26.** 6 sub-materi baru (60 soal) untuk tab Logaritma:
+
+1. **Pengenalan Logaritma** (Tahap 1) — definisi & notasi $\log_a b=c \iff a^c=b$, syarat basis, evaluasi langsung.
+2. **Sifat Operasi Logaritma** (Tahap 2) — gabungan 4.2+4.3 buku (penjumlahan & pengurangan basis sama, satu sifat dua arah), plus sifat pangkat.
+3. **Mengubah Basis Logaritma** (Tahap 3) — rumus ubah basis, sifat kebalikan basis, rantai basis berseri.
+4. **Identitas Pangkat Logaritma** (Tahap 4) — $a^{\log_a b}=b$ dan variannya.
+5. **Persamaan Logaritma** (Tahap 5) — termasuk soal yang menguji kesadaran syarat numerus $>0$ (akar ganda, salah satu ditolak).
+6. **Fungsi Logaritma** (Tahap 6, sisipan) — evaluasi $f(x)=\log_a x$, domain, satu soal konteks (desibel). Sama seperti "Fungsi Eksponen", menutup celah yang dicatat ROADMAP prota.
+
+Gerbang: **"Pengenalan Logaritma" digerbangkan oleh SELURUH 5 sub-materi Eksponen** (bukan representasi sebagian — belum ada data `konsep_prasyarat` untuk memilih mana yang paling relevan), lalu rantai sekuensial internal seperti Eksponen. Karena keenam sub-materi ini seluruhnya baru (tidak ada yang sudah live), gerbang & soal ditulis **bersamaan** — tidak ada risiko regresi live seperti catatan di Fase 1.
+
+`peta-materi.html` **catatan efek samping**: karena Eksponen(5)→Logaritma(6) tersambung jadi satu rantai lurus, kedalaman peta gabungan naik ke 11 kolom (dari sebelumnya ~8). Ambang tes `tataLetakPeta.test.js` dinaikkan ke 15 sebagai solusi sementara — **belum diputuskan** apakah peta ini akan tetap satu gabungan semua tab (akan makin panjang & sulit dibaca tiap fase baru) atau dipisah per tab. Perlu didiskusikan sebelum Fase 3+ menambah rantai lagi.
+
+Diverifikasi dengan ekspor Firestore live segar (780 soal) lewat Gate A — **✅ LOLOS**, DAG 44 node valid, keenam sub-materi Logaritma 10 soal masing-masing di `materi_utama: "Logaritma"`. Test Jest 97/97 lolos (tambahan: cek rantai gerbang Logaritma bisa dibuka setelah Eksponen master, dan cek tab Logaritma tetap terkunci bila Eksponen belum lengkap).
+
+Tab Logaritma sekarang aktif dan terisi penuh. Gerbang antar-tab Fungsi Kuadrat → "semua sub-materi Relasi dan Fungsi + Persamaan Kuadrat" (§11.4) masih menunggu kedua tab itu dibangun (Fase 3 & 4).
