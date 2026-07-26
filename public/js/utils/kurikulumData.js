@@ -8,6 +8,7 @@ export const DAFTAR_MATERI_INTI = [
   "Persamaan Kuadrat",
   "Fungsi Kuadrat",
   "Pertidaksamaan",
+  "Fungsi Rasional",
 ];
 
 // =====================================================================
@@ -167,6 +168,39 @@ export const PETA_PRASYARAT = {
   "Pertidaksamaan Rasional": ["Pertidaksamaan Kuadrat"],
   "Pertidaksamaan Irasional": ["Pertidaksamaan Rasional"],
   "Aplikasi Pertidaksamaan": ["Pertidaksamaan Irasional"],
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB FUNGSI RASIONAL — gerbang antar-tab + rantai sekuensial
+  // (2026-07-26, plan/PLAN.md §11). Pintu masuk tab ("Pengertian Fungsi
+  // Rasional") digerbangkan oleh SELURUH sub-materi Relasi dan Fungsi (7)
+  // + Fungsi Kuadrat (3) + Pertidaksamaan (6) master (Bab 8 prasyarat
+  // ["bab7","bab9","bab6"] di RENCANA prota) — ketiga tab prasyaratnya
+  // sudah lengkap sejak Fase 3, 5, dan 6, jadi gerbang ini langsung
+  // ditulis penuh, tidak ditunda. Semua 4 sub-materi di tab ini benar-
+  // benar baru (tidak ada reklasifikasi), jadi tidak ada risiko regresi
+  // live seperti Fase 5/6.
+  // ═══════════════════════════════════════════════════════════════════
+  "Pengertian Fungsi Rasional": [
+    "Substitusi Fungsi Linear",
+    "Definisi Relasi dan Fungsi",
+    "Jenis-jenis Fungsi",
+    "Fungsi Piecewise",
+    "Analisis Grafik Fungsi",
+    "Sifat-sifat Fungsi",
+    "Operasi Aljabar Fungsi",
+    "Sifat dan Grafik Fungsi Kuadrat",
+    "Menyusun Persamaan Parabola",
+    "Aplikasi Fungsi Kuadrat",
+    "Pertidaksamaan Linear",
+    "Program Linear",
+    "Pertidaksamaan Kuadrat",
+    "Pertidaksamaan Rasional",
+    "Pertidaksamaan Irasional",
+    "Aplikasi Pertidaksamaan",
+  ],
+  "Domain dan Range Fungsi Rasional": ["Pengertian Fungsi Rasional"],
+  "Asimtot Fungsi Rasional": ["Domain dan Range Fungsi Rasional"],
+  "Menggambar Grafik Fungsi Rasional": ["Asimtot Fungsi Rasional"],
 
   // ── Tahap 1: Pengenalan & Konsep Dasar ─────────────────────────────
   // Pintu masuk tab. Digerbangkan atas keputusan guru: 63% soalnya memakai
@@ -417,6 +451,24 @@ const TAHAPAN_PERTIDAKSAMAAN = {
   "aplikasi pertidaksamaan": "Tahap 6: Aplikasi Pertidaksamaan",
 };
 
+// --- MATERI FUNGSI RASIONAL (tab "Fungsi Rasional", Bab 8 prota) ---
+// Fase 7 lengkap 2026-07-26 (plan/PLAN.md §11). Buku memecah bab ini jadi
+// 6 subbab beralfabet (A. Pengertian, B. Mengidentifikasi, C. Domain,
+// D. Range, E. Asimtot, F. Menggambar) untuk cuma 8 JP total -- terlalu
+// halus untuk jadi 6 sub-materi terpisah, jadi DIGABUNG jadi 4: A+B jadi
+// "Pengertian" (definisi + identifikasi, termasuk pengantar konsep lubang),
+// C+D jadi "Domain dan Range" (dua sisi dari batasan nilai yang sama),
+// E dan F tetap sendiri (masing-masing substansial). Bab ini di luar CP
+// Fase E resmi (dicatat ROADMAP prota) dan dinilai lewat proyek, bukan UH
+// tulis -- konsisten dengan tidak adanya sub-materi "Aplikasi" terpisah;
+// "Menggambar Grafik" sudah menjadi sintesis akhirnya.
+const TAHAPAN_FUNGSI_RASIONAL = {
+  "pengertian fungsi rasional": "Tahap 1: Pengertian Fungsi Rasional",
+  "domain dan range fungsi rasional": "Tahap 2: Domain dan Range",
+  "asimtot fungsi rasional": "Tahap 3: Asimtot",
+  "menggambar grafik fungsi rasional": "Tahap 4: Menggambar Grafik",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
@@ -513,6 +565,7 @@ export const PETA_TAHAPAN = {
   ...TAHAPAN_FUNGSI_KUADRAT,
   ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PERTIDAKSAMAAN,
+  ...TAHAPAN_FUNGSI_RASIONAL,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
 };

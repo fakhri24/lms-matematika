@@ -99,19 +99,24 @@ describe("susunTataLetakPeta", () => {
     // Akar, Vieta, Menyusun PK Baru, Aplikasi) + 3 target Fungsi Kuadrat
     // (Fase 5 -- Sifat dan Grafik, Menyusun Persamaan Parabola, Aplikasi)
     // + 6 target Pertidaksamaan (Fase 6 -- Linear, Program Linear, Kuadrat,
-    // Rasional, Irasional, Aplikasi) = 54 target + 12 akar (leaf,
-    // prasyarat:[]) -- naik dari 10 karena "Sistem Persamaan Linear Dua/Tiga
-    // Variabel (SPLDV/SPLTV)" baru pertama kali jadi prasyarat di sini
-    // (sebelumnya tidak pernah dirujuk PETA_PRASYARAT), jadi masuk sebagai
-    // akar baru.
-    expect(hasil.node).toHaveLength(66);
-    // Ambang dinaikkan dari 8 ke 15 di Fase 2 (plan/PLAN.md §11): Logaritma
-    // digerbang oleh SELURUH sub-materi Eksponen, jadi rantai Eksponen(5)+
-    // Logaritma(6) tersambung lurus jadi satu jalur sedalam 11 kolom. Ini
-    // gejala nyata bahwa peta-materi.html (satu peta gabungan semua tab)
-    // akan makin sulit dibaca seiring tab baru bertambah — pertimbangkan
-    // memisah peta per tab alih-alih terus menaikkan ambang ini.
-    expect(hasil.jumlahKolom).toBeLessThanOrEqual(15);
+    // Rasional, Irasional, Aplikasi) + 4 target Fungsi Rasional (Fase 7 --
+    // Pengertian, Domain dan Range, Asimtot, Menggambar Grafik; semua
+    // prasyaratnya sudah node lain, tidak menambah akar baru) = 58 target +
+    // 12 akar (leaf, prasyarat:[]) -- akar naik dari 10 ke 12 di Fase 6
+    // karena "Sistem Persamaan Linear Dua/Tiga Variabel (SPLDV/SPLTV)" baru
+    // pertama kali jadi prasyarat di situ (sebelumnya tidak pernah dirujuk
+    // PETA_PRASYARAT).
+    expect(hasil.node).toHaveLength(70);
+    // Ambang dinaikkan lagi dari 15 ke 20 di Fase 7 (plan/PLAN.md §11):
+    // "Pengertian Fungsi Rasional" digerbang oleh SELURUH sub-materi Relasi
+    // dan Fungsi + Fungsi Kuadrat + Pertidaksamaan, dan rantai Pertidaksamaan
+    // itu sendiri digerbang oleh SELURUH Eksponen + Fungsi Kuadrat + Sistem
+    // Persamaan -- jalur terpanjang sekarang 19 kolom. Sudah dinaikkan 3x
+    // (8->15 di Fase 2, 15->20 di sini) hanya dalam 7 fase; peta-materi.html
+    // (satu peta gabungan semua tab) SUDAH sulit dibaca, bukan lagi cuma
+    // berisiko. Keputusan pemisahan peta per tab (masih **belum diputuskan**
+    // sejak Fase 2) semestinya tidak ditunda lagi lebih lama.
+    expect(hasil.jumlahKolom).toBeLessThanOrEqual(20);
   });
 
   test("kolom nol tabel produksi hanya berisi materi tab Prasyarat", () => {

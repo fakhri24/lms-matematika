@@ -388,3 +388,24 @@ Kode lolos Jest 102/102 lokal (tambahan: cek rantai gerbang Pertidaksamaan bisa 
 Diverifikasi dengan ekspor Firestore live segar (930 soal) lewat Gate A — **✅ LOLOS**, DAG 66 node valid, tidak ada deadlock, keenam sub-materi Pertidaksamaan 10 soal masing-masing di `materi_utama: "Pertidaksamaan"` (termasuk "Pertidaksamaan Kuadrat" yang sudah berpindah tab meski nama `sub_materi`-nya tidak berubah). Test Jest 102/102 lolos.
 
 Tab Pertidaksamaan sekarang aktif dan terisi penuh — 7 dari 8 tab baru selesai (Eksponen, Logaritma, Sistem Persamaan, Relasi dan Fungsi, Persamaan Kuadrat, Fungsi Kuadrat, Pertidaksamaan). Gerbang antar-tab Fungsi Rasional → "semua sub-materi Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan" (§11.4) sekarang **bisa ditulis penuh** — ketiga tab prasyaratnya sudah lengkap. Akan ditambahkan saat Fase 7 (Fungsi Rasional) dikerjakan.
+
+**Fase 7 — Fungsi Rasional, disiapkan 2026-07-26 (menunggu impor & verifikasi).** 4 sub-materi baru (40 soal), semuanya baru (tidak ada reklasifikasi), untuk tab Fungsi Rasional, dari Bab 8 prota (subbab beralfabet A. Pengertian / B. Mengidentifikasi / C. Domain / D. Daerah Hasil (Range) / E. Asimtot / F. Menggambar Fungsi Rasional):
+
+1. **Pengertian Fungsi Rasional** (Tahap 1, pintu masuk) — **gabungan** subbab A+B buku (definisi bentuk $\frac{p(x)}{q(x)}$ + identifikasi contoh/bukan-contoh) — terlalu tipis untuk 2 sub-materi terpisah mengingat total bab ini cuma 8 JP. Termasuk pengantar konsep lubang (hole) lewat penyederhanaan aljabar.
+2. **Domain dan Range Fungsi Rasional** (Tahap 2) — **gabungan** subbab C+D buku (dua sisi dari batasan nilai yang berkaitan: domain dari titik tak terdefinisi penyebut, range dari nilai yang tidak pernah dicapai akibat asimtot horizontal).
+3. **Asimtot Fungsi Rasional** (Tahap 3) — subbab E, tetap sendiri (substansial, 6 halaman buku): asimtot vertikal, horizontal (3 kasus derajat), dan miring (oblique).
+4. **Menggambar Grafik Fungsi Rasional** (Tahap 4) — subbab F, sintesis akhir: titik potong sumbu, lubang vs asimtot, sketsa grafik dari ciri-ciri yang diberikan.
+
+Catatan: bab ini **di luar CP Fase E resmi** (dicatat ROADMAP prota) dan dinilai lewat **proyek** ("Analisis Grafik"), bukan UH tulis — konsisten dengan tidak adanya sub-materi "Aplikasi" terpisah seperti fase-fase lain; "Menggambar Grafik Fungsi Rasional" sudah berfungsi sebagai sintesis akhirnya.
+
+Gerbang: **"Pengertian Fungsi Rasional" digerbangkan oleh SELURUH sub-materi Relasi dan Fungsi (7) + Fungsi Kuadrat (3) + Pertidaksamaan (6)** — sama seperti Fase 5/6, gerbang ini **langsung ditulis penuh sekaligus** (tidak ditunda) karena ketiga tab prasyaratnya sudah lengkap & terverifikasi (Fase 3, 5, dan 6). Rantai internal: Pengertian → Domain dan Range → Asimtot → Menggambar Grafik. Karena keempat sub-materi ini seluruhnya baru (tidak ada yang sudah live sebelumnya), tidak ada risiko regresi live seperti Fase 5/6.
+
+`TAHAPAN_FUNGSI_RASIONAL` ditambahkan ke `PETA_TAHAPAN`, ditempatkan setelah `TAHAPAN_PERTIDAKSAMAAN` dalam urutan spread (urutan ini dipakai `validasiKurikulum` untuk cek "prasyarat diajarkan sebelum materinya" — seluruh sub-materi Pertidaksamaan harus muncul sebelum Fungsi Rasional).
+
+**Alur impor**: 4 file baru (`bank_soal_pengertian_fungsi_rasional.json`, `bank_soal_domain_dan_range_fungsi_rasional.json`, `bank_soal_asimtot_fungsi_rasional.json`, `bank_soal_menggambar_grafik_fungsi_rasional.json`, semua tanpa `id`) aman diimpor langsung — tidak ada file reklasifikasi di fase ini.
+
+Kode lolos Jest 104/104 lokal (tambahan: cek rantai gerbang Fungsi Rasional bisa dibuka setelah Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan master, dan cek tab ini tetap terkunci bila Pertidaksamaan belum lengkap). Gate A lokal LOLOS tanpa deadlock, DAG 70 node valid.
+
+`peta-materi.html` **catatan penting**: kolom peta gabungan melonjak ke **19** (dari ambang 15 sebelumnya) karena "Pengertian Fungsi Rasional" mewarisi kedalaman rantai Pertidaksamaan yang sendirinya mewarisi rantai Eksponen. Ambang test dinaikkan lagi jadi **20** — ini kenaikan ke-3 (8→15 Fase 2, 15→20 di sini) hanya dalam 7 fase. Peta gabungan **sudah** sulit dibaca, bukan lagi sekadar berisiko; keputusan pemisahan peta per tab (masih belum diputuskan sejak Fase 2) semestinya diambil sebelum fase-fase berikutnya menambah kedalaman lagi.
+
+Belum di-push — menunggu konfirmasi impor lalu verifikasi ekspor Firestore live segar.

@@ -1,0 +1,130 @@
+[
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Titik potong sumbu Y dari grafik fungsi $f(x)=\\frac{x-2}{x+3}$ adalah ...",
+    "clue": "Substitusikan $x=0$ ke fungsi tersebut.",
+    "opsi": ["$(0,-\\frac{2}{3})$", "$(0,\\frac{2}{3})$", "$(2,0)$", "$(-3,0)$", "$(0,-2)$"],
+    "jawaban_benar": "$(0,-\\frac{2}{3})$",
+    "pembahasan": "$f(0)=\\frac{0-2}{0+3}=-\\frac{2}{3}$, sehingga titik potong sumbu Y adalah $(0,-\\frac{2}{3})$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Titik potong sumbu X dari grafik fungsi $f(x)=\\frac{x-2}{x+3}$ adalah ...",
+    "clue": "Titik potong sumbu X terjadi saat pembilang bernilai nol (dan penyebut tidak nol di titik itu).",
+    "opsi": ["$(2,0)$", "$(-3,0)$", "$(0,-\\frac{2}{3})$", "$(0,2)$", "$(-2,0)$"],
+    "jawaban_benar": "$(2,0)$",
+    "pembahasan": "Pembilang nol saat $x-2=0 \\Rightarrow x=2$, dan penyebut di $x=2$ tidak nol, sehingga titik potongnya $(2,0)$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Grafik fungsi $f(x)=\\frac{2x}{x-1}$ memiliki asimtot vertikal dan horizontal berturut-turut di ...",
+    "clue": "Asimtot vertikal dari penyebut nol; asimtot horizontal dari rasio koefisien utama (derajat sama).",
+    "opsi": ["$x=1$ dan $y=2$", "$x=-1$ dan $y=2$", "$x=1$ dan $y=0$", "$x=2$ dan $y=1$", "$x=1$ dan $y=-2$"],
+    "jawaban_benar": "$x=1$ dan $y=2$",
+    "pembahasan": "Penyebut nol di $x=1$. Derajat pembilang dan penyebut sama, rasio koefisien utama $\\frac{2}{1}=2$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Grafik fungsi $f(x)=\\frac{1}{x}$ terletak di kuadran ...",
+    "clue": "Periksa tanda $f(x)$ untuk $x$ positif dan $x$ negatif.",
+    "opsi": ["I dan III", "II dan IV", "I dan II", "III dan IV", "I saja"],
+    "jawaban_benar": "I dan III",
+    "pembahasan": "Untuk $x>0$, $f(x)=\\frac{1}{x}>0$ (kuadran I). Untuk $x<0$, $f(x)<0$ (kuadran III)."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Sebuah grafik fungsi rasional memiliki asimtot vertikal $x=2$, asimtot horizontal $y=0$, dan memotong sumbu Y di $(0,-1)$. Fungsi yang sesuai dengan ciri tersebut adalah ...",
+    "clue": "Bentuk umum dengan asimtot vertikal $x=2$ dan horizontal $y=0$ adalah $f(x)=\\frac{k}{x-2}$; cari $k$ dari titik potong sumbu Y.",
+    "opsi": [
+      "$f(x)=\\frac{2}{x-2}$",
+      "$f(x)=\\frac{-2}{x-2}$",
+      "$f(x)=\\frac{2}{x+2}$",
+      "$f(x)=\\frac{x}{x-2}$",
+      "$f(x)=\\frac{2}{x-2}+1$"
+    ],
+    "jawaban_benar": "$f(x)=\\frac{2}{x-2}$",
+    "pembahasan": "$f(0)=\\frac{k}{-2}=-1 \\Rightarrow k=2$. Jadi $f(x)=\\frac{2}{x-2}$, dengan asimtot vertikal $x=2$ dan horizontal $y=0$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Grafik fungsi $f(x)=\\frac{x+1}{x-4}$ memotong sumbu X di titik ...",
+    "clue": "Titik potong sumbu X terjadi saat pembilang bernilai nol.",
+    "opsi": ["$(-1,0)$", "$(4,0)$", "$(0,-\\frac{1}{4})$", "$(1,0)$", "$(0,\\frac{1}{4})$"],
+    "jawaban_benar": "$(-1,0)$",
+    "pembahasan": "Pembilang nol saat $x+1=0 \\Rightarrow x=-1$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Untuk fungsi $f(x)=\\frac{1}{x-3}$, ketika $x$ mendekati $3$ dari kiri ($x\\to3^-$), nilai $f(x)$ akan ...",
+    "clue": "Saat $x$ sedikit kurang dari $3$, nilai $x-3$ menjadi bilangan negatif yang sangat kecil.",
+    "opsi": ["mendekati $-\\infty$", "mendekati $+\\infty$", "mendekati $0$", "mendekati $1$", "mendekati $3$"],
+    "jawaban_benar": "mendekati $-\\infty$",
+    "pembahasan": "Saat $x\\to3^-$, $x-3$ mendekati $0$ dari arah negatif, sehingga $\\frac{1}{x-3}$ mendekati $-\\infty$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Grafik fungsi rasional $f(x)=\\frac{3}{x+1}$ TIDAK PERNAH memotong garis ...",
+    "clue": "Garis yang tidak pernah dipotong adalah asimtot horizontalnya.",
+    "opsi": ["$y=0$", "$x=0$", "$y=3$", "$x=-1$", "$y=1$"],
+    "jawaban_benar": "$y=0$",
+    "pembahasan": "Asimtot horizontal $y=0$ (derajat pembilang lebih kecil dari penyebut) tidak pernah dipotong grafiknya."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional", "Pengertian Fungsi Rasional"],
+    "pertanyaan": "Pada grafik fungsi $f(x)=\\frac{x^2-1}{x-1}$, di titik $x=1$ akan tampak sebagai ...",
+    "clue": "Sederhanakan dulu fungsinya untuk melihat apakah ada faktor yang saling coret.",
+    "opsi": [
+      "lubang (lingkaran terbuka) di titik $(1,2)$",
+      "asimtot vertikal di $x=1$",
+      "titik potong sumbu X di $(1,0)$",
+      "asimtot horizontal di $y=1$",
+      "grafik terputus tanpa keterangan apa pun"
+    ],
+    "jawaban_benar": "lubang (lingkaran terbuka) di titik $(1,2)$",
+    "pembahasan": "$\\frac{x^2-1}{x-1}=\\frac{(x-1)(x+1)}{x-1}=x+1$ untuk $x\\ne1$. Di $x=1$, bentuk sederhana bernilai $2$, sehingga muncul lubang di $(1,2)$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Menggambar Grafik Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Asimtot Fungsi Rasional"],
+    "pertanyaan": "Sebuah grafik fungsi rasional diketahui memiliki asimtot vertikal $x=-2$ dan asimtot miring $y=x-1$ (tanpa lubang). Fungsi yang mungkin sesuai dengan ciri tersebut adalah ...",
+    "clue": "Lakukan pembagian polinomial pada setiap opsi dan periksa apakah sisa pembagiannya nol (berarti ada lubang, bukan asimtot) atau tidak nol.",
+    "opsi": [
+      "$f(x)=\\frac{x^2+x+1}{x+2}$",
+      "$f(x)=\\frac{x^2+x-2}{x+2}$",
+      "$f(x)=\\frac{x^2-x+1}{x-2}$",
+      "$f(x)=\\frac{x^2+x+1}{x-2}$",
+      "$f(x)=\\frac{x-1}{x+2}$"
+    ],
+    "jawaban_benar": "$f(x)=\\frac{x^2+x+1}{x+2}$",
+    "pembahasan": "$x^2+x+1=(x+2)(x-1)+3$, sehingga $f(x)=x-1+\\frac{3}{x+2}$: asimtot miring $y=x-1$, asimtot vertikal $x=-2$ (sisa $3\\ne0$, bukan lubang)."
+  }
+]

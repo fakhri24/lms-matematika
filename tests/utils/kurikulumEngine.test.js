@@ -549,6 +549,69 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
     ]);
   });
 
+  test("seluruh rantai gerbang Fungsi Rasional dapat dibuka setelah Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan master", () => {
+    const rantaiFungsiRasional = [
+      "pengertian fungsi rasional",
+      "domain dan range fungsi rasional",
+      "asimtot fungsi rasional",
+      "menggambar grafik fungsi rasional",
+    ];
+    const master = new Set([
+      "substitusi fungsi linear",
+      "definisi relasi dan fungsi",
+      "jenis-jenis fungsi",
+      "fungsi piecewise",
+      "analisis grafik fungsi",
+      "sifat-sifat fungsi",
+      "operasi aljabar fungsi",
+      "sifat dan grafik fungsi kuadrat",
+      "menyusun persamaan parabola",
+      "aplikasi fungsi kuadrat",
+      "pertidaksamaan linear",
+      "program linear",
+      "pertidaksamaan kuadrat",
+      "pertidaksamaan rasional",
+      "pertidaksamaan irasional",
+      "aplikasi pertidaksamaan",
+    ]);
+    for (let lapis = 0; lapis < rantaiFungsiRasional.length; lapis++) {
+      const status = hitungStatusKunci(PETA_PRASYARAT, master);
+      const terbuka = rantaiFungsiRasional.filter(
+        (n) => !master.has(n) && !status[n]?.locked,
+      );
+      if (terbuka.length === 0) break;
+      terbuka.forEach((n) => master.add(n));
+    }
+    expect(rantaiFungsiRasional.filter((n) => !master.has(n))).toEqual([]);
+  });
+
+  test("tab Fungsi Rasional terkunci bila Pertidaksamaan belum lengkap master", () => {
+    // Relasi dan Fungsi + Fungsi Kuadrat lengkap master, tapi Pertidaksamaan
+    // sengaja dibiarkan bolong satu ("aplikasi pertidaksamaan").
+    const master = new Set([
+      "substitusi fungsi linear",
+      "definisi relasi dan fungsi",
+      "jenis-jenis fungsi",
+      "fungsi piecewise",
+      "analisis grafik fungsi",
+      "sifat-sifat fungsi",
+      "operasi aljabar fungsi",
+      "sifat dan grafik fungsi kuadrat",
+      "menyusun persamaan parabola",
+      "aplikasi fungsi kuadrat",
+      "pertidaksamaan linear",
+      "program linear",
+      "pertidaksamaan kuadrat",
+      "pertidaksamaan rasional",
+      "pertidaksamaan irasional",
+    ]);
+    const status = hitungStatusKunci(PETA_PRASYARAT, master);
+    expect(status["pengertian fungsi rasional"].locked).toBe(true);
+    expect(status["pengertian fungsi rasional"].prereqBelum).toEqual([
+      "Aplikasi Pertidaksamaan",
+    ]);
+  });
+
   test("seluruh tab Trigonometri dapat dibuka bila prasyaratnya dituntaskan", () => {
     // Menjamin tak ada materi yatim: setiap materi punya jalur menuju terbuka.
     const master = new Set(

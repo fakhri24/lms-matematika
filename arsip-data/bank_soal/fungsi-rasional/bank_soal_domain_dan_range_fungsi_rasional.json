@@ -1,0 +1,154 @@
+[
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Domain dari fungsi $f(x)=\\frac{x+1}{x-3}$ adalah ...",
+    "clue": "Cari nilai $x$ yang membuat penyebut bernilai nol, lalu kecualikan dari domain.",
+    "opsi": [
+      "$\\{x|x\\in\\mathbb{R}, x\\ne3\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne-1\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ge3\\}$",
+      "$\\{x|x\\in\\mathbb{R}\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne-3\\}$"
+    ],
+    "jawaban_benar": "$\\{x|x\\in\\mathbb{R}, x\\ne3\\}$",
+    "pembahasan": "Penyebut nol saat $x-3=0 \\Rightarrow x=3$, sehingga domainnya semua bilangan real kecuali $3$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Domain dari fungsi $f(x)=\\frac{2x}{x^2-9}$ adalah ...",
+    "clue": "Faktorkan penyebut untuk menemukan seluruh nilai $x$ yang membuatnya nol.",
+    "opsi": [
+      "$\\{x|x\\in\\mathbb{R}, x\\ne3, x\\ne-3\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne9\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne0\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ge3\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne3\\}$"
+    ],
+    "jawaban_benar": "$\\{x|x\\in\\mathbb{R}, x\\ne3, x\\ne-3\\}$",
+    "pembahasan": "$x^2-9=(x-3)(x+3)=0 \\Rightarrow x=3$ atau $x=-3$, keduanya dikecualikan."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Domain dari fungsi $f(x)=\\frac{x-1}{x^2+4}$ adalah ...",
+    "clue": "Periksa apakah penyebut ($x^2+4$) bisa bernilai nol untuk bilangan real mana pun.",
+    "opsi": ["semua bilangan real", "$x\\ne2$", "$x\\ne-2 \\text{ dan } x\\ne2$", "$x\\ne4$", "$x>0$"],
+    "jawaban_benar": "semua bilangan real",
+    "pembahasan": "$x^2+4$ selalu positif untuk setiap $x$ real (tidak pernah nol), sehingga tidak ada nilai $x$ yang perlu dikecualikan."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Daerah hasil (range) dari fungsi $f(x)=\\frac{1}{x-2}$ adalah ...",
+    "clue": "Pikirkan nilai $y$ yang TIDAK PERNAH bisa dihasilkan, berapa pun $x$ yang disubstitusikan.",
+    "opsi": [
+      "$\\{y|y\\in\\mathbb{R}, y\\ne0\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne2\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y>0\\}$",
+      "$\\{y|y\\in\\mathbb{R}\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne1\\}$"
+    ],
+    "jawaban_benar": "$\\{y|y\\in\\mathbb{R}, y\\ne0\\}$",
+    "pembahasan": "$\\frac{1}{x-2}$ tidak pernah sama dengan $0$ untuk berapa pun $x$, sehingga $y=0$ dikecualikan dari range."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Daerah hasil dari fungsi $f(x)=\\frac{2x+1}{x-3}$ adalah ...",
+    "clue": "Coba selesaikan $y=\\frac{2x+1}{x-3}$ untuk $x$; nilai $y$ yang membuat persamaan itu tidak memiliki solusi adalah nilai yang dikecualikan.",
+    "opsi": [
+      "$\\{y|y\\in\\mathbb{R}, y\\ne2\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne3\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne-2\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ge2\\}$",
+      "$\\{y|y\\in\\mathbb{R}\\}$"
+    ],
+    "jawaban_benar": "$\\{y|y\\in\\mathbb{R}, y\\ne2\\}$",
+    "pembahasan": "$y(x-3)=2x+1 \\Rightarrow x(y-2)=3y+1$. Jika $y=2$, persamaan menjadi $0=7$ (tidak memiliki solusi), sehingga $y=2$ dikecualikan."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Domain dari fungsi $f(x)=\\frac{x^2-4}{x-2}$ adalah ...",
+    "clue": "Perhatikan penyebut ASLI (sebelum disederhanakan) untuk menentukan domain, bukan bentuk sederhananya.",
+    "opsi": [
+      "$\\{x|x\\in\\mathbb{R}, x\\ne2\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne-2\\}$",
+      "$\\{x|x\\in\\mathbb{R}\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne2, x\\ne-2\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x>2\\}$"
+    ],
+    "jawaban_benar": "$\\{x|x\\in\\mathbb{R}, x\\ne2\\}$",
+    "pembahasan": "Meskipun disederhanakan jadi $x+2$, domain tetap ditentukan penyebut asli: $x-2=0 \\Rightarrow x=2$ dikecualikan."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Nilai $x$ yang HARUS dikecualikan dari domain fungsi $f(x)=\\frac{5}{2x+6}$ adalah ...",
+    "clue": "Selesaikan $2x+6=0$.",
+    "opsi": ["$-3$", "$3$", "$-6$", "$6$", "$0$"],
+    "jawaban_benar": "$-3$",
+    "pembahasan": "$2x+6=0 \\Rightarrow x=-3$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Domain dari $f(x)=\\frac{x}{x^2-x-6}$ adalah ...",
+    "clue": "Faktorkan penyebut $x^2-x-6$ terlebih dahulu.",
+    "opsi": [
+      "$\\{x|x\\in\\mathbb{R}, x\\ne3, x\\ne-2\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne3, x\\ne2\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne-3, x\\ne2\\}$",
+      "$\\{x|x\\in\\mathbb{R}, x\\ne6\\}$",
+      "$\\{x|x\\in\\mathbb{R}\\}$"
+    ],
+    "jawaban_benar": "$\\{x|x\\in\\mathbb{R}, x\\ne3, x\\ne-2\\}$",
+    "pembahasan": "$x^2-x-6=(x-3)(x+2)=0 \\Rightarrow x=3$ atau $x=-2$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Daerah hasil dari fungsi $f(x)=\\frac{3x}{x+1}$ adalah ...",
+    "clue": "Bandingkan koefisien utama pembilang dan penyebut (derajatnya sama) untuk menemukan nilai $y$ yang tidak tercapai.",
+    "opsi": [
+      "$\\{y|y\\in\\mathbb{R}, y\\ne3\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne-1\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ne0\\}$",
+      "$\\{y|y\\in\\mathbb{R}, y\\ge3\\}$",
+      "$\\{y|y\\in\\mathbb{R}\\}$"
+    ],
+    "jawaban_benar": "$\\{y|y\\in\\mathbb{R}, y\\ne3\\}$",
+    "pembahasan": "Rasio koefisien utama $\\frac{3}{1}=3$; nilai ini tidak pernah tercapai karena $y(x+1)=3x \\Rightarrow x(y-3)=-y$, dan $y=3$ membuat persamaan tak bersolusi."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Domain dan Range Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Pengertian Fungsi Rasional"],
+    "pertanyaan": "Konsentrasi larutan dimodelkan $C(t)=\\frac{50}{t+5}$ (mg/L) untuk $t\\ge0$ (menit). Nilai konsentrasi yang TIDAK PERNAH dicapai, berapa pun lamanya waktu berlalu, adalah ...",
+    "clue": "Perhatikan apa yang terjadi pada $C(t)$ ketika $t$ menjadi sangat besar.",
+    "opsi": ["$0$", "$10$", "$5$", "$50$", "$1$"],
+    "jawaban_benar": "$0$",
+    "pembahasan": "Semakin besar $t$, $C(t)$ semakin mendekati $0$ tetapi tidak pernah benar-benar mencapainya (asimtot horizontal $y=0$)."
+  }
+]

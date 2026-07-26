@@ -1,0 +1,124 @@
+[
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot vertikal dari fungsi $f(x)=\\frac{x+2}{x-5}$ adalah ...",
+    "clue": "Asimtot vertikal terjadi di nilai $x$ yang membuat penyebut nol (dan tidak dicoret dengan pembilang).",
+    "opsi": ["$x=5$", "$x=-5$", "$x=-2$", "$x=2$", "$y=5$"],
+    "jawaban_benar": "$x=5$",
+    "pembahasan": "Penyebut nol saat $x-5=0 \\Rightarrow x=5$, dan tidak ada faktor sama di pembilang, sehingga $x=5$ adalah asimtot vertikal."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot vertikal dari fungsi $f(x)=\\frac{3}{x^2-16}$ adalah ...",
+    "clue": "Faktorkan penyebut untuk menemukan seluruh titik nolnya.",
+    "opsi": ["$x=4 \\text{ dan } x=-4$", "$x=16$", "$x=-16$", "$x=4$ saja", "$y=4 \\text{ dan } y=-4$"],
+    "jawaban_benar": "$x=4 \\text{ dan } x=-4$",
+    "pembahasan": "$x^2-16=(x-4)(x+4)=0 \\Rightarrow x=4$ atau $x=-4$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot horizontal dari fungsi $f(x)=\\frac{2x+1}{x^2-3}$ adalah ...",
+    "clue": "Bandingkan derajat pembilang dan penyebut: jika derajat pembilang lebih kecil, asimtot horizontal selalu $y=0$.",
+    "opsi": ["$y=0$", "$y=2$", "$x=0$", "$y=1$", "tidak ada"],
+    "jawaban_benar": "$y=0$",
+    "pembahasan": "Derajat pembilang ($1$) lebih kecil dari derajat penyebut ($2$), sehingga asimtot horizontalnya $y=0$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot horizontal dari fungsi $f(x)=\\frac{4x-1}{2x+5}$ adalah ...",
+    "clue": "Jika derajat pembilang dan penyebut sama, asimtot horizontal adalah rasio koefisien utamanya.",
+    "opsi": ["$y=2$", "$y=4$", "$y=\\frac{1}{2}$", "$x=2$", "$y=-\\frac{1}{5}$"],
+    "jawaban_benar": "$y=2$",
+    "pembahasan": "Derajat pembilang dan penyebut sama ($1$); rasio koefisien utama $\\frac{4}{2}=2$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot horizontal dari fungsi $f(x)=\\frac{-3x^2+2}{5x^2+x}$ adalah ...",
+    "clue": "Bandingkan koefisien utama pembilang dan penyebut karena derajatnya sama.",
+    "opsi": ["$y=-\\frac{3}{5}$", "$y=\\frac{3}{5}$", "$y=-3$", "$y=5$", "$y=0$"],
+    "jawaban_benar": "$y=-\\frac{3}{5}$",
+    "pembahasan": "Derajat pembilang dan penyebut sama ($2$); rasio koefisien utama $\\frac{-3}{5}$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot miring (oblique) dari fungsi $f(x)=\\frac{x^2+1}{x-1}$ adalah ...",
+    "clue": "Karena derajat pembilang lebih besar $1$ dari derajat penyebut, lakukan pembagian polinomial untuk menemukan asimtot miringnya.",
+    "opsi": ["$y=x+1$", "$y=x-1$", "$y=x+2$", "$y=2x+1$", "$y=x$"],
+    "jawaban_benar": "$y=x+1$",
+    "pembahasan": "$x^2+1=(x-1)(x+1)+2$, sehingga $f(x)=x+1+\\frac{2}{x-1}$. Untuk $x$ sangat besar, suku $\\frac{2}{x-1}$ mendekati $0$, jadi asimtot miringnya $y=x+1$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional", "Pengertian Fungsi Rasional"],
+    "pertanyaan": "Fungsi $f(x)=\\frac{(x-3)(x+1)}{x-3}$ TIDAK memiliki asimtot vertikal di $x=3$, karena ...",
+    "clue": "Bandingkan dengan konsep lubang yang sudah dipelajari di sub-materi Pengertian Fungsi Rasional.",
+    "opsi": [
+      "faktor $(x-3)$ pada pembilang dan penyebut saling meniadakan, sehingga $x=3$ adalah lubang, bukan asimtot",
+      "$x=3$ bukan solusi penyebut $=0$",
+      "fungsi tersebut tidak terdefinisi di $x=3$",
+      "pembilangnya berderajat lebih tinggi",
+      "asimtot vertikal hanya ada satu buah"
+    ],
+    "jawaban_benar": "faktor $(x-3)$ pada pembilang dan penyebut saling meniadakan, sehingga $x=3$ adalah lubang, bukan asimtot",
+    "pembahasan": "Karena faktor $(x-3)$ dapat dicoret, $x=3$ menjadi lubang (titik tak terdefinisi tanpa asimtot), bukan asimtot vertikal."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Asimtot horizontal dari fungsi $f(x)=\\frac{7}{x+2}$ adalah ...",
+    "clue": "Derajat pembilang ($0$) lebih kecil dari derajat penyebut ($1$).",
+    "opsi": ["$y=0$", "$x=-2$", "$y=7$", "$y=2$", "$x=0$"],
+    "jawaban_benar": "$y=0$",
+    "pembahasan": "Derajat pembilang lebih kecil dari derajat penyebut, sehingga asimtot horizontalnya $y=0$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Biaya rata-rata produksi tiap unit barang dimodelkan $C(x)=\\frac{500000+2000x}{x}$ (rupiah), $x$ jumlah unit ($x>0$). Untuk produksi yang sangat besar, biaya rata-rata tiap unit akan mendekati nilai ...",
+    "clue": "Tulis ulang $C(x)$ menjadi $\\frac{500000}{x}+2000$, lalu perhatikan apa yang terjadi saat $x$ sangat besar.",
+    "opsi": ["Rp$2.000$", "Rp$500.000$", "Rp$0$", "Rp$2.500$", "Rp$1.000$"],
+    "jawaban_benar": "Rp$2.000$",
+    "pembahasan": "$C(x)=\\frac{500000}{x}+2000$. Saat $x\\to\\infty$, suku $\\frac{500000}{x}\\to0$, sehingga $C(x)$ mendekati asimtot horizontal $y=2000$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Asimtot Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Domain dan Range Fungsi Rasional"],
+    "pertanyaan": "Fungsi $f(x)=\\frac{2x-3}{x+4}$ memiliki asimtot vertikal dan horizontal berturut-turut di ...",
+    "clue": "Cari asimtot vertikal dari penyebut, lalu asimtot horizontal dari rasio koefisien utama (derajat sama).",
+    "opsi": [
+      "$x=-4$ dan $y=2$",
+      "$x=4$ dan $y=2$",
+      "$x=-4$ dan $y=-3$",
+      "$x=-3$ dan $y=2$",
+      "$x=-4$ dan $y=-2$"
+    ],
+    "jawaban_benar": "$x=-4$ dan $y=2$",
+    "pembahasan": "Penyebut nol di $x=-4$. Derajat pembilang dan penyebut sama, rasio koefisien utama $\\frac{2}{1}=2$."
+  }
+]

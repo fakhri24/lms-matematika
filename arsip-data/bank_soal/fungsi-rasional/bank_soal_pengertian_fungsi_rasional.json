@@ -1,0 +1,136 @@
+[
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Fungsi rasional adalah fungsi yang dapat dinyatakan dalam bentuk $f(x)=\\frac{p(x)}{q(x)}$ dengan syarat ...",
+    "clue": "Perhatikan jenis ekspresi $p(x)$ dan $q(x)$, serta syarat agar pembagian bermakna.",
+    "opsi": [
+      "$p(x)$ dan $q(x)$ adalah polinomial, dengan $q(x)$ bukan polinomial nol",
+      "$p(x)$ dan $q(x)$ harus berderajat sama",
+      "$q(x)$ harus berderajat $1$",
+      "$p(x)$ harus konstanta",
+      "$p(x)$ dan $q(x)$ harus polinomial linear"
+    ],
+    "jawaban_benar": "$p(x)$ dan $q(x)$ adalah polinomial, dengan $q(x)$ bukan polinomial nol",
+    "pembahasan": "Fungsi rasional adalah rasio dua polinomial; penyebutnya hanya perlu tidak identik dengan nol (bebas dari syarat derajat tertentu)."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Manakah dari fungsi berikut yang BUKAN merupakan fungsi rasional?",
+    "clue": "Fungsi rasional harus berupa rasio dua polinomial, tanpa bentuk akar atau eksponen pada variabelnya.",
+    "opsi": [
+      "$f(x)=\\sqrt{x}+1$",
+      "$f(x)=\\frac{x+1}{x-2}$",
+      "$f(x)=\\frac{3}{x^2+1}$",
+      "$f(x)=\\frac{x^2-4}{x+3}$",
+      "$f(x)=\\frac{2x}{5}$"
+    ],
+    "jawaban_benar": "$f(x)=\\sqrt{x}+1$",
+    "pembahasan": "$\\sqrt{x}+1$ bukan rasio dua polinomial karena mengandung bentuk akar, sehingga bukan fungsi rasional."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Diketahui $f(x)=\\frac{2x+1}{x-3}$. Nilai $f(2)$ adalah ...",
+    "clue": "Substitusikan $x=2$ ke pembilang dan penyebut secara langsung.",
+    "opsi": ["$-5$", "$5$", "$-1$", "$1$", "$-3$"],
+    "jawaban_benar": "$-5$",
+    "pembahasan": "$f(2)=\\frac{2(2)+1}{2-3}=\\frac{5}{-1}=-5$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Diketahui $f(x)=\\frac{x^2-1}{x+1}$. Nilai $f(4)$ adalah ...",
+    "clue": "Substitusikan $x=4$ langsung; titik ini bukan titik tak terdefinisi dari fungsi tersebut.",
+    "opsi": ["$3$", "$4$", "$5$", "$15$", "$1$"],
+    "jawaban_benar": "$3$",
+    "pembahasan": "$f(4)=\\frac{4^2-1}{4+1}=\\frac{15}{5}=3$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Fungsi $f(x)=\\frac{x^2-4}{x-2}$ dapat disederhanakan menjadi ...",
+    "clue": "Faktorkan pembilang, lalu coret faktor yang sama dengan penyebut — ingat syarat pengecualiannya tetap berlaku.",
+    "opsi": [
+      "$x+2$, untuk $x\\ne2$",
+      "$x+2$, untuk semua $x$",
+      "$x-2$",
+      "$x+2$, untuk $x\\ne-2$",
+      "$\\frac{x+2}{1}$, untuk $x\\ne-2$"
+    ],
+    "jawaban_benar": "$x+2$, untuk $x\\ne2$",
+    "pembahasan": "$\\frac{(x-2)(x+2)}{x-2}=x+2$, tetapi syarat $x\\ne2$ tetap berlaku karena fungsi asli tak terdefinisi di sana (lubang)."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Titik yang TIDAK termasuk dalam grafik $f(x)=\\frac{x^2-9}{x-3}$, meskipun bentuk sederhananya $y=x+3$ terdefinisi di titik tersebut, adalah ...",
+    "clue": "Cari nilai $x$ yang membuat penyebut ASLI (sebelum disederhanakan) bernilai nol.",
+    "opsi": ["$(3,6)$", "$(3,0)$", "$(-3,0)$", "$(0,-3)$", "$(3,3)$"],
+    "jawaban_benar": "$(3,6)$",
+    "pembahasan": "Penyebut asli nol di $x=3$. Bentuk sederhana $y=x+3$ di $x=3$ bernilai $6$, sehingga $(3,6)$ adalah lubang yang dikecualikan."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Pada fungsi rasional $f(x)=\\frac{3x^2+2x-1}{x^3-5}$, derajat pembilang dan penyebut berturut-turut adalah ...",
+    "clue": "Derajat polinomial ditentukan oleh pangkat tertinggi variabelnya.",
+    "opsi": ["$2$ dan $3$", "$3$ dan $2$", "$2$ dan $2$", "$3$ dan $3$", "$1$ dan $3$"],
+    "jawaban_benar": "$2$ dan $3$",
+    "pembahasan": "Pembilang $3x^2+2x-1$ berderajat $2$; penyebut $x^3-5$ berderajat $3$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi", "Pertidaksamaan Kuadrat"],
+    "pertanyaan": "Fungsi $f(x)=\\frac{x+5}{x^2-4}$ tidak terdefinisi untuk nilai $x$ sama dengan ...",
+    "clue": "Cari nilai $x$ yang membuat penyebut $x^2-4$ bernilai nol.",
+    "opsi": ["$2 \\text{ dan } -2$", "$4 \\text{ dan } -4$", "$-5$", "$2$ saja", "$0$"],
+    "jawaban_benar": "$2 \\text{ dan } -2$",
+    "pembahasan": "$x^2-4=0 \\Rightarrow (x-2)(x+2)=0 \\Rightarrow x=2$ atau $x=-2$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Nilai $k$ agar fungsi $f(x)=\\frac{x+3}{x-k}$ tidak terdefinisi di $x=5$ adalah ...",
+    "clue": "Fungsi tidak terdefinisi ketika penyebutnya nol.",
+    "opsi": ["$5$", "$-5$", "$3$", "$-3$", "$0$"],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Penyebut nol saat $x-k=0 \\Rightarrow x=k$. Agar tak terdefinisi di $x=5$, maka $k=5$."
+  },
+  {
+    "materi_utama": "Fungsi Rasional",
+    "sub_materi": "Pengertian Fungsi Rasional",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": ["Operasi Aljabar Fungsi"],
+    "pertanyaan": "Manakah fungsi rasional berikut yang memiliki lubang (titik tak terdefinisi yang hilang setelah disederhanakan) di $x=1$?",
+    "clue": "Lubang terjadi ketika ada faktor $(x-1)$ yang sama-sama muncul di pembilang DAN penyebut sehingga bisa dicoret.",
+    "opsi": [
+      "$\\frac{(x-1)(x+2)}{x-1}$",
+      "$\\frac{x+2}{x-1}$",
+      "$\\frac{x-1}{x+2}$",
+      "$\\frac{x^2-1}{x+2}$",
+      "$\\frac{x+1}{x^2-1}$"
+    ],
+    "jawaban_benar": "$\\frac{(x-1)(x+2)}{x-1}$",
+    "pembahasan": "Hanya opsi ini yang memiliki faktor $(x-1)$ di pembilang DAN penyebut yang saling coret, sehingga menghasilkan lubang di $x=1$."
+  }
+]
