@@ -15,21 +15,94 @@ export function acakArray(array) {
 }
 
 /**
- * Mengatur drafting soal (Formatif = Semua, Ujian = Maks 10 dengan rasio 4-4-2)
+ * Mengelompokkan soal per tingkat kesulitan (1/2/3), dipakai formatif adaptif.
+ */
+export function kelompokkanSoalPerLevel(semuaSoal) {
+  const perLevel = { 1: [], 2: [], 3: [] };
+  semuaSoal.forEach((s) => {
+    const level = parseInt(s.tingkat_kesulitan) || 1;
+    const levelValid = perLevel[level] ? level : 1;
+    perLevel[levelValid].push(s);
+  });
+  return perLevel;
+}
+
+/**
+ * Formatif adaptif: pilih satu soal acak dari level saat ini, mengecualikan
+ * soal yang sudah pernah dijawab benar. Kalau level ini tidak punya soal
+ * yang belum benar, ulangi acak dari soal yang sudah benar di level itu
+ * (latihan tambahan) — supaya syarat naik/turun level tetap murni performa,
+ * bukan kehabisan stok. Kalau level ini benar-benar tidak punya soal sama
+ * sekali, jatuh ke gabungan semua level (fallback bank soal timpang).
+ */
+export function pilihSoalFormatifBerikutnya(
+  soalPerLevel,
+  levelSaatIni,
+  idSoalSudahBenar,
+) {
+  const belumBenarDari = (kumpulan) =>
+    kumpulan.filter((s) => !idSoalSudahBenar.includes(s.id_unik_sistem));
+
+  const poolLevel = soalPerLevel[levelSaatIni] || [];
+  let kandidat =
+    belumBenarDari(poolLevel).length > 0 ? belumBenarDari(poolLevel) : poolLevel;
+
+  if (kandidat.length === 0) {
+    const semuaSoal = [1, 2, 3].flatMap((lvl) => soalPerLevel[lvl] || []);
+    kandidat =
+      belumBenarDari(semuaSoal).length > 0
+        ? belumBenarDari(semuaSoal)
+        : semuaSoal;
+  }
+
+  if (kandidat.length === 0) return null;
+  return acakArray(kandidat)[0];
+}
+
+/**
+ * Aturan naik/turun level formatif adaptif, dari satu jawaban (benar/salah):
+ * - Benar 3x berturut-turut -> naik level (mentok 3; di level 3 jadi TUNTAS,
+ *   bukan naik level lagi).
+ * - Salah 2x kumulatif (tidak harus berturut-turut) -> turun level (mentok 1).
+ * - Kedua counter direset saat level berubah (naik/turun); counter salah
+ *   TIDAK direset saat jawaban benar (sengaja kumulatif).
+ * Menerima & mengembalikan objek state baru, tidak memodifikasi input (murni).
+ */
+export function perbaruiLevelAdaptif(stateLevel, benar) {
+  let { levelSaatIni, levelTertinggiDicapai, streakBenar, totalSalahDiLevelIni } =
+    stateLevel;
+  let tuntas = false;
+
+  if (benar) {
+    streakBenar += 1;
+    if (streakBenar >= 3) {
+      if (levelSaatIni < 3) {
+        levelSaatIni += 1;
+        levelTertinggiDicapai = Math.max(levelTertinggiDicapai, levelSaatIni);
+        streakBenar = 0;
+        totalSalahDiLevelIni = 0;
+      } else {
+        tuntas = true;
+      }
+    }
+  } else {
+    totalSalahDiLevelIni += 1;
+    streakBenar = 0;
+    if (totalSalahDiLevelIni >= 2) {
+      if (levelSaatIni > 1) levelSaatIni -= 1;
+      totalSalahDiLevelIni = 0;
+    }
+  }
+
+  return { levelSaatIni, levelTertinggiDicapai, streakBenar, totalSalahDiLevelIni, tuntas };
+}
+
+/**
+ * Mengatur drafting soal (Ujian = Maks 10 dengan rasio 4-4-2, Spesial = 1-3-1).
+ * Formatif punya alur sendiri lewat pilihSoalFormatifBerikutnya di atas.
  */
 export function siapkanDraftSoal(semuaSoalValid, modeLatihan) {
   let drafFinal = [];
-
-  if (modeLatihan === MODE_LATIHAN.FORMATIF) {
-    // Formatif: Ambil semua, langsung urutkan dari yang paling mudah
-    drafFinal = [...semuaSoalValid];
-    drafFinal.sort(
-      (a, b) =>
-        (parseInt(a.tingkat_kesulitan) || 1) -
-        (parseInt(b.tingkat_kesulitan) || 1),
-    );
-    return drafFinal;
-  }
 
   if (modeLatihan === MODE_LATIHAN.SPESIAL) {
     // Spesial: 1 Mudah, 3 Sedang, 1 Sulit PER sub-materi

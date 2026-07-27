@@ -50,9 +50,16 @@ export async function getProgresFormatif(nis, subMateri) {
   const docSnap = await getDoc(
     doc(db, "progres_belajar", `${nis}_${subMateri}`),
   );
-  return docSnap.exists() && docSnap.data().log_progres
-    ? docSnap.data().log_progres
-    : {};
+  const data = docSnap.exists() ? docSnap.data() : {};
+  return {
+    logProgres: data.log_progres || {},
+    levelSaatIni: data.level_saat_ini || 1,
+    levelTertinggiDicapai: data.level_tertinggi_dicapai || 1,
+    streakBenar: data.streak_benar || 0,
+    totalSalahDiLevelIni: data.total_salah_di_level_ini || 0,
+    formatifTuntas: data.formatif_tuntas || false,
+    nilaiTuntasTerakhir: data.nilai_tuntas_terakhir ?? null,
+  };
 }
 
 export async function getDrafFormatif(nis, subMateri) {
@@ -61,30 +68,53 @@ export async function getDrafFormatif(nis, subMateri) {
   return docSnap.exists() ? docSnap.data() : null;
 }
 
-export async function simpanProgresSatuSoal(
-  nis,
-  subMateri,
-  idSoal,
-  skorSoal,
-  jawabanSiswa,
-) {
+export async function simpanProgresAdaptif(nis, subMateri, stateAdaptif) {
+  const {
+    idSoal,
+    benar,
+    skorSoal,
+    jawabanSiswa,
+    levelSaatIni,
+    levelTertinggiDicapai,
+    streakBenar,
+    totalSalahDiLevelIni,
+    formatifTuntas,
+    nilaiTuntasTerakhir,
+  } = stateAdaptif;
+
+  const payload = {
+    nis_siswa: nis,
+    sub_materi: subMateri,
+    level_saat_ini: levelSaatIni,
+    level_tertinggi_dicapai: levelTertinggiDicapai,
+    streak_benar: streakBenar,
+    total_salah_di_level_ini: totalSalahDiLevelIni,
+    formatif_tuntas: formatifTuntas,
+  };
+  if (benar) {
+    payload.log_progres = { [idSoal]: { skor: skorSoal, jawaban: jawabanSiswa } };
+  }
+  if (formatifTuntas) {
+    payload.nilai_tuntas_terakhir = nilaiTuntasTerakhir;
+  }
+
   const docRef = doc(db, "progres_belajar", `${nis}_${subMateri}`);
-  await setDoc(
-    docRef,
-    {
-      nis_siswa: nis,
-      sub_materi: subMateri,
-      log_progres: { [idSoal]: { skor: skorSoal, jawaban: jawabanSiswa } },
-    },
-    { merge: true },
-  );
+  await setDoc(docRef, payload, { merge: true });
 }
 
 export async function resetProgresFormatif(nis, subMateri) {
   await updateDoc(
     // <--- Konsekuensi: Ubah setDoc menjadi updateDoc
     doc(db, "progres_belajar", `${nis}_${subMateri}`),
-    { log_progres: {} },
+    {
+      log_progres: {},
+      level_saat_ini: 1,
+      level_tertinggi_dicapai: 1,
+      streak_benar: 0,
+      total_salah_di_level_ini: 0,
+      formatif_tuntas: false,
+      nilai_tuntas_terakhir: null,
+    },
   );
 }
 

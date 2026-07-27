@@ -64,7 +64,10 @@ export function renderKartuSoal(
       </div>
     </div>`;
 
-  el.teksHalaman.innerText = `${nomorTampil} / ${totalSoal}`;
+  el.teksHalaman.innerText =
+    modeLatihan === MODE_LATIHAN.FORMATIF
+      ? `Soal ke-${nomorTampil}`
+      : `${nomorTampil} / ${totalSoal}`;
 }
 
 export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
@@ -160,14 +163,22 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
   }
 }
 
-export function createWilayahTertaklukkanHTML(namaAktif, subMateriPilihan) {
+export function createFormatifTuntasHTML(
+  namaAktif,
+  subMateriPilihan,
+  nilaiTuntasTerakhir,
+  levelTertinggiDicapai,
+) {
+  const bintangTertinggi = "⭐".repeat(levelTertinggiDicapai || 1);
   return `
     <div class="text-center" style="padding: 40px 20px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
-      <span style="font-size: 4rem;">🏆</span>
-      <h2 class="text-primary mt-15 mb-10">Luar Biasa, ${namaAktif}!</h2>
-      <p class="text-muted mb-25">Kamu telah menaklukkan seluruh tantangan di wilayah <strong>${subMateriPilihan}</strong>.</p>
-      <div class="flex-center gap-10">
-        <button id="btn-reset-progres" class="btn btn-primary btn-sm" style="padding: 10px 20px;">Mulai Ulang (Reset)</button>
+      <span style="font-size: 4rem;">🎉</span>
+      <h2 class="text-primary mt-15 mb-10">Tuntas, ${namaAktif}!</h2>
+      <p class="text-muted mb-10">Kamu berhasil menjawab benar 3x berturut-turut di level tersulit wilayah <strong>${subMateriPilihan}</strong>.</p>
+      <p class="text-muted mb-25">Skor akurasi: <strong>${nilaiTuntasTerakhir ?? 0}%</strong> &middot; Level tertinggi dicapai: <strong>${bintangTertinggi}</strong></p>
+      <div class="flex-center gap-10" style="flex-wrap: wrap;">
+        <button id="btn-lanjut-sumatif" class="btn btn-success btn-sm" style="padding: 10px 20px;">🎯 Uji Kompetensi (Sumatif)</button>
+        <button id="btn-reset-progres" class="btn btn-primary btn-sm" style="padding: 10px 20px;">Latihan Lagi dari Awal</button>
         <button id="btn-kembali-tamat" class="btn btn-secondary btn-sm" style="padding: 10px 20px;">Kembali ke Dasbor</button>
       </div>
     </div>

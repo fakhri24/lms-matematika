@@ -13,12 +13,17 @@ import {
   dapatkanDanResetDurasiTerakhir,
   dapatkanTotalWaktuSekarang,
 } from "../utils/timerSensor.js";
-import { siapkanDraftSoal } from "../utils/soalEngine.js";
+import {
+  siapkanDraftSoal,
+  kelompokkanSoalPerLevel,
+  pilihSoalFormatifBerikutnya,
+  perbaruiLevelAdaptif,
+} from "../utils/soalEngine.js";
 import {
   getBankSoalBySubMateri,
   getProgresFormatif,
   getDrafFormatif,
-  simpanProgresSatuSoal,
+  simpanProgresAdaptif,
   resetProgresFormatif,
   simpanDrafFormatifDB,
   simpanHasilAkhirDB,
@@ -28,7 +33,7 @@ import {
 import {
   renderKartuSoal,
   renderElemenFormatif,
-  createWilayahTertaklukkanHTML,
+  createFormatifTuntasHTML,
 } from "../views/soalView.js";
 import {
   MODE_LATIHAN,
@@ -52,6 +57,17 @@ export class LatihanController {
       intervalTimer: null,
       intervalAutosave: null,
       isSelesai: false,
+
+      // Khusus Formatif Adaptif
+      soalPerLevel: { 1: [], 2: [], 3: [] },
+      idSoalSudahBenar: [],
+      langkahFormatif: 0,
+      levelSaatIni: 1,
+      levelTertinggiDicapai: 1,
+      streakBenar: 0,
+      totalSalahDiLevelIni: 0,
+      formatifTuntas: false,
+      nilaiTuntasTerakhir: null,
 
       modeLatihan: localStorage.getItem("mode_latihan") || MODE_LATIHAN.NORMAL,
       subMateriPilihan:
@@ -83,6 +99,7 @@ export class LatihanController {
       teksHalaman: document.getElementById("teks-halaman"),
       elemenTimer: document.getElementById("tampilan-timer"),
       btnKembaliDasbor: document.getElementById("btn-kembali-dasbor"),
+      btnResetFormatif: document.getElementById("btn-reset-formatif"),
       wadahFeedback: document.getElementById("wadah-feedback-formatif"),
       pesanFeedback: document.getElementById("pesan-feedback"),
       areaClue: document.getElementById("area-clue"),
@@ -139,6 +156,10 @@ export class LatihanController {
 
     this.el.btnSelesai?.addEventListener("click", () => this.handleSelesai());
 
+    this.el.btnResetFormatif?.addEventListener("click", () =>
+      this.handleResetFormatif(),
+    );
+
     window.addEventListener("beforeunload", (e) => {
       if (
         this.state.modeLatihan === MODE_LATIHAN.FORMATIF &&
@@ -157,7 +178,9 @@ export class LatihanController {
 
     const dataMemori = this.state.memoriJawaban[soal.id_unik_sistem];
     const nomorTampil =
-      this.state.offsetNomorSoal + this.state.indeksSaatIni + 1;
+      this.state.modeLatihan === MODE_LATIHAN.FORMATIF
+        ? this.state.offsetNomorSoal + this.state.langkahFormatif + 1
+        : this.state.offsetNomorSoal + this.state.indeksSaatIni + 1;
 
     renderKartuSoal(
       this.el,
@@ -174,7 +197,9 @@ export class LatihanController {
     if (this.el.areaPembahasan) this.el.areaPembahasan.style.display = "none";
 
     const isTerakhir =
-      this.state.indeksSaatIni === this.state.kumpulanSoal.length - 1;
+      this.state.modeLatihan === MODE_LATIHAN.FORMATIF
+        ? this.state.formatifTuntas
+        : this.state.indeksSaatIni === this.state.kumpulanSoal.length - 1;
 
     if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
       [
@@ -334,6 +359,92 @@ export class LatihanController {
     }
   }
 
+  /**
+   * Rekap skor formatif: persentase akurasi (poin/soal_dikerjakan), bukan
+   * lagi poin/total_bank_soal — sub-materi besar tidak lagi mustahil "100".
+   */
+  hitungRingkasanFormatif() {
+    let totalPoin = 0;
+    let jumlahSelesai = 0;
+    let detailJawabanGabungan = {};
+
+    for (const id in this.state.riwayatProgresGlobal) {
+      totalPoin += this.state.riwayatProgresGlobal[id].skor;
+      detailJawabanGabungan[id] = this.state.riwayatProgresGlobal[id].jawaban;
+      jumlahSelesai++;
+    }
+
+    for (const idSoal in this.state.memoriJawaban) {
+      if (!this.state.memoriJawaban[idSoal].status_selesai) continue;
+      detailJawabanGabungan[idSoal] =
+        this.state.memoriJawaban[idSoal].jawaban_terakhir;
+      // Soal yang diulang (fallback pilihSoalFormatifBerikutnya saat level
+      // habis) sudah terhitung lewat riwayatProgresGlobal -- jangan dobel.
+      if (this.state.riwayatProgresGlobal[idSoal]) continue;
+      totalPoin += this.state.memoriJawaban[idSoal].skor_soal;
+      jumlahSelesai++;
+    }
+
+    const nilai = jumlahSelesai === 0 ? 0 : Math.round(totalPoin / jumlahSelesai);
+    return { nilai, jumlahSelesai, detailJawabanGabungan };
+  }
+
+  tampilkanLayarTuntas() {
+    if (this.el.statusKoneksi)
+      this.el.statusKoneksi.innerText = "Formatif Tuntas!";
+    if (this.el.areaNavigasi) this.el.areaNavigasi.style.display = "none";
+    if (this.el.elemenTimer) this.el.elemenTimer.style.display = "none";
+    if (this.el.btnResetFormatif) this.el.btnResetFormatif.style.display = "none";
+
+    if (this.el.wadahSoal) {
+      this.el.wadahSoal.innerHTML = createFormatifTuntasHTML(
+        this.state.namaAktif,
+        this.state.subMateriPilihan,
+        this.state.nilaiTuntasTerakhir,
+        this.state.levelTertinggiDicapai,
+      );
+    }
+
+    document.getElementById("btn-lanjut-sumatif")?.addEventListener("click", () => {
+      localStorage.setItem("mode_latihan", MODE_LATIHAN.NORMAL);
+      window.location.href = "latihan.html";
+    });
+
+    document
+      .getElementById("btn-reset-progres")
+      ?.addEventListener("click", () => this.handleResetFormatif());
+
+    document
+      .getElementById("btn-kembali-tamat")
+      ?.addEventListener("click", () => (window.location.href = this.dashboardUrl));
+  }
+
+  async handleResetFormatif() {
+    if (
+      !confirm(
+        "Yakin ingin mulai dari awal lagi? Seluruh progres level dan soal yang sudah kamu taklukkan di sub-materi ini akan dihapus.",
+      )
+    )
+      return;
+
+    const target = document.getElementById("btn-reset-progres") || this.el.btnResetFormatif;
+    if (target) {
+      target.innerText = "Mereset...";
+      target.disabled = true;
+    }
+
+    // Cegah beforeunload menyinkronkan ulang draf lama saat reload() di bawah
+    // dipicu -- kalau tidak, race ini menghidupkan lagi draf yang baru dihapus.
+    this.state.isSelesai = true;
+    if (this.state.intervalAutosave) clearInterval(this.state.intervalAutosave);
+
+    await resetProgresFormatif(this.state.nisAktif, this.state.subMateriPilihan);
+    const docIdKustom = `${this.state.nisAktif}_${this.state.subMateriPilihan.replace(/\s+/g, "")}_formatif_draft`;
+    await hapusDrafFormatifDB(docIdKustom);
+
+    window.location.reload();
+  }
+
   async sinkronRiwayatFormatifSementara() {
     this.amankanJawabanLayar();
     this.simpanDurasiKeSoal(
@@ -349,40 +460,16 @@ export class LatihanController {
 
     const durasiTotalKumulatif =
       this.state.durasiSebelumnya + tambahanWaktuSesiIni;
-    let totalPoinSementara = 0;
-    let detailJawabanGabungan = {};
-    let jumlahSelesai = 0;
 
-    for (const id in this.state.riwayatProgresGlobal) {
-      totalPoinSementara += this.state.riwayatProgresGlobal[id].skor;
-      detailJawabanGabungan[id] = this.state.riwayatProgresGlobal[id].jawaban;
-      jumlahSelesai++;
-    }
-
-    for (const idSoal in this.state.memoriJawaban) {
-      if (this.state.memoriJawaban[idSoal].status_selesai) {
-        totalPoinSementara += this.state.memoriJawaban[idSoal].skor_soal;
-        detailJawabanGabungan[idSoal] =
-          this.state.memoriJawaban[idSoal].jawaban_terakhir;
-        if (!this.state.riwayatProgresGlobal[idSoal]) jumlahSelesai++;
-      }
-    }
-
-    const skorSementara =
-      this.state.totalSoalKeseluruhan === 0
-        ? 0
-        : Math.round(totalPoinSementara / this.state.totalSoalKeseluruhan);
-
-    const isLengkap =
-      this.state.totalSoalKeseluruhan > 0 &&
-      jumlahSelesai === this.state.totalSoalKeseluruhan;
+    const { nilai, jumlahSelesai, detailJawabanGabungan } =
+      this.hitungRingkasanFormatif();
 
     const dataHasil = {
       nis_siswa: this.state.nisAktif,
       nama_siswa: this.state.namaAktif,
       materi_utama: this.state.materiUtama,
       sub_materi: this.state.subMateriPilihan,
-      nilai: skorSementara,
+      nilai,
       durasi_detik: durasiTotalKumulatif,
       waktu_submit: new Date().toISOString(),
       detail_jawaban: detailJawabanGabungan,
@@ -392,12 +479,51 @@ export class LatihanController {
       },
       urutan_soal: this.state.urutanSoalGlobal,
       mode_latihan: MODE_LATIHAN.FORMATIF,
-      keterangan: `Progres: ${jumlahSelesai} dari ${this.state.totalSoalKeseluruhan} Soal`,
-      status: isLengkap ? STATUS_LATIHAN.SELESAI : STATUS_LATIHAN.DRAF,
+      keterangan: `Progres: ${jumlahSelesai} soal ditaklukkan (level tertinggi: ${this.state.levelTertinggiDicapai})`,
+      level_tertinggi_dicapai: this.state.levelTertinggiDicapai,
+      status: STATUS_LATIHAN.DRAF,
     };
 
     const docIdKustom = `${this.state.nisAktif}_${this.state.subMateriPilihan.replace(/\s+/g, "")}_formatif_draft`;
     await simpanDrafFormatifDB(docIdKustom, dataHasil);
+  }
+
+  /**
+   * Naik/turun level (soalEngine.perbaruiLevelAdaptif) lalu persist real-time
+   * ke progres_belajar — dipanggil dari SETIAP jawaban formatif, benar atau salah.
+   */
+  perbaruiLevelDanSimpan(idSoal, benar, skorSoal = null, jawabanSiswa = null) {
+    const hasilLevel = perbaruiLevelAdaptif(
+      {
+        levelSaatIni: this.state.levelSaatIni,
+        levelTertinggiDicapai: this.state.levelTertinggiDicapai,
+        streakBenar: this.state.streakBenar,
+        totalSalahDiLevelIni: this.state.totalSalahDiLevelIni,
+      },
+      benar,
+    );
+    this.state.levelSaatIni = hasilLevel.levelSaatIni;
+    this.state.levelTertinggiDicapai = hasilLevel.levelTertinggiDicapai;
+    this.state.streakBenar = hasilLevel.streakBenar;
+    this.state.totalSalahDiLevelIni = hasilLevel.totalSalahDiLevelIni;
+
+    if (hasilLevel.tuntas) {
+      this.state.formatifTuntas = true;
+      this.state.nilaiTuntasTerakhir = this.hitungRingkasanFormatif().nilai;
+    }
+
+    simpanProgresAdaptif(this.state.nisAktif, this.state.subMateriPilihan, {
+      idSoal,
+      benar,
+      skorSoal,
+      jawabanSiswa,
+      levelSaatIni: this.state.levelSaatIni,
+      levelTertinggiDicapai: this.state.levelTertinggiDicapai,
+      streakBenar: this.state.streakBenar,
+      totalSalahDiLevelIni: this.state.totalSalahDiLevelIni,
+      formatifTuntas: this.state.formatifTuntas,
+      nilaiTuntasTerakhir: this.state.nilaiTuntasTerakhir,
+    });
   }
 
   handleCekJawaban() {
@@ -433,15 +559,19 @@ export class LatihanController {
       }
 
       if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
-        simpanProgresSatuSoal(
-          this.state.nisAktif,
-          this.state.subMateriPilihan,
+        this.state.idSoalSudahBenar.push(soal.id_unik_sistem);
+        this.perbaruiLevelDanSimpan(
           soal.id_unik_sistem,
+          true,
           dataMemori.skor_soal,
           jawabanUser,
         );
       }
     } else {
+      if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
+        this.perbaruiLevelDanSimpan(soal.id_unik_sistem, false);
+      }
+
       if (dataMemori.percobaan >= 3) {
         dataMemori.lihat_bahas = true;
         dataMemori.pesan_aktif = getPesanAcak(feedbackSalahTiga);
@@ -480,11 +610,44 @@ export class LatihanController {
     this.renderSoal();
   }
 
+  /**
+   * pilihSoalFormatifBerikutnya kadang mengulang soal yang sudah pernah benar
+   * (level habis, lihat soalEngine.js). Kalau soal itu sudah status_selesai
+   * di sesi INI juga (bukan cuma riwayat lama), hapus memori lamanya supaya
+   * benar-benar bisa dikerjakan ulang -- kalau tidak, kartu langsung tampil
+   * dalam kondisi "selesai" dan siswa tidak pernah dapat kesempatan menjawab,
+   * sehingga naik/turun level jadi macet begitu pool soal level ini habis.
+   */
+  sajikanSoalFormatif(soal) {
+    if (this.state.memoriJawaban[soal.id_unik_sistem]?.status_selesai) {
+      delete this.state.memoriJawaban[soal.id_unik_sistem];
+    }
+    this.state.kumpulanSoal = [soal];
+    this.state.indeksSaatIni = 0;
+  }
+
   handleNavigasi(arah) {
     this.simpanDurasiKeSoal(
       this.state.kumpulanSoal[this.state.indeksSaatIni].id_unik_sistem,
     );
-    this.state.indeksSaatIni += arah;
+
+    if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
+      const soalBerikutnya = pilihSoalFormatifBerikutnya(
+        this.state.soalPerLevel,
+        this.state.levelSaatIni,
+        this.state.idSoalSudahBenar,
+      );
+      if (!soalBerikutnya) {
+        if (this.el.statusKoneksi)
+          this.el.statusKoneksi.innerText = "Maaf, belum ada soal di wilayah ini.";
+        return;
+      }
+      this.state.langkahFormatif += 1;
+      this.sajikanSoalFormatif(soalBerikutnya);
+    } else {
+      this.state.indeksSaatIni += arah;
+    }
+
     this.renderSoal();
   }
 
@@ -536,27 +699,13 @@ export class LatihanController {
 
     let nilaiAkhir = 0;
     let jumlahBenar = 0;
-    const formatDetailJawabanDB = {};
+    let formatDetailJawabanDB = {};
 
     if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
-      let totalPoinFormatif = 0;
-      for (const id in this.state.riwayatProgresGlobal) {
-        totalPoinFormatif += this.state.riwayatProgresGlobal[id].skor;
-        formatDetailJawabanDB[id] = this.state.riwayatProgresGlobal[id].jawaban;
-        jumlahBenar++;
-      }
-      for (const idSoal in this.state.memoriJawaban) {
-        if (this.state.memoriJawaban[idSoal].status_selesai) {
-          totalPoinFormatif += this.state.memoriJawaban[idSoal].skor_soal;
-          formatDetailJawabanDB[idSoal] =
-            this.state.memoriJawaban[idSoal].jawaban_terakhir;
-          jumlahBenar++;
-        }
-      }
-      nilaiAkhir =
-        this.state.totalSoalKeseluruhan === 0
-          ? 0
-          : Math.round(totalPoinFormatif / this.state.totalSoalKeseluruhan);
+      const ringkasan = this.hitungRingkasanFormatif();
+      nilaiAkhir = ringkasan.nilai;
+      jumlahBenar = ringkasan.jumlahSelesai;
+      formatDetailJawabanDB = ringkasan.detailJawabanGabungan;
     } else {
       this.state.kumpulanSoal.forEach((soal) => {
         const memori = this.state.memoriJawaban[soal.id_unik_sistem];
@@ -599,6 +748,11 @@ export class LatihanController {
       dataHasil.id_latihan_spesial = this.state.idLatihanSpesial;
     }
 
+    if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
+      dataHasil.level_tertinggi_dicapai = this.state.levelTertinggiDicapai;
+      dataHasil.status_tuntas = this.state.formatifTuntas;
+    }
+
     try {
       await simpanHasilAkhirDB(dataHasil);
 
@@ -622,7 +776,9 @@ export class LatihanController {
 
       document.getElementById("detail-hasil").innerText =
         this.state.modeLatihan === MODE_LATIHAN.FORMATIF
-          ? `Latihan Selesai, ${this.state.namaAktif}! Kamu menaklukkan ${jumlahBenar} soal dalam ${teksDurasi} dengan skor ${nilaiAkhir}.`
+          ? this.state.formatifTuntas
+            ? `Tuntas, ${this.state.namaAktif}! Kamu benar 3x berturut-turut di level tersulit, dengan akurasi ${nilaiAkhir}% dari ${jumlahBenar} soal.`
+            : `Latihan Selesai, ${this.state.namaAktif}! Kamu menaklukkan ${jumlahBenar} soal dalam ${teksDurasi} dengan akurasi ${nilaiAkhir}%.`
           : `Luar biasa, ${this.state.namaAktif}! Kamu menjawab benar ${jumlahBenar} dari ${this.state.totalSoalKeseluruhan} soal dalam ${teksDurasi}.`;
 
       const teksApresiasi = document.getElementById("teks-apresiasi");
@@ -635,6 +791,22 @@ export class LatihanController {
             : nilaiAkhir >= 60
               ? "Bagus!"
               : "Ayo Belajar Lagi!";
+      }
+
+      const btnKerjakanSumatif = document.getElementById("btn-kerjakan-sumatif");
+      if (btnKerjakanSumatif) {
+        if (
+          this.state.modeLatihan === MODE_LATIHAN.FORMATIF &&
+          this.state.formatifTuntas
+        ) {
+          btnKerjakanSumatif.style.display = "block";
+          btnKerjakanSumatif.onclick = () => {
+            localStorage.setItem("mode_latihan", MODE_LATIHAN.NORMAL);
+            window.location.href = "latihan.html";
+          };
+        } else {
+          btnKerjakanSumatif.style.display = "none";
+        }
       }
 
       document.getElementById("modal-hasil").style.display = "flex";
@@ -674,11 +846,25 @@ export class LatihanController {
       let daftarSoalSelesai = [];
 
       if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
-        this.state.riwayatProgresGlobal = await getProgresFormatif(
+        const progres = await getProgresFormatif(
           this.state.nisAktif,
           this.state.subMateriPilihan,
         );
+        this.state.riwayatProgresGlobal = progres.logProgres;
         daftarSoalSelesai = Object.keys(this.state.riwayatProgresGlobal);
+        this.state.idSoalSudahBenar = [...daftarSoalSelesai];
+
+        this.state.levelSaatIni = progres.levelSaatIni;
+        this.state.levelTertinggiDicapai = progres.levelTertinggiDicapai;
+        this.state.streakBenar = progres.streakBenar;
+        this.state.totalSalahDiLevelIni = progres.totalSalahDiLevelIni;
+        this.state.formatifTuntas = progres.formatifTuntas;
+        this.state.nilaiTuntasTerakhir = progres.nilaiTuntasTerakhir;
+
+        if (this.state.formatifTuntas) {
+          this.tampilkanLayarTuntas();
+          return;
+        }
 
         const draftData = await getDrafFormatif(
           this.state.nisAktif,
@@ -718,25 +904,45 @@ export class LatihanController {
         );
       }
 
-      let semuaSoalValid = semuaSoalUtuh;
       if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
-        semuaSoalUtuh.sort(
-          (a, b) =>
-            (parseInt(a.tingkat_kesulitan) || LEVEL_SOAL.MUDAH) -
-            (parseInt(b.tingkat_kesulitan) || LEVEL_SOAL.MUDAH),
+        this.state.soalPerLevel = kelompokkanSoalPerLevel(semuaSoalUtuh);
+        this.state.urutanSoalGlobal = [...semuaSoalUtuh]
+          .sort(
+            (a, b) =>
+              (parseInt(a.tingkat_kesulitan) || LEVEL_SOAL.MUDAH) -
+              (parseInt(b.tingkat_kesulitan) || LEVEL_SOAL.MUDAH),
+          )
+          .map((s) => s.id_unik_sistem);
+
+        // Kalau ada soal yang sudah pernah dicoba tapi belum benar (ditinggal
+        // di tengah jalan), lanjutkan soal itu dulu -- bukan pilih baru acak.
+        const idSoalTertunda = Object.keys(this.state.memoriJawaban).find(
+          (id) => !this.state.memoriJawaban[id].status_selesai,
         );
-        this.state.urutanSoalGlobal = semuaSoalUtuh.map(
-          (s) => s.id_unik_sistem,
-        );
-        semuaSoalValid = semuaSoalUtuh.filter(
-          (s) => !daftarSoalSelesai.includes(s.id_unik_sistem),
+        let soalAwal = idSoalTertunda
+          ? semuaSoalUtuh.find((s) => s.id_unik_sistem === idSoalTertunda)
+          : null;
+
+        if (!soalAwal) {
+          soalAwal = pilihSoalFormatifBerikutnya(
+            this.state.soalPerLevel,
+            this.state.levelSaatIni,
+            this.state.idSoalSudahBenar,
+          );
+        }
+
+        if (soalAwal) {
+          this.sajikanSoalFormatif(soalAwal);
+        } else {
+          this.state.kumpulanSoal = [];
+        }
+      } else {
+        this.state.kumpulanSoal = siapkanDraftSoal(
+          semuaSoalUtuh,
+          this.state.modeLatihan,
         );
       }
 
-      this.state.kumpulanSoal = siapkanDraftSoal(
-        semuaSoalValid,
-        this.state.modeLatihan,
-      );
       this.state.totalSoalKeseluruhan =
         this.state.modeLatihan === MODE_LATIHAN.FORMATIF
           ? semuaSoalUtuh.length
@@ -777,6 +983,8 @@ export class LatihanController {
         }
 
         if (this.state.modeLatihan === MODE_LATIHAN.FORMATIF) {
+          if (this.el.btnResetFormatif)
+            this.el.btnResetFormatif.style.display = "inline-block";
           if (this.el.btnKembaliDasbor) {
             this.el.btnKembaliDasbor.innerText = "💾 Simpan & Kembali";
             this.el.btnKembaliDasbor.onclick = async () => {
@@ -804,49 +1012,12 @@ export class LatihanController {
           }
         }
       } else {
-        if (
-          this.state.modeLatihan === MODE_LATIHAN.FORMATIF &&
-          semuaSoalUtuh.length > 0
-        ) {
-          if (this.el.areaNavigasi) this.el.areaNavigasi.style.display = "none";
-          if (this.el.elemenTimer) this.el.elemenTimer.style.display = "none";
-          if (this.el.statusKoneksi)
-            this.el.statusKoneksi.innerText = "Wilayah Tertaklukkan!";
-
-          if (this.el.wadahSoal) {
-            this.el.wadahSoal.innerHTML = createWilayahTertaklukkanHTML(
-              this.state.namaAktif,
-              this.state.subMateriPilihan,
-            );
-          }
-
-          document
-            .getElementById("btn-reset-progres")
-            ?.addEventListener("click", async (e) => {
-              e.target.innerText = "Mereset...";
-              e.target.disabled = true;
-              await resetProgresFormatif(
-                this.state.nisAktif,
-                this.state.subMateriPilihan,
-              );
-
-              const docIdKustom = `${this.state.nisAktif}_${this.state.subMateriPilihan.replace(/\s+/g, "")}_formatif_draft`;
-              await hapusDrafFormatifDB(docIdKustom);
-
-              window.location.reload();
-            });
-
-          document
-            .getElementById("btn-kembali-tamat")
-            ?.addEventListener(
-              "click",
-              () => (window.location.href = this.dashboardUrl),
-            );
-        } else {
-          if (this.el.statusKoneksi)
-            this.el.statusKoneksi.innerText =
-              "Maaf, belum ada soal di wilayah ini.";
-        }
+        // Hanya mungkin terjadi kalau bank soal sub-materi ini benar-benar
+        // kosong -- pilihSoalFormatifBerikutnya selalu mengembalikan soal
+        // (mengulang yang sudah benar bila perlu) selama bank tidak kosong.
+        if (this.el.statusKoneksi)
+          this.el.statusKoneksi.innerText =
+            "Maaf, belum ada soal di wilayah ini.";
       }
     } catch (error) {
       console.error(error);
