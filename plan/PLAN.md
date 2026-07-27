@@ -204,6 +204,16 @@ Soalnya sempat berupa berkas arsip di `arsip-data/bank_soal/prasyarat/aritmatika
 
 **Cakupan Tes Diagnostik Numerasi Kelas X kini lengkap (50/50 soal)** — enam celah yang tercatat di analisis awal (§10 bagian atas) semuanya sudah punya sub-materi padanan dan sudah masuk Firestore.
 
+**Update 2026-07-27 — urutan tahap dirombak mengikuti urutan tes.** `TAHAPAN_PRASYARAT_SMP` (`kurikulumData.js`) disusun ulang supaya tahap-tahapnya mengikuti urutan Bagian tes diagnostik (Bilangan Bulat → Faktorisasi → Non-Bulat → Aljabar → Numerasi Terapan), lalu sub-materi yang **tidak** diuji tes ini (sudut/geometri, sistem & realita, area kuadratik, fungsi & transformasi) ditaruh setelahnya, diurutkan dari paling dasar ke paling lanjut:
+
+- **Tahap 1: Aritmatika** — tidak berubah (Bagian 1–3 tes).
+- **Tahap 2: Aljabar Dasar** — Pengenalan Variabel + Manipulasi Aljabar Dasar, dipisah dari sudut (dulu bersanding di "Tahap 2: Gerbang Logika & Sudut"). Bagian 4 tes.
+- **Tahap 3: Numerasi Terapan** — Persentase, Perbandingan dan Skala, Pembulatan dan Estimasi, naik dari Tahap 7 lama. Bagian 6 tes (Bagian 5/PLSV-SPLDV dilewati karena sudah pindah ke tab "Sistem Persamaan" sejak §11, dan sub-materinya sendiri tidak digerbang oleh apa pun).
+- **Tahap 4: Sudut & Spasial** — gabungan sudut (dulu separuh Tahap 2) + spasial (dulu Tahap 3), tidak diuji tes tapi paling dasar di antara sisanya.
+- **Tahap 5: Sistem & Realita**, **Tahap 6: Area Kuadratik**, **Tahap 7: Fungsi & Transformasi Dasar** — nomor tahap naik satu (dulu 4/5/6), isi tidak berubah.
+
+Perubahan ini murni tata letak kartu peta materi — Prasyarat SMP tetap tidak pernah dikunci dan tidak ada satu pun sub-materinya yang jadi target gerbang sub-materi lain di tab yang sama, jadi tidak menyentuh `PETA_PRASYARAT` maupun logika kunci. Gate A dan seluruh test Jest (116) sudah dijalankan ulang dan lolos. Posisi tahap 4-7 tetap pilihan sementara penulis dokumen, **belum ditinjau guru**.
+
 ---
 
 ## 11. Ekspansi kurikulum ke prota/prosem penuh (2026-07-26, berjalan)

@@ -535,45 +535,47 @@ const TAHAPAN_KAIDAH_PENCACAHAN_PELUANG = {
 };
 
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
+// Urutan tahap dirombak 2026-07-27 (plan/PLAN.md §10) mengikuti urutan Bagian
+// Tes Diagnostik Numerasi Kelas X (Bilangan Bulat -> Faktorisasi -> Non-Bulat
+// -> Aljabar -> Numerasi Terapan; Bagian 5-nya, PLSV/SPLDV, dilewati di sini
+// karena sudah pindah ke tab "Sistem Persamaan" sejak 2026-07-26), supaya
+// hasil tes bisa dipetakan 1:1 ke tahap remediasi. Sub-materi yang TIDAK
+// diuji tes ini (sudut/geometri, sistem & realita, area kuadratik, fungsi &
+// transformasi) ditaruh setelahnya, diurutkan dari yang paling dasar ke
+// paling lanjut -- bukan hasil topological sort, keputusan pedagogis manual,
+// belum ditinjau guru.
 const TAHAPAN_PRASYARAT_SMP = {
   "operasi aritmatika dasar": "Tahap 1: Aritmatika",
-  // Ditambahkan 2026-07-26 (bersama dua sub-materi lain di bawah) untuk
-  // menutup tiga celah tersisa dari analisis Tes Diagnostik Numerasi Kelas X
-  // — lihat plan/PLAN.md §10. Posisi tahap belum ditinjau guru.
   "sifat operasi bilangan": "Tahap 1: Aritmatika",
   "kpk dan fpb": "Tahap 1: Aritmatika",
   "operasi pecahan": "Tahap 1: Aritmatika",
   "operasi dan konversi desimal": "Tahap 1: Aritmatika",
 
-  "pengenalan variabel": "Tahap 2: Gerbang Logika & Sudut",
-  "manipulasi aljabar dasar": "Tahap 2: Gerbang Logika & Sudut",
-  "pengenalan sudut dasar": "Tahap 2: Gerbang Logika & Sudut",
-  "sifat sudut (berpelurus)": "Tahap 2: Gerbang Logika & Sudut",
-  "sifat sudut (berseberangan)": "Tahap 2: Gerbang Logika & Sudut",
+  "pengenalan variabel": "Tahap 2: Aljabar Dasar",
+  "manipulasi aljabar dasar": "Tahap 2: Aljabar Dasar",
 
-  "terminologi bangun geometri": "Tahap 3: Spasial & Pemodelan",
-  "sifat bangun datar": "Tahap 3: Spasial & Pemodelan",
-  "jumlah sudut segitiga": "Tahap 3: Spasial & Pemodelan",
-  "visualisasi spasial dan arah": "Tahap 3: Spasial & Pemodelan",
-  "pemodelan navigasi (jurusan tiga angka)": "Tahap 3: Spasial & Pemodelan",
-  "lingkaran luar segitiga": "Tahap 3: Spasial & Pemodelan",
+  "persentase": "Tahap 3: Numerasi Terapan",
+  "perbandingan dan skala": "Tahap 3: Numerasi Terapan",
+  "pembulatan dan estimasi": "Tahap 3: Numerasi Terapan",
 
-  "representasi aljabar": "Tahap 4: Sistem & Realita",
-  "relasi dinamis (jarak, kecepatan, waktu)": "Tahap 4: Sistem & Realita",
+  "pengenalan sudut dasar": "Tahap 4: Sudut & Spasial",
+  "sifat sudut (berpelurus)": "Tahap 4: Sudut & Spasial",
+  "sifat sudut (berseberangan)": "Tahap 4: Sudut & Spasial",
+  "terminologi bangun geometri": "Tahap 4: Sudut & Spasial",
+  "sifat bangun datar": "Tahap 4: Sudut & Spasial",
+  "jumlah sudut segitiga": "Tahap 4: Sudut & Spasial",
+  "visualisasi spasial dan arah": "Tahap 4: Sudut & Spasial",
+  "pemodelan navigasi (jurusan tiga angka)": "Tahap 4: Sudut & Spasial",
+  "lingkaran luar segitiga": "Tahap 4: Sudut & Spasial",
 
-  "sistem persamaan linear-kuadrat (splk)": "Tahap 5: Area Kuadratik",
-  "sistem persamaan kuadrat-kuadrat (spkk)": "Tahap 5: Area Kuadratik",
+  "representasi aljabar": "Tahap 5: Sistem & Realita",
+  "relasi dinamis (jarak, kecepatan, waktu)": "Tahap 5: Sistem & Realita",
 
-  "translasi horizontal": "Tahap 6: Fungsi & Transformasi Dasar",
-  "translasi vertikal": "Tahap 6: Fungsi & Transformasi Dasar",
+  "sistem persamaan linear-kuadrat (splk)": "Tahap 6: Area Kuadratik",
+  "sistem persamaan kuadrat-kuadrat (spkk)": "Tahap 6: Area Kuadratik",
 
-  // Ditambahkan 2026-07-26 untuk menutup celah cakupan Bagian 6 (Numerasi
-  // Terapan) pada Tes Diagnostik Numerasi Kelas X — lihat plan/PLAN.md §10.
-  // Posisi "Tahap 7" bersifat sementara; belum ditinjau oleh guru, cukup
-  // ubah string tahapnya di sini kalau urutan mengajar sebenarnya berbeda.
-  "persentase": "Tahap 7: Numerasi Terapan",
-  "perbandingan dan skala": "Tahap 7: Numerasi Terapan",
-  "pembulatan dan estimasi": "Tahap 7: Numerasi Terapan",
+  "translasi horizontal": "Tahap 7: Fungsi & Transformasi Dasar",
+  "translasi vertikal": "Tahap 7: Fungsi & Transformasi Dasar",
 };
 
 // --- MATERI TRIGONOMETRI ---
