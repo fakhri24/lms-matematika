@@ -2,7 +2,7 @@
 
 > Latihan formatif diubah dari "ambil semua soal, urut level statis, lewati yang sudah benar" menjadi **adaptif**: satu soal per langkah, dipilih acak dari level saat ini, level naik/turun berdasarkan performa. Formatif tetap murni proses pembentukan — begitu "tuntas", siswa diarahkan ke sumatif (`tes_normal`/`tes_acak`) untuk benar-benar diuji, karena formatif **tidak pernah** jadi bukti penguasaan (§2, §3 [PLAN.md](PLAN.md); §3 [CLAUDE.md](../CLAUDE.md)).
 
-**Status: SELESAI, terverifikasi 2026-07-27.** Jest 130/130 lolos (18 test baru untuk `soalEngine.js`). Diuji manual end-to-end di browser terhadap Firestore live (§7.5) — 3 bug ditemukan & diperbaiki dalam prosesnya.
+**Status: LIVE DI PRODUKSI, 2026-07-27.** Jest 130/130 lolos (18 test baru untuk `soalEngine.js`). Diuji manual end-to-end di browser terhadap Firestore live (§7.5) — 3 bug ditemukan & diperbaiki dalam prosesnya. Commit `6563213` di-push ke `origin/main` dan di-deploy ke Firebase Hosting (`firebase deploy --only hosting`) — aktif di `https://lms-matematika.web.app`, diverifikasi ulang langsung di URL produksi (bukan cuma `localhost`): layar Tuntas, skor, dan redirect ke sumatif tampil identik dengan hasil uji lokal, nol error console.
 
 > **Berkas ini tunduk pada [CLAUDE.md](../CLAUDE.md)** dan tidak bertentangan dengan [PLAN.md](PLAN.md) (topik berbeda: itu soal gerbang prasyarat & peta materi, ini soal mekanisme pengerjaan soal di dalam satu sesi latihan).
 
