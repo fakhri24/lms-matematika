@@ -65,7 +65,7 @@ export class LatihanController {
       langkahFormatif: 0,
       levelSaatIni: 1,
       levelTertinggiDicapai: 1,
-      streakBenar: 0,
+      jumlahBenarMandiri: 0,
       totalSalahDiLevelIni: 0,
       formatifTuntas: false,
       nilaiTuntasTerakhir: null,
@@ -493,19 +493,20 @@ export class LatihanController {
    * Naik/turun level (soalEngine.perbaruiLevelAdaptif) lalu persist real-time
    * ke progres_belajar — dipanggil dari SETIAP jawaban formatif, benar atau salah.
    */
-  perbaruiLevelDanSimpan(idSoal, benar, skorSoal = null, jawabanSiswa = null) {
+  perbaruiLevelDanSimpan(idSoal, benar, skorSoal = null, jawabanSiswa = null, mandiri = false) {
     const hasilLevel = perbaruiLevelAdaptif(
       {
         levelSaatIni: this.state.levelSaatIni,
         levelTertinggiDicapai: this.state.levelTertinggiDicapai,
-        streakBenar: this.state.streakBenar,
+        jumlahBenarMandiri: this.state.jumlahBenarMandiri,
         totalSalahDiLevelIni: this.state.totalSalahDiLevelIni,
       },
       benar,
+      mandiri,
     );
     this.state.levelSaatIni = hasilLevel.levelSaatIni;
     this.state.levelTertinggiDicapai = hasilLevel.levelTertinggiDicapai;
-    this.state.streakBenar = hasilLevel.streakBenar;
+    this.state.jumlahBenarMandiri = hasilLevel.jumlahBenarMandiri;
     this.state.totalSalahDiLevelIni = hasilLevel.totalSalahDiLevelIni;
 
     if (hasilLevel.tuntas) {
@@ -520,7 +521,7 @@ export class LatihanController {
       jawabanSiswa,
       levelSaatIni: this.state.levelSaatIni,
       levelTertinggiDicapai: this.state.levelTertinggiDicapai,
-      streakBenar: this.state.streakBenar,
+      jumlahBenarMandiri: this.state.jumlahBenarMandiri,
       totalSalahDiLevelIni: this.state.totalSalahDiLevelIni,
       formatifTuntas: this.state.formatifTuntas,
       nilaiTuntasTerakhir: this.state.nilaiTuntasTerakhir,
@@ -566,6 +567,7 @@ export class LatihanController {
           true,
           dataMemori.skor_soal,
           jawabanUser,
+          dataMemori.skor_soal === 100, // mandiri: benar di percobaan pertama, tanpa clue/pembahasan
         );
       }
     } else {
@@ -857,7 +859,7 @@ export class LatihanController {
 
         this.state.levelSaatIni = progres.levelSaatIni;
         this.state.levelTertinggiDicapai = progres.levelTertinggiDicapai;
-        this.state.streakBenar = progres.streakBenar;
+        this.state.jumlahBenarMandiri = progres.jumlahBenarMandiri;
         this.state.totalSalahDiLevelIni = progres.totalSalahDiLevelIni;
         this.state.formatifTuntas = progres.formatifTuntas;
         this.state.nilaiTuntasTerakhir = progres.nilaiTuntasTerakhir;

@@ -127,63 +127,91 @@ describe('soalEngine', () => {
     const stateAwal = () => ({
       levelSaatIni: 1,
       levelTertinggiDicapai: 1,
-      streakBenar: 0,
+      jumlahBenarMandiri: 0,
       totalSalahDiLevelIni: 0,
     });
 
-    test('benar 1-2x belum menaikkan level', () => {
+    test('benar mandiri 1-3x di Level 1 belum menaikkan level (ambang 4)', () => {
       let state = stateAwal();
-      state = perbaruiLevelAdaptif(state, true);
-      state = perbaruiLevelAdaptif(state, true);
+      state = perbaruiLevelAdaptif(state, true, true);
+      state = perbaruiLevelAdaptif(state, true, true);
+      state = perbaruiLevelAdaptif(state, true, true);
       expect(state.levelSaatIni).toBe(1);
-      expect(state.streakBenar).toBe(2);
+      expect(state.jumlahBenarMandiri).toBe(3);
       expect(state.tuntas).toBe(false);
     });
 
-    test('benar 3x berturut-turut menaikkan level dan reset kedua counter', () => {
+    test('benar mandiri 4x kumulatif di Level 1 menaikkan level dan reset kedua counter', () => {
       let state = stateAwal();
-      state = perbaruiLevelAdaptif(state, true);
-      state = perbaruiLevelAdaptif(state, true);
-      state = perbaruiLevelAdaptif(state, true);
+      for (let i = 0; i < 4; i++) state = perbaruiLevelAdaptif(state, true, true);
       expect(state.levelSaatIni).toBe(2);
       expect(state.levelTertinggiDicapai).toBe(2);
-      expect(state.streakBenar).toBe(0);
+      expect(state.jumlahBenarMandiri).toBe(0);
       expect(state.totalSalahDiLevelIni).toBe(0);
     });
 
-    test('level mentok di 3, tidak naik lagi -> jadi tuntas', () => {
-      let state = { levelSaatIni: 3, levelTertinggiDicapai: 3, streakBenar: 2, totalSalahDiLevelIni: 0 };
-      state = perbaruiLevelAdaptif(state, true);
+    test('benar mandiri 4x TIDAK harus berturut-turut, boleh diselingi 1x salah', () => {
+      let state = stateAwal();
+      state = perbaruiLevelAdaptif(state, true, true); // mandiri 1
+      state = perbaruiLevelAdaptif(state, false); // salah 1 (di bawah ambang turun)
+      state = perbaruiLevelAdaptif(state, true, true); // mandiri 2
+      state = perbaruiLevelAdaptif(state, true, true); // mandiri 3
+      state = perbaruiLevelAdaptif(state, true, true); // mandiri 4 -> naik
+      expect(state.levelSaatIni).toBe(2);
+    });
+
+    test('benar TAPI tidak mandiri (pakai clue/pembahasan) bersifat netral, tidak menambah hitungan', () => {
+      let state = stateAwal();
+      state = perbaruiLevelAdaptif(state, true, true); // mandiri 1
+      state = perbaruiLevelAdaptif(state, true, false); // benar tapi tidak mandiri -> netral
+      expect(state.levelSaatIni).toBe(1);
+      expect(state.jumlahBenarMandiri).toBe(1);
+    });
+
+    test('Level 2 juga butuh 4 benar mandiri untuk naik', () => {
+      let state = { levelSaatIni: 2, levelTertinggiDicapai: 2, jumlahBenarMandiri: 0, totalSalahDiLevelIni: 0 };
+      for (let i = 0; i < 3; i++) state = perbaruiLevelAdaptif(state, true, true);
+      expect(state.levelSaatIni).toBe(2);
+      state = perbaruiLevelAdaptif(state, true, true);
+      expect(state.levelSaatIni).toBe(3);
+    });
+
+    test('Level 3 cuma butuh 2 benar mandiri untuk tuntas (ambang lebih rendah)', () => {
+      let state = { levelSaatIni: 3, levelTertinggiDicapai: 3, jumlahBenarMandiri: 0, totalSalahDiLevelIni: 0 };
+      state = perbaruiLevelAdaptif(state, true, true);
+      expect(state.tuntas).toBe(false);
+      state = perbaruiLevelAdaptif(state, true, true);
       expect(state.levelSaatIni).toBe(3);
       expect(state.tuntas).toBe(true);
     });
 
-    test('salah 1x tidak menurunkan level tapi reset streak benar', () => {
-      let state = { levelSaatIni: 2, levelTertinggiDicapai: 2, streakBenar: 2, totalSalahDiLevelIni: 0 };
+    test('salah 1x tidak menurunkan level dan TIDAK mereset jumlah benar mandiri', () => {
+      let state = { levelSaatIni: 2, levelTertinggiDicapai: 2, jumlahBenarMandiri: 2, totalSalahDiLevelIni: 0 };
       state = perbaruiLevelAdaptif(state, false);
       expect(state.levelSaatIni).toBe(2);
-      expect(state.streakBenar).toBe(0);
+      expect(state.jumlahBenarMandiri).toBe(2);
       expect(state.totalSalahDiLevelIni).toBe(1);
     });
 
-    test('salah 2x kumulatif (tidak harus berturut-turut) menurunkan level', () => {
-      let state = { levelSaatIni: 2, levelTertinggiDicapai: 2, streakBenar: 0, totalSalahDiLevelIni: 0 };
+    test('salah 2x kumulatif (tidak harus berturut-turut) menurunkan level dan reset kedua counter', () => {
+      let state = { levelSaatIni: 2, levelTertinggiDicapai: 2, jumlahBenarMandiri: 2, totalSalahDiLevelIni: 0 };
       state = perbaruiLevelAdaptif(state, false); // salah 1
-      state = perbaruiLevelAdaptif(state, true); // benar di antaranya, tidak reset total salah
+      state = perbaruiLevelAdaptif(state, true, true); // benar mandiri di antaranya, tidak reset total salah
       state = perbaruiLevelAdaptif(state, false); // salah 2 -> turun
       expect(state.levelSaatIni).toBe(1);
+      expect(state.jumlahBenarMandiri).toBe(0);
       expect(state.totalSalahDiLevelIni).toBe(0);
     });
 
     test('level mentok di 1, tidak turun lagi', () => {
-      let state = { levelSaatIni: 1, levelTertinggiDicapai: 1, streakBenar: 0, totalSalahDiLevelIni: 1 };
+      let state = { levelSaatIni: 1, levelTertinggiDicapai: 1, jumlahBenarMandiri: 0, totalSalahDiLevelIni: 1 };
       state = perbaruiLevelAdaptif(state, false);
       expect(state.levelSaatIni).toBe(1);
       expect(state.totalSalahDiLevelIni).toBe(0);
     });
 
     test('levelTertinggiDicapai tidak pernah turun walau level saat ini turun', () => {
-      let state = { levelSaatIni: 3, levelTertinggiDicapai: 3, streakBenar: 0, totalSalahDiLevelIni: 1 };
+      let state = { levelSaatIni: 3, levelTertinggiDicapai: 3, jumlahBenarMandiri: 0, totalSalahDiLevelIni: 1 };
       state = perbaruiLevelAdaptif(state, false);
       expect(state.levelSaatIni).toBe(2);
       expect(state.levelTertinggiDicapai).toBe(3);
@@ -192,7 +220,7 @@ describe('soalEngine', () => {
     test('tidak memodifikasi objek state input (murni)', () => {
       const state = stateAwal();
       const salinan = { ...state };
-      perbaruiLevelAdaptif(state, true);
+      perbaruiLevelAdaptif(state, true, true);
       expect(state).toEqual(salinan);
     });
   });

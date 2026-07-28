@@ -59,42 +59,60 @@ export function pilihSoalFormatifBerikutnya(
   return acakArray(kandidat)[0];
 }
 
+// Ambang jumlah benar MANDIRI (tanpa lihat clue/pembahasan, benar di percobaan
+// pertama) yang dibutuhkan untuk naik dari tiap level -- sengaja disamakan
+// dengan kuota draf sumatif (4 mudah, 4 sedang, 2 sulit, lihat siapkanDraftSoal
+// di bawah) supaya "lulus formatif" merepresentasikan volume bukti yang sama
+// dengan yang akan ditemui siswa saat ujian sumatif.
+const AMBANG_NAIK_LEVEL = { 1: 4, 2: 4, 3: 2 };
+
 /**
- * Aturan naik/turun level formatif adaptif, dari satu jawaban (benar/salah):
- * - Benar 3x berturut-turut -> naik level (mentok 3; di level 3 jadi TUNTAS,
- *   bukan naik level lagi).
- * - Salah 2x kumulatif (tidak harus berturut-turut) -> turun level (mentok 1).
- * - Kedua counter direset saat level berubah (naik/turun); counter salah
- *   TIDAK direset saat jawaban benar (sengaja kumulatif).
+ * Aturan naik/turun level formatif adaptif, dari satu jawaban:
+ * - `mandiri` (benar di percobaan pertama, tanpa lihat_clue/lihat_bahas -- lihat
+ *   LatihanController.handleCekJawaban, skor_soal === 100) menambah hitungan
+ *   KUMULATIF (bukan streak/berturut-turut). Begitu hitungan mencapai
+ *   AMBANG_NAIK_LEVEL untuk level saat ini -> naik level (mentok 3; di level 3
+ *   jadi TUNTAS, bukan naik level lagi). Benar tapi TIDAK mandiri (pakai
+ *   clue/pembahasan, atau baru benar di percobaan ke-2+) bersifat netral --
+ *   tidak menambah maupun mengurangi hitungan ini.
+ * - Salah 2x kumulatif (tidak harus berturut-turut, tidak peduli mandiri atau
+ *   tidak) -> turun level (mentok 1).
+ * - Kedua counter direset ke 0 saat level berubah (naik ATAU turun); counter
+ *   salah TIDAK direset oleh jawaban benar, dan counter benar-mandiri TIDAK
+ *   direset oleh satu jawaban salah/tidak-mandiri (sengaja kumulatif, supaya
+ *   satu kepleset di tengah jalan tidak menghapus progres sebelumnya).
  * Menerima & mengembalikan objek state baru, tidak memodifikasi input (murni).
  */
-export function perbaruiLevelAdaptif(stateLevel, benar) {
-  let { levelSaatIni, levelTertinggiDicapai, streakBenar, totalSalahDiLevelIni } =
+export function perbaruiLevelAdaptif(stateLevel, benar, mandiri = false) {
+  let { levelSaatIni, levelTertinggiDicapai, jumlahBenarMandiri, totalSalahDiLevelIni } =
     stateLevel;
   let tuntas = false;
 
   if (benar) {
-    streakBenar += 1;
-    if (streakBenar >= 3) {
-      if (levelSaatIni < 3) {
-        levelSaatIni += 1;
-        levelTertinggiDicapai = Math.max(levelTertinggiDicapai, levelSaatIni);
-        streakBenar = 0;
-        totalSalahDiLevelIni = 0;
-      } else {
-        tuntas = true;
+    if (mandiri) {
+      jumlahBenarMandiri += 1;
+      if (jumlahBenarMandiri >= AMBANG_NAIK_LEVEL[levelSaatIni]) {
+        if (levelSaatIni < 3) {
+          levelSaatIni += 1;
+          levelTertinggiDicapai = Math.max(levelTertinggiDicapai, levelSaatIni);
+          jumlahBenarMandiri = 0;
+          totalSalahDiLevelIni = 0;
+        } else {
+          tuntas = true;
+        }
       }
     }
+    // benar tapi tidak mandiri: netral, tidak mengubah counter apa pun.
   } else {
     totalSalahDiLevelIni += 1;
-    streakBenar = 0;
     if (totalSalahDiLevelIni >= 2) {
       if (levelSaatIni > 1) levelSaatIni -= 1;
+      jumlahBenarMandiri = 0;
       totalSalahDiLevelIni = 0;
     }
   }
 
-  return { levelSaatIni, levelTertinggiDicapai, streakBenar, totalSalahDiLevelIni, tuntas };
+  return { levelSaatIni, levelTertinggiDicapai, jumlahBenarMandiri, totalSalahDiLevelIni, tuntas };
 }
 
 /**

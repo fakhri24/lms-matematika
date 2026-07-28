@@ -107,27 +107,33 @@ for (const sub of target) {
   );
   if (hasil.total < 10) console.log(`  ⚠️  DI BAWAH SOAL_MIN (10)`);
 
-  // Ambang mistake-budget K = N - 3 (formatif adaptif butuh 3 benar
-  // BERUNTUN buat naik level; tiap benar BARU mengunci soal itu keluar dari
-  // pool "belum benar" permanen -- lihat soalEngine.pilihSoalFormatifBerikutnya
-  // & LatihanController.js:614-620). K = berapa kali salah yang masih bisa
-  // ditoleransi sebelum siswa TERPAKSA diberi soal yang jawabannya sudah
-  // dia tahu. K negatif = cacat struktural: bahkan tanpa satu kesalahan pun,
-  // stok soal segar tak cukup untuk streak 3.
+  // Ambang mistake-budget K = N - BENAR_MANDIRI_UNTUK_NAIK[level] (sejak
+  // 2026-07-28: naik level butuh sekian benar MANDIRI kumulatif -- tanpa
+  // lihat clue/pembahasan, boleh diselingi salah -- bukan lagi 3 beruntun;
+  // lihat soalEngine.perbaruiLevelAdaptif & AMBANG_NAIK_LEVEL di sana.
+  // Level 1/2 butuh 4 (disamakan kuota sumatif mudah/sedang), Level 3 cuma
+  // butuh 2 (disamakan kuota sumatif sulit). Tiap benar BARU mengunci soal
+  // itu keluar dari pool "belum benar" permanen -- lihat
+  // soalEngine.pilihSoalFormatifBerikutnya & LatihanController.js. K =
+  // berapa kali salah yang masih bisa ditoleransi sebelum siswa TERPAKSA
+  // diberi soal yang jawabannya sudah dia tahu. K negatif = cacat
+  // struktural: bahkan tanpa satu kesalahan pun, stok soal segar tak cukup.
   // idSoalSudahBenar direstore dari progres_belajar (latihanService.js),
   // jadi ini akumulasi SELURUH riwayat siswa di sub-materi itu, bukan cuma
   // satu sesi.
-  // Ambang tidak simetris: Level 1 adalah lantai (tidak ada penurunan di
+  // Ambang K tidak simetris: Level 1 adalah lantai (tidak ada penurunan di
   // bawahnya) -- siswa lemah bisa terjebak lama di sana, butuh buffer
   // terbesar. Level 2/3 lebih transit (2x salah langsung turun level).
-  const AMBANG_K = { 1: 4, 2: 2, 3: 2 }; // -> min soal: L1>=7, L2>=5, L3>=5
+  const BENAR_MANDIRI_UNTUK_NAIK = { 1: 4, 2: 4, 3: 2 };
+  const AMBANG_K = { 1: 4, 2: 2, 3: 2 }; // -> min soal: L1>=8, L2>=6, L3>=4
   [1, 2, 3].forEach((lvl) => {
     const n = hasil.perLevel[lvl] || 0;
-    const k = n - 3;
+    const k = n - BENAR_MANDIRI_UNTUK_NAIK[lvl];
     if (k < AMBANG_K[lvl]) {
       const label = k < 0 ? "CACAT STRUKTURAL" : "di bawah ambang";
+      const minSoal = BENAR_MANDIRI_UNTUK_NAIK[lvl] + AMBANG_K[lvl];
       console.log(
-        `  ⚠️  Level ${lvl}: ${n} soal, K=${k} (${label}, target K>=${AMBANG_K[lvl]} / min ${3 + AMBANG_K[lvl]} soal) -- siswa bisa dipaksa mengulang soal yang sudah pernah dijawab benar`,
+        `  ⚠️  Level ${lvl}: ${n} soal, K=${k} (${label}, target K>=${AMBANG_K[lvl]} / min ${minSoal} soal) -- siswa bisa dipaksa mengulang soal yang sudah pernah dijawab benar`,
       );
     }
   });
