@@ -1,9 +1,12 @@
 // --- DAFTAR MATERI INTI ---
 export const DAFTAR_MATERI_INTI = [
   "Eksponen",
+  // Sistem Persamaan (Bab 3 prota) dipindah sebelum Logaritma (Bab 4 prota)
+  // 2026-07-28: "Persamaan Logaritma" kini digerbangkan oleh PLSV (Gate B,
+  // plan/PLAN.md), jadi urutan tab harus konsisten dengan urutan bab prota.
+  "Sistem Persamaan",
   "Logaritma",
   "Trigonometri",
-  "Sistem Persamaan",
   "Relasi dan Fungsi",
   "Persamaan Kuadrat",
   "Fungsi Kuadrat",
@@ -45,22 +48,54 @@ export const DAFTAR_MATERI_INTI = [
 // konsep_prasyarat) memakai rantai sekuensial sederhana dulu — lihat §11.
 export const PETA_PRASYARAT = {
   // ═══════════════════════════════════════════════════════════════════
-  // TAB EKSPONEN — rantai sekuensial sederhana (2026-07-26, plan/PLAN.md
-  // §11). Belum ada data konsep_prasyarat (soal baru ditulis), jadi tiap
-  // sub-materi cuma butuh SATU pendahulu langsung — diperkaya jadi
-  // jaringan bercabang nanti setelah polanya kelihatan dari data nyata.
+  // TAB EKSPONEN — rantai sekuensial (2026-07-26, plan/PLAN.md §11),
+  // DIPERKAYA 2026-07-28 dari data konsep_prasyarat riil (Gate B,
+  // plan/diagnostik/gate-b-analisis-konsep-prasyarat.mjs, ambang 30%).
+  // "Sifat Eksponen Bilangan Bulat" akhirnya dapat gerbang nyata (dulu
+  // pintu masuk tab tanpa syarat sama sekali). Edge yang cuma terpenuhi
+  // transitif lewat rantai ini (mis. "Eksponen Rasional" tak perlu
+  // "Sifat Eksponen Bilangan Bulat" langsung, sudah otomatis lewat
+  // Merasionalkan Penyebut → Operasi Bentuk Akar) sengaja TIDAK ditulis.
   // ═══════════════════════════════════════════════════════════════════
+  "Sifat Eksponen Bilangan Bulat": ["Operasi Aritmatika Dasar"], // data: 100%
   "Operasi Bentuk Akar": ["Sifat Eksponen Bilangan Bulat"],
-  "Merasionalkan Penyebut": ["Operasi Bentuk Akar"],
+  "Merasionalkan Penyebut": ["Operasi Bentuk Akar", "Manipulasi Aljabar Dasar"], // data: 30% (pas di ambang)
   "Eksponen Rasional (Pangkat Pecahan)": ["Merasionalkan Penyebut"],
-  "Fungsi Eksponen": ["Eksponen Rasional (Pangkat Pecahan)"],
+  "Fungsi Eksponen": ["Eksponen Rasional (Pangkat Pecahan)", "Pengenalan Variabel"], // data: 80%
+
+  // ═══════════════════════════════════════════════════════════════════
+  // TAB SISTEM PERSAMAAN (Bab 3 prota) — sebelum 2026-07-28 tab ini TIDAK
+  // punya rantai internal sama sekali (PLSV/SPLDV/SPLTV tiga-tiganya
+  // terbuka independen, meski `TAHAPAN_SISTEM_PERSAMAAN` sudah menandainya
+  // Tahap 1/2/3). Gate B (§13) mengonfirmasi rantai sekuensial yang memang
+  // dimaksud sejak awal: PLSV → SPLDV → SPLTV.
+  // ═══════════════════════════════════════════════════════════════════
+  "Persamaan Linear Satu Variabel (PLSV)": [
+    "Operasi Aritmatika Dasar", // data: 70%
+    "Manipulasi Aljabar Dasar", // data: 40%
+    "Operasi Pecahan", // data: 30%, pas di ambang
+  ],
+  "Sistem Persamaan Linear Dua Variabel (SPLDV)": [
+    "Persamaan Linear Satu Variabel (PLSV)", // data: 100%
+  ],
+  "Sistem Persamaan Linear Tiga Variabel (SPLTV)": [
+    "Sistem Persamaan Linear Dua Variabel (SPLDV)", // data: 100%
+    "Representasi Aljabar", // data: 40%
+  ],
 
   // ═══════════════════════════════════════════════════════════════════
   // TAB LOGARITMA — gerbang antar-tab + rantai sekuensial (2026-07-26,
   // plan/PLAN.md §11). Pintu masuk tab (Pengenalan Logaritma) digerbangkan
   // oleh SELURUH sub-materi Eksponen master (Bab 4 prasyarat ["bab1"] di
-  // RENCANA prota) — bukan representasi sebagian, karena belum ada data
-  // konsep_prasyarat untuk memilih mana yang paling relevan.
+  // RENCANA prota) — representasi bab-ke-bab dari prota, bukan konsep per
+  // konsep, jadi TETAP dipertahankan penuh meski dukungan data individual
+  // per sub-materi Eksponen di sini lemah (Gate B, 2026-07-28).
+  //
+  // "Persamaan Logaritma" dan "Fungsi Logaritma" DIPERKAYA 2026-07-28 dari
+  // data konsep_prasyarat: keduanya ternyata butuh skill dari tab lain
+  // (PLSV dari Sistem Persamaan, Pengenalan Variabel dari Aritmatika) yang
+  // sebelumnya tidak tertangkap sama sekali karena rantai lama cuma linear
+  // di dalam tab Logaritma sendiri.
   // ═══════════════════════════════════════════════════════════════════
   "Pengenalan Logaritma": [
     "Sifat Eksponen Bilangan Bulat",
@@ -72,32 +107,54 @@ export const PETA_PRASYARAT = {
   "Sifat Operasi Logaritma": ["Pengenalan Logaritma"],
   "Mengubah Basis Logaritma": ["Sifat Operasi Logaritma"],
   "Identitas Pangkat Logaritma": ["Mengubah Basis Logaritma"],
-  "Persamaan Logaritma": ["Identitas Pangkat Logaritma"],
-  "Fungsi Logaritma": ["Persamaan Logaritma"],
+  "Persamaan Logaritma": [
+    "Identitas Pangkat Logaritma",
+    "Persamaan Linear Satu Variabel (PLSV)", // data: 100%
+  ],
+  "Fungsi Logaritma": ["Persamaan Logaritma", "Pengenalan Variabel"], // data: 60%
 
   // ═══════════════════════════════════════════════════════════════════
   // TAB RELASI DAN FUNGSI — rantai sekuensial (2026-07-26, plan/PLAN.md
   // §11). Bab 7 prasyarat [] di RENCANA prota, jadi TIDAK ada gerbang
-  // antar-tab di pintu masuknya ("Substitusi Fungsi Linear") — tab ini
-  // terbuka begitu siswa masuk, hanya sekuensial di dalamnya.
+  // SATU-TAB-PENUH di pintu masuknya. DIPERKAYA 2026-07-28 (Gate B, §13):
+  // "Substitusi Fungsi Linear" dapat 3 gerbang konsep dari Prasyarat SMP +
+  // Sistem Persamaan (keduanya sudah lebih dulu di urutan tab).
   //
   // "Analisis Grafik Fungsi" digerbang belakangan (bukan bersamaan dengan
   // sisanya) setelah "Fungsi Piecewise" dikonfirmasi live — sub-materi ini
   // sudah live duluan sejak §10, jadi gerbangnya sengaja ditahan agar tidak
   // mendadak terkunci di rentang push-vs-impor (pola sama seperti Fase 1).
+  // Gate B (2026-07-28) menyarankan tambahan "Pertidaksamaan Kuadrat"
+  // (30%, pas di ambang) tapi SENGAJA TIDAK ditulis: itu akan membentuk
+  // SIKLUS — Pertidaksamaan Kuadrat mensyaratkan (transitif) seluruh
+  // Fungsi Kuadrat, dan Fungsi Kuadrat mensyaratkan SELURUH Relasi dan
+  // Fungsi termasuk "Analisis Grafik Fungsi" sendiri.
   // ═══════════════════════════════════════════════════════════════════
+  "Substitusi Fungsi Linear": [
+    "Manipulasi Aljabar Dasar", // data: 100%
+    "Pengenalan Variabel", // data: 60%
+    "Persamaan Linear Satu Variabel (PLSV)", // data: 30%, pas di ambang
+  ],
   "Definisi Relasi dan Fungsi": ["Substitusi Fungsi Linear"],
   "Jenis-jenis Fungsi": ["Definisi Relasi dan Fungsi"],
   "Fungsi Piecewise": ["Jenis-jenis Fungsi"],
-  "Analisis Grafik Fungsi": ["Fungsi Piecewise"],
+  "Analisis Grafik Fungsi": ["Fungsi Piecewise", "Representasi Aljabar"], // data: 100%
   "Sifat-sifat Fungsi": ["Fungsi Piecewise"],
   "Operasi Aljabar Fungsi": ["Sifat-sifat Fungsi"],
 
   // ═══════════════════════════════════════════════════════════════════
   // TAB PERSAMAAN KUADRAT — rantai sekuensial (2026-07-26, plan/PLAN.md
   // §11). Bab 5 prasyarat [] di RENCANA prota, jadi TIDAK ada gerbang
-  // antar-tab di pintu masuknya ("Akar Persamaan Kuadrat").
+  // SATU-TAB-PENUH di pintu masuknya. Tapi 2026-07-28 (Gate B) "Akar
+  // Persamaan Kuadrat" dapat gerbang KONSEP spesifik dari data
+  // konsep_prasyarat — beda dari gerbang antar-tab §11.4 (yang mensyaratkan
+  // SELURUH sub-materi tab lain), ini cuma 3 skill dasar tertentu.
   // ═══════════════════════════════════════════════════════════════════
+  "Akar Persamaan Kuadrat": [
+    "Manipulasi Aljabar Dasar", // data: 70%
+    "Operasi Pecahan", // data: 40%
+    "Operasi Bentuk Akar", // data: 30%
+  ],
   "Diskriminan dan Jenis Akar": ["Akar Persamaan Kuadrat"],
   "Jumlah dan Hasil Kali Akar (Vieta)": ["Diskriminan dan Jenis Akar"],
   "Menyusun Persamaan Kuadrat Baru": ["Jumlah dan Hasil Kali Akar (Vieta)"],
@@ -217,7 +274,14 @@ export const PETA_PRASYARAT = {
   // Peluang) digerbangkan oleh SELURUH sub-materi Kaidah Pencacahan master
   // (Bab 11 prasyarat ["bab10"]) -- pola sama seperti gerbang antar-bab di
   // tab lain, hanya saja di sini kedua bab digabung jadi satu tab UI.
+  //
+  // DIPERKAYA 2026-07-28 (Gate B, §13): "Aturan Penjumlahan dan Perkalian"
+  // (pintu masuk tab, dulu tanpa syarat) dapat gerbang nyata dari Prasyarat
+  // SMP. "Peluang Kejadian Majemuk" + Ruang Sampel (100%) yang disarankan
+  // Gate B TIDAK ditulis -- sudah otomatis terpenuhi transitif lewat
+  // Frekuensi Relatif dan Harapan.
   // ═══════════════════════════════════════════════════════════════════
+  "Aturan Penjumlahan dan Perkalian": ["Operasi Aritmatika Dasar"], // data: 100%
   "Permutasi": ["Aturan Penjumlahan dan Perkalian"],
   "Kombinasi": ["Permutasi"],
   "Ruang Sampel dan Peluang Kejadian Tunggal": [
@@ -637,17 +701,31 @@ const TAHAPAN_NILAI_MUTLAK = {
 // dikunci, terlepas dari tab materi utama lain yang boleh punya gerbang.
 export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
 
+// Urutan spread di bawah = "urutan mengajar" flat yang dipakai
+// validasiKurikulum() untuk mendeteksi prasyarat yang ditulis mundur (lihat
+// tests/utils/kurikulumEngine.test.js). Sejak PETA_PRASYARAT diperkaya data
+// konsep_prasyarat (2026-07-28, Gate B) dan mulai punya gerbang antar-tab ke
+// tab Prasyarat SMP & Sistem Persamaan, urutan berikut disesuaikan:
+//  - TAHAPAN_PRASYARAT_SMP dipindah ke PALING DEPAN. Ini TIDAK mengubah
+//    urutan tab yang terlihat siswa (tab "Prasyarat" sudah selalu tampil
+//    pertama, lihat urutanTab di pages/pilihMateri.js) — cuma menyamakan
+//    urutan flat internal dengan kenyataan itu.
+//  - TAHAPAN_SISTEM_PERSAMAAN dipindah ke sebelum TAHAPAN_LOGARITMA, sesuai
+//    Bab 3 < Bab 4 di RENCANA prota (plan/PLAN.md §11.4) — bukan urutan
+//    baru yang diputus di sini, cuma menyamakan dengan bab prota yang sudah
+//    didokumentasikan. Ini MENGUBAH urutan tampil tab (Sistem Persamaan
+//    sekarang tampil sebelum Logaritma, bukan sesudah Trigonometri).
 export const PETA_TAHAPAN = {
+  ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_EKSPONEN,
+  ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_LOGARITMA,
   ...TAHAPAN_RELASI_FUNGSI,
   ...TAHAPAN_PERSAMAAN_KUADRAT,
   ...TAHAPAN_FUNGSI_KUADRAT,
-  ...TAHAPAN_SISTEM_PERSAMAAN,
   ...TAHAPAN_PERTIDAKSAMAAN,
   ...TAHAPAN_FUNGSI_RASIONAL,
   ...TAHAPAN_KAIDAH_PENCACAHAN_PELUANG,
-  ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_TRIGONOMETRI,
   ...TAHAPAN_NILAI_MUTLAK,
 };

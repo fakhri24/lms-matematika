@@ -485,3 +485,82 @@ Mockup dibuat lebih dulu (metafora peta transit: tab = jalur, tab tuntas = stasi
 **Konsekuensi yang disengaja**: peta jadi **berbeda per siswa** — siswa yang lebih maju melihat peta lebih ringkas (tab-tab yang sudah dikuasainya terlipat) daripada siswa yang baru mulai. Ini konsisten dengan filosofi "fokus ke garis depan" yang sudah ada sebelumnya di halaman ini.
 
 Diverifikasi: Jest 112/112 lolos (8 test baru untuk `kolapsTabTuntas`, termasuk kasus produksi nyata). Karena tidak ada alat browser di lingkungan pengerjaan ini, verifikasi render+interaksi (klik simpul, klik tombol +, klik "Lipat semua tab") dilakukan lewat skrip jsdom sekali pakai (di-mock `getRiwayatLatihanSiswa`, dihapus setelah dipakai) — bukan pengecekan visual di browser sungguhan. Hasilnya: render awal melipat Eksponen jadi 1 simpul (66 dari 70 simpul tampil), panel detail menampilkan kelima nama sub-materi aslinya dengan benar, tombol + membuka lagi sub-materi individual, dan "Lipat semua tab" melipatnya kembali.
+
+## 13. Pengayaan PETA_PRASYARAT dari data konsep_prasyarat riil (2026-07-27, berjalan)
+
+Sejak §11 keputusan #4, gerbang tab selain Trigonometri ditulis sebagai **rantai sekuensial sederhana** (satu prasyarat langsung per node) karena saat itu soalnya belum ada, jadi belum ada `konsep_prasyarat` untuk memilih mana yang paling relevan. Sekarang bank soal sudah lengkap (1100+ soal, hampir semua tab 100% terisi `konsep_prasyarat`) — pekerjaan ini memanfaatkan data itu untuk memperkaya rantai jadi jaringan bercabang, tab demi tab, persis seperti riwayat Trigonometri sendiri (bukti pemakaian, bukan topological sort — lihat CLAUDE.md §4).
+
+**Tahap 0 — Bersihkan nama usang di `konsep_prasyarat` (2026-07-27).** Ditemukan 128 referensi ke nama sub-materi yang sudah di-rename sejak Fase 4 (mis. "Persamaan Kuadrat Dasar" → "Akar Persamaan Kuadrat") atau nama generik yang bukan sub-materi sungguhan ("Pemodelan Matematika" = nama tab, bukan node; "Sistem Persamaan Linear" tanpa akronim = ambigu SPLDV/SPLTV). 121 soal diperbaiki lewat jalur replace (§11.6), diverifikasi bersih 0 sisa nama usang. Satu koreksi isi (bukan cuma rename) ditandai eksplisit untuk ditinjau pemilik proyek: soal `kxdE8z11AJBSrFPLeRBE` (Nilai Sudut Istimewa) tadinya menyebut SPLTV padahal soalnya cuma 2 variabel — diganti SPLDV.
+
+**Tahap 1 — Skrip analisis (`plan/diagnostik/gate-b-analisis-konsep-prasyarat.mjs`, baru).** Untuk tiap sub-materi, menghitung % soal yang menyebut tiap konsep di `konsep_prasyarat`, dibandingkan dengan `PETA_PRASYARAT` yang berlaku sekarang. Ambang disepakati **30%** (bahan pertimbangan, bukan aturan mutlak — kasus di ambang tetap ditinjau manual). Skrip juga memfilter "edge yang disarankan data tapi sudah otomatis terpenuhi transitif lewat rantai yang ada" (mis. kalau A→B→C, menambahkan A sebagai syarat langsung C tidak mengubah gating apa pun) supaya rekomendasinya cuma yang benar-benar mengubah perilaku gerbang.
+
+**Tahap 2a — Eksponen + Logaritma, SELESAI (2026-07-27).** 5 edge baru diterapkan ke `kurikulumData.js`:
+- "Sifat Eksponen Bilangan Bulat" (pintu masuk tab, dulu tanpa syarat sama sekali) ← **+ Operasi Aritmatika Dasar** (data: 100%) — temuan utama: sub-materi paling sering disebut sebagai prasyarat di SELURUH bank soal (lintas hampir semua tab) ternyata sebelumnya punya leverage NOL di `PETA_PRASYARAT` karena rantai lama belum sempat menjangkaunya.
+- "Merasionalkan Penyebut" ← + Manipulasi Aljabar Dasar (data: 30%, pas di ambang).
+- "Fungsi Eksponen" ← + Pengenalan Variabel (data: 80%, gerbang antar-tab baru dari Prasyarat SMP).
+- "Persamaan Logaritma" ← + **Persamaan Linear Satu Variabel (PLSV)** (data: 100%, gerbang antar-tab baru dari Sistem Persamaan — masuk akal karena persamaan logaritma memang direduksi ke PLSV).
+- "Fungsi Logaritma" ← + Pengenalan Variabel (data: 60%).
+
+**Efek samping struktural yang ditemukan & diperbaiki:** menambah gerbang lintas-tab dari "Sistem Persamaan" (Bab 3 prota) ke "Logaritma" (Bab 4 prota) memicu kegagalan test `urutanMundur` (`validasiKurikulum`) karena urutan flat `PETA_TAHAPAN` — yang dipakai sebagai proksi "urutan mengajar" — ternyata sudah lama tidak konsisten dengan urutan bab prota sendiri (§11.4). Dua perbaikan diterapkan:
+1. Blok `TAHAPAN_PRASYARAT_SMP` dipindah ke **paling depan** urutan spread `PETA_TAHAPAN`. Tidak mengubah apa pun yang terlihat siswa (tab "Prasyarat" sudah selalu tampil pertama di `pilihMateri.js`), cuma menyamakan urutan internal dengan kenyataan itu.
+2. `DAFTAR_MATERI_INTI` (urutan tab yang terlihat siswa) dan blok `TAHAPAN_SISTEM_PERSAMAAN` dipindah ke **sebelum** Logaritma, sesuai Bab 3 < Bab 4 di RENCANA prota — **ini mengubah urutan tab yang dilihat siswa** (Sistem Persamaan sekarang tampil sebelum Logaritma, bukan sesudah Trigonometri). Bukan keputusan baru yang diambil di sini, cuma menyamakan dengan bab prota yang sudah didokumentasikan sejak §11.4, tapi tetap dicatat karena dampaknya terlihat.
+
+Diverifikasi: Gate A **✅ LOLOS** (82 node, nol deadlock, DAG valid). Jest 130/130 lolos (3 test fixture disesuaikan: dua rantai-gerbang Eksponen/Logaritma butuh set master diperluas dengan prasyarat lintas-tab barunya, satu jumlah-node `tataLetakPeta.test.js` naik dari 80 ke 82 karena "Operasi Aritmatika Dasar" & "Pengenalan Variabel" kini jadi node baru di peta).
+
+**Tahap 2b — Persamaan Kuadrat + Fungsi Kuadrat, SELESAI (2026-07-28).** Tahap 0 dikonfirmasi sudah live (0 nama usang tersisa di ekspor segar). Gate B menyarankan 3 edge untuk "Aplikasi Fungsi Kuadrat" & "Sifat dan Grafik Fungsi Kuadrat" (semua "+ Manipulasi Aljabar Dasar"), tapi begitu edge pertama diterapkan ke "Akar Persamaan Kuadrat" (akar rantai, pintu masuk tab), skrip dijalankan ulang dan mengonfirmasi ketiganya **otomatis terpenuhi transitif** — tidak ditulis, supaya `PETA_PRASYARAT` tidak menumpuk edge percuma. Hasil akhir cuma **1 edge**:
+- "Akar Persamaan Kuadrat" (pintu masuk tab, dulu tanpa syarat) ← + Manipulasi Aljabar Dasar (data: 70%), + Operasi Pecahan (data: 40%), + Operasi Bentuk Akar (data: 30%, lintas-tab dari Eksponen).
+
+Ini gerbang KONSEP spesifik, beda dari gerbang antar-tab §11.4 (yang mensyaratkan SELURUH sub-materi satu tab) — cuma 3 skill dasar yang benar-benar dipakai, bukan representasi "seluruh tab Eksponen" seperti gerbang Logaritma.
+
+**Efek samping berulang:** kolom terdalam `tataLetakPeta.js` naik lagi dari 23 ke **25** (lihat `tests/utils/tataLetakPeta.test.js`) — menambah prasyarat ke sub-materi manapun yang jadi bagian rantai leluhur "Definisi dan Sifat Nilai Mutlak" (gerbang "semua tab", §11.5 Fase 9) otomatis memperdalam kolomnya, walau tidak ada tab baru. Ambang ini kemungkinan **akan naik lagi** tiap kali Tahap 2 mengerjakan tab berikutnya — dulu dikira final di Fase 9, ternyata keliru begitu §13 mulai menambah gerbang ke sub-materi yang sudah ada.
+
+Diverifikasi: Gate A **✅ LOLOS** (82 node, jadi target 69/jadi prasyarat 13 akar — tidak ada node baru, cuma "Akar Persamaan Kuadrat" pindah dari akar ke target). Jest 130/130 lolos (1 test disesuaikan: ambang kolom 23→25 + komentar penjelasan).
+
+**Tahap 2c — Relasi dan Fungsi, SELESAI (2026-07-28).** 2 edge diterapkan:
+- "Substitusi Fungsi Linear" (pintu masuk tab, dulu tanpa syarat) ← + Manipulasi Aljabar Dasar (data: 100%), + Pengenalan Variabel (data: 60%), + Persamaan Linear Satu Variabel (PLSV) (data: 30%, pas di ambang).
+- "Analisis Grafik Fungsi" ← + Representasi Aljabar (data: 100%).
+
+Saran ketiga dari Gate B ("Operasi Aljabar Fungsi" + Manipulasi Aljabar Dasar) terkonfirmasi redundan transitif setelah edge pertama ditulis (pola sama seperti Tahap 2b) — tidak ditulis.
+
+**Temuan penting: satu saran Gate B DITOLAK karena akan membentuk siklus**, bukan cuma soal ambang data. "Analisis Grafik Fungsi" + "Pertidaksamaan Kuadrat" (data: 30%) terlihat masuk akal sekilas, tapi `Pertidaksamaan Kuadrat` mensyaratkan (transitif, lewat `Pertidaksamaan Linear` → `Program Linear`) seluruh tab Fungsi Kuadrat, dan Fungsi Kuadrat sendiri mensyaratkan SELURUH sub-materi Relasi dan Fungsi — termasuk "Analisis Grafik Fungsi" itu sendiri. Kalau edge ini ditulis, Gate A akan menangkapnya sebagai siklus (Temuan 2). Ini pengingat bahwa filter "redundan transitif" saja tidak cukup untuk tiap saran Gate B — cek arah dependency lintas-tab tetap perlu sebelum menulis, terutama untuk sub-materi yang dirinya sendiri jadi bagian gerbang "seluruh tab" di tempat lain.
+
+Diverifikasi: Gate A **✅ LOLOS** (83 node, nol deadlock, DAG valid). Jest 130/130 lolos (3 test disesuaikan: rantai-gerbang Relasi dan Fungsi butuh set master diperluas, jumlah-node `tataLetakPeta.test.js` naik 82→83 karena "Representasi Aljabar" jadi node baru; kolom peta TIDAK naik dari 25, kedalaman rantai ini tidak melebihi cabang lain).
+
+**Tahap 2d — Sistem Persamaan, SELESAI (2026-07-28).** Temuan berbeda dari tab lain: sebelum ini, tab Sistem Persamaan **tidak punya rantai internal sama sekali** — PLSV/SPLDV/SPLTV bertiga terbuka independen di `PETA_PRASYARAT` (meski `TAHAPAN_SISTEM_PERSAMAAN` sudah menandainya Tahap 1/2/3 sejak Fase 0). Gate B mengonfirmasi & akhirnya menuliskan rantai yang memang dimaksud sejak awal:
+- "Persamaan Linear Satu Variabel (PLSV)" (pintu masuk tab) ← + Operasi Aritmatika Dasar (data: 70%), + Manipulasi Aljabar Dasar (data: 40%), + Operasi Pecahan (data: 30%, pas di ambang).
+- "Sistem Persamaan Linear Dua Variabel (SPLDV)" ← + Persamaan Linear Satu Variabel (PLSV) (data: 100%).
+- "Sistem Persamaan Linear Tiga Variabel (SPLTV)" ← + Sistem Persamaan Linear Dua Variabel (SPLDV) (data: 100%), + Representasi Aljabar (data: 40%).
+
+Saran "SPLDV + Manipulasi Aljabar Dasar" (90%) terkonfirmasi redundan transitif (sudah lewat PLSV) — tidak ditulis.
+
+Diverifikasi: Gate A **✅ LOLOS** (83 node — PLSV/SPLDV/SPLTV pindah dari akar ke target, tidak ada node baru sama sekali karena keempat prasyaratnya sudah ada semua). Jest 130/130 lolos **tanpa perlu penyesuaian test apa pun** — rantai ini (kedalaman 3) tidak melebihi cabang Persamaan Kuadrat/Fungsi Kuadrat yang sudah jadi patokan kolom terdalam (25).
+
+**Tahap 2e — Pertidaksamaan, SELESAI tanpa perubahan kode (2026-07-28).** Gate B tidak menyarankan satu edge baru pun — SEMUA saran (Manipulasi Aljabar Dasar, Operasi Bentuk Akar, Akar Persamaan Kuadrat, Diskriminan dan Jenis Akar, dll di berbagai sub-materi tab ini) terkonfirmasi sudah otomatis terpenuhi transitif, karena "Pertidaksamaan Linear" (pintu masuk tab) sudah punya mega-gerbang §11.4 (SELURUH Eksponen + Fungsi Kuadrat + Sistem Persamaan master) yang jauh lebih luas dari apa pun yang disarankan data konsep_prasyarat per sub-materi. Tidak ada perubahan `kurikulumData.js`, tidak ada perubahan test, Gate A & Jest tidak perlu dijalankan ulang (state tidak berubah dari Tahap 2d).
+
+**Tahap 2f — Fungsi Rasional, SELESAI tanpa perubahan kode (2026-07-28).** Pola sama seperti Pertidaksamaan (Tahap 2e): "Pengertian Fungsi Rasional" (pintu masuk tab) sudah punya mega-gerbang §11.4 (SELURUH Relasi dan Fungsi + Fungsi Kuadrat + Pertidaksamaan master), jadi seluruh saran Gate B untuk 4 sub-materi tab ini sudah otomatis terpenuhi transitif. Tidak ada perubahan `kurikulumData.js`/test.
+
+**Tahap 2g — Kaidah Pencacahan & Peluang, SELESAI (2026-07-28).** 1 edge diterapkan:
+- "Aturan Penjumlahan dan Perkalian" (pintu masuk tab, dulu tanpa syarat) ← + Operasi Aritmatika Dasar (data: 100%).
+
+Saran "Peluang Kejadian Majemuk + Ruang Sampel dan Peluang Kejadian Tunggal" (100%) terkonfirmasi redundan transitif (sudah lewat Frekuensi Relatif dan Harapan) — tidak ditulis.
+
+Diverifikasi: Gate A **✅ LOLOS** (83 node, tidak ada node baru — "Aturan Penjumlahan dan Perkalian" pindah dari akar ke target, "Operasi Aritmatika Dasar" sudah node lama). Jest 130/130 lolos (1 test disesuaikan: rantai-gerbang Kaidah Pencacahan & Peluang butuh set master diperluas). Kolom peta tetap di ambang sebelumnya.
+
+**Tahap 2h — Nilai Mutlak, SELESAI tanpa perubahan kode (2026-07-28).** Sesuai dugaan: "Definisi dan Sifat Nilai Mutlak" sudah punya mega-gerbang "SEMUA tab lain" (§11.5 Fase 9), jadi seluruh saran Gate B untuk 4 sub-materi tab ini sudah otomatis terpenuhi transitif. Tidak ada perubahan `kurikulumData.js`/test.
+
+**Tahap 2 SELESAI — seluruh 9 tab bab-utama sudah dianalisis Gate B (2026-07-28).** Ringkasan hasil per tab:
+
+| Tab | Edge baru ditulis | Catatan |
+|---|---|---|
+| Eksponen (2a) | 3 | Sifat Eksponen Bilangan Bulat, Merasionalkan Penyebut, Fungsi Eksponen |
+| Logaritma (2a) | 2 | Persamaan Logaritma (gerbang antar-tab baru ke PLSV), Fungsi Logaritma |
+| Persamaan Kuadrat (2b) | 1 | Akar Persamaan Kuadrat |
+| Fungsi Kuadrat (2b) | 0 | Semua saran redundan transitif lewat Persamaan Kuadrat |
+| Relasi dan Fungsi (2c) | 2 | Substitusi Fungsi Linear, Analisis Grafik Fungsi — 1 saran DITOLAK (siklus) |
+| Sistem Persamaan (2d) | 3 | Tab ini sebelumnya TANPA rantai internal sama sekali — PLSV→SPLDV→SPLTV baru ditulis |
+| Pertidaksamaan (2e) | 0 | Mega-gerbang §11.4 sudah menutupi semua |
+| Fungsi Rasional (2f) | 0 | Mega-gerbang §11.4 sudah menutupi semua |
+| Kaidah Pencacahan & Peluang (2g) | 1 | Aturan Penjumlahan dan Perkalian |
+| Nilai Mutlak (2h) | 0 | Mega-gerbang "semua tab" sudah menutupi semua |
+
+Total 12 edge baru + 1 saran ditolak (siklus) + rekonstruksi rantai internal Sistem Persamaan yang sebelumnya tidak ada. Node peta naik dari 80 → 83, kolom terdalam naik dari 23 → 25. Semua diverifikasi Gate A (nol deadlock/siklus di tiap langkah) dan Jest (130/130 di commit akhir).

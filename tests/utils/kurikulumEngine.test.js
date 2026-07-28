@@ -364,7 +364,13 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
       "eksponen rasional (pangkat pecahan)",
       "fungsi eksponen",
     ];
-    const master = new Set();
+    // Sejak 2026-07-28 (Gate B), rantai ini butuh 3 prasyarat lintas-tab
+    // (tab Prasyarat SMP, selalu terbuka) di luar rantai internalnya sendiri.
+    const master = new Set([
+      "operasi aritmatika dasar",
+      "manipulasi aljabar dasar",
+      "pengenalan variabel",
+    ]);
     for (let lapis = 0; lapis < rantaiEksponen.length; lapis++) {
       const status = hitungStatusKunci(PETA_PRASYARAT, master);
       const terbuka = rantaiEksponen.filter(
@@ -386,11 +392,17 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
       "fungsi logaritma",
     ];
     const master = new Set([
+      "operasi aritmatika dasar",
+      "manipulasi aljabar dasar",
+      "pengenalan variabel",
       "sifat eksponen bilangan bulat",
       "operasi bentuk akar",
       "merasionalkan penyebut",
       "eksponen rasional (pangkat pecahan)",
       "fungsi eksponen",
+      // Sejak 2026-07-28 (Gate B), "Persamaan Logaritma" & "Fungsi
+      // Logaritma" juga butuh prasyarat lintas-tab di luar rantai Eksponen.
+      "persamaan linear satu variabel (plsv)",
     ]);
     for (let lapis = 0; lapis < rantaiLogaritma.length; lapis++) {
       const status = hitungStatusKunci(PETA_PRASYARAT, master);
@@ -427,7 +439,13 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
       "sifat-sifat fungsi",
       "operasi aljabar fungsi",
     ];
-    const master = new Set();
+    // Sejak 2026-07-28 (Gate B), "Substitusi Fungsi Linear" (pintu masuk
+    // tab) butuh 3 prasyarat lintas-tab di luar rantai internalnya sendiri.
+    const master = new Set([
+      "manipulasi aljabar dasar",
+      "pengenalan variabel",
+      "persamaan linear satu variabel (plsv)",
+    ]);
     for (let lapis = 0; lapis < rantaiRelasiFungsi.length; lapis++) {
       const status = hitungStatusKunci(PETA_PRASYARAT, master);
       const terbuka = rantaiRelasiFungsi.filter(
@@ -621,7 +639,9 @@ describe("PETA_PRASYARAT — integritas tabel yang dipakai produksi", () => {
       "frekuensi relatif dan harapan",
       "peluang kejadian majemuk",
     ];
-    const master = new Set();
+    // Sejak 2026-07-28 (Gate B), "Aturan Penjumlahan dan Perkalian" (pintu
+    // masuk tab) butuh 1 prasyarat lintas-tab dari Prasyarat SMP.
+    const master = new Set(["operasi aritmatika dasar"]);
     for (let lapis = 0; lapis < rantaiKaidahPeluang.length; lapis++) {
       const status = hitungStatusKunci(PETA_PRASYARAT, master);
       const terbuka = rantaiKaidahPeluang.filter(

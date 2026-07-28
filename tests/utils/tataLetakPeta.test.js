@@ -108,19 +108,43 @@ describe("susunTataLetakPeta", () => {
     // Peluang Kejadian Majemuk) + 4 target Nilai Mutlak (Fase 9 -- Definisi
     // dan Sifat, Persamaan, Pertidaksamaan, Grafik Fungsi; semua 70
     // prasyarat gerbang "semua"-nya sudah node lain, tidak menambah akar
-    // baru) = 67 target + 13 akar (leaf, prasyarat:[]).
-    expect(hasil.node).toHaveLength(80);
-    // Ambang dinaikkan lagi dari 20 ke 23 di Fase 9 (plan/PLAN.md §11):
-    // "Definisi dan Sifat Nilai Mutlak" sengaja digerbang oleh SELURUH
-    // sub-materi SELURUH tab lain (RENCANA prota: prasyarat literal
-    // ["semua"]), jadi ia menempati kolom SETELAH kolom terdalam dari
-    // SEMUA rantai lain sekaligus (kolom 19), lalu +3 kolom lagi untuk
-    // rantai internalnya sendiri (Persamaan -> Pertidaksamaan -> Grafik,
-    // kolom 20-22) = 23 kolom total. Ini kenaikan terakhir yang direncanakan
-    // -- Fase 9 adalah fase penutup roadmap §11.5, tidak ada tab baru
-    // sesudahnya yang akan memperdalam peta gabungan lagi. Riwayat kenaikan
-    // sebelumnya: 8->15 (Fase 2), 15->20 (Fase 7).
-    expect(hasil.jumlahKolom).toBeLessThanOrEqual(23);
+    // baru) = 67 target + 13 akar (leaf, prasyarat:[]) = 80.
+    //
+    // +2 lagi 2026-07-28 (Gate B, plan/diagnostik/gate-b-analisis-konsep-
+    // prasyarat.mjs): "Sifat Eksponen Bilangan Bulat" (pintu masuk tab
+    // Eksponen, dulu akar tanpa syarat) dapat gerbang nyata dari data
+    // konsep_prasyarat -> pindah dari akar jadi target (+1 target, -1
+    // akar), dan gerbang barunya butuh 2 node baru sama sekali yang
+    // sebelumnya tak pernah disebut di PETA_PRASYARAT: "Operasi Aritmatika
+    // Dasar" dan "Pengenalan Variabel" (+2 akar). Total: 68 target + 14
+    // akar = 82.
+    //
+    // +0 net di Persamaan Kuadrat (Gate B, sama hari): "Akar Persamaan
+    // Kuadrat" pindah dari akar ke target, tapi ketiga prasyarat barunya
+    // (Manipulasi Aljabar Dasar, Operasi Pecahan, Operasi Bentuk Akar)
+    // semuanya sudah node lama -- 69 target + 13 akar, tetap 82 total.
+    //
+    // +1 lagi di Relasi dan Fungsi (Gate B, sama hari): "Substitusi Fungsi
+    // Linear" pindah dari akar ke target (prasyaratnya Manipulasi Aljabar
+    // Dasar/Pengenalan Variabel/PLSV semua sudah node lama), tapi "Analisis
+    // Grafik Fungsi" dapat 1 node BARU yang belum pernah disebut di manapun:
+    // "Representasi Aljabar" (+1 akar). Total: 70 target + 13 akar = 83.
+    expect(hasil.node).toHaveLength(83);
+    // Ambang dinaikkan dari 20 ke 23 di Fase 9 (plan/PLAN.md §11) karena
+    // "Definisi dan Sifat Nilai Mutlak" digerbang oleh SELURUH sub-materi
+    // SELURUH tab lain, jadi kolomnya = kolom terdalam dari SEMUA rantai
+    // lain + 3 (rantai internalnya sendiri). Saat itu dikira ini kenaikan
+    // TERAKHIR ("tidak ada tab baru lagi") -- ternyata keliru: §13 (Gate B,
+    // 2026-07-28) menambah PRASYARAT BARU ke sub-materi yang SUDAH ada
+    // (bukan tab baru), yang tetap memperdalam rantai yang sama persis
+    // lewat mega-gerbang "semua tab" ini. Dinaikkan lagi ke 25 (Eksponen
+    // dapat gerbang -> +1 kedalaman; Akar Persamaan Kuadrat dapat gerbang
+    // -> +1 kedalaman lagi di rantai Persamaan/Fungsi Kuadrat). Kemungkinan
+    // akan naik lagi tiap kali §13 menambah gerbang ke tab lain -- bukan
+    // dianggap final sampai seluruh rollout §13 selesai. Riwayat: 8->15
+    // (Fase 2), 15->20 (Fase 7), 20->23 (Fase 9), 23->25 (§13 Eksponen +
+    // Persamaan Kuadrat).
+    expect(hasil.jumlahKolom).toBeLessThanOrEqual(25);
   });
 
   test("kolom nol tabel produksi hanya berisi materi tab Prasyarat", () => {
