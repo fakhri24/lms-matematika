@@ -564,3 +564,17 @@ Diverifikasi: Gate A **✅ LOLOS** (83 node, tidak ada node baru — "Aturan Pen
 | Nilai Mutlak (2h) | 0 | Mega-gerbang "semua tab" sudah menutupi semua |
 
 Total 12 edge baru + 1 saran ditolak (siklus) + rekonstruksi rantai internal Sistem Persamaan yang sebelumnya tidak ada. Node peta naik dari 80 → 83, kolom terdalam naik dari 23 → 25. Semua diverifikasi Gate A (nol deadlock/siklus di tiap langkah) dan Jest (130/130 di commit akhir).
+
+### 13.1 Kurasi bank soal "Operasi Aritmatika Dasar" (2026-07-28, SELESAI)
+
+Dari analisis leverage awal §13, "Operasi Aritmatika Dasar" ternyata sub-materi dengan bukti pemakaian `konsep_prasyarat` terluas di seluruh kurikulum (dipakai hampir semua tab), jadi 40 soalnya bukan salah alokasi — tapi isinya perlu dikurasi: 25 dari 40 soal cuma ekspresi angka murni ("Hasil dari ...") yang menguji skill identik (urutan operasi hitung bilangan bulat) dengan angka diganti-ganti, sementara 15 soal cerita kontekstualnya jauh lebih beragam (suhu, utang, kedalaman, lift, berbagi barang).
+
+**Riset pembanding** (web search, Ruangguru/Twinkl/TPT grade 7 & sumber Indonesia serupa): konteks umum utk skill ini = suhu, elevasi/permukaan laut, keuangan (utang/setor/tarik), berbagi barang — semuanya sudah terwakili di bank kita. Yang **belum ada sama sekali**: skor kuis/permainan, transaksi rekening bank (setor/tarik eksplisit), selisih gol pertandingan, poin nyawa game.
+
+**Rencana (dieksekusi manual oleh pemilik proyek via admin.html, 2026-07-28):**
+1. **Hapus 16 soal** duplikat template ekspresi angka murni (menyisakan representasi tiap operasi per level kesulitan, bukan menghapus semuanya) + 2 soal cerita yang strukturnya identik dengan soal cerita lain (gudang/pedagang sayur sama-sama pola "n kelompok × m barang − rusak ÷ penerima"; mesin cetak redundan dengan toko roti). Daftar ID lengkap: `plan/hapus-operasi-aritmatika-dasar.md`. Dilakukan manual satu-satu lewat `admin.html` → Bank Soal → hapus.
+2. **Tambah 5 soal baru** (orisinal, ditulis sendiri terinspirasi pola umum internasional/Indonesia, bukan salinan) untuk menutup celah konteks yang belum ada: skor kuis (level 1), transaksi rekening bank (level 2), selisih gol pertandingan (level 2), poin nyawa game (level 3), transaksi rekening bank multi-langkah (level 3). File: `~/Downloads/reimport/bank_soal_operasi_aritmatika_dasar_tambahan.json` — tanpa `id`, diimpor sebagai dokumen baru.
+
+**Verifikasi ke Firestore live (2026-07-28)**: 29 soal (persis 40 − 16 + 5), 0 dari 16 ID yang seharusnya terhapus masih tersisa, kelima soal baru ditemukan, distribusi 13 mudah / 9 sedang / 7 sulit — sesuai rencana. Masih jauh di atas kuota draf sumatif 4/4/2, dan lebih dalam untuk formatif adaptif dibanding ambang minimum tab lain.
+
+**Alat baru untuk kurasi berikutnya**: `akses-admin/hapus-soal.js` (mode satuan/batch, pola sama seperti `hapus-siswa.js`) supaya penghapusan massal berikutnya tidak perlu manual satu-satu lewat admin.html lagi.
