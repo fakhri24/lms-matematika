@@ -611,3 +611,24 @@ Pemilik proyek menanyakan apakah kurasi §13.1 layak jadi standar untuk sub-mate
 Sub-materi #2–12 ditulis sebagai file JSON tanpa `id` di `~/Downloads/reimport/bank_soal_<nama>_tambahan.json`, direview pemilik proyek, diimpor manual via admin.html, dan `tt9TAhLpbWbqhWFOR4dg` dihapus manual. **Diverifikasi ke ekspor Firestore segar (2026-07-28)**: seluruh 12 sub-materi persis sesuai tabel di atas, Gate C menunjukkan nol peringatan K di semua sub-materi (dibanding 9 dari 12 yang tadinya punya level cacat struktural K<0 sebelum kurasi — termasuk hub besar Manipulasi Aljabar Dasar dan PLSV yang level 1-nya cuma 2 soal).
 
 **Sub-materi lain di luar 12 ini** (82 sisanya) belum disentuh — masih di ambang `SOAL_MIN`=10 apa adanya, beberapa kemungkinan juga punya K negatif. Algoritma & Gate C di atas siap dipakai ulang kalau pemilik proyek mau memperluas sub-materi lain berikutnya.
+
+### 13.3 Ronde kedua: variasi tipe tugas terinspirasi SAT/TIMSS/PISA (2026-07-28, SELESAI)
+
+Setelah §13.2, pemilik proyek minta ditinjau ulang: 190+ soal baru kemarin kuat di variasi *konteks* tapi riset pembanding (SAT, TIMSS grade 8, PISA numeracy — lihat sumber di respons sesi, tidak disalin ke sini) menunjukkan bank kita nyaris seragam di *tipe tugas* — hampir semuanya "hitung/selesaikan". Tiga tipe tugas yang berulang muncul di soal SAT/TIMSS/PISA tapi nol di bank kita: **analisis kesalahan** (diberi solusi salah, cari letak salahnya), **bandingkan dua opsi** (bukan hitung satu nilai, tapi tentukan mana lebih baik), dan **kasus batas/jebakan konseptual** (tanpa solusi, desimal berulang, skala luas, naik-turun persentase).
+
+**16 soal baru ditulis**, satu file gabungan `~/Downloads/reimport/bank_soal_gabungan_tambahan2.json` (union dari 11 file per-sub-materi yang ditulis lebih dulu):
+- Sifat Operasi Bilangan (+1, L2): anotasi-langkah — identifikasi sifat yang dipakai di satu langkah solusi bertahap ($25\times17\times4$).
+- KPK dan FPB (+2, L2): kasus khusus saat satu bilangan kelipatan langsung yang lain (FPB/KPK langsung tanpa faktorisasi penuh).
+- Operasi Pecahan (+1, L2): estimasi benchmark — pecahan mana paling dekat ke $1$, tanpa hitung presisi.
+- Operasi dan Konversi Desimal (+1, L3): klasifikasi desimal berulang vs berhenti (konsep yang sebelumnya nol sama sekali).
+- Pengenalan Variabel (+1, L2): analisis kesalahan ($3x+2x=5x^2$, siswa keliru mengalikan pangkat).
+- Manipulasi Aljabar Dasar (+1, L3): analisis kesalahan faktorisasi trinomial (cek jumlah TAPI lupa cek hasil kali pasangan faktor).
+- PLSV (+2, L3): titik impas dua tarif linear (mirip SAT value/break-even problem) + persamaan tanpa solusi ($3x+5=3x-2$).
+- SPLDV (+2, L3): sistem sejajar tanpa solusi unik (nilai $k$ yang membuat dua garis berimpit vs sejajar-tidak-berpotongan) + soal tiket bioskop 2-harga (elimination genuine, bukan PLSV berkedok 2 variabel — draf awal salah desain, diperbaiki sebelum ditulis).
+- Persentase (+2, L3): jebakan naik-$20\%$-turun-$20\%$ (tidak kembali ke nilai semula) + poin persentase vs persen perubahan relatif.
+- Perbandingan dan Skala (+2, L2/L3): bandingkan harga per unit dua kemasan + skala luas (berbanding kuadrat, bukan linear — jebakan klasik).
+- Pembulatan dan Estimasi (+1, L2): cek kewajaran hasil hitungan berdasarkan taksiran kasar.
+
+**Dibuang dari daftar**: ide PISA berbasis diagram (mis. hitung persentase dari gambar segitiga berwarna) — skema `bank_soal` tidak punya field gambar (dicek `arsip-data/bank_soal_all.json`, field cuma teks/LaTeX), jadi tidak bisa diadaptasi tanpa dukungan gambar di kode.
+
+Diverifikasi ke ekspor Firestore segar (2026-07-28): jumlah per sub-materi persis 20 (Sifat Operasi Bilangan), 19 (KPK dan FPB), 18 (Operasi Pecahan), 18 (Operasi dan Konversi Desimal), 18 (Pengenalan Variabel), 20 (Manipulasi Aljabar Dasar), 20 (PLSV), 19 (SPLDV), 19 (Persentase), 21 (Perbandingan dan Skala), 19 (Pembulatan dan Estimasi) — sesuai §13.2 + soal ronde ini.
