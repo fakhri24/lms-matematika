@@ -578,3 +578,36 @@ Dari analisis leverage awal §13, "Operasi Aritmatika Dasar" ternyata sub-materi
 **Verifikasi ke Firestore live (2026-07-28)**: 29 soal (persis 40 − 16 + 5), 0 dari 16 ID yang seharusnya terhapus masih tersisa, kelima soal baru ditemukan, distribusi 13 mudah / 9 sedang / 7 sulit — sesuai rencana. Masih jauh di atas kuota draf sumatif 4/4/2, dan lebih dalam untuk formatif adaptif dibanding ambang minimum tab lain.
 
 **Alat baru untuk kurasi berikutnya**: `akses-admin/hapus-soal.js` (mode satuan/batch, pola sama seperti `hapus-siswa.js`) supaya penghapusan massal berikutnya tidak perlu manual satu-satu lewat admin.html lagi.
+
+### 13.2 Algoritma perluasan bank soal + kurasi 11 sub-materi Prasyarat/Sistem Persamaan (2026-07-28, SELESAI)
+
+Pemilik proyek menanyakan apakah kurasi §13.1 layak jadi standar untuk sub-materi lain, dan minta algoritma perluasan bank soal yang konsisten: tidak terlalu luas, tapi cukup mewakili semua sisi sub-materi + variasi tipe soal. Audit `arsip-data/bank_soal_all.json` menunjukkan **94 dari 100 sub-materi** persis mentok di `SOAL_MIN` (10) — bukan target desain, cuma ambang minimum yang tak pernah dilewati. §13.1 metodologinya layak ditiru (identifikasi duplikat struktural + riset pembanding konteks + verifikasi live), tapi **ukuran akhirnya (29 soal, rasio 13/9/7) tidak layak jadi angka baku** — itu residu dari berapa banyak yang kebetulan dihapus, dan Operasi Aritmatika Dasar adalah node hub (139 referensi `konsep_prasyarat` lintas tab) sehingga wajar lebih besar dari sub-materi daun.
+
+**Temuan kunci (dari pertanyaan pemilik proyek soal risiko formatif adaptif mengulang soal)**: naik level formatif butuh 3 benar **berturut-turut** (`perbaruiLevelAdaptif`, `soalEngine.js`), dan tiap jawaban benar BARU mengunci soal itu keluar dari pool "belum benar" secara permanen. Ditelusuri ke `LatihanController.js:849-856` — `idSoalSudahBenar` direstore dari `progres_belajar/{nis}_{sub_materi}` (`latihanService.js:getProgresFormatif`), **bukan direset per sesi**, jadi akumulasinya sepanjang seluruh riwayat remedial siswa di sub-materi itu sampai `formatif_tuntas`. Turunan rumusnya: **minimum soal per level = 3 (syarat streak) + K**, K = toleransi salah sebelum siswa dipaksa diberi soal yang jawabannya sudah dia tahu. K negatif = cacat struktural (bahkan tanpa satu kesalahan pun, stok soal segar tak cukup untuk streak 3).
+
+**Kebijakan ambang K (tidak simetris)**: Level 1 adalah lantai tanpa penurunan di bawahnya — siswa lemah bisa terjebak lama di situ, butuh buffer terbesar → **K≥4 (min 7 soal)**. Level 2 & 3 lebih transit (2x salah langsung turun level) → **K≥2 (min 5 soal)**. Total lantai minimum ≈ 17/sub-materi dari kendala ini saja, konvergen dengan estimasi terpisah dari sudut cakupan konsep (matriks skill × level, target ~2 soal per sel).
+
+**Alat baru**: `plan/diagnostik/gate-c-audit-bank-soal.mjs` (pola Gate A/B) — untuk satu/lebih sub-materi, menghitung distribusi level, rasio ekspresi-telanjang vs cerita (heuristik kata penanda, lemah untuk soal cerita — dicatat eksplisit di komentar skrip), K per level dengan ambang di atas, dan kandidat duplikat struktural (signature dari kerangka operator setelah angka dilepas; sinyal KUAT untuk ekspresi telanjang, sinyal lemah untuk cerita karena kata kerja operasi ikut terlepas oleh heuristik).
+
+**Algoritma perluasan per sub-materi** (dipakai berulang untuk 11 sub-materi di bawah): (1) baca semua soal existing, verifikasi matematikanya benar; (2) petakan skill/konsep yang diuji vs yang seharusnya ada di kurikulum sub-materi itu (tabel manual, bukan otomatis); (3) identifikasi celah nyata (konsep hilang total, arah pengujian yang tidak pernah dibalik, konteks cerita yang timpang/nol, tipe tugas yang monoton); (4) tulis soal baru menutup celah, opsi pengecoh mewakili miskonsepsi spesifik (bukan angka acak), matematika diverifikasi lewat Python/sympy sebelum ditulis; (5) kalau ada duplikat struktural asli (skill identik, cuma angka beda) rekomendasikan hapus by ID, TIDAK dieksekusi sendiri — tetap manual oleh pemilik proyek.
+
+**12 sub-materi yang dikerjakan berurutan** (urutan penguasaan materi dari pemilik proyek, tab Prasyarat SMP + Sistem Persamaan):
+
+| # | Sub-materi | Sebelum | Sesudah (L1/L2/L3) | Catatan celah utama |
+|---|---|---:|---|---|
+| 1 | Operasi Aritmatika Dasar | 40 | 29 (13/9/7) | §13.1, sudah selesai sebelumnya |
+| 2 | Sifat Operasi Bilangan | 10 | 19 (8/6/5) | Asosiatif perkalian, identitas +/×, invers +/× hilang total; leverage 0 (bukan hub) |
+| 3 | KPK dan FPB | 10 | 17 (7/5/5) | Nol soal komputasi telanjang, faktorisasi prima tak pernah diuji eksplisit, rumus KPK×FPB=a×b hilang |
+| 4 | Operasi Pecahan | 10 | 17 (7/5/5) | Bilangan pecahan campuran nol; L2 timpang (4/5 soal bertema pembagian). 1 duplikat asli dihapus (`tt9TAhLpbWbqhWFOR4dg`, sama persis dengan `XtIqN7...`) |
+| 5 | Operasi dan Konversi Desimal | 10 | 17 (7/5/5) | Desimal negatif nol, urutan operasi dgn desimal nol, konteks nyata cuma 1/10 |
+| 6 | Pengenalan Variabel | 10 | 17 (7/5/5) | Kosakata "suku"/"suku sejenis" tak pernah diuji langsung, arah ekspresi→situasi nyata nol |
+| 7 | Manipulasi Aljabar Dasar | 10 | 19 (7/7/5) | Pemfaktoran trinomial ($x^2+6x+8$) nol — cuma arah penjabaran (FOIL) yang diuji |
+| 8 | PLSV | 10 | 18 (7/6/5) | 0/10 soal cerita (hub 100 referensi!), solusi negatif nol |
+| 9 | SPLDV | 10 | 17 (7/5/5) | Nyaris 0 soal cerita asli, semua "diketahui sistem persamaan..." abstrak |
+| 10 | Persentase | 10 | 17 (7/5/5) | Konteks untung/rugi nol (cuma diskon), konversi persen→pecahan/desimal nol |
+| 11 | Perbandingan dan Skala | 10 | 19 (7/7/5) | Perbandingan berbalik nilai cuma 1 soal vs 3 soal senilai — timpang |
+| 12 | Pembulatan dan Estimasi | 10 | 18 (7/6/5) | Pembulatan ke ribuan berdiri sendiri nol, taksiran pengurangan nol, "pembulatan ke atas" (ceiling) nol |
+
+Sub-materi #2–12 ditulis sebagai file JSON tanpa `id` di `~/Downloads/reimport/bank_soal_<nama>_tambahan.json`, direview pemilik proyek, diimpor manual via admin.html, dan `tt9TAhLpbWbqhWFOR4dg` dihapus manual. **Diverifikasi ke ekspor Firestore segar (2026-07-28)**: seluruh 12 sub-materi persis sesuai tabel di atas, Gate C menunjukkan nol peringatan K di semua sub-materi (dibanding 9 dari 12 yang tadinya punya level cacat struktural K<0 sebelum kurasi — termasuk hub besar Manipulasi Aljabar Dasar dan PLSV yang level 1-nya cuma 2 soal).
+
+**Sub-materi lain di luar 12 ini** (82 sisanya) belum disentuh — masih di ambang `SOAL_MIN`=10 apa adanya, beberapa kemungkinan juga punya K negatif. Algoritma & Gate C di atas siap dipakai ulang kalau pemilik proyek mau memperluas sub-materi lain berikutnya.
