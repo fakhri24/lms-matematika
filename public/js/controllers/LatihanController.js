@@ -18,6 +18,7 @@ import {
   kelompokkanSoalPerLevel,
   pilihSoalFormatifBerikutnya,
   perbaruiLevelAdaptif,
+  acakOpsiSoal,
 } from "../utils/soalEngine.js";
 import {
   getBankSoalBySubMateri,
@@ -622,7 +623,7 @@ export class LatihanController {
     if (this.state.memoriJawaban[soal.id_unik_sistem]?.status_selesai) {
       delete this.state.memoriJawaban[soal.id_unik_sistem];
     }
-    this.state.kumpulanSoal = [soal];
+    this.state.kumpulanSoal = [acakOpsiSoal(soal)];
     this.state.indeksSaatIni = 0;
   }
 
@@ -940,7 +941,7 @@ export class LatihanController {
         this.state.kumpulanSoal = siapkanDraftSoal(
           semuaSoalUtuh,
           this.state.modeLatihan,
-        );
+        ).map(acakOpsiSoal);
       }
 
       this.state.totalSoalKeseluruhan =

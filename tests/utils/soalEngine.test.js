@@ -5,6 +5,7 @@ import {
   kelompokkanSoalPerLevel,
   pilihSoalFormatifBerikutnya,
   perbaruiLevelAdaptif,
+  acakOpsiSoal,
 } from '../../public/js/utils/soalEngine.js';
 import { MODE_LATIHAN } from '../../public/js/utils/constants.js';
 
@@ -17,6 +18,47 @@ describe('soalEngine', () => {
     expect(shuffled).toEqual(expect.arrayContaining(arr));
     // It's technically possible but very unlikely to match original order for large arrays,
     // but for unit test we just check it contains all elements.
+  });
+
+  describe('acakOpsiSoal', () => {
+    test('mengacak urutan opsi tanpa mengubah jawaban_benar', () => {
+      const soal = {
+        id: 1,
+        opsi: ['A', 'B', 'C', 'D', 'E'],
+        jawaban_benar: 'C',
+      };
+      const hasil = acakOpsiSoal(soal);
+
+      expect(hasil.opsi).toHaveLength(5);
+      expect(hasil.opsi).toEqual(expect.arrayContaining(soal.opsi));
+      expect(hasil.jawaban_benar).toBe('C');
+      expect(hasil.opsi).toContain(hasil.jawaban_benar);
+    });
+
+    test('tidak memodifikasi array opsi asli (murni)', () => {
+      const opsiAsli = ['A', 'B', 'C'];
+      const soal = { opsi: opsiAsli, jawaban_benar: 'A' };
+      acakOpsiSoal(soal);
+      expect(soal.opsi).toBe(opsiAsli);
+      expect(soal.opsi).toEqual(['A', 'B', 'C']);
+    });
+
+    test('field lain di luar opsi tetap utuh', () => {
+      const soal = {
+        id_unik_sistem: 'xyz',
+        pertanyaan: 'Contoh?',
+        opsi: ['A', 'B'],
+        jawaban_benar: 'A',
+      };
+      const hasil = acakOpsiSoal(soal);
+      expect(hasil.id_unik_sistem).toBe('xyz');
+      expect(hasil.pertanyaan).toBe('Contoh?');
+    });
+
+    test('soal tanpa field opsi (bukan array) dikembalikan apa adanya', () => {
+      const soal = { id: 1, jawaban_benar: 'A' };
+      expect(acakOpsiSoal(soal)).toBe(soal);
+    });
   });
 
   describe('kelompokkanSoalPerLevel', () => {

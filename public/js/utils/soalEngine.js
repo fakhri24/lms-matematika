@@ -98,6 +98,18 @@ export function perbaruiLevelAdaptif(stateLevel, benar) {
 }
 
 /**
+ * Mengacak urutan tampil `opsi` satu soal (mis. supaya jawaban benar tidak
+ * selalu di posisi A ketika soal ditulis dengan urutan itu di bank soal).
+ * `jawaban_benar` disimpan sebagai teks pilihan itu sendiri (bukan indeks),
+ * jadi pengecekan benar/salah di LatihanController tidak perlu tahu urutan
+ * aslinya -- aman diacak di sini tanpa menyentuh logika manapun.
+ */
+export function acakOpsiSoal(soal) {
+  if (!Array.isArray(soal?.opsi)) return soal;
+  return { ...soal, opsi: acakArray(soal.opsi) };
+}
+
+/**
  * Mengatur drafting soal (Ujian = Maks 10 dengan rasio 4-4-2, Spesial = 1-3-1).
  * Formatif punya alur sendiri lewat pilihSoalFormatifBerikutnya di atas.
  */
