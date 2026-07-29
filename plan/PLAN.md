@@ -654,3 +654,75 @@ Pemilik proyek minta aturan naik/turun level formatif diubah: **Level 1 & 2** bu
 **Audit ulang 12 sub-materi §13.2/§13.3 dengan ambang baru** (2026-07-28): 9 dari 12 kini di bawah ambang Level 1 baru (K=3, butuh K≥4 — kurang 1 soal dari min 8), karena semuanya berhenti tepat di 7 soal Level 1 saat dikerjakan dengan rumus lama. Tiga di antaranya (Operasi dan Konversi Desimal, SPLDV, Persentase) juga kurang 1 di Level 2 (K=1, butuh K≥2). Operasi Aritmatika Dasar dan Sifat Operasi Bilangan tetap bersih (Level 1 masing-masing 13 dan 8 soal).
 
 **Gap ditutup (2026-07-28, SELESAI)**: 13 soal baru ditulis — 1 di Level 1 untuk tiap sub-materi yang kurang (KPK dan FPB, Operasi Pecahan, Operasi dan Konversi Desimal, Pengenalan Variabel, Manipulasi Aljabar Dasar, PLSV, SPLDV, Persentase, Perbandingan dan Skala, Pembulatan dan Estimasi), plus 1 di Level 2 untuk Operasi dan Konversi Desimal, SPLDV, dan Persentase. Bukan cuma pengisi kuantitas — tiap soal menutup celah kecil yang masih tersisa dari audit sebelumnya (mis. konversi desimal→pecahan di Level 1 yang sebelumnya cuma ada di Level 2; arah pecahan-biasa→campuran yang sebelumnya cuma ada arah sebaliknya; pengenalan konsep "ekspresi ekuivalen" ala SAT yang belum pernah dipakai). File gabungan: `~/Downloads/reimport/bank_soal_gabungan_tambahan3_gap_level.json`. Diverifikasi ke ekspor Firestore segar: nol peringatan K di seluruh 12 sub-materi dengan ambang baru (min L1=8, L2=6, L3=4).
+
+---
+
+## 15. Rencana bank soal matrikulasi numerasi — tanpa konteks (2026-07-29, rencana)
+
+Pemilik proyek minta jalur remedial untuk kelas matrikulasi: siswa berkemampuan numerasi sangat lemah butuh materi yang **tidak membingungkan arahnya** dan soal yang **tidak menambah beban baca** di atas beban konsep. Alasan diagnostik juga disebutkan eksplisit: soal berkonteks (cerita) mengaburkan apakah siswa salah karena **konsep** (mis. aturan tanda) atau karena **salah baca soal** — untuk siswa yang levelnya serendah ini, itu dua masalah berbeda yang butuh intervensi berbeda, dan bank soal saat ini tidak bisa memisahkannya.
+
+### 15.1 Keputusan yang sudah diambil
+
+- **(Koreksi 2026-07-29)** Draf pertama section ini salah menyimpulkan "bagian tabnya dihilangkan saja" sebagai *jangan buat tab baru*. Pemilik proyek mengonfirmasi ulang: maksudnya **tab baru tetap dibuat** — kalimat itu cuma berarti "abaikan kolom Tab di tabel yang saya kirim, itu cuma referensi tab lama". Keputusan final: **tab baru "Matrikulasi Numerasi"**, berisi 12 sub-materi bernama **`Matrikulasi - <nama sub-materi lama>`** (format final, dikonfirmasi pemilik proyek 2026-07-29).
+- **Kode strukturnya SUDAH dikerjakan** (2026-07-29): `DAFTAR_MATERI_INTI` (`kurikulumData.js`) dapat entri `"Matrikulasi Numerasi"`; `urutanTab` (`pilihMateri.js`) diubah eksplisit supaya tab ini tampil sebelum "Prasyarat"; `TAHAPAN_MATRIKULASI_NUMERASI` (baru) di-spread ke `PETA_TAHAPAN` dengan 4 tahap meniru struktur Bagian tes diagnostik (Aritmatika / Aljabar Dasar / Persamaan Linear / Numerasi Terapan). `PETA_PRASYARAT` sengaja tidak diisi. 137 test Jest lolos. Tab belum tampil di UI karena belum ada soal (`jumlah_soal === 0` disaring di `pilihMateri.js:153`) — baru muncul setelah soal pertama diimpor.
+- **Nama unik itu bukan soal gaya, tapi wajib secara teknis.** Dicek tiga tempat yang key-nya **flat, cuma nama sub-materi, tidak ikut sertakan `materi_utama`**:
+  1. `PETA_TAHAPAN` & `PETA_PRASYARAT` (`kurikulumData.js`) — digabung dari semua tab lewat spread (`kurikulumData.js:718-731`), nama yang sama dari tab berbeda saling timpa.
+  2. `hitungSetMaster` (`kurikulumEngine.js:76-77`) — kunci status master cuma `normalisasiNama(hasil.sub_materi)` (lowercase+trim, tidak strip tanda kurung/bracket — prefiks aman dari normalisasi ini).
+  3. Query progres (`gelarService.js:40`, `latihanService.js:40,188`) — `where("sub_materi", "==", subMateri)`, tanpa `materi_utama`.
+
+  Kalau nama sub-materi baru identik dengan yang lama, status master/progres siswa di dua tab akan **tercampur**. Prefiks unik menghindari ini sepenuhnya.
+- **Kode yang perlu diubah untuk tab-nya sendiri** (di luar authoring soal):
+  - `DAFTAR_MATERI_INTI` (`kurikulumData.js`) — tambah `"Matrikulasi Numerasi"`. Tanpa ini, `pilihMateri.js:118-122` melempar semua sub-materi barunya ke tab "Prasyarat" generik (materi_utama di luar daftar otomatis masuk situ).
+  - `urutanTab` (`pilihMateri.js:130`) — saat ini hardcode `["Prasyarat", ...DAFTAR_MATERI_INTI]`, jadi Prasyarat **selalu** tab pertama apa pun isi array. Supaya Matrikulasi Numerasi tampil **sebelum** Prasyarat (sesuai permintaan awal), urutan ini perlu diubah eksplisit.
+  - `PETA_TAHAPAN` — perlu entri baru untuk 12 nama sub-materi baru (boleh satu "Tahap" tunggal kalau tidak perlu sub-pengelompokan visual, atau dipecah kalau mau).
+  - `PETA_PRASYARAT` — **sengaja tidak diisi apa pun** untuk 12 sub-materi baru ini, supaya semuanya leaf node = terbuka penuh (formatif *dan* ujian) dan **tidak menggerbang apa pun juga** — persis "no connection" yang diminta di pesan pertama.
+- **Bank soal `all` yang ada sekarang tidak disentuh** — karena sub-materi barunya punya nama sendiri (bukan menambah ke sub-materi lama), pemisahannya otomatis lewat struktur data, **tidak perlu** field tag (`tanpa_konteks`) atau perubahan ke "Latihan Spesial" seperti draf pertama section ini. Dibuang dari rencana.
+- **(Dibuang 2026-07-29)** Rencana lembar cetak asrama dari bank soal ini — pemilik proyek memutuskan materi cetak asrama akan dibuat lewat alat/web lain, di luar cakupan proyek ini.
+
+### 15.2 Definisi "tanpa konteks" per sub-materi
+
+Untuk 9 dari 12 sub-materi ini "tanpa konteks" berarti murni: ekspresi/simbol matematis, nol narasi ("Andi membeli...", "Sebuah toko..."). **3 sub-materi Numerasi Terapan (Persentase, Perbandingan dan Skala, Pembulatan dan Estimasi) memakai "konteks minimal" — dikonfirmasi 2026-07-29**, karena soal aslinya di tes diagnostik (Bagian 6, No. 40-50) memang begitu: sebagian murni simbolik ("Berapakah 10% dari 200?", "Sederhanakan perbandingan 12:18", "Taksirlah hasil 19×21..."), sebagian pakai satu objek generik tanpa nama orang/tempat/narasi bertahap ("Sebuah baju berharga Rp80.000 mendapat diskon 20%...", "Sebuah denah berskala 1:1.000..."). Pola persis ini (No. 40-50) jadi acuan gaya untuk ketiga sub-materi tersebut — bukan didesain ulang dari nol, tinggal direplikasi & divariasikan angkanya.
+
+### 15.3 Checklist konsep per sub-materi (dasar bank soal baru)
+
+Fokusnya konsep-benar-atau-salah (sesuai arahan "bukan variasi, tapi konsep"), bukan gaya soal:
+
+1. **Operasi Aritmatika Dasar** — *(dicatat eksplisit: wajib termasuk urutan operasi/PEMDAS-KaliBaTaKu)*: urutan operasi (kali/bagi sebelum tambah/kurang, dengan & tanpa kurung); penjumlahan tanda (+/+, +/−, −/−); pengurangan termasuk "kurang negatif = tambah"; perkalian tanda (empat kombinasi ±×±); pembagian tanda; operasi bertingkat 2-3 langkah.
+2. **Sifat Operasi Bilangan** — komutatif (berlaku di +,× — TIDAK di −,÷); asosiatif (+,×); distributif perkalian atas +/−; unsur identitas (0 dan 1) & invers.
+3. **KPK dan FPB** — faktorisasi prima; FPB via faktor persekutuan/faktorisasi; KPK via faktorisasi; hubungan FPB×KPK = a×b (level 3).
+4. **Operasi Pecahan** — menyamakan penyebut untuk +/−; kali pecahan (langsung); bagi pecahan (kali kebalikan); campuran↔biasa dua arah; menyederhanakan (FPB).
+5. **Operasi dan Konversi Desimal** — +/−/×/÷ desimal (penjajaran koma/pergeseran); konversi pecahan↔desimal dua arah; bandingkan/urutkan campuran pecahan-desimal.
+6. **Pengenalan Variabel** — substitusi nilai ke ekspresi (evaluasi murni, bukan translasi cerita→ekspresi); membaca koefisien/variabel.
+7. **Manipulasi Aljabar Dasar** — suku sejenis (gabung/kurangi); distribusi termasuk tanda negatif di depan kurung `-a(b-c)`; faktorisasi sederhana (FPB suku).
+8. **PLSV** — isolasi variabel (operasi kebalikan kedua ruas); variabel di kedua ruas; koefisien pecahan/desimal; kasus tak-terhingga/tanpa-solusi (level 3).
+9. **SPLDV** — substitusi; eliminasi; murni dua persamaan eksplisit (bukan translasi cerita).
+10. **Persentase** — persen-dari-bilangan; konversi persen↔pecahan↔desimal; naik/turun persen sederhana (konteks minimal, lihat §15.2).
+11. **Perbandingan dan Skala** — sederhanakan rasio a:b; perbandingan senilai; perbandingan berbalik nilai; skala (konteks minimal).
+12. **Pembulatan dan Estimasi** — pembulatan bilangan bulat (puluhan/ratusan terdekat); pembulatan desimal (n angka di belakang koma); taksiran hasil operasi (bulatkan dulu, baru hitung).
+
+### 15.4 Level (bintang) — eskalasi angka, bukan eskalasi tipe
+
+Sesuai arahan awal ("dasar banget semuanya, walaupun bintang 3"): ketiga level tetap dalam skill family yang sama per sub-materi di atas — Level 3 **tidak** memperkenalkan konsep baru, cuma menambah beban kerja (angka lebih besar/pecahan lebih rumit/lebih banyak langkah dirantai, lebih banyak tanda negatif bertumpuk). Ini beda prinsip dari bank soal reguler (yang levelnya memang boleh naik kompleksitas konsep).
+
+### 15.5 Target jumlah soal
+
+Pakai ambang K yang sudah berlaku (§14): minimal **8 soal Level 1, 6 Level 2, 4 Level 3 = 18/sub-materi**, supaya tab Matrikulasi Numerasi memenuhi ambang 10 soal (§4) untuk ujian sumatif dan headroom K formatif dengan sendirinya (pool-nya memang berdiri sendiri sejak awal, bukan cuma "cukup dipakai" seperti draf sebelumnya — sekarang ini satu-satunya pool untuk nama sub-materi itu). 12 sub-materi × 18 = **216 soal baru**. Ini baseline sesuai ambang resmi, bukan target variasi — pengulangan struktur dengan angka berbeda di dalam satu level itu diharapkan, bukan cacat (persis seperti maksud "variasi duplikat dari soal tes diagnostik").
+
+### 15.6 Rencana eksekusi (belum dikerjakan)
+
+1. **Putuskan nama final 12 sub-materi** (prefiks — lihat §15.1) sebelum authoring, supaya `id`/nama tidak perlu diganti-ganti belakangan.
+2. Kode struktur tab: tambah `"Matrikulasi Numerasi"` ke `DAFTAR_MATERI_INTI`, ubah `urutanTab` di `pilihMateri.js` supaya tab ini tampil sebelum "Prasyarat", tambah entri `PETA_TAHAPAN` untuk 12 nama baru. **Tidak** menyentuh `PETA_PRASYARAT` (sengaja kosong, lihat §15.1). Jalankan test Jest terkait (`kurikulumEngine.test.js`, `tataLetakPeta.test.js`) setelah perubahan ini.
+3. Authoring soal per sub-materi, format sama seperti `arsip-data/bank_soal/prasyarat/*.json` (field sama, `sub_materi` pakai nama baru), ditaruh di folder baru (usul: `arsip-data/bank_soal/matrikulasi-numerasi/*.json`).
+4. Jalankan `gate-c-audit-bank-soal.mjs "<nama sub-materi baru>"` setelah authoring untuk cek distribusi level & duplikat struktural sebelum impor — pola yang sama seperti §13/§14.
+5. Impor lewat `admin.html` → Bank Soal → "Impor JSON" (pola §10), lalu hapus berkas arsip supaya tidak ter-impor dobel. Jalankan Gate A (`gate-a-audit-kurikulum.mjs`) sekali lagi setelah impor karena `DAFTAR_MATERI_INTI`/`PETA_TAHAPAN` berubah.
+6. **Belum diputuskan, tidak memblokir langkah 1-5**: aturan turun-level formatif "2× salah berturut-turut, reset ke 0 kalau benar" yang diusulkan pemilik proyek — berbeda dari aturan kumulatif yang berlaku sekarang (`soalEngine.js:106-113`). Kalau mau dipakai khusus tab ini, butuh parameter baru di `perbaruiLevelAdaptif` + audit K ulang (streak lebih longgar terhadap error menyebar, mengubah seberapa sering siswa didorong turun level).
+
+**Authoring SELESAI (2026-07-29)**: 216 soal ditulis (12 sub-materi × 18, didelegasikan ke 11 agent paralel — 1 sub-materi dikerjakan Root Agent sendiri sebagai sampel gaya yang disetujui pemilik proyek sebelum scale-up). File di `arsip-data/bank_soal/matrikulasi-numerasi/matrikulasi-<slug>.json`, satu file per sub-materi. Validasi agregat lintas 12 file (dijalankan Root Agent, bukan cuma laporan tiap agent): total 216 soal, distribusi level `{1:8, 2:6, 3:4}` tepat di SEMUA sub-materi, nol soal dengan `jawaban_benar` hilang dari `opsi`, nol opsi duplikat, nol pertanyaan identik lintas file, `materi_utama`/`sub_materi` di semua 216 soal cocok persis dengan 12 nama resmi (match ke key `TAHAPAN_MATRIKULASI_NUMERASI`). Spot-check manual ~12 soal (KPK-FPB hubungan FPB×KPK, PLSV kasus tanpa-solusi/tak-terhingga, SPLDV eliminasi 2-langkah, Persentase, Perbandingan-Skala, Pembulatan) — semua perhitungan diverifikasi ulang, tidak ditemukan kesalahan.
+
+**Digabung jadi satu file (2026-07-29)**: 12 file per sub-materi digabung ke `arsip-data/bank_soal/matrikulasi-numerasi/matrikulasi_numerasi_gabungan.json` (216 soal, urutan per sub-materi dijaga) supaya impor cukup sekali lewat "Impor JSON", bukan 12×. Divalidasi ulang setelah digabung (total 216, distribusi 8/6/4 tepat di semua 12 sub-materi, nol jawaban hilang/opsi duplikat). 12 file per sub-materi yang lama **dihapus** setelah tergabung, supaya tidak ada risiko ter-impor dobel (satu file lama + gabungan).
+
+**SELESAI (2026-07-29)**: pemilik proyek sudah mengimpor `matrikulasi_numerasi_gabungan.json` ke Firestore lewat `admin.html` → Bank Soal → "Impor JSON" (berjalan aman, dikonfirmasi pemilik proyek). Verifikasi pasca-impor: `gate-a-audit-kurikulum.mjs` → VERDIKT LOLOS, ke-12 sub-materi muncul dengan 18 soal masing-masing di kategori "punya soal, tidak ada di peta = default TERBUKA" (sesuai desain §15.1 — sengaja tidak didaftarkan ke `PETA_PRASYARAT`); 137 test Jest lolos. File arsip gabungan **sudah dihapus** dari `arsip-data/bank_soal/matrikulasi-numerasi/` (folder ikut dihapus karena jadi kosong) supaya tidak ter-impor dobel — sumber kebenarannya sekarang Firestore, pola sama seperti §10/§14.
+
+**Sisa pekerjaan (belum dikerjakan, di luar cakupan yang diminta sejauh ini)**:
+- Keputusan turun-level formatif "2× salah berturut-turut, reset kalau benar" (§15.6 langkah 6) — belum diputuskan, tidak memblokir apa pun yang sudah selesai.
+- Verifikasi visual tab "Matrikulasi Numerasi" di `pilih-materi.html` langsung di browser (soal sudah di Firestore, kode tab sudah benar secara test, tapi belum ada pengecekan visual manual).

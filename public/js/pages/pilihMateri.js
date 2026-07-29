@@ -127,7 +127,13 @@ async function muatMateri() {
     wadahTombol.innerHTML = "";
     wadahKonten.innerHTML = "";
     let tabPertamaAktif = false;
-    const urutanTab = ["Prasyarat", ...DAFTAR_MATERI_INTI];
+    // "Matrikulasi Numerasi" tampil sebelum "Prasyarat" (jalur remedial jadi
+    // titik masuk pertama yang terlihat) -- lihat plan/PLAN.md §15.
+    const urutanTab = [
+      "Matrikulasi Numerasi",
+      "Prasyarat",
+      ...DAFTAR_MATERI_INTI.filter((m) => m !== "Matrikulasi Numerasi"),
+    ];
 
     urutanTab.forEach((namaTab) => {
       const dataTab = kelompokData[namaTab];

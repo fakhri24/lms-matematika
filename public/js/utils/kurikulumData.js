@@ -1,5 +1,11 @@
 // --- DAFTAR MATERI INTI ---
 export const DAFTAR_MATERI_INTI = [
+  // 2026-07-29: jalur remedial berdiri sendiri, 12 sub-materi bertema tes
+  // diagnostik numerasi kelas X (lihat plan/PLAN.md §15), sengaja TIDAK
+  // didaftarkan di PETA_PRASYARAT (leaf node, tidak menggerbang & tidak
+  // digerbang apa pun -- "no connection" ke kurikulum lain). Tab ini
+  // ditampilkan sebelum "Prasyarat", lihat urutanTab di pilihMateri.js.
+  "Matrikulasi Numerasi",
   "Eksponen",
   // Sistem Persamaan (Bab 3 prota) dipindah sebelum Logaritma (Bab 4 prota)
   // 2026-07-28: "Persamaan Logaritma" kini digerbangkan oleh PLSV (Gate B,
@@ -598,6 +604,33 @@ const TAHAPAN_KAIDAH_PENCACAHAN_PELUANG = {
   "peluang kejadian majemuk": "Tahap 6: Peluang Kejadian Majemuk",
 };
 
+// --- MATRIKULASI NUMERASI — tab berdiri sendiri, TIDAK PERNAH dikunci ---
+// 12 sub-materi bertema tes diagnostik numerasi kelas X (plan/PLAN.md §15),
+// dinamai "Matrikulasi - <nama sub-materi lama>" supaya statusnya (master,
+// progres) tidak tercampur dengan sub-materi sebernama di tab lain --
+// PETA_TAHAPAN, PETA_PRASYARAT, dan query progres semuanya cuma dikunci lewat
+// nama, bukan materi_utama, jadi nama identik akan saling timpa/campur.
+// Tahapnya mengikuti struktur "Bagian" tes diagnostik yang sama.
+const TAHAPAN_MATRIKULASI_NUMERASI = {
+  "matrikulasi - operasi aritmatika dasar": "Tahap 1: Aritmatika",
+  "matrikulasi - sifat operasi bilangan": "Tahap 1: Aritmatika",
+  "matrikulasi - kpk dan fpb": "Tahap 1: Aritmatika",
+  "matrikulasi - operasi pecahan": "Tahap 1: Aritmatika",
+  "matrikulasi - operasi dan konversi desimal": "Tahap 1: Aritmatika",
+
+  "matrikulasi - pengenalan variabel": "Tahap 2: Aljabar Dasar",
+  "matrikulasi - manipulasi aljabar dasar": "Tahap 2: Aljabar Dasar",
+
+  "matrikulasi - persamaan linear satu variabel (plsv)":
+    "Tahap 3: Persamaan Linear",
+  "matrikulasi - sistem persamaan linear dua variabel (spldv)":
+    "Tahap 3: Persamaan Linear",
+
+  "matrikulasi - persentase": "Tahap 4: Numerasi Terapan",
+  "matrikulasi - perbandingan dan skala": "Tahap 4: Numerasi Terapan",
+  "matrikulasi - pembulatan dan estimasi": "Tahap 4: Numerasi Terapan",
+};
+
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 // Urutan tahap dirombak 2026-07-27 (plan/PLAN.md §10) mengikuti urutan Bagian
 // Tes Diagnostik Numerasi Kelas X (Bilangan Bulat -> Faktorisasi -> Non-Bulat
@@ -716,6 +749,7 @@ export const SUB_MATERI_PRASYARAT_SMP = Object.keys(TAHAPAN_PRASYARAT_SMP);
 //    didokumentasikan. Ini MENGUBAH urutan tampil tab (Sistem Persamaan
 //    sekarang tampil sebelum Logaritma, bukan sesudah Trigonometri).
 export const PETA_TAHAPAN = {
+  ...TAHAPAN_MATRIKULASI_NUMERASI,
   ...TAHAPAN_PRASYARAT_SMP,
   ...TAHAPAN_EKSPONEN,
   ...TAHAPAN_SISTEM_PERSAMAAN,
