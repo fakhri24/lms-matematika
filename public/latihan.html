@@ -31,8 +31,6 @@
       }
       .soal-card-wrapper {
         min-height: 420px;
-        max-height: 65vh;
-        overflow-y: auto;
         background: white;
         border-radius: var(--radius);
         box-shadow:
@@ -40,7 +38,26 @@
           0 2px 4px -1px rgba(0, 0, 0, 0.06);
         padding: 30px;
         margin-bottom: 20px;
-        scroll-behavior: smooth;
+      }
+      .quiz-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--bg-body);
+        padding: 12px 0;
+      }
+      .area-bawah-sticky {
+        position: sticky;
+        bottom: 0;
+        z-index: 15;
+        padding-bottom: 10px;
+      }
+      .tautan-eksternal-bar {
+        background: white;
+        border-radius: var(--radius);
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
       }
       .nav-bar-latihan {
         background: white;
@@ -120,7 +137,6 @@
       </header>
 
       <main>
-        <!-- Scrollable card: soal + feedback -->
         <div class="soal-card-wrapper" id="soal-card-wrapper">
           <div id="wadah-soal"></div>
 
@@ -151,75 +167,83 @@
           </div>
         </div>
 
-        <!-- Fixed nav bar — tidak ikut scroll -->
-        <div id="navigasi-soal" class="nav-bar-latihan" style="display: none">
-          <div class="flex-center gap-10">
-            <button
-              id="btn-sebelumnya"
-              class="btn btn-secondary"
-              style="display: none"
-            >
-              &laquo; Sebelumnya
-            </button>
-            <button
-              id="btn-skip"
-              class="btn btn-secondary"
-              style="display: none"
-            >
-              Lewati Soal (Skip)
-            </button>
-            <button
-              id="btn-lihat-bahas"
-              class="btn btn-secondary"
-              style="display: none"
-            >
-              Nyerah (Lihat Pembahasan)
-            </button>
-          </div>
+        <!-- Sticky ke bawah viewport — tidak bikin scroll region baru -->
+        <div class="area-bawah-sticky">
+          <div
+            id="area-tautan-eksternal"
+            class="tautan-eksternal-bar"
+            style="display: none"
+          ></div>
 
-          <span
-            id="teks-halaman"
-            class="font-bold text-muted"
-            style="white-space: nowrap"
-            >1 / 3</span
-          >
+          <div id="navigasi-soal" class="nav-bar-latihan" style="display: none">
+            <div class="flex-center gap-10">
+              <button
+                id="btn-sebelumnya"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                &laquo; Sebelumnya
+              </button>
+              <button
+                id="btn-skip"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Lewati Soal (Skip)
+              </button>
+              <button
+                id="btn-lihat-bahas"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Nyerah (Lihat Pembahasan)
+              </button>
+            </div>
 
-          <div class="flex-center gap-10">
-            <button
-              id="btn-cek-jawaban"
-              class="btn btn-primary"
-              style="display: none; background-color: #f59e0b"
+            <span
+              id="teks-halaman"
+              class="font-bold text-muted"
+              style="white-space: nowrap"
+              >1 / 3</span
             >
-              Cek Jawaban
-            </button>
-            <button
-              id="btn-simpan"
-              class="btn btn-primary"
-              style="display: none"
-            >
-              Simpan & Lanjut &raquo;
-            </button>
-            <button
-              id="btn-selanjutnya"
-              class="btn btn-primary"
-              style="display: none"
-            >
-              Selanjutnya &raquo;
-            </button>
-            <button
-              id="btn-lanjut-formatif"
-              class="btn btn-primary"
-              style="display: none"
-            >
-              Lanjut Soal Berikutnya &raquo;
-            </button>
-            <button
-              id="btn-selesai"
-              class="btn btn-success"
-              style="display: none"
-            >
-              Selesai Kerjakan
-            </button>
+
+            <div class="flex-center gap-10">
+              <button
+                id="btn-cek-jawaban"
+                class="btn btn-primary"
+                style="display: none; background-color: #f59e0b"
+              >
+                Cek Jawaban
+              </button>
+              <button
+                id="btn-simpan"
+                class="btn btn-primary"
+                style="display: none"
+              >
+                Simpan & Lanjut &raquo;
+              </button>
+              <button
+                id="btn-selanjutnya"
+                class="btn btn-primary"
+                style="display: none"
+              >
+                Selanjutnya &raquo;
+              </button>
+              <button
+                id="btn-lanjut-formatif"
+                class="btn btn-primary"
+                style="display: none"
+              >
+                Lanjut Soal Berikutnya &raquo;
+              </button>
+              <button
+                id="btn-selesai"
+                class="btn btn-success"
+                style="display: none"
+              >
+                Selesai Kerjakan
+              </button>
+            </div>
           </div>
         </div>
       </main>

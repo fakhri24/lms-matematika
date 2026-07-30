@@ -23,18 +23,6 @@ export function renderKartuSoal(
   const levelKesulitan = parseInt(soal.tingkat_kesulitan) || 1;
   const bintangVisual = "⭐".repeat(levelKesulitan);
 
-  const tautanEksternal =
-    modeLatihan === MODE_LATIHAN.FORMATIF
-      ? getTautanEksternalMatrikulasi(soal.sub_materi)
-      : null;
-  const tautanEksternalHTML = tautanEksternal
-    ? `
-      <div class="flex-center flex-wrap gap-10 mt-15">
-        <a href="${tautanEksternal.materi}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">📖 Pelajari Materi</a>
-        <a href="${tautanEksternal.drilling}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">🎯 Latihan Drilling Khusus</a>
-      </div>`
-    : "";
-
   el.wadahSoal.innerHTML = `
     <div class="question-card">
       <div class="flex-between mb-15">
@@ -75,13 +63,30 @@ export function renderKartuSoal(
           })
           .join("")}
       </div>
-      ${tautanEksternalHTML}
     </div>`;
 
   el.teksHalaman.innerText =
     modeLatihan === MODE_LATIHAN.FORMATIF
       ? `Soal ke-${nomorTampil}`
       : `${nomorTampil} / ${totalSoal}`;
+
+  if (el.areaTautanEksternal) {
+    const tautanEksternal =
+      modeLatihan === MODE_LATIHAN.FORMATIF
+        ? getTautanEksternalMatrikulasi(soal.sub_materi)
+        : null;
+
+    if (tautanEksternal) {
+      el.areaTautanEksternal.innerHTML = `
+        <div class="flex-center flex-wrap gap-10">
+          <a href="${tautanEksternal.materi}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">📖 Pelajari Materi</a>
+          <a href="${tautanEksternal.drilling}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">🎯 Latihan Drilling Khusus</a>
+        </div>`;
+      el.areaTautanEksternal.style.display = "block";
+    } else {
+      el.areaTautanEksternal.style.display = "none";
+    }
+  }
 }
 
 export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
@@ -93,13 +98,14 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnLanjutFormatif.style.display = "none";
     el.wadahFeedback.style.display = "block";
     if (dataMemori.pesan_aktif) {
-      const wrapper = document.getElementById("soal-card-wrapper");
       const renderAtCall = _renderCount;
-      if (wrapper)
-        setTimeout(() => {
-          if (_renderCount === renderAtCall)
-            wrapper.scrollTo({ top: wrapper.scrollHeight, behavior: "smooth" });
-        }, 50);
+      setTimeout(() => {
+        if (_renderCount === renderAtCall)
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+      }, 50);
     }
 
     if (dataMemori.pesan_aktif) {
@@ -150,13 +156,14 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnCekJawaban.style.display = "none";
     el.btnLihatBahas.style.display = "none";
     el.wadahFeedback.style.display = "block";
-    const wrapper = document.getElementById("soal-card-wrapper");
     const renderAtCall = _renderCount;
-    if (wrapper)
-      setTimeout(() => {
-        if (_renderCount === renderAtCall)
-          wrapper.scrollTo({ top: wrapper.scrollHeight, behavior: "smooth" });
-      }, 50);
+    setTimeout(() => {
+      if (_renderCount === renderAtCall)
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+    }, 50);
     el.pesanFeedback.style.display = "block";
     el.pesanFeedback.innerText = dataMemori.pesan_aktif;
     el.pesanFeedback.className += " box-success"; // State Benar

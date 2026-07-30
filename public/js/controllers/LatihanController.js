@@ -107,6 +107,7 @@ export class LatihanController {
       teksClue: document.getElementById("teks-clue"),
       areaPembahasan: document.getElementById("area-pembahasan"),
       teksPembahasan: document.getElementById("teks-pembahasan"),
+      areaTautanEksternal: document.getElementById("area-tautan-eksternal"),
       btnCekJawaban: document.getElementById("btn-cek-jawaban"),
       btnLihatBahas: document.getElementById("btn-lihat-bahas"),
       btnLanjutFormatif: document.getElementById("btn-lanjut-formatif"),
