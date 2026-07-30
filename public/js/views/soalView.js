@@ -1,6 +1,7 @@
 // public/js/views/soalView.js
 
 import { MODE_LATIHAN } from "../utils/constants.js";
+import { getTautanEksternalMatrikulasi } from "../utils/kurikulumData.js";
 
 let _renderCount = 0;
 
@@ -21,6 +22,18 @@ export function renderKartuSoal(
 
   const levelKesulitan = parseInt(soal.tingkat_kesulitan) || 1;
   const bintangVisual = "⭐".repeat(levelKesulitan);
+
+  const tautanEksternal =
+    modeLatihan === MODE_LATIHAN.FORMATIF
+      ? getTautanEksternalMatrikulasi(soal.sub_materi)
+      : null;
+  const tautanEksternalHTML = tautanEksternal
+    ? `
+      <div class="flex-center flex-wrap gap-10 mt-15">
+        <a href="${tautanEksternal.materi}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">📖 Pelajari Materi</a>
+        <a href="${tautanEksternal.drilling}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">🎯 Latihan Drilling Khusus</a>
+      </div>`
+    : "";
 
   el.wadahSoal.innerHTML = `
     <div class="question-card">
@@ -62,6 +75,7 @@ export function renderKartuSoal(
           })
           .join("")}
       </div>
+      ${tautanEksternalHTML}
     </div>`;
 
   el.teksHalaman.innerText =

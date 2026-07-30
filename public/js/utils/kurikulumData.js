@@ -1,3 +1,5 @@
+import { normalisasiNama } from "./kurikulumEngine.js";
+
 // --- DAFTAR MATERI INTI ---
 export const DAFTAR_MATERI_INTI = [
   // 2026-07-29: jalur remedial berdiri sendiri, 12 sub-materi bertema tes
@@ -630,6 +632,83 @@ const TAHAPAN_MATRIKULASI_NUMERASI = {
   "matrikulasi - perbandingan dan skala": "Tahap 4: Numerasi Terapan",
   "matrikulasi - pembulatan dan estimasi": "Tahap 4: Numerasi Terapan",
 };
+
+// --- TAUTAN EKSTERNAL MATRIKULASI NUMERASI ---
+// Situs eksternal terpisah (bukan bagian repo ini, tidak dites/di-deploy dari
+// sini): materi-numerasi-x = 12 halaman materi statis tanpa login;
+// drilling-100 = latihan soal per kompetensi, butuh login (Google/email).
+// Kedua situs memakai penomoran 01-12 yang sama untuk 12 materi yang sama.
+// Dipakai HANYA di mode formatif tab Matrikulasi Numerasi.
+const BASE_MATERI_NUMERASI_X =
+  "https://fakhri24.github.io/materi-numerasi-x/materi/";
+const BASE_DRILLING_100 =
+  "https://fakhri24.github.io/drilling-100/materi.html?id=";
+
+const TAUTAN_EKSTERNAL_MATRIKULASI_NUMERASI = {
+  "matrikulasi - operasi aritmatika dasar": {
+    slugMateri: "01-operasi-aritmatika-dasar",
+    idDrilling: "01",
+  },
+  "matrikulasi - sifat operasi bilangan": {
+    slugMateri: "02-sifat-operasi-bilangan",
+    idDrilling: "02",
+  },
+  "matrikulasi - kpk dan fpb": {
+    slugMateri: "03-kpk-dan-fpb",
+    idDrilling: "03",
+  },
+  "matrikulasi - operasi pecahan": {
+    slugMateri: "04-operasi-pecahan",
+    idDrilling: "04",
+  },
+  "matrikulasi - operasi dan konversi desimal": {
+    slugMateri: "05-operasi-konversi-desimal",
+    idDrilling: "05",
+  },
+  "matrikulasi - pengenalan variabel": {
+    slugMateri: "06-pengenalan-variabel",
+    idDrilling: "06",
+  },
+  "matrikulasi - manipulasi aljabar dasar": {
+    slugMateri: "07-manipulasi-aljabar-dasar",
+    idDrilling: "07",
+  },
+  "matrikulasi - persamaan linear satu variabel (plsv)": {
+    slugMateri: "08-plsv",
+    idDrilling: "08",
+  },
+  "matrikulasi - sistem persamaan linear dua variabel (spldv)": {
+    slugMateri: "09-spldv",
+    idDrilling: "09",
+  },
+  "matrikulasi - persentase": {
+    slugMateri: "10-persentase",
+    idDrilling: "10",
+  },
+  "matrikulasi - perbandingan dan skala": {
+    slugMateri: "11-perbandingan-dan-skala",
+    idDrilling: "11",
+  },
+  "matrikulasi - pembulatan dan estimasi": {
+    slugMateri: "12-pembulatan-dan-estimasi",
+    idDrilling: "12",
+  },
+};
+
+/**
+ * Tautan materi & drilling eksternal untuk satu sub-materi Matrikulasi
+ * Numerasi. Mengembalikan null bila sub-materi tidak dipetakan (mis. sub-materi
+ * dari tab lain).
+ */
+export function getTautanEksternalMatrikulasi(subMateri) {
+  const entri =
+    TAUTAN_EKSTERNAL_MATRIKULASI_NUMERASI[normalisasiNama(subMateri)];
+  if (!entri) return null;
+  return {
+    materi: `${BASE_MATERI_NUMERASI_X}${entri.slugMateri}.html`,
+    drilling: `${BASE_DRILLING_100}${entri.idDrilling}`,
+  };
+}
 
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---
 // Urutan tahap dirombak 2026-07-27 (plan/PLAN.md §10) mengikuti urutan Bagian

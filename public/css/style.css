@@ -168,12 +168,14 @@ body {
 }
 
 .btn {
+  display: inline-block;
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.2s;
 }
 
