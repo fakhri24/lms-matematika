@@ -117,8 +117,41 @@ export class LatihanController {
   }
 
   async init() {
+    this.selaraskanPaddingFixed();
     this.bindGlobalEvents();
     await this.mulaiAplikasi();
+  }
+
+  /**
+   * Header (.quiz-header) & nav bar (.nav-bar-latihan) posisinya fixed agar
+   * tidak pernah "meloncat" antara status statis <-> menempel saat halaman
+   * di-scroll. Konsekuensinya, konten di bawah/atasnya butuh padding sebesar
+   * tinggi asli kedua elemen itu supaya tidak tertutup -- dan tingginya
+   * berubah-ubah (wrap ke banyak baris di layar sempit, tombol berganti-ganti
+   * per state). ResizeObserver menjaga variabel CSS --header-h/--footer-h
+   * tetap sinkron dengan tinggi sebenarnya, apa pun penyebab perubahannya.
+   * Tautan materi/drilling (.tautan-eksternal-bar) SENGAJA tidak ikut fixed
+   * -- itu bukan aksi yang harus selalu terjangkau seperti nav bar, dan
+   * kalau ikut digabung footprint permanennya jadi kebesaran di layar
+   * sempit (menutupi konten soal).
+   */
+  selaraskanPaddingFixed() {
+    const header = document.querySelector(".quiz-header");
+    const footer = document.querySelector(".nav-bar-latihan");
+    if (!header || !footer || typeof ResizeObserver === "undefined") return;
+
+    const JARAK_LUAR = 20; // harus sama dengan top/bottom di CSS
+    const JARAK_AMAN = 16; // jarak napas ke konten
+
+    const perbarui = (elemen, namaVariabel) => {
+      document.documentElement.style.setProperty(
+        namaVariabel,
+        `${elemen.offsetHeight + JARAK_LUAR + JARAK_AMAN}px`,
+      );
+    };
+
+    new ResizeObserver(() => perbarui(header, "--header-h")).observe(header);
+    new ResizeObserver(() => perbarui(footer, "--footer-h")).observe(footer);
   }
 
   bindGlobalEvents() {
@@ -243,12 +276,10 @@ export class LatihanController {
       }
     }
 
-    // Reset scroll ke atas setelah semua konten selesai dirender
-    const wrapper = document.getElementById("soal-card-wrapper");
-    if (wrapper)
-      setTimeout(() => {
-        wrapper.scrollTop = 0;
-      }, 0);
+    // Reset scroll halaman ke atas setiap ganti soal
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 0);
 
     this.renderMathJax();
     mulaiAtauLanjutStopwatch();

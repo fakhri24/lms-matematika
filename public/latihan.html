@@ -25,9 +25,23 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
     <style>
+      html {
+        /* --header-h/--footer-h diisi JS (LatihanController, ResizeObserver)
+           berdasarkan tinggi asli header/nav bar fixed -- supaya tetap benar
+           walau tinggi berubah (wrap ke banyak baris di layar sempit, tombol
+           tautan eksternal muncul/hilang, dst). Fallback dipakai sesaat
+           sebelum JS jalan. Juga dipakai scroll-padding supaya
+           scrollIntoView tidak menyembunyikan target di belakang elemen fixed. */
+        scroll-padding-top: var(--header-h, 130px);
+        scroll-padding-bottom: var(--footer-h, 170px);
+      }
       .latihan-container {
         max-width: 960px;
-        margin: 40px auto;
+        margin: 0 auto;
+      }
+      main {
+        padding-top: var(--header-h, 130px);
+        padding-bottom: var(--footer-h, 170px);
       }
       .soal-card-wrapper {
         min-height: 420px;
@@ -39,27 +53,34 @@
         padding: 30px;
         margin-bottom: 20px;
       }
+      /* Fixed (bukan sticky): posisinya konstan terhadap viewport, tidak
+         pernah "meloncat" berpindah antara status statis <-> menempel.
+         left/right/max-width/margin meniru box .latihan-container supaya
+         lebarnya selalu selaras dengan konten di bawahnya. */
       .quiz-header {
-        position: sticky;
-        top: 0;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 960px;
+        margin: 0 auto;
         z-index: 20;
         background: var(--bg-body);
-        padding: 12px 0;
-      }
-      .area-bawah-sticky {
-        position: sticky;
-        bottom: 0;
-        z-index: 15;
-        padding-bottom: 10px;
       }
       .tautan-eksternal-bar {
         background: white;
         border-radius: var(--radius);
         padding: 12px 20px;
-        margin-bottom: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
       }
       .nav-bar-latihan {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 960px;
+        margin: 0 auto;
+        z-index: 15;
         background: white;
         border-radius: var(--radius);
         padding: 16px 24px;
@@ -165,85 +186,85 @@
               <div id="teks-pembahasan"></div>
             </div>
           </div>
-        </div>
 
-        <!-- Sticky ke bawah viewport — tidak bikin scroll region baru -->
-        <div class="area-bawah-sticky">
+          <!-- Ikut flow normal (tidak fixed) -- cuma butuh dilihat sesekali,
+               bukan aksi yang harus selalu terjangkau seperti nav bar. -->
           <div
             id="area-tautan-eksternal"
             class="tautan-eksternal-bar"
             style="display: none"
           ></div>
+        </div>
 
-          <div id="navigasi-soal" class="nav-bar-latihan" style="display: none">
-            <div class="flex-center gap-10">
-              <button
-                id="btn-sebelumnya"
-                class="btn btn-secondary"
-                style="display: none"
-              >
-                &laquo; Sebelumnya
-              </button>
-              <button
-                id="btn-skip"
-                class="btn btn-secondary"
-                style="display: none"
-              >
-                Lewati Soal (Skip)
-              </button>
-              <button
-                id="btn-lihat-bahas"
-                class="btn btn-secondary"
-                style="display: none"
-              >
-                Nyerah (Lihat Pembahasan)
-              </button>
-            </div>
-
-            <span
-              id="teks-halaman"
-              class="font-bold text-muted"
-              style="white-space: nowrap"
-              >1 / 3</span
+        <!-- Fixed ke bawah viewport, tidak pernah meloncat statis <-> menempel -->
+        <div id="navigasi-soal" class="nav-bar-latihan" style="display: none">
+          <div class="flex-center gap-10">
+            <button
+              id="btn-sebelumnya"
+              class="btn btn-secondary"
+              style="display: none"
             >
+              &laquo; Sebelumnya
+            </button>
+            <button
+              id="btn-skip"
+              class="btn btn-secondary"
+              style="display: none"
+            >
+              Lewati Soal (Skip)
+            </button>
+            <button
+              id="btn-lihat-bahas"
+              class="btn btn-secondary"
+              style="display: none"
+            >
+              Nyerah (Lihat Pembahasan)
+            </button>
+          </div>
 
-            <div class="flex-center gap-10">
-              <button
-                id="btn-cek-jawaban"
-                class="btn btn-primary"
-                style="display: none; background-color: #f59e0b"
-              >
-                Cek Jawaban
-              </button>
-              <button
-                id="btn-simpan"
-                class="btn btn-primary"
-                style="display: none"
-              >
-                Simpan & Lanjut &raquo;
-              </button>
-              <button
-                id="btn-selanjutnya"
-                class="btn btn-primary"
-                style="display: none"
-              >
-                Selanjutnya &raquo;
-              </button>
-              <button
-                id="btn-lanjut-formatif"
-                class="btn btn-primary"
-                style="display: none"
-              >
-                Lanjut Soal Berikutnya &raquo;
-              </button>
-              <button
-                id="btn-selesai"
-                class="btn btn-success"
-                style="display: none"
-              >
-                Selesai Kerjakan
-              </button>
-            </div>
+          <span
+            id="teks-halaman"
+            class="font-bold text-muted"
+            style="white-space: nowrap"
+            >1 / 3</span
+          >
+
+          <div class="flex-center gap-10">
+            <button
+              id="btn-cek-jawaban"
+              class="btn btn-primary"
+              style="display: none; background-color: #f59e0b"
+            >
+              Cek Jawaban
+            </button>
+            <button
+              id="btn-simpan"
+              class="btn btn-primary"
+              style="display: none"
+            >
+              Simpan & Lanjut &raquo;
+            </button>
+            <button
+              id="btn-selanjutnya"
+              class="btn btn-primary"
+              style="display: none"
+            >
+              Selanjutnya &raquo;
+            </button>
+            <button
+              id="btn-lanjut-formatif"
+              class="btn btn-primary"
+              style="display: none"
+            >
+              Lanjut Soal Berikutnya &raquo;
+            </button>
+            <button
+              id="btn-selesai"
+              class="btn btn-success"
+              style="display: none"
+            >
+              Selesai Kerjakan
+            </button>
           </div>
         </div>
       </main>

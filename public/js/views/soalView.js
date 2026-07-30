@@ -98,19 +98,17 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnLanjutFormatif.style.display = "none";
     el.wadahFeedback.style.display = "block";
     if (dataMemori.pesan_aktif) {
+      el.pesanFeedback.style.display = "block";
+      el.pesanFeedback.innerHTML = dataMemori.pesan_aktif;
+
       const renderAtCall = _renderCount;
       setTimeout(() => {
         if (_renderCount === renderAtCall)
-          window.scrollTo({
-            top: document.body.scrollHeight,
+          el.pesanFeedback.scrollIntoView({
             behavior: "smooth",
+            block: "nearest",
           });
       }, 50);
-    }
-
-    if (dataMemori.pesan_aktif) {
-      el.pesanFeedback.style.display = "block";
-      el.pesanFeedback.innerHTML = dataMemori.pesan_aktif;
     } else {
       el.pesanFeedback.style.display = "none";
     }
@@ -156,17 +154,18 @@ export function renderElemenFormatif(el, soal, dataMemori, isTerakhir) {
     el.btnCekJawaban.style.display = "none";
     el.btnLihatBahas.style.display = "none";
     el.wadahFeedback.style.display = "block";
-    const renderAtCall = _renderCount;
-    setTimeout(() => {
-      if (_renderCount === renderAtCall)
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
-    }, 50);
     el.pesanFeedback.style.display = "block";
     el.pesanFeedback.innerText = dataMemori.pesan_aktif;
     el.pesanFeedback.className += " box-success"; // State Benar
+
+    const renderAtCall = _renderCount;
+    setTimeout(() => {
+      if (_renderCount === renderAtCall)
+        el.pesanFeedback.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+    }, 50);
 
     if (dataMemori.lihat_clue) el.areaClue.style.display = "block";
     if (dataMemori.lihat_bahas) {
