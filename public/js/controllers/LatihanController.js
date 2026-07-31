@@ -694,7 +694,23 @@ export class LatihanController {
 
     if (this.state.modeLatihan !== MODE_LATIHAN.FORMATIF) {
       this.amankanJawabanLayar();
-      if (this.state.indeksSaatIni < this.state.kumpulanSoal.length - 1) {
+
+      const jumlahBelumDijawab = this.state.kumpulanSoal.filter(
+        (soal) =>
+          !this.state.memoriJawaban[soal.id_unik_sistem]?.jawaban_terakhir,
+      ).length;
+
+      if (jumlahBelumDijawab > 0) {
+        const pesanSoal =
+          jumlahBelumDijawab === 1
+            ? "1 soal belum kamu jawab"
+            : `${jumlahBelumDijawab} soal belum kamu jawab`;
+        if (!confirm(`Masih ada ${pesanSoal}. Yakin ingin mengakhiri ujian?`))
+          return;
+      } else if (
+        this.state.indeksSaatIni <
+        this.state.kumpulanSoal.length - 1
+      ) {
         if (
           !confirm(
             "Kamu belum melihat semua soal. Yakin ingin mengakhiri ujian?",
