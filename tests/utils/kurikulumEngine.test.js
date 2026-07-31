@@ -100,6 +100,22 @@ describe("isHasilMasterSumatif — satu definisi untuk gerbang, gelar, dan panel
     });
   });
 
+  test("soal yang di-skip tetap terhitung lewat log_percobaan", () => {
+    // Tombol "Lewati Soal" tidak merekam jawaban ke detail_jawaban, tapi
+    // simpanDurasiKeSoal() tetap menginisialisasi entrinya di memoriJawaban
+    // (disimpan sebagai log_percobaan). Kalau fungsi ini cuma membaca
+    // detail_jawaban, siswa yang skip 2 dari 10 soal tapi tetap nilai >= 80
+    // tidak akan pernah dapat ceklis master walau soal sudah lengkap dilihat.
+    const logLengkap = {};
+    for (let i = 0; i < 10; i++) logLengkap[`soal-${i}`] = { skor_soal: 1 };
+    const skip2 = hasilLulus("Aturan Kuadran", {
+      nilai: 80,
+      detail_jawaban: { "soal-0": 1, "soal-1": 1, "soal-2": 1, "soal-3": 1 },
+      log_percobaan: logLengkap,
+    });
+    expect(isHasilMasterSumatif(skip2)).toBe(true);
+  });
+
   test("data rusak tidak menyebabkan exception", () => {
     [null, undefined, {}, { nilai: "abc" }].forEach((rusak) => {
       expect(isHasilMasterSumatif(rusak)).toBe(false);

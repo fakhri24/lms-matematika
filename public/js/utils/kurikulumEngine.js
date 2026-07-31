@@ -29,11 +29,20 @@ export function apakahModeDikunci(modeLatihan) {
   return MODE_UJIAN.has(modeLatihan);
 }
 
-/** Menghitung berapa soal yang benar-benar dikerjakan pada satu record hasil. */
+/** Menghitung berapa soal yang benar-benar dikerjakan pada satu record hasil.
+ * Ambil yang terbesar antara detail_jawaban dan log_percobaan -- soal yang
+ * di-skip tidak masuk detail_jawaban, tapi log_percobaan tetap merekam
+ * semua soal yang sempat dibuka (lihat simpanDurasiKeSoal di
+ * LatihanController.js). Pola ini sama dengan yang sudah dipakai di
+ * leaderboard.js, ketuntasanController.js, dan rekapHasil.js. */
 function jumlahSoalDikerjakan(hasil) {
-  if (hasil?.detail_jawaban) return Object.keys(hasil.detail_jawaban).length;
-  if (hasil?.log_percobaan) return Object.keys(hasil.log_percobaan).length;
-  return 0;
+  const jmlJawaban = hasil?.detail_jawaban
+    ? Object.keys(hasil.detail_jawaban).length
+    : 0;
+  const jmlLog = hasil?.log_percobaan
+    ? Object.keys(hasil.log_percobaan).length
+    : 0;
+  return Math.max(jmlJawaban, jmlLog);
 }
 
 /**
