@@ -49,6 +49,10 @@ async function muatDataLeaderboard() {
     dataLatihanAll.forEach((d) => {
       // (Logika agregasi dan perhitungan tidak ada yang berubah, tetap di controller)
       if (d.status === STATUS_LATIHAN.DRAF) return;
+      // Latihan spesial menyimpan sub_materi sebagai array (multi-materi
+      // sekaligus), bukan satu nama arena -- tidak cocok dipetakan ke
+      // leaderboard per sub-materi, jadi dikecualikan di sini.
+      if (d.mode_latihan === MODE_LATIHAN.SPESIAL) return;
       const sub = d.sub_materi || DATA_DEFAULT.MATERI;
       const nis = d.nis_siswa;
       const nama = d.nama_siswa || DATA_DEFAULT.NAMA;
@@ -92,8 +96,12 @@ async function muatDataLeaderboard() {
     });
 
     daftarSemuaSubMateri = Array.from(setSubMateri).sort();
-    renderSaranMateri("");
-    wadahLeaderboard.innerHTML = `<p style="text-align:center; color: var(--text-muted); margin-top: 40px;">Pilih salah satu arena di atas untuk melihat klasemen.</p>`;
+    renderSaranMateri(searchInput.value);
+    if (subMateriAktif) {
+      prosesTampilan();
+    } else {
+      wadahLeaderboard.innerHTML = `<p style="text-align:center; color: var(--text-muted); margin-top: 40px;">Pilih salah satu arena di atas untuk melihat klasemen.</p>`;
+    }
   } catch (error) {
     console.error("Gagal memuat leaderboard:", error);
     wadahLeaderboard.innerHTML = `<p style="text-align:center; color: #ef4444;">Gagal terhubung ke database.</p>`;
