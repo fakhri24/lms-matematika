@@ -1,0 +1,242 @@
+[
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Diketahui $7^3 = 343$. Berdasarkan informasi itu, nilai dari $\\sqrt[3]{343}$ adalah ...",
+    "clue": "Akar pangkat 3 adalah kebalikan dari pangkat 3 — jawabannya sudah disebutkan di soal, tinggal dikenali yang mana.",
+    "opsi": [
+      "$3$",
+      "$4$",
+      "$6$",
+      "$7$",
+      "$9$"
+    ],
+    "jawaban_benar": "$7$",
+    "pembahasan": "$\\sqrt[3]{343}$ menanyakan: bilangan berapa yang jika dipangkatkan 3 hasilnya 343?<br>Soal sudah memberitahu $7^3 = 343$, jadi bilangan itu adalah $7$.<br>Maka $\\sqrt[3]{343} = 7$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $\\sqrt[4]{256}$ adalah ...",
+    "clue": "Angka kecil di atas tanda akar adalah indeksnya. Cari bilangan yang dipangkatkan 4 hasilnya 256.",
+    "opsi": [
+      "$2$",
+      "$4$",
+      "$6$",
+      "$8$",
+      "$12$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "Indeks akarnya 4, jadi kita mencari bilangan yang dipangkatkan 4 hasilnya 256.<br>$4^4 = 4 \\times 4 \\times 4 \\times 4 = 256$.<br>Maka $\\sqrt[4]{256} = 4$.<br>Perhatikan $2$ bukan jawabannya: $2^4 = 16$, bukan 256."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $243^{\\frac{1}{5}}$ adalah ...",
+    "clue": "Pangkat $\\frac{1}{n}$ setara dengan akar pangkat $n$. Ubah dulu bentuknya, baru cari nilainya.",
+    "opsi": [
+      "$2$",
+      "$3$",
+      "$4$",
+      "$6$",
+      "$9$"
+    ],
+    "jawaban_benar": "$3$",
+    "pembahasan": "Pangkat $\\frac{1}{5}$ berarti akar pangkat 5: $243^{\\frac{1}{5}} = \\sqrt[5]{243}$.<br>Kita cari bilangan yang dipangkatkan 5 hasilnya 243: $3^5 = 3 \\times 3 \\times 3 \\times 3 \\times 3 = 243$.<br>Maka $243^{\\frac{1}{5}} = 3$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 1,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $\\sqrt[4]{625}$ adalah ...",
+    "clue": "Cari bilangan yang dipangkatkan 4 hasilnya 625. Hati-hati dengan pilihan bertanda negatif: akar berindeks genap tidak pernah bernilai negatif.",
+    "opsi": [
+      "$-5$",
+      "$3$",
+      "$5$",
+      "$7$",
+      "$15$"
+    ],
+    "jawaban_benar": "$5$",
+    "pembahasan": "Kita cari bilangan yang dipangkatkan 4 hasilnya 625. Karena $5^4 = 625$, maka $\\sqrt[4]{625} = 5$.<br>Mengapa bukan $-5$? Memang benar $(-5)^4 = 625$ juga, tetapi lambang $\\sqrt[4]{\\ }$ dengan indeks genap disepakati hanya menunjuk nilai yang tak negatif.<br>Jadi jawabannya $5$ saja, bukan $\\pm 5$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi dan Konversi Desimal"
+    ],
+    "pertanyaan": "Nilai dari $1,331^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Pangkat $\\frac{1}{3}$ berarti akar pangkat 3. Bilangan desimal juga punya akar — perhatikan bahwa mengalikan tiga bilangan berkoma satu angka menghasilkan tiga angka di belakang koma.",
+    "opsi": [
+      "$1,1$",
+      "$1,2$",
+      "$1,3$",
+      "$1,7$",
+      "$1,9$"
+    ],
+    "jawaban_benar": "$1,1$",
+    "pembahasan": "$1,331^{\\frac{1}{3}} = \\sqrt[3]{1,331}$, yaitu bilangan yang dipangkatkan 3 hasilnya $1,331$.<br>Coba $1,1$: $1,1 \\times 1,1 = 1,21$, lalu $1,21 \\times 1,1 = 1,331$. Cocok.<br>Maka $1,331^{\\frac{1}{3}} = 1,1$.<br>Perhatikan $1,3$ bukan jawabannya walau angkanya muncul di soal: $1,3^3 = 2,197$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $(-343)^{\\frac{1}{3}}$ adalah ...",
+    "clue": "Periksa dulu indeks akarnya ganjil atau genap. Aturan 'akar tidak boleh negatif' hanya berlaku untuk indeks genap.",
+    "opsi": [
+      "$-13$",
+      "$-7$",
+      "$-3$",
+      "$7$",
+      "Tidak terdefinisi"
+    ],
+    "jawaban_benar": "$-7$",
+    "pembahasan": "$(-343)^{\\frac{1}{3}} = \\sqrt[3]{-343}$. Indeksnya 3, yaitu ganjil.<br>Untuk indeks ganjil, basis negatif tetap punya akar, karena bilangan negatif yang dipangkatkan ganjil hasilnya tetap negatif: $(-7)^3 = -343$.<br>Maka $(-343)^{\\frac{1}{3}} = -7$.<br>Bandingkan dengan $\\sqrt[4]{-625}$ — barulah <i>itu</i> yang tidak terdefinisi, karena indeksnya genap."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Nilai dari $-(729)^{\\frac{1}{6}}$ adalah ...",
+    "clue": "Perhatikan baik-baik letak tanda minusnya: ia berada di luar tanda kurung, jadi ia tidak ikut dipangkatkan.",
+    "opsi": [
+      "$-9$",
+      "$-6$",
+      "$-3$",
+      "$3$",
+      "$9$"
+    ],
+    "jawaban_benar": "$-3$",
+    "pembahasan": "Tanda minus berada di luar kurung, sehingga yang dipangkatkan hanyalah $729$, bukan $-729$.<br>Hitung dulu bagian pangkatnya: $(729)^{\\frac{1}{6}} = \\sqrt[6]{729} = 3$, karena $3^6 = 729$.<br>Baru bubuhkan tanda minus di depannya: $-3$.<br>Ini berbeda dari $(-729)^{\\frac{1}{6}}$, yang justru tidak terdefinisi karena indeksnya genap dan basisnya negatif."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 2,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\left(16^{\\frac{1}{3}}\\right)^{\\frac{3}{2}}$ adalah ...",
+    "clue": "Jangan hitung isi kurungnya lebih dulu — hasilnya bukan bilangan bulat. Pakai sifat pangkat berpangkat: kalikan kedua pangkatnya.",
+    "opsi": [
+      "$1$",
+      "$2$",
+      "$4$",
+      "$8$",
+      "$16$"
+    ],
+    "jawaban_benar": "$4$",
+    "pembahasan": "Sifat $(a^m)^n = a^{m \\times n}$ tetap berlaku walaupun pangkatnya pecahan.<br>$\\left(16^{\\frac{1}{3}}\\right)^{\\frac{3}{2}} = 16^{\\frac{1}{3} \\times \\frac{3}{2}} = 16^{\\frac{3}{6}} = 16^{\\frac{1}{2}}$.<br>$16^{\\frac{1}{2}} = \\sqrt{16} = 4$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Bentuk Akar"
+    ],
+    "pertanyaan": "Bentuk paling sederhana dari $\\sqrt{3^5}$ adalah ...",
+    "clue": "Ubah dulu ke pangkat pecahan, lalu pecah pangkatnya menjadi bagian bulat dan sisa pecahannya.",
+    "opsi": [
+      "$3$",
+      "$3\\sqrt{2}$",
+      "$3\\sqrt{3}$",
+      "$9\\sqrt{3}$",
+      "$27\\sqrt{3}$"
+    ],
+    "jawaban_benar": "$9\\sqrt{3}$",
+    "pembahasan": "Ubah ke pangkat pecahan: $\\sqrt{3^5} = 3^{\\frac{5}{2}}$.<br>Pecah pangkatnya menjadi bagian bulat dan sisanya: $\\frac{5}{2} = 2 + \\frac{1}{2}$.<br>Maka $3^{\\frac{5}{2}} = 3^2 \\times 3^{\\frac{1}{2}} = 9 \\times \\sqrt{3} = 9\\sqrt{3}$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $9^{2\\frac{1}{2}}$ (dibaca: 9 pangkat dua setengah) adalah ...",
+    "clue": "Pangkatnya berupa pecahan campuran. Ubah dulu menjadi pecahan biasa sebelum sifat eksponen dipakai.",
+    "opsi": [
+      "$3$",
+      "$9$",
+      "$27$",
+      "$81$",
+      "$243$"
+    ],
+    "jawaban_benar": "$243$",
+    "pembahasan": "Ubah pangkat campurannya jadi pecahan biasa: $2\\frac{1}{2} = \\frac{5}{2}$.<br>Maka $9^{2\\frac{1}{2}} = 9^{\\frac{5}{2}} = \\left(9^{\\frac{1}{2}}\\right)^5 = \\left(\\sqrt{9}\\right)^5 = 3^5 = 243$.<br>Perhatikan $81$ bukan jawabannya — itu hasil jika pangkatnya keliru dibaca sebagai $9^2$ lalu dikalikan sendiri."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\left(\\frac{5^{\\frac{1}{3}}}{25^{\\frac{1}{6}}}\\right)^{\\frac{3}{5}}$ adalah ...",
+    "clue": "Basis pembilang dan penyebut berbeda. Tulis ulang $25$ sebagai pangkat dari $5$, lalu perhatikan apa yang terjadi pada pecahan di dalam kurung.",
+    "opsi": [
+      "$0$",
+      "$\\frac{1}{25}$",
+      "$\\frac{1}{5}$",
+      "$1$",
+      "$5$"
+    ],
+    "jawaban_benar": "$1$",
+    "pembahasan": "Samakan basisnya lebih dulu: $25^{\\frac{1}{6}} = \\left(5^2\\right)^{\\frac{1}{6}} = 5^{\\frac{2}{6}} = 5^{\\frac{1}{3}}$.<br>Ternyata pembilang dan penyebutnya sama persis, jadi isi kurungnya adalah $\\frac{5^{\\frac{1}{3}}}{5^{\\frac{1}{3}}} = 5^{\\frac{1}{3} - \\frac{1}{3}} = 5^0 = 1$.<br>Berapa pun pangkat luarnya, $1^{\\frac{3}{5}} = 1$.<br>Perhatikan $5^0$ bernilai $1$, bukan $0$."
+  },
+  {
+    "materi_utama": "Eksponen",
+    "sub_materi": "Eksponen Rasional (Pangkat Pecahan)",
+    "tingkat_kesulitan": 3,
+    "konsep_prasyarat": [
+      "Sifat Eksponen Bilangan Bulat",
+      "Operasi Pecahan"
+    ],
+    "pertanyaan": "Nilai dari $\\frac{125^{\\frac{1}{3}} - 81^{\\frac{1}{4}}}{8^{\\frac{1}{3}} + 25^{\\frac{1}{2}}}$ adalah ...",
+    "clue": "Jangan mencoba menyederhanakan pangkatnya sekaligus. Hitung nilai keempat pangkat pecahan satu per satu, baru kerjakan pengurangan dan penjumlahannya.",
+    "opsi": [
+      "$\\frac{2}{7}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{5}{3}$",
+      "$\\frac{7}{2}$"
+    ],
+    "jawaban_benar": "$\\frac{2}{7}$",
+    "pembahasan": "Hitung tiap suku lebih dulu:<br>$125^{\\frac{1}{3}} = \\sqrt[3]{125} = 5$<br>$81^{\\frac{1}{4}} = \\sqrt[4]{81} = 3$<br>$8^{\\frac{1}{3}} = \\sqrt[3]{8} = 2$<br>$25^{\\frac{1}{2}} = \\sqrt{25} = 5$<br>Baru masukkan ke pecahannya: $\\frac{5 - 3}{2 + 5} = \\frac{2}{7}$."
+  }
+]
