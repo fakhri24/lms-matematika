@@ -93,6 +93,18 @@ function basisPangkat(s, i) {
 function latexToJs(latexAsli) {
   let s = String(latexAsli).trim();
   if (s.startsWith("$") && s.endsWith("$")) s = s.slice(1, -1);
+
+  // Opsi yang bukan skalar tunggal WAJIB ditolak, bukan dinilai apa adanya.
+  // Pasangan koordinat "(-4, 0)" dan daftar urutan "\frac{1}{4}, 0,3,
+  // \frac{2}{5}" bukan bilangan; kalau dipaksa dievaluasi, koma terbaca
+  // sebagai operator koma JavaScript (atau sebagai pemisah desimal) dan dua
+  // opsi yang jelas berbeda bisa tampak bernilai sama. Koma hanya sah
+  // sebagai pemisah desimal, yaitu persis di antara dua angka.
+  const komaBukanDesimal = /(?<!\d),|,(?!\d)/.test(s.replace(/\s+/g, "$&"));
+  const pasanganTerurut = /^\(.*,.*\)$/.test(s.trim());
+  if (komaBukanDesimal || pasanganTerurut || /,\s/.test(s)) {
+    throw new Error("bukan skalar tunggal (pasangan/daftar), tidak dinilai");
+  }
   for (const sampah of ["\\left", "\\right", "\\,", "\\!", " "]) {
     s = s.split(sampah).join("");
   }
@@ -249,18 +261,40 @@ function periksaSoal(soal, nomor, konteks) {
     info.push(`${label} LEWAT nilai — tidak terparse (${e.message}), wajib dicek manual`);
     return { fatal, info };
   }
+  // Soal yang menanyakan BENTUK atau IDENTIFIKASI, bukan nilai: di situ opsi
+  // bernilai sama justru inti soalnya. "Bentuk paling sederhana dari
+  // perbandingan $84:126$" memang menyediakan $6:9$ dan $14:21$ yang senilai
+  // tapi belum sederhana; "Manakah yang BUKAN penerapan sifat distributif"
+  // menyediakan empat bentuk yang semuanya bernilai 161. Diuji ke bank 1473
+  // soal: tanpa pengecualian ini muncul 56 pasangan "bernilai sama" dan
+  // hampir seluruhnya memang disengaja. Untuk soal seperti itu temuan
+  // diturunkan jadi peringatan.
+  const PENANDA_SOAL_BENTUK = [
+    "paling sederhana", "senilai", "setara", "ekuivalen", "manakah",
+    "bukan", "urutkan", "angka penting", "bentuk pangkat", "bentuk akar",
+    "angka di belakang koma", "bentuk faktor", "perbandingan",
+  ];
+  const tentangBentuk = PENANDA_SOAL_BENTUK.some((k) =>
+    String(soal.pertanyaan).toLowerCase().includes(k),
+  );
+
   const iKunci = soal.opsi.indexOf(soal.jawaban_benar);
   const cocok = nilai.map((v, i) => (samaNilai(v, nilai[iKunci]) ? i : -1)).filter((i) => i >= 0);
   if (cocok.length !== 1) {
-    fatal.push(
-      `${label} ${cocok.length} opsi bernilai sama dengan kunci: ` +
-        cocok.map((i) => soal.opsi[i]).join("  |  "),
-    );
+    // Kunci berbagi nilai dengan opsi lain: dua jawaban sama-sama bisa
+    // dibela. Fatal, KECUALI soalnya memang tentang bentuk.
+    const pesan =
+      `${label} ${cocok.length} opsi bernilai sama dengan KUNCI: ` +
+      cocok.map((i) => soal.opsi[i]).join("  |  ");
+    if (tentangBentuk) info.push(`${pesan} — soal tentang bentuk, cek manual`);
+    else fatal.push(pesan);
   }
+  // Dua distraktor yang kembar tidak membuat soal salah, hanya memboroskan
+  // satu opsi. Selalu peringatan.
   for (let i = 0; i < 5; i++) {
     for (let j = i + 1; j < 5; j++) {
-      if (samaNilai(nilai[i], nilai[j])) {
-        fatal.push(`${label} dua opsi BERNILAI SAMA: ${soal.opsi[i]}  =  ${soal.opsi[j]}`);
+      if (i !== iKunci && j !== iKunci && samaNilai(nilai[i], nilai[j])) {
+        info.push(`${label} dua distraktor bernilai sama: ${soal.opsi[i]}  =  ${soal.opsi[j]}`);
       }
     }
   }
