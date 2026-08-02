@@ -125,7 +125,7 @@ Dua hal muncul dari pembacaan PDF ini yang **bukan** soal UH, tapi perlu dicatat
 ## 6. Langkah lanjut (belum dikerjakan)
 
 - [ ] Verifikasi 2 titik cetakan/notasi bermasalah (§5.1, §5.2) ke buku fisik.
-- [ ] Putuskan wadah UH. Sekarang sudah ada tiga berkas rencana UH (1.1, 1.2, 1.3) tanpa satu pun wadah nyata — keputusan ini makin mendesak, bukan makin bisa ditunda.
+- [x] Putuskan wadahnya — **selesai 2026-08-03: di luar alur adaptif**, ditangani website tes terpisah milik pemilik proyek (template impornya: `template-import-soal.docx`). Konsekuensinya tidak ada Level 4 di `soalEngine.js` dan tidak ada sub-materi baru di `kurikulumData.js`. Alasan lengkap + gagasan jangka panjang "pop-up latihan bonus setelah tuntas" di [plan/PLAN.md](../../plan/PLAN.md) §16.
 - [ ] Pertimbangkan Pola A (akar bersusun) sebagai sub-materi baru. Butuh 18 soal (8/6/4) untuk memenuhi headroom; PDF ini menyumbang 11, jadi 7 sisanya harus dikarang.
 - [ ] Pertimbangkan menambah materi "bilangan rasional vs irasional" ke bank latihan (§3.1) — ini celah fondasi, bukan pengayaan.
 - [ ] Tulis `clue` + `pembahasan` bergaya bank utama untuk soal yang akhirnya dipakai; jangan salin kunci mentah.

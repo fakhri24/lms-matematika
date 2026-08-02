@@ -171,6 +171,6 @@ Draf siap impor: **`arsip-data/bank_soal/eksponen/bank_soal_eksponen_rasional__p
   - soal ke-5 ($1,331^{\frac13}$): penerjemah LaTeX Gate D membaca koma sebagai pemisah, bukan koma desimal, lalu menghitung $331^{\frac13}=6{,}917$. Nilai soal yang benar $1,1^3 = 1,331$ sudah diverifikasi tangan.
   - soal ke-6 ($(-343)^{\frac13}$): opsi "Tidak terdefinisi" bukan LaTeX sehingga tak bisa dievaluasi numerik. Disengaja — opsi itu justru inti jebakannya.
 - [ ] Verifikasi 3 titik cetakan buram (§5.2) ke buku fisik. **Tidak menghalangi impor** — ketiganya ada di soal yang TIDAK diambil.
-- [ ] Impor lewat panel admin, lalu jalankan ulang Gate C; targetnya semua ⚠️ headroom hilang.
+- [x] Impor lewat panel admin, lalu jalankan ulang Gate C — **selesai 2026-08-03**. Bank live sekarang `Total: 22 | Level 1/2/3: 8/8/6`, ketiga ⚠️ headroom hilang. `bank_soal_all.json` sudah diekspor ulang (1473 → 1485 soal).
 - [ ] **Nol soal berkonteks** masih akan tersisa (bank 0/10, PDF hanya punya 1 yaitu Eval no.6 yang levelnya UH). Kalau mau ada soal cerita di Tahap 3, harus dikarang sendiri — PDF ini tidak menyediakannya.
-- [ ] Putuskan wadah bagian UH: sama seperti berkas 1.1, belum ada wadahnya. 26 soal Evaluasi 1.3 + 3 soal Latihan 1.3.2 (no.22–24) + no.4/10/17 cukup untuk satu paket UH utuh.
+- [x] Putuskan wadahnya — **selesai 2026-08-03: di luar alur adaptif**, ditangani website tes terpisah milik pemilik proyek (template impornya: `template-import-soal.docx`). Konsekuensinya tidak ada Level 4 di `soalEngine.js` dan tidak ada sub-materi baru di `kurikulumData.js`. Alasan lengkap + gagasan jangka panjang "pop-up latihan bonus setelah tuntas" di [plan/PLAN.md](../../plan/PLAN.md) §16.

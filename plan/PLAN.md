@@ -726,3 +726,37 @@ Pakai ambang K yang sudah berlaku (§14): minimal **8 soal Level 1, 6 Level 2, 4
 **Sisa pekerjaan (belum dikerjakan, di luar cakupan yang diminta sejauh ini)**:
 - Keputusan turun-level formatif "2× salah berturut-turut, reset kalau benar" (§15.6 langkah 6) — belum diputuskan, tidak memblokir apa pun yang sudah selesai.
 - Verifikasi visual tab "Matrikulasi Numerasi" di `pilih-materi.html` langsung di browser (soal sudah di Firestore, kode tab sudah benar secara test, tapi belum ada pengecekan visual manual).
+
+---
+
+## 16. Materi UH: di luar alur adaptif, plus gagasan "bonus Level 4" (2026-08-03)
+
+Konteks: pembedahan tiga PDF sumber (`Eksponen 1.1/1.2/1.3`) menghasilkan soal yang levelnya jelas di atas Level 3 bank latihan — variabel sebagai pangkat, akar bersusun, penyebut tiga suku, esai uraian. Catatannya di `arsip-data/bank-soal-uh/*.md`, naskahnya di `arsip-data/bank-soal-uh/uh-eksponen-1-*.docx`. Sejak berkas UH pertama dibuat (2026-07-31) selalu tertulis pertanyaan terbuka "wadahnya di mana" — sekarang terjawab.
+
+### 16.1 Keputusan: materi UH TIDAK masuk alur adaptif (sementara)
+
+Keputusan pemilik proyek 2026-08-03. Materi UH ditangani **website tes terpisah milik pemilik proyek** (berbasis tes, punya template impor `.docx` sendiri — salinannya di `arsip-data/bank-soal-uh/template-import-soal.docx`), bukan lewat LMS ini.
+
+Konsekuensinya, dan ini yang penting supaya tidak salah kaprah nanti:
+
+- **Tidak ada Level 4** di `soalEngine.js`. `AMBANG_NAIK_LEVEL` tetap 4/4/2 untuk Level 1/2/3.
+- **Tidak ada sub-materi baru** ("Sifat Eksponen Lanjutan" dsb.) di `kurikulumData.js`. Tiga opsi wadah yang dulu didaftar di berkas UH — level 4, sub-materi terpisah, bank UH tersendiri — yang dipilih adalah **yang ketiga, dan di luar repo ini**.
+- **Ambang §4 dan headroom §14 tidak tersentuh.** Ini bukan detail administratif: menambah Level 4 ke sub-materi yang sudah ada akan membuat ambang naik-level dan headroom K harus dihitung ulang untuk SELURUH sub-materi, bukan cuma yang dapat soal UH.
+- Berkas di `arsip-data/bank-soal-uh/` statusnya **dokumen kerja guru**, bukan sumber data aplikasi. Tidak pernah diimpor lewat `admin.html`, tidak pernah ter-deploy (`firebase.json` hanya menyajikan `public/`).
+
+### 16.2 Gagasan jangka panjang: pop-up "latihan bonus" setelah tuntas
+
+Diusulkan pemilik proyek 2026-08-03, **eksplisit ditandai sebagai rencana jangka panjang — tidak untuk dikerjakan sekarang.** Dicatat di sini supaya tidak hilang, bukan sebagai antrean kerja.
+
+Gagasannya: begitu siswa menuntaskan sebuah sub-materi (bintang 3 / master), muncul tawaran latihan "Level 4" sebagai **bonus** — opsional, di luar jalur ketuntasan.
+
+Yang membuat gagasan ini menarik: ia memberi wadah bagi materi UH **tanpa** menyentuh mesin ketuntasan, karena sifatnya menawarkan bukan mewajibkan. Itu berbeda dari "menambah Level 4 ke tangga adaptif", yang justru yang dihindari di §16.1.
+
+Pertanyaan yang harus dijawab sebelum ini boleh dikerjakan — belum satu pun dijawab:
+
+1. **Apakah hasilnya tercatat, dan di mana?** Kalau masuk `hasil_latihan`, ia berisiko ikut terhitung oleh `isHasilMasterSumatif()` dan mencemari status master. Preseden yang relevan: "Latihan spesial tidak pernah memberi status master" (§9) — modenya di luar `MODE_UJIAN` sehingga nilainya tidak membuka kunci apa pun. Bonus Level 4 kemungkinan besar harus mengikuti pola yang sama.
+2. **Soalnya dari mana?** Bank UH sekarang hidup di `.docx` di luar Firestore. Memakainya di LMS berarti mengarangnya ulang sebagai JSON — dengan `clue` + `pembahasan` bergaya bank utama, bukan sekadar salin kunci.
+3. **Berapa soal minimum?** Kalau ia punya level sendiri, ia butuh headroom sendiri (§14). Kalau ia sekadar kumpulan pengayaan tanpa naik-turun level, tidak. Ini menentukan apakah biayanya ~4 soal atau ~18 soal per sub-materi.
+4. **Pop-up muncul sekali atau tiap kali?** Pop-up yang muncul berulang setelah tiap ujian tuntas akan cepat jadi gangguan.
+
+Jangan mulai mengarang soal Level 4 sebelum pertanyaan 1 dan 3 dijawab — urutan itu yang menentukan berapa banyak soal yang perlu ditulis.

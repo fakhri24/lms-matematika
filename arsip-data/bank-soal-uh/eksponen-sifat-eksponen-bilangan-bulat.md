@@ -93,6 +93,6 @@ No.30b khususnya: siswa harus melihat bahwa pembilang memfaktor menjadi $a^{2q}(
 
 - [x] Verifikasi ulang tiap jawaban akhir (jangan asumsikan kunci di PDF benar) — **selesai, seluruhnya dihitung ulang; satu cacat sumber ditemukan (§6.1)**.
 - [x] Tulis naskah UH — `uh-eksponen-1-1-sifat-eksponen-bulat.docx`, 13 soal, bobot 210.
-- [ ] Putuskan wadahnya: level 4 di sub-materi yang sama, sub-materi baru ("Sifat Eksponen Lanjutan"?), atau memang khusus bank UH terpisah dari alur formatif/sumatif adaptif. **Sekarang ada tiga naskah UH (1.1, 1.2, 1.3) yang menunggu keputusan ini.**
-- [ ] Kalau jadi level baru dalam sub-materi yang sama: cek ulang `AMBANG_NAIK_LEVEL` & aturan headroom K di `soalEngine.js` (lihat CLAUDE.md §4) — level baru butuh kuota naik-level sendiri, bukan otomatis warisan dari Level 3.
+- [x] Putuskan wadahnya — **selesai 2026-08-03: di luar alur adaptif**, ditangani website tes terpisah milik pemilik proyek (template impornya: `template-import-soal.docx`). Konsekuensinya tidak ada Level 4 di `soalEngine.js` dan tidak ada sub-materi baru di `kurikulumData.js`. Alasan lengkap + gagasan jangka panjang "pop-up latihan bonus setelah tuntas" di [plan/PLAN.md](../../plan/PLAN.md) §16.
+- ~~Kalau jadi level baru dalam sub-materi yang sama: cek ulang `AMBANG_NAIK_LEVEL` & aturan headroom K di `soalEngine.js`.~~ **Gugur** — keputusan §16.1 PLAN.md menutup opsi "level baru", jadi `AMBANG_NAIK_LEVEL` tidak disentuh. Butir ini hidup lagi hanya kalau gagasan "bonus Level 4" (PLAN.md §16.2) suatu saat dikerjakan.
 - [ ] Kalau ada yang "naik kelas" ke bank latihan: tulis `clue` + `pembahasan` bergaya bank utama, bukan sekadar salin kunci.
