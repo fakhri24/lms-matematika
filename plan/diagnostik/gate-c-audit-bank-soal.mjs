@@ -31,12 +31,21 @@ const soal = JSON.parse(
 // Penanda narasi umum di bank soal ini (Bahasa Indonesia, konteks cerita).
 const PENANDA_CERITA = [
   "Sebuah", "Seorang", "Suatu", "Sebanyak", "Dalam sebuah", "Andi", "Rani",
-  "Budi", "Pak ", "Bu ", "Ia ", "Ia,", "mereka", "siswa", "pedagang",
+  "Budi", "Ibu", "Pak", "Bu", "Ia", "mereka", "siswa", "pedagang",
   "toko", "gudang", "tim", "kota", "kolam", "kebun", "sekolah",
 ];
+// Pencocokan WAJIB berbatas kata. Versi pertama memakai includes(), sehingga
+// "tim" ikut cocok di dalam "\times" dan "estimasi", "Andi" di dalam
+// "perbandingan", "Bu " di dalam "sumbu X", "Pak " di dalam "sepak bola":
+// 132 soal (9% bank) salah dihitung sebagai soal cerita, dan sub-materi yang
+// isinya penuh "\times" tampak seolah punya konteks padahal ekspresi telanjang
+// semua. "Ibu" ditulis eksplisit supaya "Ibu memiliki ..." tidak ikut hilang
+// saat "Bu" dibatasi kata.
+const RE_CERITA = new RegExp(
+  `(?<![a-z])(${PENANDA_CERITA.map((p) => p.toLowerCase()).join("|")})(?![a-z])`,
+);
 function isCerita(pertanyaan) {
-  const lower = pertanyaan.toLowerCase();
-  return PENANDA_CERITA.some((p) => lower.includes(p.toLowerCase()));
+  return RE_CERITA.test(pertanyaan.toLowerCase());
 }
 
 // --- Heuristik: kerangka operator (signature) untuk deteksi duplikat ---
