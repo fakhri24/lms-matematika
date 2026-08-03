@@ -760,3 +760,79 @@ Pertanyaan yang harus dijawab sebelum ini boleh dikerjakan — belum satu pun di
 4. **Pop-up muncul sekali atau tiap kali?** Pop-up yang muncul berulang setelah tiap ujian tuntas akan cepat jadi gangguan.
 
 Jangan mulai mengarang soal Level 4 sebelum pertanyaan 1 dan 3 dijawab — urutan itu yang menentukan berapa banyak soal yang perlu ditulis.
+
+---
+
+## 17. Perluasan "Fungsi Eksponen": batas MTK X vs MTL X (2026-08-03)
+
+Sumber contoh & latihan: situs statis `../1.1-eksponen` (bagian **Nilai Fungsi**,
+**Grafik**, **Persamaan**, **Pertidaksamaan**). Sumber batas cakupan: `../supermath-mtk-x`
+(PLAN.md, bagian ROADMAP MTL X).
+
+### 17.1 Keputusan cakupan: pengenalan saja
+
+Prota MTK X mencatat sendiri bahwa fungsi eksponen **bukan subbab buku cetak** —
+ia sisipan yang menutup celah CP Fase E/SNBT, dengan ukuran yang sudah ditetapkan
+di sana: *"sisipan ringan 6–8 halaman (grafik dan persamaan eksponen basis sama)
+di akhir Bab 1."* Lanjutannya — fungsi/persamaan/**pertidaksamaan** eksponen utuh —
+adalah **MTL X unit 1**, semester genap, dan sengaja menunggu pertidaksamaan kuadrat
+(Bab 6 MTK) selesai akhir Februari.
+
+Jadi yang **masuk** bank latihan sub-materi "Fungsi Eksponen":
+
+- nilai fungsi $f(x) = a^x$ dan $f(x) = k \cdot a^x$;
+- karakter grafik: naik ($a > 1$) vs turun ($0 < a < 1$), titik potong sumbu-Y di
+  $(0, 1)$, tidak memotong sumbu-X, asimtot datar $y = 0$, nilai selalu positif;
+- persamaan eksponen **basis sama**, $a^{f(x)} = a^{g(x)} \Rightarrow f(x) = g(x)$,
+  termasuk yang basisnya harus disamakan dulu ($9^x = 27$, $5^x = 25^{x-1}$,
+  $\left(\frac12\right)^x = 8$);
+- konteks pertumbuhan & peluruhan satu langkah.
+
+Yang **tidak** masuk, walaupun ada di situs sumber dan gampang ditulis:
+
+- **pertidaksamaan eksponen** (termasuk pembalikan arah saat $0 < a < 1$) — inti
+  MTL X unit 1, dan butuh pertidaksamaan kuadrat sebagai prasyarat;
+- persamaan eksponen yang perlu **substitusi kuadrat** ($p = a^x$);
+- basis yang **tidak bisa** disamakan (butuh logaritma — Bab 4, tab lain);
+- transformasi/pergeseran grafik.
+
+Batas ini bukan preferensi gaya. Kalau soal pertidaksamaan eksponen dimasukkan ke
+sini, materinya jadi prasyarat gerbang Logaritma (§11.4: seluruh sub-materi Eksponen
+harus master lebih dulu) — artinya siswa dipaksa menguasai topik semester genap MTL
+sebelum boleh membuka Bab 4 di semester ganjil.
+
+### 17.2 Yang dikerjakan
+
+Bank sebelumnya 10 soal (3/5/2) dan **melanggar ketiga ambang headroom** §14 —
+Level 1 bahkan K = −1 (cacat struktural). Isinya juga timpang: sepuluh-sepuluhnya
+soal *nilai fungsi*, nol soal grafik dan nol soal persamaan, padahal justru dua hal
+itu yang disebut prota sebagai isi sisipan.
+
+Ditambah 16 soal (+6/+6/+4) sehingga komposisinya jadi **9/11/6 (26 soal)** — aman
+di ketiga level. Lolos Gate D tanpa temuan fatal; enam soal ditandai `LEWAT nilai`
+karena opsinya bukan skalar (pasangan koordinat, persamaan garis, atau pilihan
+berupa teks) dan sudah diperiksa manual.
+
+**Terverifikasi live 2026-08-03**: sudah diimpor, ekspor ulang `bank_soal_all.json`
+1485 → 1501 soal, Gate C mengonfirmasi 9/11/6 tanpa satu pun peringatan headroom.
+Draf `bank_soal/eksponen/bank_soal_fungsi_eksponen.json` dihapus setelah keenambelas
+soal dipastikan tersimpan utuh (semua field, bukan cuma pertanyaannya) di ekspor.
+Draf pangkat rasional yang sudah diimpor lebih dulu ikut dihapus di commit yang sama
+— sebelumnya ia membuat Gate D tanpa argumen keluar GAGAL dengan 12 "duplikat impor",
+yang mudah disalahartikan sebagai cacat draf baru.
+
+Kandidat duplikat struktural yang dilaporkan Gate C **sengaja dibiarkan** (5 kelompok,
+tak satu pun cacat isi):
+
+- `f(0)` vs `f(3)`, dan `f(p) = 32` vs `f(x) = 1` — dua pasang lama; masing-masing
+  menguji aturan berbeda ($a^0 = 1$ vs evaluasi biasa; mencari pangkat vs mengenali
+  pangkat nol);
+- potong sumbu-X vs potong sumbu-Y — justru **sengaja** dipasangkan: jawabannya
+  berlawanan ("tidak ada" vs $(0, 1)$), dan kontras itulah materinya;
+- $2^{x-3} = 16$ vs $3^{2x-1} = 27$ — mekanikanya beda (memindah konstanta vs membagi
+  koefisien), yang sama cuma kalimat pembukanya;
+- asimtot vs $\frac{f(5)}{f(2)}$ — sinyal lemah, topiknya jelas tak berkaitan.
+
+Yang memicu heuristiknya sebagian besar keseragaman kalimat pembuka ("Tentukan nilai
+$x$ yang memenuhi persamaan ..."), bukan kesamaan soal. Dengan 26 soal, peluang satu
+pasang muncul berdekatan dalam satu sesi sudah kecil.
