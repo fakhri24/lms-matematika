@@ -836,3 +836,180 @@ tak satu pun cacat isi):
 Yang memicu heuristiknya sebagian besar keseragaman kalimat pembuka ("Tentukan nilai
 $x$ yang memenuhi persamaan ..."), bukan kesamaan soal. Dengan 26 soal, peluang satu
 pasang muncul berdekatan dalam satu sesi sudah kecil.
+
+> **Sebagian kesimpulan ini direvisi 2026-08-06** — lihat §18.4. Dua dari lima
+> kelompok yang di atas dinyatakan "sengaja dibiarkan" akhirnya tetap diganti, tapi
+> dengan alasan yang **berbeda** dari yang dibantah di sini.
+
+---
+
+## 18. Audit kurasi seluruh tab Eksponen (2026-08-06)
+
+Kurasi menyeluruh 5 sub-materi tab Eksponen: **132 soal lama diperiksa dan digeser
+angkanya, 34 di antaranya diganti konsepnya, plus 12 soal baru** (total 144 soal di
+6 berkas). Sebaran penggantian konsep per sub-materi: 4 / 7 / 13 / 5 / 5 — pemuncaknya
+`Merasionalkan Penyebut`, yang memang paling parah (§18.4). Pemicunya permintaan pemilik proyek —
+soal-soal yang disalin dari modul Supermath perlu digeser angkanya supaya siswa yang
+memegang buku tidak sekadar mengingat jawaban. Yang tidak diduga: proses itu
+membongkar tiga pola cacat yang berulang di kelima sub-materi, dan ketiganya **lolos
+dari Gate C maupun Gate D**. Tiga aturan turunannya sudah dinaikkan ke `CLAUDE.md` §4.
+
+Berkas hasil (semua di `arsip-data/bank_soal/`, belum diimpor per 2026-08-06):
+
+| Berkas | Isi | Level | Sifat impor |
+|---|---|---|---|
+| `bank_soal_sifat_eksponen_bilangan_bulat_revisi.json` | 28, ber-`id` | 10/12/6 | idempoten |
+| `bank_soal_sifat_eksponen_bilangan_bulat_tambahan.json` | 12, **tanpa `id`** | → 12/18/10 | **sekali saja** |
+| `bank_soal_operasi_bentuk_akar_revisi.json` | 28, ber-`id` | 10/12/6 | idempoten |
+| `bank_soal_merasionalkan_penyebut_revisi.json` | 28, ber-`id` | 10/11/7 | idempoten |
+| `bank_soal_eksponen_rasional_revisi.json` | 22, ber-`id` | 8/8/6 | idempoten |
+| `bank_soal_fungsi_eksponen_revisi.json` | 26, ber-`id` | 9/11/6 | idempoten |
+
+Berkas ber-`id` aman diimpor berulang — `importBankSoalJSON` memanggil
+`upsertSoalImportDB(id, …)` (`public/js/admin/bankSoalController.js:566`), jadi ia
+meng-*update* dokumen yang sama. Berkas `_tambahan` tanpa `id` hanya boleh sekali;
+impor kedua membuat 12 duplikat ber-`id` acak.
+
+> **Efek samping penggeseran angka yang perlu diketahui.** `idSoalSudahBenar`
+> direstore dari `progres_belajar` dan mengunci soal secara permanen (§14). Siswa
+> yang sudah pernah menjawab benar sebuah `id` **tidak akan pernah melihat versi
+> barunya**. Untuk angkatan yang sedang berjalan, efek penyegaran ini tidak merata.
+
+### 18.1 `tingkat_kesulitan` tidak dijaga siapa pun
+
+Kelima sub-materi punya **tepat satu soal L3 yang bebannya setara L1**:
+
+| Sub-materi | Soal L3 yang terlalu ringan | Bandingkan |
+|---|---|---|
+| Sifat Eksponen Bilangan Bulat | — (yang cacat justru di L2: $4^{-2}$ setara $2^{-3}$ di L1) | |
+| Operasi Bentuk Akar | `6tYqz…` $\sqrt8+\sqrt2 \to 3\sqrt2$ | versi 3 suku ada di **L2** |
+| Merasionalkan Penyebut | `P5ah…`, `fA8C…`, `qdJi…` — **tiga** soal, struktur identik `X0Jm…` di L2 | |
+| Eksponen Rasional | `LOlY…` $2^{\frac12}\times2^{\frac32}$ — satu langkah | |
+| Fungsi Eksponen | `UClS…` $f(x)=3^{x+1}$, hitung $f(1)$ — satu substitusi | |
+
+Akibatnya bukan kosmetik. `AMBANG_NAIK_LEVEL` (§14) mensyaratkan 2 benar mandiri
+untuk lulus L3. Kalau sebagian soal L3 ternyata seringan L1, ambang itu bisa
+terpenuhi tanpa penguasaan yang sepadan — dan L3 adalah level terakhir sebelum
+sub-materi dianggap tuntas.
+
+**Kenapa lolos gate.** Gate C mengukur kemiripan kalimat antar-soal dalam satu level;
+ia tidak punya konsep "berat". Gate D memvalidasi skema dan nilai opsi, bukan
+kesulitan. Keduanya benar pada lingkupnya masing-masing — celahnya di antara
+keduanya, dan sampai ada gate baru celah itu harus ditutup dengan pemeriksaan manual.
+
+Menaikkan isi soalnya lebih disukai daripada menurunkan levelnya: menurunkan tiga
+soal L3 di Merasionalkan Penyebut akan menyisakan L3 = 4, tepat di lantai headroom
+§14 tanpa cadangan sama sekali.
+
+### 18.2 Pengecoh "bentuk belum sederhana" adalah jawaban benar kedua
+
+Lima kasus ditemukan; semuanya berbentuk sama — sebuah opsi yang **bernilai sama
+persis dengan kunci** tetapi ditulis dalam bentuk yang belum disederhanakan:
+
+| Soal | Kunci | Opsi yang senilai |
+|---|---|---|
+| $\sqrt5\times\sqrt5$ (warisan) | $5$ | $\sqrt{25}$ |
+| $\frac{5}{\sqrt{20}}$ (warisan) | $\frac{\sqrt5}{2}$ | $\frac{5\sqrt{20}}{20}$ **dan** $\frac{\sqrt{20}}{4}$ — tiga opsi senilai |
+| Persegi panjang $\frac{12}{\sqrt6}$ (warisan) | $2\sqrt6$ | $\frac{12}{\sqrt6}$ |
+| $\frac{\sqrt3+\sqrt6}{\sqrt3}$ (warisan) | $1+\sqrt2$ | $\frac{3+\sqrt{18}}{3}$ |
+| $\frac{\sqrt6}{\sqrt3+\sqrt2}$ (**dibuat di sesi ini**) | $3\sqrt2-2\sqrt3$ | $\sqrt{18}-\sqrt{12}$ |
+
+Yang terakhir dibuat oleh sesi kurasi ini sendiri, beberapa jam setelah cacat yang
+sama dikritik pada soal $\sqrt5\times\sqrt5$. Itu menunjukkan godaannya kuat dan
+niat baik tidak cukup — Gate D yang menangkapnya, bukan pembacaan ulang.
+
+Pembelaannya selalu terdengar masuk akal ("soalnya minta bentuk *paling sederhana*"),
+tapi tidak tahan uji: siswa yang memilih $\sqrt{25}$ memilih sesuatu yang **benar
+nilainya**, dan "paling sederhana" bukan kriteria yang bisa dia banding. Dua jalan
+keluar yang dipakai di sesi ini:
+
+1. **Buang opsinya, pindahkan jebakan ke `pembahasan`.** Dipakai untuk empat kasus.
+   Nilai didaktiknya tetap terjaga — pembahasan $\sqrt7\times\sqrt7$ tetap menegur
+   "berhenti menulis $\sqrt{49}$ berarti belum selesai".
+2. **Ubah rancangan soalnya** kalau jebakan itu justru inti soalnya. `VtTZ…` semula
+   "$\frac{\sqrt7}{4}$ jika dirasionalkan menjadi …" — mustahil dibuat sehat, karena
+   pengecoh yang diincar ($\frac{7}{4\sqrt7}$) pasti senilai kunci. Diubah jadi
+   "manakah yang penyebutnya **SUDAH** rasional?" dengan lima pecahan bernilai
+   berbeda. Kriterianya jadi tajam dan konsepnya justru lebih jelas.
+
+Yang **tidak** boleh: mematikan atau menyiasati Gate D karena "ini kasus khusus".
+
+### 18.3 Gate C dan Gate D buta terhadap duplikat lintas sub-materi
+
+Keduanya berjalan per-sub-materi. Dua nyaris-duplikat tertangkap hanya karena
+di-`grep` manual ke `bank_soal_all.json` sebelum menulis soal:
+
+- **Akar pangkat tiga.** Sempat direncanakan masuk `Operasi Bentuk Akar` sebagai
+  penambah variasi. Ternyata `Eksponen Rasional (Pangkat Pecahan)` sudah punya 8 soal
+  $\sqrt[3]{\;}$ — dan ia sub-materi **hilir**. Menambahkannya di hulu bukan cuma
+  duplikat: ia mencuri materi yang menjadi alasan keberadaan hilirnya.
+- **Model pertumbuhan populasi.** Sempat direncanakan sebagai soal konteks untuk
+  `Eksponen Rasional` (pangkat pecahan dari waktu, mis. $t=\frac23$ jam). Ternyata
+  `Fungsi Eksponen` sudah memilikinya ($P(t)=200\times3^t$, $N(t)=100\times2^t$).
+  Diganti konteks geometri — volume kubus → luas permukaan, yang justru memberi arti
+  langsung pada pangkat $\frac{m}{n}$ ($\frac13$ mengubah volume jadi panjang,
+  $\frac23$ langsung jadi luas).
+
+Arah yang berbahaya adalah **hulu mengambil materi hilir**, bukan sebaliknya. Kalau
+`Operasi Bentuk Akar` mengajarkan akar pangkat tiga, siswa bertemu materinya sebelum
+gerbang prasyarat menghendakinya, dan `Eksponen Rasional` kehilangan sebagian isinya.
+
+Celah struktural sebaliknya juga ditemukan dan **ditutup** di sesi ini: identitas
+selisih kuadrat $(\sqrt a+\sqrt b)(\sqrt a-\sqrt b) = a-b$ **nol** di `Operasi Bentuk
+Akar`, padahal `Merasionalkan Penyebut` (hilirnya) punya 12 soal yang bersandar pada
+identitas itu. Siswa bertemu sekawan pertama kali justru saat sudah harus memakainya.
+Sekarang ada di L2 `Operasi Bentuk Akar` (`EaYW…`), dengan pembahasan yang eksplisit
+menunjuk ke depan.
+
+### 18.4 Rekonsiliasi dengan §17.2 — dua keputusan yang direvisi
+
+§17.2 (2026-08-03) menyatakan lima kelompok duplikat Gate C di `Fungsi Eksponen`
+"sengaja dibiarkan". Tiga di antaranya **tetap dipertahankan** di sesi ini, dengan
+alasan yang sama seperti yang ditulis di sana:
+
+- potong sumbu-X vs potong sumbu-Y — kontras yang disengaja, keduanya dipertahankan;
+- $2^{x-3}=16$ vs $3^{2x-1}=27$ — mekanika berbeda; keduanya dipertahankan, dan
+  pembahasan yang bernomor $2x-3$ kini menyebut bedanya secara eksplisit;
+- asimtot vs $\frac{f(5)}{f(2)}$ — sinyal lemah, tidak berkaitan.
+
+Dua sisanya **diganti**, tetapi bukan karena bantahan §17.2 keliru — melainkan karena
+pasangan yang dinilai di sana bukan pasangan yang bermasalah:
+
+- **`O5yd…` ($f(p)=32$).** §17.2 membandingkannya dengan `wqLZ…` ($f(x)=1$) dan
+  menyimpulkan keduanya menguji aturan berbeda. Itu benar. Yang terlewat: `O5yd`
+  praktis identik dengan **`ou894…` ($2^x=64$) di L1** — keterampilan sama, dan yang
+  di L2 tidak lebih sulit. Diganti "rumus dari tabel" ($f(x)=k\cdot a^x$ dari tiga
+  data), satu-satunya soal di sub-materi ini yang bergerak dari data ke model.
+- **`wqLZ…` ($4^x=1$).** §17.2 menilainya per pasangan. Dilihat menyeluruh, fakta
+  $a^0=1$ adalah punchline **empat** soal sekaligus (`1C32`, `IFFR`, `wqLZ`, dan
+  pembahasan `7LVu`). `IFFR` dan `7LVu` layak dipertahankan karena menambah tafsir
+  grafik; `1C32` dan `wqLZ` adalah faktanya telanjang. Keduanya diganti — `1C32`
+  jadi soal **daerah asal** (pelengkap `08Fs` yang menguji daerah hasil), `wqLZ` jadi
+  soal **"manakah pernyataan yang SALAH"** tentang grafik $a^x$.
+
+**Pelajarannya untuk sesi berikutnya:** menilai duplikat *per pasangan* — cara Gate C
+melaporkannya — bisa meloloskan konsentrasi yang baru kelihatan saat sub-materi
+dibaca utuh. Contoh terparah bukan di sini melainkan di `Merasionalkan Penyebut`:
+**seluruh L1 (10 dari 10 soal) adalah satu prosedur yang sama**, dan pola
+$\frac{a}{\sqrt b}$ muncul 14 kali dari 28 soal. Gate C melaporkannya sebagai
+kelompok "8x mirip" — angka yang mudah dibaca sebagai peringatan gaya bahasa, padahal
+ia menyatakan setengah sub-materi hanya melatih satu keterampilan.
+
+### 18.5 Celah yang masih terbuka
+
+Sudah diidentifikasi, belum dikerjakan:
+
+- **Format "manakah yang SALAH"** kini ada di `Sifat Eksponen Bilangan Bulat` (draf
+  tambahan), `Merasionalkan Penyebut`, dan `Fungsi Eksponen`. Belum ada di
+  `Operasi Bentuk Akar` (kandidat jelas: $\sqrt a+\sqrt b=\sqrt{a+b}$,
+  $\sqrt{a^2}=a$, $\sqrt{16}=\pm4$) dan `Eksponen Rasional`.
+- **Soal berkonteks** masih tipis di tiga sub-materi pertama: semula 1 dari 84, kini
+  4. Modul 1.1–1.3 nyaris tidak menyediakan bahannya — `eksponen-bentuk-akar.md` §108
+  sudah mencatat "kalau mau soal cerita, harus dikarang sendiri".
+- **Akar bersusun** $\sqrt{a\pm2\sqrt b}$ — 11 soal terverifikasi menganggur di
+  `eksponen-bentuk-akar.md` §2 Pola A. Terlalu sedikit untuk sub-materi baru (butuh
+  8/6/4 = 18), tapi 2–3 yang termudah bisa mengisi L3 `Operasi Bentuk Akar`.
+- **Gate E?** Ketiga temuan §18.1–18.3 pada prinsipnya bisa diotomatiskan: beban per
+  level (proksi: jumlah langkah di `pembahasan`), dan duplikat lintas sub-materi
+  (bandingkan konsep, bukan cuma teks, ke seluruh `bank_soal_all.json`). Belum
+  dirancang — untuk sekarang ketiganya adalah pemeriksaan manual yang wajib.
