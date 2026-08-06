@@ -1,9 +1,12 @@
 import { describe, test, expect } from "@jest/globals";
-import { getTautanEksternalMatrikulasi } from "../../public/js/utils/kurikulumData.js";
+import {
+  getTautanEksternalFormatif,
+  PETA_TAB_SUB_MATERI,
+} from "../../public/js/utils/kurikulumData.js";
 
-describe("getTautanEksternalMatrikulasi", () => {
+describe("getTautanEksternalFormatif", () => {
   test("mengembalikan tautan materi & drilling untuk sub-materi yang dipetakan", () => {
-    const hasil = getTautanEksternalMatrikulasi(
+    const hasil = getTautanEksternalFormatif(
       "Matrikulasi - Operasi Aritmatika Dasar",
     );
     expect(hasil).toEqual({
@@ -14,7 +17,7 @@ describe("getTautanEksternalMatrikulasi", () => {
   });
 
   test("mengabaikan perbedaan kapitalisasi & spasi tepi (normalisasiNama)", () => {
-    const hasil = getTautanEksternalMatrikulasi(
+    const hasil = getTautanEksternalFormatif(
       "  MATRIKULASI - kpk DAN fpb  ",
     );
     expect(hasil).toEqual({
@@ -25,7 +28,7 @@ describe("getTautanEksternalMatrikulasi", () => {
 
   test("mengembalikan tautan yang benar untuk PLSV & SPLDV (nama panjang berkurung)", () => {
     expect(
-      getTautanEksternalMatrikulasi(
+      getTautanEksternalFormatif(
         "Matrikulasi - Persamaan Linear Satu Variabel (PLSV)",
       ),
     ).toEqual({
@@ -33,7 +36,7 @@ describe("getTautanEksternalMatrikulasi", () => {
       drilling: "https://fakhri24.github.io/drilling-100/materi.html?id=08",
     });
     expect(
-      getTautanEksternalMatrikulasi(
+      getTautanEksternalFormatif(
         "Matrikulasi - Sistem Persamaan Linear Dua Variabel (SPLDV)",
       ),
     ).toEqual({
@@ -43,14 +46,14 @@ describe("getTautanEksternalMatrikulasi", () => {
   });
 
   test("mengembalikan null untuk sub-materi dari tab lain", () => {
-    expect(getTautanEksternalMatrikulasi("Aturan Kuadran")).toBeNull();
-    expect(getTautanEksternalMatrikulasi("Persentase")).toBeNull(); // bukan "Matrikulasi - Persentase"
+    expect(getTautanEksternalFormatif("Aturan Kuadran")).toBeNull();
+    expect(getTautanEksternalFormatif("Persentase")).toBeNull(); // bukan "Matrikulasi - Persentase"
   });
 
   test("mengembalikan null untuk input kosong/null/undefined", () => {
-    expect(getTautanEksternalMatrikulasi("")).toBeNull();
-    expect(getTautanEksternalMatrikulasi(null)).toBeNull();
-    expect(getTautanEksternalMatrikulasi(undefined)).toBeNull();
+    expect(getTautanEksternalFormatif("")).toBeNull();
+    expect(getTautanEksternalFormatif(null)).toBeNull();
+    expect(getTautanEksternalFormatif(undefined)).toBeNull();
   });
 
   test("memetakan seluruh 12 sub-materi Matrikulasi Numerasi tanpa duplikat idDrilling", () => {
@@ -68,10 +71,48 @@ describe("getTautanEksternalMatrikulasi", () => {
       "Matrikulasi - Perbandingan dan Skala",
       "Matrikulasi - Pembulatan dan Estimasi",
     ];
-    const hasil = namaLengkap.map((nama) => getTautanEksternalMatrikulasi(nama));
+    const hasil = namaLengkap.map((nama) => getTautanEksternalFormatif(nama));
     expect(hasil.every((h) => h !== null)).toBe(true);
 
     const idDrillingSet = new Set(hasil.map((h) => h.drilling));
     expect(idDrillingSet.size).toBe(12);
+  });
+
+  test("memetakan sub-materi Eksponen ke halaman belajar-eksponen + drilling E1..E5", () => {
+    expect(getTautanEksternalFormatif("Sifat Eksponen Bilangan Bulat")).toEqual({
+      materi: "https://fakhri24.github.io/belajar-eksponen/",
+      drilling: "https://fakhri24.github.io/drilling-100/materi.html?id=E1",
+    });
+    expect(
+      getTautanEksternalFormatif("Eksponen Rasional (Pangkat Pecahan)"),
+    ).toEqual({
+      materi: "https://fakhri24.github.io/belajar-eksponen/",
+      drilling: "https://fakhri24.github.io/drilling-100/materi.html?id=E4",
+    });
+    expect(getTautanEksternalFormatif("  FUNGSI eksponen ")).toEqual({
+      materi: "https://fakhri24.github.io/belajar-eksponen/",
+      drilling: "https://fakhri24.github.io/drilling-100/materi.html?id=E5",
+    });
+  });
+
+  // Penjaga sinkronisasi: menambah sub-materi ke tab Eksponen tanpa menambah
+  // tautannya di sini akan membuat siswa kehilangan tombol materi/drilling
+  // di mode formatif, tanpa error apa pun di runtime.
+  test("SELURUH sub-materi tab Eksponen punya tautan, id drilling unik", () => {
+    const hasil = PETA_TAB_SUB_MATERI.Eksponen.map((nama) =>
+      getTautanEksternalFormatif(nama),
+    );
+    expect(hasil.every((h) => h !== null)).toBe(true);
+    expect(new Set(hasil.map((h) => h.drilling)).size).toBe(
+      PETA_TAB_SUB_MATERI.Eksponen.length,
+    );
+  });
+
+  test("tabel tautan tidak bisa diubah lewat objek yang dikembalikan", () => {
+    const pertama = getTautanEksternalFormatif("Operasi Bentuk Akar");
+    pertama.materi = "https://contoh.invalid/dirusak";
+    expect(getTautanEksternalFormatif("Operasi Bentuk Akar").materi).toBe(
+      "https://fakhri24.github.io/belajar-eksponen/",
+    );
   });
 });

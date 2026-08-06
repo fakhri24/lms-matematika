@@ -633,81 +633,95 @@ const TAHAPAN_MATRIKULASI_NUMERASI = {
   "matrikulasi - pembulatan dan estimasi": "Tahap 4: Numerasi Terapan",
 };
 
-// --- TAUTAN EKSTERNAL MATRIKULASI NUMERASI ---
+// --- TAUTAN EKSTERNAL MODE FORMATIF ---
 // Situs eksternal terpisah (bukan bagian repo ini, tidak dites/di-deploy dari
-// sini): materi-numerasi-x = 12 halaman materi statis tanpa login;
-// drilling-100 = latihan soal per kompetensi, butuh login (Google/email).
-// Kedua situs memakai penomoran 01-12 yang sama untuk 12 materi yang sama.
-// Dipakai HANYA di mode formatif tab Matrikulasi Numerasi.
+// sini):
+//   - materi-numerasi-x  = 12 halaman materi statis tanpa login (Matrikulasi);
+//   - belajar-eksponen   = SATU halaman interaktif tanpa login (Eksponen);
+//   - drilling-100       = latihan soal per kompetensi, butuh login
+//                          (Google/email). Id "01".."12" = Matrikulasi,
+//                          "E1".."E5" = Eksponen, urut sama dengan
+//                          TAHAPAN_EKSPONEN di bawah.
+// Dipakai HANYA di mode formatif; sub-materi tab lain sengaja tidak dipetakan.
 const BASE_MATERI_NUMERASI_X =
   "https://fakhri24.github.io/materi-numerasi-x/materi/";
 const BASE_DRILLING_100 =
   "https://fakhri24.github.io/drilling-100/materi.html?id=";
+// Satu halaman, navigasi antar-bagian pakai tombol JS yang TIDAK membaca
+// location.hash (dicek 2026-08-06). Jadi kelima sub-materi Eksponen menunjuk
+// URL yang sama persis — menambahkan "#sifat" dsb. hanya akan menyesatkan
+// siswa ke bagian yang tetap tersembunyi.
+const HALAMAN_BELAJAR_EKSPONEN = "https://fakhri24.github.io/belajar-eksponen/";
 
-const TAUTAN_EKSTERNAL_MATRIKULASI_NUMERASI = {
-  "matrikulasi - operasi aritmatika dasar": {
-    slugMateri: "01-operasi-aritmatika-dasar",
-    idDrilling: "01",
-  },
-  "matrikulasi - sifat operasi bilangan": {
-    slugMateri: "02-sifat-operasi-bilangan",
-    idDrilling: "02",
-  },
-  "matrikulasi - kpk dan fpb": {
-    slugMateri: "03-kpk-dan-fpb",
-    idDrilling: "03",
-  },
-  "matrikulasi - operasi pecahan": {
-    slugMateri: "04-operasi-pecahan",
-    idDrilling: "04",
-  },
-  "matrikulasi - operasi dan konversi desimal": {
-    slugMateri: "05-operasi-konversi-desimal",
-    idDrilling: "05",
-  },
-  "matrikulasi - pengenalan variabel": {
-    slugMateri: "06-pengenalan-variabel",
-    idDrilling: "06",
-  },
-  "matrikulasi - manipulasi aljabar dasar": {
-    slugMateri: "07-manipulasi-aljabar-dasar",
-    idDrilling: "07",
-  },
-  "matrikulasi - persamaan linear satu variabel (plsv)": {
-    slugMateri: "08-plsv",
-    idDrilling: "08",
-  },
-  "matrikulasi - sistem persamaan linear dua variabel (spldv)": {
-    slugMateri: "09-spldv",
-    idDrilling: "09",
-  },
-  "matrikulasi - persentase": {
-    slugMateri: "10-persentase",
-    idDrilling: "10",
-  },
-  "matrikulasi - perbandingan dan skala": {
-    slugMateri: "11-perbandingan-dan-skala",
-    idDrilling: "11",
-  },
-  "matrikulasi - pembulatan dan estimasi": {
-    slugMateri: "12-pembulatan-dan-estimasi",
-    idDrilling: "12",
-  },
+const entriNumerasi = (slugMateri, idDrilling) => ({
+  materi: `${BASE_MATERI_NUMERASI_X}${slugMateri}.html`,
+  drilling: `${BASE_DRILLING_100}${idDrilling}`,
+});
+
+const entriEksponen = (idDrilling) => ({
+  materi: HALAMAN_BELAJAR_EKSPONEN,
+  drilling: `${BASE_DRILLING_100}${idDrilling}`,
+});
+
+const TAUTAN_EKSTERNAL_FORMATIF = {
+  // Tab Matrikulasi Numerasi
+  "matrikulasi - operasi aritmatika dasar": entriNumerasi(
+    "01-operasi-aritmatika-dasar",
+    "01",
+  ),
+  "matrikulasi - sifat operasi bilangan": entriNumerasi(
+    "02-sifat-operasi-bilangan",
+    "02",
+  ),
+  "matrikulasi - kpk dan fpb": entriNumerasi("03-kpk-dan-fpb", "03"),
+  "matrikulasi - operasi pecahan": entriNumerasi("04-operasi-pecahan", "04"),
+  "matrikulasi - operasi dan konversi desimal": entriNumerasi(
+    "05-operasi-konversi-desimal",
+    "05",
+  ),
+  "matrikulasi - pengenalan variabel": entriNumerasi(
+    "06-pengenalan-variabel",
+    "06",
+  ),
+  "matrikulasi - manipulasi aljabar dasar": entriNumerasi(
+    "07-manipulasi-aljabar-dasar",
+    "07",
+  ),
+  "matrikulasi - persamaan linear satu variabel (plsv)": entriNumerasi(
+    "08-plsv",
+    "08",
+  ),
+  "matrikulasi - sistem persamaan linear dua variabel (spldv)": entriNumerasi(
+    "09-spldv",
+    "09",
+  ),
+  "matrikulasi - persentase": entriNumerasi("10-persentase", "10"),
+  "matrikulasi - perbandingan dan skala": entriNumerasi(
+    "11-perbandingan-dan-skala",
+    "11",
+  ),
+  "matrikulasi - pembulatan dan estimasi": entriNumerasi(
+    "12-pembulatan-dan-estimasi",
+    "12",
+  ),
+
+  // Tab Eksponen — kunci wajib sama persis dengan TAHAPAN_EKSPONEN
+  "sifat eksponen bilangan bulat": entriEksponen("E1"),
+  "operasi bentuk akar": entriEksponen("E2"),
+  "merasionalkan penyebut": entriEksponen("E3"),
+  "eksponen rasional (pangkat pecahan)": entriEksponen("E4"),
+  "fungsi eksponen": entriEksponen("E5"),
 };
 
 /**
- * Tautan materi & drilling eksternal untuk satu sub-materi Matrikulasi
- * Numerasi. Mengembalikan null bila sub-materi tidak dipetakan (mis. sub-materi
- * dari tab lain).
+ * Tautan materi & drilling eksternal untuk satu sub-materi (Matrikulasi
+ * Numerasi atau Eksponen). Mengembalikan null bila sub-materi tidak dipetakan
+ * (mis. sub-materi dari tab lain).
  */
-export function getTautanEksternalMatrikulasi(subMateri) {
-  const entri =
-    TAUTAN_EKSTERNAL_MATRIKULASI_NUMERASI[normalisasiNama(subMateri)];
+export function getTautanEksternalFormatif(subMateri) {
+  const entri = TAUTAN_EKSTERNAL_FORMATIF[normalisasiNama(subMateri)];
   if (!entri) return null;
-  return {
-    materi: `${BASE_MATERI_NUMERASI_X}${entri.slugMateri}.html`,
-    drilling: `${BASE_DRILLING_100}${entri.idDrilling}`,
-  };
+  return { ...entri }; // salinan: tabel tidak boleh bisa diubah pemanggil
 }
 
 // --- PRASYARAT MATEMATIKA DASAR (SMP) — tab Prasyarat, TIDAK PERNAH dikunci ---

@@ -1,7 +1,7 @@
 // public/js/views/soalView.js
 
 import { MODE_LATIHAN } from "../utils/constants.js";
-import { getTautanEksternalMatrikulasi } from "../utils/kurikulumData.js";
+import { getTautanEksternalFormatif } from "../utils/kurikulumData.js";
 
 let _renderCount = 0;
 
@@ -73,7 +73,7 @@ export function renderKartuSoal(
   if (el.areaTautanEksternal) {
     const tautanEksternal =
       modeLatihan === MODE_LATIHAN.FORMATIF
-        ? getTautanEksternalMatrikulasi(soal.sub_materi)
+        ? getTautanEksternalFormatif(soal.sub_materi)
         : null;
 
     if (tautanEksternal) {
